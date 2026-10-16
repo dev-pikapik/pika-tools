@@ -74,26 +74,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>حماية ⌘Q و⌘W</b>
+<br>لا يُغلق شيء بالخطأ. أضف ⇧ عندما تقصد ذلك.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>وضع الألعاب</b>
+<br>أثناء اللعب لا يظهر شيء فوق اللعبة ولا يغلقها شيء.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>رفيق على سطح المكتب</b>
+<br>صديق صغير يتمشى خلف نوافذك. التقطه وارمه، أو اضغط مفتاح المسافة فيقفز. ألبِسه من خزانة الملابس واربح الجوائز وأنتما تلعبان معًا. ينشط وأنت تكتب ويغفو حين تبتعد.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>إبقاء الجهاز مستيقظًا</b>
 <br>يبقى Mac مستيقظًا طوال ما تحتاج، حتى والغطاء مغلق.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>المراوح</b>
 <br>شاهد مدى سرعة دوران المراوح واختر سرعتها.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>البطارية</b>
 <br>شاهد حالة بطاريتك والحد الأقصى لقدرتها وعدد دوراتها، وكم من الطاقة تدخل إليها، وكيف تجعلها تدوم أطول.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>حماية ⌘Q و⌘W</b>
-<br>لا يُغلق شيء بالخطأ. أضف ⇧ عندما تقصد ذلك.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -170,74 +182,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>وضع الألعاب</b>
-<br>أثناء اللعب لا يظهر شيء فوق اللعبة ولا يغلقها شيء.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>اختبار السرعة</b>
 <br>ما مدى سرعة الإنترنت لديك، وما الذي يكفي له.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>الأزرار الجانبية</b>
 <br>الزران 4 و5 للرجوع والتقدم، مثل السحب على لوحة التعقب.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>الإخفاء بزر الماوس</b>
 <br>ضغطة واحدة تُخفي التطبيق الظاهر في المقدمة، مثل ⌘H. ويبقى التطبيق قيد التشغيل.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>التمرير بالأسطر</b>
 <br>كل نقرة من العجلة تمرّر المسافة نفسها مهما كانت سرعة الدوران.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>اتجاه التمرير</b>
 <br>اتجاه للوحة التعقب وآخر للماوس.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>إيقاف تسارع المؤشر</b>
 <br>يتحرك المؤشر بقدر حركة يدك تمامًا.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>تكرار المفتاح عند الضغط المستمر</b>
 <br>اضغط مع الاستمرار على مفتاح ليتكرر، بدلًا من قائمة الحركات.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home وEnd</b>
 <br>انتقل إلى بداية السطر أو نهايته أثناء الكتابة.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>الرسوم المتحركة</b>
 <br>سرّع Dock والنوافذ والنظرة السريعة، حتى تصبح فورية.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>أذونات التطبيقات المحذوفة</b>
 <br>أزل الأذونات التي يحتفظ بها macOS لتطبيقات حذفتها بالفعل.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>رفيق على سطح المكتب</b>
-<br>صديق صغير يتمشى خلف نوافذك. التقطه وارمه، أو اضغط مفتاح المسافة فيقفز. ألبِسه من خزانة الملابس واربح الجوائز وأنتما تلعبان معًا. ينشط وأنت تكتب ويغفو حين تبتعد.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -418,7 +418,7 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 
 **إظهار FPS.** FPS تعني عدد الإطارات في الثانية: كم صورة ترسمها اللعبة كل ثانية. شغّل **إظهار FPS** في صفحة الألعاب، وما دام وضع الألعاب قيد التشغيل، تظهر في زاوية أي لعبة شارة صغيرة داكنة عليها هذا الرقم. انقر على زاوية في الصورة فوق المفتاح لاختيارها. تعني الشرطة أن الإطارات الأولى لم تصل بعد، ويعني الصفر الباهت أن اللعبة توقفت عن الرسم. في macOS 27 يحسب macOS نفسه معظم الألعاب دون أي إذن. أما اللعبة التي لا يستطيع macOS حسابها، وهي غالبًا قديمة، فتُحسب عبر تسجيل الشاشة: عندها يظهر في صفحة «الأذونات» صفّ **تسجيل الشاشة**، ولا يطلب pikapik الإذن أبدًا أثناء اللعب، ولا يمكن أن يتجاوز الرقم معدل تحديث الشاشة. في macOS 14–26 وفي إصدار Mac App Store تُحسب كل الألعاب بهذه الطريقة، لذلك يظهر هذا الصفّ فور تشغيل **إظهار FPS**، ويقودك إليه زر **السماح** الموجود تحت المفتاح. لا تُحفظ أي صورة ولا تُرسل. معطّل افتراضيًا.
 
-**خزانة الملابس والجوائز للرفيق.** افتح الإعدادات › الرفيق لتُلبس رفيقك: أكثر من 30 قطعة، من القبعات والنظارات إلى الأردية والأجنحة، وأزياء جاهزة مثل الساحر والقرصان ورائد الفضاء. بضع قطع مجانية من البداية، أما الباقي فجوائز تأتيك وأنتما تلعبان معًا: التقط رفيقك وارمه، واركل الكرة، وشاهده يتسلق النوافذ ويتكلم، أو ببساطة رافقه يومًا بعد يوم. وعندما تحصل على جائزة جديدة يخبرك رفيقك بذلك.
+**خزانة الملابس والجوائز للرفيق.** افتح الإعدادات › الرفيق لتُلبس رفيقك: أكثر من 50 قطعة، من القبعات والنظارات إلى الأردية والأجنحة، وأزياء جاهزة مثل الساحر والقرصان ورائد الفضاء. بضع قطع مجانية من البداية، أما الباقي فجوائز تأتيك وأنتما تلعبان معًا: التقط رفيقك وارمه، واركل الكرة، وشاهده يتسلق النوافذ ويتكلم، أو ببساطة رافقه يومًا بعد يوم. وعندما تحصل على جائزة جديدة يخبرك رفيقك بذلك. ولرفيقك الآن مشاعر أيضًا: يتغيّر وجهه وتظهر فوق رأسه إشارة صغيرة عندما يكون سعيدًا أو خجولًا أو فضوليًا أو ناعسًا وغير ذلك، ردًّا على ما تفعله، كما صارت له خزانة ملابس رجل نبيل فيها شوارب وعدسة أحادية وسترة فراك وعصا. يحدّد مشاعره على جهاز Mac لديك مما يعرفه أصلًا، ولا يُقرأ أو يُرسَل أي شيء.
 
 لمعرفة متى يحين موعد الجائزة، يعدّ pikapik فقط ما تفعله أنت ورفيقك: الخطوات، وعدد المرات التي تلتقطه فيها وترميه، وقفزاته، وتسلقه، وألعاب الكرة، والأحاديث، والأيام التي قضيتماها معًا، وهل كنتما معًا في الصباح الباكر أو بعد منتصف الليل أو في عطلة نهاية الأسبوع، وصفحات الإعدادات التي فتحتها، والقطع التي جرّبتها. وخارج Mac App Store يسجّل pikapik أيضًا ما إذا فتحت صفحتنا على GitHub من الإعدادات. تبقى هذه الأرقام وتاريخ كل جائزة وما يرتديه رفيقك على جهاز Mac هذا. لا يُرسَل شيء إلى أي مكان، ولا يدخل أي منها في ملف الإعدادات المصدَّر أو مزامنة iCloud. يمكنك مسح كل شيء في أي وقت من الإعدادات › الرفيق، فيبدأ رفيقك من جديد.
 

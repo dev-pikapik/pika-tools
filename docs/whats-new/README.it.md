@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Il lettore riproduce la tua musica e le impostazioni tornano dopo un arresto anomalo
+
+<sub>1.52.1 · 16 ottobre 2026</sub>
+
+Il lettore ora riproduce le canzoni e ha un pannello di vetro, e le tue impostazioni tornano anche dopo un arresto anomalo.
+
+- Lettore (versione dal sito): le canzoni si riproducono nella stessa finestra, con copertina, titolo e artista, e una cartella suona canzone dopo canzone.
+- Lettore (versione dal sito): ogni formato è un pulsante che lo affida a pikapik Player e lo restituisce; **Apri tutto in pikapik** li fa tutti.
+- Lettore (versione dal sito): un pannello di controllo in vetro smerigliato che si nasconde mentre guardi, e una piccola immagine del video quando punti la barra del tempo.
+
+**Provalo:** Impostazioni › Lettore
+
+**Corretto**
+
+- Le tue impostazioni, per esempio «Nascondi automaticamente il Dock», tornano anche se pikapik si è fermato all’improvviso.
+- Chrome, Slack, VS Code (versione dal sito): dopo un arresto anomalo non restano più nella modalità di pikapik, e una finestra bloccata non rallenta più l’apertura né la chiusura di pikapik.
+- Pulsanti laterali: Impostazioni mostra frecce indietro e avanti al posto di 4 e 5, e «Avanti» non inoltra più un’e-mail in Mail o Outlook.
+- **Rendi questa copia quella principale** agisce una sola volta a ogni pressione, e le brevi righe sotto alcuni interruttori spiegano meglio cosa fanno.
+- Versione Mac App Store: la pagina “Animaletto” non promette più novità sugli aggiornamenti, perché l’App Store li porta da solo.
+
+---
+
 ## <a id="v1.52.0"></a>La correzione delle parole e i tasti laterali del mouse ora funzionano in quasi ogni app
 
 <sub>1.52.0 · 15 ottobre 2026</sub>

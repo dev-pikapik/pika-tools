@@ -40,26 +40,38 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Bảo vệ ⌘Q và ⌘W</b>
+<br>Không gì bị đóng nhầm. Thêm ⇧ khi bạn thật sự muốn.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Chế độ trò chơi</b>
+<br>Khi bạn chơi, không gì bật lên che trò chơi hay đóng nó lại.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Thú cưng trên màn hình nền</b>
+<br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy. Chọn đồ cho nó trong tủ quần áo riêng và nhận giải thưởng khi cùng chơi. Nó hăng hái khi bạn gõ phím và ngủ gà ngủ gật khi bạn rời đi.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Giữ máy thức</b>
 <br>Máy Mac luôn thức bao lâu tùy bạn, kể cả khi gập nắp.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Quạt</b>
 <br>Xem quạt quay nhanh cỡ nào và chọn tốc độ cho quạt.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Pin</b>
 <br>Xem tình trạng, dung lượng và số lượng chu kỳ của pin, lượng điện đang vào pin và cách giúp pin dùng được lâu hơn.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Bảo vệ ⌘Q và ⌘W</b>
-<br>Không gì bị đóng nhầm. Thêm ⇧ khi bạn thật sự muốn.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Cả lệnh ở trên và Homebrew đều đặt ứng dụng vào `/Application
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Chế độ trò chơi</b>
-<br>Khi bạn chơi, không gì bật lên che trò chơi hay đóng nó lại.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Kiểm tra tốc độ</b>
 <br>Internet của bạn nhanh cỡ nào và đủ dùng cho việc gì.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Nút bên của chuột</b>
 <br>Nút 4 và 5 để quay lại và tiếp, như vuốt trên bàn di chuột.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Ẩn bằng nút chuột</b>
 <br>Nhấn một lần là ẩn ứng dụng ở phía trước, như ⌘H. Ứng dụng vẫn chạy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Cuộn theo dòng</b>
 <br>Mỗi nấc bánh xe cuộn như nhau, dù bạn xoay nhanh đến đâu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Hướng cuộn</b>
 <br>Một hướng cho bàn di chuột, hướng khác cho chuột.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Không tăng tốc con trỏ</b>
 <br>Con trỏ đi đúng bằng quãng tay bạn di.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Lặp lại phím khi giữ</b>
 <br>Giữ một phím để gõ lặp lại, không hiện menu dấu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home và End</b>
 <br>Nhảy về đầu hoặc cuối dòng khi đang gõ.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Hoạt ảnh</b>
 <br>Tăng tốc Dock, cửa sổ và Xem nhanh, cho đến tức thì.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Quyền của ứng dụng đã xóa</b>
 <br>Gỡ các quyền mà macOS vẫn giữ cho những ứng dụng bạn đã xóa.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Thú cưng trên màn hình nền</b>
-<br>Một người bạn nhỏ dạo bước sau các cửa sổ của bạn. Nhấc lên và tung đi, hoặc nhấn phím cách để nó nhảy. Chọn đồ cho nó trong tủ quần áo riêng và nhận giải thưởng khi cùng chơi. Nó hăng hái khi bạn gõ phím và ngủ gà ngủ gật khi bạn rời đi.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Mở Cài đặt → Trò chơi → Thêm trò chơi rồi nhấp vào trò chơ
 
 **Hiện FPS.** FPS là số khung hình mỗi giây: số hình mà trò chơi vẽ ra trong mỗi giây. Bật **Hiện FPS** trên trang Trò chơi, và khi Chế độ trò chơi đang bật, một nhãn nhỏ màu tối ghi con số đó sẽ hiện ở một góc của bất kỳ trò chơi nào. Nhấp vào một góc trên hình phía trên công tắc để chọn góc đó. Dấu gạch nghĩa là những khung hình đầu tiên chưa đến, còn số 0 mờ nghĩa là trò chơi đã ngừng vẽ. Trên macOS 27, phần lớn trò chơi do chính macOS đếm, không cần quyền nào. Trò chơi mà macOS không đếm được, thường là trò cũ, sẽ được đếm qua tính năng ghi màn hình: khi đó dòng **Ghi màn hình** xuất hiện trên trang Quyền, pikapik không bao giờ xin quyền trong lúc chơi, và con số không thể cao hơn tần số làm tươi của màn hình. Trên macOS 14–26 và trong phiên bản Mac App Store, mọi trò chơi đều được đếm theo cách này, nên dòng đó xuất hiện ngay khi bạn bật **Hiện FPS**, và nút **Cho phép** bên dưới công tắc sẽ đưa bạn đến đó. Không có hình ảnh nào được lưu hay gửi đi. Mặc định tắt.
 
-**Tủ quần áo và giải thưởng của thú cưng.** Mở Cài đặt › Thú cưng để mặc đồ cho thú cưng: hơn 30 món, từ mũ và kính đến áo choàng và đôi cánh, cùng những trang phục làm sẵn như phù thủy, cướp biển hay phi hành gia. Một vài món có sẵn miễn phí. Phần còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận giải thưởng mới, thú cưng sẽ báo cho bạn.
+**Tủ quần áo và giải thưởng của thú cưng.** Mở Cài đặt › Thú cưng để mặc đồ cho thú cưng: hơn 50 món, từ mũ và kính đến áo choàng và đôi cánh, cùng những trang phục làm sẵn như phù thủy, cướp biển hay phi hành gia. Một vài món có sẵn miễn phí. Phần còn lại là giải thưởng đến khi hai bạn chơi cùng nhau: nhấc thú cưng lên rồi tung đi, đá bóng, xem nó trèo cửa sổ và trò chuyện, hoặc đơn giản là ở bên nó ngày này qua ngày khác. Khi bạn nhận giải thưởng mới, thú cưng sẽ báo cho bạn. Giờ thú cưng còn biết thể hiện cảm xúc: tùy việc bạn làm, khuôn mặt nó thay đổi và một dấu hiệu nhỏ hiện trên đầu khi nó vui, ngại ngùng, tò mò, buồn ngủ và hơn thế nữa, và có thêm tủ đồ quý ông với ria mép, kính một tròng, áo đuôi tôm và ba toong. Nó tự suy ra cảm xúc ngay trên máy Mac của bạn từ những gì nó đã biết, và không có gì bị đọc hay gửi đi.
 
 Để biết lúc nào đến lượt một giải thưởng, pikapik chỉ đếm những gì bạn và thú cưng làm: số bước chân, số lần bạn nhấc và tung nó, các cú nhảy, những lần trèo, các ván bóng, những lần trò chuyện, số ngày bên nhau, việc hai bạn có ở bên nhau vào sáng sớm, sau nửa đêm hay cuối tuần không, những trang Cài đặt bạn đã mở và những món bạn đã thử. Ngoài Mac App Store, pikapik còn ghi lại việc bạn có mở trang GitHub của chúng tôi từ Cài đặt hay không. Các con số này, ngày nhận mỗi giải thưởng và bộ đồ thú cưng đang mặc chỉ nằm trên máy Mac này. Không có gì được gửi đi đâu cả, và không thứ nào trong đó vào tệp cài đặt đã xuất hay đồng bộ iCloud. Bạn có thể xóa tất cả bất cứ lúc nào trong Cài đặt › Thú cưng, và thú cưng sẽ bắt đầu lại từ đầu.
 

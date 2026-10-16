@@ -40,26 +40,38 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q en ⌘W beschermen</b>
+<br>Niets stopt of sluit per ongeluk. Voeg ⇧ toe als je het echt wilt.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Gamemodus</b>
+<br>Terwijl je speelt, verschijnt er niets bovenop het spel en sluit niets het af.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Huisdiertje op het bureaublad</b>
+<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Wakker houden</b>
 <br>Je Mac blijft wakker zolang je wilt, zelfs met de klep dicht.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilatoren</b>
 <br>Zie hoe snel je ventilatoren draaien en kies hun snelheid.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterij</b>
 <br>Zie de conditie, capaciteit en het aantal cycli van je batterij, hoeveel stroom erin gaat en hoe je hem langer laat meegaan.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q en ⌘W beschermen</b>
-<br>Niets stopt of sluit per ongeluk. Voeg ⇧ toe als je het echt wilt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Zowel de opdracht hierboven als Homebrew zetten de app in `/Applications`, opene
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Gamemodus</b>
-<br>Terwijl je speelt, opent niets zich over het spel en sluit niets het af.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Snelheidstest</b>
 <br>Hoe snel je internet is, en waar het goed voor is.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Zijknoppen</b>
 <br>Knop 4 en 5 gaan terug en vooruit, net als vegen op het trackpad.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Verbergen met een muisknop</b>
 <br>Eén druk verbergt de app op de voorgrond, net als ⌘H. De app blijft draaien.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Per regel scrollen</b>
 <br>Elke klik van het scrollwiel scrolt even ver, hoe snel je ook draait.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichting</b>
 <br>Eén richting voor het trackpad, een andere voor de muis.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Zonder aanwijzerversnelling</b>
 <br>De aanwijzer gaat precies zo ver als je hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ingedrukte toets herhalen</b>
 <br>Houd een toets ingedrukt om hem te herhalen, zonder accentmenu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home en End</b>
 <br>Spring tijdens het typen naar het begin of einde van de regel.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animaties</b>
 <br>Maak het Dock, vensters en Snel bekijken sneller, tot direct aan toe.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Toestemmingen van verwijderde apps</b>
 <br>Haal de toestemmingen weg die macOS bewaart voor apps die je al hebt verwijderd.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Huisdiertje op het bureaublad</b>
-<br>Een klein vriendje wandelt achter je vensters. Pak het op en gooi het, of druk op de spatiebalk en het springt. Kleed het aan met kleren uit zijn kledingkast en verdien onderscheidingen terwijl jullie samen spelen. Het wordt levendig als je typt en dommelt in als je wegloopt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Open Instellingen → Spellen → Spel toevoegen en klik op je draaiende spel. O
 
 **FPS tonen.** FPS betekent beelden per seconde: hoeveel beelden de game elke seconde tekent. Zet **FPS tonen** aan op de pagina Games, en zolang de Gamemodus aanstaat, staat er in een hoek van elke game een klein donker labeltje met dat getal. Kies de hoek door erop te klikken in het plaatje boven de schakelaar. Een streepje betekent dat de eerste beelden er nog niet zijn, en een vervaagde 0 dat de game niets meer tekent. Onder macOS 27 telt macOS de meeste games zelf, zonder toestemming. Een game die macOS niet kan tellen, meestal een oudere game, wordt geteld via schermopname: dan verschijnt op de pagina Toestemmingen de rij **Schermopname**, vraagt pikapik er nooit om tijdens een game en kan het getal niet hoger zijn dan de verversingssnelheid van het scherm. Onder macOS 14 tot en met 26 en in de versie uit de Mac App Store wordt elke game zo geteld, dus de rij verschijnt zodra je **FPS tonen** aanzet, en de knop **Toestaan** onder de schakelaar brengt je erheen. Er wordt geen beeld bewaard of verstuurd. Standaard uit.
 
-**Kledingkast en onderscheidingen van je huisdiertje.** Open Instellingen › Huisdiertje om je huisdiertje aan te kleden: meer dan 30 dingen, van hoeden en brillen tot capes en vleugels, en kant-en-klare outfits zoals tovenaar, piraat of astronaut. Een paar dingen zijn vanaf het begin gratis. De rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een nieuwe onderscheiding hebt verdiend, vertelt je huisdiertje het je.
+**Kledingkast en onderscheidingen van je huisdiertje.** Open Instellingen › Huisdiertje om je huisdiertje aan te kleden: meer dan 50 dingen, van hoeden en brillen tot capes en vleugels, en kant-en-klare outfits zoals tovenaar, piraat of astronaut. Een paar dingen zijn vanaf het begin gratis. De rest zijn onderscheidingen die je onder het spelen krijgt: pak je huisdiertje op en gooi het omhoog, schop tegen de bal, kijk hoe het op ramen klimt en kletst, of houd het gewoon dag na dag gezelschap. Als je een nieuwe onderscheiding hebt verdiend, vertelt je huisdiertje het je. Je huisdiertje laat nu ook gevoelens zien: als reactie op wat je doet verandert zijn gezicht en verschijnt er een klein teken boven zijn hoofd als het blij, verlegen, nieuwsgierig, slaperig en meer is, en er is een kledingkast voor gentlemen met snorren, monocle, slipjas en wandelstok. Het bepaalt zijn gevoelens op je Mac aan de hand van wat het al weet, en er wordt niets gelezen of verstuurd.
 
 Om te weten wanneer een onderscheiding toekomt, telt pikapik alleen wat jij en je huisdiertje doen: stappen, hoe vaak je het oppakt en gooit, sprongen, klimpartijen, balspelletjes en praatjes, dagen samen, of jullie vroeg in de ochtend, na middernacht of in het weekend samen waren, welke pagina’s van Instellingen je opende en wat je hebt gepast. Buiten de Mac App Store noteert pikapik ook of je vanuit Instellingen onze GitHub-pagina hebt geopend. Deze aantallen, de datum van elke onderscheiding en wat je huisdiertje draagt blijven op deze Mac. Er wordt niets ergens naartoe verstuurd en niets hiervan komt in het geëxporteerde instellingenbestand of in de iCloud-synchronisatie. Je kunt alles op elk moment wissen in Instellingen › Huisdiertje, en je huisdiertje begint opnieuw.
 

@@ -62,7 +62,7 @@ final class FinderExtension {
             refresh()
             return
             #else
-            guard MainCopy.shared.role != .passive else { return }
+            guard MainCopy.canAct else { return }
             Self.elect(newValue, bundle: bundle, id: id)
             if preview { Self.elect(newValue, bundle: "Preview", id: Self.previewID) }
             refresh()

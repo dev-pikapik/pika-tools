@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Ihr Mac versteht, was Sie meinen.</b><br>Kleine Verbesserungen für Tastatur, Maus, Fenster und Finder, direkt in der Menüleiste deines Mac.</p>
+<p align="center"><b>Dein Mac weiß, was du meinst.</b><br>Kleine Verbesserungen für Tastatur, Maus, Fenster und Finder, direkt in der Menüleiste deines Mac.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <b>Deutsch</b> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q und ⌘W schützen</b>
+<br>Nichts wird aus Versehen beendet oder geschlossen. Nimm ⇧ dazu, wenn du es wirklich willst.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Spielmodus</b>
+<br>Während du spielst, drängt sich nichts vor das Spiel und nichts schließt es.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Haustier auf dem Schreibtisch</b>
+<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt. Er wird munter, während du tippst, und döst ein, wenn du weggehst.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Wach bleiben</b>
 <br>Dein Mac bleibt wach, so lange du willst, auch mit zugeklapptem Deckel.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Lüfter</b>
 <br>Sieh, wie schnell deine Lüfter drehen, und wähle ihre Geschwindigkeit.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterie</b>
 <br>Sieh den Zustand deiner Batterie, ihre Kapazität und Anzahl der Zyklen, wie viel Strom hineinfließt und wie sie länger durchhält.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q und ⌘W schützen</b>
-<br>Nichts wird aus Versehen beendet oder geschlossen. Mit ⇧ klappt es gewollt.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Der obige Befehl und Homebrew legen die App in `/Applications` ab, starten sie, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Spielmodus</b>
-<br>Während du spielst, springt nichts über das Spiel und nichts schließt es.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Speedtest</b>
 <br>Wie schnell dein Internet ist und wofür es reicht.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Seitentasten der Maus</b>
 <br>Die Tasten 4 und 5 gehen zurück und vor, wie ein Wischen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Per Maustaste ausblenden</b>
 <br>Ein Druck blendet die App im Vordergrund aus, wie ⌘H. Sie läuft weiter.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Zeilenweise scrollen</b>
 <br>Jeder Klick am Mausrad scrollt gleich weit, egal wie schnell du drehst.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scrollrichtung</b>
 <br>Eine Richtung fürs Trackpad, eine andere für die Maus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ohne Zeigerbeschleunigung</b>
 <br>Der Zeiger bewegt sich genau so weit wie deine Hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Gehaltene Taste wiederholen</b>
 <br>Halte eine Taste, und sie tippt immer wieder, ohne Akzentmenü.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home und End</b>
 <br>Beim Tippen an den Anfang oder das Ende der Zeile springen.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationen</b>
 <br>Dock, Fenster und Übersicht werden schneller, auf Wunsch sofort.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Berechtigungen gelöschter Apps</b>
 <br>Entferne die Berechtigungen, die macOS für gelöschte Apps behält.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Haustier auf dem Schreibtisch</b>
-<br>Ein kleiner Freund spaziert hinter deinen Fenstern. Heb ihn hoch und wirf ihn, oder drück die Leertaste, und er hüpft. Zieh ihm etwas aus seinem Kleiderschrank an und sammle Auszeichnungen, während ihr zusammen spielt. Er wird munter, während du tippst, und döst ein, wenn du weggehst.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Unter Einstellungen → Spiele → Weitere Spieleinstellungen gibt es die Gruppe
 
 **FPS anzeigen.** FPS heißt Bilder pro Sekunde: wie viele Bilder das Spiel jede Sekunde zeichnet. Schalte **FPS anzeigen** auf der Seite „Spiele“ ein, und solange der Spielmodus an ist, sitzt in einer Ecke jedes Spiels eine kleine dunkle Anzeige mit dieser Zahl. Die Ecke wählst du per Klick auf das Bild über dem Schalter. Ein Strich bedeutet, dass die ersten Bilder noch nicht da sind, eine blasse 0, dass das Spiel nichts mehr zeichnet. Unter macOS 27 zählt macOS die meisten Spiele selbst, ganz ohne Erlaubnis. Ein Spiel, das macOS nicht zählen kann, meist ein älteres, zählt pikapik über die Bildschirmaufnahme: Dann erscheint auf der Seite „Berechtigungen“ die Zeile **Bildschirmaufnahme**, pikapik fragt nie mitten im Spiel danach, und die Zahl kann nicht höher sein als die Bildwiederholrate des Bildschirms. Unter macOS 14 bis 26 und in der Version aus dem Mac App Store wird jedes Spiel so gezählt, deshalb erscheint die Zeile gleich nach dem Einschalten von **FPS anzeigen**, und die Taste **Erlauben** unter dem Schalter führt dich dorthin. Es wird kein Bild gespeichert oder gesendet. Standardmäßig aus.
 
-**Kleiderschrank und Auszeichnungen fürs Haustier.** Öffne Einstellungen › Haustier, um dein Haustier anzuziehen: mehr als 30 Teile, von Hüten und Brillen bis zu Umhängen und Flügeln, dazu fertige Outfits wie Zauberer, Pirat oder Astronaut. Ein paar Teile sind von Anfang an frei. Die übrigen sind Auszeichnungen, die ihr beim gemeinsamen Spielen sammelt: Heb dein Haustier hoch und wirf es, kick den Ball herum, sieh zu, wie es auf Fenster klettert und plaudert, oder leiste ihm einfach Tag für Tag Gesellschaft. Wenn du eine neue Auszeichnung verdient hast, sagt dir dein Haustier Bescheid.
+**Kleiderschrank und Auszeichnungen fürs Haustier.** Öffne Einstellungen › Haustier, um dein Haustier anzuziehen: mehr als 50 Teile, von Hüten und Brillen bis zu Umhängen und Flügeln, dazu fertige Outfits wie Zauberer, Pirat oder Astronaut. Ein paar Teile sind von Anfang an frei. Die übrigen sind Auszeichnungen, die ihr beim gemeinsamen Spielen sammelt: Heb dein Haustier hoch und wirf es, kick den Ball herum, sieh zu, wie es auf Fenster klettert und plaudert, oder leiste ihm einfach Tag für Tag Gesellschaft. Wenn du eine neue Auszeichnung verdient hast, sagt dir dein Haustier Bescheid. Dein Haustier zeigt jetzt auch Gefühle: Je nachdem, was du tust, verändert sich sein Gesicht und über dem Kopf erscheint ein kleines Zeichen, zum Beispiel wenn es fröhlich, schüchtern, neugierig oder müde ist; dazu gibt es eine Gentleman-Garderobe mit Schnurrbärten, Monokel, Frack und Spazierstock. Seine Gefühle ermittelt es direkt auf deinem Mac aus dem, was es ohnehin weiß, und nichts wird gelesen oder gesendet.
 
 Damit pikapik weiß, wann eine Auszeichnung fällig ist, zählt es nur, was du und dein Haustier tun: Schritte, wie oft du es hochhebst und wirfst, seine Sprünge, Kletterpartien, Ballspiele und Gespräche, die gemeinsamen Tage, ob ihr früh am Morgen, nach Mitternacht oder am Wochenende zusammen wart, welche Seiten der Einstellungen du geöffnet und was du anprobiert hast. Außerhalb des Mac App Store merkt sich pikapik außerdem, ob du aus den Einstellungen heraus unsere GitHub-Seite geöffnet hast. Diese Zahlen, das Datum jeder Auszeichnung und das, was dein Haustier trägt, bleiben auf diesem Mac. Nichts wird irgendwohin gesendet, und nichts davon landet in der exportierten Einstellungsdatei oder in der iCloud-Synchronisierung. Du kannst alles jederzeit in Einstellungen › Haustier löschen, dann fängt dein Haustier von vorn an.
 

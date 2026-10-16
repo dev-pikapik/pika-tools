@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Mac-ul tău înțelege ce vrei să spui.</b><br>Mici îmbunătățiri pentru tastatură, maus, ferestre și Finder, direct în bara de meniu a Mac-ului tău.</p>
+<p align="center"><b>Mac-ul tău înțelege din zbor.</b><br>Mici îmbunătățiri pentru tastatură, maus, ferestre și Finder, direct în bara de meniu a Mac-ului tău.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <b>Română</b> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protejarea ⌘Q și ⌘W</b>
+<br>Nimic nu se închide din greșeală. Adaugă ⇧ când chiar vrei.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Modul Joc</b>
+<br>Cât timp te joci, nimic nu apare peste joc și nimic nu-l închide.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Animăluț pe birou</b>
+<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună. Se înviorează cât timp tastezi și ațipește când te îndepărtezi.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Rămâi treaz</b>
 <br>Mac-ul rămâne treaz cât ai nevoie, chiar și cu capacul închis.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilatoare</b>
 <br>Vezi cât de repede se rotesc ventilatoarele și alege viteza lor.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Baterie</b>
 <br>Vezi starea bateriei, capacitatea și numărul de cicluri, cât curent intră în ea și cum o poți face să țină mai mult.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Protejarea ⌘Q și ⌘W</b>
-<br>Nimic nu se închide din greșeală. Adaugă ⇧ când chiar vrei.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Atât comanda de mai sus, cât și Homebrew pun aplicația în `/Applications`, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Modul Joc</b>
-<br>Cât timp te joci, nimic nu apare peste joc și nimic nu-l închide.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Viteza internetului</b>
 <br>Cât de rapid e internetul tău și la ce îți ajunge.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Butoanele laterale</b>
 <br>Butoanele 4 și 5 merg înapoi și înainte, ca un gest pe trackpad.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Ascundere cu un buton al mausului</b>
 <br>O apăsare ascunde aplicația din prim-plan, ca ⌘H. Aplicația rulează în continuare.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Derulare pe rânduri</b>
 <br>Fiecare clic al rotiței derulează la fel, oricât de repede o învârți.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direcția de derulare</b>
 <br>O direcție pentru trackpad, alta pentru maus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Fără accelerarea cursorului</b>
 <br>Cursorul merge exact cât mâna ta.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repetă tasta ținută apăsată</b>
 <br>Ține o tastă apăsată ca s-o repeți, fără meniul de accente.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home și End</b>
 <br>Sari la începutul sau la sfârșitul rândului în timp ce scrii.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animații</b>
 <br>Grăbește Dock-ul, ferestrele și Privirea rapidă, până la instantaneu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permisiunile aplicațiilor șterse</b>
 <br>Elimină permisiunile pe care macOS le păstrează pentru aplicațiile deja șterse.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Animăluț pe birou</b>
-<br>Un mic prieten se plimbă în spatele ferestrelor. Ia-l și aruncă-l sau apasă Spațiu ca să sară. Îmbracă-l cu haine din garderoba lui și câștigă premii cât vă jucați împreună. Se înviorează cât timp tastezi și ațipește când te îndepărtezi.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Deschide Configurări → Jocuri → Adaugă un joc și apasă pe jocul pornit. 
 
 **Afișează FPS.** FPS înseamnă cadre pe secundă: câte imagini desenează jocul în fiecare secundă. Activează **Afișează FPS** pe pagina Jocuri și, cât timp Modul Joc este pornit, o mică etichetă închisă la culoare, cu acest număr, apare într-un colț al oricărui joc. Apasă pe un colț în imaginea de deasupra comutatorului ca să-l alegi. O liniuță înseamnă că primele cadre nu au ajuns încă, iar un 0 estompat înseamnă că jocul a încetat să deseneze. Pe macOS 27, cele mai multe jocuri sunt numărate chiar de macOS, fără nicio permisiune. Un joc pe care macOS nu-l poate număra, de obicei unul mai vechi, este numărat prin înregistrarea ecranului: atunci apare pe pagina Permisiuni rândul **Înregistrare ecran**, pikapik nu cere niciodată permisiunea în timpul unui joc, iar numărul nu poate depăși rata de reîmprospătare a ecranului. Pe macOS 14–26 și în versiunea din Mac App Store toate jocurile sunt numărate astfel, de aceea rândul apare imediat ce pornești **Afișează FPS**, iar butonul **Permite** de sub comutator te duce la el. Nicio imagine nu este păstrată sau trimisă. Oprit implicit.
 
-**Garderoba și premiile animăluțului.** Deschide Configurări › Animăluț ca să-ți îmbraci animăluțul: peste 30 de piese, de la pălării și ochelari până la pelerine și aripi, plus ținute gata făcute, cum ar fi vrăjitor, pirat sau astronaut. Câteva piese sunt gratuite de la început. Restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu nou, animăluțul îți spune.
+**Garderoba și premiile animăluțului.** Deschide Configurări › Animăluț ca să-ți îmbraci animăluțul: peste 50 de piese, de la pălării și ochelari până la pelerine și aripi, plus ținute gata făcute, cum ar fi vrăjitor, pirat sau astronaut. Câteva piese sunt gratuite de la început. Restul sunt premii care vin cât vă jucați împreună: ridică animăluțul și aruncă-l, dă cu piciorul în minge, uită-te cum urcă pe ferestre și vorbește sau pur și simplu ține-i companie zi de zi. Când câștigi un premiu nou, animăluțul îți spune. Animăluțul arată acum și emoții: ca răspuns la ce faci, i se schimbă fața și deasupra capului apare un semn mic când e vesel, timid, curios, somnoros și altele, și există o garderobă de gentleman cu mustăți, monoclu, frac și baston. Își stabilește emoțiile direct pe Mac, din ceea ce știe deja, și nu se citește și nu se trimite nimic.
 
 Ca să știe când se cuvine un premiu, pikapik numără doar ce faceți tu și animăluțul: pașii, de câte ori l-ai ridicat și l-ai aruncat, săriturile, cățărările, jocurile cu mingea și discuțiile, zilele petrecute împreună, dacă ați fost împreună dimineața devreme, după miezul nopții sau în weekend, paginile din Configurări pe care le-ai deschis și piesele pe care le-ai probat. În afara Mac App Store, pikapik notează și dacă ai deschis din Configurări pagina noastră de GitHub. Aceste numere, data fiecărui premiu și ce poartă animăluțul rămân pe acest Mac. Nimic nu este trimis nicăieri și nimic din toate acestea nu intră în fișierul de configurări exportat sau în sincronizarea iCloud. Poți șterge totul oricând din Configurări › Animăluț, iar animăluțul o ia de la zero.
 

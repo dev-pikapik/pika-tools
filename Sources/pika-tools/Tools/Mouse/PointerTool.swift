@@ -13,6 +13,7 @@ final class PointerTool: Tool {
     static let speedRange = 0.2...3.0
     private static let speedKey = "linear-pointer-speed"
     private static let savedKey = "linear-pointer-saved"
+    private static let oursKey = "linear-pointer-ours"
     private static let linearKey = "HIDUseLinearScalingMouseAcceleration"
     private static let resolutionKey = "HIDPointerResolution"
 
@@ -39,6 +40,7 @@ final class PointerTool: Tool {
 
     @ObservationIgnored private let client = PointerTool.makeClient()
     @ObservationIgnored private var saved: [String: [String: Int]]
+    @ObservationIgnored private var ours: [String: [String: [Int]]]
     @ObservationIgnored private var port: IONotificationPortRef?
 
     init() {
@@ -46,6 +48,7 @@ final class PointerTool: Tool {
         isEnabled = defaults.bool(forKey: id)
         speed = Self.savedSpeed
         saved = defaults.dictionary(forKey: Self.savedKey) as? [String: [String: Int]] ?? [:]
+        ours = defaults.dictionary(forKey: Self.oursKey) as? [String: [String: [Int]]] ?? [:]
     }
 
     private static var savedSpeed: Double {
@@ -82,36 +85,46 @@ final class PointerTool: Tool {
     }
 
     func restore() {
+        var left: [String: [String: Int]] = [:]
         for service in mice() {
-            guard let id = Self.registryID(service), let values = saved[id] else { continue }
-            for (key, value) in values {
+            guard let id = Self.registryID(service), let before = saved[id] else { continue }
+            let mine = ours[id] ?? Self.numbers(written(service)).mapValues { [$0] }
+            for (key, value) in OriginalValue.putBack(before, ours: mine, current: Self.read(service, before.keys)) {
                 IOHIDServiceClientSetProperty(service, key as CFString, value as CFNumber)
             }
+            if !OriginalValue.isBack(before, ours: mine, current: Self.read(service, before.keys)) { left[id] = before }
         }
-        saved = [:]
-        UserDefaults.standard.removeObject(forKey: Self.savedKey)
+        saved = left
+        ours = ours.filter { left[$0.key] != nil }
+        save()
     }
 
     private func apply() {
         for service in mice() {
             guard let id = Self.registryID(service) else { continue }
-            let accelerationKey = Self.property(service, "HIDPointerAccelerationType") as? String ?? "HIDMouseAcceleration"
-            if saved[id] == nil {
-                var values: [String: Int] = [:]
-                for key in [Self.linearKey, accelerationKey, Self.resolutionKey] {
-                    values[key] = (Self.property(service, key) as? NSNumber)?.intValue
-                }
-                saved[id] = values
+            let values = written(service)
+            let new = Self.numbers(values)
+            if saved[id] == nil { saved[id] = Self.read(service, [Self.linearKey, Self.accelerationKey(service), Self.resolutionKey]) }
+            ours[id] = (ours[id] ?? [:]).merging(new.mapValues { [$0] }) { $1 + $0 }
+            save()
+            for (key, value) in values {
+                IOHIDServiceClientSetProperty(service, key as CFString, value)
             }
-            if Self.property(service, Self.linearKey) != nil {
-                IOHIDServiceClientSetProperty(service, Self.linearKey as CFString, 1 as CFNumber)
-                IOHIDServiceClientSetProperty(service, accelerationKey as CFString, Self.fixed(speed))
-            } else {
-                IOHIDServiceClientSetProperty(service, Self.resolutionKey as CFString, Self.fixed(min(max(400 / speed, 10), 1995)))
-                IOHIDServiceClientSetProperty(service, accelerationKey as CFString, Self.fixed(-1))
-            }
+            ours[id] = new.mapValues { [$0] }
+            save()
         }
-        UserDefaults.standard.set(saved, forKey: Self.savedKey)
+    }
+
+    private func save() {
+        UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: Self.savedKey)
+        UserDefaults.standard.set(ours.isEmpty ? nil : ours, forKey: Self.oursKey)
+    }
+
+    private func written(_ service: IOHIDServiceClient) -> [(String, NSNumber)] {
+        let accelerationKey = Self.accelerationKey(service)
+        return Self.property(service, Self.linearKey) != nil
+            ? [(Self.linearKey, NSNumber(value: 1)), (accelerationKey, Self.fixed(speed))]
+            : [(Self.resolutionKey, Self.fixed(min(max(400 / speed, 10), 1995))), (accelerationKey, Self.fixed(-1))]
     }
 
     private func mice() -> [IOHIDServiceClient] {
@@ -153,12 +166,24 @@ final class PointerTool: Tool {
         IOHIDServiceClientCopyProperty(service, key as CFString)
     }
 
+    private static func read(_ service: IOHIDServiceClient, _ keys: some Sequence<String>) -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: keys.compactMap { key in (property(service, key) as? NSNumber).map { (key, $0.intValue) } })
+    }
+
+    private static func numbers(_ values: [(String, NSNumber)]) -> [String: Int] {
+        Dictionary(uniqueKeysWithValues: values.map { ($0.0, $0.1.intValue) })
+    }
+
     private static func registryID(_ service: IOHIDServiceClient) -> String? {
         (IOHIDServiceClientGetRegistryID(service) as? NSNumber)?.stringValue
     }
 
-    private static func fixed(_ value: Double) -> CFNumber {
-        Int32(value * 65536) as CFNumber
+    private static func accelerationKey(_ service: IOHIDServiceClient) -> String {
+        property(service, "HIDPointerAccelerationType") as? String ?? "HIDMouseAcceleration"
+    }
+
+    private static func fixed(_ value: Double) -> NSNumber {
+        NSNumber(value: Int32(value * 65536))
     }
 }
 

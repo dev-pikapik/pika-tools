@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>The player plays your music, and your settings come back after a crash
+
+<sub>1.52.1 · October 16, 2026</sub>
+
+The player now plays songs and looks like glass, and your own settings come back even after a crash.
+
+- Player (website version): songs play in the same window, with the cover, title and artist, and a folder plays one song after another.
+- Player (website version): every format is a button that gives it to pikapik Player and back; **Open All in pikapik** does them all.
+- Player (website version): a frosted glass control panel that hides while you watch, and a small picture of the video when you point at the time bar.
+
+**Try it:** Settings › Player
+
+**Fixed**
+
+- Your own settings, such as “Hide the Dock automatically”, come back even if pikapik stopped unexpectedly.
+- Chrome, Slack, VS Code (website version): after a crash they no longer stay in pikapik’s mode, and a window that freezes no longer slows down opening or quitting pikapik.
+- Side buttons: Settings shows back and forward arrows instead of 4 and 5, and Forward no longer forwards an email in Mail or Outlook.
+- **Make This Copy the Main One** works once per press, and the short lines under some switches say more clearly what they do.
+- Mac App Store version: the Pet page no longer promises news about updates, because the App Store brings them by itself.
+
+---
+
 ## <a id="v1.52.0"></a>Retyping and side buttons now work in nearly every app
 
 <sub>1.52.0 · October 15, 2026</sub>

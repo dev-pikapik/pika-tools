@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Přehrávač hraje vaši hudbu a nastavení se vrátí po pádu
+
+<sub>1.52.1 · 16. října 2026</sub>
+
+Přehrávač teď hraje písničky a má skleněný panel a vaše nastavení se vrátí i po pádu.
+
+- Přehrávač (verze z webu): písničky hrají ve stejném okně, s obalem, názvem a interpretem, a složka hraje písničku za písničkou.
+- Přehrávač (verze z webu): každý formát je tlačítko, které ho předá pikapik Player a zase vrátí; **Otevřít vše v aplikaci pikapik** to udělá se všemi.
+- Přehrávač (verze z webu): ovládací panel z matného skla, který se při sledování schová, a malý obrázek videa, když ukážete na časovou lištu.
+
+**Vyzkoušejte:** Nastavení › Přehrávač
+
+**Opraveno**
+
+- Vaše nastavení, například „Automaticky skrývat Dock“, se vrátí, i když se pikapik neočekávaně zastavil.
+- Chrome, Slack, VS Code (verze z webu): po pádu už nezůstanou v režimu pikapik a zamrzlé okno už nezpomaluje otevření ani ukončení pikapik.
+- Boční tlačítka: Nastavení ukazuje šipky zpět a vpřed místo 4 a 5 a „Vpřed“ už v Mailu ani Outlooku nepřepošle e-mail.
+- **Udělat z této kopie hlavní** zabere jen jednou na stisk a krátké řádky pod některými přepínači jasněji říkají, co dělají.
+- Verze z Mac App Store: stránka „Mazlíček“ už neslibuje novinky o aktualizacích, protože je App Store přináší sám.
+
+---
+
 ## <a id="v1.52.0"></a>Oprava slov a boční tlačítka myši teď fungují téměř v každé aplikaci
 
 <sub>1.52.0 · 15. října 2026</sub>

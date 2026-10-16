@@ -8,6 +8,7 @@ final class Background: NSObject {
 
     var iconShown = true
     @ObservationIgnored var quitting = false
+    @ObservationIgnored var poweringOff = false
     @ObservationIgnored private var alert: NSAlert?
 
     private override init() {}
@@ -18,11 +19,20 @@ final class Background: NSObject {
     static var isOn: Bool { UserDefaults.standard.object(forKey: key) as? Bool ?? true }
     #endif
 
-    static var isOutsideQuit: Bool {
+    private static var quitEvent: NSAppleEventDescriptor? {
         guard let event = NSAppleEventManager.shared().currentAppleEvent,
               event.eventClass == AEEventClass(kCoreEventClass), event.eventID == AEEventID(kAEQuitApplication)
-        else { return false }
-        if event.attributeDescriptor(forKeyword: AEKeyword(kAEQuitReason)) != nil { return true }
+        else { return nil }
+        return event
+    }
+
+    static var isLoggingOut: Bool {
+        quitEvent?.attributeDescriptor(forKeyword: AEKeyword(kAEQuitReason)) != nil
+    }
+
+    static var isOutsideQuit: Bool {
+        guard let event = quitEvent else { return false }
+        if isLoggingOut { return true }
         let sender = event.attributeDescriptor(forKeyword: AEKeyword(keySenderPIDAttr)).flatMap {
             NSRunningApplication(processIdentifier: $0.int32Value)?.bundleIdentifier
         }

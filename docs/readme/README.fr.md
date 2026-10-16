@@ -40,26 +40,38 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protéger ⌘Q et ⌘W</b>
+<br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Jeu</b>
+<br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Compagnon sur le bureau</b>
+<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Rester éveillé</b>
 <br>Votre Mac reste éveillé aussi longtemps qu’il le faut, même écran rabattu.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilateurs</b>
 <br>Voyez la vitesse de vos ventilateurs et choisissez-la.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batterie</b>
 <br>Voyez l’état de votre batterie, sa capacité et son nombre de cycles, la puissance qui y entre et comment la faire durer.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Protéger ⌘Q et ⌘W</b>
-<br>Rien ne se ferme par erreur. Ajoutez ⇧ quand c’est voulu.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ La commande ci-dessus et Homebrew placent tous deux l’app dans `/Applications`
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Mode Jeu</b>
-<br>Pendant que vous jouez, rien ne s’ouvre par-dessus le jeu ni ne le ferme.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test de débit</b>
 <br>La vitesse de votre connexion, et ce qu’elle permet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boutons latéraux</b>
 <br>Les boutons 4 et 5 reculent et avancent, comme un balayage.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Masquer avec un bouton de la souris</b>
 <br>Un appui masque l’app au premier plan, comme ⌘H. Elle continue de tourner.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Défiler par lignes</b>
 <br>Chaque cran de la molette fait défiler d’autant, quelle que soit la vitesse.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Sens de défilement</b>
 <br>Un sens pour le trackpad, un autre pour la souris.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Sans accélération du pointeur</b>
 <br>Le pointeur parcourt exactement la distance de votre main.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Répéter une touche maintenue</b>
 <br>Maintenez une touche pour la répéter, sans menu des accents.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home et End</b>
 <br>Allez au début ou à la fin de la ligne pendant la saisie.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Accélérez le Dock, les fenêtres et Coup d’œil, jusqu’à l’instantané.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Autorisations des apps supprimées</b>
 <br>Retirez les autorisations que macOS garde pour les apps déjà supprimées.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Compagnon sur le bureau</b>
-<br>Un petit ami se promène derrière vos fenêtres. Attrapez-le et lancez-le, ou appuyez sur Espace pour le faire sauter. Habillez-le avec les vêtements de sa garde-robe et gagnez des récompenses en jouant ensemble. Il s’anime quand vous tapez et somnole quand vous vous éloignez.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Ouvrez Réglages → Jeux → Ajouter un jeu et cliquez sur votre jeu en cours. 
 
 **Afficher les FPS.** Les FPS sont les images par seconde : le nombre d’images que le jeu dessine chaque seconde. Activez **Afficher les FPS** sur la page Jeux, et tant que le Mode Jeu est activé, une petite pastille sombre avec ce nombre s’affiche dans un coin de n’importe quel jeu. Cliquez sur un coin de l’image au-dessus de l’interrupteur pour le choisir. Un tiret signifie que les premières images ne sont pas encore arrivées, et un 0 grisé que le jeu ne dessine plus rien. Sous macOS 27, la plupart des jeux sont comptés par macOS lui-même, sans autorisation. Un jeu que macOS ne peut pas compter, le plus souvent un jeu ancien, est compté via l’enregistrement de l’écran : la ligne **Enregistrement de l’écran** apparaît alors sur la page Autorisations, pikapik ne la demande jamais pendant une partie, et le nombre ne peut pas dépasser la fréquence de rafraîchissement de l’écran. Sous macOS 14 à 26 et dans la version du Mac App Store, tous les jeux sont comptés ainsi, c’est pourquoi la ligne apparaît dès que vous activez **Afficher les FPS**, et le bouton **Autoriser** sous l’interrupteur vous y mène. Aucune image n’est conservée ni envoyée. Désactivé par défaut.
 
-**Garde-robe et récompenses du compagnon.** Ouvrez Réglages › Compagnon pour habiller votre compagnon : plus de 30 vêtements et accessoires, des chapeaux et lunettes aux capes et aux ailes, et des tenues toutes prêtes comme le sorcier, le pirate ou l’astronaute. Quelques pièces sont offertes dès le départ. Les autres sont des récompenses qui arrivent quand vous jouez ensemble : attrapez votre compagnon et lancez-le, faites rouler le ballon, regardez-le grimper sur les fenêtres et bavarder, ou tenez-lui simplement compagnie jour après jour. Votre compagnon vous prévient quand vous avez gagné une nouvelle récompense.
+**Garde-robe et récompenses du compagnon.** Ouvrez Réglages › Compagnon pour habiller votre compagnon : plus de 50 vêtements et accessoires, des chapeaux et lunettes aux capes et aux ailes, et des tenues toutes prêtes comme le sorcier, le pirate ou l’astronaute. Quelques pièces sont offertes dès le départ. Les autres sont des récompenses qui arrivent quand vous jouez ensemble : attrapez votre compagnon et lancez-le, faites rouler le ballon, regardez-le grimper sur les fenêtres et bavarder, ou tenez-lui simplement compagnie jour après jour. Votre compagnon vous prévient quand vous avez gagné une nouvelle récompense. Votre compagnon montre aussi des émotions : selon ce que vous faites, son visage change et un petit signe apparaît au-dessus de sa tête quand il est content, timide, curieux, endormi et plus encore, et il y a une garde-robe de gentleman avec des moustaches, un monocle, une queue-de-pie et une canne. Il déduit ses émotions sur votre Mac à partir de ce qu’il sait déjà, et rien n’est lu ni envoyé.
 
 Pour savoir quand une récompense est due, pikapik compte uniquement ce que vous et votre compagnon faites : les pas, les fois où vous le prenez et le lancez, ses sauts, ses escalades, les parties de ballon et les conversations, les jours passés ensemble, si vous étiez ensemble tôt le matin, après minuit ou le week-end, les pages des Réglages ouvertes et les pièces essayées. En dehors du Mac App Store, pikapik note aussi si vous avez ouvert notre page GitHub depuis les Réglages. Ces chiffres, la date de chaque récompense et la tenue de votre compagnon restent sur ce Mac. Rien n’est envoyé nulle part, et rien de tout cela n’entre dans le fichier de réglages exporté ni dans la synchronisation iCloud. Vous pouvez tout effacer à tout moment dans Réglages › Compagnon, et votre compagnon repart de zéro.
 

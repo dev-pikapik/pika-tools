@@ -40,26 +40,38 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Skydda ⌘Q och ⌘W</b>
+<br>Inget avslutas eller stängs av misstag. Lägg till ⇧ när du menar det.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Spelläge</b>
+<br>Medan du spelar dyker inget upp över spelet och inget stänger det.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Husdjur på skrivbordet</b>
+<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Håll vaken</b>
 <br>Din Mac håller sig vaken så länge du vill, även med locket stängt.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Fläktar</b>
 <br>Se hur snabbt fläktarna snurrar och välj deras hastighet.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batteri</b>
 <br>Se batteriets skick, kapacitet och cykelantal, hur mycket ström som går in och hur du får det att räcka längre.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Skydda ⌘Q och ⌘W</b>
-<br>Inget avslutas eller stängs av misstag. Lägg till ⇧ när du menar det.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Både kommandot ovan och Homebrew lägger appen i `/Applications`, öppnar den, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Spelläge</b>
-<br>Medan du spelar dyker inget upp över spelet och inget stänger det.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Hastighetstest</b>
 <br>Hur snabbt ditt internet är och vad det räcker till.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Sidoknappar</b>
 <br>Knapp 4 och 5 går bakåt och framåt, som ett svep.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Göm med en musknapp</b>
 <br>Ett tryck gömmer appen i förgrunden, som ⌘H. Den fortsätter att köras.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Rulla per rad</b>
 <br>Varje klick på hjulet rullar lika långt, hur snabbt du än snurrar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Rullningsriktning</b>
 <br>En riktning för styrplattan, en annan för musen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Ingen pekaracceleration</b>
 <br>Pekaren rör sig exakt lika långt som din hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Upprepa en nedhållen tangent</b>
 <br>Håll ned en tangent för att skriva den om och om igen, utan accentmeny.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home och End</b>
 <br>Hoppa till början eller slutet av raden medan du skriver.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animationer</b>
 <br>Snabba upp Dock, fönster och Snabbtitt, ända till direkt.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Behörigheter för raderade appar</b>
 <br>Ta bort behörigheterna som macOS sparar för appar du redan har raderat.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Husdjur på skrivbordet</b>
-<br>En liten vän promenerar bakom dina fönster. Lyft upp och kasta den, eller tryck på mellanslag så hoppar den. Klä på den med kläder ur dess garderob och samla utmärkelser medan ni leker tillsammans. Den piggnar till när du skriver och slumrar när du går iväg.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Under Inställningar → Spel → Fler spelinställningar finns gruppen ”Mus o
 
 **Visa FPS.** FPS betyder bilder per sekund: hur många bilder spelet ritar varje sekund. Slå på **Visa FPS** på sidan Spel, så visas en liten mörk etikett med det talet i ett hörn av alla spel så länge Spelläge är på. Välj hörn genom att klicka på det i bilden ovanför reglaget. Ett streck betyder att de första bilderna inte har kommit ännu, och en blek 0 att spelet har slutat rita. På macOS 27 räknar macOS själv de flesta spel, utan behörighet. Ett spel som macOS inte kan räkna, oftast ett äldre, räknas via skärminspelning: då dyker raden **Skärminspelning** upp på sidan Behörigheter, pikapik ber aldrig om den under ett spel och siffran kan inte bli högre än skärmens uppdateringsfrekvens. På macOS 14–26 och i versionen från Mac App Store räknas alla spel så, så raden dyker upp så fort du slår på **Visa FPS**, och knappen **Tillåt** under reglaget tar dig dit. Ingen bild sparas eller skickas. Av som standard.
 
-**Husdjurets garderob och utmärkelser.** Öppna Inställningar › Husdjur för att klä på ditt husdjur: över 30 plagg och tillbehör, från hattar och glasögon till kappor och vingar, och färdiga outfits som trollkarl, pirat eller astronaut. Några få är gratis från start. Resten är utmärkelser som kommer medan ni leker tillsammans: lyft upp husdjuret och kasta det, sparka runt bollen, titta på när det klättrar på fönster och pratar, eller håll det helt enkelt sällskap dag efter dag. När du har fått en ny utmärkelse säger husdjuret till.
+**Husdjurets garderob och utmärkelser.** Öppna Inställningar › Husdjur för att klä på ditt husdjur: över 50 plagg och tillbehör, från hattar och glasögon till kappor och vingar, och färdiga outfits som trollkarl, pirat eller astronaut. Några få är gratis från start. Resten är utmärkelser som kommer medan ni leker tillsammans: lyft upp husdjuret och kasta det, sparka runt bollen, titta på när det klättrar på fönster och pratar, eller håll det helt enkelt sällskap dag efter dag. När du har fått en ny utmärkelse säger husdjuret till. Ditt husdjur visar nu också känslor: som svar på det du gör ändras ansiktet och ett litet tecken syns över huvudet när det är glatt, blygt, nyfiket, sömnigt och mer, och det finns en gentlemannagarderob med mustascher, monokel, frack och promenadkäpp. Känslorna avgörs på din Mac utifrån det husdjuret redan vet, och inget läses eller skickas.
 
 För att veta när en utmärkelse är på väg räknar pikapik bara det du och ditt husdjur gör: steg, hur ofta du lyfter upp och kastar det, hopp, klättringar, bollspel och pratstunder, dagar tillsammans, om ni var tillsammans tidigt på morgonen, efter midnatt eller på en helg, vilka sidor i Inställningar du har öppnat och vad du har provat. Utanför Mac App Store noterar pikapik också om du har öppnat vår GitHub-sida från Inställningar. Siffrorna, datumet för varje utmärkelse och vad husdjuret har på sig stannar på den här Mac-datorn. Ingenting skickas någonstans, och inget av det hamnar i den exporterade inställningsfilen eller i iCloud-synkroniseringen. Du kan radera allt när som helst i Inställningar › Husdjur, och då börjar husdjuret om från början.
 

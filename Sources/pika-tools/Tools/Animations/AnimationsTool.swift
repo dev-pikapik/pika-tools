@@ -1,8 +1,7 @@
 import AppKit
 import SwiftUI
 
-@Observable
-final class AnimationsTool: Tool {
+final class AnimationsTool: AnimationsEngine, Tool {
     static let shared = AnimationsTool()
 
     let id = "animations"
@@ -18,25 +17,36 @@ final class AnimationsTool: Tool {
         set { if !newValue { reset() } }
     }
 
-    private(set) var owned: [AnimationSetting: Double]
-    private(set) var own: [AnimationSetting: Double]
-    private(set) var system: [AnimationSetting: Double] = [:]
-    private(set) var storedSpeed: Double?
-    private(set) var autohide = false
-    private(set) var appsPending = false
-    private(set) var finderPending = false
-    @ObservationIgnored private var dockRestart: DispatchWorkItem?
-
     private static let dock = "com.apple.dock" as CFString
-    private static let speedKey = "animations-speed"
-    private static let ownKey = "animations-own"
-    private static let autohideKey = "animations-autohide-original"
+    private static let host = AnimationsHost(
+        me: MainCopy.shared.me,
+        canAct: { MainCopy.canAct },
+        peers: { MainCopy.shared.peers() },
+        poweringOff: { Background.shared.poweringOff },
+        journal: { MainCopy.journal },
+        local: .standard,
+        read: { $0.read() },
+        write: { $0.write($1) },
+        readAutohide: {
+            CFPreferencesAppSynchronize(dock)
+            return CFPreferencesCopyAppValue("autohide" as CFString, dock) as? Bool ?? false
+        },
+        writeAutohide: {
+            CFPreferencesSetAppValue("autohide" as CFString, $0 as CFBoolean, dock)
+            CFPreferencesAppSynchronize(dock)
+        },
+        later: { DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: $0) },
+        kill: { killall($0, wait: $1) },
+        exclusive: { body in
+            let file = open(NSTemporaryDirectory() + "pikapik-animations.lock", O_RDWR | O_CREAT | O_EXLOCK, 0o600)
+            body()
+            MainCopy.journal.synchronize()
+            if file >= 0 { close(file) }
+        }
+    )
 
     private init() {
-        owned = Self.saved()
-        own = Self.originals()
-        storedSpeed = UserDefaults.standard.object(forKey: Self.speedKey) as? Double
-        reload()
+        super.init(Self.host)
     }
 
     var settingsView: AnyView {
@@ -51,151 +61,12 @@ final class AnimationsTool: Tool {
         AnimationSpeed.speed(of: values, stored: storedSpeed, baseline: baseline)
     }
 
-    var baseline: [AnimationSetting: Double] {
-        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.map { ($0, baseline($0)) })
-    }
-
     func value(_ setting: AnimationSetting) -> Double {
         system[setting] ?? setting.macOS
     }
 
-    func baseline(_ setting: AnimationSetting) -> Double {
-        (owned[setting] == nil ? system[setting] : own[setting]) ?? setting.macOS
-    }
-
-    func reload() {
-        system = Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in setting.read().map { (setting, $0) } })
-        autohide = Self.readAutohide()
-    }
-
-    func set(_ setting: AnimationSetting, _ value: Double) {
-        var new = owned
-        new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
-        storedSpeed = nil
-        apply(new)
-    }
-
-    func setSpeed(_ speed: Double) {
-        var new = owned
-        for (setting, value) in AnimationSpeed.preset(speed, baseline: baseline) {
-            new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
-        }
-        storedSpeed = speed > 0 ? speed : nil
-        apply(new)
-    }
-
-    func setAutohide(_ on: Bool) {
-        guard MainCopy.canAct else { return }
-        OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.autohideKey), current: Self.readAutohide(), to: on), Self.autohideKey)
-        Self.writeAutohide(on)
-        autohide = on
-        restartDock()
-    }
-
-    func restartFinder() {
-        finderPending = false
-        Self.killall("Finder")
-    }
-
-    func reset() {
-        storedSpeed = nil
-        apply([:])
-    }
-
-    func refresh() {
-        reload()
-        MainCopy.canAct ? apply(owned) : putBack()
-    }
-
-    private func putBack() {
-        let ours = owned.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
-        let changes = AnimationSetting.changes(from: ours, to: [:], system: system, own: own)
-        let dock = Self.putBackAutohide()
-        guard !changes.isEmpty || dock else { return }
-        changes.forEach { $0.0.write($0.1) }
-        reload()
-        if dock || changes.contains(where: { $0.0.apply == .dock }) { Self.killall("Dock", wait: true) }
-    }
-
-    func load() {
-        storedSpeed = UserDefaults.standard.object(forKey: Self.speedKey) as? Double
-        reload()
-        apply(Self.saved())
-    }
-
     static func uninstall() {
-        let own = originals()
-        let settings = saved().filter { setting, value in setting.read().map { abs($0 - value) < 0.0005 } ?? false }.keys
-        settings.forEach { $0.write(own[$0]) }
-        if putBackAutohide() || settings.contains(where: { $0.apply == .dock }) { killall("Dock", wait: true) }
-    }
-
-    private static func putBackAutohide() -> Bool {
-        let value = OriginalValue.putBack(OriginalValue.load(autohideKey), current: readAutohide())
-        if let value { writeAutohide(value) }
-        OriginalValue.save(nil, autohideKey)
-        return value != nil
-    }
-
-    private static func readAutohide() -> Bool {
-        CFPreferencesAppSynchronize(dock)
-        return CFPreferencesCopyAppValue("autohide" as CFString, dock) as? Bool ?? false
-    }
-
-    private static func writeAutohide(_ on: Bool) {
-        CFPreferencesSetAppValue("autohide" as CFString, on as CFBoolean, dock)
-        CFPreferencesAppSynchronize(dock)
-    }
-
-    private func apply(_ new: [AnimationSetting: Double]) {
-        let changes = AnimationSetting.changes(from: owned, to: new, system: system, own: own)
-        let originals = AnimationSetting.originals(own, owned: owned, new: new, system: system)
-        remember(own: own.merging(originals) { $1 }, owned: owned.merging(new) { $1 })
-        own = originals
-        owned = new
-        changes.forEach { $0.0.write($0.1) }
-        remember(own: own, owned: owned)
-        guard !changes.isEmpty else { return }
-        reload()
-        if changes.contains(where: { $0.0.apply == .dock && (autohide || !$0.0.isSpeed) }) { restartDock() }
-        if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
-        if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
-    }
-
-    private func remember(own: [AnimationSetting: Double], owned: [AnimationSetting: Double]) {
-        let defaults = UserDefaults.standard
-        let originals = own.isEmpty ? nil : Dictionary(uniqueKeysWithValues: own.map { ($0.key.rawValue, $0.value) })
-        if defaults.dictionary(forKey: Self.ownKey) as? [String: Double] != originals {
-            defaults.set(originals, forKey: Self.ownKey)
-        }
-        for setting in AnimationSetting.allCases where defaults.object(forKey: Self.key(setting)) as? Double != owned[setting] {
-            defaults.set(owned[setting], forKey: Self.key(setting))
-        }
-        if defaults.object(forKey: Self.speedKey) as? Double != storedSpeed {
-            defaults.set(storedSpeed, forKey: Self.speedKey)
-        }
-    }
-
-    func restartDock() {
-        dockRestart?.cancel()
-        let work = DispatchWorkItem { Self.killall("Dock") }
-        dockRestart = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: work)
-    }
-
-    private static func key(_ setting: AnimationSetting) -> String {
-        "animations-\(setting.rawValue)"
-    }
-
-    private static func saved() -> [AnimationSetting: Double] {
-        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in
-            (UserDefaults.standard.object(forKey: key(setting)) as? Double).map { (setting, $0) }
-        })
-    }
-
-    private static func originals() -> [AnimationSetting: Double] {
-        let saved = UserDefaults.standard.dictionary(forKey: ownKey) as? [String: Double] ?? [:]
-        return Dictionary(uniqueKeysWithValues: saved.compactMap { key, value in AnimationSetting(rawValue: key).map { ($0, value) } })
+        uninstall(host)
     }
 
     static func killall(_ name: String, wait: Bool = false) {

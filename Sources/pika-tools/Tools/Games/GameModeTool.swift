@@ -251,9 +251,14 @@ final class GameModeTool: Tool {
         hinted = false
         let paused = PointerShortcuts.paused(catalog, rules: rules, values: systemShortcuts)
         swipes = (paused.blocksAll, paused.except, Set(PointerShortcuts.sides.indices).subtracting(paused.corners))
-        if rules.contains(.cursor) || paused.blocksAll || !paused.except.isEmpty { moveFence() }
-        DockEdges.calm(corners: paused.corners, hidesDock: rules.contains(.cursor))
-        if rules.contains(.cursor) {
+        #if APPSTORE
+        let holdsCursor = false
+        #else
+        let holdsCursor = rules.contains(.cursor)
+        #endif
+        if holdsCursor || paused.blocksAll || !paused.except.isEmpty { moveFence() }
+        DockEdges.calm(corners: paused.corners, hidesDock: holdsCursor)
+        if holdsCursor {
             fenceTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in GameModeTool.shared.moveFence() }
         }
         if rules.contains(.display) {
@@ -464,29 +469,7 @@ final class GameModeTool: Tool {
     }
 }
 
-extension GameRules {
-    #if APPSTORE
-    // The App Store copy can't switch hot corners off, so the fence keeps the pointer this far (x + y) from every corner pixel.
-    static let cornerGap: CGFloat = 16
-    #else
-    static let cornerGap: CGFloat = 0
-    #endif
-
-    static func fenceCorners(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
-        var fenced = fence(point, in: frame, corners: corners) ?? point
-        for corner in 0..<4 where !corners.contains(corner) {
-            let sx: CGFloat = corner % 2 == 0 ? 1 : -1, sy: CGFloat = corner < 2 ? 1 : -1
-            let gap = (fenced.x - (sx > 0 ? frame.minX : frame.maxX - 1)) * sx + (fenced.y - (sy > 0 ? frame.minY : frame.maxY - 1)) * sy
-            guard gap < cornerGap else { continue }
-            fenced.x += (cornerGap - gap) / 2 * sx
-            fenced.y += (cornerGap - gap) / 2 * sy
-        }
-        return fenced == point ? nil : fenced
-    }
-}
-
 #if APPSTORE
-// Dock preferences are out of reach in the sandbox; GameRules.fenceCorners keeps hot corners quiet instead.
 enum DockEdges {
     static var journal: [String: Any] { [:] }
     static func calm(corners: Set<Int>, hidesDock: Bool) {}
@@ -598,12 +581,7 @@ private final class CursorFence {
         self.blocksAll = blocksAll
         self.except = except
         self.corners = corners
-        #if APPSTORE
-        let moves: [CGEventType] = frame == nil ? [] : [.mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged]
-        #else
-        let moves: [CGEventType] = []
-        #endif
-        let mask = moves.reduce(CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)) { $0 | (1 << $1.rawValue) }
+        let mask = CGEventMask(blocksAll || !except.isEmpty ? 1 << 30 : 0)
         guard mask != 0, AXIsProcessTrusted() else { return }
         let ready = DispatchSemaphore(value: 0)
         let thread = Thread { [self] in
@@ -734,14 +712,6 @@ private func cursorFenceCallback(
     switch type {
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         if let tap = fence.tap { CGEvent.tapEnable(tap: tap, enable: true) }
-    #if APPSTORE
-    case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
-        if let frame = fence.frame, let point = GameRules.fenceCorners(event.location, in: frame, corners: fence.corners) {
-            event.location = point
-            CGEventSource(stateID: .combinedSessionState)?.localEventsSuppressionInterval = 0
-            CGWarpMouseCursorPosition(point)
-        }
-    #endif
     default:
         if type.rawValue == 30, event.getIntegerValueField(CGEventField(rawValue: 110)!) == 23 {
             let gate = GameRules.dropsSwipe(
@@ -876,7 +846,7 @@ struct GameModePage: View {
 
     private func rules(_ header: Text, _ rows: [Rule], footer: Text? = nil) -> some View {
         #if APPSTORE
-        let rows = rows.filter { $0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil } }
+        let rows = rows.filter { $0.rule != .cursor && ($0.rule.hotKeys.isEmpty || [.appSwitcher, .hide].contains($0.rule) || $0.rule.hotKeys.contains { SymbolicHotKeys.value($0) != nil }) }
         #endif
         return Section {
             ForEach(rows, id: \.rule) { row in

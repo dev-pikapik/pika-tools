@@ -47,8 +47,7 @@ final class DesktopIconsTool: Tool {
         get { hidden }
         set {
             guard MainCopy.canAct else { return }
-            OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
-            Self.write(newValue)
+            OriginalValue.set(Self.journal, current: Self.read(), to: newValue, write: Self.write)
             hidden = newValue
         }
     }
@@ -99,9 +98,10 @@ final class HiddenFilesTool: Tool {
         get { shown }
         set {
             guard MainCopy.canAct else { return }
-            OriginalValue.save(OriginalValue.change(OriginalValue.load(Self.journal), current: Self.read(), to: newValue), Self.journal)
-            CFPreferencesSetAppValue(Self.key, newValue as CFBoolean, Self.domain)
-            CFPreferencesAppSynchronize(Self.domain)
+            OriginalValue.set(Self.journal, current: Self.read(), to: newValue) {
+                CFPreferencesSetAppValue(Self.key, $0 as CFBoolean, Self.domain)
+                CFPreferencesAppSynchronize(Self.domain)
+            }
             let idle = finderShows == nil
             if idle { finderShows = shown }
             shown = newValue

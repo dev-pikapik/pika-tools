@@ -269,8 +269,7 @@ final class DockHideTool: Tool {
 
     private static func replay(_ events: [CGEvent]) {
         for event in events {
-            event.markPikapik()
-            event.post(tap: .cgSessionEventTap)
+            event.postPikapik()
         }
     }
 }
@@ -305,8 +304,7 @@ private func dockHideCallback(
         let from = press.down.location, to = event.location
         guard hypot(to.x - from.x, to.y - from.y) >= 5 else { return nil }
         tool.press = nil
-        press.down.markPikapik()
-        press.down.tapPostEvent(proxy)
+        press.down.postPikapik(proxy)
     case .leftMouseUp:
         if tool.swallowsUp {
             tool.swallowsUp = false

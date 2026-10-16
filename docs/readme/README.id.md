@@ -40,26 +40,38 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Lindungi ⌘Q dan ⌘W</b>
+<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ saat Anda memang bermaksud.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Mode Game</b>
+<br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Peliharaan di desktop</b>
+<br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Tetap Terjaga</b>
 <br>Mac tetap terjaga selama yang Anda perlukan, bahkan saat penutupnya ditutup.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Kipas</b>
 <br>Lihat seberapa cepat kipas berputar dan pilih kecepatannya.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Baterai</b>
 <br>Lihat kondisi, kapasitas, dan jumlah siklus baterai, berapa banyak daya yang masuk, serta cara membuatnya lebih awet.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Lindungi ⌘Q dan ⌘W</b>
-<br>Tidak ada yang tertutup tanpa sengaja. Tambahkan ⇧ jika memang disengaja.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Perintah di atas maupun Homebrew sama-sama menaruh app di `/Applications`, membu
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Mode Game</b>
-<br>Selama Anda bermain, tidak ada yang muncul di atas game atau menutupnya.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Tes Kecepatan</b>
 <br>Seberapa cepat internet Anda dan cukup untuk apa saja.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Tombol samping</b>
 <br>Tombol 4 dan 5 untuk kembali dan maju, seperti usapan di trackpad.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Sembunyikan dengan tombol tetikus</b>
 <br>Sekali tekan menyembunyikan app di depan, seperti ⌘H. App tetap berjalan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Gulir per baris</b>
 <br>Setiap klik roda menggulir sama jauh, secepat apa pun diputar.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Arah gulir</b>
 <br>Satu arah untuk trackpad, arah lain untuk tetikus.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Tanpa akselerasi penunjuk</b>
 <br>Penunjuk bergerak persis sejauh tangan Anda.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ulangi tombol yang ditahan</b>
 <br>Tahan tombol untuk mengetiknya berulang kali, tanpa menu aksen.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home dan End</b>
 <br>Lompat ke awal atau akhir baris saat mengetik.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasi</b>
 <br>Percepat Dock, jendela, dan Lihat Cepat, bahkan sampai instan.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Izin app yang sudah dihapus</b>
 <br>Hapus izin yang masih disimpan macOS untuk app yang sudah Anda hapus.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Peliharaan di desktop</b>
-<br>Teman kecil berjalan-jalan di belakang jendela Anda. Angkat dan lempar dia, atau tekan Spasi supaya ia melompat. Dandani dia dengan isi lemari pakaiannya dan raih penghargaan sambil bermain bersama. Ia bersemangat saat Anda mengetik dan terkantuk-kantuk saat Anda pergi.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Buka Pengaturan → Game → Tambahkan Game dan klik game yang berjalan. Game me
 
 **Tampilkan FPS.** FPS artinya frame per detik: berapa banyak gambar yang digambar game setiap detik. Nyalakan **Tampilkan FPS** di halaman Game, dan selama Mode Game aktif, label kecil gelap berisi angka itu muncul di sudut game mana pun. Klik sudut pada gambar di atas sakelar untuk memilihnya. Tanda hubung berarti frame pertama belum datang, dan angka 0 yang pudar berarti game berhenti menggambar. Di macOS 27, sebagian besar game dihitung oleh macOS sendiri, tanpa izin. Game yang tidak bisa dihitung macOS, biasanya game lama, dihitung lewat perekaman layar: baris **Perekaman Layar** lalu muncul di halaman Izin, pikapik tidak pernah memintanya saat Anda bermain, dan angkanya tidak bisa melebihi kecepatan refresh layar. Di macOS 14–26 dan di versi Mac App Store, semua game dihitung dengan cara ini, jadi baris itu muncul begitu **Tampilkan FPS** dinyalakan, dan tombol **Izinkan** di bawah sakelar membawa Anda ke sana. Tidak ada gambar yang disimpan atau dikirim. Mati secara default.
 
-**Lemari pakaian dan penghargaan peliharaan.** Buka Pengaturan › Peliharaan untuk mendandani peliharaan Anda: lebih dari 30 barang, dari topi dan kacamata sampai jubah dan sayap, serta gaya siap pakai seperti penyihir, bajak laut, atau astronaut. Beberapa barang gratis sejak awal. Sisanya adalah penghargaan yang datang saat Anda bermain bersama: angkat peliharaan lalu lempar, tendang bolanya, lihat dia memanjat jendela dan mengobrol, atau sekadar temani dia hari demi hari. Saat Anda meraih penghargaan baru, peliharaan akan memberi tahu Anda.
+**Lemari pakaian dan penghargaan peliharaan.** Buka Pengaturan › Peliharaan untuk mendandani peliharaan Anda: lebih dari 50 barang, dari topi dan kacamata sampai jubah dan sayap, serta gaya siap pakai seperti penyihir, bajak laut, atau astronaut. Beberapa barang gratis sejak awal. Sisanya adalah penghargaan yang datang saat Anda bermain bersama: angkat peliharaan lalu lempar, tendang bolanya, lihat dia memanjat jendela dan mengobrol, atau sekadar temani dia hari demi hari. Saat Anda meraih penghargaan baru, peliharaan akan memberi tahu Anda. Peliharaan Anda kini juga menunjukkan perasaan: sesuai apa yang Anda lakukan, wajahnya berubah dan tanda kecil muncul di atas kepalanya saat ia senang, malu, penasaran, mengantuk, dan lainnya, dan ada lemari pakaian ala gentleman dengan kumis, monokel, jas berekor, dan tongkat. Perasaan itu ditentukan di Mac Anda dari apa yang sudah diketahuinya, dan tidak ada yang dibaca atau dikirim.
 
 Untuk tahu kapan penghargaan diberikan, pikapik hanya menghitung apa yang dilakukan Anda dan peliharaan: langkah, berapa kali Anda mengangkat dan melemparnya, lompatan, panjatan, permainan bola, obrolan, hari bersama, apakah kalian bersama pagi-pagi sekali, lewat tengah malam, atau di akhir pekan, halaman Pengaturan yang Anda buka, dan barang yang Anda coba. Di luar Mac App Store, pikapik juga mencatat apakah Anda membuka halaman GitHub kami dari Pengaturan. Angka-angka ini, tanggal tiap penghargaan, dan apa yang dikenakan peliharaan tetap ada di Mac ini. Tidak ada yang dikirim ke mana pun, dan tidak ada yang masuk ke berkas pengaturan yang diekspor atau sinkronisasi iCloud. Anda bisa menghapus semuanya kapan saja di Pengaturan › Peliharaan, lalu peliharaan mulai dari awal lagi.
 
@@ -403,14 +403,14 @@ Mencegah Mac masuk mode tidur saat Anda jauh dari papan ketik: untuk waktu berap
 
 Di MacBook, Anda juga bisa menyalakan **Bekerja dengan penutup tertutup**. macOS tidak punya saklar untuk ini, jadi pikapik menjalankan `pmset -a disablesleep 1` dan meminta kata sandi administrator: hanya administrator yang bisa mengubah cara Mac tidur. Pengaturan ini kembali normal dengan sendirinya saat Tetap Terjaga berakhir, saat Anda keluar dari app, atau jika app mogok. Jika Anda tidak memasukkan kata sandi, tidak ada yang berubah. Pastikan Mac mendapat sirkulasi udara yang baik saat penutupnya tertutup. **Berhenti saat baterai di bawah 20%** mengakhiri sesi sebelum baterai habis.
 
-Keep Awake, mode layar, dan mode layar tertutup bisa dipasang ke tombol di Pusat Kontrol, bilah menu, atau widget desktop lewat app Pintasan, dengan tautan yang kamu salin dari Pengaturan › Tetap Terjaga.
+Keep Awake, mode layar, dan mode layar tertutup bisa dipasang ke tombol di Pusat Kontrol, bilah menu, atau widget desktop lewat app Pintasan, dengan tautan yang Anda salin dari Pengaturan › Tetap Terjaga.
 
 </details>
 
 <details>
 <summary>Tes Kecepatan</summary>
 
-Menunjukkan seberapa cepat internetmu saat ini. Klik **Cek Kecepatan** di Pengaturan › Tes Kecepatan, atau **Cek** di menu setelah kamu menambahkan barisnya dengan tombol pensil. Dalam sekitar setengah menit kamu melihat kecepatan unduh dan unggah, ping, serta responsivitas: seberapa cepat semuanya merespons saat koneksi sedang sibuk. Di bawahnya tertulis dengan kata sederhana koneksi ini cocok untuk apa: film 4K, panggilan video, game online, dan unduhan besar. Pengecekan memakai networkQuality bawaan macOS dan server Apple. Hasil terakhir tetap tersimpan sampai pengecekan berikutnya, dan tautan untuk Pintasan menjalankannya dari Pusat Kontrol.
+Menunjukkan seberapa cepat internet Anda saat ini. Klik **Cek Kecepatan** di Pengaturan › Tes Kecepatan, atau **Cek** di menu setelah Anda menambahkan barisnya dengan tombol pensil. Dalam sekitar setengah menit Anda melihat kecepatan unduh dan unggah, ping, serta responsivitas: seberapa cepat semuanya merespons saat koneksi sedang sibuk. Di bawahnya tertulis dengan kata sederhana koneksi ini cocok untuk apa: film 4K, panggilan video, game online, dan unduhan besar. Pengecekan memakai networkQuality bawaan macOS dan server Apple. Hasil terakhir tetap tersimpan sampai pengecekan berikutnya, dan tautan untuk Pintasan menjalankannya dari Pusat Kontrol.
 
 </details>
 

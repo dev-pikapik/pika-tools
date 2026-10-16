@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>保护 ⌘Q 和 ⌘W</b>
+<br>不会误退出或误关闭。真想这么做时，加上 ⇧。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>游戏模式</b>
+<br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>桌面宠物</b>
+<br>一个小伙伴在窗口后面散步。把它拎起来扔出去，或者按空格键让它跳一下。用衣橱给它换装，一起玩的时候还能赢得奖章。你打字时它精神抖擞，你走开时它打起瞌睡。
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>保持唤醒</b>
 <br>Mac 想醒多久就醒多久，合上盖子也行。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>风扇</b>
 <br>查看风扇转得有多快，并选择它的转速。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>电池</b>
 <br>查看电池的状态、最大容量和循环次数，有多少电力正在充入，以及怎样让它更耐用。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>保护 ⌘Q 和 ⌘W</b>
-<br>不会误退出或误关闭。真想这么做时，加上 ⇧。
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>游戏模式</b>
-<br>玩游戏时，不会有东西弹到游戏上面，也不会把游戏关掉。
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>网速测试</b>
 <br>网速有多快、够做什么，一看便知。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>鼠标侧键</b>
 <br>按键 4 和 5 用于返回和前进，就像在触控板上轻扫。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>用鼠标按钮隐藏</b>
 <br>按一下即可隐藏最前面的 App，就像按 ⌘H 一样。它会继续运行。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>按行滚动</b>
 <br>无论滚轮转得多快，每一格都滚动相同的距离。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>滚动方向</b>
 <br>触控板一个方向，鼠标另一个方向。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>关闭指针加速</b>
 <br>手移动多少，指针就移动多少。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>按住按键连续输入</b>
 <br>按住按键会重复输入字母，而不是弹出重音符号菜单。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home 和 End</b>
 <br>输入时跳到行首或行尾。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>动画</b>
 <br>让程序坞、窗口和快速查看更快，甚至瞬间完成。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>已删除 App 的权限</b>
 <br>清除 macOS 为已删除的 App 保留的权限。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>桌面宠物</b>
-<br>一个小伙伴在窗口后面散步。把它拎起来扔出去，或者按空格键让它跳一下。用衣橱给它换装，一起玩的时候还能赢得奖章。你打字时它精神抖擞，你走开时它打起瞌睡。
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ pikapik 还能打开 macOS 打不开的文件：RAR（包括分成多个部分�
 
 **显示 FPS。** FPS 指每秒帧数，也就是游戏每秒绘制的画面数。在“游戏”页面打开**显示 FPS**，游戏模式开启时，任何游戏的一个角落都会出现一个带着这个数字的深色小标签。点按开关上方图片里的角落，就能选择它的位置。“—”表示最初的画面还没到，变淡的“0”表示游戏已停止绘制。在 macOS 27 上，大多数游戏由 macOS 自己计数，不需要权限。macOS 数不了的游戏（多为较旧的游戏）会通过屏幕录制来计数：这时“权限”页面里会出现**屏幕录制**一行，pikapik 绝不会在游戏中请求权限，数值也不会超过屏幕的刷新率。在 macOS 14–26 和 Mac App Store 版本中，所有游戏都这样计数，所以一打开**显示 FPS**，这一行就会出现，开关下方的**允许**按钮会带你到那里。不会保存或发送任何图像。默认关闭。
 
-**宠物衣橱和奖章。** 打开“设置 › 宠物”，给你的宠物换装：30 多件衣饰，从帽子、眼镜到披风和翅膀，还有巫师、海盗、宇航员等现成的造型。少数几件一开始就能用，其余的是奖章，一起玩的时候就会慢慢拿到：把宠物拎起来扔出去、踢一踢球、看它爬窗户和聊天，或者每天陪它待一会儿。获得新奖章时，宠物会告诉你。
+**宠物衣橱和奖章。** 打开“设置 › 宠物”，给你的宠物换装：50 多件衣饰，从帽子、眼镜到披风和翅膀，还有巫师、海盗、宇航员等现成的造型。少数几件一开始就能用，其余的是奖章，一起玩的时候就会慢慢拿到：把宠物拎起来扔出去、踢一踢球、看它爬窗户和聊天，或者每天陪它待一会儿。获得新奖章时，宠物会告诉你。宠物现在还有了心情：它会根据你的举动变换表情，开心、害羞、好奇、犯困时头顶会冒出一个小标志；还新增了绅士衣橱，有小胡子、单片眼镜、燕尾服和手杖。心情是在你的 Mac 上根据它本来就知道的事情判断的，不会读取或发送任何内容。
 
 为了知道什么时候该颁发奖章，pikapik 只统计你和宠物做的事：步数、你拎起和抛出宠物的次数、跳跃、攀爬、踢球玩耍、聊天、一起度过的天数、是不是在清晨、午夜后或周末陪着它、你打开过的设置页面和试穿过的衣饰。在 Mac App Store 之外的版本中，pikapik 还会记下你是否在设置里打开过我们的 GitHub 页面。这些数字、每枚奖章的获得日期和宠物身上穿的衣服只保存在这台 Mac 上。不会向任何地方发送，也不会进入导出的设置文件或 iCloud 同步。你可以随时在“设置 › 宠物”里全部清除，宠物会从头开始。
 

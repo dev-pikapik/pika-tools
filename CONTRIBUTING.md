@@ -59,6 +59,16 @@ swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -na
 
 The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. During Game Mode, shortcuts with Control or without Command pass through as game input, even if they were assigned to quitting or closing elsewhere.
 
+Every event pikapik posts (the keys it sends for you, the mouse clicks, the swipes, the replayed Dock clicks) goes through `CGEvent.postPikapik` in `Common/EventTag.swift`: it marks the event as pikapik's own and hands it to a sender that a test can replace. Keyboard events are built only by `CGEvent.pikapikKey` in the same file. A key-down carries the modifiers the replacement needs, and a key-up carries the modifiers the user really holds (`CGEvent.pikapikHeld`, by default `CGEventSource.flagsState(.hidSystemState)`). A key-up with the key-down's flags leaves ⌘ held in every other app until the next real keyboard or mouse event. The test replaces the sender (`CGEvent.pikapikSend`) with a recorder and the held modifiers with a fixed value, so the result doesn't depend on the keys held on the Mac that runs it. It then runs the real code of each place and compares the keys it would send, their order, their flags, their text, and the tag on every event itself: the Home and End key-down and key-up, the release in `stop()` of Home and End, the ⌘ keys, the Finder keys and the App Store layout-fix key, the Finder ⌘X after a copy (on a pasteboard of its own, never the general one), the layout-fix retype, and Back and Forward. It also reads the sources and fails if any file but `EventTag.swift` builds a keyboard event or posts an event. It posts nothing and needs no Accessibility. Run it for the website build and for the App Store build, which has its own layout-fix key:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-key-up-flags.swift -o build/test-key-up-flags && build/test-key-up-flags
+```
+
+```bash
+swiftc -parse-as-library -D APPSTORE $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift ! -name Updater.swift ! -name 'LeftoverPermissions*.swift' ! -name SMC.swift ! -name FanHelperProtocol.swift ! -name FanControl.swift ! -name FanSettings.swift ! -name PointerTool.swift ! -name 'DockDisplay*' ! -path '*/Tools/Animations/*' ! -path '*/Tools/KeyRepeat/*' ! -path '*/Tools/Uninstaller/*') Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-key-up-flags.swift -o build/test-key-up-flags-appstore && build/test-key-up-flags-appstore
+```
+
 Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pikapik becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
 
 ```bash
@@ -88,13 +98,13 @@ swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockDisplaySwitch.swif
 swiftc -parse-as-library Sources/pika-tools/Tools/Windows/DockHideMigration.swift scripts/test-dock-hide-migration.swift -o build/test-dock-hide-migration && build/test-dock-hide-migration
 ```
 
-Only one copy of pikapik acts on the Mac. Copies of the same family (the website and App Store builds) pick the one that started last as the main copy: it is the only one that runs event taps and writes settings, and any other copy stays passive and shows a single screen with a button to take over. When the main copy quits or loses the lead, it puts back what it changed, and the previous copy takes over. Features that change a system switch keep the original in an `OriginalValue` entry that is written once and is put back only while the switch still holds our value.
+Only one copy of pikapik acts on the Mac. Copies of the same family (the website and App Store builds) pick the one that started last as the main copy (every copy reads each launch date, its own included, from the kernel process start time, `MainCopyChoice.started`, so all of them see the same moment; a copy that cannot read its own start counts as the oldest, so any other copy leads): it is the only one that runs event taps and writes settings, and any other copy stays passive and shows a single screen with a button to take over. When the main copy quits or loses the lead, it puts back what it changed, and the previous copy takes over. Features that change a system switch keep the original in an `OriginalValue` entry that is written once and is put back only while the switch still holds our value. Animations keep their journal (`animations-own`, `animations-ours`, the Dock autohide entry) in one defaults domain per family. The logic lives in `AnimationsEngine` (`AnimationSetting.swift`), which reaches the Mac only through `AnimationsHost`, so the test below runs the real engine on a simulated Mac. When the main copy quits or loses the lead while another Animations-capable copy of the family runs, it hands over: it puts nothing back, the journal stays, the next main copy writes its own choices, and the Dock restarts at most once, and not at all when the choices are the same. The animations are put back instead when no other copy is left, when the copy that comes next is the App Store one (it has no Animations), or when the quit comes from logout, restart or shutdown (`Background.isLoggingOut`). A copy that is not the main one and quits last puts back what the journal still holds. Before it quits, each copy calls `willQuit()`, which sets its own journal key `animations-leaving-<pid>` to the copy's launch date (one key per copy, so two copies never overwrite each other's mark); a copy that leaves, or that hands over, counts a peer as leaving only when that key holds the peer's launch date (within a second), so a key left by an earlier process with the same pid never counts, even before the new copy has started, and each copy also clears its own key at start. So when two copies get the quit at the same moment each sees the other as leaving and the last one puts everything back, once. The put-back removes all these keys. A Dock restart is decided, and its flag `animations-dock-pending` is set, before the first write that needs it; the flag stays until the Dock has restarted, so the next copy finishes the restart if this one stops.
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
+swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift Sources/pika-tools/Common/MainCopy.swift Sources/pika-tools/Tools/Animations/AnimationSetting.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
 ```
 
-In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and puts back every app that still runs with the same pid and bundle id. It does not read the attribute first: Electron answers `false` even while the switch is on.
+In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and, off the main thread, puts back every app that still runs with the same pid and bundle id, trying again every second for up to 10 tries while the app still runs and does not answer. Switching off works the same way, off the main thread, and on quit the main copy waits up to 2 seconds for it. Each app stays in the journal until it is put back, and new switches wait until this is done. It does not read the attribute first: Electron answers `false` even while the switch is on.
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/TextFocus.swift scripts/test-chromium-ax-journal.swift -o build/test-chromium-ax-journal && build/test-chromium-ax-journal
@@ -139,7 +149,7 @@ swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -na
 Animations writes hidden macOS preferences with `CFPreferencesSetAppValue`: the Dock keys go to `com.apple.dock`, the Finder key to `com.apple.finder` and the rest to the global domain. pikapik remembers which keys it wrote, so Restore Defaults and `--uninstall` delete exactly those; a value set in Terminal is shown as it is and stays until you move its slider. A change to a Dock key restarts the Dock once, 0.6 seconds after the last change, and Finder restarts only from its button. The slider math and what gets written live in `AnimationSetting`, which you can test without the app:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Tools/Animations/AnimationSetting.swift scripts/test-animation-tweaks.swift -o build/test-animation-tweaks && build/test-animation-tweaks
+swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift Sources/pika-tools/Tools/Animations/AnimationSetting.swift scripts/test-animation-tweaks.swift -o build/test-animation-tweaks && build/test-animation-tweaks
 ```
 
 Permissions left by deleted apps are read from the system TCC database (`/Library/Application Support/com.apple.TCC/TCC.db`), which needs Full Disk Access. A client counts as deleted when LaunchServices has no copy of it outside the Trash, no helper, launch agent or system extension with its id is left, and it is not on a disk that is unplugged; Apple apps and system paths are skipped. Remove calls `tccutil reset All <id>`. tccutil only accepts ids that LaunchServices knows, so pikapik registers a tiny placeholder app with that id in its Caches folder for a moment and deletes it right after. Path clients can’t be reset this way, so their row opens the list in System Settings instead. The parsing and the deleted check live in `LeftoverPermissions`, which you can test without the app:
@@ -176,6 +186,36 @@ Awards and wardrobe unlocks live in `PetProgress`. `PetPhysics` reports what the
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetWardrobe.swift Sources/pika-tools/Tools/Pet/PetAwards.swift scripts/test-awards.swift -o build/test-awards && build/test-awards
+```
+
+The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head) that `PetMind` fades between. `PetStage` cues a mood from what the pet already knows (being picked up, a kick, an award, a late hour) and the rules are plain numbers: a higher mood interrupts a lower one, the same cue extends a mood instead of restarting it, every mood rests before it can come back, and the pet starts at most one mood of its own every three minutes. The rules run without the app too:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
+```
+
+What the pet feels, when it sits down and when it says a phrase it owes live in `PetCues`, which has no AppKit, and `PetStage` only feeds it the clock and the pet: a pet that wakes from a doze is sleepy and sits, the morning phrase waits for the yawn and is never lost, a phrase owed while the pet cannot sit waits until it can, and bored and sleepy never start while it cannot sit:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetCues,PetMood,PetPhrases,PetPhysics,BallPhysics,PetWardrobe,PetAwards}.swift scripts/test-pet-cues.swift -o build/test-pet-cues && build/test-pet-cues
+```
+
+Each mark stays 0.4 units clear of the pet and of every hat and back item, in every pose and both facings, so the crown heights in `PetFigure.mark` can’t drift out of date:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
+```
+
+Every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window; a fill that falls below that gets a thin gray rim under it (about 0.8 pt on screen) at full strength. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the rim is gray its first 2 render px (the test draws at scale 6) must keep the 3:1 too and the rim must stick out 2 to 3 render px, so a rim half or twice as wide fails:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
+```
+
+The outline must stay cheap: drawing any single item with it costs at most 0.3 ms more per frame than without it, and a whole look, which is 3 to 7 items whose outlines add up, at most 0.5 ms, under 2% of a frame at the pet’s 30 frames per second (release build on an idle Mac; add `raster` to also fill the paths). This check is manual: CI does not run it, because timings on shared runners are too noisy to hold such small limits:
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/bench-pet.swift -o build/bench-pet && build/bench-pet
 ```
 
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
@@ -236,6 +276,12 @@ The app also reads the file whenever it comes to the front, so a change that arr
 
 ```bash
 ./scripts/check-settings-sync.sh
+```
+
+Sync hears about every saved setting through `SettingsFile.onSave`, including the ones saved off the main thread, for example the list of Chromium apps that `TextFocus` keeps while it holds its lock. Such a save must not wait for the main thread: on quit the main thread waits for `TextFocus`, so a waiting save would freeze pikapik. A setting saved on the main thread is still heard at once, so sync can tell its own changes apart. The test checks both, with the main thread busy for the second, and fails if anything else in `Sources` listens for saved settings:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-sync-thread.swift -o build/test-settings-sync-thread && build/test-settings-sync-thread
 ```
 
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. The App Store build uses it only to list background tasks. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:

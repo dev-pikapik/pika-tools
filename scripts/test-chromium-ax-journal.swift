@@ -17,7 +17,7 @@ struct TestChromiumAXJournal {
         }
 
         let key = "test-chromium-ax-journal"
-        defer { UserDefaults.standard.removeObject(forKey: key); UserDefaults.standard.removeObject(forKey: crashKey) }
+        defer { [key, crashKey, TextFocus.journalKey].forEach(UserDefaults.standard.removeObject) }
         let saved = [entry(100), entry(200, "com.tinyspeck.slackmacgap", "AXEnhancedUserInterface")]
         precondition(Switched.load(key).isEmpty)
         Switched.save(saved, key)
@@ -50,5 +50,67 @@ struct TestChromiumAXJournal {
         CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication)
         precondition(Switched.load(crashKey) == saved)
         print("after a crash the next launch finds what was switched on: ok")
+
+        var writes: [String] = []
+        TextFocus.write = { _, on, pid in
+            if !on { Thread.sleep(forTimeInterval: 0.3) }
+            writes.append("\(pid) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            return .success
+        }
+        let gone = crashed.processIdentifier
+        let chrome: (pid_t) -> String? = { $0 == 100 || $0 == gone ? "com.google.Chrome" : nil }
+        Switched.save([entry(100)], TextFocus.journalKey)
+        TextFocus.putBackAfterCrash(bundleID: chrome)
+        precondition(writes.isEmpty, "putBackAfterCrash must return before it writes")
+        TextFocus.isOn = { _ in false }
+        let owner = NSObject()
+        TextFocus.watch(owner, front: nil)
+        precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .success)
+        precondition(writes == ["100 false [100]", "\(gone) true [\(gone)]"], "\(writes)")
+        print("putting back runs off the main thread, the journal holds an app before its switch changes, and putting back finishes before a new switch: ok")
+
+        TextFocus.unwatch(owner, bundleID: chrome)
+        precondition(writes.count == 2, "unwatch must return before it writes")
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]", "\(gone) true [\(gone)]", "\(gone) false [\(gone)]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("switching off runs off the main thread and keeps each app in the journal until it is put back: ok")
+
+        writes = []
+        TextFocus.isOn = { $0 == gone }
+        TextFocus.watch(owner, front: nil)
+        precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .success)
+        precondition(TextFocus.enable("AXEnhancedUserInterface", gone, "com.google.Chrome") == .success)
+        precondition(writes.isEmpty && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        TextFocus.unwatch(owner, bundleID: chrome)
+        TextFocus.puttingBack.wait()
+        precondition(writes.isEmpty && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        TextFocus.isOn = { _ in false }
+        print("an app that was already on is not switched, not remembered and not switched off: ok")
+
+        var timeouts = 1
+        writes = []
+        TextFocus.write = { _, on, pid in
+            writes.append("\(pid) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            timeouts -= 1
+            return timeouts >= 0 ? .cannotComplete : .success
+        }
+        Switched.save([entry(100)], TextFocus.journalKey)
+        TextFocus.putBackAfterCrash(bundleID: chrome)
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]", "100 false [100]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("a put-back that times out is tried again, and the app stays in the journal until then: ok")
+
+        var alive = true
+        writes = []
+        TextFocus.write = { _, on, pid in
+            writes.append("\(pid) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            alive = false
+            return .cannotComplete
+        }
+        Switched.save([entry(100)], TextFocus.journalKey)
+        TextFocus.putBackAfterCrash(bundleID: { $0 == 100 && alive ? "com.google.Chrome" : nil })
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["100 false [100]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("a put-back stops trying once the app has quit: ok")
     }
 }

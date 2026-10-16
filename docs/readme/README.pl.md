@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Twój Mac rozumie Cię w pół słowa.</b><br>Drobne usprawnienia klawiatury, myszy, okien i Findera, prosto z paska menu Twojego Maca.</p>
+<p align="center"><b>Mac rozumie cię w pół słowa.</b><br>Drobne usprawnienia klawiatury, myszy, okien i Findera, prosto z paska menu Twojego Maca.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <b>Polski</b> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Ochrona ⌘Q i ⌘W</b>
+<br>Nic nie zamknie się przypadkiem. Dodaj ⇧, gdy naprawdę chcesz.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Tryb gry</b>
+<br>Gdy grasz, nic nie przesłoni gry ani jej nie zamknie.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Zwierzak na biurku</b>
+<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem. Ożywia się, gdy piszesz, i drzemie, gdy odchodzisz.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Nie usypiaj</b>
 <br>Mac nie zaśnie, dopóki tego potrzebujesz, nawet z zamkniętą klapą.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Wentylatory</b>
 <br>Zobacz, jak szybko kręcą się wentylatory, i wybierz ich prędkość.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Bateria</b>
 <br>Zobacz stan baterii, jej pojemność i liczbę cykli, ile energii do niej płynie i jak sprawić, by działała dłużej.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Ochrona ⌘Q i ⌘W</b>
-<br>Nic nie zamknie się przypadkiem. Dodaj ⇧, gdy naprawdę chcesz.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Zarówno powyższe polecenie, jak i Homebrew umieszczają aplikację w `/Applica
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Tryb gry</b>
-<br>Gdy grasz, nic nie wyskoczy nad grą ani jej nie zamknie.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test prędkości</b>
 <br>Jak szybki jest Twój internet i do czego wystarczy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boczne przyciski</b>
 <br>Przyciski 4 i 5 cofają i przechodzą dalej, jak przesunięcie palcami.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Ukrywanie przyciskiem myszy</b>
 <br>Jedno naciśnięcie ukrywa aplikację na pierwszym planie, jak ⌘H. Aplikacja działa dalej.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Przewijanie o wiersze</b>
 <br>Każdy ząbek kółka przewija tyle samo, niezależnie od tempa.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Kierunek przewijania</b>
 <br>Jeden kierunek dla gładzika, drugi dla myszy.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez przyspieszenia wskaźnika</b>
 <br>Wskaźnik przesuwa się dokładnie tyle, co Twoja ręka.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Powtarzaj przytrzymany klawisz</b>
 <br>Przytrzymaj klawisz, by pisał raz za razem, bez menu akcentów.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home i End</b>
 <br>Skacz na początek lub koniec wiersza podczas pisania.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animacje</b>
 <br>Przyspiesz Dock, okna i Szybki przegląd, nawet do natychmiastowych.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Uprawnienia usuniętych aplikacji</b>
 <br>Usuń uprawnienia, które macOS zachowuje dla już usuniętych aplikacji.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Zwierzak na biurku</b>
-<br>Mały przyjaciel spaceruje za twoimi oknami. Podnieś go i rzuć albo naciśnij spację, a podskoczy. Ubieraj go w rzeczy z jego garderoby i zdobywaj nagrody, kiedy bawicie się razem. Ożywia się, gdy piszesz, i drzemie, gdy odchodzisz.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Otwórz Ustawienia → Gry → Dodaj grę i kliknij uruchomioną grę. Gry korzy
 
 **Pokaż FPS.** FPS to klatki na sekundę: ile obrazów gra rysuje w ciągu sekundy. Włącz **Pokaż FPS** na stronie Gry, a gdy Tryb gry jest włączony, w rogu każdej gry pojawi się mała ciemna plakietka z tą liczbą. Wybierz róg, klikając go na obrazku nad przełącznikiem. Kreska oznacza, że pierwsze klatki jeszcze nie dotarły, a przygaszone 0 — że gra przestała rysować. W macOS 27 większość gier liczy sam macOS, bez żadnego uprawnienia. Grę, której macOS nie potrafi policzyć, zwykle starszą, pikapik liczy przez nagrywanie ekranu: wtedy na stronie Uprawnienia pojawia się wiersz **Nagrywanie ekranu**, pikapik nigdy nie prosi o uprawnienie w trakcie gry, a liczba nie może być wyższa niż częstotliwość odświeżania ekranu. W macOS 14–26 i w wersji z Mac App Store każda gra jest liczona w ten sposób, dlatego wiersz pojawia się zaraz po włączeniu **Pokaż FPS**, a przycisk **Zezwól** pod przełącznikiem prowadzi do niego. Żaden obraz nie jest zapisywany ani wysyłany. Domyślnie wyłączone.
 
-**Garderoba i nagrody zwierzaka.** Otwórz Ustawienia › Zwierzak, żeby ubrać zwierzaka: ponad 30 rzeczy, od czapek i okularów po peleryny i skrzydła, oraz gotowe przebrania, takie jak czarodziej, pirat czy astronauta. Kilka rzeczy jest za darmo od początku. Reszta to nagrody, które przychodzą podczas wspólnej zabawy: podnieś zwierzaka i rzuć nim, pokop piłkę, patrz, jak wspina się na okna i gada, albo po prostu dotrzymuj mu towarzystwa dzień po dniu. Kiedy zdobędziesz nową nagrodę, zwierzak ci o tym powie.
+**Garderoba i nagrody zwierzaka.** Otwórz Ustawienia › Zwierzak, żeby ubrać zwierzaka: ponad 50 rzeczy, od czapek i okularów po peleryny i skrzydła, oraz gotowe przebrania, takie jak czarodziej, pirat czy astronauta. Kilka rzeczy jest za darmo od początku. Reszta to nagrody, które przychodzą podczas wspólnej zabawy: podnieś zwierzaka i rzuć nim, pokop piłkę, patrz, jak wspina się na okna i gada, albo po prostu dotrzymuj mu towarzystwa dzień po dniu. Kiedy zdobędziesz nową nagrodę, zwierzak ci o tym powie. Zwierzak pokazuje teraz także emocje: w odpowiedzi na to, co robisz, zmienia mu się twarz, a nad głową pojawia się mały znaczek, gdy jest wesoły, wstydliwy, ciekawski, śpiący i nie tylko, a do tego jest garderoba dżentelmena z wąsami, monoklem, frakiem i laską. Emocje wylicza na twoim Macu z tego, co już wie, i nic nie jest czytane ani wysyłane.
 
 Żeby wiedzieć, kiedy należy się nagroda, pikapik liczy tylko to, co robicie ty i zwierzak: kroki, ile razy go podnosisz i rzucasz, skoki, wspinaczki, zabawy piłką i rozmowy, wspólne dni, czy byliście razem wcześnie rano, po północy albo w weekend, które strony ustawień otwierasz i co przymierzasz. Poza Mac App Store pikapik zapisuje też, czy z Ustawień otwarto naszą stronę na GitHubie. Te liczby, data każdej nagrody i to, w co zwierzak jest ubrany, zostają na tym Macu. Nic nie jest nigdzie wysyłane i nic z tego nie trafia do wyeksportowanego pliku ustawień ani do synchronizacji przez iCloud. Wszystko możesz w każdej chwili wymazać w Ustawieniach › Zwierzak, a zwierzak zacznie od zera.
 

@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Váš Mac vám rozumí na půl slova.</b><br>Drobná vylepšení klávesnice, myši, oken a Finderu přímo v řádku nabídek vašeho Macu.</p>
+<p align="center"><b>Váš Mac rozumí na půl slova.</b><br>Drobná vylepšení klávesnice, myši, oken a Finderu přímo v řádku nabídek vašeho Macu.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <b>Čeština</b> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Ochrana ⌘Q a ⌘W</b>
+<br>Nic se nezavře omylem. Když to myslíte vážně, přidejte ⇧.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Herní režim</b>
+<br>Zatímco hrajete, nic se nezobrazí přes hru a nic ji nezavře.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Mazlíček na ploše</b>
+<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete. Když píšete, ožije, a když odejdete, podřimuje.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Nespat</b>
 <br>Mac zůstane vzhůru, jak dlouho potřebujete, i se zavřeným víkem.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventilátory</b>
 <br>Podívejte se, jak rychle se ventilátory točí, a vyberte jejich rychlost.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Baterie</b>
 <br>Podívejte se na stav baterie, její kapacitu a počet cyklů, kolik energie do ní teče a jak prodloužit její výdrž.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Ochrana ⌘Q a ⌘W</b>
-<br>Nic se nezavře omylem. Když to myslíte vážně, přidejte ⇧.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Výše uvedený příkaz i Homebrew uloží aplikaci do `/Applications`, spustí
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Herní režim</b>
-<br>Zatímco hrajete, nic nevyskočí přes hru a nic ji nezavře.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Test rychlosti</b>
 <br>Jak rychlý je váš internet a na co stačí.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Boční tlačítka</b>
 <br>Tlačítka 4 a 5 jdou zpět a vpřed, jako přejetí prsty.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Skrytí tlačítkem myši</b>
 <br>Jedno stisknutí skryje aplikaci v popředí, jako ⌘H. Aplikace dál běží.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Posouvání po řádcích</b>
 <br>Každé cvaknutí kolečka posune stejně, ať točíte jakkoli rychle.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Směr posouvání</b>
 <br>Jeden směr pro trackpad, jiný pro myš.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Bez zrychlení ukazatele</b>
 <br>Ukazatel ujede přesně tolik co vaše ruka.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Opakovat drženou klávesu</b>
 <br>Podržte klávesu a píše se znovu a znovu, bez nabídky diakritiky.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home a End</b>
 <br>Při psaní skok na začátek nebo konec řádku.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animace</b>
 <br>Zrychlete Dock, okna a Rychlý náhled, klidně až na okamžité.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Oprávnění smazaných aplikací</b>
 <br>Odstraňte oprávnění, která si macOS nechává pro už smazané aplikace.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Mazlíček na ploše</b>
-<br>Malý kamarád se prochází za vašimi okny. Zvedněte ho a hoďte, nebo stiskněte mezerník a vyskočí. Oblékejte ho do věcí z jeho šatníku a získávejte ocenění, když si spolu hrajete. Když píšete, ožije, a když odejdete, podřimuje.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Otevřete Nastavení → Hry → Přidat hru a klikněte na spuštěnou hru. Obj
 
 **Zobrazit FPS.** FPS znamená snímky za sekundu: kolik obrázků hra nakreslí za jednu sekundu. Zapněte **Zobrazit FPS** na stránce Hry a dokud je zapnutý Herní režim, objeví se v rohu každé hry malý tmavý štítek s tímto číslem. Roh vyberete kliknutím na obrázek nad přepínačem. Pomlčka znamená, že první snímky ještě nedorazily, a pobledlá 0 znamená, že hra přestala kreslit. V macOS 27 většinu her počítá sám macOS, bez jakéhokoli oprávnění. Hru, kterou macOS spočítat neumí, většinou starší, pikapik počítá přes záznam obrazovky: na stránce Oprávnění se pak objeví řádek **Záznam obrazovky**, pikapik o oprávnění nikdy nežádá během hry a číslo nemůže být vyšší než obnovovací frekvence obrazovky. V macOS 14–26 a ve verzi z Mac App Store se tak počítají všechny hry, proto se řádek objeví hned po zapnutí **Zobrazit FPS** a tlačítko **Povolit** pod přepínačem vás k němu zavede. Žádný obraz se neukládá ani neodesílá. Ve výchozím stavu vypnuto.
 
-**Šatník a ocenění mazlíčka.** Otevřete Nastavení › Mazlíček a oblékněte svého mazlíčka: přes 30 kousků, od klobouků a brýlí po pláště a křídla, a hotové kostýmy třeba pro čaroděje, piráta nebo astronauta. Pár kousků je zdarma hned od začátku. Zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte nové ocenění, mazlíček vám to řekne.
+**Šatník a ocenění mazlíčka.** Otevřete Nastavení › Mazlíček a oblékněte svého mazlíčka: přes 50 kousků, od klobouků a brýlí po pláště a křídla, a hotové kostýmy třeba pro čaroděje, piráta nebo astronauta. Pár kousků je zdarma hned od začátku. Zbytek jsou ocenění, která přicházejí při společné hře: zvedněte mazlíčka a hoďte s ním, kopejte do míče, sledujte, jak leze po oknech a povídá si, nebo mu prostě dělejte společnost den za dnem. Až získáte nové ocenění, mazlíček vám to řekne. Mazlíček teď také projevuje emoce: podle toho, co děláte, se mění jeho obličej a nad hlavou se objeví malá značka, když je veselý, plachý, zvědavý, ospalý a podobně, a přibyl i šatník gentlemana s kníry, monoklem, frakem a hůlkou. Emoce si odvozuje přímo ve vašem Macu z toho, co už ví, a nic se nečte ani neodesílá.
 
 Aby pikapik věděl, kdy je čas na ocenění, počítá jen to, co děláte vy a váš mazlíček: kroky, kolikrát ho zvednete a hodíte, skoky, lezení, hru s míčem a řeči, společné dny, jestli jste byli spolu brzy ráno, po půlnoci nebo o víkendu, které stránky nastavení jste otevřeli a co jste vyzkoušeli. Mimo Mac App Store si pikapik také poznamenává, zda jste z Nastavení otevřeli naši stránku na GitHubu. Tato čísla, datum každého ocenění a to, co má mazlíček na sobě, zůstávají v tomto Macu. Nic se nikam neposílá a nic z toho nejde do exportovaného souboru nastavení ani do synchronizace přes iCloud. Všechno můžete kdykoli smazat v Nastavení › Mazlíček a mazlíček začne od nuly.
 

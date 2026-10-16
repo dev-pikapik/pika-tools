@@ -194,7 +194,7 @@ final class KeepAwake {
         #if APPSTORE
         return
         #else
-        guard mode != .off, MainCopy.shared.role != .passive else { return }
+        guard mode != .off, MainCopy.canAct else { return }
         let bridge = Process()
         bridge.executableURL = URL(fileURLWithPath: "/usr/bin/caffeinate")
         let seconds = min(120, max(1, Int(endDate?.timeIntervalSinceNow ?? 120)))
@@ -480,7 +480,7 @@ struct KeepAwakeSettings: View {
 
 extension KeepAwake {
     func handle(_ url: URL) {
-        guard MainCopy.shared.role != .passive else { return }
+        guard MainCopy.canAct else { return MainCopy.shared.whenMain { [self] in handle(url) } }
         let value = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first?.name
         func flag(_ current: Bool) -> Bool { value == "on" ? true : value == "off" ? false : !current }
         switch url.host {

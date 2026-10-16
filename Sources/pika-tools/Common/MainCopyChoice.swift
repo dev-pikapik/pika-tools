@@ -1,9 +1,25 @@
-import Foundation
+import AppKit
 
 struct RunningCopy: Equatable {
     let pid: Int32
     let bundleID: String
     let launched: Date
+}
+
+extension RunningCopy {
+    init?(pid: Int32, bundleID: String, started: (Int32) -> Date? = MainCopyChoice.started) {
+        guard let launched = started(pid) else { return nil }
+        self.init(pid: pid, bundleID: bundleID, launched: launched)
+    }
+
+    init?(_ app: NSRunningApplication, started: (Int32) -> Date? = MainCopyChoice.started) {
+        guard !app.isTerminated, let bundleID = app.bundleIdentifier else { return nil }
+        self.init(pid: app.processIdentifier, bundleID: bundleID, started: started)
+    }
+
+    static func own(started: (Int32) -> Date? = MainCopyChoice.started) -> RunningCopy {
+        RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: started(getpid()) ?? .distantPast)
+    }
 }
 
 enum MainCopyChoice {
@@ -23,6 +39,27 @@ enum MainCopyChoice {
     static func leader(_ me: RunningCopy, among peers: [RunningCopy]) -> RunningCopy {
         (peers + [me]).max { ($0.launched, $0.pid) < ($1.launched, $1.pid) } ?? me
     }
+
+    static func becomesMain(_ me: RunningCopy, among peers: [RunningCopy], quitting: Bool) -> Bool {
+        !quitting && leader(me, among: peers) == me
+    }
+
+    static func takesOver(_ peers: [RunningCopy], poweringOff: Bool) -> Bool {
+        !poweringOff && peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
+    }
+
+    static func journal(_ bundleID: String) -> String {
+        family(bundleID) == "pikapik" ? websiteID : family(bundleID)
+    }
+
+    static func started(_ pid: Int32) -> Date? {
+        var info = kinfo_proc()
+        var size = MemoryLayout<kinfo_proc>.stride
+        var mib = [CTL_KERN, KERN_PROC, KERN_PROC_PID, pid]
+        guard sysctl(&mib, UInt32(mib.count), &info, &size, nil, 0) == 0, size > 0, info.kp_proc.p_pid == pid else { return nil }
+        let time = info.kp_proc.p_starttime
+        return Date(timeIntervalSince1970: Double(time.tv_sec) + Double(time.tv_usec) / 1e6)
+    }
 }
 
 enum OriginalValue {
@@ -41,12 +78,69 @@ enum OriginalValue {
         return entry.before
     }
 
-    static func load(_ key: String) -> Entry? {
-        guard let saved = UserDefaults.standard.array(forKey: key) as? [Bool], saved.count == 2 else { return nil }
+    enum Resume: Equatable {
+        case keep
+        case write(Bool)
+        case forget
+    }
+
+    static func resume(_ wanted: Entry?, journal: Entry?, current: Bool) -> Resume {
+        if let journal {
+            guard current == journal.ours else { return .forget }
+            return wanted == nil ? .write(journal.before) : .keep
+        }
+        guard let wanted else { return .keep }
+        return current == wanted.before ? .write(wanted.ours) : .forget
+    }
+
+    @discardableResult
+    static func set(_ key: String, intent: String? = nil, journal: UserDefaults = .standard, local: UserDefaults = .standard, current: Bool, to new: Bool, write: (Bool) -> Void) -> Entry? {
+        let entry = change(load(key, journal: journal), current: current, to: new)
+        if let intent { save(entry, intent, journal: local) }
+        if entry != nil { save(entry, key, journal: journal) }
+        write(new)
+        if entry == nil { save(nil, key, journal: journal) }
+        return entry
+    }
+
+    static func same(_ value: Int?, _ other: Int?) -> Bool {
+        guard let value, let other else { return value == other }
+        let a = Int(Int32(truncatingIfNeeded: value)), b = Int(Int32(truncatingIfNeeded: other))
+        return abs(a - b) <= abs(b) / 100
+    }
+
+    static func putBack(_ before: [String: Int], ours: [String: [Int]], current: [String: Int]) -> [String: Int] {
+        before.filter { key, value in !same(current[key], value) && (ours[key] ?? []).contains { same(current[key], $0) } }
+    }
+
+    static func isBack(_ before: [String: Int], ours: [String: [Int]], current: [String: Int]) -> Bool {
+        putBack(before, ours: ours, current: current).isEmpty
+    }
+
+    static func load(_ key: String, journal: UserDefaults = .standard) -> Entry? {
+        guard let saved = journal.array(forKey: key) as? [Bool], saved.count == 2 else { return nil }
         return Entry(before: saved[0], ours: saved[1])
     }
 
-    static func save(_ entry: Entry?, _ key: String) {
-        UserDefaults.standard.set(entry.map { [$0.before, $0.ours] }, forKey: key)
+    static func save(_ entry: Entry?, _ key: String, journal: UserDefaults = .standard) {
+        journal.set(entry.map { [$0.before, $0.ours] }, forKey: key)
+    }
+}
+
+struct DeferredActions {
+    private var actions: [() -> Void] = []
+
+    mutating func add(_ action: @escaping () -> Void) {
+        actions.append(action)
+    }
+
+    mutating func run() {
+        let due = actions
+        actions = []
+        due.forEach { $0() }
+    }
+
+    mutating func drop() {
+        actions = []
     }
 }

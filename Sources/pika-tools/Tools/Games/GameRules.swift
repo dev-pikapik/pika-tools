@@ -132,19 +132,6 @@ enum GameRules {
             || id == nil && ["wine", "crossover", "whisky", "game porting toolkit"].contains(where: path.contains)
     }
 
-    static func fence(_ point: CGPoint, in frame: CGRect, corners: Set<Int> = []) -> CGPoint? {
-        let reaches = corners.contains { corner in
-            abs(point.x - (corner % 2 == 0 ? frame.minX : frame.maxX - 1)) <= 3
-                && abs(point.y - (corner < 2 ? frame.minY : frame.maxY - 1)) <= 3
-        }
-        let inset: CGFloat = reaches ? 0 : 1
-        let fenced = CGPoint(
-            x: min(max(point.x, frame.minX + inset), frame.maxX - 1 - inset),
-            y: min(max(point.y, frame.minY + inset), frame.maxY - 1 - inset)
-        )
-        return fenced == point ? nil : fenced
-    }
-
     static func fenceRects(_ frame: CGRect, corners: Set<Int> = []) -> [CGRect] {
         [frame.insetBy(dx: 1, dy: 1)] + corners.sorted().map {
             CGRect(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 4, y: $0 < 2 ? frame.minY : frame.maxY - 4, width: 4, height: 4)

@@ -40,26 +40,38 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Proteggi ⌘Q e ⌘W</b>
+<br>Niente si chiude per sbaglio. Aggiungi ⇧ quando lo vuoi davvero.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Modalità gioco</b>
+<br>Mentre giochi, niente si apre sopra il gioco né lo chiude.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Animaletto sulla scrivania</b>
+<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Resta sveglio</b>
 <br>Il Mac resta sveglio per tutto il tempo che serve, anche con il coperchio chiuso.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventole</b>
 <br>Guarda quanto veloci girano le ventole e scegli la loro velocità.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batteria</b>
 <br>Guarda lo stato della batteria, la capacità e il conteggio cicli, quanta energia entra e come farla durare di più.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Proteggi ⌘Q e ⌘W</b>
-<br>Niente si chiude per sbaglio. Aggiungi ⇧ quando lo vuoi davvero.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Modalità gioco</b>
-<br>Mentre giochi, niente si apre sopra il gioco né lo chiude.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Velocità internet</b>
 <br>Quanto è veloce la tua connessione e a cosa basta.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Tasti laterali</b>
 <br>I tasti 4 e 5 vanno indietro e avanti, come uno swipe.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Nascondi con un tasto del mouse</b>
 <br>Una pressione nasconde l’app in primo piano, come ⌘H. Resta in esecuzione.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scorri per righe</b>
 <br>Ogni scatto della rotella scorre allo stesso modo, a qualsiasi velocità.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direzione di scorrimento</b>
 <br>Una direzione per il trackpad, un’altra per il mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Senza accelerazione del puntatore</b>
 <br>Il puntatore si muove esattamente quanto la tua mano.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ripeti un tasto tenuto premuto</b>
 <br>Tieni premuto un tasto per ripeterlo, senza il menu degli accenti.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home ed End</b>
 <br>Vai a inizio o fine riga mentre scrivi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animazioni</b>
 <br>Velocizza il Dock, le finestre e Visualizzazione rapida, fino a renderli istantanei.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permessi delle app eliminate</b>
 <br>Togli i permessi che macOS conserva per le app già eliminate.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Animaletto sulla scrivania</b>
-<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Apri Impostazioni → Giochi → Aggiungi un gioco e fai clic sul gioco in esecu
 
 **Mostra FPS.** FPS significa fotogrammi al secondo: quante immagini disegna il gioco ogni secondo. Attiva **Mostra FPS** nella pagina Giochi e, finché la Modalità gioco è attiva, una piccola etichetta scura con quel numero compare in un angolo di qualsiasi gioco. Fai clic su un angolo dell’immagine sopra l’interruttore per sceglierlo. Un trattino significa che i primi fotogrammi non sono ancora arrivati, e uno 0 sbiadito che il gioco ha smesso di disegnare. Con macOS 27 la maggior parte dei giochi viene contata da macOS stesso, senza permessi. Un gioco che macOS non riesce a contare, per lo più uno vecchio, viene contato tramite la registrazione dello schermo: nella pagina Permessi compare allora la riga **Registrazione schermo**, pikapik non la chiede mai durante una partita e il numero non può superare la frequenza di aggiornamento dello schermo. Con macOS da 14 a 26 e nella versione del Mac App Store ogni gioco viene contato così, perciò la riga compare appena attivi **Mostra FPS**, e il pulsante **Consenti** sotto l’interruttore ti ci porta. Nessuna immagine viene conservata o inviata. Disattivato di default.
 
-**Guardaroba e premi dell’animaletto.** Apri Impostazioni › Animaletto per vestire il tuo animaletto: più di 30 capi, da cappelli e occhiali a mantelli e ali, e look già pronti come mago, pirata o astronauta. Alcuni sono gratis fin dall’inizio. Gli altri sono premi che arrivano mentre giocate insieme: prendi in mano il tuo animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ottieni un nuovo premio, te lo dice lui.
+**Guardaroba e premi dell’animaletto.** Apri Impostazioni › Animaletto per vestire il tuo animaletto: più di 50 capi, da cappelli e occhiali a mantelli e ali, e look già pronti come mago, pirata o astronauta. Alcuni sono gratis fin dall’inizio. Gli altri sono premi che arrivano mentre giocate insieme: prendi in mano il tuo animaletto e lancialo, calcia la palla, guardalo arrampicarsi sulle finestre e chiacchierare, oppure fagli semplicemente compagnia giorno dopo giorno. Quando ottieni un nuovo premio, te lo dice lui. Ora il tuo animaletto mostra anche le emozioni: in risposta a quello che fai, la sua faccia cambia e sopra la testa compare un piccolo segno quando è contento, timido, curioso, assonnato e altro ancora, e c’è un guardaroba da gentiluomo con baffi, monocolo, frac e bastone. Capisce le sue emozioni direttamente sul tuo Mac da ciò che già sa, e non viene letto né inviato nulla.
 
 Per sapere quando spetta un premio, pikapik conta solo quello che fate tu e il tuo animaletto: passi, quante volte lo prendi e lo lanci, salti, arrampicate, partite con la palla e chiacchierate, giorni passati insieme, se eravate insieme all’alba, dopo mezzanotte o nel fine settimana, le pagine delle Impostazioni che hai aperto e i capi che hai provato. Fuori dal Mac App Store, pikapik annota anche se hai aperto la nostra pagina GitHub dalle Impostazioni. Questi numeri, la data di ogni premio e ciò che indossa il tuo animaletto restano su questo Mac. Non viene inviato nulla da nessuna parte e niente di tutto ciò finisce nel file delle impostazioni esportato o nella sincronizzazione iCloud. Puoi cancellare tutto quando vuoi in Impostazioni › Animaletto, e il tuo animaletto ricomincia da zero.
 

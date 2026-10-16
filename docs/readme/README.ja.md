@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Qと⌘Wを保護</b>
+<br>うっかり終了したり閉じたりしません。意図して使うときは⇧を足します。
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>ゲームモード</b>
+<br>プレイ中は、ゲームの上に何も開かず、うっかり閉じることもありません。
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>デスクトップのペット</b>
+<br>小さな友だちがウインドウの後ろをお散歩します。つかんで投げたり、スペースを押してジャンプさせたりできます。クローゼットで着せ替えをして、いっしょに遊びながらアワードを集められます。入力中は元気になり、席を離れるとうとうとします。
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>スリープさせない</b>
 <br>必要なあいだMacを起こしたまま。蓋を閉じていても大丈夫です。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>ファン</b>
 <br>ファンの回転の速さを確認し、速さを選べます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>バッテリー</b>
 <br>バッテリーの状態、最大容量、充放電回数、バッテリーに入る電力、そして長持ちさせるコツを確認できます。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Qと⌘Wを保護</b>
-<br>うっかり終了したり閉じたりしません。意図して使うときは⇧を足します。
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>ゲームモード</b>
-<br>プレイ中は、ゲームの上に何も開かず、うっかり閉じることもありません。
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>速度テスト</b>
 <br>インターネットの速さと、それで何ができるかがわかります。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>サイドボタン</b>
 <br>ボタン4と5で戻る/進む。トラックパッドのスワイプと同じです。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>マウスボタンで隠す</b>
 <br>1回押すと、⌘Hのように最前面のアプリが隠れます。アプリは動いたままです。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>行単位でスクロール</b>
 <br>ホイールをどれだけ速く回しても、1クリックで同じだけスクロールします。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>スクロール方向</b>
 <br>トラックパッドとマウスで、別々の方向を選べます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>ポインタの加速をオフ</b>
 <br>手を動かしたぶんだけ、ポインタが正確に動きます。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>キーを押し続けて連続入力</b>
 <br>キーを押し続けると、アクセントメニューの代わりに文字が繰り返されます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>HomeとEnd</b>
 <br>入力中に行頭や行末へジャンプします。
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>アニメーション</b>
 <br>Dock、ウインドウ、クイックルックを速く。瞬時にもできます。
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>削除したアプリの許可</b>
 <br>削除したアプリのために macOS が残している許可を取り除けます。
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>デスクトップのペット</b>
-<br>小さな友だちがウインドウの後ろをお散歩します。つかんで投げたり、スペースを押してジャンプさせたりできます。クローゼットで着せ替えをして、いっしょに遊びながらアワードを集められます。入力中は元気になり、席を離れるとうとうとします。
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ pikapik は、macOS では開けないものも開けます。複数の部分に
 
 **FPSを表示。** FPS は1秒あたりのフレーム数、つまりゲームが1秒間に描く絵の枚数です。「ゲーム」ページで**FPSを表示**をオンにすると、ゲームモード中は、どのゲームでも角に、この数字が入った小さな黒いラベルが表示されます。スイッチの上の絵で角をクリックすると、表示する角を選べます。「—」はまだ最初のフレームが届いていないこと、薄い「0」はゲームが描画を止めたことを表します。macOS 27 では、ほとんどのゲームを macOS 自身が数えるので、許可は要りません。macOS が数えられないゲーム、たいていは古いゲームは、画面収録で数えます。その場合は「許可」ページに**画面収録**の行が現れ、pikapik がゲーム中に許可を求めることはなく、数値は画面のリフレッシュレートを超えられません。macOS 14〜26 と Mac App Store 版では、すべてのゲームをこの方法で数えるため、**FPSを表示**をオンにするとすぐにその行が現れ、スイッチの下の**許可**ボタンからその行へ移動できます。画像が保存されたり送信されたりすることはありません。初期状態ではオフです。
 
-**ペットのクローゼットとアワード。** 設定 › ペットを開くと、ペットに着せ替えができます。帽子やメガネからマントや翼まで30種類以上のアイテムと、魔法使い、海賊、宇宙飛行士のようなコーデが用意されています。最初から使えるのは少しだけで、残りはアワードです。ペットをつかんで投げたり、ボールを蹴って遊んだり、ウインドウをよじ登ったりおしゃべりしたりする様子を眺めたり、毎日そばにいてあげたりすると、少しずつ手に入ります。新しいアワードをもらうと、ペットが教えてくれます。
+**ペットのクローゼットとアワード。** 設定 › ペットを開くと、ペットに着せ替えができます。帽子やメガネからマントや翼まで50種類以上のアイテムと、魔法使い、海賊、宇宙飛行士のようなコーデが用意されています。最初から使えるのは少しだけで、残りはアワードです。ペットをつかんで投げたり、ボールを蹴って遊んだり、ウインドウをよじ登ったりおしゃべりしたりする様子を眺めたり、毎日そばにいてあげたりすると、少しずつ手に入ります。新しいアワードをもらうと、ペットが教えてくれます。ペットが気持ちも見せてくれるようになりました。あなたの行動に応じて表情が変わり、うれしい、照れる、気になる、眠いなどのときは頭の上に小さなマークが出ます。口ひげ、モノクル、燕尾服、ステッキがそろった紳士のクローゼットもあります。気持ちはあなたの Mac の上で、ペットがもともと知っていることだけから決まり、何かを読み取ったり送信したりすることはありません。
 
 アワードの時期を知るため、pikapik はあなたとペットがしたことだけを数えます。Mac App Store 以外の版では、設定から GitHub のページを開いたかどうかも記録されます。歩数、つかんだ回数と投げた回数、ジャンプ、よじ登り、ボール遊び、おしゃべり、いっしょに過ごした日数、早朝・深夜・週末にいっしょにいたかどうか、開いた設定のページ、試着したアイテムです。これらの数、アワードをもらった日付、ペットが着ているものは、この Mac の中だけに残ります。どこにも送信されず、書き出した設定ファイルや iCloud の同期にも含まれません。設定 › ペットでいつでもすべて消去でき、ペットは最初からやり直しになります。
 

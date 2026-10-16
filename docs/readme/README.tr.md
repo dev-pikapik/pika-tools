@@ -1,6 +1,6 @@
 <p align="center"><img src="../media/icon.png" width="128" height="128" alt=""></p>
 <h1 align="center">pikapik</h1>
-<p align="center"><b>Mac'iniz ne demek istediğinizi anlar.</b><br>Klavye, fare, pencereler ve Finder için küçük iyileştirmeler, doğrudan Mac’inizin menü çubuğunda.</p>
+<p align="center"><b>Mac’iniz sizi hemen anlar.</b><br>Klavye, fare, pencereler ve Finder için küçük iyileştirmeler, doğrudan Mac’inizin menü çubuğunda.</p>
 <p align="center"><sub><a href="../../README.md">English</a> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.es.md">Español</a> · <a href="README.it.md">Italiano</a> · <a href="README.pt-BR.md">Português (Brasil)</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh-Hans.md">简体中文</a> · <a href="README.ko.md">한국어</a> · <a href="README.ro.md">Română</a> · <a href="README.pl.md">Polski</a> · <b>Türkçe</b> · <a href="README.nl.md">Nederlands</a> · <a href="README.sv.md">Svenska</a> · <a href="README.cs.md">Čeština</a> · <a href="README.zh-Hant.md">繁體中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.hi.md">हिन्दी</a> · <a href="README.id.md">Bahasa Indonesia</a> · <a href="README.vi.md">Tiếng Việt</a> · <a href="README.th.md">ไทย</a></sub></p>
 
 <p align="center">
@@ -40,26 +40,38 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>⌘Q ve ⌘W’yi koruma</b>
+<br>Hiçbir şey yanlışlıkla kapanmaz. Gerçekten istediğinizde ⇧ ekleyin.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Oyun Modu</b>
+<br>Siz oynarken oyunun üstünde hiçbir şey açılmaz, oyunu hiçbir şey kapatmaz.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Masaüstünde evcil dost</b>
+<br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın. Onu gardırobundaki kıyafetlerle giydirin ve birlikte oynarken ödüller kazanın. Siz yazarken canlanır, uzaklaştığınızda uyuklar.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Uyanık Tut</b>
 <br>Mac’iniz gerektiği kadar uyanık kalır, kapak kapalıyken bile.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Fanlar</b>
 <br>Fanlarınızın ne kadar hızlı döndüğünü görün ve hızlarını seçin.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Pil</b>
 <br>Pilinizin durumunu, kapasitesini ve devir sayısını, içine ne kadar güç girdiğini ve ömrünü nasıl uzatacağınızı görün.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>⌘Q ve ⌘W’yi koruma</b>
-<br>Hiçbir şey yanlışlıkla kapanmaz. Gerçekten istediğinizde ⇧ ekleyin.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Yukarıdaki komut da Homebrew de uygulamayı `/Applications` klasörüne koyar, 
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Oyun Modu</b>
-<br>Siz oynarken oyunun üstünde hiçbir şey açılmaz, oyunu hiçbir şey kapatmaz.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Hız Testi</b>
 <br>İnternetiniz ne kadar hızlı ve neye yetiyor.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Yan tuşlar</b>
 <br>4 ve 5 numaralı tuşlar, kaydırma hareketi gibi geri ve ileri gider.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Fare düğmesiyle gizleme</b>
 <br>Tek basış öndeki uygulamayı ⌘H gibi gizler. Uygulama çalışmaya devam eder.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Satır satır kaydır</b>
 <br>Tekerleğin her tıkı, ne kadar hızlı çevirirseniz çevirin aynı miktarda kaydırır.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Kaydırma yönü</b>
 <br>İzleme dörtgeni için bir yön, fare için başka bir yön.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>İmleç hızlandırma yok</b>
 <br>İmleç tam olarak elinizin gittiği kadar gider.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Basılı tutulan tuşu tekrarla</b>
 <br>Bir tuşu basılı tutun, aksan menüsü çıkmadan tekrar tekrar yazsın.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home ve End</b>
 <br>Yazarken satırın başına ya da sonuna atlayın.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animasyonlar</b>
 <br>Dock’u, pencereleri ve Hızlı Bakış’ı hızlandırın, anında olacak kadar.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Silinen uygulamaların izinleri</b>
 <br>macOS’in silinmiş uygulamalar için sakladığı izinleri kaldırın.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Masaüstünde evcil dost</b>
-<br>Küçük bir dost pencerelerinizin arkasında geziniyor. Tutup fırlatın ya da Boşluk tuşuna basın, zıplasın. Onu gardırobundaki kıyafetlerle giydirin ve birlikte oynarken ödüller kazanın. Siz yazarken canlanır, uzaklaştığınızda uyuklar.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Ayarlar → Oyunlar → Oyun Ekle bölümünü aç ve çalışan oyununa tıkla.
 
 **FPS’yi göster.** FPS, saniyedeki kare sayısı demektir: oyunun her saniye kaç resim çizdiği. Oyunlar sayfasında **FPS’yi göster** seçeneğini açın; Oyun Modu açıkken herhangi bir oyunun bir köşesinde bu sayıyı gösteren küçük, koyu bir etiket görünür. Köşeyi, anahtarın üstündeki resimde tıklayarak seçersiniz. Tire, ilk karelerin henüz gelmediği anlamına gelir; soluk bir 0 ise oyunun çizmeyi bıraktığı anlamına gelir. macOS 27’de oyunların çoğunu macOS kendisi sayar, izin gerekmez. macOS’un sayamadığı bir oyun, çoğunlukla eski bir oyun, ekran kaydı üzerinden sayılır: İzinler sayfasında **Ekran Kaydı** satırı belirir, pikapik oyun sırasında asla izin istemez ve sayı ekranın yenileme hızını aşamaz. macOS 14–26’da ve Mac App Store sürümünde tüm oyunlar bu şekilde sayılır; bu yüzden satır, **FPS’yi göster** açılır açılmaz belirir ve anahtarın altındaki **İzin Ver** düğmesi sizi oraya götürür. Hiçbir görüntü saklanmaz veya gönderilmez. Varsayılan olarak kapalıdır.
 
-**Evcil dostun gardırobu ve ödüller.** Evcil dostunuzu giydirmek için Ayarlar › Evcil Dost sayfasını açın: şapkalardan gözlüklere, pelerinlerden kanatlara 30’dan fazla parça ve büyücü, korsan ya da astronot gibi hazır kombinler. Birkaç parça en baştan ücretsizdir. Gerisi birlikte oynarken gelen ödüllerdir: evcil dostunuzu tutup fırlatın, topu tekmeleyin, pencerelere tırmanışını ve konuşmasını izleyin ya da günden güne yalnızca ona eşlik edin. Yeni bir ödül kazandığınızda evcil dostunuz size söyler.
+**Evcil dostun gardırobu ve ödüller.** Evcil dostunuzu giydirmek için Ayarlar › Evcil Dost sayfasını açın: şapkalardan gözlüklere, pelerinlerden kanatlara 50’den fazla parça ve büyücü, korsan ya da astronot gibi hazır kombinler. Birkaç parça en baştan ücretsizdir. Gerisi birlikte oynarken gelen ödüllerdir: evcil dostunuzu tutup fırlatın, topu tekmeleyin, pencerelere tırmanışını ve konuşmasını izleyin ya da günden güne yalnızca ona eşlik edin. Yeni bir ödül kazandığınızda evcil dostunuz size söyler. Evcil dostunuz artık duygularını da gösteriyor: yaptıklarınıza karşılık yüzü değişiyor ve başının üstünde küçük bir işaret beliriyor, örneğin mutlu, utangaç, meraklı ya da uykulu olduğunda; üstelik bıyıklar, monokl, frak ve bastondan oluşan bir centilmen gardırobu da var. Duygularını Mac’inizde, zaten bildiklerinden çıkarıyor; hiçbir şey okunmuyor ya da gönderilmiyor.
 
 Ödülün ne zaman geldiğini bilmek için pikapik yalnızca sizin ve evcil dostunuzun yaptıklarını sayar: adımlar, onu kaç kez tutup fırlattığınız, zıplamalar, tırmanışlar, top oyunları ve sohbetler, birlikte geçen günler, sabahın erken saatlerinde, gece yarısından sonra ya da hafta sonu birlikte olup olmadığınız, açtığınız Ayarlar sayfaları ve denediğiniz parçalar. Mac App Store dışındaki sürümde pikapik, Ayarlar’dan GitHub sayfamızı açıp açmadığınızı da not eder. Bu sayılar, her ödülün tarihi ve evcil dostunuzun üzerindekiler yalnızca bu Mac’te kalır. Hiçbir yere gönderilmez ve hiçbiri dışa aktarılan ayar dosyasına ya da iCloud eşitlemesine girmez. Hepsini istediğiniz zaman Ayarlar › Evcil Dost sayfasından silebilirsiniz; evcil dostunuz baştan başlar.
 

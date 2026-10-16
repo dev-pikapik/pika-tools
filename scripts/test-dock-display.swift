@@ -1,4 +1,5 @@
 import CoreGraphics
+import Foundation
 
 @main
 struct TestDockDisplay {
@@ -37,6 +38,21 @@ struct TestDockDisplay {
         let off = DockDisplaySwitch.plan(on: false, current: crashed.value, owned: true, before: again.before)
         precondition(off.value == true && off.restart)
         print("after a crash the next launch keeps the real value as the original and puts it back: ok")
+
+        let defaults = UserDefaults.standard
+        [DockDisplaySwitch.ownedKey, DockDisplaySwitch.beforeKey].forEach(defaults.removeObject)
+        var written: Bool??
+        precondition(DockDisplaySwitch.apply(true, current: true) { value in
+            precondition(defaults.bool(forKey: DockDisplaySwitch.ownedKey) && defaults.object(forKey: DockDisplaySwitch.beforeKey) as? Bool == true)
+            written = value
+        })
+        precondition(written == false && defaults.bool(forKey: DockDisplaySwitch.ownedKey))
+        precondition(DockDisplaySwitch.apply(false, current: false) { value in
+            precondition(defaults.bool(forKey: DockDisplaySwitch.ownedKey) && defaults.object(forKey: DockDisplaySwitch.beforeKey) as? Bool == true)
+            written = value
+        })
+        precondition(written == true && !defaults.bool(forKey: DockDisplaySwitch.ownedKey) && defaults.object(forKey: DockDisplaySwitch.beforeKey) == nil)
+        print("the old value is saved before the Dock key is written and forgotten only after it is put back: ok")
 
         let side = ["a": CGPoint(x: 0, y: 0), "b": CGPoint(x: 1920, y: -120), "c": CGPoint(x: -1440, y: 60)]
         let moved = MainDisplay.moved(side, to: "b")

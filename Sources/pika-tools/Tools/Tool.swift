@@ -88,6 +88,7 @@ final class ToolRegistry {
         list.append(DockDisplayTool())
         #endif
         list.append(NewFileTool())
+        ConvertTool.takeOverCompress()
         list.append(CompressTool())
         list.append(ConvertTool())
         #if APPSTORE

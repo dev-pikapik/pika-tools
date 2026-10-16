@@ -191,12 +191,12 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps one copy of pikapik in charge of the Mac when several are open (website and App Store edition, or two builds), and puts everything back when that copy stops being in charge.
 
-**How it works:** The copy started last is the main one (`MainCopyChoice.leader`, `Sources/pika-tools/Common/MainCopyChoice.swift`), found from the running apps by `MainCopy` (`Sources/pika-tools/Common/MainCopy.swift`). A new copy asks the others to step back through a distributed notification and waits up to 3 seconds for the answer. A copy that is not in charge restores what it changed, stops its key and mouse watchers, Keep Awake, the brightness and fan helpers, and shows `PassiveCopyView` in Settings instead of the pages. Its menu bar icon is removed. The tools check `MainCopy.canAct` in their `refresh()`. Features that change a system switch keep the original once (`OriginalValue`, or the journal of the tool) and write it back only while the switch still holds our value.
+**How it works:** The copy started last, by the kernel process start time (`MainCopyChoice.started`), is the main one (`MainCopyChoice.leader`, `Sources/pika-tools/Common/MainCopyChoice.swift`), found from the running apps by `MainCopy` (`Sources/pika-tools/Common/MainCopy.swift`). A new copy asks the others to step back through a distributed notification and waits up to 3 seconds for the answer. A copy that is not in charge restores what it changed, stops its key and mouse watchers, Keep Awake, the brightness and fan helpers, and shows `PassiveCopyView` in Settings instead of the pages. Its menu bar icon is removed. The tools check `MainCopy.canAct` in their `refresh()`. Features that change a system switch keep the original once (`OriginalValue`, or the journal of the tool) and write it back only while the switch still holds our value.
 
 **Options:**
 - Make This Copy the Main One: starts a fresh copy that opens Settings and takes the lead.
 
-**Nuances:** Copies with the same bundle id that start later replace the older one. Older versions without this feature do not step back. A copy that crashes leaves its changes until the next copy starts. The Dock, DDC monitor brightness and the default apps for archives are not part of the handover.
+**Nuances:** Copies with the same bundle id that start later replace the older one. Older versions without this feature do not step back. A copy that crashes leaves its changes until the next copy starts. The Dock, DDC monitor brightness and the default apps for archives are not part of the handover. A copy started by running its binary from Terminal has no launch date, so the other copies do not see it and it does not see them: for tests start every copy with `open -n`.
 
 **Edition:** Both; the website and App Store copies count as the same family.
 
@@ -335,7 +335,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Gives links you can add to Shortcuts, Control Center and widgets to start Keep Awake in one click.
 
-**How it works:** `pikapik://keep-awake`, `pikapik://display`, `pikapik://lid-closed` handled by `KeepAwake.handle(_:)` (`KeepAwake.swift:473`). The App Store build uses the scheme `pikapik-store` (`scripts/build.sh:181`). Add the Open URLs action in Shortcuts with the link.
+**How it works:** `pikapik://keep-awake`, `pikapik://display`, `pikapik://lid-closed` handled by `KeepAwake.handle(_:)` (`KeepAwake.swift:482`). The App Store build uses the scheme `pikapik-store` (`scripts/build.sh:181`). Add the Open URLs action in Shortcuts with the link.
 
 **Options:**
 - Keep Awake — row with Copy Link (`KeepAwake.swift:433`).
@@ -415,7 +415,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Fan speed (slider) — shown for Manual; from the fan’s minimum to its maximum in steps of 50 rpm.
 - This Mac has no fans — what the page says on a Mac without fans (fanless MacBook Air; empty state, `FanSettings.swift:22`).
 
-**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:182`). The helper is installed and removed through the Administrator access permission row. Needs a Mac with fans.
+**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:195`). The helper is installed and removed through the Administrator access permission row. Needs a Mac with fans.
 
 **Edition:** Website only (App Store: hidden — needs administrator rights and SMC access).
 
@@ -630,6 +630,9 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Test:**
 1. (Website) Turn it on, open a new app (TextEdit) and hold a key → the letter repeats, no accent popup. Turn it off and reopen the app → the popup is back.
+2. (Website, two copies) Write down `defaults read -g ApplePressAndHoldEnabled` (“does not exist” counts too). Start one copy with `open -n` and turn the switch on → `0`. Start a second copy of the same family with `open -n` → the first one puts the value back and the second one writes `0` again within a fraction of a second; the value ends at `0`.
+3. Quit the second copy → the first one takes over and the value stays `0`. Turn the switch off in the first copy → the value is what you wrote down.
+4. With the switch on, quit the copy → the value is what you wrote down, and the next start writes `0` again. After `kill -9` the value stays `0` until a copy starts again; turning the switch off then puts it back.
 
 ### Home and End go to the start and end of a line
 
@@ -654,21 +657,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fixes text typed in the wrong keyboard layout (“ghbdtn” becomes “привет”).
 
-**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:567`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
+**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:488`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:25`, `LayoutFixServiceSettings` :322-395) because the sandbox cannot read selected text; the toggle rows ask Accessibility themselves. Since 1.50.1 (PR #92) the App Store build also fixes words as you type with the same kind of event tap, but it cannot check the text field, so it retypes without looking (`:162-167`).
 
 **Options:**
-- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:577`). Website only.
-- Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:580`). Website only.
-- Words left as you typed them — list with a Clear button, shown only when not empty (`:587-590`). Website only.
+- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:755`). Both. Website: on at first. App Store: a switch under Fix the selected text, off at first (`:349`).
+- Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:763`). Website only; the App Store build has Fix the selected text instead.
+- Words left as you typed them — list with a Clear button, shown only when not empty (`:777-787`). Both; in the App Store build it shows while Fix words as you type is on.
 - Add a Layout — menu in the note shown when fewer than two layouts exist: the installed layouts for your preferred languages that you don’t have yet; picking one turns it on with `TISEnableInputSource`, no password (`LayoutFixTool.swift` `AddLayoutNotice`, `KeyboardLayouts.addable`). If none is left to offer, or adding fails, the Keyboard Settings… button opens System Settings. Website only; the App Store build shows only Keyboard Settings….
-- Don’t fix text in these apps — app exclusion list (`:602`). Website only.
+- Don’t fix text in these apps — app exclusion list (`:771`). Both; in the App Store build it shows while Fix words as you type is on (`:357`).
 
 **Nuances:** Needs at least two input sources. Website App Exclusions: Add App… / Done, app shelf, Remove. The retyped text and the keys it sends are tagged (`EventTag.swift`), so with two copies of pikapik one copy does not fix the text the other has just retyped.
 
-**Edition:** Both; App Store differs: only the selected text is fixed, through the Services item or the shortcut (see Fix the selected text); the options above are Website only.
+**Edition:** Both; App Store differs: the selected text is fixed through the Services item or the shortcut (see Fix the selected text), and Fix words as you type is there too since 1.50.1, off at first. Fix the last word or selected text and Add a Layout are Website only.
 
 **Test:**
-1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
+1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”. (App Store) Turn on Fix words as you type, allow Accessibility when asked, and type the same → the same result.
 2. Select a mistyped word and press ⌃⇧Space → it is fixed.
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
 4. With only one input source (and a second language in System Settings › General › Language & Region) → the note shows Add a Layout; pick a layout → it turns on at once, the note goes away, no password asked. Remove it again in System Settings › Keyboard › Input Sources. With no other language → the note shows Keyboard Settings… instead.
@@ -710,7 +713,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes the pointer move the same distance for the same hand movement, with no speed-up.
 
-**How it works:** Website: the private `IOHIDEventSystemClient` (`HIDPointerAccelerationType`), no permission; restored when pikapik quits (`Sources/pika-tools/App.swift:185`) and by `--uninstall` (`Sources/pika-tools/Tools/Mouse/PointerTool.swift:216`). App Store: replaced by an animated guide and a row with an Open button to System Settings › Mouse (`SettingsWindow.swift:978-987`, `com.apple.Mouse-Settings.extension`) because an App Store app cannot change it. The guide (`SettingsGuide`, `Sources/pika-tools/Common/SettingsGuide.swift`) shows where to click: Advanced…, then “Pointer acceleration” off; its labels come from your Mac, in its language. System Settings shows the Mouse page only while a mouse is connected.
+**How it works:** Website: the private `IOHIDEventSystemClient` (`HIDPointerAccelerationType`), no permission; restored when pikapik quits (`Sources/pika-tools/App.swift:190`) and by `--uninstall` (`Sources/pika-tools/Tools/Mouse/PointerTool.swift:216`). App Store: replaced by an animated guide and a row with an Open button to System Settings › Mouse (`SettingsWindow.swift:978-987`, `com.apple.Mouse-Settings.extension`) because an App Store app cannot change it. The guide (`SettingsGuide`, `Sources/pika-tools/Common/SettingsGuide.swift`) shows where to click: Advanced…, then “Pointer acceleration” off; its labels come from your Mac, in its language. System Settings shows the Mouse page only while a mouse is connected.
 
 **Options:**
 - Tracking speed — slider, disabled while the switch is off (`PointerTool.swift:226`). Website only; in the App Store guide it is the system’s own slider.
@@ -1051,7 +1054,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Clears the desktop of files and folders before a call or a screen recording, and brings them back to the same places.
 
-**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:61`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: the sandbox can’t change that setting, so the switch puts a curtain over the icons: one borderless window per screen one level above the desktop icons (`CGWindowLevelForKey(.desktopIconWindow)+1`, ordered back so the pet stays on top), `ignoresMouseEvents` so clicks reach the desktop, showing the wallpaper from `NSWorkspace.desktopImageURL` decoded at screen size with the Fill/Fit/Stretch/Center option (`Sources/pika-tools/Tools/Windows/DesktopCurtain.swift`). A moving (Aerial) wallpaper reports `DefaultDesktop.heic`, so it gets the wallpaper’s fill color or the window background instead; no Screen Recording. Rebuilt on screen and Space changes, when another app becomes active (a new wallpaper) and on wake; gone when turned off or on quit. Below it in Settings: the animated guide (Show items › On Desktop turned off) and an Open button to System Settings › Desktop & Dock, subtitled Turn off “On Desktop” (`DesktopIconsSettings`, `DesktopTools.swift:181`, `SystemSettingsRow`).
+**How it works:** Website: `StandardHideDesktopIcons` in `com.apple.WindowManager` (`Sources/pika-tools/Tools/Windows/DesktopTools.swift:61`); no Finder restart; the switch always follows System Settings › Desktop & Dock › Show items › On Desktop; works with Stage Manager. App Store: the sandbox can’t change that setting, so the switch puts a curtain over the icons: one borderless window per screen one level above the desktop icons (`CGWindowLevelForKey(.desktopIconWindow)+1`, ordered back so the pet stays on top), `ignoresMouseEvents` so clicks reach the desktop, showing the wallpaper from `NSWorkspace.desktopImageURL` decoded at screen size with the Fill/Fit/Stretch/Center option (`Sources/pika-tools/Tools/Windows/DesktopCurtain.swift`). A wallpaper inside the home folder is read through the home folder access (`FolderAccess.reopen()`); without that access it gets the plain color. A moving (Aerial) wallpaper reports `DefaultDesktop.heic`, so it gets the wallpaper’s fill color or the window background instead; no Screen Recording. Rebuilt on screen and Space changes, when another app becomes active (a new wallpaper) and on wake; gone when turned off or on quit. Below it in Settings: the animated guide (Show items › On Desktop turned off) and an Open button to System Settings › Desktop & Dock, subtitled Turn off “On Desktop” (`DesktopIconsSettings`, `DesktopTools.swift:181`, `SystemSettingsRow`).
 
 **Edition:** Both; App Store differs: the switch covers the icons with the wallpaper instead of hiding them, and a guide with an Open button to System Settings sits below it.
 
@@ -1093,7 +1096,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** One slider that sets every effect below at once: As in macOS, Faster, Instant.
 
-**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:325`, `AnimationSetting.swift`); “Sets all the effects below at once.”
+**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:347`, `AnimationSetting.swift`); “Sets all the effects below at once.”
 
 **Nuances:** Changes bar: “Works in apps after you reopen them”; “Finder picks up the changes after a restart” with a Restart Finder button. The Dock restarts through `/usr/bin/killall`. `--uninstall` puts everything back.
 
@@ -1106,7 +1109,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Hides the Dock until the pointer touches the edge.
 
-**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:251`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
+**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:35`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1118,10 +1121,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fine controls for each effect.
 
-**How it works:** Section at `AnimationsTool.swift:255`, `AnimationSetting.swift`, in the defaults named below.
+**How it works:** Section at `AnimationsTool.swift:152`, `AnimationSetting.swift`, in the defaults named below.
 
 **Options:**
-- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:200`).
+- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:154`).
 - How fast the Dock slides out — slider, `autohide-time-modifier` (`:201`).
 - Opening windows — toggle, `NSAutomaticWindowAnimationsEnabled` in the global domain (`:204`).
 - Save dialogs and resizing — slider, `NSWindowResizeTime` (`:205`).
@@ -1139,7 +1142,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Chooses Genie, Scale or Suck for minimizing windows.
 
-**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:416`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
+**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:302`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the picker.
 
@@ -1151,7 +1154,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Turns off the Dock icons’ bounce when an app opens.
 
-**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:203`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
+**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:159`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1163,7 +1166,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Opens System Settings › Accessibility › Motion so you can turn on Reduce Motion, and shows where to click.
 
-**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:274`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
+**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:171`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
 
 **Edition:** Both.
 
@@ -1808,14 +1811,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Keeps the pointer inside the game’s display, so a fast mouse does not slip to the other screen.
 
-**How it works:** Website: `CursorLock` (`GameModeTool.swift`) asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use. The lock covers the game’s display inset by one point plus the hot corners Game Mode keeps (`GameRules.fenceRects`), is set only while the pointer is already inside, so setting it never moves the pointer, is checked again every second, and is released when the game is left or pikapik quits. Nothing in the website version moves the pointer. App Store: the private call is not allowed, so `CursorFence` still pushes the pointer back when it crosses the edge (`GameRules.fence`), and `GameRules.fenceCorners` keeps it 16 points (x + y) from every corner pixel because the sandbox can’t switch hot corners off. Both editions calm Dock and hot corners with `DockEdges` (a stub in the App Store build), which restarts the Dock once when a game is entered or left.
+**How it works:** Website: `CursorLock` (`GameModeTool.swift`) asks the WindowServer to confine the pointer through `SLSSetCursorRegionLock`, the same mechanism the Dock and screencapture use. The lock covers the game’s display inset by one point plus the hot corners Game Mode keeps (`GameRules.fenceRects`), is set only while the pointer is already inside, so setting it never moves the pointer, is checked again every second, and is released when the game is left or pikapik quits. Nothing moves the pointer. App Store: the private call is not allowed and moving the pointer back is not an option, so this build hides the option and does not hold the pointer or guard hot corners.
 
-**Nuances:** The App Store version still moves the pointer back, so a very fast mouse can briefly cross before it returns. Needs two displays to test.
+**Nuances:** Needs two displays to test.
 
-**Edition:** Both; the website version holds the pointer with macOS itself, the App Store version moves it back.
+**Edition:** Website only.
 
 **Test:**
-1. (two displays) Turn it on, play a stub game and push a fast mouse against every edge toward the other display → website: the pointer stops at the edge and never crosses; App Store: it may cross for an instant and is moved back.
+1. (two displays) Turn it on, play a stub game and push a fast mouse against every edge toward the other display → the pointer stops at the edge and never crosses.
 2. Leave the game → the pointer is free; kill pikapik during a game → the pointer is free at once.
 
 ### Gestures don’t leave the game
@@ -1839,68 +1842,81 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Pet on the desktop
 
-**Does:** A small pet walks along the bottom of the screen and reacts to you.
+**Does:** A small pet walks along the bottom of the screen and reacts to you. It also shows nine feelings (happy, excited, proud, curious, surprised, shy, bored, sleepy and a little grumpy): each is a face, a small sign over its head and sometimes a hop, in answer to what you do. It never asks for anything and makes no sound.
 
-**How it works:** `Sources/pika-tools/Tools/Pet/PetTool.swift:151`, overlay window `PetStage`, physics `PetPhysics.swift`. No permission needed. Website reads Dock icon positions through Accessibility (`PetStage.swift:346`) and announces updates (`:673`); App Store uses a window-list check for full screen and the screen’s full width (`PetStage.swift:272,338`).
+**How it works:** `Sources/pika-tools/Tools/Pet/PetTool.swift` (`PetSettings`), overlay window `PetStage`, physics `PetPhysics.swift`. No permission needed. Website reads Dock icon positions through Accessibility (`PetStage.tiles`) and announces updates (`PetStage.nextPhrase`); App Store uses a window-list check for full screen (`PetStage.fullscreen`) and the screen’s full width (`PetStage.dock`). Feelings: the rules are plain numbers in `PetMood.swift` (`PetMood`, `PetFace`, `PetMind`), `PetCues` (no AppKit) decides what the pet feels, when it sits down and when it says a phrase it owes, `PetStage` only feeds it what the pet already knows, and `PetFigure.draw` paints the face (eye, brow, mouth, blush) under the moustache and the sign over everything. There is no new timer; it runs in the existing frame loop, and a calm pet redraws nothing extra. A higher feeling interrupts a lower one, the same cue extends a feeling instead of restarting it, every feeling rests before it can return, the pet starts at most one curious, bored or sleepy feeling of its own every 3 minutes, and faces fade in over 0.25 s and out over 0.4 s. The rules run without the app: `scripts/test-mood.swift`, `scripts/test-pet-cues.swift` runs the cues with a real pet (wake from a doze, the morning phrase, a phrase owed after a toss, sitting only when it can), and `scripts/test-pet-marks.swift` checks that no sign touches a hat or a back item in any pose, and `scripts/test-pet-contrast.swift` checks that every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window, and that a fill falling below that gets a thin gray rim (about 0.8 pt on screen) at full strength, neither thinner nor thicker than intended (commands in CONTRIBUTING.md).
 
 **Options:**
-- Talks sometimes — speech bubbles (`PetTool.swift:160`).
-- Follows your rhythm — reacts to typing (`:167`).
-- Ball — a ball the pet plays with (`:174`).
-- “To make it jump when you press Space, allow Input Monitoring” — note with a permission bar (`:183`); a listen-only tap checks only whether Space was pressed.
+- Talks sometimes — speech bubbles (`PetTool.talks`); the App Store line under it does not mention updates; it also governs the two feeling phrases, “Hey, gently!” and “Good morning!”. The pet keeps them to itself while you type or the microphone is in use.
+- Follows your rhythm — reacts to typing (`PetTool.rhythm`); when it is off, typing and idle time start no feelings.
+- Ball — a ball the pet plays with (`PetTool.ball`).
+- “To make it jump when you press Space, allow Input Monitoring” — note with a permission bar (`PetTool.listening`); a listen-only tap checks only whether Space was pressed.
 
 **Nuances:** The only tool on by default in the App Store build.
+- What starts a feeling: surprised when you pick it up or it tumbles; happy when you hold it still for 1.2 s, set it down slowly, it kicks the ball, your Mac wakes up, or you type fast for more than a minute; excited, with a hop, about a new award; proud after a leap over the pointer, a window climb or a new outfit; shy when the pointer rests on it for 1.2 s; curious when the pointer stops within 80 points in front of it for 0.8 s (its eye follows the pointer); bored, sitting down, after 20 to 40 s without keyboard or mouse or 10 minutes without attention (not while you type); sleepy, sitting down with a yawn and a small “z”, as soon as it has stretched and is up from a doze, or, while you are idle for the same 20 to 40 s, late at night (11 pm to 5 am) or when the battery is at 10 % or less; a little grumpy (a pout and a small cloud, never angry) when it is tossed, and at a second tumble within a minute.
+- Phrases: “Hey, gently!” after a toss, at most once every 10 minutes. “Good morning!” the first time each day, between 5 and 12 o’clock, that the pet starts or your Mac wakes up. If the pet was dozing it yawns first and says it when the yawn is over; if it cannot say it right then (you are typing, the microphone is on, it walks behind the Dock or is in the air) it says it as soon as it can, until 12 o’clock. “Hey, gently!” waits only up to 8 seconds. The day still counts when Talks sometimes is off.
+- Quiet rules: while the pet is hidden (screen asleep, Mac locked, full screen, Game Mode) it has no frames and no feelings; while it dozes its face does not change; with Reduce Motion on (System Settings › Accessibility › Display) it does not hop and its signs stay still; with Talks sometimes off it says neither phrase but still shows feelings.
+- Nothing is read or sent: the cues use only the time of day, how long ago a key or the mouse was used (never what you typed), the pointer, the ball, being carried and the battery level. No sound, window, notification or meter.
 
 **Edition:** Both; App Store differs: does not find Dock icons, no update phrase.
 
 **Test:**
 1. Turn it on → the pet appears at the bottom; pick it up and throw it; push the ball; turn each sub-switch off and on → behavior follows.
 2. Switch an app to full screen on each display → the pet hides on that display only and returns when full screen ends; works across Spaces and after sleep and wake.
+3. Pick the pet up → wide eyes and a “!” sign. Hold it still for 2 s → a smile and a heart. Set it down slowly → it smiles again. Throw it hard → a pout and a small cloud, and “Hey, gently!” (with Talks sometimes on; the phrase does not repeat within 10 minutes).
+4. Rest the pointer on the pet for 2 s → it blushes and looks down with a drop sign. Stop the pointer on the ground about 50 points in front of it for 1 s → a “?” sign and its eye follows the pointer.
+5. Put a different thing on in Settings › Pet › Wardrobe → the pet looks proud, with sparkles. Earn an award → it is excited, sparkles and hops once.
+6. With Follows your rhythm on, leave keyboard and mouse alone for about 40 s → it looks bored and sits down; press a key → it gets up. Put the Mac to sleep and wake it between 5 and 12 o’clock → a heart and “Good morning!” the first time that day (after the yawn if the pet was dozing), only the heart after the next wake.
+7. Turn Talks sometimes off and repeat step 3 and 6 → no phrases, feelings still show. Turn Reduce Motion on → no hops, signs stay still. Switch an app to full screen → no feelings while the pet is hidden. Open Activity Monitor → CPU of pikapik is as before the pet had feelings (a calm pet adds nothing).
 
 ### Wardrobe
 
-**Does:** Things the pet can wear: 38 things in seven groups, six free; the rest unlock with awards.
+**Does:** Things the pet can wear: 53 things in eight groups (Hats & Hair, Face, Moustaches, Neckwear, Tops, Bottoms, Shoes, Extras), six free; the rest unlock with awards.
 
-**How it works:** `Sources/pika-tools/Tools/Pet/PetWardrobeView.swift`, `PetClothes.swift`; tiles, slot chips, “New” tags.
+**How it works:** `Sources/pika-tools/Tools/Pet/PetWardrobeView.swift`, `PetClothes.swift`; tiles, slot chips, “New” tags. Moustaches are a group of their own so they can be worn with a monocle, glasses or a mask; hats and hairstyles share one group because there is one head. The Cane and the Umbrella are Extras (one slot with Cape, Balloon and the wings); the Cane is drawn in front of the pet (layer `prop`), the Umbrella is held up behind it and lifts when the pet jumps. Fifteen things are new, all unlocked by awards: Bowler Hat (Rare), Quiff, Curls and Top Knot (Uncommon), Handlebar Moustache (Epic), Chevron and Pencil Moustache (Rare), Monocle (Epic), Cravat (Rare), Tailcoat (Rare), Waistcoat (Epic), Tweed Jacket (Rare), Spats (Rare), Cane (Uncommon) and Umbrella (Epic).
 
 **Options:**
-- Take Everything Off — clears the outfit (`PetWardrobeView.swift:346`).
+- Take Everything Off — clears the outfit (`PetWardrobeSection`).
 
 **Edition:** Both.
 
 **Test:**
-1. Open Settings › Pet → Wardrobe shows 38 things in seven groups with six unlocked. Click an unlocked thing → the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing → its award opens and nothing is worn.
+1. Open Settings › Pet → Wardrobe shows 53 things in eight groups with six unlocked. Click an unlocked thing → the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing → its award opens and nothing is worn.
+2. Open the Moustaches group → three moustaches (Handlebar, Chevron, Pencil), all locked at first. Once unlocked, wear one together with a monocle or glasses → both show, the moustache over the mouth. Open Hats & Hair and wear a hat, then a hairstyle → the hairstyle replaces the hat (one head).
+3. Once unlocked, wear the Cane → it is drawn in front of the pet; wear the Umbrella → it is held up behind the pet and replaces the Cane; wear the Cape → it replaces the Umbrella (one Extras slot).
 
 ### Looks
 
-**Does:** Ready-made outfits: 10 looks.
+**Does:** Ready-made outfits: 13 looks. New: Professor (Curls, Round Glasses, Chevron Moustache, Tweed Jacket, Cravat), Londoner (Bowler Hat, Pencil Moustache, Waistcoat, Spats, Umbrella) and Rock Star (Quiff, Sunglasses, Hoodie, Jeans, Sneakers). The Gentleman look is fuller: Top Hat, Monocle, Handlebar Moustache, Tailcoat, Bow Tie, Spats and Cane.
 
-**How it works:** Look cards (`PetTool.swift:135`, `PetLooks`).
+**How it works:** Look cards (`PetLooksSection` in `PetWardrobeView.swift`, the looks themselves are `PetLook` in `PetWardrobe.swift`).
 
 **Edition:** Both.
 
 **Test:**
 1. Click a look with missing pieces → nothing is worn; click a complete look → the pet wears it all.
+2. Open Looks → 13 cards. Wear Gentleman, Professor, Londoner or Rock Star once all their pieces are unlocked → every piece shows at once, the moustache and the monocle with the hat, and nothing stays from the previous outfit.
 
 ### Awards
 
-**Does:** Awards you earn by playing with the pet: 24 in the App Store build, 25 on the Website; they unlock clothes.
+**Does:** Awards you earn by playing with the pet: 30 in the App Store build, 31 on the Website; they unlock clothes. Six are new and come from its feelings and manners: Sunshine (make the pet happy 30 times; unlocks Quiff, Curls, Top Knot), Charmer (rest the pointer on it until it blushes, 10 times; Pencil Moustache, Cravat), All the Feels (see all 9 feelings; Monocle, Handlebar and Chevron Moustache), Gentle Hands (pick it up and set it down gently 25 times; Waistcoat, Spats), Good Morning (meet it in the morning on 7 different days; Bowler Hat, Umbrella, Tweed Jacket) and Dapper (wear 5 things at once; Tailcoat, Cane).
 
-**How it works:** `PetAwardsView.swift`, `PetAwards.swift`. The Website adds an Open Source award, earned by opening the GitHub link in About; the App Store build drops it and gives the explorer award extra unlocks (`PetAwards.swift:3,23,100`). Plain totals of steps, pick-ups, throws and the like, the date of each award and the outfit are stored only in five preferences keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit); never sent, never exported, never synced. Detail sheet: Done, “Earned on …”, Unlocks. The sidebar badge shows new awards.
+**How it works:** `PetAwardsView.swift`, `PetAwards.swift`. The Website adds an Open Source award, earned by opening the GitHub link in About; the App Store build drops it and gives the explorer award extra unlocks (`appStore`, `PetAward.all`, `PetAward.items`). Plain totals of steps, pick-ups, throws and the like (now also happy moments, blushes, gentle set-downs and mornings greeted), which of the 9 feelings you have seen, whether 5 things were worn at once, the date of each award and the outfit are stored only in five preferences keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit); never sent, never exported, never synced. Detail sheet: Done, “Earned on …”, Unlocks. The sidebar badge shows new awards.
 
 **Options:**
-- Erase Progress… — button in Awards (`PetAwardsView.swift:304`); after the alert “Erase Progress” it deletes all pet progress on this Mac and removes the five pet keys.
+- Erase Progress… — button in Awards (`PetAwardsSection.erase`); after the alert “Erase Progress” it deletes all pet progress on this Mac and removes the five pet keys.
 
 **Nuances:** Network access unlocks nothing. Restore Defaults keeps awards and outfit.
 
 **Edition:** Both; App Store differs: no Open Source award.
 
 **Test:**
-1. Open Settings › Pet → Awards shows 24 awards (App Store; no “Open Source” award) or 25 (Website).
+1. Open Settings › Pet → Awards shows 30 awards (App Store; no “Open Source” award) or 31 (Website).
 2. Earn an award (pick the pet up and throw it high 10 times) → the pet announces it, Pet in the sidebar shows a badge, the award and what it unlocks are marked “New” until you leave the page, and the unlocked things can be worn. Quit and relaunch → outfit, counts and awards are kept.
 3. Export Settings and open the file → no pet-counts, pet-awards, pet-seen, pet-fresh or pet-outfit. Restore Defaults keeps the awards and the outfit.
 4. (Website) Click the GitHub link in About → the “Open Source” award is earned; with iCloud sync on, a second Mac does not receive the awards or the outfit.
-5. Press Erase Progress… and confirm → awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read <bundle id>` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off → same result, no error.
+5. Earn a new award: make the pet happy 30 times (hold it still, set it down slowly, kick the ball), rest the pointer on it 10 times until it blushes, see each of the 9 feelings once, pick it up and set it down slowly 25 times, meet it in the morning on 7 different days (start the pet or wake the Mac between 5 and 12), wear 5 things at once → each one is announced, marked “New” and unlocks its things. The “Good Morning” award counts one day however often the Mac wakes up, and it counts whether or not Talks sometimes is on.
+6. Press Erase Progress… and confirm → awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read <bundle id>` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off → same result, no error.
 
 ## Permissions
 

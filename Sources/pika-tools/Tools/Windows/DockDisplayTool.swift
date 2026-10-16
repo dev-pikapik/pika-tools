@@ -20,7 +20,6 @@ final class DockDisplayTool: Tool {
     }
 
     private static let dock = "com.apple.dock" as CFString, key = "allow-display-switching" as CFString
-    private static let ownedKey = "dock-display-owned", beforeKey = "dock-display-before"
 
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
@@ -42,23 +41,11 @@ final class DockDisplayTool: Tool {
     }
 
     private static func apply(_ on: Bool) -> Bool {
-        let defaults = UserDefaults.standard
         CFPreferencesAppSynchronize(dock)
-        let current = CFPreferencesCopyAppValue(key, dock) as? Bool
-        let plan = DockDisplaySwitch.plan(on: on, current: current, owned: defaults.bool(forKey: ownedKey), before: defaults.object(forKey: beforeKey) as? Bool)
-        if on {
-            defaults.set(true, forKey: ownedKey)
-            defaults.set(plan.before, forKey: beforeKey)
-        }
-        if plan.value != current {
-            CFPreferencesSetAppValue(key, plan.value.map { $0 as CFBoolean }, dock)
+        return DockDisplaySwitch.apply(on, current: CFPreferencesCopyAppValue(key, dock) as? Bool) { value in
+            CFPreferencesSetAppValue(key, value.map { $0 as CFBoolean }, dock)
             CFPreferencesAppSynchronize(dock)
         }
-        if !on {
-            defaults.set(false, forKey: ownedKey)
-            defaults.removeObject(forKey: beforeKey)
-        }
-        return plan.restart
     }
 }
 

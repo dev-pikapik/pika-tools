@@ -132,7 +132,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Enter opens files in Finder"), String(localized: "Delete removes files in Finder"),
             String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
-            String(localized: "Columns in Finder"), String(localized: "Finder animations"),
+            String(localized: "Columns in Finder"), String(localized: "Finder animations"), String(localized: "The pointer stays in the game"),
             String(localized: "Dim the picture instead"),
             String(localized: "Middle click on the trackpad"), String(localized: "Fingers"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])
@@ -268,7 +268,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .games, title: String(localized: "System keyboard shortcuts")),
             SettingsItem(tab: .games, title: String(localized: "Game safeguards")),
             SettingsItem(tab: .pet, title: String(localized: "Pet on the desktop"), synonyms: "pet, buddy, friend, character, mascot, desktop, jump, Space"),
-            SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: "phrases, speech bubble, talk, say, messages, updates"),
+            SettingsItem(tab: .pet, title: String(localized: "Talks sometimes"), synonyms: PetTool.talksSynonyms),
             SettingsItem(tab: .pet, title: String(localized: "Follows your rhythm"), synonyms: "sleep, nap, doze, tired, energy, typing, away, idle, wake"),
             SettingsItem(tab: .pet, title: String(localized: "Ball"), synonyms: "toy, football, soccer, kick, play, throw, selection, platform"),
             SettingsItem(tab: .pet, title: String(localized: "Wardrobe"), synonyms: "clothes, outfit, costume, dress up, hats, glasses, scarf, shoes, cape, wings"),

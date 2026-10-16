@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>ป้องกัน ⌘Q และ ⌘W</b>
+<br>ไม่มีอะไรปิดไปโดยไม่ตั้งใจ ถ้าตั้งใจจริงให้กด ⇧ เพิ่ม
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>โหมดเกม</b>
+<br>ระหว่างเล่น จะไม่มีอะไรเด้งขึ้นมาทับเกมหรือปิดเกมไป
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>เพื่อนตัวน้อยบนเดสก์ท็อป</b>
+<br>เพื่อนตัวน้อยเดินเล่นอยู่หลังหน้าต่างของคุณ จับขึ้นมาแล้วโยน หรือกดเว้นวรรคให้มันกระโดด เลือกชุดให้มันจากตู้เสื้อผ้าของมัน แล้วรับรางวัลระหว่างที่เล่นด้วยกัน มันกระฉับกระเฉงขณะคุณพิมพ์ และงีบหลับเมื่อคุณลุกไป
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>ไม่ให้เข้าสู่โหมดพัก</b>
 <br>Mac ตื่นอยู่ได้นานเท่าที่ต้องการ แม้ปิดฝาไว้
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>พัดลม</b>
 <br>ดูว่าพัดลมหมุนเร็วแค่ไหน และเลือกความเร็วได้
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>แบตเตอรี่</b>
 <br>ดูสภาพ ความจุ และจำนวนรอบของแบตเตอรี่ ดูว่ามีกำลังไฟเข้ามากเท่าไร และจะทำให้ใช้ได้นานขึ้นได้อย่างไร
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>ป้องกัน ⌘Q และ ⌘W</b>
-<br>ไม่มีอะไรปิดไปโดยไม่ตั้งใจ ถ้าตั้งใจจริงให้กด ⇧ เพิ่ม
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>โหมดเกม</b>
-<br>ระหว่างเล่น จะไม่มีอะไรเด้งขึ้นมาทับเกมหรือปิดเกมไป
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>ทดสอบความเร็ว</b>
 <br>อินเทอร์เน็ตเร็วแค่ไหน และพอสำหรับอะไรบ้าง
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>ปุ่มด้านข้างเมาส์</b>
 <br>ปุ่ม 4 และ 5 ใช้ย้อนกลับและไปข้างหน้า เหมือนปัดบนแทร็คแพด
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>ซ่อนด้วยปุ่มเมาส์</b>
 <br>กดครั้งเดียวก็ซ่อนแอปที่อยู่ด้านหน้า เหมือนกด ⌘H แอปยังทำงานต่อไป
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>เลื่อนทีละบรรทัด</b>
 <br>หมุนล้อเร็วแค่ไหน แต่ละคลิกก็เลื่อนเท่ากัน
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>ทิศทางการเลื่อน</b>
 <br>ทิศหนึ่งสำหรับแทร็คแพด อีกทิศสำหรับเมาส์
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>ปิดความเร่งตัวชี้</b>
 <br>ตัวชี้เคลื่อนที่เท่ากับที่มือขยับพอดี
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>พิมพ์ซ้ำเมื่อกดแป้นค้างไว้</b>
 <br>กดแป้นค้างไว้เพื่อพิมพ์ซ้ำ โดยไม่มีเมนูอักษรพิเศษ
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home และ End</b>
 <br>กระโดดไปต้นหรือท้ายบรรทัดขณะพิมพ์
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>ภาพเคลื่อนไหว</b>
 <br>เร่ง Dock หน้าต่าง และดูด่วนให้เร็วขึ้น จนถึงทันที
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>สิทธิ์ของแอปที่ลบไปแล้ว</b>
 <br>ล้างสิทธิ์ที่ macOS ยังเก็บไว้ให้แอปที่คุณลบไปแล้ว
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>เพื่อนตัวน้อยบนเดสก์ท็อป</b>
-<br>เพื่อนตัวน้อยเดินเล่นอยู่หลังหน้าต่างของคุณ จับขึ้นมาแล้วโยน หรือกดเว้นวรรคให้มันกระโดด เลือกชุดให้มันจากตู้เสื้อผ้าของมัน แล้วรับรางวัลระหว่างที่เล่นด้วยกัน มันกระฉับกระเฉงขณะคุณพิมพ์ และงีบหลับเมื่อคุณลุกไป
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ pikapik เปิดสิ่งที่ macOS เปิดไม่ได้�
 
 **แสดง FPS** FPS คือจำนวนเฟรมต่อวินาที หรือจำนวนภาพที่เกมวาดในทุกวินาที เปิด **แสดง FPS** ในหน้าเกม แล้วขณะที่โหมดเกมเปิดอยู่ ป้ายสีเข้มเล็ก ๆ ที่มีตัวเลขนี้จะปรากฏที่มุมของเกมใดก็ได้ คลิกที่มุมบนรูปเหนือสวิตช์เพื่อเลือกมุมนั้น เครื่องหมาย — หมายถึงเฟรมแรกยังมาไม่ถึง ส่วนเลข 0 สีจางหมายถึงเกมหยุดวาดภาพแล้ว บน macOS 27 เกมส่วนใหญ่ถูกนับโดย macOS เอง โดยไม่ต้องขออนุญาต เกมที่ macOS นับไม่ได้ ซึ่งส่วนใหญ่เป็นเกมรุ่นเก่า จะถูกนับผ่านการบันทึกหน้าจอ เมื่อนั้นแถว **การบันทึกหน้าจอ** จะปรากฏที่หน้าการอนุญาต pikapik จะไม่ขออนุญาตระหว่างเล่นเกมเด็ดขาด และตัวเลขจะสูงกว่าอัตราการรีเฟรชของหน้าจอไม่ได้ บน macOS 14–26 และในเวอร์ชัน Mac App Store เกมทุกเกมถูกนับด้วยวิธีนี้ ดังนั้นแถวนี้จะปรากฏทันทีที่เปิด **แสดง FPS** และปุ่ม **อนุญาต** ใต้สวิตช์จะพาคุณไปที่แถวนั้น ไม่มีภาพใดถูกเก็บหรือส่งออกไป ปิดไว้เป็นค่าเริ่มต้น
 
-**ตู้เสื้อผ้าและรางวัลของเพื่อนตัวน้อย** เปิด การตั้งค่า › เพื่อนตัวน้อย เพื่อแต่งตัวให้เพื่อนตัวน้อยของคุณ: มีของให้ใส่มากกว่า 30 ชิ้น ตั้งแต่หมวกและแว่นตาไปจนถึงผ้าคลุมและปีก รวมถึงลุคสำเร็จรูปอย่างพ่อมด โจรสลัด หรือนักบินอวกาศ มีไม่กี่ชิ้นที่ใช้ได้ฟรีตั้งแต่เริ่มต้น ที่เหลือเป็นรางวัลที่ได้ระหว่างเล่นด้วยกัน เช่น จับเพื่อนตัวน้อยขึ้นมาแล้วโยน เตะบอล ดูมันปีนหน้าต่างและพูดคุย หรือแค่อยู่เป็นเพื่อนมันไปทุกวัน เมื่อคุณได้รางวัลใหม่ เพื่อนตัวน้อยจะบอกคุณเอง
+**ตู้เสื้อผ้าและรางวัลของเพื่อนตัวน้อย** เปิด การตั้งค่า › เพื่อนตัวน้อย เพื่อแต่งตัวให้เพื่อนตัวน้อยของคุณ: มีของให้ใส่มากกว่า 50 ชิ้น ตั้งแต่หมวกและแว่นตาไปจนถึงผ้าคลุมและปีก รวมถึงลุคสำเร็จรูปอย่างพ่อมด โจรสลัด หรือนักบินอวกาศ มีไม่กี่ชิ้นที่ใช้ได้ฟรีตั้งแต่เริ่มต้น ที่เหลือเป็นรางวัลที่ได้ระหว่างเล่นด้วยกัน เช่น จับเพื่อนตัวน้อยขึ้นมาแล้วโยน เตะบอล ดูมันปีนหน้าต่างและพูดคุย หรือแค่อยู่เป็นเพื่อนมันไปทุกวัน เมื่อคุณได้รางวัลใหม่ เพื่อนตัวน้อยจะบอกคุณเอง ตอนนี้เพื่อนตัวน้อยแสดงความรู้สึกได้ด้วย ใบหน้าจะเปลี่ยนไปตามสิ่งที่คุณทำ และมีเครื่องหมายเล็กๆ ปรากฏเหนือศีรษะเมื่อมันดีใจ เขินอาย อยากรู้อยากเห็น ง่วง และอื่นๆ พร้อมตู้เสื้อผ้าสุภาพบุรุษที่มีหนวด แว่นตาข้างเดียว เสื้อสูทหางยาว และไม้เท้า มันคิดความรู้สึกเหล่านี้บน Mac ของคุณจากสิ่งที่มันรู้อยู่แล้ว และไม่มีอะไรถูกอ่านหรือส่งออกไป
 
 เพื่อรู้ว่าถึงเวลามอบรางวัลเมื่อไร pikapik จะนับเฉพาะสิ่งที่คุณและเพื่อนตัวน้อยทำ ได้แก่ จำนวนก้าว จำนวนครั้งที่คุณจับขึ้นมาและโยน การกระโดด การปีน การเล่นบอล การพูดคุย จำนวนวันที่อยู่ด้วยกัน ว่าคุณอยู่ด้วยกันตอนเช้าตรู่ หลังเที่ยงคืน หรือวันหยุดสุดสัปดาห์หรือไม่ หน้าการตั้งค่าที่คุณเปิด และของที่คุณลองใส่ นอก Mac App Store pikapik ยังจดไว้ด้วยว่าคุณเปิดหน้า GitHub ของเราจากการตั้งค่าหรือไม่ ตัวเลขเหล่านี้ วันที่ได้รับแต่ละรางวัล และสิ่งที่เพื่อนตัวน้อยสวมอยู่จะอยู่บน Mac เครื่องนี้เท่านั้น ไม่มีอะไรถูกส่งไปที่ใด และไม่มีสิ่งใดเข้าไปอยู่ในไฟล์การตั้งค่าที่ส่งออกหรือการซิงค์ iCloud คุณลบทั้งหมดได้ทุกเมื่อที่ การตั้งค่า › เพื่อนตัวน้อย แล้วเพื่อนตัวน้อยจะเริ่มใหม่ตั้งแต่ต้น
 

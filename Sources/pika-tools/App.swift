@@ -131,10 +131,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         #endif
 
-        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { _ in
-            Background.shared.quitting = true
-        }
-
         MainCopy.shared.begin(
             activate: { [self] in MainActor.assumeIsolated { startFeatures() } },
             deactivate: { [self] quitting in MainActor.assumeIsolated { stopFeatures(quitting: quitting) } }
@@ -155,9 +151,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         let background = Background.shared
+        background.poweringOff = Background.isLoggingOut
         if background.quitting || Background.isOutsideQuit { return .terminateNow }
         guard Background.isOn, MainCopy.shared.role != .passive, !NSEvent.modifierFlags.contains(.option) else {
-            if MainCopy.shared.role != .passive { KeepAwake.shared.set(.off) }
+            if MainCopy.canAct { KeepAwake.shared.set(.off) }
             return .terminateNow
         }
         background.hide()
@@ -165,8 +162,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
+        Background.shared.quitting = true
         KeepAwake.shared.handOff()
         SpeedTest.shared.cancel()
+        #if !APPSTORE
+        AnimationsTool.shared.willQuit()
+        #endif
         MainCopy.shared.retire()
         if #available(macOS 14.2, *) { AppVolumeEngine.shared.shutdown() }
     }
@@ -198,6 +199,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         HiddenFilesTool.putBack()
         HotCorners.putBackAll()
         TextFocus.unwatch()
+        if quitting { _ = TextFocus.puttingBack.wait(timeout: .now() + 2) }
         #endif
         GameModeTool.shared.leave()
         DockEdges.restore()

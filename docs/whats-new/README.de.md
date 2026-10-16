@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Der Player spielt Ihre Musik, und Ihre Einstellungen kommen nach einem Absturz zurück
+
+<sub>1.52.1 · 16. Oktober 2026</sub>
+
+Der Player spielt jetzt Songs und sieht aus wie Glas, und Ihre Einstellungen kommen auch nach einem Absturz zurück.
+
+- Player (Version von der Website): Songs spielen im selben Fenster, mit Cover, Titel und Interpret, und ein Ordner spielt Song für Song.
+- Player (Version von der Website): Jedes Format ist eine Taste, die es an pikapik Player gibt und wieder zurückgibt; **Alle in pikapik öffnen** erledigt alle.
+- Player (Version von der Website): ein Bedienfeld aus mattem Glas, das sich beim Schauen ausblendet, und ein kleines Bild des Videos, wenn Sie auf die Zeitleiste zeigen.
+
+**Ausprobieren:** Einstellungen › Player
+
+**Behoben**
+
+- Ihre Einstellungen, zum Beispiel „Dock automatisch ein- und ausblenden“, kommen zurück, auch wenn pikapik unerwartet beendet wurde.
+- Chrome, Slack, VS Code (Version von der Website): Nach einem Absturz bleiben sie nicht mehr im Modus von pikapik, und ein hängendes Fenster bremst Start und Beenden von pikapik nicht mehr.
+- Maustasten an der Seite: Die Einstellungen zeigen Pfeile zurück und vor statt 4 und 5, und „Vor“ leitet in Mail oder Outlook keine E-Mail mehr weiter.
+- **Diese Kopie zur Hauptkopie machen** wirkt nur einmal pro Klick, und die kurzen Zeilen unter einigen Schaltern sagen klarer, was sie tun.
+- Mac-App-Store-Version: Die Seite „Haustier“ verspricht keine Neuigkeiten über Updates mehr, denn der App Store bringt sie von selbst.
+
+---
+
 ## <a id="v1.52.0"></a>Falsch getippte Wörter und Maus-Seitentasten funktionieren jetzt in fast jeder App
 
 <sub>1.52.0 · 15. Oktober 2026</sub>

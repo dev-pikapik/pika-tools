@@ -40,26 +40,38 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/command-keys-dark.png"><img src="docs/media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Protect ⌘Q and ⌘W</b>
+<br>Nothing quits or closes by accident. Add ⇧ when you mean it.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Game Mode</b>
+<br>While you play, nothing pops up over the game or closes it.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
+<br><b>Pet on the desktop</b>
+<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/keep-awake-dark.png"><img src="docs/media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Keep Awake</b>
 <br>Your Mac stays awake for as long as you need, even with the lid closed.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/fans-dark.png"><img src="docs/media/fans-light.png" width="340" alt=""></picture>
 <br><b>Fans</b>
 <br>See how fast your fans spin, and choose their speed.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/battery-dark.png"><img src="docs/media/battery-light.png" width="340" alt=""></picture>
 <br><b>Battery</b>
 <br>See your battery’s condition, capacity and cycle count, how much power goes in, and how to make it last.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/command-keys-dark.png"><img src="docs/media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Protect ⌘Q and ⌘W</b>
-<br>Nothing quits or closes by accident. Add ⇧ when you mean it.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ The command above and Homebrew both put the app in `/Applications`, launch it, a
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/game-mode-dark.png"><img src="docs/media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Game Mode</b>
-<br>While you play, nothing pops up over the game or closes it.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/speed-test-dark.png"><img src="docs/media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Speed Test</b>
 <br>How fast your internet is, and what it’s good for.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/side-buttons-dark.png"><img src="docs/media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Side mouse buttons</b>
 <br>Buttons 4 and 5 go back and forward, like a swipe.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/hide-app-dark.png"><img src="docs/media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Hide with a mouse button</b>
 <br>One press hides the app in front, like ⌘H. It keeps running.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-lines-dark.png"><img src="docs/media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scroll by lines</b>
 <br>Every click of the wheel scrolls the same, however fast you spin it.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/wheel-direction-dark.png"><img src="docs/media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Scroll direction</b>
 <br>One direction for the trackpad, another for the mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/linear-pointer-dark.png"><img src="docs/media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>No pointer acceleration</b>
 <br>The pointer moves exactly as far as your hand.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/key-repeat-dark.png"><img src="docs/media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Repeat a held key</b>
 <br>Hold a key to type it again and again, without the accent menu.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/home-end-dark.png"><img src="docs/media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home and End</b>
 <br>Jump to the start or end of a line while you type.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/animations-dark.png"><img src="docs/media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animations</b>
 <br>Speed up the Dock, windows and Quick Look, all the way to instant.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/leftover-permissions-dark.png"><img src="docs/media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permissions of deleted apps</b>
 <br>Remove the permissions macOS still keeps for apps you deleted.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/media/pet-dark.png"><img src="docs/media/pet-light.png" width="340" alt=""></picture>
-<br><b>Pet on the desktop</b>
-<br>A little friend strolls behind your windows. Pick it up and toss it, or press Space to make it jump. Dress it up in clothes from its wardrobe and earn awards as you play together. It perks up while you type and dozes off when you step away.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ Open Settings → Games → Add a Game and click your running game. Games throug
 
 **Show FPS.** FPS means frames per second: how many pictures the game draws each second. Switch on **Show FPS** on the Games page, and while Game Mode is on, a small dark label with that number sits in a corner of any game. Click a corner on the picture above the switch to choose it. A dash means the first frames haven’t arrived yet, and a faded 0 means the game has stopped drawing. On macOS 27 most games are counted by macOS itself, with no permission. A game it can’t count, mostly an older one, is counted through screen recording: the Screen Recording row then appears on the Permissions page, pikapik never asks during a game, and the number can’t go above the screen’s refresh rate. On macOS 14 to 26 and in the Mac App Store version every game is counted this way, so the row appears as soon as you switch Show FPS on, and **Allow** under the switch takes you to it. No picture is kept or sent. Off by default.
 
-**Pet wardrobe and awards.** Open Settings › Pet to dress your pet: more than 30 things to wear, from hats and glasses to capes and wings, and ready-made looks such as a wizard, a pirate or an astronaut. A few are free from the start. The rest are awards that come as you play together: pick your pet up and toss it, kick the ball around, watch it climb windows and chat, or simply keep it company day after day. Your pet tells you when you have earned a new one.
+**Pet wardrobe and awards.** Open Settings › Pet to dress your pet: more than 50 things to wear, from hats and glasses to capes and wings, and ready-made looks such as a wizard, a pirate or an astronaut. A few are free from the start. The rest are awards that come as you play together: pick your pet up and toss it, kick the ball around, watch it climb windows and chat, or simply keep it company day after day. Your pet tells you when you have earned a new one. Your pet also shows feelings now: its face changes and a small sign appears over its head when it is happy, shy, curious, sleepy and more, in answer to what you do, and there is a gentleman’s wardrobe with moustaches, a monocle, a tailcoat and a cane. It works out its feelings on your Mac from what it already knows, and nothing is read or sent.
 
 To know when an award is due, pikapik only counts what you and your pet do: steps, pick-ups, throws, jumps, climbs, ball games, chats, days together, whether you were together early in the morning, after midnight or at a weekend, the Settings pages you opened and the things you tried on. Outside the Mac App Store, pikapik also notes whether you opened our GitHub page from Settings. The counts, the date of each award and what your pet wears stay on this Mac. Nothing is sent anywhere, and none of it goes into the exported settings file or iCloud sync. Erase it all any time in Settings › Pet, and your pet starts over.
 

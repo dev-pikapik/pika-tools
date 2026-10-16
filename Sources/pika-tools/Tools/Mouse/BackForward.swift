@@ -67,18 +67,13 @@ enum BackForward {
             event.setIntegerValueField(CGEventField(rawValue: 110)!, value: 16)
             event.setIntegerValueField(CGEventField(rawValue: 132)!, value: phase)
             event.setIntegerValueField(CGEventField(rawValue: 115)!, value: forward ? 8 : 4)
-            event.post(tap: .cgSessionEventTap)
+            event.postPikapik()
         }
     }
 
-    private static func press(_ flags: CGEventFlags, forward: Bool) {
-        let key = CGKeyCode(forward ? kVK_ANSI_RightBracket : kVK_ANSI_LeftBracket)
-        for down in [true, false] {
-            guard let event = CGEvent(keyboardEventSource: nil, virtualKey: key, keyDown: down) else { return }
-            event.flags = flags
-            event.markPikapik()
-            event.post(tap: .cgSessionEventTap)
-        }
+    static func press(_ flags: CGEventFlags, forward: Bool) {
+        let key = forward ? kVK_ANSI_RightBracket : kVK_ANSI_LeftBracket
+        CGEvent.tapPikapikKey(key, flags: flags)
     }
 
     private static func click(forward: Bool, at point: CGPoint) {
@@ -86,8 +81,7 @@ enum BackForward {
             guard let event = CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: point, mouseButton: .center) else { return }
             event.setIntegerValueField(.mouseEventButtonNumber, value: forward ? 4 : 3)
             event.setIntegerValueField(.mouseEventClickState, value: 1)
-            event.markPikapik()
-            event.post(tap: .cgSessionEventTap)
+            event.postPikapik()
         }
     }
 }

@@ -33,6 +33,8 @@ enum TestAwards {
         case .weekend:
             p.mark("weekday:1")
             p.mark("weekday:7")
+        case .feelings: (0..<award.goal).forEach { p.mark("mood:\($0)") }
+        case .dapper: p.mark("dressed")
         default: p.add(award.counter, award.goal)
         }
     }
@@ -48,7 +50,7 @@ enum TestAwards {
         precondition(p.outfit.isEmpty && p.news.isEmpty && !p.hasNews && p.freshAwards == 0 && earned(p).isEmpty)
         print("a new pet starts with nothing and nothing is written: ok")
 
-        let derived: Set<PetAward> = [.explorer, .stylist, .weekend, .collector]
+        let derived: Set<PetAward> = [.explorer, .stylist, .weekend, .feelings, .dapper, .collector]
         for award in PetAward.all where !derived.contains(award) {
             p = fresh()
             p.add(award.counter, award.goal - 1)
@@ -92,6 +94,33 @@ enum TestAwards {
         print("pages, tried items and weekend days count each once: ok")
 
         p = fresh()
+        for k in 0..<8 {
+            p.mark("mood:\(k)")
+            p.mark("mood:\(k)")
+        }
+        p.mark("item:tee")
+        precondition(p.count(.feelings) == 8 && !p.earned(.feelings), "feelings counted something else or twice")
+        p.mark("mood:8")
+        precondition(p.count(.feelings) == 9 && earned(p) == [.feelings] && p.progress(.feelings).current == 9)
+        print("feelings count each mood once: ok")
+
+        p = fresh()
+        PetAward.all.filter { $0 != .dapper && $0 != .collector }.forEach { satisfy(p, $0) }
+        let rocker = PetLook.all.first { $0.id == "rocker" }!
+        precondition(rocker.items.count == 5 && p.count(.dressed) == 0)
+        for item in rocker.items.dropLast() { p.wear(item) }
+        precondition(p.outfit.count == 4 && p.count(.dressed) == 0 && !p.earned(.dapper), "dressed after four things")
+        p.wear(rocker.items[4])
+        precondition(p.outfit.count == 5 && p.count(.dressed) == 1 && p.earned(.dapper), "five things at once did not count")
+        p.wear(rocker.items[4])
+        precondition(p.outfit.count == 4 && p.count(.dressed) == 1 && p.progress(.dapper) == (1, 1), "taking one off undid dressed")
+        p = fresh()
+        PetAward.all.filter { $0 != .dapper && $0 != .collector }.forEach { satisfy(p, $0) }
+        p.wear(rocker)
+        precondition(p.count(.dressed) == 1 && p.earned(.dapper), "a look of five did not count as dressed")
+        print("five things at once make the pet dapper: ok")
+
+        p = fresh()
         for award in PetAward.all where award != .chatter && award != .collector { satisfy(p, award) }
         precondition(!p.earned(.collector) && p.count(.awards) == PetAward.all.count - 2)
         satisfy(p, .chatter)
@@ -104,6 +133,9 @@ enum TestAwards {
         precondition(p.earnedAt.values.allSatisfy { $0 <= last }, "collector was not the last")
         precondition(p.progress(.collector).current == PetAward.all.count - 1 && p.progress(.collector).goal == PetAward.all.count - 1)
         precondition(PetItem.allCases.allSatisfy(p.unlocked), "some item can never be unlocked: \(PetItem.allCases.filter { !p.unlocked($0) })")
+        for item in PetItem.allCases where !item.free {
+            precondition(PetAward.all.filter { $0.items.contains(item) }.count == 1, "\(item) is not unlocked by exactly one award")
+        }
         for look in PetLook.all {
             precondition(Set(look.items.map(\.slot)).count == look.items.count, "\(look.id) has two items for one slot")
             p.wear(look)

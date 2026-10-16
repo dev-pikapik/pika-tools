@@ -40,26 +40,38 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Защита ⌘Q и ⌘W</b>
+<br>Ничего не закроется случайно. Когда нужно, добавьте ⇧.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Игровой режим</b>
+<br>Пока вы играете, ничто не всплывёт поверх игры и не закроет её.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Питомец на рабочем столе</b>
+<br>Маленький друг гуляет за окнами внизу экрана. Возьмите его и подбросьте или нажмите пробел — он подпрыгнет. Подбирайте ему наряды в гардеробе и получайте награды, пока играете вместе. Он бодрится, пока вы печатаете, и дремлет, когда вы отходите.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Не засыпать</b>
 <br>Mac не уснёт, сколько нужно, даже с закрытой крышкой.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Вентиляторы</b>
 <br>Смотрите, как быстро крутятся вентиляторы, и выбирайте их скорость.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Аккумулятор</b>
 <br>Смотрите состояние аккумулятора, его ёмкость и количество циклов, сколько энергии в него поступает и как продлить его срок службы.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Защита ⌘Q и ⌘W</b>
-<br>Ничего не закроется случайно. Когда нужно, добавьте ⇧.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ brew install --cask dev-pikapik/pika-tools/pikapik && open -a pikapik
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Игровой режим</b>
-<br>Пока вы играете, ничто не всплывёт поверх игры и не закроет её.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Скорость интернета</b>
 <br>Насколько быстрый у вас интернет и на что его хватит.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Боковые кнопки мыши</b>
 <br>Кнопки 4 и 5 листают назад и вперёд, как свайп.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Скрыть кнопкой мыши</b>
 <br>Одно нажатие скрывает активное приложение, как ⌘H. Оно продолжает работать.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Прокрутка по строкам</b>
 <br>Каждый щелчок колёсика прокручивает одинаково, как быстро ни крутите.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Направление прокрутки</b>
 <br>Одно направление для трекпада, другое для мыши.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Без ускорения курсора</b>
 <br>Курсор проходит ровно столько, сколько ваша рука.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Повтор клавиши</b>
 <br>Удерживайте клавишу — буква повторяется, без меню с акцентами.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home и End</b>
 <br>Переход в начало или конец строки, пока вы печатаете.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Анимации</b>
 <br>Dock, окна и Быстрый просмотр станут быстрее — вплоть до мгновенных.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Разрешения удалённых приложений</b>
 <br>Уберите разрешения, которые macOS хранит для уже удалённых приложений.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Питомец на рабочем столе</b>
-<br>Маленький друг гуляет за окнами внизу экрана. Возьмите его и подбросьте или нажмите пробел — он подпрыгнет. Подбирайте ему наряды в гардеробе и получайте награды, пока играете вместе. Он бодрится, пока вы печатаете, и дремлет, когда вы отходите.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -372,7 +372,7 @@ pikapik открывает и то, что macOS не умеет: RAR, в том
 
 **Показывать FPS.** FPS — это кадры в секунду: сколько картинок игра рисует за секунду. Включите **Показывать FPS** на странице «Игры», и пока работает «Игровой режим», в углу любой игры появится маленькая тёмная плашка с этим числом. Угол выбирается нажатием на картинку над переключателем. Прочерк означает, что первые кадры ещё не пришли, а тусклый 0 — что игра перестала рисовать. В macOS 27 большинство игр считает сама macOS, разрешение не нужно. Игру, которую macOS посчитать не может, чаще всего старую, pikapik считает через запись экрана: тогда на странице «Разрешения» появляется строка **Запись экрана**, во время игры pikapik разрешение никогда не просит, а число не бывает выше частоты обновления экрана. В macOS 14–26 и в версии из Mac App Store так считаются все игры, поэтому строка появляется сразу после включения **Показывать FPS**, а кнопка **Разрешить** под переключателем ведёт к ней. Изображение не сохраняется и никуда не отправляется. По умолчанию выключено.
 
-**Гардероб и награды питомца.** Откройте «Настройки › Питомец», чтобы нарядить питомца: больше 30 вещей, от шляп и очков до плащей и крыльев, и готовые образы вроде волшебника, пирата или астронавта. Несколько вещей доступны сразу. Остальные — награды, которые приходят, пока вы играете вместе: поднимите питомца и подбросьте, погоняйте мяч, посмотрите, как он лазает по окнам и болтает, или просто день за днём составляйте ему компанию. Когда вы получите новую награду, питомец сам об этом скажет.
+**Гардероб и награды питомца.** Откройте «Настройки › Питомец», чтобы нарядить питомца: больше 50 вещей, от шляп и очков до плащей и крыльев, и готовые образы вроде волшебника, пирата или астронавта. Несколько вещей доступны сразу. Остальные — награды, которые приходят, пока вы играете вместе: поднимите питомца и подбросьте, погоняйте мяч, посмотрите, как он лазает по окнам и болтает, или просто день за днём составляйте ему компанию. Когда вы получите новую награду, питомец сам об этом скажет. Теперь у питомца есть и чувства: в ответ на ваши действия у него меняется выражение лица, а над головой появляется маленький значок, когда он радуется, смущается, любопытствует, клюёт носом и не только, и есть гардероб джентльмена с усами, моноклем, фраком и тростью. Чувства питомец определяет прямо на вашем Mac по тому, что ему и так известно: ничего не читается и никуда не отправляется.
 
 Чтобы знать, когда пора выдать награду, pikapik считает только то, что делаете вы и питомец: шаги, сколько раз вы поднимали и подбрасывали питомца, его прыжки, подъёмы на окна, игры с мячом и разговоры, дни вместе, были ли вы вместе рано утром, после полуночи или в выходные, какие страницы настроек вы открывали и что примеряли. Вне Mac App Store pikapik также отмечает, открывали ли вы нашу страницу на GitHub из настроек. Эти числа, дата каждой награды и наряд питомца остаются на этом Mac. Ничего никуда не отправляется, и в выгруженный файл настроек или синхронизацию через iCloud они не попадают. Всё это можно стереть в любой момент в разделе «Настройки › Питомец», и питомец начнёт с нуля.
 
