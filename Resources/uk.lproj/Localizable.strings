@@ -36,7 +36,7 @@
 "Lets the app change the fan speed and turn off services for the whole Mac" = "Щоб змінювати швидкість вентиляторів і вимикати служби для всього Mac";
 "Lets the app add items to the right-click menu in Finder" = "Щоб додавати пункти в меню правого кліку у Finder";
 "Lets the app find permissions left by deleted apps" = "Щоб знаходити дозволи, що залишилися від видалених програм";
-"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "macOS дозволяє вимкнути їх лише в Системних параметрах. Кнопка відкриє потрібний список, де ви вимкнете pikapik.";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "Вимкнути їх можна лише в Системних параметрах. Кнопка відкриє потрібний список, де ви вимкнете pikapik.";
 "Needs a permission. Click to allow it." = "Потрібен дозвіл. Натисніть, щоб дозволити.";
 "Turn off %@?" = "Вимкнути %@?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik перезапуститься, а інструменти, яким це потрібно, стануть сірими, доки ви знову не дозволите.";

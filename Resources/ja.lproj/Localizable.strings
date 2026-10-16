@@ -36,7 +36,7 @@
 "Lets the app change the fan speed and turn off services for the whole Mac" = "ファンの回転数を変更し、Mac 全体のサービスをオフにするため";
 "Lets the app add items to the right-click menu in Finder" = "Finderの右クリックメニューに項目を追加するため";
 "Lets the app find permissions left by deleted apps" = "削除したアプリが残した許可を見つけるため";
-"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "これらをオフにできるのは「システム設定」だけです。ボタンを押すと該当のリストが開くので、そこで pikapik をオフにしてください。";
+"macOS lets you turn these off only in System Settings. The button opens the right list, where you switch pikapik off." = "これらをオフにできるのは「システム設定」だけです。ボタンで開くリストで pikapik をオフにしてください。";
 "Needs a permission. Click to allow it." = "許可が必要です。クリックして許可してください。";
 "Turn off %@?" = "%@をオフにしますか?";
 "pikapik will restart, and the tools that need it will turn grey until you allow it again." = "pikapik が再起動し、必要とするツールは、もう一度許可するまでグレーになります。";
@@ -537,7 +537,7 @@
 "Every now and then it sits down for a chat and tells you when an update is out" = "ときどき座っておしゃべりし、アップデートが出たら教えてくれます";
 "Every now and then it sits down for a chat" = "ときどき座っておしゃべりします";
 "Follows your rhythm" = "あなたのリズムに合わせる";
-"Perks up while you type and dozes off when you step away" = "入力中は元気になり、席を離れるとうとうとします";
+"Perks up while you type and dozes off when you step away" = "入力中は元気になり、席を離れると、うとうとします";
 "sleep, nap, doze, tired, energy, typing, away, idle, wake" = "睡眠, 昼寝, うたた寝, 眠い, 元気, タイピング, 離席, アイドル, 起きる";
 "Ball" = "ボール";
 "A ball rolls along the bottom of the screen. Your pet kicks it, and you can kick it with the pointer or pick it up and throw it" = "画面の下の端をボールが転がります。ペットが蹴って遊び、あなたもポインタで蹴ったり、つまんで投げたりできます";
