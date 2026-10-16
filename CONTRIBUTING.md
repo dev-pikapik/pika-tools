@@ -208,6 +208,12 @@ The app also reads the file whenever it comes to the front, so a change that arr
 ./scripts/check-settings-sync.sh
 ```
 
+Sync hears about every saved setting through `SettingsFile.onSave`, including the ones saved off the main thread, for example the list of Chromium apps that `TextFocus` keeps while it holds its lock. Such a save must not wait for the main thread: on quit the main thread waits for `TextFocus`, so a waiting save would freeze pikapik. A setting saved on the main thread is still heard at once, so sync can tell its own changes apart. The test checks both, with the main thread busy for the second:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-sync-thread.swift -o build/test-settings-sync-thread && build/test-settings-sync-thread
+```
+
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. The App Store build uses it only to list background tasks. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
 
 ```bash
