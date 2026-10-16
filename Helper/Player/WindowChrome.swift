@@ -8,7 +8,7 @@ final class WindowChrome {
     static let shadeHeight: CGFloat = 72
     let shade = WindowShade()
     private weak var window: NSWindow?
-    private var shown = true
+    private var state = (bar: true, shade: false)
 
     init(_ window: NSWindow, over content: NSView) {
         self.window = window
@@ -20,6 +20,7 @@ final class WindowChrome {
         gradient.endPoint = CGPoint(x: 0.5, y: 0)
         shade.layer = gradient
         shade.wantsLayer = true
+        shade.alphaValue = 0
         shade.translatesAutoresizingMaskIntoConstraints = false
         content.addSubview(shade)
         NSLayoutConstraint.activate([
@@ -29,6 +30,8 @@ final class WindowChrome {
             shade.heightAnchor.constraint(equalToConstant: Self.shadeHeight),
         ])
     }
+
+    static let trackingOptions: NSTrackingArea.Options = [.mouseMoved, .mouseEnteredAndExited, .activeAlways, .inVisibleRect]
 
     static func style(_ window: NSWindow) {
         window.styleMask.insert(.fullSizeContentView)
@@ -54,16 +57,26 @@ final class WindowChrome {
         panel.map { $0.isHidden || !$0.frame.contains(point) } ?? true
     }
 
-    func setVisible(_ visible: Bool, video: Bool) {
-        guard let bar = window?.standardWindowButton(.closeButton)?.superview else { return }
+    static func overButtons(_ point: NSPoint, in window: NSWindow) -> Bool {
+        [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton].contains {
+            window.standardWindowButton($0).map { $0.convert($0.bounds, to: nil).insetBy(dx: -6, dy: -6).contains(point) } ?? false
+        }
+    }
+
+    @discardableResult
+    func setVisible(_ visible: Bool, video: Bool, voiceOver: Bool = NSWorkspace.shared.isVoiceOverEnabled) -> Bool {
+        guard let bar = window?.standardWindowButton(.closeButton)?.superview else { return false }
         let system = window?.styleMask.contains(.fullScreen) == true
-        shown = visible || system
-        if shown { bar.isHidden = false }
+        let next = (bar: visible || system, shade: visible && video && !system)
+        guard next != state else { return false }
+        state = next
+        if next.bar { bar.isHidden = false }
         NSAnimationContext.runAnimationGroup({ _ in
-            bar.animator().alphaValue = shown ? 1 : 0
-            shade.animator().alphaValue = visible && video && !system ? 1 : 0
+            bar.animator().alphaValue = next.bar ? 1 : 0
+            shade.animator().alphaValue = next.shade ? 1 : 0
         }, completionHandler: { [weak self] in
-            if self?.shown == false { bar.isHidden = true }
+            if self?.state.bar == false, !voiceOver { bar.isHidden = true }
         })
+        return true
     }
 }

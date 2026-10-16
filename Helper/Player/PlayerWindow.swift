@@ -48,7 +48,7 @@ final class VideoView: NSView {
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         trackingAreas.forEach(removeTrackingArea)
-        addTrackingArea(NSTrackingArea(rect: .zero, options: [.mouseMoved, .mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self))
+        addTrackingArea(NSTrackingArea(rect: .zero, options: WindowChrome.trackingOptions, owner: self))
     }
 
     override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation {
@@ -813,9 +813,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func refreshControls(idle: Double) {
         guard let window else { return }
-        let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
+        let location = window.mouseLocationOutsideOfEventStream
+        let overPanel = window.isKeyWindow && controls.bounds.contains(controls.convert(location, from: nil))
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
+        let visible = PlayerChrome.visibility(playing: playing, overControls: overPanel || WindowChrome.overButtons(location, in: window), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
         chrome?.setVisible(visible.controls, video: engine?.hasVideo == true)
         if !visible.controls { hover(nil) }
