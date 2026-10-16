@@ -27,7 +27,7 @@ final class MainCopy {
     @ObservationIgnored private var timeout: DispatchWorkItem?
     @ObservationIgnored private var deferred = DeferredActions()
     @ObservationIgnored private var watching: NSKeyValueObservation?
-    @ObservationIgnored private let me = MainCopy.copy(.current) ?? RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: .now)
+    @ObservationIgnored let me = MainCopy.copy(.current) ?? RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: .now)
 
     private init() {}
 

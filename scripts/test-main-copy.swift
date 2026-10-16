@@ -404,17 +404,34 @@ struct TestMainCopy {
         }
         print("both copies get the quit at the same moment, in any order: the animations come back and the Dock restarts once: ok")
 
-        let stale = Mac(system: original)
-        stale.journal.set(true, forKey: "animations-leaving-10")
-        let main = stale.party("A", "\(tools).a", 10, wantsA), passive = stale.party("B", "\(tools).b", 20, wantsB)
-        stale.become(main)
-        stale.elapse()
-        stale.kills = []
-        stale.quit(passive)
-        precondition(stale.kills.isEmpty && stale.system == original.merging(wantsA) { $1 }, "a mark left by an earlier copy with the same pid is not the main copy leaving: \(stale.kills)")
-        stale.quit(main)
-        precondition(stale.system == original && stale.journalEmpty && stale.kills == [.putBack("A")], "the main copy puts back when it leaves: \(stale.kills)")
-        print("a copy clears its own leaving mark when it starts, so a mark left by an earlier copy with the same pid does not count: ok")
+        let window = Mac(system: original)
+        let incumbent = window.party("A", "\(tools).a", 10, wantsA)
+        window.become(incumbent)
+        window.elapse()
+        window.kills = []
+        window.journal.set(start, forKey: "animations-leaving-20")
+        window.strangers = [copy(20, "\(tools).b", at: 20)]
+        window.leader = nil
+        incumbent.engine.refresh()
+        precondition(window.kills.isEmpty && window.system == original.merging(wantsA) { $1 } && !window.journalEmpty, "a mark left by an earlier process with the same pid does not make the new copy leaving: \(window.kills)")
+        window.strangers = []
+        _ = window.party("B", "\(tools).b", 20, wantsB)
+        precondition(window.leaving.isEmpty, "a copy clears the mark left under its pid when it starts: \(window.leaving)")
+        print("a mark left by an earlier process with the same pid is ignored before the new copy has started, and cleared once it has: ok")
+
+        let trio = Mac(system: original)
+        let a3 = trio.party("A", "\(tools).a", 10, wantsA), b3 = trio.party("B", "\(tools).b", 20, wantsB), c3 = trio.party("C", "\(tools).c", 30, wantsB)
+        trio.become(a3)
+        trio.elapse()
+        trio.kills = []
+        trio.willQuit(a3)
+        trio.willQuit(b3)
+        precondition(trio.leaving == ["animations-leaving-10", "animations-leaving-20"] && trio.kills.isEmpty, "B's mark does not erase A's: \(trio.leaving)")
+        trio.retire(a3)
+        precondition(trio.kills.isEmpty && trio.system == original.merging(wantsA) { $1 }, "A has read the marks before C writes its own and hands over: \(trio.kills)")
+        trio.willQuit(c3)
+        precondition(trio.system == original && trio.journalEmpty && trio.kills.count == 1 && trio.kills[0].wait, "C's mark lands after A has read, and C still puts everything back once: \(trio.kills)")
+        print("a mark written after another copy has read the marks loses nothing, and marks never overwrite each other: ok")
 
         everyOrder()
 
@@ -436,7 +453,7 @@ struct TestMainCopy {
         later.elapse()
         later.kills = []
         later.leader = nil
-        later.journal.set(true, forKey: "animations-leaving-99")
+        later.journal.set(start, forKey: "animations-leaving-99")
         AnimationsEngine.uninstall(f.host)
         precondition(later.system == original && !later.autohide && later.journalEmpty && later.kills == [.putBack("A")], "uninstall after a finished restart: \(later.kills)")
         let old = Mac(system: original.merging(wantsA) { $1 })
@@ -485,7 +502,7 @@ struct TestMainCopy {
             for steps in orders([Int](repeating: 0, count: copies), first, takeOver: takeOver) {
                 let label = "\(copies) copies, takeover \(takeOver), same wishes \(same), main \(first): " + steps.map { "\($0.0.rawValue)\($0.1)" }.joined(separator: " ")
                 let mac = Mac(system: original)
-                (0..<copies).forEach { mac.journal.set(true, forKey: "animations-leaving-\(10 * ($0 + 1))") }
+                (0..<copies).forEach { mac.journal.set(start, forKey: "animations-leaving-\(10 * ($0 + 1))") }
                 let parties = (0..<copies).map { mac.party(["A", "B", "C"][$0], "\(tools).\(["a", "b", "c"][$0])", Int32(10 * ($0 + 1)), same || $0 == first ? wantsA : wantsB) }
                 mac.become(parties[first])
                 mac.elapse()
@@ -563,7 +580,7 @@ struct TestMainCopy {
             local.removePersistentDomain(forName: suite)
             let party = Party(name, bundleID, pid, wants)
             party.host = AnimationsHost(
-                pid: pid,
+                me: party.running,
                 canAct: { self.leader === party },
                 peers: { MainCopyChoice.peers(of: party.running, in: self.running.map(\.running) + self.strangers) },
                 poweringOff: { self.poweringOff },

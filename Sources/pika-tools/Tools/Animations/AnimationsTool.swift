@@ -19,7 +19,7 @@ final class AnimationsTool: AnimationsEngine, Tool {
 
     private static let dock = "com.apple.dock" as CFString
     private static let host = AnimationsHost(
-        pid: getpid(),
+        me: MainCopy.shared.me,
         canAct: { MainCopy.canAct },
         peers: { MainCopy.shared.peers() },
         poweringOff: { Background.shared.poweringOff },

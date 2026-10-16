@@ -217,7 +217,7 @@ final class DockRestart {
 }
 
 struct AnimationsHost {
-    let pid: Int32
+    let me: RunningCopy
     let canAct: () -> Bool
     let peers: () -> [RunningCopy]
     let poweringOff: () -> Bool
@@ -258,7 +258,7 @@ class AnimationsEngine {
         own = Self.originals(host.journal())
         ours = Self.written(host.journal(), host.local)
         storedSpeed = host.local.object(forKey: Self.speedKey) as? Double
-        host.journal().removeObject(forKey: Self.leavingPrefix + String(host.pid))
+        host.journal().removeObject(forKey: Self.leavingKey(host.me.pid))
         reload()
     }
 
@@ -322,7 +322,7 @@ class AnimationsEngine {
     }
 
     func willQuit() {
-        host.journal().set(true, forKey: Self.leavingPrefix + String(host.pid))
+        host.journal().set(host.me.launched, forKey: Self.leavingKey(host.me.pid))
         guard !host.canAct(), staying().isEmpty else { return }
         reload()
         putBack()
@@ -350,7 +350,9 @@ class AnimationsEngine {
 
     private func staying() -> [RunningCopy] {
         let journal = host.journal()
-        return host.peers().filter { !journal.bool(forKey: Self.leavingPrefix + String($0.pid)) }
+        return host.peers().filter { peer in
+            (journal.object(forKey: Self.leavingKey(peer.pid)) as? Date).map { abs($0.timeIntervalSince(peer.launched)) >= 1 } ?? true
+        }
     }
 
     private func resumeAutohide() {
@@ -418,6 +420,10 @@ class AnimationsEngine {
         if let value { host.writeAutohide(value) } else if entry != nil { OriginalValue.save(nil, wantedAutohideKey, journal: host.local) }
         OriginalValue.save(nil, autohideKey, journal: journal)
         return value != nil
+    }
+
+    private static func leavingKey(_ pid: Int32) -> String {
+        leavingPrefix + String(pid)
     }
 
     private static func clearLeaving(_ journal: UserDefaults) {
