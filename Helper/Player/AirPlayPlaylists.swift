@@ -28,6 +28,7 @@ struct AirPlayVideoInfo: Equatable {
     var tenBit: Bool
     var codecString: String
     var burnsSubtitles = false
+    var cutsAtTimes = false
 }
 
 struct AirPlayVariant: Equatable {
@@ -64,6 +65,12 @@ struct AirPlayTextTrack: Equatable {
 enum AirPlayPlan {
     static let target = 6.0
     static let shortest = 1.0
+    static let longest = 30.0
+
+    static func plan(keyframes: [Double], duration: Double) -> (segments: [AirPlaySegment], atKeys: Bool) {
+        let keyed = segments(keyframes: keyframes, duration: duration)
+        return keyed.contains { $0.duration > longest } ? (fixed(duration: duration), false) : (keyed, true)
+    }
 
     static func segments(keyframes: [Double], duration: Double) -> [AirPlaySegment] {
         guard duration > 0 else { return [] }
@@ -119,8 +126,8 @@ enum AirPlayCodecs {
                                   frameRate: video.frameRate, range: video.range, tenBit: video.tenBit)
         }
         switch video.codec {
-        case .h264: return [make(.h264, transcode: video.burnsSubtitles)]
-        case .hevc: return [make(.hevc, transcode: video.burnsSubtitles)]
+        case .h264: return [make(.h264, transcode: video.burnsSubtitles || video.cutsAtTimes)]
+        case .hevc: return [make(.hevc, transcode: video.burnsSubtitles || video.cutsAtTimes)]
         case .other: return video.range == "SDR" && !video.tenBit ? [make(.hevc, transcode: true), make(.h264, transcode: true)] : [make(.hevc, transcode: true)]
         }
     }
@@ -284,6 +291,8 @@ enum AirPlayFirewall {
 
 enum AirPlayAdvice {
     static var title: String { String(localized: "AirPlay video can’t continue") }
+
+    static var unavailable: String { String(localized: "pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again.") }
 
     static func text(blockAll: Bool?, asked: Bool) -> String {
         if asked {

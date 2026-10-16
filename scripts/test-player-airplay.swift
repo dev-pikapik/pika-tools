@@ -128,6 +128,97 @@ private func get(_ port: UInt16, _ target: String, method: String = "GET", extra
     request(port, "\(method) \(target) HTTP/1.1\r\nHost: x\r\nConnection: close\r\n\(extra)\r\n")
 }
 
+private func connect(_ port: UInt16, to address: UInt32 = 0x7F00_0001) -> Int32? {
+    let fd = socket(AF_INET, SOCK_STREAM, 0)
+    var quiet: Int32 = 1
+    setsockopt(fd, SOL_SOCKET, SO_NOSIGPIPE, &quiet, socklen_t(MemoryLayout<Int32>.size))
+    var target = sockaddr_in()
+    target.sin_family = sa_family_t(AF_INET)
+    target.sin_port = port.bigEndian
+    target.sin_addr.s_addr = address.bigEndian
+    let connected = withUnsafePointer(to: &target) { $0.withMemoryRebound(to: sockaddr.self, capacity: 1) { Darwin.connect(fd, $0, socklen_t(MemoryLayout<sockaddr_in>.size)) } }
+    guard connected == 0 else {
+        close(fd)
+        return nil
+    }
+    return fd
+}
+
+private func put(_ fd: Int32, _ text: String) {
+    _ = text.withCString { send(fd, $0, strlen($0), 0) }
+}
+
+private func wait(_ fd: Int32, _ seconds: Double) {
+    var timeout = timeval(tv_sec: Int(seconds), tv_usec: Int32((seconds - Double(Int(seconds))) * 1_000_000))
+    setsockopt(fd, SOL_SOCKET, SO_RCVTIMEO, &timeout, socklen_t(MemoryLayout<timeval>.size))
+}
+
+private func closed(_ fd: Int32, within seconds: Double) -> Bool {
+    wait(fd, seconds)
+    var buffer = [UInt8](repeating: 0, count: 4096)
+    while true {
+        let read = recv(fd, &buffer, buffer.count, 0)
+        if read > 0 { continue }
+        return read == 0 || (errno != EAGAIN && errno != EWOULDBLOCK)
+    }
+}
+
+private func answer(_ fd: Int32) -> Int? {
+    wait(fd, 3)
+    var data = Data()
+    var buffer = [UInt8](repeating: 0, count: 4096)
+    while true {
+        if let end = data.range(of: Data("\r\n\r\n".utf8)) {
+            let head = String(decoding: data[..<end.lowerBound], as: UTF8.self)
+            let length = head.components(separatedBy: "\r\n").compactMap { $0.lowercased().hasPrefix("content-length:") ? Int($0.dropFirst(15).trimmingCharacters(in: .whitespaces)) : nil }.first ?? 0
+            if data.count - end.upperBound >= length { return Int(head.dropFirst(9).prefix(3)) }
+        }
+        let read = recv(fd, &buffer, buffer.count, 0)
+        if read <= 0 { return nil }
+        data.append(buffer, count: read)
+    }
+}
+
+private func ask(_ fd: Int32, _ token: String, _ path: String = "master.m3u8", keep: Bool = true) -> Int? {
+    put(fd, "GET /\(token)/\(path) HTTP/1.1\r\nHost: x\r\nConnection: \(keep ? "keep-alive" : "close")\r\n\r\n")
+    return answer(fd)
+}
+
+private final class Fake: AirPlayContent, @unchecked Sendable {
+    private let owner: Opened
+
+    init(_ owner: Opened) { self.owner = owner }
+
+    func master() -> String { "#EXTM3U\n" }
+    func playlist(kind: Character, id: String) -> String? { "#EXTM3U\n" }
+    func build(kind: Character, id: String, index: Int, _ done: @escaping (Result<AirPlayBuilt, Error>) -> Void) {
+        owner.countBuild()
+        let built = Result<AirPlayBuilt, Error>.success(AirPlayBuilt(initData: Data("init".utf8), media: Data("media".utf8)))
+        if index == 7 { DispatchQueue.global().asyncAfter(deadline: .now() + 0.4) { done(built) } } else { done(built) }
+    }
+}
+
+private final class Opened: @unchecked Sendable {
+    private let lock = NSLock()
+    private var number = 0
+    private var built = 0
+    private weak var last: Fake?
+    var count: Int { lock.withLock { number } }
+    var builds: Int { lock.withLock { built } }
+    func countBuild() { lock.withLock { built += 1 } }
+    var alive: Bool { lock.withLock { last != nil } }
+    func make() -> AirPlayContent? {
+        let fake = Fake(self)
+        lock.withLock {
+            number += 1
+            last = fake
+        }
+        return fake
+    }
+}
+
+private func token(of url: URL) -> String { url.pathComponents[1] }
+
 @main
 enum TestPlayerAirplay {
     static func main() async throws {
@@ -137,6 +228,9 @@ enum TestPlayerAirplay {
         texts()
         router()
         server()
+        limits()
+        session()
+        try timeouts()
         cache()
         try await audioSegments()
         try await videoSegments()
@@ -153,6 +247,12 @@ enum TestPlayerAirplay {
         let sparse = AirPlayPlan.segments(keyframes: [0, 30, 60], duration: 80)
         check(sparse.map(\.start) == [0, 30, 60], "a piece never starts between two key frames: \(sparse)")
         check(AirPlayPlan.fixed(duration: 20).map(\.start) == [0, 6, 12, 18] && AirPlayPlan.fixed(duration: 18.5).map(\.start) == [0, 6, 12], "a film without a key frame list is cut every six seconds, a short tail is joined")
+        let planned = AirPlayPlan.plan(keyframes: [0, 300, 600], duration: 900)
+        check(!planned.atKeys && planned.segments == AirPlayPlan.fixed(duration: 900) && planned.segments.allSatisfy { $0.duration <= 7 }, "a key frame every five minutes means pieces cut by time, never five-minute pieces")
+        check(AirPlayPlan.plan(keyframes: [0, 10, 20], duration: 30).atKeys && !AirPlayPlan.plan(keyframes: [0, 31], duration: 40).atKeys, "pieces over thirty seconds switch to cutting by time")
+        var cutting = info(.h264)
+        cutting.cutsAtTimes = true
+        check(AirPlayCodecs.variants(for: cutting).allSatisfy(\.transcode) && !AirPlayCodecs.variants(for: info(.h264)).contains(where: \.transcode), "cutting by time re-encodes, copying stays for key frame pieces")
         check(AirPlayPlan.segments(keyframes: [], duration: 20).count == 1, "no key frames means one piece")
         check(AirPlayPlan.segments(keyframes: [0], duration: 0).isEmpty, "an empty film has no pieces")
         check(AirPlayPlan.index(of: 6, in: regular) == 1 && AirPlayPlan.index(of: 5.999, in: regular) == 0 && AirPlayPlan.index(of: 99.9, in: regular) == regular.count - 1, "a time finds its piece, boundaries are exact")
@@ -236,9 +336,11 @@ enum TestPlayerAirplay {
             "/\(token)/%2e%2e/master.m3u8", "/\(token)/v/%2e%2e%2fh264.m3u8", "/\(token)/v/h264%2finit.mp4", "/\(token)//master.m3u8", "/\(token)/master.m3u8?x=1", "/\(token)/master.m3u8#x",
             "/\(token)/V/h264.m3u8", "/\(token)/v/H264.m3u8", "/\(token)/x/h264.m3u8", "/\(token)/v/123456789/init.mp4", "/\(token)/v/h264/9999999.m4s", "/\(token)/v/h264/-1.m4s", "/\(token)/v/h264/1.mp4",
             "/\(token)/s/3/init.mp4", "/\(token)/v/h264/init.mp4/x", "/\(token)\\master.m3u8", "http://127.0.0.1/\(token)/master.m3u8", "/\(token)/master.m3u8\u{0}", "/\(token)/ключ.m3u8", "/\(token)/v/h264.m3u8" + String(repeating: "a", count: 100),
-            "", "/", "/\(token)", "/\(token)/", "\(token)/master.m3u8",
+            "", "/", "/\(token)", "/\(token)/", "\(token)/master.m3u8", "/\(token)/v/../init.mp4", "/\(token)/v/h.264.m3u8",
         ]
         for target in refused { check(AirPlayRouter.parse(target, token: token) == nil, "refused: \(target)") }
+        let long = String(repeating: "ab", count: 50)
+        check(AirPlayRouter.parse("/\(long)/master.m3u8", token: long) == nil, "a path longer than 96 characters is refused")
         check(AirPlayRouter.same(token, token) && !AirPlayRouter.same(token, String(repeating: "ab", count: 15) + "ac") && !AirPlayRouter.same(token, ""), "tokens are compared whole")
         let tokens = Set((0..<50).compactMap { _ in AirPlayNetwork.token() })
         check(tokens.count == 50 && tokens.allSatisfy { $0.count == 32 && $0.allSatisfy(\.isHexDigit) }, "every showing gets a new 128-bit token")
@@ -250,7 +352,7 @@ enum TestPlayerAirplay {
         let token = AirPlayNetwork.token() ?? ""
         let calls = Calls()
         let body = Data((0..<1000).map { UInt8($0 % 251) })
-        let handler: AirPlayServer.Handler = { route, reply in
+        let handler: AirPlayServer.Handler = { route, _, reply in
             calls.add(route)
             switch route {
             case .master: reply(AirPlayResponse(type: "application/vnd.apple.mpegurl", body: Data("#EXTM3U\n".utf8)))
@@ -293,6 +395,184 @@ enum TestPlayerAirplay {
         check(again.start(), "a new server can start right after")
         again.stop()
         print("server: ok")
+    }
+
+    static func limits() {
+        let token = AirPlayNetwork.token() ?? ""
+        let loopback = [AirPlaySubnet(network: 0x7F00_0000, mask: 0xFF00_0000)]
+        let big = Data(count: 32 << 20)
+        let handler: AirPlayServer.Handler = { route, _, reply in
+            if case .segment = route { reply(AirPlayResponse(type: "video/mp4", body: big)) } else { reply(AirPlayResponse(type: "text/plain", body: Data("ok".utf8))) }
+        }
+        func run(_ limits: AirPlayServer.Limits, _ body: (AirPlayServer) -> Void) {
+            let server = AirPlayServer(host: 0x7F00_0001, token: token, subnets: loopback, limits: limits, handler: handler)
+            check(server.start(), "a server with its own limits starts")
+            body(server)
+            server.stop()
+        }
+
+        var quick = AirPlayServer.Limits()
+        quick.header = 0.4
+        run(quick) { server in
+            let silent = connect(server.port)!
+            let started = Date()
+            check(closed(silent, within: 3) && Date().timeIntervalSince(started) < 1.5, "a connection that sends nothing is closed after the header time")
+            let dripping = connect(server.port)!
+            for _ in 0..<20 {
+                put(dripping, "G")
+                usleep(100_000)
+            }
+            check(closed(dripping, within: 0.3), "a connection that sends its request one byte at a time is closed too")
+            close(silent)
+            close(dripping)
+        }
+
+        run(AirPlayServer.Limits()) { server in
+            let fd = connect(server.port)!
+            put(fd, String(repeating: "A", count: 9000))
+            check(closed(fd, within: 1), "a request head that never ends is closed once it is too long")
+            close(fd)
+        }
+
+        quick = AirPlayServer.Limits()
+        quick.idle = 0.4
+        run(quick) { server in
+            let fd = connect(server.port)!
+            check(ask(fd, token) == 200, "a request is answered")
+            let started = Date()
+            check(closed(fd, within: 3) && Date().timeIntervalSince(started) < 1.5, "a kept-alive connection that goes quiet is closed")
+            close(fd)
+        }
+
+        quick = AirPlayServer.Limits()
+        quick.send = 0.5
+        run(quick) { server in
+            let fd = connect(server.port)!
+            put(fd, "GET /\(token)/v/h264/0.m4s HTTP/1.1\r\nHost: x\r\nConnection: close\r\n\r\n")
+            sleep(2)
+            wait(fd, 3)
+            var total = 0
+            var buffer = [UInt8](repeating: 0, count: 1 << 16)
+            while true {
+                let read = recv(fd, &buffer, buffer.count, 0)
+                if read <= 0 { break }
+                total += read
+            }
+            check(total < big.count, "a client that does not read its answer is cut off after the send time (\(total) of \(big.count) bytes)")
+            close(fd)
+        }
+
+        quick = AirPlayServer.Limits()
+        quick.perHost = 3
+        run(quick) { server in
+            let held = (0..<3).map { _ in connect(server.port)! }
+            let extra = connect(server.port)!
+            check(closed(extra, within: 1), "one address cannot hold more than its share of connections")
+            check(!closed(held[0], within: 0.2), "the connections it already holds stay")
+            close(held[0])
+            usleep(400_000)
+            let again = connect(server.port)!
+            check(ask(again, token, keep: false) == 200, "a freed place is used again")
+            held.dropFirst().forEach { close($0) }
+            close(extra)
+            close(again)
+        }
+
+        quick = AirPlayServer.Limits()
+        quick.waiting = 2
+        quick.perHost = 100
+        run(quick) { server in
+            let verified = (0..<3).map { _ -> Int32 in
+                let fd = connect(server.port)!
+                check(ask(fd, token) == 200, "connections with the right token do not count as waiting")
+                return fd
+            }
+            let silent = (0..<2).map { _ in connect(server.port)! }
+            let extra = connect(server.port)!
+            check(closed(extra, within: 1), "too many connections that have said nothing are refused")
+            (verified + silent + [extra]).forEach { close($0) }
+        }
+
+        quick = AirPlayServer.Limits()
+        quick.connections = 2
+        quick.perHost = 100
+        run(quick) { server in
+            let first = connect(server.port)!, second = connect(server.port)!
+            check(ask(first, token) == 200 && ask(second, token) == 200, "two connections with the right token are served")
+            let third = connect(server.port)!
+            put(third, "GET /\(token)/master.m3u8 HTTP/1.1\r\nHost: x\r\n\r\n")
+            check(closed(third, within: 1), "a third one is closed without an answer")
+            close(first)
+            usleep(400_000)
+            let fourth = connect(server.port)!
+            check(ask(fourth, token, keep: false) == 200, "a place freed by a client is used again")
+            [second, third, fourth].forEach { close($0) }
+        }
+
+        run(AirPlayServer.Limits()) { server in
+            let wrong = connect(server.port)!
+            check(ask(wrong, String(repeating: "0", count: 32)) == 404 && closed(wrong, within: 1), "a wrong token is answered once and the connection is closed, even if it asked to stay")
+            close(wrong)
+        }
+
+        let all = [AirPlaySubnet(network: 0, mask: 0)]
+        let local = AirPlayServer(host: 0x7F00_0001, token: token, subnets: all, handler: handler)
+        check(local.start(), "a server bound to the loopback address starts")
+        if let other = AirPlayNetwork.primary() {
+            check(connect(local.port, to: other) == nil, "the server answers on its own address only, not on the Mac's network address")
+        } else {
+            print("skipped: this Mac has no network address to try")
+        }
+        local.stop()
+        print("limits: ok")
+    }
+
+    static func session() {
+        let loopback = [AirPlaySubnet(network: 0x7F00_0000, mask: 0xFF00_0000)]
+        let opened = Opened()
+        check(AirPlaySession(host: nil, subnets: loopback, local: [], open: opened.make) == nil, "without a network address nothing starts")
+        guard let session = AirPlaySession(host: 0x7F00_0001, subnets: loopback, local: [], open: opened.make) else { fatalError("the session starts") }
+        let port = UInt16(session.url.port ?? 0)
+        let secret = token(of: session.url)
+        usleep(300_000)
+        check(opened.count == 0 && !session.hasBeenAsked, "nothing reads the film until a device asks")
+        let master = get(port, "/\(secret)/master.m3u8")
+        check(master.status == 200 && opened.count == 1 && session.hasBeenAsked, "the first request opens the film once and counts as the device asking")
+        check(get(port, "/\(secret)/v/h264/3.m4s").text.hasSuffix("media") && get(port, "/\(secret)/v/h264/init.mp4").text.hasSuffix("init") && opened.count == 1, "pieces are built from the opened film")
+        _ = get(port, "/\(secret)/v/h264/3.m4s")
+        check(opened.builds == 2, "a piece asked again comes from the cache")
+        DispatchQueue.concurrentPerform(iterations: 3) { _ in _ = get(port, "/\(secret)/v/h264/7.m4s") }
+        check(opened.builds == 3, "three devices asking for the same piece at once build it once")
+        check(session.cachedBytes > 0, "built pieces are kept for the next ask")
+        session.close()
+        check(!opened.alive && session.cachedBytes == 0, "closing the session lets go of the film and the cache")
+        check(get(port, "/\(secret)/master.m3u8").status == nil, "after closing the port is shut")
+
+        let own = AirPlaySession(host: 0x7F00_0001, subnets: loopback, local: [0x7F00_0001], open: opened.make)!
+        check(get(UInt16(own.url.port ?? 0), "/\(token(of: own.url))/master.m3u8").status == 200 && !own.hasBeenAsked, "this Mac's own player asking does not count as a device asking")
+        own.close()
+
+        let broken = AirPlaySession(host: 0x7F00_0001, subnets: loopback, local: [], open: { nil })!
+        check(get(UInt16(broken.url.port ?? 0), "/\(token(of: broken.url))/master.m3u8").status == 500, "a film that cannot be opened is answered with an error")
+        broken.close()
+        print("session: ok")
+    }
+
+    static func timeouts() throws {
+        let hung = DispatchSemaphore(value: 0)
+        let settings: [String: Any] = [AVFormatIDKey: kAudioFormatMPEG4AAC, AVSampleRateKey: 44100, AVNumberOfChannelsKey: 1]
+        let started = Date()
+        do {
+            _ = try AirPlaySegmentWriter.build(.audio, format: nil, settings: settings, start: .zero, number: 0, timeout: 0.5) {
+                hung.wait()
+                return nil
+            }
+            check(false, "a writer that never finishes must give up")
+        } catch {
+            check(Date().timeIntervalSince(started) < 3, "a writer that never finishes gives up after the limit: \(error)")
+        }
+        hung.signal()
+        print("timeouts: ok")
     }
 
     static func cache() {

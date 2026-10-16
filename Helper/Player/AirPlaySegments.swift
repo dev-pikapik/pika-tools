@@ -60,12 +60,12 @@ private final class SegmentSink: NSObject, AVAssetWriterDelegate {
 }
 
 enum AirPlaySegmentWriter {
-    static func build(_ type: AVFoundation.AVMediaType, format: CMFormatDescription?, settings: [String: Any]?, start: CMTime, number: Int, next: @escaping () -> CMSampleBuffer?) throws -> AirPlayBuilt {
+    static func build(_ type: AVFoundation.AVMediaType, format: CMFormatDescription?, settings: [String: Any]?, start: CMTime, number: Int, timeout: Double = 90, next: @escaping () -> CMSampleBuffer?) throws -> AirPlayBuilt {
         let writer = AVAssetWriter(contentType: UTType(AVFileType.mp4.rawValue)!)
         let sink = SegmentSink()
         writer.delegate = sink
         writer.outputFileTypeProfile = .mpeg4AppleHLS
-        writer.preferredOutputSegmentInterval = .indefinite
+        writer.preferredOutputSegmentInterval = settings == nil ? .indefinite : CMTime(seconds: 3600, preferredTimescale: 1)
         writer.initialSegmentStartTime = start
         let input = AVAssetWriterInput(mediaType: type, outputSettings: settings, sourceFormatHint: format)
         input.expectsMediaDataInRealTime = false
@@ -89,10 +89,16 @@ enum AirPlaySegmentWriter {
                 }
             }
         }
-        done.wait()
+        func within(_ semaphore: DispatchSemaphore) throws {
+            guard semaphore.wait(timeout: .now() + timeout) == .success else {
+                writer.cancelWriting()
+                throw AirPlayBuildError.writer("timed out")
+            }
+        }
+        try within(done)
         let finished = DispatchSemaphore(value: 0)
         writer.finishWriting { finished.signal() }
-        finished.wait()
+        try within(finished)
         guard writer.status == .completed else { throw AirPlayBuildError.writer(writer.error?.localizedDescription ?? "status \(writer.status.rawValue)") }
         return AirPlayBuilt(initData: sink.initData, media: renumber(sink.media, first: number * 256 + 1))
     }

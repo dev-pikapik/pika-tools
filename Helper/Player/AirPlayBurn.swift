@@ -138,6 +138,7 @@ final class AirPlayBurner {
 }
 
 final class AirPlayHardwareDecoder {
+    private static let reorderDepth = 16
     private var session: VTDecompressionSession?
     private let lock = NSLock()
     private var frames: [CMSampleBuffer] = []
@@ -163,20 +164,23 @@ final class AirPlayHardwareDecoder {
             guard let format, CMSampleBufferCreateReadyWithImageBuffer(allocator: nil, imageBuffer: image, formatDescription: format, sampleTiming: &timing, sampleBufferOut: &made) == noErr, let made else { return }
             self.lock.withLock { self.frames.append(made) }
         }
-        return take()
+        VTDecompressionSessionWaitForAsynchronousFrames(session)
+        return take(keeping: Self.reorderDepth)
     }
 
     func finish() -> [CMSampleBuffer] {
         guard let session else { return [] }
         VTDecompressionSessionFinishDelayedFrames(session)
         VTDecompressionSessionWaitForAsynchronousFrames(session)
-        return take()
+        return take(keeping: 0)
     }
 
-    private func take() -> [CMSampleBuffer] {
+    private func take(keeping depth: Int) -> [CMSampleBuffer] {
         lock.withLock {
-            defer { frames = [] }
-            return frames
+            frames.sort { CMSampleBufferGetPresentationTimeStamp($0) < CMSampleBufferGetPresentationTimeStamp($1) }
+            let ready = Array(frames.prefix(max(0, frames.count - depth)))
+            frames.removeFirst(ready.count)
+            return ready
         }
     }
 }

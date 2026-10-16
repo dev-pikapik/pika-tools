@@ -59,7 +59,7 @@ final class AirPlayPCMReader {
     }
 }
 
-final class AirPlaySource {
+final class AirPlaySource: AirPlayContent {
     struct Audio {
         let id: String
         let info: AirPlayStreamInfo
@@ -83,6 +83,7 @@ final class AirPlaySource {
     private let audioDemuxer: Demuxer?
     private let video: Track
     private let segments: [AirPlaySegment]
+    private let atKeys: Bool
     private let variants: [AirPlayVariant]
     private let range: String
     private let audio: [Audio]
@@ -124,12 +125,13 @@ final class AirPlaySource {
         let duration = container.duration > 0 ? container.duration : Double(scan.end) * scale
         let all = (scan.keys + scan.open).sorted()
         let keys = scan.keys.count >= max(1, Int(duration / 20)) ? scan.keys : all
-        let segments = AirPlayPlan.segments(keyframes: keys.map { Double($0) * scale }, duration: duration)
+        let (segments, atKeys) = AirPlayPlan.plan(keyframes: keys.map { Double($0) * scale }, duration: duration)
         guard !keys.isEmpty, !segments.isEmpty else { throw MediaError.noSamples }
 
         let codec: AirPlayVideoCodec = stream.codec == AV_CODEC_ID_H264 && stream.depth <= 8 ? .h264 : stream.codec == AV_CODEC_ID_HEVC ? .hevc : .other
         let range = stream.transfer == AVCOL_TRC_SMPTE2084 ? "PQ" : stream.transfer == AVCOL_TRC_ARIB_STD_B67 ? "HLG" : "SDR"
-        let decoder = codec == .other ? try FrameDecoder(video.format.description) : nil
+        let decoder = codec == .other ? try? FrameDecoder(video.format.description) : nil
+        if codec == .other, decoder == nil, AirPlayHardwareDecoder(video.format.description) == nil { throw MediaError.unsupportedFeature }
         let burned = range == "SDR" && stream.depth <= 8 ? pictureStreams.first { $0.isForced } ?? pictureStreams.first { $0.isDefault } : nil
         let pictures = burned.flatMap { picture in
             container.parameters(picture.index).flatMap { parameters in
@@ -138,7 +140,7 @@ final class AirPlaySource {
         }
         let info = AirPlayVideoInfo(codec: codec, width: stream.width, height: stream.height, frameRate: Double(video.frameRate),
                                     bitrate: min(80_000_000, max(1_000_000, Int(Double(size) * 8 / max(duration, 1)))), range: range, tenBit: stream.depth > 8,
-                                    codecString: codecString(video.format.description, codec, stream), burnsSubtitles: pictures != nil)
+                                    codecString: codecString(video.format.description, codec, stream), burnsSubtitles: pictures != nil, cutsAtTimes: !atKeys)
 
         var audioDemuxer: Demuxer?
         var audio: [Audio] = []
@@ -148,13 +150,13 @@ final class AirPlaySource {
             audioDemuxer = tracks.isEmpty ? nil : opened
             audio = tracks.compactMap { track in container.streams.first { $0.index == track.index && $0.kind == .audio }.flatMap { audioEntry(track, $0) } }
         }
-        return AirPlaySource(fd: fd, container: container, videoDemuxer: videoDemuxer, audioDemuxer: audioDemuxer, video: video, segments: segments,
+        return AirPlaySource(fd: fd, container: container, videoDemuxer: videoDemuxer, audioDemuxer: audioDemuxer, video: video, segments: segments, atKeys: atKeys,
                              variants: AirPlayCodecs.variants(for: info), range: range, audio: audio,
                              text: textStreams.map { Text(id: String($0.index), info: $0, format: textFormat($0.codec)) },
                              textPackets: scan.packets, pictures: pictures, duration: duration, frameDecoder: decoder)
     }
 
-    private init(fd: Int32, container: AirPlayContainer, videoDemuxer: Demuxer, audioDemuxer: Demuxer?, video: Track, segments: [AirPlaySegment], variants: [AirPlayVariant],
+    private init(fd: Int32, container: AirPlayContainer, videoDemuxer: Demuxer, audioDemuxer: Demuxer?, video: Track, segments: [AirPlaySegment], atKeys: Bool, variants: [AirPlayVariant],
                  range: String, audio: [Audio], text: [Text], textPackets: [Int32: [AirPlayRawPacket]], pictures: AirPlayPictures?, duration: Double, frameDecoder: FrameDecoder?) {
         self.fd = fd
         self.container = container
@@ -162,6 +164,7 @@ final class AirPlaySource {
         self.audioDemuxer = audioDemuxer
         self.video = video
         self.segments = segments
+        self.atKeys = atKeys
         self.variants = variants
         self.range = range
         self.audio = audio
@@ -330,12 +333,14 @@ final class AirPlaySource {
         frameDecoder?.flush()
         var ready: [CMSampleBuffer] = []
         var drained = false
-        let from = video.time(first.pts)
+        let from = atKeys ? video.time(first.pts) : CMTime(seconds: segment.start, preferredTimescale: 90_000)
+        let until = atKeys || index + 1 == segments.count ? CMTime.positiveInfinity : CMTime(seconds: segments[index + 1].start, preferredTimescale: 90_000)
         let built = try AirPlaySegmentWriter.build(.video, format: nil, settings: settings(variant), start: from, number: index) { [self] in
             while true {
                 if !ready.isEmpty {
                     let frame = ready.removeFirst()
-                    guard CMSampleBufferGetPresentationTimeStamp(frame) >= from else { continue }
+                    let time = CMSampleBufferGetPresentationTimeStamp(frame)
+                    guard time >= from, time < until else { continue }
                     guard let burner else { return frame }
                     guard let burned = burner.apply(frame) else {
                         failed = true

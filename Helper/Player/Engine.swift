@@ -243,11 +243,6 @@ final class Engine {
         queue.async { [weak self] in self?.restartOnFrame() }
     }
 
-    func finishRemote() {
-        finished = duration
-        synchronizer.setRate(synchronizer.rate, time: duration)
-    }
-
     func tags() -> MediaTags { demuxer.tags() }
 
     func frameImage() -> CGImage? {

@@ -97,29 +97,55 @@ enum AirPlayNetwork {
         return (wired.first { $0.name == "en0" } ?? wired.first ?? usable.first { !$0.name.hasPrefix("utun") && !$0.name.hasPrefix("awdl") && !$0.name.hasPrefix("llw") })?.address
     }
 
+    static func addresses() -> [UInt32] {
+        interfaces().map(\.address)
+    }
+
     static func text(_ address: UInt32) -> String {
         "\(address >> 24).\(address >> 16 & 255).\(address >> 8 & 255).\(address & 255)"
     }
 }
 
 final class AirPlayServer {
-    typealias Handler = (AirPlayRoute, @escaping (AirPlayResponse) -> Void) -> Void
+    typealias Handler = (AirPlayRoute, UInt32, @escaping (AirPlayResponse) -> Void) -> Void
 
-    static let limit = 16
+    struct Limits {
+        var connections = 16
+        var waiting = 16
+        var perHost = 6
+        var header = 5.0
+        var idle = 15.0
+        var send = 30.0
+    }
+
+    private final class Client {
+        let connection: NWConnection
+        let host: UInt32
+        var verified = false
+        var timer: DispatchWorkItem?
+
+        init(_ connection: NWConnection, _ host: UInt32) {
+            self.connection = connection
+            self.host = host
+        }
+    }
+
     private let host: UInt32
     private let token: String
     private let subnets: [AirPlaySubnet]
+    private let limits: Limits
     private let handler: Handler
     private let queue = DispatchQueue(label: "pikapik.airplay.server")
     private var listener: NWListener?
-    private var connections: [ObjectIdentifier: NWConnection] = [:]
+    private var clients: [ObjectIdentifier: Client] = [:]
     private var closed = false
     private(set) var port: UInt16 = 0
 
-    init(host: UInt32, token: String, subnets: [AirPlaySubnet], handler: @escaping Handler) {
+    init(host: UInt32, token: String, subnets: [AirPlaySubnet], limits: Limits = Limits(), handler: @escaping Handler) {
         self.host = host
         self.token = token
         self.subnets = subnets
+        self.limits = limits
         self.handler = handler
     }
 
@@ -157,55 +183,74 @@ final class AirPlayServer {
             self.closed = true
             self.listener?.cancel()
             self.listener = nil
-            for connection in self.connections.values { connection.cancel() }
-            self.connections = [:]
+            for client in self.clients.values {
+                client.timer?.cancel()
+                client.connection.cancel()
+            }
+            self.clients = [:]
             done.signal()
         }
         _ = done.wait(timeout: .now() + 2)
     }
 
+    private func arm(_ client: Client, _ seconds: Double?) {
+        client.timer?.cancel()
+        client.timer = nil
+        guard let seconds else { return }
+        let work = DispatchWorkItem { [weak client] in client?.connection.cancel() }
+        client.timer = work
+        queue.asyncAfter(deadline: .now() + seconds, execute: work)
+    }
+
     private func accept(_ connection: NWConnection) {
-        guard !closed, connections.count < Self.limit, case .hostPort(let remote, _) = connection.endpoint, case .ipv4(let address) = remote, address.rawValue.count == 4 else {
+        guard !closed, case .hostPort(let remote, _) = connection.endpoint, case .ipv4(let address) = remote, address.rawValue.count == 4 else {
             connection.cancel()
             return
         }
         let value = address.rawValue.reduce(UInt32(0)) { $0 << 8 | UInt32($1) }
-        guard subnets.contains(where: { $0.contains(value) }) else {
+        guard subnets.contains(where: { $0.contains(value) }), clients.values.filter({ $0.host == value }).count < limits.perHost,
+              clients.values.filter({ !$0.verified }).count < limits.waiting else {
             connection.cancel()
             return
         }
+        let client = Client(connection, value)
         let id = ObjectIdentifier(connection)
-        connections[id] = connection
+        clients[id] = client
         connection.stateUpdateHandler = { [weak self] state in
             switch state {
-            case .failed, .cancelled: self?.queue.async { self?.connections[id] = nil }
+            case .failed, .cancelled:
+                self?.queue.async {
+                    client.timer?.cancel()
+                    self?.clients[id] = nil
+                }
             default: break
             }
         }
         connection.start(queue: queue)
-        receive(connection, Data())
+        arm(client, limits.header)
+        receive(client, Data())
     }
 
-    private func receive(_ connection: NWConnection, _ buffer: Data) {
-        connection.receive(minimumIncompleteLength: 1, maximumLength: 4096) { [weak self] data, _, complete, error in
-            guard let self, !self.closed else { return connection.cancel() }
+    private func receive(_ client: Client, _ buffer: Data) {
+        client.connection.receive(minimumIncompleteLength: 1, maximumLength: 4096) { [weak self] data, _, complete, error in
+            guard let self, !self.closed else { return client.connection.cancel() }
             var buffer = buffer
             if let data { buffer.append(data) }
             if let end = buffer.range(of: Data("\r\n\r\n".utf8)) {
-                self.serve(connection, head: String(decoding: buffer[..<end.lowerBound], as: UTF8.self))
+                self.serve(client, head: String(decoding: buffer[..<end.lowerBound], as: UTF8.self))
             } else if error != nil || complete || buffer.count > 8192 {
-                connection.cancel()
+                client.connection.cancel()
             } else {
-                self.receive(connection, buffer)
+                self.receive(client, buffer)
             }
         }
     }
 
-    private func serve(_ connection: NWConnection, head: String) {
+    private func serve(_ client: Client, head: String) {
         let lines = head.components(separatedBy: "\r\n")
         let words = lines[0].components(separatedBy: " ")
         guard words.count == 3, ["GET", "HEAD"].contains(words[0]), ["HTTP/1.1", "HTTP/1.0"].contains(words[2]) else {
-            return send(connection, AirPlayResponse(status: 400, type: "text/plain", body: Data("Bad request".utf8)), head: false, range: nil, keep: false)
+            return send(client, AirPlayResponse(status: 400, type: "text/plain", body: Data("Bad request".utf8)), head: false, range: nil, keep: false)
         }
         var range: String?
         var keep = words[2] == "HTTP/1.1"
@@ -220,10 +265,15 @@ final class AirPlayServer {
         }
         let headOnly = words[0] == "HEAD"
         guard let route = AirPlayRouter.parse(words[1], token: token) else {
-            return send(connection, .notFound, head: headOnly, range: nil, keep: false)
+            return send(client, .notFound, head: headOnly, range: nil, keep: false)
         }
-        handler(route) { [weak self] response in
-            self?.queue.async { self?.send(connection, response, head: headOnly, range: range, keep: keep) }
+        if !client.verified {
+            guard clients.values.filter(\.verified).count < limits.connections else { return client.connection.cancel() }
+            client.verified = true
+        }
+        arm(client, nil)
+        handler(route, client.host) { [weak self] response in
+            self?.queue.async { self?.send(client, response, head: headOnly, range: range, keep: keep) }
         }
     }
 
@@ -240,7 +290,8 @@ final class AirPlayServer {
         }
     }
 
-    private func send(_ connection: NWConnection, _ response: AirPlayResponse, head: Bool, range: String?, keep: Bool) {
+    private func send(_ client: Client, _ response: AirPlayResponse, head: Bool, range: String?, keep: Bool) {
+        let connection = client.connection
         guard !closed else { return connection.cancel() }
         var status = response.status
         var body = response.body
@@ -260,8 +311,15 @@ final class AirPlayServer {
         headers.append("Content-Length: \(body.count)")
         let reason = [200: "OK", 206: "Partial Content", 400: "Bad Request", 404: "Not Found", 416: "Range Not Satisfiable", 500: "Internal Server Error"][status] ?? "OK"
         let top = Data(("HTTP/1.1 \(status) \(reason)\r\n" + headers.joined(separator: "\r\n") + "\r\n\r\n").utf8)
+        arm(client, client.verified ? limits.send : limits.header)
         let finish: (NWError?) -> Void = { [weak self] error in
-            if error != nil || !keep { connection.cancel() } else { self?.receive(connection, Data()) }
+            guard let self else { return connection.cancel() }
+            if error != nil || !keep {
+                connection.cancel()
+            } else {
+                self.arm(client, self.limits.idle)
+                self.receive(client, Data())
+            }
         }
         if head || body.isEmpty {
             connection.send(content: top, completion: .contentProcessed(finish))

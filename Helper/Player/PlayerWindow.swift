@@ -330,6 +330,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         return info
     }
 
+    func closeAirPlay() {
+        airPlay.close()
+    }
+
     private func stop() {
         airPlay.close()
         stopClockWatch()
@@ -402,7 +406,6 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         switch event {
         case .entered: enterAirPlay()
         case let .left(time, resume): leaveAirPlay(time, resume: resume)
-        case .ended: engine?.finishRemote()
         case let .playing(value): setPlaying(value)
         case let .problem(text): advise(text)
         }

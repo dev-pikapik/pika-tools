@@ -2,87 +2,10 @@ import AVFoundation
 import AVKit
 import AppKit
 
-final class AirPlaySession {
-    private let source: AirPlaySource
-    private let queue = DispatchQueue(label: "pikapik.airplay.session")
-    private var server: AirPlayServer?
-    private var cache = AirPlayCache(limit: 128 << 20)
-    private var pending: [String: [(AirPlayBuilt?) -> Void]] = [:]
-    private var closed = false
-    private var asked = false
-    private(set) var url: URL
-
-    var hasBeenAsked: Bool { queue.sync { asked } }
-
-    init?(source: AirPlaySource) {
-        guard let token = AirPlayNetwork.token(), let host = AirPlayNetwork.primary() else { return nil }
-        self.source = source
-        url = URL(fileURLWithPath: "/")
-        let server = AirPlayServer(host: host, token: token, subnets: AirPlayNetwork.subnets()) { [weak self] route, reply in
-            guard let self else { return reply(.notFound) }
-            self.queue.async { self.handle(route, reply) }
-        }
-        guard server.start(), let link = URL(string: "http://\(AirPlayNetwork.text(host)):\(server.port)/\(token)/master.m3u8") else { return nil }
-        url = link
-        self.server = server
-    }
-
-    func close() {
-        server?.stop()
-        server = nil
-        queue.sync {
-            closed = true
-            cache.removeAll()
-        }
-    }
-
-    private func handle(_ route: AirPlayRoute, _ reply: @escaping (AirPlayResponse) -> Void) {
-        guard !closed else { return reply(.notFound) }
-        switch route {
-        case .master:
-            asked = true
-            reply(playlist(source.master()))
-        case let .playlist(kind, id):
-            reply(source.playlist(kind: kind, id: id).map(playlist) ?? .notFound)
-        case let .initSegment(kind, id):
-            fetch(kind, id, 0) { built in
-                reply(built.map { AirPlayResponse(type: kind == "a" ? "audio/mp4" : "video/mp4", body: $0.initData) } ?? .failed)
-            }
-        case let .segment(kind, id, index):
-            fetch(kind, id, index) { built in
-                reply(built.map { AirPlayResponse(type: kind == "a" ? "audio/mp4" : kind == "s" ? "text/vtt" : "video/mp4", body: $0.media) } ?? .failed)
-            }
-        }
-    }
-
-    private func playlist(_ text: String) -> AirPlayResponse {
-        AirPlayResponse(type: "application/vnd.apple.mpegurl", body: Data(text.utf8))
-    }
-
-    private func fetch(_ kind: Character, _ id: String, _ index: Int, _ done: @escaping (AirPlayBuilt?) -> Void) {
-        let key = "\(kind)/\(id)/\(index)"
-        if let hit = cache.value(key) { return done(hit) }
-        if pending[key] != nil {
-            pending[key]?.append(done)
-            return
-        }
-        pending[key] = [done]
-        source.build(kind: kind, id: id, index: index) { [weak self] result in
-            guard let self else { return done(nil) }
-            self.queue.async {
-                let built = try? result.get()
-                if let built, !self.closed { self.cache.store(key, built) }
-                for waiter in self.pending.removeValue(forKey: key) ?? [] { waiter(self.closed ? nil : built) }
-            }
-        }
-    }
-}
-
 final class AirPlayLink: NSObject, AVRoutePickerViewDelegate {
     enum Event {
         case entered
         case left(CMTime, resume: Bool)
-        case ended
         case playing(Bool)
         case problem(String)
     }
@@ -93,9 +16,8 @@ final class AirPlayLink: NSObject, AVRoutePickerViewDelegate {
     private(set) var isActive = false
     private let player = AVPlayer()
     private var file: URL?
-    private var source: AirPlaySource?
     private var session: AirPlaySession?
-    private var opening = false
+    private var warned = false
     private var observations: [NSKeyValueObservation] = []
     private var observers: [NSObjectProtocol] = []
     private var watchdog: DispatchWorkItem?
@@ -125,16 +47,16 @@ final class AirPlayLink: NSObject, AVRoutePickerViewDelegate {
     func open(_ url: URL) {
         close()
         file = url
+        warned = false
     }
 
     func close() {
         teardown()
-        source = nil
         file = nil
     }
 
     func routePickerViewDidEndPresentingRoutes(_ routePickerView: AVRoutePickerView) {
-        prepare()
+        begin()
     }
 
     func command(time: CMTime?, rate: Float) {
@@ -161,24 +83,13 @@ final class AirPlayLink: NSObject, AVRoutePickerViewDelegate {
         if wanted > 0 { player.rate = wanted } else { player.pause() }
     }
 
-    private func prepare() {
-        guard let file, session == nil, !opening else { return }
-        if let source { return begin(source) }
-        opening = true
-        DispatchQueue.global(qos: .userInitiated).async {
-            let opened = try? AirPlaySource.open(file)
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                self.opening = false
-                guard self.file == file, let opened else { return }
-                self.source = opened
-                self.begin(opened)
-            }
+    private func begin() {
+        guard let file, session == nil else { return }
+        guard let made = AirPlaySession(open: { try? AirPlaySource.open(file) }) else {
+            if !warned { onEvent(.problem(AirPlayAdvice.unavailable)) }
+            warned = true
+            return
         }
-    }
-
-    private func begin(_ source: AirPlaySource) {
-        guard session == nil, let made = AirPlaySession(source: source) else { return }
         session = made
         let item = AVPlayerItem(url: made.url)
         observations = [
@@ -196,16 +107,21 @@ final class AirPlayLink: NSObject, AVRoutePickerViewDelegate {
             },
         ]
         observers = [
-            NotificationCenter.default.addObserver(forName: AVPlayerItem.didPlayToEndTimeNotification, object: item, queue: .main) { [weak self] _ in self?.onEvent(.ended) },
+            NotificationCenter.default.addObserver(forName: AVPlayerItem.didPlayToEndTimeNotification, object: item, queue: .main) { [weak self] _ in self?.leave(resume: false) },
             NotificationCenter.default.addObserver(forName: AVPlayerItem.failedToPlayToEndTimeNotification, object: item, queue: .main) { [weak self] _ in self?.stopped() },
         ]
         player.replaceCurrentItem(with: item)
         item.seek(to: position(), toleranceBefore: .zero, toleranceAfter: .zero, completionHandler: nil)
+        watch(after: 20, extend: true)
+    }
+
+    private func watch(after seconds: Double, extend: Bool) {
         let work = DispatchWorkItem { [weak self] in
-            if self?.isActive == false { self?.teardown() }
+            guard let self, !self.isActive else { return }
+            if extend, self.session?.hasBeenAsked == true { self.watch(after: 40, extend: false) } else { self.teardown() }
         }
         watchdog = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20, execute: work)
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: work)
     }
 
     private func routeChanged(_ active: Bool) {

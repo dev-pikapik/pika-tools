@@ -1296,3 +1296,5 @@
 "The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay 裝置沒有向這部 Mac 要求影片。請確認 Mac 和裝置在同一網路中，且沒有 VPN 或防火牆封鎖網路內的連線，然後重新選擇裝置。";
 "Playing on AirPlay" = "正在透過 AirPlay 播放";
 "Track %lld" = "軌道 %lld";
+"pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again." = "pikapik 無法開始向 AirPlay 裝置分享此影片。請確認這部 Mac 已連上 Wi-Fi 或乙太網路，然後重新選擇裝置。";
+"pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network." = "pikapik Player 會把你正在播放的影片分享給你選擇的 AirPlay 裝置，僅限在你的本地網路內。";
