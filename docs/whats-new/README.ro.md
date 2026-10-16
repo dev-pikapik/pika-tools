@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Playerul îți cântă muzica, iar setările revin după o blocare
+
+<sub>1.52.1 · 16 octombrie 2026</sub>
+
+Playerul cântă acum melodii și are un panou de sticlă, iar setările tale revin chiar și după o blocare.
+
+- Player (versiunea de pe site): melodiile cântă în aceeași fereastră, cu coperta, titlul și artistul, iar un dosar cântă melodie după melodie.
+- Player (versiunea de pe site): fiecare format este un buton care îl dă către pikapik Player și îl înapoiază; **Deschide tot în pikapik** le face pe toate.
+- Player (versiunea de pe site): un panou de control din sticlă mată care se ascunde cât te uiți, și o mică imagine din video când indici bara de timp.
+
+**Încearcă:** Setări › Player
+
+**Reparat**
+
+- Setările tale, de exemplu „Ascunde automat Dock-ul”, revin chiar dacă pikapik s-a oprit pe neașteptate.
+- Chrome, Slack, VS Code (versiunea de pe site): după o blocare nu mai rămân în modul pikapik, iar o fereastră blocată nu mai încetinește deschiderea sau închiderea pikapik.
+- Butoane laterale: Setările arată săgeți înapoi și înainte în loc de 4 și 5, iar „Înainte” nu mai redirecționează un e-mail în Mail sau Outlook.
+- **Fă din această copie copia principală** acționează o singură dată la fiecare apăsare, iar rândurile scurte de sub unele comutatoare spun mai clar ce fac.
+- Versiunea Mac App Store: pagina „Animăluț” nu mai promite vești despre actualizări, pentru că App Store le aduce singur.
+
+---
+
 ## <a id="v1.52.0"></a>Corectarea cuvintelor și butoanele laterale ale mouse-ului merg acum în aproape orice aplicație
 
 <sub>1.52.0 · 15 octombrie 2026</sub>

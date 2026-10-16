@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Odtwarzacz gra twoją muzykę, a ustawienia wracają po awarii
+
+<sub>1.52.1 · 16 października 2026</sub>
+
+Odtwarzacz gra teraz piosenki i ma szklany panel, a twoje ustawienia wracają nawet po awarii.
+
+- Odtwarzacz (wersja ze strony): piosenki grają w tym samym oknie, z okładką, tytułem i wykonawcą, a folder gra piosenkę po piosence.
+- Odtwarzacz (wersja ze strony): każdy format to przycisk, który oddaje go pikapik Player i przywraca z powrotem; **Otwieraj wszystkie w aplikacji pikapik** robi to dla wszystkich.
+- Odtwarzacz (wersja ze strony): panel sterowania z mlecznego szkła, który chowa się podczas oglądania, oraz mały obraz filmu, gdy wskażesz pasek czasu.
+
+**Wypróbuj:** Ustawienia › Odtwarzacz
+
+**Poprawki**
+
+- Twoje ustawienia, na przykład „Automatycznie ukrywaj Dock”, wracają, nawet jeśli pikapik nagle się zatrzymał.
+- Chrome, Slack, VS Code (wersja ze strony): po awarii nie zostają już w trybie pikapik, a zawieszone okno nie spowalnia już otwierania ani zamykania pikapik.
+- Boczne przyciski: Ustawienia pokazują strzałki wstecz i dalej zamiast 4 i 5, a „Dalej” nie przekazuje już e-maila w Mail ani Outlooku.
+- **Ustaw tę kopię jako główną** działa tylko raz na kliknięcie, a krótkie opisy pod niektórymi przełącznikami jaśniej mówią, co robią.
+- Wersja z Mac App Store: strona „Zwierzak” nie obiecuje już wieści o aktualizacjach, bo App Store przynosi je sam.
+
+---
+
 ## <a id="v1.52.0"></a>Poprawianie słów i boczne przyciski myszy działają teraz w prawie każdej aplikacji
 
 <sub>1.52.0 · 15 października 2026</sub>

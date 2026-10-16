@@ -2,7 +2,20 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
-## [1.52.1] - Unreleased
+## [1.52.2] - Unreleased
+
+### Fixed
+- Hide the Dock automatically, desktop icons and hidden files: pikapik writes down your own setting before it changes it and forgets it only after your setting is back. If pikapik stops at that very moment, the next launch still puts your setting back.
+- Hide the Dock automatically turns on again when this copy of pikapik becomes the main one again. If you changed it yourself in the meantime, pikapik keeps your choice.
+- Pointer speed: when it is turned off, your mouse gets its own speed back only while it still has pikapik’s speed, so a speed you set yourself stays. If the mouse doesn’t take its speed back, pikapik tries again next time.
+- Finder extensions and Keep Awake: a copy of pikapik that has just opened no longer changes them before it knows it is the main one.
+- Animations: when another copy of pikapik becomes the main one, or you quit one of two copies, the copy that leaves no longer puts your values back over the other copy’s choices. The Dock restarts at most once, and not at all if both copies want the same. Your own values come back when the last copy quits, also when both copies quit one after another or at the same moment.
+- Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
+- Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
+- Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.
+- Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
+
+## [1.52.1] - 2026-10-16
 
 ### Added
 - Player, website version: every format on the Player page is now a button that shows the app opening it. Click it to give that format to pikapik Player, click again to give it back to the app it had. **Open All in pikapik** does all formats one after another and becomes **Restore Previous Apps** once they are all the player’s. macOS asks about each format, both ways, and the next one is asked only after you answer; “Keep …” moves on to the next. What each button shows is read from the system, so an answer of Keep shows correctly, and no answer for 60 seconds stops the run. This replaces the single switch. The Archives switch shares the same code. The line under Open Video… saying it never changes your apps is gone, because the buttons can.
@@ -18,16 +31,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - One main copy: if pikapik stopped unexpectedly while one of its settings was on, the next launch no longer takes pikapik’s value for yours. Animations, Hide the Dock automatically, hot corners, Repeat a held key, Keep the Dock on one display, Hide desktop icons and Show hidden files remember your own value before they change anything and put it back later. Hide the Dock automatically now also goes back as it was when pikapik quits. Only the main copy changes the brightness of external displays, the app that opens archives, Finder extensions and settings from your other Macs, and only the main copy checks for updates and offers them; a copy that is not the main one quits without turning off Keep Awake.
 - Side buttons: the mouse Forward button no longer presses a menu item called Forward that has a letter shortcut, such as forwarding an email in Outlook or Mail. It also no longer goes back twice when an app is busy and answers late.
 - Second copy of pikapik: Make This Copy the Main One now works once per press, so a fast double click can’t open two new copies. The note names the main copy as the website or Mac App Store version instead of a file path, and the window title is pikapik instead of the last page you looked at.
-- Retype words you typed in the wrong language and Home/End, website version: if pikapik stopped unexpectedly, Chrome, Slack, VS Code and other apps built on Chromium stayed in the mode pikapik had switched on to see their text fields. pikapik now remembers each app it switched, and the next launch of the main copy puts it back in the apps that are still open.
-- Hide the Dock automatically, desktop icons and hidden files: pikapik writes down your own setting before it changes it and forgets it only after your setting is back. If pikapik stops at that very moment, the next launch still puts your setting back.
-- Hide the Dock automatically turns on again when this copy of pikapik becomes the main one again. If you changed it yourself in the meantime, pikapik keeps your choice.
-- Pointer speed: when it is turned off, your mouse gets its own speed back only while it still has pikapik’s speed, so a speed you set yourself stays. If the mouse doesn’t take its speed back, pikapik tries again next time.
-- Finder extensions and Keep Awake: a copy of pikapik that has just opened no longer changes them before it knows it is the main one.
-- Animations: when another copy of pikapik becomes the main one, or you quit one of two copies, the copy that leaves no longer puts your values back over the other copy’s choices. The Dock restarts at most once, and not at all if both copies want the same. Your own values come back when the last copy quits, also when both copies quit one after another or at the same moment.
-- Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
-- Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
-- Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.
-- Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
+- Pet, App Store version: the line under Talks sometimes no longer promises news about updates. The App Store brings updates by itself, so the pet never said anything about them there; the line now just says it sits down for a chat.
+- Retype words you typed in the wrong language and Home/End, website version: if pikapik stopped unexpectedly, Chrome, Slack, VS Code and other apps built on Chromium stayed in the mode pikapik had switched on to see their text fields. pikapik now remembers each app it switched, and the next launch of the main copy puts it back in the apps that are still open. A Chrome, Slack or VS Code window that freezes no longer slows down opening or quitting pikapik, and pikapik still puts the app back as it was.
 
 ## [1.52.0] - 2026-10-15
 
@@ -1031,6 +1036,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Built-in updates from GitHub Releases.
 - Install with Homebrew, an install script or a dmg.
 
+[1.52.1]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.52.1
 [1.52.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.52.0
 [1.51.0]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.51.0
 [1.50.3]: https://github.com/dev-pikapik/pika-tools/releases/tag/v1.50.3

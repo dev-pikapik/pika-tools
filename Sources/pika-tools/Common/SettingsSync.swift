@@ -139,9 +139,7 @@ final class SettingsSync {
         isEnabled = Self.isAvailable && defaults.bool(forKey: Self.enabledKey)
         last = SettingsBackup.snapshot
         let center = NotificationCenter.default
-        center.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: .main) { _ in
-            SettingsSync.shared.settingsChanged()
-        }
+        SettingsFile.onSave { SettingsSync.shared.settingsChanged() }
         center.addObserver(forName: NSApplication.didBecomeActiveNotification, object: nil, queue: .main) { _ in
             let sync = SettingsSync.shared
             switch sync.state {

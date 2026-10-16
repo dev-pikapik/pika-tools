@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Pemutar memainkan musik Anda, dan pengaturan Anda kembali setelah crash
+
+<sub>1.52.1 · 16 Oktober 2026</sub>
+
+Pemutar kini memainkan lagu dan punya panel kaca, dan pengaturan Anda kembali bahkan setelah crash.
+
+- Pemutar (versi situs web): lagu diputar di jendela yang sama, dengan sampul, judul, dan artis, dan satu folder diputar lagu demi lagu.
+- Pemutar (versi situs web): setiap format adalah tombol yang memberikannya ke pikapik Player dan mengembalikannya; **Buka Semua di pikapik** melakukannya untuk semua.
+- Pemutar (versi situs web): panel kontrol dari kaca buram yang menghilang saat Anda menonton, dan gambar kecil video saat Anda menunjuk bilah waktu.
+
+**Coba:** Pengaturan › Pemutar
+
+**Diperbaiki**
+
+- Pengaturan Anda, misalnya “Sembunyikan Dock Otomatis”, kembali meski pikapik berhenti tiba-tiba.
+- Chrome, Slack, VS Code (versi situs web): setelah crash, app ini tidak lagi tertinggal di mode pikapik, dan jendela yang macet tidak lagi memperlambat pembukaan atau penutupan pikapik.
+- Tombol samping: Pengaturan menampilkan panah mundur dan maju, bukan 4 dan 5, dan “Maju” tidak lagi meneruskan email di Mail atau Outlook.
+- **Jadikan salinan ini yang utama** hanya bekerja sekali per klik, dan baris singkat di bawah beberapa sakelar lebih jelas menyebut fungsinya.
+- Versi Mac App Store: halaman “Peliharaan” tidak lagi menjanjikan kabar soal pembaruan, karena App Store membawanya sendiri.
+
+---
+
 ## <a id="v1.52.0"></a>Perbaikan kata dan tombol samping mouse kini berfungsi di hampir semua app
 
 <sub>1.52.0 · 15 Oktober 2026</sub>

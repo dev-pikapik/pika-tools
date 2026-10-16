@@ -147,6 +147,14 @@ private struct PetSettings: View {
     @Bindable var tool: PetTool
     @Environment(\.inSettings) private var inSettings
 
+    private var talksSubtitle: Text {
+        #if APPSTORE
+        Text("Every now and then it sits down for a chat")
+        #else
+        Text("Every now and then it sits down for a chat and tells you when an update is out")
+        #endif
+    }
+
     var body: some View {
         ToggleRow(
             icon: tool.icon,
@@ -160,7 +168,7 @@ private struct PetSettings: View {
             ToggleRow(
                 icon: "text.bubble",
                 title: String(localized: "Talks sometimes"),
-                subtitle: Text("Every now and then it sits down for a chat and tells you when an update is out"),
+                subtitle: talksSubtitle,
                 isOn: $tool.talks
             )
             .disabled(!tool.isEnabled)
@@ -185,6 +193,16 @@ private struct PetSettings: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .needs([.inputMonitoring])
         }
+    }
+}
+
+extension PetTool {
+    static var talksSynonyms: String {
+        #if APPSTORE
+        "phrases, speech bubble, talk, say, messages"
+        #else
+        "phrases, speech bubble, talk, say, messages, updates"
+        #endif
     }
 }
 

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Spelaren spelar din musik, och dina inställningar kommer tillbaka efter en krasch
+
+<sub>1.52.1 · 16 oktober 2026</sub>
+
+Spelaren spelar nu låtar och har en glaspanel, och dina egna inställningar kommer tillbaka även efter en krasch.
+
+- Spelare (webbversionen): låtar spelas i samma fönster, med omslag, titel och artist, och en mapp spelar låt efter låt.
+- Spelare (webbversionen): varje format är en knapp som ger det till pikapik Player och tillbaka igen; **Öppna alla i pikapik** gör alla.
+- Spelare (webbversionen): en kontrollpanel av frostat glas som döljs medan du tittar, och en liten bild av videon när du pekar på tidslinjen.
+
+**Prova:** Inställningar › Spelare
+
+**Åtgärdat**
+
+- Dina inställningar, till exempel ”Dölj Dock automatiskt”, kommer tillbaka även om pikapik stoppade oväntat.
+- Chrome, Slack, VS Code (webbversionen): efter en krasch blir de inte kvar i pikapiks läge, och ett fönster som hänger saktar inte längre ner start och avslut av pikapik.
+- Sidoknappar: Inställningar visar pilar bakåt och framåt i stället för 4 och 5, och ”Framåt” vidarebefordrar inte längre ett mejl i Mail eller Outlook.
+- **Gör den här kopian till huvudkopia** verkar bara en gång per tryck, och de korta raderna under vissa reglage säger tydligare vad de gör.
+- Mac App Store-versionen: sidan ”Husdjur” lovar inte längre nyheter om uppdateringar, eftersom App Store kommer med dem själv.
+
+---
+
 ## <a id="v1.52.0"></a>Rättning av ord och musens sidoknappar fungerar nu i nästan alla appar
 
 <sub>1.52.0 · 15 oktober 2026</sub>
