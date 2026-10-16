@@ -92,7 +92,11 @@ enum TestThumbnails {
             let middle = thumbnail(url, size: CGSize(width: 320, height: 180), duration: 10, at: 0.5)
             check(middle.map { $0.width == 320 && $0.height == 180 } ?? false, "\(name): the 50 % picture is 320 × 180, sharp on a Retina screen")
             let data = middle.map(pixels) ?? []
-            check(Set(stride(from: 0, to: data.count, by: 4).map { Int(data[$0]) << 16 | Int(data[$0 + 1]) << 8 | Int(data[$0 + 2]) }).count > 50, "\(name): the picture is not empty")
+            let colors = Set(stride(from: 0, to: data.count, by: 4).map { (i: Int) -> Int in
+                let red = Int(data[i]) << 16, green = Int(data[i + 1]) << 8
+                return red | green | Int(data[i + 2])
+            })
+            check(colors.count > 50, "\(name): the picture is not empty")
             let start = thumbnail(url, size: CGSize(width: 320, height: 180), duration: 10, at: 0)
             check(start.map(pixels) != nil && start.map(pixels)! != data, "\(name): the start and the middle show different frames")
         }
