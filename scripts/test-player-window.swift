@@ -12,6 +12,14 @@ final class Fires: Sendable {
     func add() { times.withLock { $0.append(Date()) } }
 }
 
+final class FullScreen: NSWindow {
+    var system = false
+    override var styleMask: NSWindow.StyleMask {
+        get { system ? super.styleMask.union(.fullScreen) : super.styleMask }
+        set { super.styleMask = newValue.subtracting(.fullScreen) }
+    }
+}
+
 final class Stand: NSWindow {
     var shown = false
     var sheeted: NSWindow?
@@ -82,6 +90,23 @@ enum TestPlayerWindow {
         precondition(settled(true, video: false), "a song gets the buttons but no dark shade")
         precondition(settled(false, video: false), "the buttons of a song hide too")
         precondition(settled(true), "and come back")
+        let full = FullScreen(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
+        let fullContent = NSView()
+        full.contentView = fullContent
+        let fullChrome = WindowChrome(full, over: fullContent)
+        let fullBar = full.standardWindowButton(.closeButton)?.superview
+        func faded(_ show: Bool, video: Bool = true) -> Bool {
+            let changed = fullChrome.setVisible(show, video: video, voiceOver: false)
+            spin(.default, 0.1)
+            return changed
+        }
+        precondition(faded(true) && fullBar?.alphaValue == 1 && fullChrome.shade.alphaValue == 1, "outside full screen a video shows the buttons with the dark shade")
+        full.system = true
+        precondition(faded(true) && fullBar?.alphaValue == 1 && fullChrome.shade.alphaValue == 0, "in full screen the system bar is shown and our dark shade goes away")
+        precondition(!faded(false) && fullBar?.alphaValue == 1 && fullBar?.isHidden == false && fullChrome.shade.alphaValue == 0, "in full screen hiding the buttons changes nothing, the system bar stays")
+        full.system = false
+        precondition(faded(false) && fullBar?.alphaValue == 0 && fullChrome.shade.alphaValue == 0, "back in a window the buttons hide again")
+        pass("in full screen the system bar stays and the dark shade goes away")
         precondition(!chrome.setVisible(true, video: true, voiceOver: false), "the same state again starts no animation, a mouse move does not restart the fade")
         precondition(chrome.setVisible(false, video: true, voiceOver: false) && !chrome.setVisible(false, video: true, voiceOver: false), "only a change animates")
         precondition(settled(false), "the buttons are hidden")
@@ -179,10 +204,10 @@ enum TestPlayerWindow {
         precondition(WindowChrome.opened(over: window), "a shown pop-up menu counts as open")
         put(menu, false)
         for level in [NSWindow.Level.floating, .modalPanel, .mainMenu, .statusBar, .screenSaver] {
-            let other = stand(level)
-            put(other, true)
+            let above = stand(level)
+            put(above, true)
             precondition(!WindowChrome.opened(over: window), "a window at level \(level.rawValue), like a second player kept on top, is not a menu")
-            put(other, false)
+            put(above, false)
         }
         sheet.sheeted = peer
         put(sheet, true)
@@ -245,7 +270,6 @@ enum TestPlayerWindow {
             released = temporary
         }
         precondition(released == nil, "when its window goes away the chrome is freed even while its timer waits")
-        quiet()
         pass("the hide delay starts over when a menu closes or a sheet ends, and a window that goes away is freed with its timer waiting")
     }
 }
