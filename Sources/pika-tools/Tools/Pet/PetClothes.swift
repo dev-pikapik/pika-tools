@@ -37,7 +37,7 @@ struct PetClothes {
         var covers = [body.boundingRect.insetBy(dx: 2, dy: 2)]
         for (path, paint) in layers {
             let box = path.boundingRect
-            if paint.faint && !covers.contains(where: { $0.contains(box) }) {
+            if paint.faint && !paint.nested && !covers.contains(where: { $0.contains(box) }) {
                 for part in path.subpaths {
                     let inner = part.boundingRect
                     let holders = faint.filter { $0.box.contains(inner) }, probes = holders.isEmpty ? [] : part.inside
@@ -48,20 +48,12 @@ struct PetClothes {
             path.forEach { if case .move = $0 { parts += 1 } }
             if parts == 1 { covers.append(box) }
         }
-        var batches: [(path: Path, boxes: [CGRect])] = []
-        for part in faint {
-            let ring = part.path.strokedPath(Self.stroke), near = part.box.insetBy(dx: -1, dy: -1)
-            if let i = batches.firstIndex(where: { batch in !batch.boxes.contains { $0.intersects(near) } }) {
-                batches[i].path.addPath(ring)
-                batches[i].boxes.append(part.box)
-            } else { batches.append((ring, [part.box])) }
-        }
-        for batch in batches { fill(batch.path.applying(place), Self.rim) }
+        for part in faint { fill(part.path.strokedPath(Self.stroke).applying(place), Self.rim) }
     }
 
     private typealias Ink = (r: Double, g: Double, b: Double)
     private struct Paint {
-        let color: Color, ink: Ink, alpha: Double
+        let color: Color, ink: Ink, alpha: Double, nested: Bool
         var faint: Bool { PetClothes.faint(ink.r, ink.g, ink.b, alpha) }
     }
     private typealias Layers = [(Path, Paint)]
@@ -91,10 +83,10 @@ struct PetClothes {
         static let pine: Ink = (0.16, 0.45, 0.43), pineDeep: Ink = (0.10, 0.31, 0.31)
     }
 
-    private func c(_ k: Ink, _ a: Double = 1) -> Paint {
+    private func c(_ k: Ink, _ a: Double = 1, nested: Bool = false) -> Paint {
         let l = night ? 0.12 : 0
         let ink = (k.r + (1 - k.r) * l, k.g + (1 - k.g) * l, k.b + (1 - k.b) * l)
-        return Paint(color: Color(red: ink.0, green: ink.1, blue: ink.2, opacity: a), ink: ink, alpha: a)
+        return Paint(color: Color(red: ink.0, green: ink.1, blue: ink.2, opacity: a), ink: ink, alpha: a, nested: nested)
     }
 
     private var neck: CGFloat { -height / 2 + 6.4 }
@@ -165,7 +157,7 @@ struct PetClothes {
             var bands = Path()
             for k in 0..<3 { bands.addPath(poly([P(-4, -0.6 - CGFloat(k) * 2.6), P(4, -2.4 - CGFloat(k) * 2.6), P(4, -1.3 - CGFloat(k) * 2.6), P(-4, 0.5 - CGFloat(k) * 2.6)])) }
             let side = poly([P(0.1, -6.4), P(2.9, 1.0), P(1.6, 1.45)])
-            return [(cone.applying(lean), c(Dye.pink)), (bands.intersection(cone).applying(lean), c(Dye.white)), (side.applying(lean), c(Dye.shade, 0.12)), (fluff(P(0, -6.9), 1.2).applying(lean), c(Dye.gold))]
+            return [(cone.applying(lean), c(Dye.pink)), (bands.intersection(cone).applying(lean), c(Dye.white, nested: true)), (side.applying(lean), c(Dye.shade, 0.12)), (fluff(P(0, -6.9), 1.2).applying(lean), c(Dye.gold))]
         case .flowers:
             var petals = [Path(), Path(), Path()], hearts = Path(), leaves = Path()
             let xs: [CGFloat] = [-5.6, -3.8, -1.9, 0.1, 2.1, 4.0, 5.6]
@@ -181,7 +173,7 @@ struct PetClothes {
                     leaves.addPath(oval(m, 0.95 + 0.05 * m * m, 0.45, 0.95).turned(i % 2 == 0 ? 0.9 : -0.9, P(m, 0.95 + 0.05 * m * m)))
                 }
             }
-            return [(leaves, c(Dye.leaf)), (petals[0], c(Dye.pink)), (petals[1], c(Dye.lavender)), (petals[2], c(Dye.white)), (hearts, c(Dye.gold))]
+            return [(leaves, c(Dye.leaf)), (petals[0], c(Dye.pink)), (petals[1], c(Dye.lavender)), (petals[2], c(Dye.white)), (hearts, c(Dye.gold, nested: true))]
         case .bunny:
             let bounce = pose.air ? -0.3 : 0.1 * sin(2 * s - 0.6) * walk
             let back = ear(P(-2.2, 0.4), -0.34 + bounce, 0, 7.0), front = ear(P(0.9, 0.2), 0.14 + bounce * 1.3, 0.9 + bounce, 7.2)
@@ -214,7 +206,7 @@ struct PetClothes {
             dark.addPath(oval(-0.9, -3.0, 0.8, 0.45).turned(0.3, P(-0.9, -3.0)))
             dark.addPath(oval(0.9, -3.0, 0.8, 0.45).turned(-0.3, P(0.9, -3.0)))
             dark.addPath(oval(0, -2.85, 0.45, 0.45))
-            return [(cap, c(Dye.oat)), (v.intersection(cap), c(Dye.brown, 0.32)), (h.intersection(cap), c(Dye.brown, 0.32)), (dark, c(Dye.brown))]
+            return [(cap, c(Dye.oat)), (v.intersection(cap), c(Dye.brown, 0.32, nested: true)), (h.intersection(cap), c(Dye.brown, 0.32, nested: true)), (dark, c(Dye.brown))]
         case .pirate:
             let edge = [P(-7.5, -0.2), P(-6.1, -2.0), P(-3.8, -3.4), P(-1.7, -3.0), P(0.7, -4.4), P(2.9, -3.5), P(5.0, -3.4), P(6.9, -1.6), P(7.8, 0.5)]
             let shape = blob(edge + [P(5.2, 1.5), P(1.0, 2.1), P(-3.2, 1.7), P(-6.3, 0.9)])
@@ -247,7 +239,7 @@ struct PetClothes {
             stars.addPath(star(P(-1.3, -4.5), 0.75))
             stars.addPath(star(P(2.1, -0.1), 0.55))
             let side = ribbon(Array(line.prefix(line.count * 2 / 3)), { 1.6 * (1 - $0) + 0.3 }).offsetBy(dx: 2.0, dy: 0).intersection(cone)
-            return [(oval(0, 1.0, 7.0, 1.15), c(Dye.purpleDeep)), (purple, c(Dye.purple)), (side, c(Dye.shade, 0.16)), (stars, c(Dye.gold))]
+            return [(oval(0, 1.0, 7.0, 1.15), c(Dye.purpleDeep)), (purple, c(Dye.purple)), (side, c(Dye.shade, 0.16, nested: true)), (stars, c(Dye.gold))]
         case .viking:
             var horns = Path()
             for d in [-1.0, 1.0] as [CGFloat] {
@@ -286,7 +278,7 @@ struct PetClothes {
             ink.addPath(blob([P(-6.7, -0.4), P(-4.6, 0.4), P(0, 0.8), P(4.6, 0.4), P(6.7, -0.4), P(6.3, 0.7), P(3.6, 1.7), P(0, 1.9), P(-3.6, 1.7), P(-6.3, 0.7)]))
             let band = poly([P(-4.6, -0.7), P(4.6, -0.7), P(4.6, 0.9), P(-4.6, 0.9)]).intersection(dome)
             let shine = blob([P(-3.4, -1.4), P(-2.6, -3.0), P(-1.2, -3.9), P(-0.9, -3.5), P(-2.1, -2.6), P(-2.7, -1.1)])
-            return [(ink.applying(lean), c(Dye.ink)), (band.applying(lean), c(Dye.satin)), (shine.applying(lean), c(Dye.white, 0.2))]
+            return [(ink.applying(lean), c(Dye.ink)), (band.applying(lean), c(Dye.satin, nested: true)), (shine.applying(lean), c(Dye.white, 0.2))]
         case .quiff:
             let sway = (pose.air ? 0.7 : 0.25 * sin(s * 2)) * (1 - pose.sit)
             let hair = blob([P(-6.1, 3.4), P(-6.4, 1.0), P(-5.2, -1.0), P(-2.9, -2.0), P(-0.6, -3.5), P(1.8, -5.6 - sway * 0.3), P(4.4 + sway * 0.5, -6.9), P(6.6 + sway, -6.4), P(7.6 + sway, -4.6), P(5.9 + sway * 0.4, -4.1), P(5.0, -2.4), P(5.2, 0.2), P(4.4, 1.2), P(2.0, 1.0), P(-1.0, 0.9), P(-3.6, 1.6)], sharp: [8])
@@ -582,7 +574,7 @@ struct PetClothes {
             white.addPath(sleeves)
             var bands = Path()
             for k in 0..<6 { bands.addRect(CGRect(x: -w - 2, y: n + 0.8 + CGFloat(k) * 1.45, width: 2 * w + 4, height: 0.72)) }
-            return [(white, c(Dye.white)), (bands.intersection(white), c(Dye.navy))]
+            return [(white, c(Dye.white)), (bands.intersection(white), c(Dye.navy, nested: true))]
         case .hero:
             let trunk = torso(0, to: b + 1)
             var suit = trunk
@@ -670,7 +662,7 @@ struct PetClothes {
             patch.addPath(oval(-w - 0.1, n + 1.3, 0.42, 0.58))
             let welt = ribbon([P(0.2, n + 1.7), P(1.9, n + 1.5)], { _ in 0.35 })
             let square = poly([P(0.5, n + 1.6), P(0.6, n + 0.7), P(1.0, n + 1.1), P(1.4, n + 0.6), P(1.7, n + 1.5)])
-            return [(jacket, c(Dye.oat)), (weave.intersection(jacket), c(Dye.tan, 0.9)), (check.intersection(jacket), c(Dye.chestnut, 0.85)), (shirt, c(Dye.cream)), (lapel, c(Dye.tanDeep)), (patch, c(Dye.brown)), (welt, c(Dye.brown)), (square, c(Dye.pink)), (buttons, c(Dye.brown))]
+            return [(jacket, c(Dye.oat)), (weave.intersection(jacket), c(Dye.tan, 0.9, nested: true)), (check.intersection(jacket), c(Dye.chestnut, 0.85, nested: true)), (shirt, c(Dye.cream)), (lapel, c(Dye.tanDeep)), (patch, c(Dye.brown)), (welt, c(Dye.brown)), (square, c(Dye.pink)), (buttons, c(Dye.brown))]
         case .waistcoat:
             let vest = torso(0, to: b + 0.4)
             let shirt = poly([P(2.2, n + 0.4), P(w - 0.2, n + 0.3), P(3.9, n + 2.4)])
@@ -740,7 +732,7 @@ struct PetClothes {
             for k in 0..<9 { let x = -6.4 + CGFloat(k) * 1.6; high.addPath(oval(x, t + 0.05 + 0.02 * x * x, 1.05, 1.05)) }
             for (x, y) in [(-4.8, 0.3), (-1.6, 0.1), (1.8, 0.4), (4.6, 0.2), (-3.0, 1.6), (3.2, 1.7)] as [(CGFloat, CGFloat)] { dots.addPath(oval(x, t + y, 0.22, 0.22)) }
             let band = ribbon(trace([P(-w + 0.4, t - 0.75), P(0, t - 0.6), P(w - 0.4, t - 0.75)]), { _ in 0.9 })
-            return [(low, c(Dye.pinkDeep)), (high, c(Dye.pink)), (band, c(Dye.lavenderDeep)), (dots, c(Dye.white, 0.85))]
+            return [(low, c(Dye.pinkDeep)), (high, c(Dye.pink)), (band, c(Dye.lavenderDeep)), (dots, c(Dye.white, 0.85, nested: true))]
         default:
             return []
         }

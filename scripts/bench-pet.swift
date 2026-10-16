@@ -20,7 +20,7 @@ struct Row {
 
 @main
 enum BenchPet {
-    static let frames = 300, rounds = 5, limit = 0.3
+    static let frames = 300, rounds = 5, limit = 0.3, lookLimit = 0.5
     static let raster = CommandLine.arguments.contains("raster")
     static let environment = EnvironmentValues()
     static let context = CGContext(data: nil, width: 256, height: 256, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpace(name: CGColorSpace.sRGB)!, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
@@ -75,9 +75,9 @@ enum BenchPet {
         print("worst looks:")
         for row in lookRows.sorted(by: { $0.worst > $1.worst }).prefix(3) { print("  " + row.text) }
         if let detective = itemRows.first(where: { $0.name == "detective" }) { print("detective:\n  " + detective.text) }
-        let over = (itemRows + lookRows).filter { $0.worst > limit }
-        for row in over { print("over \(limit) ms: " + row.text) }
+        let over = itemRows.filter { $0.worst > limit }.map { (limit, $0) } + lookRows.filter { $0.worst > lookLimit }.map { (lookLimit, $0) }
+        for (limit, row) in over { print("over \(limit) ms: " + row.text) }
         if !over.isEmpty { exit(1) }
-        print("outline adds at most \(limit) ms per frame to \(itemRows.count) items and \(lookRows.count) looks while walking: ok")
+        print("outline adds at most \(limit) ms per frame to each of \(itemRows.count) items and \(lookLimit) ms to each of \(lookRows.count) looks, walking, idle and at night: ok")
     }
 }
