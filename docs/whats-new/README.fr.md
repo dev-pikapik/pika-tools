@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Le lecteur joue votre musique, et vos réglages reviennent après un plantage
+
+<sub>1.52.1 · 16 octobre 2026</sub>
+
+Le lecteur joue maintenant les chansons et prend un aspect de verre, et vos réglages reviennent même après un plantage.
+
+- Lecteur (version du site) : les chansons se jouent dans la même fenêtre, avec la pochette, le titre et l’artiste, et un dossier se joue chanson après chanson.
+- Lecteur (version du site) : chaque format est un bouton qui le confie à pikapik Player puis le rend ; **Tout ouvrir dans pikapik** les fait tous.
+- Lecteur (version du site) : un panneau de commandes en verre dépoli qui se cache pendant la lecture, et une petite image de la vidéo quand vous pointez la barre de temps.
+
+**Pour essayer :** Réglages › Lecteur
+
+**Corrigé**
+
+- Vos réglages, par exemple « Masquer le Dock automatiquement », reviennent même si pikapik s’est arrêté de façon inattendue.
+- Chrome, Slack, VS Code (version du site) : après un plantage, ils ne restent plus dans le mode de pikapik, et une fenêtre qui se fige ne ralentit plus l’ouverture ni la fermeture de pikapik.
+- Boutons latéraux : les Réglages montrent des flèches précédent et suivant au lieu de 4 et 5, et « Suivant » ne transfère plus un e-mail dans Mail ou Outlook.
+- **Faire de cette copie la copie principale** n’agit qu’une fois par clic, et les courtes lignes sous certains interrupteurs disent plus clairement ce qu’ils font.
+- Version Mac App Store : la page « Compagnon » ne promet plus de nouvelles sur les mises à jour, car l’App Store les apporte tout seul.
+
+---
+
 ## <a id="v1.52.0"></a>La correction des mots et les boutons latéraux de la souris marchent presque partout
 
 <sub>1.52.0 · 15 octobre 2026</sub>

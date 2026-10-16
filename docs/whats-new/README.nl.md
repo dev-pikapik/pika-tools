@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>De speler speelt je muziek, en je instellingen komen terug na een crash
+
+<sub>1.52.1 · 16 oktober 2026</sub>
+
+De speler speelt nu liedjes en heeft een glazen paneel, en je eigen instellingen komen terug, ook na een crash.
+
+- Speler (versie van de website): liedjes spelen in hetzelfde venster, met hoes, titel en artiest, en een map speelt liedje na liedje.
+- Speler (versie van de website): elk formaat is een knop die het aan pikapik Player geeft en weer teruggeeft; **Alles openen in pikapik** doet ze allemaal.
+- Speler (versie van de website): een bedieningspaneel van matglas dat verdwijnt terwijl je kijkt, en een klein beeld van de video als je naar de tijdbalk wijst.
+
+**Probeer het:** Instellingen › Speler
+
+**Opgelost**
+
+- Je instellingen, bijvoorbeeld “Dock automatisch verbergen”, komen terug, ook als pikapik onverwacht was gestopt.
+- Chrome, Slack, VS Code (versie van de website): na een crash blijven ze niet meer in de stand van pikapik staan, en een vastgelopen venster vertraagt het openen en afsluiten van pikapik niet meer.
+- Zijknoppen: Instellingen toont pijlen terug en vooruit in plaats van 4 en 5, en “Vooruit” stuurt in Mail of Outlook geen e-mail meer door.
+- **Maak deze kopie de hoofdkopie** werkt maar één keer per klik, en de korte regels onder sommige schakelaars zeggen duidelijker wat ze doen.
+- Versie uit de Mac App Store: de pagina “Huisdiertje” belooft geen nieuws over updates meer, want de App Store brengt ze zelf.
+
+---
+
 ## <a id="v1.52.0"></a>Woorden verbeteren en de zijknoppen van de muis werken nu in bijna elke app
 
 <sub>1.52.0 · 15 oktober 2026</sub>

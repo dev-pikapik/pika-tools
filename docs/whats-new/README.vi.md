@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Trình phát chơi nhạc của bạn, và cài đặt quay lại sau khi bị lỗi
+
+<sub>1.52.1 · 16 tháng 10 năm 2026</sub>
+
+Trình phát giờ chơi được bài hát và có bảng điều khiển bằng kính, còn cài đặt của bạn quay lại ngay cả sau khi bị lỗi.
+
+- Trình phát (bản từ trang web): bài hát phát trong cùng một cửa sổ, có ảnh bìa, tên bài và nghệ sĩ, còn một thư mục sẽ phát hết bài này đến bài khác.
+- Trình phát (bản từ trang web): mỗi định dạng là một nút giao nó cho pikapik Player và trả lại; **Mở tất cả trong pikapik** làm điều đó cho tất cả.
+- Trình phát (bản từ trang web): bảng điều khiển bằng kính mờ tự ẩn khi bạn xem, và một ảnh nhỏ của video khi bạn trỏ vào thanh thời gian.
+
+**Thử ngay:** Cài đặt › Trình phát
+
+**Đã sửa**
+
+- Cài đặt của bạn, ví dụ “Tự động ẩn Dock”, quay lại ngay cả khi pikapik dừng đột ngột.
+- Chrome, Slack, VS Code (bản từ trang web): sau khi bị lỗi, chúng không còn ở lại chế độ của pikapik, và cửa sổ bị treo không còn làm chậm việc mở hay thoát pikapik.
+- Nút bên: Cài đặt hiện mũi tên lùi và tiến thay cho 4 và 5, và “Tiến” không còn chuyển tiếp email trong Mail hay Outlook.
+- **Đặt bản sao này làm bản chính** chỉ hoạt động một lần mỗi lần bấm, và các dòng ngắn dưới một số công tắc nói rõ hơn chúng làm gì.
+- Bản Mac App Store: trang “Thú cưng” không còn hứa hẹn tin tức về bản cập nhật nữa, vì App Store tự mang chúng đến.
+
+---
+
 ## <a id="v1.52.0"></a>Sửa từ gõ sai và nút bên của chuột nay dùng được ở hầu hết mọi ứng dụng
 
 <sub>1.52.0 · 15 tháng 10 năm 2026</sub>

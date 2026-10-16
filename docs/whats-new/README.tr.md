@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>Oynatıcı müziğinizi çalar, ayarlarınız çökmeden sonra geri gelir
+
+<sub>1.52.1 · 16 Ekim 2026</sub>
+
+Oynatıcı artık şarkıları çalıyor ve cam gibi bir panele sahip, ayarlarınız da çökmeden sonra bile geri geliyor.
+
+- Oynatıcı (web sitesi sürümü): şarkılar aynı pencerede kapak, başlık ve sanatçıyla çalar, klasör de şarkı şarkı çalar.
+- Oynatıcı (web sitesi sürümü): her biçim, onu pikapik Player’a veren ve geri alan bir düğmedir; **Tümünü pikapik’te Aç** hepsini yapar.
+- Oynatıcı (web sitesi sürümü): izlerken kendini gizleyen buzlu cam bir kontrol paneli ve zaman çubuğuna işaret edince videonun küçük bir resmi.
+
+**Deneyin:** Ayarlar › Oynatıcı
+
+**Düzeltilenler**
+
+- “Dock’u otomatik gizle” gibi ayarlarınız, pikapik beklenmedik şekilde durmuş olsa bile geri gelir.
+- Chrome, Slack, VS Code (web sitesi sürümü): çökmeden sonra artık pikapik’in modunda kalmaz, donan bir pencere de pikapik’in açılışını ya da kapanışını yavaşlatmaz.
+- Yan düğmeler: Ayarlar 4 ve 5 yerine geri ve ileri okları gösterir, “İleri” de Mail veya Outlook’ta artık e-posta iletmez.
+- **Bu kopyayı ana kopya yap** her basışta yalnızca bir kez çalışır, bazı anahtarların altındaki kısa satırlar ne yaptıklarını daha net söyler.
+- Mac App Store sürümü: “Evcil Dost” sayfası artık güncelleme haberleri vaat etmiyor, çünkü App Store güncellemeleri kendisi getiriyor.
+
+---
+
 ## <a id="v1.52.0"></a>Sözcük düzeltme ve farenin yan düğmeleri artık hemen her uygulamada çalışıyor
 
 <sub>1.52.0 · 15 Ekim 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>O player toca sua música, e seus ajustes voltam depois de uma falha
+
+<sub>1.52.1 · 16 de outubro de 2026</sub>
+
+O player agora toca músicas e tem um painel de vidro, e seus ajustes voltam mesmo depois de uma falha.
+
+- Player (versão do site): as músicas tocam na mesma janela, com capa, título e artista, e uma pasta toca música após música.
+- Player (versão do site): cada formato é um botão que o entrega ao pikapik Player e o devolve; **Abrir tudo no pikapik** faz isso com todos.
+- Player (versão do site): um painel de controle de vidro fosco que some enquanto você assiste, e uma pequena imagem do vídeo quando você aponta para a barra de tempo.
+
+**Experimente:** Ajustes › Player
+
+**Corrigido**
+
+- Seus ajustes, como “Ocultar o Dock automaticamente”, voltam mesmo que o pikapik tenha parado de repente.
+- Chrome, Slack, VS Code (versão do site): depois de uma falha eles não ficam mais no modo do pikapik, e uma janela travada não atrasa mais a abertura nem o fechamento do pikapik.
+- Botões laterais: os Ajustes mostram setas de voltar e avançar no lugar de 4 e 5, e “Avançar” não encaminha mais um e-mail no Mail ou no Outlook.
+- **Tornar esta cópia a principal** age uma única vez por clique, e as linhas curtas sob alguns interruptores dizem com mais clareza o que fazem.
+- Versão da Mac App Store: a página “Bichinho” não promete mais novidades sobre atualizações, porque a App Store as traz sozinha.
+
+---
+
 ## <a id="v1.52.0"></a>A correção de palavras e os botões laterais do mouse agora funcionam em quase todo app
 
 <sub>1.52.0 · 15 de outubro de 2026</sub>

@@ -5,6 +5,28 @@
 
 ---
 
+## <a id="v1.52.1"></a>El reproductor pone tu música, y tus ajustes vuelven tras un cierre inesperado
+
+<sub>1.52.1 · 16 de octubre de 2026</sub>
+
+El reproductor ya reproduce canciones y tiene un panel de cristal, y tus ajustes vuelven incluso tras un cierre inesperado.
+
+- Reproductor (versión de la web): las canciones suenan en la misma ventana, con la carátula, el título y el artista, y una carpeta suena canción tras canción.
+- Reproductor (versión de la web): cada formato es un botón que se lo da a pikapik Player y se lo devuelve a la app anterior; **Abrir todo en pikapik** lo hace con todos.
+- Reproductor (versión de la web): un panel de control de cristal esmerilado que se oculta mientras ves el vídeo, y una imagen pequeña del vídeo al señalar la barra de tiempo.
+
+**Pruébalo:** Ajustes › Reproductor
+
+**Corregido**
+
+- Tus ajustes, por ejemplo «Ocultar el Dock automáticamente», vuelven aunque pikapik se haya detenido de forma inesperada.
+- Chrome, Slack, VS Code (versión de la web): tras un cierre inesperado ya no se quedan en el modo de pikapik, y una ventana bloqueada ya no ralentiza la apertura ni el cierre de pikapik.
+- Botones laterales: Ajustes muestra flechas de atrás y adelante en lugar de 4 y 5, y «Adelante» ya no reenvía un correo en Mail u Outlook.
+- **Convertir esta copia en la principal** actúa una sola vez por pulsación, y las líneas cortas bajo algunos interruptores explican mejor lo que hacen.
+- Versión de Mac App Store: la página “Mascota” ya no promete noticias sobre actualizaciones, porque la App Store las trae sola.
+
+---
+
 ## <a id="v1.52.0"></a>La corrección de palabras y los botones laterales del ratón ya funcionan en casi cualquier app
 
 <sub>1.52.0 · 15 de octubre de 2026</sub>
