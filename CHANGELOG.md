@@ -20,6 +20,8 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Animations: when two copies of pikapik quit at the same moment, only one of them puts your values back and the Dock restarts only once: the second copy waits for the first and finds nothing left to do. A copy that is still closing is never taken for one that stays open, so your values always come back.
 - Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
 - Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
+- Animations: if pikapik stops right after it puts your values back, the Dock still shows them: the next time pikapik opens, it restarts the Dock.
+- Dock on one display: when you quit pikapik, the Dock now restarts at once and moves between displays again. Before, the restart could be lost as pikapik closed, and the Dock stayed on one display until it restarted on its own.
 - Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.
 - Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
 - Games, Mac App Store version: The pointer stays in the game is gone from this version. It could only pull the pointer back after it had already slipped onto another screen or into a hot corner, which was jumpy and not reliable. The website version keeps this option: there macOS itself stops the pointer at the edge.
