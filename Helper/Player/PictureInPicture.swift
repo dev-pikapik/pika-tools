@@ -46,7 +46,6 @@ final class PictureInPicture: NSObject, AVPictureInPictureControllerDelegate, AV
         observation = nil
         controller?.delegate = nil
         if isActive { controller?.stopPictureInPicture() }
-        controller?.contentSource = nil
         controller = nil
     }
 

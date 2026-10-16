@@ -919,8 +919,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     func windowWillClose(_ notification: Notification) {
-        hiddenForPip = false
         chrome?.cancelIdle()
+        hiddenForPip = false
         stop()
         scrubber.onHover = nil
         onClose?(self)
