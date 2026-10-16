@@ -64,7 +64,9 @@ enum PetFigure {
         let eye = CGPoint(x: 2.6, y: -height / 2 + 3.8)
         let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place)
         wear.draw(.back, fill)
-        if sit < 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
+        if sit < 0.5 { fill(paws, feet) }
+        wear.draw(.rim, fill)
+        if sit < 0.5 { wear.draw(.feet, fill) }
         fill(shape.applying(place), body)
         wear.draw(.base, fill)
         wear.draw(.legs, fill)

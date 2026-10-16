@@ -1,12 +1,14 @@
 import SwiftUI
 
 struct PetClothes {
-    enum Layer { case back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
+    enum Layer { case rim, back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
 
     let pose: PetPose, night: Bool, body: Path, width: CGFloat, height: CGFloat, eye: CGPoint, paws: [CGRect], ground: CGFloat, place: CGAffineTransform
 
     func draw(_ layer: Layer, _ fill: (Path, Color) -> Void) {
-        for (path, color) in shapes(layer) { fill(path.applying(place), color) }
+        for (path, color) in shapes(layer) where (color == .clear) == (layer == .rim) {
+            fill(path.applying(place), color == .clear ? c(Dye.steel) : color)
+        }
     }
 
     private typealias Ink = (r: Double, g: Double, b: Double)
@@ -42,14 +44,11 @@ struct PetClothes {
         return Color(red: k.r + (1 - k.r) * l, green: k.g + (1 - k.g) * l, blue: k.b + (1 - k.b) * l, opacity: a)
     }
 
-    private static var rims: [(path: Path, body: Path, rim: Path)] = []
+    private func edge(_ path: Path) -> Path { path.strokedPath(StrokeStyle(lineWidth: 0.7, lineJoin: .round)) }
 
-    private func rim(_ path: Path) -> (Path, Color) {
-        if let hit = Self.rims.first(where: { $0.path == path && $0.body == body }) { return (hit.rim, c(Dye.steel)) }
-        let rim = Path(path.strokedPath(StrokeStyle(lineWidth: 0.7, lineJoin: .round)).subtracting(body).cgPath)
-        Self.rims = Array((Self.rims + [(path, body, rim)]).suffix(6))
-        return (rim, c(Dye.steel))
-    }
+    private func rim(_ path: Path) -> (Path, Color) { (edge(path), .clear) }
+
+    private func shoeRim(_ path: Path) -> (Path, Color) { pose.sit < 0.5 ? (edge(path), c(Dye.steel)) : rim(path) }
 
     private var neck: CGFloat { -height / 2 + 6.4 }
     private var chest: CGFloat { -height / 2 + 5.7 }
@@ -58,9 +57,20 @@ struct PetClothes {
     private var sealed: Bool { pose.outfit[.head] == .helmet }
     private var walk: CGFloat { pose.air ? 0 : 1 - pose.sit }
 
+    private final class Memo { var layers: [Layer: Layers] = [:] }
+    private let memo = Memo()
+
     private func shapes(_ layer: Layer) -> Layers {
+        if let hit = memo.layers[layer] { return hit }
+        let built = build(layer)
+        memo.layers[layer] = built
+        return built
+    }
+
+    private func build(_ layer: Layer) -> Layers {
         let o = pose.outfit
         switch layer {
+        case .rim: return shapes(.base) + shapes(.outer) + shapes(.feet)
         case .back: return o[.back].map { inside(back($0)) } ?? []
         case .feet: return o[.feet].map(shoes) ?? []
         case .base, .outer:
@@ -484,7 +494,7 @@ struct PetClothes {
     private func torso(_ lift: CGFloat, to end: CGFloat) -> Path {
         let n = chest + lift, w = half
         let line = trace([P(-w - 1, n - 0.1), P(-2.5, n + 0.1), P(1.8, n + 0.5), P(3.8, n + 0.65), P(w + 1, n + 0.1)], 4)
-        return body.intersection(poly(line + [P(w + 1, end), P(-w - 1, end)]))
+        return Path(body.intersection(poly(line + [P(w + 1, end), P(-w - 1, end)])).cgPath)
     }
 
     private func shirt(_ lift: CGFloat, hem: CGFloat, flare f: CGFloat) -> Path {
@@ -731,10 +741,10 @@ struct PetClothes {
             }
         }
         switch item {
-        case .sneakers: return [rim(a), (a, c(Dye.snow)), (b, c(Dye.blue))]
+        case .sneakers: return [shoeRim(a), (a, c(Dye.snow)), (b, c(Dye.blue))]
         case .boots: return [(a, c(Dye.yellow)), (b, c(Dye.yellowDeep)), (d, c(Dye.white, 0.55))]
         case .spats: return [(a, c(Dye.ink)), (d, c(Dye.satin)), (b, c(Dye.cream)), (e, c(Dye.ink)), (f, c(Dye.white, 0.6))]
-        case .skates: return [(a, c(Dye.turquoise)), (b, c(Dye.white)), (d, c(Dye.steelDeep)), rim(e), (e, c(Dye.snow)), (f, c(Dye.pink))]
+        case .skates: return [(a, c(Dye.turquoise)), (b, c(Dye.white)), (d, c(Dye.steelDeep)), shoeRim(e), (e, c(Dye.snow)), (f, c(Dye.pink))]
         default: return []
         }
     }
@@ -830,7 +840,7 @@ struct PetClothes {
             var wing = primaries
             wing.addPath(coverts)
             let far = CGAffineTransform(translationX: -root.x, y: -root.y).concatenating(CGAffineTransform(scaleX: 0.85, y: 0.85)).concatenating(CGAffineTransform(translationX: root.x + 1.2, y: root.y - 1.0))
-            return [(wing.turned(flap - 0.25, root).applying(far), c(Dye.mist)), rim(wing.turned(flap, root)), (primaries.turned(flap, root), c(Dye.feather)), (coverts.turned(flap, root), c(Dye.snow))]
+            return [(wing.turned(flap - 0.25, root).applying(far), c(Dye.mist)), (edge(wing.turned(flap, root)), c(Dye.steel)), (primaries.turned(flap, root), c(Dye.feather)), (coverts.turned(flap, root), c(Dye.snow))]
         default:
             return []
         }
