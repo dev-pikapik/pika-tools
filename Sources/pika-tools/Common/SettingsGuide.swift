@@ -455,7 +455,7 @@ struct GuideLayout {
         case .toggle, .app: return CGPoint(x: right - 11, y: y - 2)
         case .checkbox: return CGPoint(x: right - 72, y: y + 3.5)
         case .popup: return CGPoint(x: right - 12, y: y - 1)
-        case .button: return CGPoint(x: right - 28, y: y)
+        case .button: return CGPoint(x: right - 28, y: y + 5)
         case .page, .info, .appInfo: return CGPoint(x: right - 3, y: y)
         case .select: return CGPoint(x: right - 16, y: y)
         case .display: return CGPoint(x: right, y: y)

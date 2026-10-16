@@ -20,6 +20,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 
 ### Fixed
 - Retype words you typed in the wrong language and Home/End, website version: pikapik no longer turns off what another app, such as Voice Control or a keyboard navigation tool, had turned on in Chrome, Slack, VS Code and other apps built on Chromium. These apps don’t say truthfully whether that mode is on, so pikapik now looks for itself: if the app already shows its text fields, pikapik leaves it as it is, does not remember it and does not touch it when quitting. It switches, and later puts back, only the apps it really had to turn on.
+- Retype words you typed in the wrong language and Home/End, website version: when you quit pikapik, Google Chrome and other Chromium browsers are put back as they were. Before, pikapik turned them on but did not remember it, because Chrome answers as if it had refused, so they stayed on after pikapik quit.
 - Keys pikapik sends for you (Home and End, Quit app and Close window, Finder keys, Back and Forward, the text the layout fix retypes, the App Store layout-fix shortcut) no longer leave other apps thinking ⌘ or other modifier keys are still held until you touch the keyboard or mouse.
 - Quit app: ⇧⌘Q and a shortcut you chose for Quit now quit the app every time. Before, the ⌘Q pikapik sent arrived looking like a key held down, and apps ignore a held-down ⌘Q, so most of the time nothing happened. Close window, Home and End and the Finder keys now send their keys the same way, so Return in Finder opens the folder on the first press.
 - Hide the Dock automatically, desktop icons and hidden files: pikapik writes down your own setting before it changes it and forgets it only after your setting is back. If pikapik stops at that very moment, the next launch still puts your setting back.
@@ -30,11 +31,16 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Animations: when two copies of pikapik quit at the same moment, only one of them puts your values back and the Dock restarts only once: the second copy waits for the first and finds nothing left to do. A copy that is still closing is never taken for one that stays open, so your values always come back.
 - Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
 - Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
+- Animations: if pikapik stops right after it puts your values back, the Dock still shows them: the next time pikapik opens, it restarts the Dock.
+- Dock on one display: when you quit pikapik, the Dock now restarts at once and moves between displays again. Before, the restart could be lost as pikapik closed, and the Dock stayed on one display until it restarted on its own.
 - Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.
 - Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
 - Games, Mac App Store version: The pointer stays in the game is gone from this version. It could only pull the pointer back after it had already slipped onto another screen or into a hot corner, which was jumpy and not reliable. The website version keeps this option: there macOS itself stops the pointer at the edge.
 - Hide desktop icons, Mac App Store version: a photo of your own as wallpaper now covers the icons too, when pikapik already has access to your home folder. Before, such a wallpaper always turned into a plain color.
 - Player, website version: a song folder you later delete is forgotten the next time the player starts.
+- Settings: when a page opens from the menu, a link or search, the list on the left scrolls to it, so you always see which page is open.
+- Settings pictures: the pointer drawn in System Settings no longer covers the button text, and the keyboard picture on Switch language shows your own language next to English instead of Russian.
+- Translations: Romanian always speaks to you formally, Korean instructions use one polite style, Brazilian Portuguese titles capitalise only the first word, and Arabic lines that start with a key name such as Home or Enter read right to left. Small fixes in Japanese, Ukrainian and Vietnamese.
 
 ## [1.52.1] - 2026-10-16
 

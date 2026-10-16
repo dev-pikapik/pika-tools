@@ -159,9 +159,10 @@ enum AnimationSetting: String, CaseIterable {
         return (originals, new, changes)
     }
 
-    static func putBack(own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, write: (Self, Double?) -> Void) -> [(Self, Double?)] {
+    static func putBack(own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, willWrite: ([(Self, Double?)]) -> Void, write: (Self, Double?) -> Void) -> [(Self, Double?)] {
         let written = ours.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
         let changes = Self.changes(from: written, to: [:], system: system, own: own)
+        willWrite(changes)
         changes.forEach { write($0.0, $0.1) }
         remember([:], [:])
         return changes
@@ -182,13 +183,15 @@ final class DockRestart {
 
     var isPending: Bool { journal().bool(forKey: Self.key) }
 
+    var isScheduled: Bool { work != nil && isPending }
+
     func restart(for changes: [(AnimationSetting, Double?)], autohide: Bool) {
         if isPending || AnimationSetting.restartsDock(changes, autohide: autohide) { schedule() }
     }
 
     func schedule() {
         work?.cancel()
-        journal().set(true, forKey: Self.key)
+        Self.mark(journal())
         let item = DispatchWorkItem { [self] in fire() }
         work = item
         later(item)
@@ -203,6 +206,10 @@ final class DockRestart {
         handOver()
         kill(true)
         Self.clear(journal())
+    }
+
+    static func mark(_ journal: UserDefaults) {
+        journal.set(true, forKey: key)
     }
 
     static func clear(_ journal: UserDefaults) {
@@ -363,7 +370,7 @@ class AnimationsEngine {
     private func putBack() {
         let dock = Self.putBack(host)
         reload()
-        if dock { dockRestart.now() }
+        if dock || dockRestart.isScheduled { dockRestart.now() }
     }
 
     private static func putBack(_ host: AnimationsHost) -> Bool {
@@ -371,7 +378,7 @@ class AnimationsEngine {
         host.exclusive {
             let journal = host.journal()
             let autohide = putBackAutohide(host)
-            let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, write: host.write)
+            let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, willWrite: { if $0.contains(where: { $0.0.apply == .dock }) { DockRestart.mark(journal) } }, write: host.write)
             clearLeaving(host)
             dock = autohide || changes.contains { $0.0.apply == .dock }
         }
@@ -420,7 +427,10 @@ class AnimationsEngine {
         let journal = host.journal()
         let entry = OriginalValue.load(autohideKey, journal: journal)
         let value = OriginalValue.putBack(entry, current: host.readAutohide())
-        if let value { host.writeAutohide(value) } else if entry != nil { OriginalValue.save(nil, wantedAutohideKey, journal: host.local) }
+        if let value {
+            DockRestart.mark(journal)
+            host.writeAutohide(value)
+        } else if entry != nil { OriginalValue.save(nil, wantedAutohideKey, journal: host.local) }
         OriginalValue.save(nil, autohideKey, journal: journal)
         return value != nil
     }

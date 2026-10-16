@@ -375,7 +375,7 @@ struct TestMainCopy {
             precondition(mac.kills.isEmpty && mac.system == original.merging(wantsA) { $1 }, "A quits and B has not become main yet: \(mac.kills)")
             mac.quit(b)
             precondition(mac.system == original && mac.journalEmpty, "B quits before it became main and puts the originals back")
-            precondition(mac.kills == [.putBack("B", flagSet: waiting)], "waiting \(waiting): \(mac.kills)")
+            precondition(mac.kills == [.putBack("B")], "waiting \(waiting): \(mac.kills)")
         }
         print("both copies quit one after another: the last one puts back what the journal holds: ok")
 
@@ -462,6 +462,49 @@ struct TestMainCopy {
         AnimationsEngine.uninstall(k.host)
         precondition(!alone.autohide && alone.journalEmpty && alone.kills == [.putBack("A")], "uninstall where only autohide comes back: \(alone.kills)")
         print("when only autohide comes back, on quit and on uninstall, the Dock restarts once: ok")
+        for uninstall in [false, true] {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, wantsB)
+            mac.become(a)
+            a.engine.setAutohide(true)
+            mac.elapse()
+            var left: [String: Any]?
+            mac.whileWaiting = { left = mac.journal.persistentDomain(forName: Mac.journalName) }
+            if uninstall {
+                mac.leader = nil
+                AnimationsEngine.uninstall(a.host)
+            } else {
+                mac.quit(a)
+            }
+            mac.running = []
+            precondition(mac.system == original && !mac.autohide && left?[DockRestart.key] as? Bool == true, "uninstall \(uninstall): the Dock restart is pending when the values are back and the Dock has not restarted yet")
+            mac.journal.setPersistentDomain(left!, forName: Mac.journalName)
+            mac.kills = []
+            let c = mac.party("C", "\(tools).c", 30, [:])
+            mac.become(c)
+            mac.elapse()
+            precondition(mac.kills == [.restart("C")] && mac.system == original && mac.journalEmpty && mac.leaving.isEmpty, "uninstall \(uninstall): the next copy restarts the Dock once: \(mac.kills)")
+        }
+        print("pikapik stops after it puts the values back and before the Dock restarts, on quit and on uninstall: the next copy restarts the Dock once: ok")
+        for staying in [false, true] {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, [:])
+            let b = staying ? mac.party("B", "\(tools).b", 20, [:]) : nil
+            mac.become(a)
+            mac.elapse()
+            mac.kills = []
+            a.engine.restartDock()
+            mac.quit(a)
+            if let b {
+                precondition(mac.kills.isEmpty && mac.flag, "the copy that stays restarts the Dock, not the one that leaves: \(mac.kills)")
+                mac.become(b)
+                mac.elapse()
+                precondition(mac.kills == [.restart("B")] && mac.journalEmpty, "the copy that stays restarts the Dock once: \(mac.kills)")
+            } else {
+                precondition(mac.kills == [.putBack("A")] && mac.journalEmpty && mac.queue.allSatisfy(\.isCancelled), "the last copy restarts the Dock before it quits: \(mac.kills)")
+            }
+        }
+        print("another setting asks for a Dock restart right before the copy quits: the last copy restarts the Dock at once, or the copy that stays does it: ok")
 
         for order in Together.allCases {
             let mac = Mac(system: original)
@@ -645,7 +688,7 @@ struct TestMainCopy {
         sync.leader = nil
         AnimationsEngine.uninstall(e.host)
         precondition(sync.system == original && !sync.autohide && sync.journalEmpty, "uninstall puts everything back")
-        precondition(sync.kills == [.putBack("A", flagSet: true)], "uninstall restarts the Dock once and clears the flag: \(sync.kills)")
+        precondition(sync.kills == [.putBack("A")], "uninstall restarts the Dock once and clears the flag: \(sync.kills)")
         sync.queue = []
         let later = Mac(system: original)
         let f = later.party("A", "\(tools).a", 10, wantsB)
@@ -740,7 +783,7 @@ struct TestMainCopy {
         let by: String, app: String, flagSet: Bool, wait: Bool
 
         static func restart(_ by: String) -> Kill { Kill(by: by, app: "Dock", flagSet: true, wait: false) }
-        static func putBack(_ by: String, flagSet: Bool = false) -> Kill { Kill(by: by, app: "Dock", flagSet: flagSet, wait: true) }
+        static func putBack(_ by: String, flagSet: Bool = true) -> Kill { Kill(by: by, app: "Dock", flagSet: flagSet, wait: true) }
     }
 
     final class Party {
@@ -864,6 +907,8 @@ struct TestMainCopy {
             if leader === party {
                 precondition(value == nil || value == journaled || value == TestMainCopy.original[setting], "\(party.name): the journal holds the value before \(setting) is written")
                 precondition(!AnimationSetting.restartsDock([(setting, value)], autohide: autohide) || flag, "\(party.name): the Dock restart is pending before \(setting) is written")
+            } else {
+                precondition(setting.apply != .dock || flag, "\(party.name): the Dock restart is pending before \(setting) is put back")
             }
             if let writing = whileWriting {
                 whileWriting = nil
@@ -874,7 +919,7 @@ struct TestMainCopy {
 
         private func writeAutohide(_ on: Bool, by party: Party) {
             precondition(OriginalValue.load(Self.autohideKey, journal: journal) != nil, "\(party.name): the journal holds the original autohide before it is written")
-            if leader === party { precondition(flag, "\(party.name): the Dock restart is pending before autohide is written") }
+            precondition(flag, "\(party.name): the Dock restart is pending before autohide is written")
             autohide = on
         }
     }

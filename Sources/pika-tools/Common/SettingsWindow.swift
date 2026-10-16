@@ -437,25 +437,29 @@ private struct SettingsView: View {
     var body: some View {
         let tab = model.selection ?? .general
         NavigationSplitView(columnVisibility: $columns) {
-            List(selection: $model.selection) {
-                if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    #if APPSTORE
-                    Section { rows([.general]) }
-                    Section("Mac") { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
-                    Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
-                    Section("Apps") { rows([.background, .games, .pet]) }
-                    #else
-                    Section { rows([.general]) }
-                    Section("Mac") { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
-                    Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
-                    Section("Apps") { rows([.player, .uninstaller, .background, .games, .pet]) }
-                    #endif
-                    Section("Info") { rows([.permissions, .about]) }
-                } else {
-                    results
+            ScrollViewReader { proxy in
+                List(selection: $model.selection) {
+                    if model.search.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        #if APPSTORE
+                        Section { rows([.general]) }
+                        Section("Mac") { rows([.battery, .keepAwake, .brightness, .temperatures, .speedTest]) }
+                        Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .finder, .animations]) }
+                        Section("Apps") { rows([.background, .games, .pet]) }
+                        #else
+                        Section { rows([.general]) }
+                        Section("Mac") { rows([.battery, .keepAwake, .brightness, .fans, .temperatures, .speedTest, .ports]) }
+                        Section("Enhancements") { rows([.sound, .keyboard, .mouse, .windows, .dock, .finder, .animations]) }
+                        Section("Apps") { rows([.player, .uninstaller, .background, .games, .pet]) }
+                        #endif
+                        Section("Info") { rows([.permissions, .about]) }
+                    } else {
+                        results
+                    }
                 }
+                .listStyle(.sidebar)
+                .onChange(of: model.selection, initial: true) { scroll(proxy) }
+                .onChange(of: model.search.isEmpty) { scroll(proxy) }
             }
-            .listStyle(.sidebar)
             .navigationSplitViewColumnWidth(min: 220, ideal: 240, max: 320)
         } detail: {
             detail(tab)
@@ -511,6 +515,11 @@ private struct SettingsView: View {
                 .tag(tab)
                 .badge(tab == .pet ? PetProgress.shared.freshAwards : 0)
         }
+    }
+
+    private func scroll(_ proxy: ScrollViewProxy) {
+        guard let tab = model.selection else { return }
+        DispatchQueue.main.async { proxy.scrollTo(tab) }
     }
 
     @ViewBuilder

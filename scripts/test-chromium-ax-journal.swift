@@ -87,6 +87,19 @@ struct TestChromiumAXJournal {
         TextFocus.isOn = { _ in false }
         print("an app that was already on is not switched, not remembered and not switched off: ok")
 
+        writes = []
+        TextFocus.write = { attribute, on, _ in
+            writes.append("\(attribute) \(on) \(Switched.load(TextFocus.journalKey).map(\.pid))")
+            return attribute == "AXManualAccessibility" ? .attributeUnsupported : .notImplemented
+        }
+        TextFocus.watch(owner, front: nil)
+        precondition(TextFocus.enable("AXManualAccessibility", gone, "com.google.Chrome") == .attributeUnsupported)
+        precondition(TextFocus.enable("AXEnhancedUserInterface", gone, "com.google.Chrome") == .success)
+        TextFocus.unwatch(owner, bundleID: chrome)
+        TextFocus.puttingBack.wait()
+        precondition(writes == ["AXManualAccessibility true [\(gone)]", "AXEnhancedUserInterface true [\(gone)]", "AXEnhancedUserInterface false [\(gone)]"] && Switched.load(TextFocus.journalKey).isEmpty, "\(writes)")
+        print("Chrome turns on although it answers that the switch is not implemented, so it is remembered and turned off: ok")
+
         var timeouts = 1
         writes = []
         TextFocus.write = { _, on, pid in

@@ -127,7 +127,9 @@ enum RenderMedia {
             SettingsWindow.show(.keyboard)
             NSApp.activate(ignoringOtherApps: true)
             guard let window = SettingsWindow.window else { return }
-            try? await Task.sleep(for: .seconds(2))
+            try? await Task.sleep(for: .seconds(1))
+            window.makeFirstResponder(sidebar(window.contentView))
+            try? await Task.sleep(for: .seconds(1))
             let name = "settings-\(language)-\(dark ? "dark" : "light").png"
             let capture = Process()
             capture.executableURL = URL(fileURLWithPath: "/usr/sbin/screencapture")
@@ -136,6 +138,10 @@ enum RenderMedia {
             capture.waitUntilExit()
             print(name)
         }
+    }
+
+    static func sidebar(_ view: NSView?) -> NSTableView? {
+        view as? NSTableView ?? view?.subviews.lazy.compactMap(sidebar).first
     }
 }
 
