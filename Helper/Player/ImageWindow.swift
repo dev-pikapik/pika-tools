@@ -147,7 +147,6 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     private var sized = false
     private var animation: ImageAnimation?
     private var slideshow: Timer?
-    private var hideTimer: Timer?
     private var detailTimer: Timer?
     private var loadingTimer: Timer?
     private var cursorHidden = false
@@ -596,8 +595,11 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
     func showControls() {
         guard !controls.isHidden || probe != nil || urls.count > 0 else { return }
         refreshControls(idle: 0)
-        hideTimer?.invalidate()
-        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
+        armHideTimer()
+    }
+
+    private func armHideTimer() {
+        chrome?.hideAfterIdle(PlayerChrome.hideDelay) { [weak self] in self?.refreshControls(idle: PlayerChrome.hideDelay) }
     }
 
     func hideControls() {
@@ -606,14 +608,14 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
 
     private func refreshControls(idle: Double) {
         guard let window else { return }
-        let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
+        let overControls = WindowChrome.overControls(window, at: window.mouseLocationOutsideOfEventStream, panel: controls)
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let overBar = NSRect(x: 0, y: canvas.bounds.height - 28, width: canvas.bounds.width, height: 28).contains(canvas.convert(window.mouseLocationOutsideOfEventStream, from: nil))
-        let visible = PlayerChrome.visibility(playing: true, overControls: window.isKeyWindow && (controls.bounds.contains(pointer) || overBar), fullScreen: fullScreen, idle: idle)
+        let visible = PlayerChrome.visibility(playing: true, overControls: overControls, fullScreen: fullScreen, idle: idle)
         let alpha: CGFloat = visible.controls ? 1 : 0
         controls.animator().alphaValue = alpha
         caption.animator().alphaValue = alpha
         chrome?.setVisible(visible.controls, video: false)
+        if overControls, idle >= PlayerChrome.hideDelay { armHideTimer() }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
             NSCursor.setHiddenUntilMouseMoves(cursorHidden)
@@ -643,7 +645,8 @@ final class ImageController: NSWindowController, NSWindowDelegate, NSMenuItemVal
 
     func windowWillClose(_ notification: Notification) {
         invalidate()
-        [hideTimer, detailTimer, loadingTimer, slideshow].forEach { $0?.invalidate() }
+        chrome?.cancelIdle()
+        [detailTimer, loadingTimer, slideshow].forEach { $0?.invalidate() }
         animation = nil
         canvas.picture.contents = nil
         canvas.controller = nil
