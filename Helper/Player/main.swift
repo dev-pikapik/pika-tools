@@ -7,6 +7,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     private let displaysItem = NSMenuItem()
     private var audioMenu: NSMenu?
     private var subtitleMenu: NSMenu?
+    private var chapters = NSMenu()
+    private let chapterItems = 2
+    private var playback = NSMenu()
+    private let outputs = NSMenu()
+    private let outputsItem = NSMenuItem()
+    private let outputsSeparator = NSMenuItem.separator()
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSWindow.allowsAutomaticWindowTabbing = false
@@ -14,6 +20,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        PlayerOutput.watch { [weak self] in self?.outputsChanged() }
         DispatchQueue.main.async {
             if self.players.isEmpty { self.show(nil) }
         }
@@ -23,12 +30,56 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         players.forEach { $0.remember() }
     }
 
+    private func outputsChanged() {
+        use(PlayerOutput.choice(PlayerController.output, among: PlayerOutput.all()))
+    }
+
+    private func use(_ uid: String?) {
+        PlayerController.output = uid
+        players.forEach { $0.setOutput(uid) }
+    }
+
+    @objc private func chooseOutput(_ sender: NSMenuItem) {
+        use(sender.representedObject as? String)
+    }
+
+    func menuWillOpen(_ menu: NSMenu) {
+        guard menu === playback else { return }
+        let all = PlayerOutput.all()
+        outputsItem.isHidden = all.count < 2
+        outputsSeparator.isHidden = outputsItem.isHidden
+        outputs.removeAllItems()
+        let system = NSMenuItem(title: String(localized: "System Output"), action: #selector(chooseOutput(_:)), keyEquivalent: "")
+        system.state = PlayerController.output == nil ? .on : .off
+        outputs.addItem(system)
+        outputs.addItem(.separator())
+        for output in all {
+            let item = NSMenuItem(title: output.name, action: #selector(chooseOutput(_:)), keyEquivalent: "")
+            item.representedObject = output.uid
+            item.state = output.uid == PlayerController.output ? .on : .off
+            outputs.addItem(item)
+        }
+    }
+
     func menuNeedsUpdate(_ menu: NSMenu) {
+        if menu === playback { return }
         if menu === audioMenu || menu === subtitleMenu {
             menu.items.filter { $0.tag == PlayerController.trackItemTag }.forEach(menu.removeItem)
             let player = (NSApp.keyWindow ?? NSApp.mainWindow)?.windowController as? PlayerController
             let items = menu === audioMenu ? player?.audioItems() : player?.subtitleItems()
             for (index, item) in (items ?? []).enumerated() { menu.insertItem(item, at: index) }
+            return
+        }
+        if menu === chapters {
+            while chapters.numberOfItems > chapterItems { chapters.removeItem(at: chapterItems) }
+            chapters.addItem(.separator())
+            let names = (NSApp.keyWindow?.windowController as? PlayerController)?.chapterNames ?? []
+            if names.isEmpty { chapters.addItem(NSMenuItem(title: String(localized: "No Chapters"), action: nil, keyEquivalent: "")) }
+            for (index, name) in names.enumerated() {
+                let item = NSMenuItem(title: name, action: #selector(PlayerController.chooseChapter(_:)), keyEquivalent: "")
+                item.tag = index
+                chapters.addItem(item)
+            }
             return
         }
         displaysItem.isHidden = NSScreen.screens.count < 2
@@ -112,7 +163,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         _ = submenu(String(localized: "View"), [
             command(String(localized: "Enter Full Screen"), .fullScreen, #selector(NSWindow.toggleFullScreen)),
         ])
-        _ = submenu(String(localized: "Playback"), [
+        let playbackMenu = submenu(String(localized: "Playback"), [
             command(String(localized: "Play"), .playPause),
             command(String(localized: "Next in Folder"), .next),
             command(String(localized: "Previous in Folder"), .previous),
@@ -131,10 +182,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             command(String(localized: "Go to End"), .end),
             command(String(localized: "Start Over"), .startOver),
             .separator(),
+            command(String(localized: "Set Loop Start"), .loop),
+            .separator(),
             command(String(localized: "Volume Up"), .louder),
             command(String(localized: "Volume Down"), .quieter),
             command(String(localized: "Mute"), .mute),
+            outputsSeparator,
+            outputsItem,
         ])
+        playbackMenu.delegate = self
+        playback = playbackMenu
+        let chaptersMenu = submenu(String(localized: "Chapters"), [
+            command(String(localized: "Next Chapter"), .nextChapter),
+            command(String(localized: "Previous Chapter"), .previousChapter),
+        ])
+        chaptersMenu.delegate = self
+        chapters = chaptersMenu
         let speeds = PlayerSpeed.all.map { speed in
             let entry = item("\(speed.formatted())×", #selector(PlayerController.chooseSpeed(_:)))
             entry.representedObject = speed
@@ -161,6 +224,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         ])
         audioMenu?.delegate = self
         subtitleMenu?.delegate = self
+        outputsItem.title = String(localized: "Play Sound Through")
+        outputsItem.submenu = outputs
         displaysItem.title = String(localized: "Move to Display")
         displaysItem.submenu = displays
         let windowMenu = submenu(String(localized: "Window"), [
@@ -168,6 +233,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             item(String(localized: "Zoom"), #selector(NSWindow.performZoom)),
             .separator(),
             command(String(localized: "Float on Top"), .floatOnTop),
+            command(String(localized: "Picture in Picture"), .pictureInPicture),
             displaysItem,
         ])
         windowMenu.delegate = self

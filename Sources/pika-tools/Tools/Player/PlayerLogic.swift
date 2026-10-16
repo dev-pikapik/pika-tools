@@ -85,12 +85,14 @@ enum PlayerAction: Equatable {
     case playPause, back, forward, skipBack, skipForward, longBack, longForward, frameBack, frameForward, start, end, startOver
     case slower, faster, normalSpeed, louder, quieter, mute, fullScreen, leaveFullScreen, snapshot, floatOnTop, next, previous
     case nextSubtitle, nextAudio, subtitleEarlier, subtitleLater, subtitleLarger, subtitleSmaller
+    case nextChapter, previousChapter, loop, pictureInPicture
 
     static let skip = 5.0
     static let longSkip = 10.0
     static let volumeStep: Float = 0.1
 
     private static let (left, right, up, down) = ("\u{F702}", "\u{F703}", "\u{F700}", "\u{F701}")
+    private static let (pageUp, pageDown) = ("\u{F72C}", "\u{F72D}")
 
     static let bindings: [(action: PlayerAction, key: String, modifiers: NSEvent.ModifierFlags)] = [
         (.playPause, " ", []), (.playPause, "k", []),
@@ -107,6 +109,7 @@ enum PlayerAction: Equatable {
         (.next, "n", []), (.next, ">", .shift), (.previous, "p", []), (.previous, "<", .shift),
         (.nextSubtitle, "v", []), (.nextAudio, "3", .shift), (.subtitleEarlier, "z", []), (.subtitleLater, "x", []),
         (.subtitleLarger, "f", .shift), (.subtitleSmaller, "g", .shift),
+        (.nextChapter, pageDown, []), (.previousChapter, pageUp, []), (.loop, "a", []), (.pictureInPicture, "p", [.command, .option]),
     ]
 
     private static let positions: [UInt16: String] = [1: "s", 3: "f", 5: "g", 6: "z", 7: "x", 9: "v", 17: "t", 20: "3", 30: "]", 33: "[", 35: "p", 37: "l", 38: "j", 40: "k", 43: ",", 45: "n", 46: "m", 47: "."]

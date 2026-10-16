@@ -317,10 +317,28 @@ swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/
 swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swift scripts/test-layout.swift -o build/test-layout && build/test-layout
 ```
 
-The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until a format button, or **Open All in pikapik**, turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app and assigns the helper with `NSWorkspace.setDefaultApplication`, one type at a time, waiting for each answer (macOS reports “Keep” as a cancel error, which only moves on to the next type; no answer for 60 s stops the run). On the way back it restores that app, or the next one that can open the type, never the helper. What the buttons show is read from `urlForApplication(toOpen:)`, not from our own settings. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
+The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until a format button, or **Open All in pikapik**, turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app and assigns the helper with `NSWorkspace.setDefaultApplication`, one type at a time, waiting for each answer (macOS reports “Keep” as a cancel error, which only moves on to the next type; no answer for 60 s stops the run). On the way back it restores that app, or the next one that can open the type, never the helper. What the buttons show is read from `urlForApplication(toOpen:)`, not from our own settings. Time, seeking, keys and the format list live in `PlayerLogic.swift`, and the chapter jumps, the chapter marks and the A–B loop in `PlayerMarks.swift`:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
+swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/PlayerMarks.swift Sources/pika-tools/Tools/Player/PlayerOutput.swift scripts/test-player.swift -o build/test-player && build/test-player
+```
+
+The Picture in Picture window (`Helper/Player/PictureInPicture.swift`) has a check too: after it is closed it must not keep the video it showed alive, which AVKit does for as long as its content source holds the delegate. It does nothing on a Mac that cannot show Picture in Picture.
+
+```bash
+swiftc -parse-as-library Helper/Player/PictureInPicture.swift scripts/test-pip.swift -o build/test-pip && build/test-pip
+```
+
+The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.swift`) makes the content run under a transparent, title-less bar, hides the three window buttons and a dark gradient under them together with the control panel, and is the one call any other player window makes. Its test opens a real window without showing it:
+
+```bash
+swiftc -parse-as-library Helper/Player/WindowChrome.swift scripts/test-player-window.swift -o build/test-player-window && build/test-player-window
+```
+
+The chapter marks on the time bar (`Helper/Player/TimeMarks.swift`) are drawn offscreen on dark glass and must stay visible there:
+
+```bash
+swiftc -parse-as-library Helper/Player/TimeMarks.swift scripts/test-time-marks.swift -o build/test-time-marks && build/test-time-marks
 ```
 
 The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg: CI builds it before the tests, and on your Mac `./scripts/build.sh` builds it the first time:
@@ -335,10 +353,10 @@ Songs have a test too (`scripts/test-music.swift`). It makes a short song in MP3
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-music.swift -o build/test-music && build/test-music
 ```
 
-The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It needs the same ffmpeg:
+The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It also checks that the bottom row of buttons, with every button shown and ten-hour times, fits the narrowest window. It needs the same ffmpeg:
 
 ```bash
-swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Ass,Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Subtitles,Thumbnails,TrackMenus}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,SubtitleParser}.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Ass,Engine,FolderAccess,MusicView,NowPlaying,PictureInPicture,PlayerWindow,Subtitles,Thumbnails,TimeMarks,TrackMenus,WindowChrome}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,PlayerMarks,PlayerOutput,SubtitleParser}.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
 ```
 
 Subtitles have three tests. The reader (`Sources/pika-tools/Tools/Player/SubtitleParser.swift`, no FFmpeg needed) is checked on SubRip, WebVTT, mov_text and WebVTT boxes with a byte order mark, CRLF, UTF-16, Windows-1251, overlapping lines, empty lines, broken times, the delay, the line at a given time, how an ASS script is told from other text, and random bytes:

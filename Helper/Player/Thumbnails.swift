@@ -154,6 +154,7 @@ final class Thumbnails {
 final class ThumbnailPreview: NSView {
     private let picture = NSImageView()
     private let label = NSTextField(labelWithString: "")
+    private let chapter = NSTextField(labelWithString: "")
 
     override init(frame: NSRect) {
         super.init(frame: frame)
@@ -166,8 +167,11 @@ final class ThumbnailPreview: NSView {
         picture.imageScaling = .scaleAxesIndependently
         label.font = .monospacedDigitSystemFont(ofSize: 12, weight: .medium)
         label.textColor = .white
-        [picture, label].forEach { $0.setAccessibilityElement(false) }
-        let stack = NSStackView(views: [label, picture])
+        chapter.font = .systemFont(ofSize: 11)
+        chapter.textColor = .white.withAlphaComponent(0.85)
+        chapter.lineBreakMode = .byTruncatingTail
+        [picture, label, chapter].forEach { $0.setAccessibilityElement(false) }
+        let stack = NSStackView(views: [label, picture, chapter])
         stack.orientation = .vertical
         stack.spacing = 4
         stack.edgeInsets = NSEdgeInsets(top: 5, left: 6, bottom: 6, right: 6)
@@ -178,13 +182,16 @@ final class ThumbnailPreview: NSView {
             stack.trailingAnchor.constraint(equalTo: trailingAnchor),
             stack.topAnchor.constraint(equalTo: topAnchor),
             stack.bottomAnchor.constraint(equalTo: bottomAnchor),
+            chapter.widthAnchor.constraint(lessThanOrEqualToConstant: 220),
         ])
     }
 
     required init?(coder: NSCoder) { nil }
 
-    func show(time: String, image: CGImage?) {
+    func show(time: String, image: CGImage?, chapter name: String?) {
         label.stringValue = time
+        chapter.stringValue = name ?? ""
+        chapter.isHidden = name == nil
         picture.isHidden = image == nil
         guard let image else { return }
         picture.image = NSImage(cgImage: image, size: NSSize(width: image.width / 2, height: image.height / 2))

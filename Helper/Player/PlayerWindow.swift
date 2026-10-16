@@ -5,8 +5,12 @@ import UniformTypeIdentifiers
 
 final class VideoView: NSView {
     weak var controller: PlayerController?
+    weak var panel: NSView?
+    private var dragsWindow = false
 
     override var acceptsFirstResponder: Bool { true }
+
+    override func acceptsFirstMouse(for event: NSEvent?) -> Bool { true }
 
     override func keyDown(with event: NSEvent) {
         controller?.showControls()
@@ -30,13 +34,21 @@ final class VideoView: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
+        let point = convert(event.locationInWindow, from: nil)
+        dragsWindow = WindowChrome.dragsWindow(at: point, panel: panel)
+        if let window, WindowChrome.stripDoubleClick(event, in: window) { return }
         if event.clickCount == 2 { _ = controller?.perform(.fullScreen) }
+    }
+
+    override func mouseDragged(with event: NSEvent) {
+        guard dragsWindow, window?.styleMask.contains(.fullScreen) == false else { return }
+        window?.performDrag(with: event)
     }
 
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         trackingAreas.forEach(removeTrackingArea)
-        addTrackingArea(NSTrackingArea(rect: .zero, options: [.mouseMoved, .mouseEnteredAndExited, .activeInKeyWindow, .inVisibleRect], owner: self))
+        addTrackingArea(NSTrackingArea(rect: .zero, options: WindowChrome.trackingOptions, owner: self))
     }
 
     override func draggingEntered(_ sender: any NSDraggingInfo) -> NSDragOperation {
@@ -92,8 +104,8 @@ final class Scrubber: NSSlider {
 final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemValidation {
     static let volumeKey = "volume"
     private static let resumeStore = "resume"
-    private static let minimum = NSSize(width: 480, height: 200)
-    private static let musicSize = NSSize(width: 560, height: 600)
+    private static let minimum = NSSize(width: 580, height: 200)
+    private static let musicSize = NSSize(width: 580, height: 600)
     private let video = VideoView()
     private let music = MusicView()
     private let message = NSTextField(labelWithString: String(localized: "Drop a video or a song here"))
@@ -120,17 +132,24 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let nextButton = NSButton()
     private let fullScreenButton = NSButton()
     private let captionsButton = NSButton()
+    private let pipButton = NSButton()
     private let speaker = NSImageView()
     private let speedLabel = NSTextField(labelWithString: "")
     private let elapsed = NSTextField(labelWithString: "0:00")
     private let remaining = NSTextField(labelWithString: "-0:00")
     private let scrubber = Scrubber(value: 0, minValue: 0, maxValue: 1, target: nil, action: nil)
+    private let marks = TimeMarks()
     private let volume = NSSlider(value: 1, minValue: 0, maxValue: 1, target: nil, action: nil)
     private(set) var engine: Engine?
     let subtitles = Subtitles()
+    private var chrome: WindowChrome?
     private var observer: Any?
     private var hideTimer: Timer?
     private var thumbnails: Thumbnails?
+    private var pip: PictureInPicture?
+    private var hiddenForPip = false
+    private var chapters: [Chapter] = []
+    private var loop = PlayerLoop()
     private var hovered: Double?
     private var cursorHidden = false
     private var playing = false
@@ -146,7 +165,14 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var lastSaved = Date.distantPast
     var onClose: ((PlayerController) -> Void)?
 
+    static var output: String?
+
     var isEmpty: Bool { engine == nil }
+
+    func setOutput(_ uid: String?) {
+        guard let engine, let target = uid ?? (engine.output == nil ? nil : PlayerOutput.system()), target != engine.output else { return }
+        engine.route(to: target)
+    }
 
     var isMusic: Bool { engine.map { !$0.hasVideo } ?? false }
 
@@ -173,6 +199,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func build(_ window: NSWindow) {
         video.controller = self
+        video.panel = controls
         video.wantsLayer = true
         video.layer?.backgroundColor = NSColor.black.cgColor
         video.registerForDraggedTypes([.fileURL])
@@ -191,6 +218,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         configure(nextButton, "forward.fill", String(localized: "Next in Folder"), #selector(next))
         configure(fullScreenButton, "arrow.up.left.and.arrow.down.right", String(localized: "Full Screen"), #selector(fullScreen))
         configure(captionsButton, "captions.bubble", String(localized: "Audio and Subtitles"), #selector(showTrackMenu))
+        configure(pipButton, "pip.enter", String(localized: "Picture in Picture"), #selector(togglePictureInPicture))
+        pipButton.isHidden = true
         for label in [elapsed, remaining, speedLabel] {
             label.font = .monospacedDigitSystemFont(ofSize: 11, weight: .regular)
             label.textColor = .labelColor
@@ -203,6 +232,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         scrubber.refusesFirstResponder = true
         scrubber.setAccessibilityLabel(String(localized: "Position"))
         scrubber.onHover = { [weak self] in self?.hover($0) }
+        marks.translatesAutoresizingMaskIntoConstraints = false
+        scrubber.addSubview(marks)
         speaker.image = NSImage(systemSymbolName: "speaker.wave.2.fill", accessibilityDescription: nil)
         speaker.contentTintColor = .labelColor
         speedLabel.isHidden = true
@@ -213,7 +244,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         volume.setAccessibilityLabel(String(localized: "Volume"))
         volume.floatValue = UserDefaults.standard.object(forKey: Self.volumeKey) as? Float ?? 1
 
-        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, captionsButton, fullScreenButton])
+        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, captionsButton, pipButton, fullScreenButton])
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
@@ -243,6 +274,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             wide,
             volume.widthAnchor.constraint(equalToConstant: 70),
             scrubber.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            marks.leadingAnchor.constraint(equalTo: scrubber.leadingAnchor),
+            marks.trailingAnchor.constraint(equalTo: scrubber.trailingAnchor),
+            marks.topAnchor.constraint(equalTo: scrubber.topAnchor),
+            marks.bottomAnchor.constraint(equalTo: scrubber.bottomAnchor),
         ])
         if #available(macOS 26.0, *), let glass = controls as? NSGlassEffectView {
             glass.contentView = row
@@ -255,6 +290,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             ])
         }
         controls.isHidden = true
+        chrome = WindowChrome(window, over: video)
     }
 
     private func configure(_ button: NSButton, _ symbol: String, _ label: String, _ action: Selector) {
@@ -281,6 +317,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             message.isHidden = true
             engine.volume = volume.floatValue
             engine.muted = muted
+            if let output = Self.output { engine.route(to: output) }
             engine.layer.frame = video.bounds
             engine.layer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
             video.layer?.insertSublayer(engine.layer, at: 0)
@@ -297,6 +334,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             isLast = siblings.map { PlaylistOrder.neighbour(of: url, kind: PlayerFormats.kind(of: url) ?? .video, among: $0, step: 1) == nil } ?? false
             observer = engine.synchronizer.addPeriodicTimeObserver(forInterval: CMTime(value: 1, timescale: 10), queue: .main) { [weak self] _ in self?.tick() }
             playing = true
+            chapters = engine.chapters
+            refreshMarks()
+            setUpPictureInPicture(engine)
             if engine.hasVideo, engine.duration.seconds > 0 {
                 let thumbnails = Thumbnails(url: url, size: engine.size, duration: engine.duration.seconds)
                 thumbnails.onReady = { [weak self] _ in self?.hover(self?.hovered) }
@@ -335,6 +375,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         message.isHidden = false
         music.isHidden = true
         controls.isHidden = true
+        chrome?.setVisible(true, video: false)
     }
 
     private static func trackInfo(_ tags: MediaTags, cover: NSImage?, file: URL, hasVideo: Bool, duration: Double) -> [String: Any] {
@@ -356,6 +397,13 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         thumbnails = nil
         subtitles.close()
         preview.isHidden = true
+        chapters = []
+        loop = PlayerLoop()
+        refreshMarks()
+        pip?.close()
+        pip = nil
+        returnFromPictureInPicture()
+        refreshPictureInPicture()
         resumeKey = nil
         if let observer { engine.synchronizer.removeTimeObserver(observer) }
         observer = nil
@@ -403,6 +451,12 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         if engine.layer.sampleBufferRenderer.requiresFlushToResumeDecoding {
             engine.seek(to: engine.synchronizer.currentTime(), rate: rate)
         }
+        let ended = engine.finished.map { engine.synchronizer.currentTime() >= $0 } ?? false
+        if playing, let start = loop.wrap(at: ended ? .infinity : engine.position.seconds) {
+            engine.seek(to: CMTime(seconds: start, preferredTimescale: 90000), rate: rate)
+            update()
+            return
+        }
         if playing, Date().timeIntervalSince(lastSaved) >= 10 { remember() }
         if playing, let finished = engine.finished, engine.synchronizer.currentTime() >= finished {
             playing = false
@@ -423,6 +477,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         let label = playing ? String(localized: "Pause") : String(localized: "Play")
         playButton.image = NSImage(systemSymbolName: playing ? "pause.fill" : "play.fill", accessibilityDescription: label)
         playButton.setAccessibilityLabel(label)
+        pip?.refresh()
         speedLabel.isHidden = speed == 1
         speedLabel.stringValue = "\(speed.formatted())×"
         speedLabel.setAccessibilityLabel(String(localized: "Speed"))
@@ -472,6 +527,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         case .previous: previous(nil)
         case .floatOnTop: window?.level = window?.level == .floating ? .normal : .floating
         case .nextSubtitle, .nextAudio, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller: return performTrack(action)
+        case .nextChapter: jumpChapter(1)
+        case .previousChapter: jumpChapter(-1)
+        case .loop: markLoop()
+        case .pictureInPicture: togglePictureInPicture(nil)
         case .back, .forward: break
         }
         return true
@@ -484,6 +543,12 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     @objc func chooseSpeed(_ sender: NSMenuItem) {
         setSpeed(sender.representedObject as? Float ?? 1)
+    }
+
+    @objc func chooseChapter(_ sender: NSMenuItem) {
+        guard chapters.indices.contains(sender.tag) else { return }
+        seek(chapters[sender.tag].start)
+        showControls()
     }
 
     @objc func moveToScreen(_ sender: NSMenuItem) {
@@ -578,6 +643,74 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         update()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in self?.subtitles.refresh() }
         showControls()
+    }
+
+    private func setUpPictureInPicture(_ engine: Engine) {
+        guard engine.hasVideo else { return }
+        pip = PictureInPicture(layer: engine.layer, host: PictureInPicture.Host(
+            duration: { [weak self] in self?.engine?.duration ?? .zero },
+            isPlaying: { [weak self] in self?.playing ?? false },
+            setPlaying: { [weak self] in if self?.playing != $0 { self?.playPause(nil) } },
+            skip: { [weak self] in self?.skip($0) },
+            changed: { [weak self] in self?.refreshPictureInPicture() },
+            started: { [weak self] in self?.hideForPictureInPicture() },
+            stopped: { [weak self] in self?.returnFromPictureInPicture() }
+        ))
+        refreshPictureInPicture()
+    }
+
+    private func refreshPictureInPicture() {
+        pipButton.isHidden = pip == nil
+        pipButton.isEnabled = pip?.isPossible == true
+        let label = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")
+        pipButton.image = NSImage(systemSymbolName: pip?.isActive == true ? "pip.exit" : "pip.enter", accessibilityDescription: label)
+        pipButton.setAccessibilityLabel(label)
+    }
+
+    private func hideForPictureInPicture() {
+        guard let window, !window.styleMask.contains(.fullScreen), window.isVisible else { return }
+        hiddenForPip = true
+        window.orderOut(nil)
+    }
+
+    private func returnFromPictureInPicture() {
+        guard hiddenForPip else { return }
+        hiddenForPip = false
+        window?.makeKeyAndOrderFront(nil)
+        showControls()
+    }
+
+    @objc private func togglePictureInPicture(_ sender: Any?) {
+        pip?.toggle()
+    }
+
+    private func jumpChapter(_ direction: Int) {
+        guard let engine, !chapters.isEmpty else { return }
+        let starts = chapters.map(\.start), now = engine.position.seconds
+        guard let target = direction > 0 ? PlayerChapters.next(starts, after: now) : PlayerChapters.previous(starts, before: now) else { return }
+        seek(target)
+        showControls()
+    }
+
+    private func markLoop() {
+        guard let engine else { return }
+        loop.press(at: engine.position.seconds)
+        refreshMarks()
+        showControls()
+    }
+
+    private func refreshMarks() {
+        let total = engine?.duration.seconds ?? 0
+        marks.chapters = PlayerChapters.fractions(chapters.map(\.start), duration: total)
+        marks.loop = [loop.start, loop.end].compactMap { $0 }.map { total > 0 ? $0 / total : 0 }
+    }
+
+    var chapterNames: [String] {
+        chapters.enumerated().map { $0.element.title.isEmpty ? String(localized: "Chapter \($0.offset + 1)") : $0.element.title }
+    }
+
+    private var currentChapter: Int? {
+        engine.flatMap { PlayerChapters.current(chapters.map(\.start), at: $0.position.seconds) }
     }
 
     private func startOver() {
@@ -689,7 +822,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     func showControls() {
-        guard engine != nil else { return }
+        guard engine != nil else {
+            chrome?.setVisible(true, video: false)
+            return
+        }
         refreshControls(idle: 0)
         hideTimer?.invalidate()
         hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
@@ -701,11 +837,13 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func refreshControls(idle: Double) {
         guard let window else { return }
-        let pointer = controls.convert(window.mouseLocationOutsideOfEventStream, from: nil)
+        let location = window.mouseLocationOutsideOfEventStream
+        let overPanel = window.isKeyWindow && controls.bounds.contains(controls.convert(location, from: nil))
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let visible = PlayerChrome.visibility(playing: playing, overControls: window.isKeyWindow && controls.bounds.contains(pointer), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
+        let visible = PlayerChrome.visibility(playing: playing, overControls: overPanel || WindowChrome.overButtons(location, in: window), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
         subtitles.view.lift(visible.controls ? controls.frame.maxY + 10 : 0)
+        chrome?.setVisible(visible.controls, video: engine?.hasVideo == true)
         if !visible.controls { hover(nil) }
         if visible.cursor == cursorHidden {
             cursorHidden = !visible.cursor
@@ -720,7 +858,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             return
         }
         let total = engine.duration.seconds, seconds = fraction * total
-        preview.show(time: PlayerTime.text(seconds), image: thumbnails?.image(for: PlayerThumbnail.bucket(seconds, duration: total)))
+        let chapter = PlayerChapters.current(chapters.map(\.start), at: seconds).map { chapterNames[$0] }
+        preview.show(time: PlayerTime.text(seconds), image: thumbnails?.image(for: PlayerThumbnail.bucket(seconds, duration: total)), chapter: chapter)
         preview.setFrameSize(preview.fittingSize)
         let point = video.convert(NSPoint(x: scrubber.bounds.minX + CGFloat(fraction) * scrubber.bounds.width, y: 0), from: scrubber)
         preview.setFrameOrigin(NSPoint(x: max(8, min(video.bounds.width - preview.frame.width - 8, point.x - preview.frame.width / 2)), y: controls.frame.maxY + 8))
@@ -735,6 +874,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             return true
         case #selector(chooseAudio), #selector(chooseSubtitle), #selector(addSubtitleFile):
             return validateTrack(item)
+        case #selector(chooseChapter):
+            item.state = item.tag == currentChapter ? .on : .off
+            return true
         case #selector(moveToScreen):
             item.state = item.representedObject as? NSScreen == window?.screen ? .on : .off
             return window?.styleMask.contains(.fullScreen) == false
@@ -752,6 +894,11 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             case .nextAudio: return (engine?.audioTracks.count ?? 0) > 1
             case .next: return window?.representedURL != nil && !isLast
             case .previous: return window?.representedURL != nil
+            case .nextChapter, .previousChapter: return !chapters.isEmpty
+            case .pictureInPicture:
+                item.title = pip?.isActive == true ? String(localized: "Exit Picture in Picture") : String(localized: "Picture in Picture")
+                return pip?.isPossible == true
+            case .loop: item.title = loop.isSet ? String(localized: "Clear Loop") : loop.start == nil ? String(localized: "Set Loop Start") : String(localized: "Set Loop End")
             default: break
             }
             return engine != nil
@@ -760,8 +907,17 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         }
     }
 
+    func windowDidEnterFullScreen(_ notification: Notification) {
+        showControls()
+    }
+
+    func windowDidExitFullScreen(_ notification: Notification) {
+        showControls()
+    }
+
     func windowWillClose(_ notification: Notification) {
         hideTimer?.invalidate()
+        hiddenForPip = false
         stop()
         scrubber.onHover = nil
         onClose?(self)

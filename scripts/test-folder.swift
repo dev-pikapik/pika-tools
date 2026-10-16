@@ -25,6 +25,11 @@ enum TestFolder {
         while Date() < end, !until() { RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.05)) }
     }
 
+    static func row(in view: NSView) -> NSStackView? {
+        if let stack = view as? NSStackView, stack.arrangedSubviews.count > 10 { return stack }
+        return view.subviews.lazy.compactMap { row(in: $0) }.first
+    }
+
     static func main() {
         setvbuf(stdout, nil, _IOLBF, 0)
         guard ffmpeg != nil else { return print("skipped: no ffmpeg (set FFMPEG=/path/to/ffmpeg)") }
@@ -44,6 +49,16 @@ enum TestFolder {
         try? FileManager.default.removeItem(at: folder.appendingPathComponent("cover.jpg"))
 
         let player = PlayerController()
+        if let window = player.window, let panel = row(in: window.contentView!) {
+            for view in panel.arrangedSubviews {
+                view.isHidden = false
+                if let label = view as? NSTextField, label.stringValue.contains(":") { label.stringValue = "-10:00:00" }
+            }
+            let needed = panel.fittingSize.width + 32
+            check(needed <= window.minSize.width, "the bottom row with every button and ten-hour times needs \(Int(needed)) pt; the narrowest window is \(Int(window.minSize.width)) pt")
+        } else {
+            check(false, "the bottom row of buttons is found")
+        }
         let center = MPNowPlayingInfoCenter.default()
         let name = { player.window?.representedURL?.lastPathComponent ?? "-" }
 

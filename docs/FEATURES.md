@@ -1365,6 +1365,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 3. (Website) Full screen, playing, mouse still → the panel and the pointer both hide; press any key → both return.
 4. (Website) Play a mostly white video → the buttons and times can still be read.
 
+### Window without a title bar
+
+**Does:** The player window has no grey title bar: the video fills the whole window, and the three round buttons sit on top of it, hidden together with the control panel.
+
+**How it works:** The window stays a normal titled window, so it keeps its rounded corners, shadow, ⌘W and the Window menu, but its content runs under a transparent, title-less bar (`Helper/Player/WindowChrome.swift:36`; the title is still set for the Window menu and VoiceOver). The three buttons are shown and hidden by the same rule as the panel (`PlayerWindow.swift:704`; the pointer resting on a button counts as being over the controls, `WindowChrome.swift:60`; the pointer is also followed over a window that is not the active one, `WindowChrome.swift:34`; hidden buttons do not react to the mouse until it moves, and an unchanged state starts no new fade), with a thin dark gradient under them, over a video only, so they stay readable on a bright picture; a song gets the buttons without the shade (`WindowChrome.swift:67`; with VoiceOver on, the hidden buttons stay in the accessibility tree). A drag on the video moves the window (`PlayerWindow.swift:43`, rule in `WindowChrome.swift:56`), except on the control panel, and it works from the first click even when the window is not the active one (`PlayerWindow.swift:13`); a double-click on the video still goes full screen (`PlayerWindow.swift:36`). A double-click on the thin strip at the very top does what System Settings says for a title bar: zoom, minimize or nothing (`WindowChrome.swift:50`). In full screen the Mac handles the menu bar and the buttons (`PlayerWindow.swift:756`). `scripts/test-player-window.swift` checks the window style and that the buttons and the gradient hide and show together.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open a video → no grey bar at the top: the picture reaches the top edge. Keep the mouse still while it plays → after about 2.5 seconds the three buttons and the panel fade out together; move the mouse → they come back with a dark shade under the buttons.
+2. (Website) Pause → the buttons stay however long you wait. Open a mostly white video → the buttons are still easy to see. Open a song without a cover in the light appearance → the buttons are there and there is no dark patch at the top. Open a file that can’t be played → the buttons are there.
+3. (Website) Click another app, then drag the video of the player window straight away → the window moves with the first drag. Drag the control panel’s edge → it doesn’t move. Keep the mouse still until the buttons fade, then click where the red button was → nothing happens until you move the mouse. Keep the pointer on the three buttons of a playing video for more than 2.5 seconds → they stay while it is there. Click another app, then only point at the player window (no click) → its buttons and panel appear. Double-click the video → full screen; double-click again → back to the window. Double-click the thin strip at the very top → what System Settings › Desktop & Dock › “Double-click a window’s title bar to” says (Zoom, Minimize or nothing). ⌘W or the red button closes it.
+4. (Website) Do it in the light and in the dark appearance → both look the same, only the buttons’ own colours differ.
+5. (Website) `scripts/test-player-window.swift` prints ok four times.
+
 ### Preview over the time bar
 
 **Does:** Shows a small picture of the video, with its time, above the time bar where you point.
@@ -1377,6 +1392,74 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. (Website) Open a video of a few minutes and move the pointer along the time bar → a card with the time and a picture follows the pointer; the picture matches the scene at that spot.
 2. (Website) Open a music file → the card shows only the time.
 3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
+
+### Picture in Picture
+
+**Does:** Shows the video in a small floating window above your other windows, with play, pause and skip buttons, while you work in other apps.
+
+**How it works:** The player gives the video layer to `AVPictureInPictureController` (`Helper/Player/PictureInPicture.swift:3`). While the small window is open macOS asks the player for the length of the video and whether it is paused, and tells it when you press play, pause or skip; the player answers from its own state (`PictureInPicture.swift:76`). The button on the control panel, **Window › Picture in Picture** and ⌘⌥P start and stop it (`Helper/Player/PlayerWindow.swift:656`). While it runs the player window is hidden, and it comes back when the small window is closed or restored, and when the video is closed or another file is opened (`PlayerWindow.swift:649`). A video has the button from the start, dimmed, so the time bar does not move when macOS says the video can be shown that way; only then the button and the menu item turn on (`PlayerWindow.swift:635`).
+
+**Nuances:** In full screen the player window stays where it is. A file with no picture, such as music, has no button.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open a video and play it → a button with two small windows is at the right of the control panel, dimmed for a moment at the start; the time bar does not move when it turns on; for a music file the button is missing.
+2. (Website) Click the button, or press ⌘⌥P → the video moves to a small floating window and keeps playing; the player window is hidden.
+3. (Website) In the small window press pause, then skip → the video pauses and jumps; close the small window or click its restore button → the player window is back at the same time.
+4. (Website) Open **Window** → the item **Picture in Picture** is there, with ⌘⌥P next to it; it is dimmed when no video is open.
+
+### Chapters
+
+**Does:** Shows the chapters of a video on the time bar and in a **Chapters** menu, names the chapter under the preview, and lets you jump from chapter to chapter.
+
+**How it works:** The reader lists the file’s chapters with their titles and moves them onto the same clock as the picture (`Extensions/MediaReader/Demuxer.swift:294`). The window turns them into marks on the time bar (`Helper/Player/TimeMarks.swift:3`, `PlayerWindow.swift:675`) and into the **Chapters** menu, where the chapter you are in has a check mark (`Helper/Player/main.swift:62`). Page Down goes to the start of the next chapter and stays put in the last one; Page Up goes to the start of the chapter you are in, or to the one before it when you are within 3 seconds of its start (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:3`, `PlayerWindow.swift:660`). The chapter name is shown under the small picture when you point at the time bar (`Helper/Player/Thumbnails.swift:157`). A chapter without a title is called “Chapter” and its number.
+
+**Nuances:** A video without chapters has no marks, and the menu says “No Chapters”. Marks at the very start or end of the bar are not drawn.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open an MKV or MP4 with chapters → thin light marks with a dark edge sit on the time bar at the chapter starts, and the **Chapters** menu lists every chapter with the current one checked.
+2. (Website) Press Page Down → the time jumps to the start of the next chapter; press it in the last chapter → nothing changes.
+3. (Website) Press Page Up in the middle of a chapter → it goes back to the start of that chapter; press Page Up again at once → the chapter before.
+4. (Website) Point at the time bar → the card shows the picture, the time and the chapter name under the picture; a long name is cut with “…”.
+5. (Website) Choose a chapter in the **Chapters** menu → the video jumps to its start.
+6. (Website) Open a video without chapters → no marks, and the menu shows “No Chapters”.
+
+### Repeat A–B
+
+**Does:** Repeats a part of the video again and again, from a spot you mark to another.
+
+**How it works:** The A key is pressed three times: the first press marks the start (A) at the current time, the second marks the end (B), the third clears both (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:34`, `Helper/Player/PlayerWindow.swift:668`). Two yellow marks and a yellow strip between them show the part on the time bar. Every tick of the player checks the time, and when it reaches B the video seeks back to A and goes on playing at the same speed (`PlayerWindow.swift:432`, `PlayerMarks.swift:46`). The Playback menu item changes its name between **Set Loop Start**, **Set Loop End** and **Clear Loop**.
+
+**Nuances:** If the second mark comes before the first, they swap places. A second mark less than half a second from the first is ignored. Opening another video clears the loop.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a video, press A at about 5 seconds, then A again at about 12 → two yellow marks and a strip show on the time bar.
+2. (Website) Keep playing → when the time reaches the second mark it jumps back to the first and plays on; this repeats.
+3. (Website) Press A a third time → the marks disappear and the video plays past the end of the old loop.
+4. (Website) Press A, jump back 10 seconds with J, press A → the loop is between the two spots, the earlier one first.
+5. (Website) Open the Playback menu → the item reads **Set Loop Start**, then **Set Loop End**, then **Clear Loop** as you press A.
+
+### Play Sound Through
+
+**Does:** Sends the sound of the player, and only of the player, to another speaker, headphones or other sound output, without changing the output of your Mac.
+
+**How it works:** The list is the Mac’s sound outputs that are not hidden (`Sources/pika-tools/Tools/Player/PlayerOutput.swift:8`), read each time the Playback menu opens (`Helper/Player/main.swift:44`). Choosing one gives its identifier to the sound renderer of every open player (`Helper/Player/PlayerWindow.swift:158`, `Helper/Player/Engine.swift:143`); videos opened later use it too. **System Output** gives the player back to whatever the Mac uses, and follows it when you change it in System Settings. When the chosen output is unplugged or switched off, the player goes back to the system output by itself (`Helper/Player/main.swift:31`, `PlayerOutput.swift:33`). The choice is not kept after the player quits.
+
+**Nuances:** The item is hidden while the Mac has only one sound output. AirPlay for video is not offered: the system AirPlay button works only with Apple’s own player, which cannot play MKV, WebM and the other formats this player is for. The sound of a video can still go to an AirPlay speaker when the Mac itself uses it as its output.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Connect headphones or a second sound output, play a video → **Playback › Play Sound Through** lists the outputs, with **System Output** checked.
+2. (Website) Choose the headphones → the sound of the player moves to them; the sound of other apps stays where it was, and the output in System Settings is the same as before.
+3. (Website) Choose **System Output** → the sound comes back to the Mac’s own output.
+4. (Website) Choose the headphones, then unplug them → the sound continues on the Mac’s output, and the menu shows **System Output** checked.
+5. (Website) With only one sound output the item is not in the Playback menu.
 
 ### Player Licenses
 
