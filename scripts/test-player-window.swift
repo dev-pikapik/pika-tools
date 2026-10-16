@@ -1,5 +1,10 @@
 import AppKit
 
+final class Press: NSObject {
+    var count = 0
+    @objc func press(_ sender: Any?) { count += 1 }
+}
+
 @main
 enum TestPlayerWindow {
     @MainActor static func main() {
@@ -59,6 +64,35 @@ enum TestPlayerWindow {
         precondition(!WindowChrome.overButtons(NSPoint(x: 300, y: 180), in: window) && !WindowChrome.overButtons(NSPoint(x: 300, y: centre(.closeButton).y), in: window), "a pointer on the picture does not")
         print("the window buttons and the dark gradient under them follow the panel: ok")
 
+        let frameView = window.contentView!.superview!
+        let close = window.standardWindowButton(.closeButton)!
+        let press = Press()
+        close.target = press
+        close.action = #selector(Press.press(_:))
+        func takesMouse() -> Bool { frameView.hitTest(centre(.closeButton)) === close }
+        precondition(settled(true) && takesMouse(), "shown buttons take the mouse")
+        precondition(settled(false) && !takesMouse(), "hidden buttons ignore the mouse")
+        precondition(settled(true), "the buttons are back")
+        RunLoop.current.run(until: Date().addingTimeInterval(1))
+        precondition(chrome.setVisible(false, video: true, voiceOver: true), "the buttons fade out")
+        RunLoop.current.run(until: Date().addingTimeInterval(1))
+        precondition(!takesMouse() && frameView.hitTest(centre(.closeButton)) === content, "with VoiceOver the transparent buttons ignore the mouse, a click on them lands on the picture")
+        let spoken = window.accessibilityCloseButton() as? NSCell
+        precondition(spoken?.isAccessibilityElement() == true && spoken?.accessibilityRole() == .button && (window.accessibilityChildren() ?? []).contains { $0 as AnyObject === spoken }, "with VoiceOver the transparent buttons stay in the accessibility tree")
+        _ = spoken?.accessibilityPerformPress()
+        precondition(press.count == 1, "and VoiceOver can press them")
+        precondition(settled(true) && takesMouse(), "the shown buttons take the mouse again")
+        print("hidden buttons ignore the mouse, with VoiceOver they stay pressable by accessibility: ok")
+
+        var asked: NSPoint?
+        precondition(WindowChrome.pointerOver(window, windowNumberAt: { asked = $0; return window.windowNumber }) && asked == NSEvent.mouseLocation, "our window on top under the pointer counts")
+        precondition(!WindowChrome.pointerOver(window, windowNumberAt: { _ in window.windowNumber + 1 }), "another window on top of ours does not")
+        let dev = "com.pesotchi.pika-tools.dev.player", release = "com.pesotchi.pika-tools.player", flag = ["-PikaForceVoiceOver"]
+        precondition(WindowChrome.voiceOver(arguments: flag, bundleID: dev, system: false) && !WindowChrome.voiceOver(arguments: [], bundleID: dev, system: false), "the dev build takes the argument")
+        precondition(!WindowChrome.voiceOver(arguments: flag, bundleID: release, system: false) && !WindowChrome.voiceOver(arguments: flag, bundleID: nil, system: false), "the release build ignores it")
+        precondition(WindowChrome.voiceOver(arguments: [], bundleID: release, system: true), "the real VoiceOver always counts")
+        print("the pointer check sees foreign windows, the VoiceOver argument works in the dev build only: ok")
+
         func click(_ y: CGFloat, _ count: Int) -> NSEvent {
             NSEvent.mouseEvent(with: .leftMouseDown, location: NSPoint(x: 100, y: y), modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 0, clickCount: count, pressure: 1)!
         }
@@ -74,5 +108,15 @@ enum TestPlayerWindow {
         panel.isHidden = true
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel) && WindowChrome.dragsWindow(at: .zero, panel: nil), "a hidden or missing panel never blocks the drag")
         print("the window moves only when the drag starts on the picture: ok")
+
+        let other = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled], backing: .buffered, defer: false)
+        let zoom = window.standardWindowButton(.zoomButton)!
+        let spot = centre(.zoomButton)
+        let origin = zoom.convert(zoom.bounds, to: nil).origin
+        other.contentView?.addSubview(zoom)
+        zoom.setFrameOrigin(origin)
+        precondition(zoom.window === other && zoom.convert(zoom.bounds, to: nil).contains(spot), "the button now lives in another window, as in full screen")
+        precondition(!WindowChrome.overButtons(spot, in: window) && WindowChrome.overButtons(centre(.closeButton), in: window), "a button of another window does not count, the others do")
+        print("a button in a system window is not ours: ok")
     }
 }

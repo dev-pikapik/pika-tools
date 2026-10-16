@@ -4,14 +4,26 @@ final class WindowShade: NSView {
     override func hitTest(_ point: NSPoint) -> NSView? { nil }
 }
 
+final class ButtonShield: NSView {
+    weak var content: NSView?
+    var active = false
+
+    override func hitTest(_ point: NSPoint) -> NSView? {
+        guard active, frame.contains(point), let content, let host = content.superview else { return nil }
+        return content.hitTest(host.convert(point, from: superview))
+    }
+}
+
 final class WindowChrome {
     static let shadeHeight: CGFloat = 72
     let shade = WindowShade()
+    private let shield = ButtonShield()
     private weak var window: NSWindow?
     private var state = (bar: true, shade: false)
 
     init(_ window: NSWindow, over content: NSView) {
         self.window = window
+        shield.content = content
         Self.style(window)
         let gradient = CAGradientLayer()
         gradient.colors = [0.5, 0.3, 0.1, 0].map { NSColor.black.withAlphaComponent($0).cgColor }
@@ -59,18 +71,29 @@ final class WindowChrome {
 
     static func overButtons(_ point: NSPoint, in window: NSWindow) -> Bool {
         [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton].contains {
-            window.standardWindowButton($0).map { $0.convert($0.bounds, to: nil).insetBy(dx: -6, dy: -6).contains(point) } ?? false
+            window.standardWindowButton($0).map { $0.window === window && $0.convert($0.bounds, to: nil).insetBy(dx: -6, dy: -6).contains(point) } ?? false
         }
     }
 
+    static func pointerOver(_ window: NSWindow, windowNumberAt: (NSPoint) -> Int = { NSWindow.windowNumber(at: $0, belowWindowWithWindowNumber: 0) }) -> Bool {
+        windowNumberAt(NSEvent.mouseLocation) == window.windowNumber
+    }
+
+    static func voiceOver(arguments: [String] = CommandLine.arguments, bundleID: String? = Bundle.main.bundleIdentifier, system: Bool = NSWorkspace.shared.isVoiceOverEnabled) -> Bool {
+        system || (bundleID == "com.pesotchi.pika-tools.dev.player" && arguments.contains("-PikaForceVoiceOver"))
+    }
+
     @discardableResult
-    func setVisible(_ visible: Bool, video: Bool, voiceOver: Bool = NSWorkspace.shared.isVoiceOverEnabled) -> Bool {
-        guard let bar = window?.standardWindowButton(.closeButton)?.superview else { return false }
+    func setVisible(_ visible: Bool, video: Bool, voiceOver: Bool = WindowChrome.voiceOver()) -> Bool {
+        guard let bar = window?.standardWindowButton(.closeButton)?.superview, let container = bar.superview else { return false }
         let system = window?.styleMask.contains(.fullScreen) == true
         let next = (bar: visible || system, shade: visible && video && !system)
         guard next != state else { return false }
         state = next
         if next.bar { bar.isHidden = false }
+        if shield.superview !== container { container.addSubview(shield) }
+        shield.frame = [NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton].compactMap { window?.standardWindowButton($0).map { bar.convert($0.frame, to: container) } }.reduce(.null) { $0.union($1) }
+        shield.active = voiceOver && !next.bar
         NSAnimationContext.runAnimationGroup({ _ in
             bar.animator().alphaValue = next.bar ? 1 : 0
             shade.animator().alphaValue = next.shade ? 1 : 0

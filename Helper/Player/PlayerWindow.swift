@@ -697,9 +697,9 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private func refreshControls(idle: Double) {
         guard let window else { return }
         let location = window.mouseLocationOutsideOfEventStream
-        let overPanel = window.isKeyWindow && controls.bounds.contains(controls.convert(location, from: nil))
+        let overControls = WindowChrome.pointerOver(window) && (controls.bounds.contains(controls.convert(location, from: nil)) || WindowChrome.overButtons(location, in: window))
         let fullScreen = window.styleMask.contains(.fullScreen)
-        let visible = PlayerChrome.visibility(playing: playing, overControls: overPanel || WindowChrome.overButtons(location, in: window), fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
+        let visible = PlayerChrome.visibility(playing: playing, overControls: overControls, fullScreen: fullScreen, idle: idle, hides: engine?.hasVideo ?? true)
         controls.animator().alphaValue = visible.controls ? 1 : 0
         chrome?.setVisible(visible.controls, video: engine?.hasVideo == true)
         if !visible.controls { hover(nil) }
