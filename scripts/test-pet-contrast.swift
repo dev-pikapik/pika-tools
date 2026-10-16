@@ -4,8 +4,10 @@ enum PetStage { static let scale: CGFloat = 2.4 }
 
 @main
 enum TestPetContrast {
-    static let side: CGFloat = 6, floor = 1.6, limit = 0.1
+    static let side: CGFloat = 6, floor = 3.0, limit = 0.1, deep = 2
     static let width = Int(48 * side), height = Int(58 * side)
+    static let backdrops: [(name: String, level: Double)] = [("#FFF", 1), ("#1E1E1E", 30.0 / 255)]
+    static let steps = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
     static func linear(_ v: Double) -> Double { v <= 0.04045 ? v / 12.92 : pow((v + 0.055) / 1.055, 2.4) }
 
@@ -39,30 +41,40 @@ enum TestPetContrast {
         }
         func covered(_ x: Int, _ y: Int) -> Bool { x >= 0 && y >= 0 && x < width && y < height && data[(y * width + x) * 4 + 3] > 0 }
         let ground = light(backdrop, backdrop, backdrop)
+        func contrast(_ x: Int, _ y: Int) -> Double? {
+            guard covered(x, y) else { return nil }
+            let i = (y * width + x) * 4, a = Double(data[i + 3]) / 255
+            let px = (0..<3).map { Double(data[i + $0]) / 255 + (1 - a) * backdrop }
+            if a > 0.99, own.contains(where: { abs($0.r - px[0]) + abs($0.g - px[1]) + abs($0.b - px[2]) < 0.02 }) { return nil }
+            let l = light(px[0], px[1], px[2])
+            return (max(l, ground) + 0.05) / (min(l, ground) + 0.05)
+        }
+        let rim = rgba(PetClothes.rim)
+        func isRim(_ x: Int, _ y: Int) -> Bool {
+            let i = (y * width + x) * 4
+            return data[i + 3] == 255 && (0..<3).allSatisfy { abs(Double(data[i + $0]) / 255 - [rim.r, rim.g, rim.b][$0]) < 0.01 }
+        }
         var edge = 0, low = 0
         for y in 0..<height {
-            for x in 0..<width where covered(x, y) && !(covered(x - 1, y) && covered(x + 1, y) && covered(x, y - 1) && covered(x, y + 1)) {
-                let i = (y * width + x) * 4, a = Double(data[i + 3]) / 255
-                let px = (0..<3).map { Double(data[i + $0]) / 255 + (1 - a) * backdrop }
-                if a > 0.99, own.contains(where: { abs($0.r - px[0]) + abs($0.g - px[1]) + abs($0.b - px[2]) < 0.02 }) { continue }
-                let l = light(px[0], px[1], px[2])
+            for x in 0..<width where covered(x, y) {
+                guard let out = steps.first(where: { !covered(x + $0.0, y + $0.1) }), contrast(x, y) != nil else { continue }
                 edge += 1
-                if (max(l, ground) + 0.05) / (min(l, ground) + 0.05) < floor { low += 1 }
+                let inner = (x - out.0, y - out.1)
+                if contrast(x, y)! < floor || (isRim(x, y) && (contrast(inner.0, inner.1) ?? floor) < floor) { low += 1 }
             }
         }
         return edge == 0 ? 0 : Double(low) / Double(edge)
     }
 
     static func main() {
-        let dark = CommandLine.arguments.contains("dark")
-        let backdrop = dark ? 30.0 / 255 : 1
         let poses: [(String, (inout PetPose) -> Void)] = [
             ("walk", { $0.step = 0.9; $0.bounce = 1 }),
             ("sit", { $0.sit = 1 }),
             ("air", { $0.air = true; $0.lift = 9; $0.squash = -0.09 }),
         ]
-        var worst: [String: (Double, String)] = [:], count = 0
+        var worst: [String: [(Double, String)]] = [:], count = 0
         func measure(_ name: String, _ dress: (inout PetPose) -> Void) {
+            worst[name] = backdrops.map { _ in (0, "") }
             for (pose, tweak) in poses {
                 for facing in [CGFloat(1), -1] {
                     var bare = PetPose()
@@ -70,25 +82,32 @@ enum TestPetContrast {
                     bare.facing = facing
                     var dressed = bare
                     dress(&dressed)
-                    let value = share(dressed, bare: bare, night: dark, backdrop: backdrop)
-                    if value > worst[name]?.0 ?? -1 { worst[name] = (value, pose) }
-                    count += 1
+                    for night in [false, true] {
+                        for (i, backdrop) in backdrops.enumerated() {
+                            let value = share(dressed, bare: bare, night: night, backdrop: backdrop.level)
+                            if value > worst[name]![i].0 { worst[name]![i] = (value, "\(pose), \(night ? "night" : "day")") }
+                            count += 1
+                        }
+                    }
                 }
             }
         }
         for item in PetItem.allCases { measure(item.rawValue) { $0.outfit = [item.slot: item] } }
         for mark in PetMark.allCases where mark != .none { measure("mark \(mark)") { $0.face = PetFace(mark: mark, glow: 1) } }
 
-        let ranked = worst.sorted { $0.value.0 > $1.value.0 }
-        if dark || CommandLine.arguments.contains("table") {
-            for (key, (value, pose)) in ranked.prefix(8) { print(String(format: "%5.1f%%  %@, %@", value * 100, key, pose)) }
+        let ranked = worst.sorted { ($0.value.map(\.0).max() ?? 0) > ($1.value.map(\.0).max() ?? 0) }
+        let failed = ranked.filter { $0.value.contains { $0.0 > limit } }
+        if failed.isEmpty && !CommandLine.arguments.contains("table") {
+            print("outlines of \(worst.count) items and marks keep \(Int(floor)):1 on white and on #1E1E1E, \(deep) px wide, in \(count) renders: ok")
+            return
         }
-        if dark { return }
-        let failed = ranked.filter { $0.value.0 > limit }
-        for (key, (value, pose)) in failed {
-            print("\(key) while \(pose): \(Int((value * 100).rounded()))% of its outline is below \(floor):1 on white, at most \(Int(limit * 100))% is allowed")
+        print("share of the outline below \(Int(floor)):1, per backdrop (\(backdrops.map(\.name).joined(separator: ", ")))")
+        for (key, values) in failed.isEmpty ? Array(ranked.prefix(5)) : failed {
+            print(values.map { String(format: "%5.1f%%", $0.0 * 100) }.joined(separator: " ") + "  " + key + " (" + values.map(\.1).joined(separator: "; ") + ")")
         }
-        if !failed.isEmpty { exit(1) }
-        print("outlines of \(worst.count) items and marks stay readable on white in \(count) poses: ok")
+        if !failed.isEmpty {
+            print("at most \(Int(limit * 100))% of an outline may be below \(Int(floor)):1 in its first \(deep) px on either backdrop")
+            exit(1)
+        }
     }
 }

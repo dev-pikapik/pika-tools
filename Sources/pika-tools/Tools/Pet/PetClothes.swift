@@ -4,6 +4,7 @@ struct PetClothes {
     enum Layer: CaseIterable { case back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
 
     let pose: PetPose, night: Bool, body: Path, width: CGFloat, height: CGFloat, eye: CGPoint, paws: [CGRect], ground: CGFloat, place: CGAffineTransform
+    var outlined = true
 
     func draw(_ layer: Layer, _ fill: (Path, Color) -> Void) {
         let layers = shapes(layer)
@@ -13,23 +14,42 @@ struct PetClothes {
 
     func outline(_ fill: (Path, Color) -> Void) { outline(Self.front.flatMap(shapes), fill) }
 
-    var rim: Color { c(Dye.steel).color }
+    static let rim = Color(red: 0.48, green: 0.50, blue: 0.58)
 
     static let stroke = StrokeStyle(lineWidth: 0.7, lineJoin: .round)
 
-    static func pale(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1) -> Bool { a * (0.2126 * r + 0.7152 * g + 0.0722 * b) + 1 - a > 0.76 }
+    private static let grounds = [1.0, 30.0 / 255]
+
+    private static func linear(_ v: Double) -> Double { v <= 0.04045 ? v / 12.92 : pow((v + 0.055) / 1.055, 2.4) }
+
+    static func faint(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1) -> Bool {
+        grounds.contains { ground in
+            let l = 0.2126 * linear(a * r + (1 - a) * ground) + 0.7152 * linear(a * g + (1 - a) * ground) + 0.0722 * linear(a * b + (1 - a) * ground), back = linear(ground)
+            return (max(l, back) + 0.05) / (min(l, back) + 0.05) < 3
+        }
+    }
 
     private static let front = Layer.allCases.filter { $0 != .back }
 
     private func outline(_ layers: Layers, _ fill: (Path, Color) -> Void) {
-        var pale = Path()
-        let core = body.boundingRect.insetBy(dx: 2, dy: 2)
-        for (path, paint) in layers where paint.pale && !core.contains(path.boundingRect) { pale.addPath(path) }
-        if !pale.isEmpty { fill(pale.strokedPath(Self.stroke).applying(place), rim) }
+        guard outlined else { return }
+        var faint = Path()
+        var covers = [body.boundingRect.insetBy(dx: 2, dy: 2)]
+        for (path, paint) in layers {
+            let box = path.boundingRect
+            if paint.faint && !covers.contains(where: { $0.contains(box) }) { faint.addPath(path) }
+            var parts = 0
+            path.forEach { if case .move = $0 { parts += 1 } }
+            if parts == 1 { covers.append(box) }
+        }
+        if !faint.isEmpty { fill(faint.strokedPath(Self.stroke).applying(place), Self.rim) }
     }
 
     private typealias Ink = (r: Double, g: Double, b: Double)
-    private struct Paint { let color: Color, pale: Bool }
+    private struct Paint {
+        let color: Color, ink: Ink, alpha: Double
+        var faint: Bool { PetClothes.faint(ink.r, ink.g, ink.b, alpha) }
+    }
     private typealias Layers = [(Path, Paint)]
 
     private enum Dye {
@@ -59,7 +79,8 @@ struct PetClothes {
 
     private func c(_ k: Ink, _ a: Double = 1) -> Paint {
         let l = night ? 0.12 : 0
-        return Paint(color: Color(red: k.r + (1 - k.r) * l, green: k.g + (1 - k.g) * l, blue: k.b + (1 - k.b) * l, opacity: a), pale: Self.pale(k.r, k.g, k.b, a))
+        let ink = (k.r + (1 - k.r) * l, k.g + (1 - k.g) * l, k.b + (1 - k.b) * l)
+        return Paint(color: Color(red: ink.0, green: ink.1, blue: ink.2, opacity: a), ink: ink, alpha: a)
     }
 
     private var neck: CGFloat { -height / 2 + 6.4 }
@@ -74,7 +95,7 @@ struct PetClothes {
 
     private func shapes(_ layer: Layer) -> Layers {
         if let hit = memo.layers[layer] { return hit }
-        let built = build(layer)
+        let built = build(layer).map { (Path($0.0.cgPath), $0.1) }
         memo.layers[layer] = built
         return built
     }

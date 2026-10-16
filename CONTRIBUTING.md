@@ -196,7 +196,7 @@ Each mark stays 0.4 units clear of the pet and of every hat and back item, in ev
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
 ```
 
-Light items and marks get an automatic outline under their fill. At most 10% of any outline may stay below 1.6:1 against white, in walking, sitting and jumping poses and both facings:
+Items and marks whose fill stays below 3:1 against white or against #1E1E1E get one thin gray outline under the fill. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the outline is gray its first 2 px must keep the 3:1 too:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast

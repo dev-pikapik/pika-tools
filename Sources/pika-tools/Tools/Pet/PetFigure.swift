@@ -31,7 +31,7 @@ enum PetFigure {
         fill(Path(ellipseIn: CGRect(x: -5.5 * f, y: -1 - pose.floor, width: 11 * f, height: 2.4)), .black.opacity(0.12 * f))
     }
 
-    static func draw(_ pose: PetPose, night: Bool, fill: (Path, Color) -> Void) {
+    static func draw(_ pose: PetPose, night: Bool, outlined: Bool = true, fill: (Path, Color) -> Void) {
         let body = night ? Color(red: 1, green: 0.53, blue: 0.46) : Color(red: 1, green: 0.45, blue: 0.38)
         let feet = night ? Color(red: 0.86, green: 0.36, blue: 0.36) : Color(red: 0.80, green: 0.30, blue: 0.29)
         let air = pose.air, hang = pose.hang, sit = pose.sit
@@ -62,7 +62,7 @@ enum PetFigure {
         paws = paws.applying(place)
         let shape = Path(roundedRect: CGRect(x: -width / 2, y: -height / 2, width: width, height: height), cornerRadius: 4, style: .continuous)
         let eye = CGPoint(x: 2.6, y: -height / 2 + 3.8)
-        let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place)
+        let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place, outlined: outlined)
         wear.draw(.back, fill)
         if sit < 0.5 { fill(paws, feet) }
         wear.outline(fill)
@@ -135,18 +135,21 @@ enum PetFigure {
             case .cap: 3.5
             case .detective: 4
             case .helmet: 4.5
-            case .cowboy, .pirate, .crown: 5
+            case .cowboy, .crown: 5
+            case .pirate: 5.8
             case .propeller, .bowler: 5.5
             case .curls: 6
-            case .viking, .beanie, .bun: 6.5
+            case .beanie, .bun: 6.5
+            case .viking: 7.3
             case .tophat: 7.5
-            case .quiff: 8.5
+            case .quiff: 9.3
             case .bunny: 8
             case .wizard, .party: 8.5
             default: 0
             }
             if pose.outfit[.back] == .umbrella { crown = max(crown, 9.5) }
-            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, rim: wear.rim, fill: fill)
+            if pose.outfit[.back] == .balloon { crown = max(crown, 10.5) }
+            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, fill: fill)
         }
     }
 
@@ -156,12 +159,12 @@ enum PetFigure {
         return z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
     }
 
-    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, rim: Color, fill emit: (Path, Color) -> Void) {
+    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, fill emit: (Path, Color) -> Void) {
         let a = face.glow, float = 0.6 * sin(time * 3)
         let c = CGPoint(x: facing * 2.2, y: top - crown - 5.5 - float), back = -facing
         func shift(_ path: Path, _ x: CGFloat, _ y: CGFloat) -> Path { path.applying(CGAffineTransform(translationX: x, y: y)) }
         func fill(_ path: Path, _ ink: (r: Double, g: Double, b: Double)) {
-            if PetClothes.pale(ink.r, ink.g, ink.b) { emit(path.strokedPath(PetClothes.stroke), rim.opacity(a)) }
+            if PetClothes.faint(ink.r, ink.g, ink.b) { emit(path.strokedPath(PetClothes.stroke), PetClothes.rim.opacity(a)) }
             emit(path, Color(red: ink.r, green: ink.g, blue: ink.b).opacity(a))
         }
         switch face.mark {
