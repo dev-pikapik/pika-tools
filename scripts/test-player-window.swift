@@ -176,7 +176,7 @@ enum TestPlayerWindow {
         video.addSubview(controls)
         video.panel = controls
         probe.contentView = video
-        let probeChrome = WindowChrome(probe, over: video)
+        _ = WindowChrome(probe, over: video)
         if let area = NSScreen.main?.visibleFrame { probe.setFrame(NSRect(x: area.minX + 20, y: area.minY + 20, width: 400, height: 300), display: false) }
         let start = probe.frame
         func stripY() -> CGFloat { probe.contentLayoutRect.height + 5 }
@@ -210,7 +210,6 @@ enum TestPlayerWindow {
         probe.system = true
         precondition(presses(150) == 0 && presses(stripY()) == 0, "full screen has no window drag")
         probe.system = false
-        withExtendedLifetime(probeChrome) {}
         pass("the window moves only when the drag starts on the picture")
 
         let other = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled], backing: .buffered, defer: false)
