@@ -26,6 +26,28 @@ final class Stand: NSWindow {
 enum TestPlayerWindow {
     @MainActor static func main() {
         _ = NSApplication.shared
+        func quiet(line: UInt = #line) {
+            let drawn = (CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []).contains { ($0[kCGWindowOwnerPID as String] as? Int32) == getpid() }
+            precondition(!drawn && !NSApp.windows.contains { ($0 as? Stand)?.onScreen ?? $0.isVisible }, "the test shows nothing on screen", line: line)
+        }
+        func stand(_ level: NSWindow.Level = .normal) -> Stand {
+            let made = Stand(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
+            made.level = level
+            return made
+        }
+        func put(_ made: Stand, _ on: Bool, line: UInt = #line) {
+            made.shown = on
+            quiet(line: line)
+        }
+        func spin(_ mode: RunLoop.Mode, _ seconds: Double) {
+            let end = Date().addingTimeInterval(seconds)
+            while Date() < end { _ = RunLoop.current.run(mode: mode, before: end) }
+        }
+        func pass(_ text: String, line: UInt = #line) {
+            quiet(line: line)
+            print(text + ": ok")
+        }
+
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
         let content = NSView()
         window.contentView = content
@@ -41,7 +63,7 @@ enum TestPlayerWindow {
         let strip = window.frame.height - window.contentLayoutRect.height
         precondition(strip > 0 && strip < 60, "the system strip is a thin band at the very top: \(strip)")
         precondition(window.contentView?.frame.maxY == window.frame.height, "the video starts at the top edge, under that band")
-        print("the window has no title bar strip, the picture covers it all: ok")
+        pass("the window has no title bar strip, the picture covers it all")
 
         precondition(chrome.shade.alphaValue == 0, "a fresh window has no dark shade, so a first song never fades one out over its cover")
         let buttons = window.standardWindowButton(.closeButton)?.superview
@@ -79,7 +101,7 @@ enum TestPlayerWindow {
         }
         precondition([NSWindow.ButtonType.closeButton, .miniaturizeButton, .zoomButton].allSatisfy { WindowChrome.overButtons(centre($0), in: window) }, "a pointer on any of the three buttons counts as over the controls")
         precondition(!WindowChrome.overButtons(NSPoint(x: 300, y: 180), in: window) && !WindowChrome.overButtons(NSPoint(x: 300, y: centre(.closeButton).y), in: window), "a pointer on the picture does not")
-        print("the window buttons and the dark gradient under them follow the panel: ok")
+        pass("the window buttons and the dark gradient under them follow the panel")
 
         let frameView = window.contentView!.superview!
         let close = window.standardWindowButton(.closeButton)!
@@ -99,7 +121,7 @@ enum TestPlayerWindow {
         _ = spoken?.accessibilityPerformPress()
         precondition(press.count == 1, "and VoiceOver can press them")
         precondition(settled(true) && takesMouse(), "the shown buttons take the mouse again")
-        print("hidden buttons ignore the mouse, with VoiceOver they stay pressable by accessibility: ok")
+        pass("hidden buttons ignore the mouse, with VoiceOver they stay pressable by accessibility")
 
         var asked: NSPoint?
         precondition(WindowChrome.pointerOver(window, windowNumberAt: { asked = $0; return window.windowNumber }) && asked == NSEvent.mouseLocation, "our window on top under the pointer counts")
@@ -108,7 +130,7 @@ enum TestPlayerWindow {
         precondition(WindowChrome.voiceOver(arguments: flag, bundleID: dev, system: false) && !WindowChrome.voiceOver(arguments: [], bundleID: dev, system: false), "the dev build takes the argument")
         precondition(!WindowChrome.voiceOver(arguments: flag, bundleID: release, system: false) && !WindowChrome.voiceOver(arguments: flag, bundleID: nil, system: false), "the release build ignores it")
         precondition(WindowChrome.voiceOver(arguments: [], bundleID: release, system: true), "the real VoiceOver always counts")
-        print("the pointer check sees foreign windows, the VoiceOver argument works in the dev build only: ok")
+        pass("the pointer check sees foreign windows, the VoiceOver argument works in the dev build only")
 
         func click(_ y: CGFloat, _ count: Int) -> NSEvent {
             NSEvent.mouseEvent(with: .leftMouseDown, location: NSPoint(x: 100, y: y), modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 0, clickCount: count, pressure: 1)!
@@ -117,14 +139,14 @@ enum TestPlayerWindow {
         precondition(WindowChrome.stripDoubleClick(click(top, 2), in: window, setting: "None"), "a double-click in the top strip is the system's, not full screen")
         precondition(!WindowChrome.stripDoubleClick(click(top, 1), in: window, setting: "None"), "one click in the strip does nothing special")
         precondition(!WindowChrome.stripDoubleClick(click(100, 2), in: window, setting: "None"), "a double-click on the picture is still full screen")
-        print("the top strip double-click follows the system setting: ok")
+        pass("the top strip double-click follows the system setting")
 
         let panel = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
         precondition(!WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel), "a drag that starts on the panel does not move the window")
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 200), panel: panel), "a drag that starts on the picture moves the window")
         panel.isHidden = true
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel) && WindowChrome.dragsWindow(at: .zero, panel: nil), "a hidden or missing panel never blocks the drag")
-        print("the window moves only when the drag starts on the picture: ok")
+        pass("the window moves only when the drag starts on the picture")
 
         let other = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled], backing: .buffered, defer: false)
         let zoom = window.standardWindowButton(.zoomButton)!
@@ -134,33 +156,20 @@ enum TestPlayerWindow {
         zoom.setFrameOrigin(origin)
         precondition(zoom.window === other && zoom.convert(zoom.bounds, to: nil).contains(spot), "the button now lives in another window, as in full screen")
         precondition(!WindowChrome.overButtons(spot, in: window) && WindowChrome.overButtons(centre(.closeButton), in: window), "a button of another window does not count, the others do")
-        print("a button in a system window is not ours: ok")
+        pass("a button in a system window is not ours")
 
-        func quiet(line: UInt = #line) {
-            let drawn = (CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] ?? []).contains { ($0[kCGWindowOwnerPID as String] as? Int32) == getpid() }
-            precondition(!drawn && !NSApp.windows.contains { ($0 as? Stand)?.onScreen ?? $0.isVisible }, "the test shows nothing on screen", line: line)
-        }
-        func stand(_ level: NSWindow.Level = .normal) -> Stand {
-            let made = Stand(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
-            made.level = level
-            return made
-        }
-        func put(_ made: Stand, _ on: Bool, line: UInt = #line) {
-            made.shown = on
-            quiet(line: line)
-        }
-        func spin(_ mode: RunLoop.Mode, _ seconds: Double) {
-            let end = Date().addingTimeInterval(seconds)
-            while Date() < end { _ = RunLoop.current.run(mode: mode, before: end) }
-        }
-
-        quiet()
         precondition(!WindowChrome.opened(over: window), "nothing of ours is open over a quiet window")
         let child = stand(), sheet = stand(), menu = stand(.popUpMenu), peer = stand()
+        precondition(!WindowChrome.opened(over: window), "a pop-up menu window that is not on screen is not an open menu")
+        let button = window.standardWindowButton(.closeButton)!, bar = button.superview!
         child.parent = window
+        child.contentView?.addSubview(button)
+        precondition(button.window === child && child.level == .normal, "the stand is what the Mac does in full screen: a child window of the player at level 0 that holds the window buttons")
         put(child, true)
-        precondition(!WindowChrome.opened(over: window), "a child window of the player, like the one the Mac keeps the buttons in during full screen, is not open: the panel would never hide there")
+        precondition(!WindowChrome.opened(over: window), "the child window that holds the buttons in full screen is not open over the player: the panel would never hide there")
         put(child, false)
+        bar.addSubview(button)
+        precondition(button.window === window, "the buttons are back in the window")
         sheet.sheeted = window
         put(sheet, true)
         precondition(WindowChrome.opened(over: window), "a shown sheet of the player counts as open")
@@ -169,13 +178,19 @@ enum TestPlayerWindow {
         put(menu, true)
         precondition(WindowChrome.opened(over: window), "a shown pop-up menu counts as open")
         put(menu, false)
+        for level in [NSWindow.Level.floating, .modalPanel, .mainMenu, .statusBar, .screenSaver] {
+            let other = stand(level)
+            put(other, true)
+            precondition(!WindowChrome.opened(over: window), "a window at level \(level.rawValue), like a second player kept on top, is not a menu")
+            put(other, false)
+        }
         sheet.sheeted = peer
         put(sheet, true)
         put(peer, true)
         precondition(!WindowChrome.opened(over: window), "a second window and its sheet are not ours to wait for")
         put(sheet, false)
         put(peer, false)
-        print("an open sheet or menu counts as open over the player; a child window, a second player window and its sheet do not: ok")
+        pass("an open sheet or menu counts as open over the player; a child window with the buttons, windows at other levels, a second player window and its sheet do not")
 
         let panelView = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
         content.addSubview(panelView)
@@ -189,7 +204,7 @@ enum TestPlayerWindow {
         precondition(WindowChrome.overControls(window, at: onPicture, panel: panelView, windowNumberAt: foreign), "an open sheet keeps the controls wherever the pointer is and whichever window is under it")
         put(sheet, false)
         precondition(!WindowChrome.overControls(window, at: onPicture, panel: panelView, windowNumberAt: foreign), "and lets go when it is closed")
-        print("the controls stay while the pointer is on them or something of ours is open, and follow the pointer after: ok")
+        pass("the controls stay while the pointer is on them or something of ours is open, and follow the pointer after")
 
         let fires = Fires(), delay = 0.4
         chrome.hideAfterIdle(delay) { fires.add() }
@@ -206,15 +221,31 @@ enum TestPlayerWindow {
         NotificationCenter.default.post(name: NSWindow.didEndSheetNotification, object: window)
         spin(.default, delay + 0.5)
         precondition(fires.all.count == 2 && fires.all[1].timeIntervalSince(closed) > delay * 0.9, "when a sheet ends the hide delay counts from that moment")
+        chrome.hideAfterIdle(delay) { fires.add() }
+        spin(.default, delay * 0.75)
+        closed = Date()
+        NotificationCenter.default.post(name: NSWindow.didEndSheetNotification, object: peer)
+        spin(.default, delay + 0.5)
+        precondition(fires.all.count == 3 && fires.all[2].timeIntervalSince(closed) < delay * 0.9, "the end of a sheet of another window does not restart this window's timer")
         NotificationCenter.default.post(name: NSMenu.didEndTrackingNotification, object: nil)
         spin(.default, delay + 0.5)
-        precondition(fires.all.count == 2, "a panel that is already hidden is not scheduled again by a closing menu")
+        precondition(fires.all.count == 3, "a panel that is already hidden is not scheduled again by a closing menu")
         chrome.hideAfterIdle(delay) { fires.add() }
         chrome.cancelIdle()
         NotificationCenter.default.post(name: NSMenu.didEndTrackingNotification, object: nil)
         spin(.default, delay + 0.5)
-        precondition(fires.all.count == 2, "a window that closed is not scheduled again either")
+        precondition(fires.all.count == 3, "a window that closed is not scheduled again either")
+        weak var released: WindowChrome?
+        autoreleasepool {
+            let gone = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
+            let view = NSView()
+            gone.contentView = view
+            let temporary = WindowChrome(gone, over: view)
+            temporary.hideAfterIdle(delay) { fires.add() }
+            released = temporary
+        }
+        precondition(released == nil, "when its window goes away the chrome is freed even while its timer waits")
         quiet()
-        print("the hide delay starts over when a menu closes or a sheet ends, and the test shows no window: ok")
+        pass("the hide delay starts over when a menu closes or a sheet ends, and a window that goes away is freed with its timer waiting")
     }
 }

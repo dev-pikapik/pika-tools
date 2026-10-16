@@ -14,7 +14,7 @@ final class ButtonShield: NSView {
     }
 }
 
-final class WindowChrome {
+final class WindowChrome: NSObject {
     static let shadeHeight: CGFloat = 72
     let shade = WindowShade()
     private let shield = ButtonShield()
@@ -22,14 +22,12 @@ final class WindowChrome {
     private var state = (bar: true, shade: false)
     private var idleTimer: Timer?
     private var idle: (delay: TimeInterval, action: () -> Void)?
-    private var observers: [NSObjectProtocol] = []
 
     init(_ window: NSWindow, over content: NSView) {
+        super.init()
         self.window = window
-        observers = [
-            NotificationCenter.default.addObserver(forName: NSMenu.didEndTrackingNotification, object: nil, queue: nil) { [weak self] _ in self?.restartIdle() },
-            NotificationCenter.default.addObserver(forName: NSWindow.didEndSheetNotification, object: window, queue: nil) { [weak self] _ in self?.restartIdle() },
-        ]
+        NotificationCenter.default.addObserver(self, selector: #selector(restartIdle), name: NSMenu.didEndTrackingNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(restartIdle), name: NSWindow.didEndSheetNotification, object: window)
         shield.content = content
         Self.style(window)
         let gradient = CAGradientLayer()
@@ -50,10 +48,6 @@ final class WindowChrome {
         ])
     }
 
-    deinit {
-        observers.forEach(NotificationCenter.default.removeObserver)
-    }
-
     func hideAfterIdle(_ delay: TimeInterval, _ action: @escaping () -> Void) {
         idleTimer?.invalidate()
         idle = (delay, action)
@@ -64,7 +58,7 @@ final class WindowChrome {
         idleTimer?.invalidate()
     }
 
-    private func restartIdle() {
+    @objc private func restartIdle(_ note: Notification) {
         if idleTimer?.isValid == true, let idle { hideAfterIdle(idle.delay, idle.action) }
     }
 
