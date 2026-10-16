@@ -42,8 +42,13 @@ struct PetClothes {
         return Color(red: k.r + (1 - k.r) * l, green: k.g + (1 - k.g) * l, blue: k.b + (1 - k.b) * l, opacity: a)
     }
 
+    private static var rims: [(path: Path, body: Path, rim: Path)] = []
+
     private func rim(_ path: Path) -> (Path, Color) {
-        (path.strokedPath(StrokeStyle(lineWidth: 0.7, lineJoin: .round)).subtracting(body), c(Dye.steel))
+        if let hit = Self.rims.first(where: { $0.path == path && $0.body == body }) { return (hit.rim, c(Dye.steel)) }
+        let rim = Path(path.strokedPath(StrokeStyle(lineWidth: 0.7, lineJoin: .round)).subtracting(body).cgPath)
+        Self.rims = Array((Self.rims + [(path, body, rim)]).suffix(6))
+        return (rim, c(Dye.steel))
     }
 
     private var neck: CGFloat { -height / 2 + 6.4 }
