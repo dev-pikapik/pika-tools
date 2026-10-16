@@ -79,6 +79,12 @@ struct SettingsFile {
         return remote.modified > local ? .apply : .upload
     }
 
+    static func onSave(_ changed: @escaping () -> Void) {
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { _ in
+            if Thread.isMainThread { changed() } else { DispatchQueue.main.async(execute: changed) }
+        }
+    }
+
     static func moveFolder(from old: URL, to new: URL) {
         let manager = FileManager.default
         guard manager.fileExists(atPath: old.path) else { return }

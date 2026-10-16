@@ -535,6 +535,7 @@
 "Put the pointer in its way and it jumps over it" = "ポインタを行く手に置くと、飛び越えます";
 "Talks sometimes" = "ときどきおしゃべり";
 "Every now and then it sits down for a chat and tells you when an update is out" = "ときどき座っておしゃべりし、アップデートが出たら教えてくれます";
+"Every now and then it sits down for a chat" = "ときどき座っておしゃべりします";
 "Follows your rhythm" = "あなたのリズムに合わせる";
 "Perks up while you type and dozes off when you step away" = "入力中は元気になり、席を離れるとうとうとします";
 "sleep, nap, doze, tired, energy, typing, away, idle, wake" = "睡眠, 昼寝, うたた寝, 眠い, 元気, タイピング, 離席, アイドル, 起きる";

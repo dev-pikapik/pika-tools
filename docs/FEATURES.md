@@ -654,21 +654,21 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fixes text typed in the wrong keyboard layout (“ghbdtn” becomes “привет”).
 
-**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:567`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:5`, `LayoutFixServiceSettings` :142-199) because the sandbox cannot read selected text; the toggle row asks Accessibility itself.
+**How it works:** Website: event tap with Accessibility (`Sources/pika-tools/Tools/LayoutFix/LayoutFixTool.swift:488`). Chromium and Electron apps show their text fields only after `TextFocus.watch()` asks them (`TextFocus.unwatch()` sets back only what it turned on when both tools stop or the app quits) (`AXManualAccessibility`, else `AXEnhancedUserInterface`) when they become the front app (`Sources/pika-tools/Common/TextFocus.swift`). App Store: Services-based (`LayoutFixTool.swift:25`, `LayoutFixServiceSettings` :322-395) because the sandbox cannot read selected text; the toggle rows ask Accessibility themselves. Since 1.50.1 (PR #92) the App Store build also fixes words as you type with the same kind of event tap, but it cannot check the text field, so it retypes without looking (`:162-167`).
 
 **Options:**
-- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:577`). Website only.
-- Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:580`). Website only.
-- Words left as you typed them — list with a Clear button, shown only when not empty (`:587-590`). Website only.
+- Fix words as you type — fixes on Space or Return (`LayoutFixTool.swift:755`). Both. Website: on at first. App Store: a switch under Fix the selected text, off at first (`:349`).
+- Fix the last word or selected text — shortcut recorder, default ⌃⇧Space (`:763`). Website only; the App Store build has Fix the selected text instead.
+- Words left as you typed them — list with a Clear button, shown only when not empty (`:777-787`). Both; in the App Store build it shows while Fix words as you type is on.
 - Add a Layout — menu in the note shown when fewer than two layouts exist: the installed layouts for your preferred languages that you don’t have yet; picking one turns it on with `TISEnableInputSource`, no password (`LayoutFixTool.swift` `AddLayoutNotice`, `KeyboardLayouts.addable`). If none is left to offer, or adding fails, the Keyboard Settings… button opens System Settings. Website only; the App Store build shows only Keyboard Settings….
-- Don’t fix text in these apps — app exclusion list (`:602`). Website only.
+- Don’t fix text in these apps — app exclusion list (`:771`). Both; in the App Store build it shows while Fix words as you type is on (`:357`).
 
 **Nuances:** Needs at least two input sources. Website App Exclusions: Add App… / Done, app shelf, Remove. The retyped text and the keys it sends are tagged (`EventTag.swift`), so with two copies of pikapik one copy does not fix the text the other has just retyped.
 
-**Edition:** Both; App Store differs: only the selected text is fixed, through the Services item or the shortcut (see Fix the selected text); the options above are Website only.
+**Edition:** Both; App Store differs: the selected text is fixed through the Services item or the shortcut (see Fix the selected text), and Fix words as you type is there too since 1.50.1, off at first. Fix the last word or selected text and Add a Layout are Website only.
 
 **Test:**
-1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”.
+1. Add two input sources (ABC and Russian). (Website) Turn on Retype words you typed in the wrong language and Fix words as you type, type “ghbdtn ” in TextEdit with the ABC layout → it becomes “привет ”. (App Store) Turn on Fix words as you type, allow Accessibility when asked, and type the same → the same result.
 2. Select a mistyped word and press ⌃⇧Space → it is fixed.
 3. Undo a fix → the word appears under Words left as you typed them; Clear empties the list.
 4. With only one input source (and a second language in System Settings › General › Language & Region) → the note shows Add a Layout; pick a layout → it turns on at once, the note goes away, no password asked. Remove it again in System Settings › Keyboard › Input Sources. With no other language → the note shows Keyboard Settings… instead.
@@ -1686,7 +1686,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **How it works:** `Sources/pika-tools/Tools/Pet/PetTool.swift` (`PetSettings`), overlay window `PetStage`, physics `PetPhysics.swift`. No permission needed. Website reads Dock icon positions through Accessibility (`PetStage.tiles`) and announces updates (`PetStage.nextPhrase`); App Store uses a window-list check for full screen (`PetStage.fullscreen`) and the screen’s full width (`PetStage.dock`). Feelings: the rules are plain numbers in `PetMood.swift` (`PetMood`, `PetFace`, `PetMind`), `PetCues` (no AppKit) decides what the pet feels, when it sits down and when it says a phrase it owes, `PetStage` only feeds it what the pet already knows, and `PetFigure.draw` paints the face (eye, brow, mouth, blush) under the moustache and the sign over everything. There is no new timer; it runs in the existing frame loop, and a calm pet redraws nothing extra. A higher feeling interrupts a lower one, the same cue extends a feeling instead of restarting it, every feeling rests before it can return, the pet starts at most one curious, bored or sleepy feeling of its own every 3 minutes, and faces fade in over 0.25 s and out over 0.4 s. The rules run without the app: `scripts/test-mood.swift`, `scripts/test-pet-cues.swift` runs the cues with a real pet (wake from a doze, the morning phrase, a phrase owed after a toss, sitting only when it can), and `scripts/test-pet-marks.swift` checks that no sign touches a hat or a back item in any pose, and `scripts/test-pet-contrast.swift` checks that every item and sign keeps a gray outline of 3:1 or better, at least 2 px wide and at full strength, on a white window and on a #1E1E1E window (commands in CONTRIBUTING.md).
 
 **Options:**
-- Talks sometimes — speech bubbles (`PetTool.talks`); it also governs the two feeling phrases, “Hey, gently!” and “Good morning!”. The pet keeps them to itself while you type or the microphone is in use.
+- Talks sometimes — speech bubbles (`PetTool.talks`); the App Store line under it does not mention updates; it also governs the two feeling phrases, “Hey, gently!” and “Good morning!”. The pet keeps them to itself while you type or the microphone is in use.
 - Follows your rhythm — reacts to typing (`PetTool.rhythm`); when it is off, typing and idle time start no feelings.
 - Ball — a ball the pet plays with (`PetTool.ball`).
 - “To make it jump when you press Space, allow Input Monitoring” — note with a permission bar (`PetTool.listening`); a listen-only tap checks only whether Space was pressed.
