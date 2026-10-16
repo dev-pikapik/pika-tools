@@ -240,42 +240,6 @@ enum TestGameMode {
 
         let screen = CGRect(x: 0, y: 0, width: 1440, height: 900)
         let second = CGRect(x: 1440, y: -200, width: 1920, height: 1080)
-        precondition(GameRules.fence(CGPoint(x: 700, y: 400), in: screen) == nil)
-        precondition(GameRules.fence(CGPoint(x: 1, y: 1), in: screen) == nil)
-        precondition(GameRules.fence(CGPoint(x: 0, y: 400), in: screen) == CGPoint(x: 1, y: 400))
-        precondition(GameRules.fence(CGPoint(x: 700, y: 899.5), in: screen) == CGPoint(x: 700, y: 898))
-        precondition(GameRules.fence(CGPoint(x: 1439, y: 0), in: screen) == CGPoint(x: 1438, y: 1))
-        precondition(GameRules.fence(CGPoint(x: 2000, y: 100), in: screen) == CGPoint(x: 1438, y: 100))
-        precondition(GameRules.fence(CGPoint(x: 1440, y: -200), in: second) == CGPoint(x: 1441, y: -199))
-        precondition(GameRules.fence(CGPoint(x: 1000, y: 500), in: second) == CGPoint(x: 1441, y: 500))
-        precondition(GameRules.fence(CGPoint(x: 1439.5, y: 899.5), in: screen, corners: [3]) == CGPoint(x: 1439, y: 899))
-        precondition(GameRules.fence(CGPoint(x: 1439, y: 899), in: screen, corners: [3]) == nil)
-        precondition(GameRules.fence(CGPoint(x: 0, y: 0), in: screen, corners: [0]) == nil)
-        precondition(GameRules.fence(CGPoint(x: 1439.5, y: 899.5), in: screen, corners: [0, 1, 2]) == CGPoint(x: 1438, y: 898))
-        precondition(GameRules.fence(CGPoint(x: 1439, y: 700), in: screen, corners: [3]) == CGPoint(x: 1438, y: 700))
-        precondition(GameRules.fence(CGPoint(x: 1442, y: 899), in: screen, corners: [3]) == CGPoint(x: 1439, y: 899))
-        precondition(GameRules.fence(CGPoint(x: 1443, y: 899), in: screen, corners: [3]) == CGPoint(x: 1438, y: 898))
-        precondition(GameRules.fence(CGPoint(x: 1438, y: -200), in: second, corners: [0]) == CGPoint(x: 1440, y: -200))
-        precondition(GameRules.fence(CGPoint(x: 1438, y: 100), in: second, corners: [0]) == CGPoint(x: 1441, y: 100))
-        for frame in [screen, second] {
-            let pixels = (0..<4).map { CGPoint(x: $0 % 2 == 0 ? frame.minX : frame.maxX - 1, y: $0 < 2 ? frame.minY : frame.maxY - 1) }
-            for corner in 0..<4 {
-                let pushed = CGPoint(x: pixels[corner].x + (corner % 2 == 0 ? -2 : 2), y: pixels[corner].y + (corner < 2 ? -2 : 2))
-                precondition((GameRules.fence(pushed, in: frame, corners: [corner]) ?? pushed) == pixels[corner])
-                precondition(GameRules.fence(pushed, in: frame) != pixels[corner])
-                for other in (0..<4) where other != corner {
-                    precondition(GameRules.fence(pixels[other], in: frame, corners: [corner]) != nil)
-                }
-                for dx in stride(from: -8.0, through: 8.0, by: 0.5) {
-                    for dy in stride(from: -8.0, through: 8.0, by: 0.5) {
-                        let point = CGPoint(x: pixels[corner].x + dx, y: pixels[corner].y + dy)
-                        precondition(frame.contains(GameRules.fence(point, in: frame, corners: [corner]) ?? point))
-                    }
-                }
-            }
-        }
-        print("cursor fence: ok")
-
         func reaches(_ x: CGFloat, _ y: CGFloat, _ frame: CGRect, _ corners: Set<Int> = []) -> Bool {
             GameRules.fenceRects(frame, corners: corners).contains { $0.contains(CGPoint(x: x + 0.5, y: y + 0.5)) }
         }

@@ -132,7 +132,7 @@ struct SettingsItem: Identifiable {
             String(localized: "Enter opens files in Finder"), String(localized: "Delete removes files in Finder"),
             String(localized: "Animation speed"), String(localized: "Delay before the Dock appears"), String(localized: "How fast the Dock slides out"),
             String(localized: "Opening windows"), String(localized: "Save dialogs and resizing"), String(localized: "Quick Look"),
-            String(localized: "Columns in Finder"), String(localized: "Finder animations"),
+            String(localized: "Columns in Finder"), String(localized: "Finder animations"), String(localized: "The pointer stays in the game"),
             String(localized: "Dim the picture instead"),
             String(localized: "Middle click on the trackpad"), String(localized: "Fingers"),
         ] + (SettingsSync.isAvailable ? [] : [String(localized: "Sync settings with iCloud")])

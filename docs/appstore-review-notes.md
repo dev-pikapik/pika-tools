@@ -15,7 +15,7 @@ No account or sample files are needed (any photo or video works). Settings opens
 - Mouse: Scroll by lines, Scroll direction, Side buttons, Mouse button hides the current app.
 - Protect quitting and closing: ⌘Q and ⌘W alone do nothing; ⇧⌘Q quits and ⇧⌘W closes.
 - Finder: turn on New File, Smaller Copy or Convert, press Allow, switch the extension on in System Settings, then right-click in Finder; at first it asks for a save folder, the only place they write. Cut files: select files, press ⌘X, open another folder, press ⌘V: the files move.
-- Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's DefaultShortcutsTable.xml; an event tap keeps the pointer in the game's display, off hot corners.
+- Game Mode: turn it on, press Add a Game… (e.g. Chess) and open it. While it is in front, system shortcuts and swipes don't pull the player out. It reads them with Carbon CopySymbolicHotKeys and /System's DefaultShortcutsTable.xml.
 No private API. Entitlements: sandbox, network client, user-selected files, bookmarks, audio input (App Volume's taps; no microphone).
 Permissions: a tool that needs one looks grey; a click shows the macOS prompt (App Volume: via Allow; Show FPS: a line under it) and opens Settings > Permissions. Accessibility (on macOS 27: Device Control and Data Access), to change or hold back a scroll, click, key, shortcut or swipe: the Mouse tools, Brightness keys, Protect quitting and closing, Cut files, Home and End, Fix Wrong Keyboard Layout and Game Mode. Input Monitoring: Switch language (its shortcut) and the Pet's jump. System Audio Recording: App Volume. Screen Recording: Show FPS. Folders: Background Tasks in the home folder. The Services command needs none. Events and sound stay in memory, never stored or sent. The app never pastes into other apps; it sends only ⌘Q, ⌘W, Finder's ⌘C, ⌘X and ⌥⌘V, ⌘←, ⌘→, ⌃⌥⇧⌘F19 (its own Services key), a back or forward swipe and Backspace plus the fixed word as you type.
 
@@ -98,7 +98,7 @@ Settings > Keyboard, off by default. When the user turns this on, the app uses a
 - To try it: turn it on, click in a text field, press End and then Home; the cursor goes to the end and start of the line.
 
 ### Game Mode
-Settings > Games. It reads the user's system keyboard shortcuts with the public Carbon API CopySymbolicHotKeys and Apple's read-only DefaultShortcutsTable.xml in /System. It needs no new entitlement and calls no private API. It keeps the pointer inside the game's display through a Quartz event tap that the user enables in Accessibility. In the App Store version it doesn't touch Dock preferences; it keeps the pointer a few points away from the screen corners so that hot corners aren't triggered. After the Mac wakes from sleep or the user switches back to their account, Game Mode checks the front app again and turns itself back on.
+Settings > Games. It reads the user's system keyboard shortcuts with the public Carbon API CopySymbolicHotKeys and Apple's read-only DefaultShortcutsTable.xml in /System. It needs no new entitlement and calls no private API. It pauses those shortcuts and Dock swipes through a Quartz event tap that the user enables in Accessibility. In the App Store version it doesn't touch Dock preferences and doesn't move or hold the pointer. After the Mac wakes from sleep or the user switches back to their account, Game Mode checks the front app again and turns itself back on.
 
 ### Archives in Finder
 Only in a package built with the Archive and Preview profiles; without them scripts/appstore.sh leaves both extensions out, Settings > Finder has no Archives row and the app opens no archives.
@@ -135,6 +135,7 @@ These features need to look inside other apps' windows, type into or control oth
 - Minimize or hide with a click in the Dock.
 - Enter opens files and Delete removes files in Finder.
 - Key repeat, pointer shortcuts, the Trash watcher, the Uninstaller, fan control and the built-in updater.
+- Keeping the pointer on the game's display and away from hot corners, in Game Mode.
 - Changing pointer acceleration, animations and leftover permissions directly. The App Store version has the buttons to System Settings instead.
 - Ports, the list of which program holds which port: the App Sandbox doesn't show it.
 - Turning background tasks off and on directly, from Background Tasks.
