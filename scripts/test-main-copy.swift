@@ -185,17 +185,20 @@ struct TestMainCopy {
         let unknown = RunningCopy.own(started: { _ in nil }), peer = copy(5, MainCopyChoice.websiteID, at: 5)
         precondition(unknown.launched == .distantPast && MainCopyChoice.leader(unknown, among: [peer]) == peer, "a copy that does not know its start counts as the oldest, so any other copy leads: \(unknown)")
         precondition(RunningCopy(NSRunningApplication.current) == nil, "a process LaunchServices does not know is no copy")
-        precondition(RunningCopy(StubApp(terminated: false, id: MainCopyChoice.websiteID), started: { $0 == getpid() ? sentinel : nil }) == RunningCopy(pid: getpid(), bundleID: MainCopyChoice.websiteID, launched: sentinel), "an app maps to a copy with its own pid, bundle id and start")
-        precondition(RunningCopy(StubApp(terminated: true, id: MainCopyChoice.websiteID), started: { _ in sentinel }) == nil, "an app that has quit is no copy")
-        precondition(RunningCopy(StubApp(terminated: false, id: nil), started: { _ in sentinel }) == nil, "an app with no bundle id is no copy")
-        guard let app = NSWorkspace.shared.runningApplications.first(where: { !$0.isTerminated && $0.bundleIdentifier != nil }), let id = app.bundleIdentifier else {
-            print("a running app maps to a copy with the kernel start of its own pid: skipped, no running app with a bundle id")
-            return
-        }
-        let pid = app.processIdentifier
-        precondition(RunningCopy(app) == RunningCopy(pid: pid, bundleID: id, launched: MainCopyChoice.started(pid)!), "a running app's date is the kernel start of its own pid")
-        precondition(RunningCopy(app, started: { $0 == pid ? sentinel : nil })?.launched == sentinel, "the start lookup gets the app's pid and its answer is the date")
+        let child = Process()
+        child.executableURL = URL(fileURLWithPath: "/bin/sleep")
+        child.arguments = ["5"]
+        try! child.run()
+        defer { child.terminate(); child.waitUntilExit() }
+        let pid = child.processIdentifier, start = MainCopyChoice.started(child.processIdentifier)
+        precondition(pid != getpid() && start != nil && start != MainCopyChoice.started(getpid()), "the child is another process with its own start")
+        let app = StubApp(pid: pid, terminated: false, id: MainCopyChoice.websiteID)
+        precondition(RunningCopy(app) == RunningCopy(pid: pid, bundleID: MainCopyChoice.websiteID, launched: start ?? .distantPast), "an app maps to a copy with its own pid, bundle id and kernel start: \(String(describing: RunningCopy(app)))")
+        var lookedUp: [Int32] = []
+        precondition(RunningCopy(app, started: { lookedUp.append($0); return sentinel })?.launched == sentinel && lookedUp == [pid], "the start lookup gets the app's pid and its answer is the date: \(lookedUp)")
         precondition(RunningCopy(app, started: { _ in nil }) == nil, "an app with no start time is no copy")
+        precondition(RunningCopy(StubApp(pid: pid, terminated: true, id: MainCopyChoice.websiteID), started: { _ in sentinel }) == nil, "an app that has quit is no copy")
+        precondition(RunningCopy(StubApp(pid: pid, terminated: false, id: nil), started: { _ in sentinel }) == nil, "an app with no bundle id is no copy")
         print("a running app maps to a copy with the kernel start of its own pid, our own copy to this process's start, and an unknown start counts as the oldest: ok")
     }
 
@@ -717,14 +720,14 @@ struct TestMainCopy {
 }
 
 final class StubApp: NSRunningApplication, @unchecked Sendable {
-    private let quit: Bool, bundle: String?
+    private let process: pid_t, quit: Bool, bundle: String?
 
-    init(terminated: Bool, id: String?) {
-        (quit, bundle) = (terminated, id)
+    init(pid: pid_t, terminated: Bool, id: String?) {
+        (process, quit, bundle) = (pid, terminated, id)
         super.init()
     }
 
     override var isTerminated: Bool { quit }
-    override var processIdentifier: pid_t { getpid() }
+    override var processIdentifier: pid_t { process }
     override var bundleIdentifier: String? { bundle }
 }
