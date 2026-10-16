@@ -295,7 +295,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         displaysItem.submenu = displays
         let windowMenu = submenu(String(localized: "Window"), [
             item(String(localized: "Minimize"), #selector(NSWindow.performMiniaturize), "m"),
-            item(String(localized: "Zoom"), #selector(NSWindow.performZoom)),
+            item(String(localized: "Zoom"), #selector(NSWindow.zoom(_:))),
             .separator(),
             command(String(localized: "Float on Top"), .floatOnTop),
             command(String(localized: "Picture in Picture"), .pictureInPicture),

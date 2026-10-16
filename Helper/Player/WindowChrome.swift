@@ -89,7 +89,7 @@ final class WindowChrome: NSObject {
     }
 
     static func startsDrag(_ event: NSEvent, in window: NSWindow, at point: NSPoint, panel: NSView?) -> Bool {
-        event.type == .leftMouseDown && event.clickCount == 1 && !window.styleMask.contains(.fullScreen) && dragsWindow(at: point, panel: panel)
+        event.clickCount == 1 && !window.styleMask.contains(.fullScreen) && dragsWindow(at: point, panel: panel)
     }
 
     static func overButtons(_ point: NSPoint, in window: NSWindow) -> Bool {
