@@ -202,6 +202,12 @@ Items and marks whose fill stays below 3:1 against white or against #1E1E1E get 
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
 ```
 
+The outline must stay cheap: drawing every item and look with it costs at most 0.3 ms more per frame than without it (release build on an idle Mac; add `raster` to also fill the paths):
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/bench-pet.swift -o build/bench-pet && build/bench-pet
+```
+
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
 
 ```bash
