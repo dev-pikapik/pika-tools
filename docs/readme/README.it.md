@@ -40,26 +40,38 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 <table>
 <tbody><tr>
 <td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
+<br><b>Proteggi ⌘Q e ⌘W</b>
+<br>Niente si chiude per sbaglio. Aggiungi ⇧ quando lo vuoi davvero.
+</td>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
+<br><b>Modalità gioco</b>
+<br>Mentre giochi, niente si apre sopra il gioco né lo chiude.
+</td>
+</tr></tbody>
+<tbody><tr>
+<td width="50%" valign="top">
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+<br><b>Animaletto sulla scrivania</b>
+<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
+</td>
+<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/keep-awake-dark.png"><img src="../media/keep-awake-light.png" width="340" alt=""></picture>
 <br><b>Resta sveglio</b>
 <br>Il Mac resta sveglio per tutto il tempo che serve, anche con il coperchio chiuso.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/fans-dark.png"><img src="../media/fans-light.png" width="340" alt=""></picture>
 <br><b>Ventole</b>
 <br>Guarda quanto veloci girano le ventole e scegli la loro velocità.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/battery-dark.png"><img src="../media/battery-light.png" width="340" alt=""></picture>
 <br><b>Batteria</b>
 <br>Guarda lo stato della batteria, la capacità e il conteggio cicli, quanta energia entra e come farla durare di più.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/command-keys-dark.png"><img src="../media/command-keys-light.png" width="340" alt=""></picture>
-<br><b>Proteggi ⌘Q e ⌘W</b>
-<br>Niente si chiude per sbaglio. Aggiungi ⇧ quando lo vuoi davvero.
 </td>
 </tr></tbody>
 <tbody><tr>
@@ -136,74 +148,62 @@ Sia il comando qui sopra sia Homebrew mettono l’app in `/Applications`, la avv
 </tr></tbody>
 <tbody><tr>
 <td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/game-mode-dark.png"><img src="../media/game-mode-light.png" width="340" alt=""></picture>
-<br><b>Modalità gioco</b>
-<br>Mentre giochi, niente si apre sopra il gioco né lo chiude.
-</td>
-<td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/speed-test-dark.png"><img src="../media/speed-test-light.png" width="340" alt=""></picture>
 <br><b>Velocità internet</b>
 <br>Quanto è veloce la tua connessione e a cosa basta.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/side-buttons-dark.png"><img src="../media/side-buttons-light.png" width="340" alt=""></picture>
 <br><b>Tasti laterali</b>
 <br>I tasti 4 e 5 vanno indietro e avanti, come uno swipe.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/hide-app-dark.png"><img src="../media/hide-app-light.png" width="340" alt=""></picture>
 <br><b>Nascondi con un tasto del mouse</b>
 <br>Una pressione nasconde l’app in primo piano, come ⌘H. Resta in esecuzione.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-lines-dark.png"><img src="../media/wheel-lines-light.png" width="340" alt=""></picture>
 <br><b>Scorri per righe</b>
 <br>Ogni scatto della rotella scorre allo stesso modo, a qualsiasi velocità.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/wheel-direction-dark.png"><img src="../media/wheel-direction-light.png" width="340" alt=""></picture>
 <br><b>Direzione di scorrimento</b>
 <br>Una direzione per il trackpad, un’altra per il mouse.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
 <br><b>Senza accelerazione del puntatore</b>
 <br>Il puntatore si muove esattamente quanto la tua mano.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/key-repeat-dark.png"><img src="../media/key-repeat-light.png" width="340" alt=""></picture>
 <br><b>Ripeti un tasto tenuto premuto</b>
 <br>Tieni premuto un tasto per ripeterlo, senza il menu degli accenti.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/home-end-dark.png"><img src="../media/home-end-light.png" width="340" alt=""></picture>
 <br><b>Home ed End</b>
 <br>Vai a inizio o fine riga mentre scrivi.
 </td>
+</tr></tbody>
+<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/animations-dark.png"><img src="../media/animations-light.png" width="340" alt=""></picture>
 <br><b>Animazioni</b>
 <br>Velocizza il Dock, le finestre e Visualizzazione rapida, fino a renderli istantanei.
 </td>
-</tr></tbody>
-<tbody><tr>
 <td width="50%" valign="top">
 <picture><source media="(prefers-color-scheme: dark)" srcset="../media/leftover-permissions-dark.png"><img src="../media/leftover-permissions-light.png" width="340" alt=""></picture>
 <br><b>Permessi delle app eliminate</b>
 <br>Togli i permessi che macOS conserva per le app già eliminate.
-</td>
-<td width="50%" valign="top">
-<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
-<br><b>Animaletto sulla scrivania</b>
-<br>Un piccolo amico passeggia dietro le tue finestre. Prendilo e lancialo, oppure premi Spazio per farlo saltare. Vestilo con i capi del suo guardaroba e vinci premi mentre giocate insieme. Si anima mentre scrivi e sonnecchia quando ti allontani.
 </td>
 </tr></tbody>
 <tbody><tr>

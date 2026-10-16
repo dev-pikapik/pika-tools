@@ -198,6 +198,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         HiddenFilesTool.putBack()
         HotCorners.putBackAll()
         TextFocus.unwatch()
+        if quitting { _ = TextFocus.puttingBack.wait(timeout: .now() + 2) }
         #endif
         GameModeTool.shared.leave()
         DockEdges.restore()

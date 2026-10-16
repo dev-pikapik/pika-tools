@@ -104,7 +104,7 @@ Only one copy of pikapik acts on the Mac. Copies of the same family (the website
 swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
 ```
 
-In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and puts back every app that still runs with the same pid and bundle id. It does not read the attribute first: Electron answers `false` even while the switch is on.
+In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and, off the main thread, puts back every app that still runs with the same pid and bundle id, trying again every second for up to 10 tries while the app still runs and does not answer. Switching off works the same way, off the main thread, and on quit the main copy waits up to 2 seconds for it. Each app stays in the journal until it is put back, and new switches wait until this is done. It does not read the attribute first: Electron answers `false` even while the switch is on.
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/TextFocus.swift scripts/test-chromium-ax-journal.swift -o build/test-chromium-ax-journal && build/test-chromium-ax-journal
@@ -246,6 +246,12 @@ The app also reads the file whenever it comes to the front, so a change that arr
 
 ```bash
 ./scripts/check-settings-sync.sh
+```
+
+Sync hears about every saved setting through `SettingsFile.onSave`, including the ones saved off the main thread, for example the list of Chromium apps that `TextFocus` keeps while it holds its lock. Such a save must not wait for the main thread: on quit the main thread waits for `TextFocus`, so a waiting save would freeze pikapik. A setting saved on the main thread is still heard at once, so sync can tell its own changes apart. The test checks both, with the main thread busy for the second, and fails if anything else in `Sources` listens for saved settings:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-sync-thread.swift -o build/test-settings-sync-thread && build/test-settings-sync-thread
 ```
 
 Removing an app completely starts with `AppFootprint`, which finds everything an app keeps on the Mac and decides which app each file belongs to, without changing anything. The App Store build uses it only to list background tasks. The test builds a made-up home folder in a temporary directory, so nothing real is read or touched:
