@@ -1093,7 +1093,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** One slider that sets every effect below at once: As in macOS, Faster, Instant.
 
-**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:346`, `AnimationSetting.swift`); “Sets all the effects below at once.”
+**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:347`, `AnimationSetting.swift`); “Sets all the effects below at once.”
 
 **Nuances:** Changes bar: “Works in apps after you reopen them”; “Finder picks up the changes after a restart” with a Restart Finder button. The Dock restarts through `/usr/bin/killall`. `--uninstall` puts everything back.
 
@@ -1106,7 +1106,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Hides the Dock until the pointer touches the edge.
 
-**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:34`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
+**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:35`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1118,10 +1118,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fine controls for each effect.
 
-**How it works:** Section at `AnimationsTool.swift:151`, `AnimationSetting.swift`, in the defaults named below.
+**How it works:** Section at `AnimationsTool.swift:152`, `AnimationSetting.swift`, in the defaults named below.
 
 **Options:**
-- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:153`).
+- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:154`).
 - How fast the Dock slides out — slider, `autohide-time-modifier` (`:201`).
 - Opening windows — toggle, `NSAutomaticWindowAnimationsEnabled` in the global domain (`:204`).
 - Save dialogs and resizing — slider, `NSWindowResizeTime` (`:205`).
@@ -1139,7 +1139,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Chooses Genie, Scale or Suck for minimizing windows.
 
-**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:301`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
+**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:302`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the picker.
 
@@ -1151,7 +1151,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Turns off the Dock icons’ bounce when an app opens.
 
-**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:158`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
+**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:159`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1163,7 +1163,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Opens System Settings › Accessibility › Motion so you can turn on Reduce Motion, and shows where to click.
 
-**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:170`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
+**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:171`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
 
 **Edition:** Both.
 

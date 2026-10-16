@@ -165,7 +165,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         KeepAwake.shared.handOff()
         SpeedTest.shared.cancel()
         #if !APPSTORE
-        AnimationsTool.shared.putBackIfLast()
+        AnimationsTool.shared.willQuit()
         #endif
         MainCopy.shared.retire()
         if #available(macOS 14.2, *) { AppVolumeEngine.shared.shutdown() }

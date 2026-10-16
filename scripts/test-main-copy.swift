@@ -150,6 +150,23 @@ struct TestMainCopy {
         print("after a crash the next launch keeps the real original and puts it back: ok")
 
         handover()
+        deferredActions()
+    }
+
+    static func deferredActions() {
+        var deferred = DeferredActions()
+        var log: [String] = []
+        deferred.add { log.append("awake on") }
+        deferred.add { log.append("awake off") }
+        deferred.run()
+        precondition(log == ["awake on", "awake off"], "both actions run, in order: \(log)")
+        deferred.run()
+        precondition(log.count == 2, "a second run does nothing: \(log)")
+        deferred.add { log.append("late") }
+        deferred.drop()
+        deferred.run()
+        precondition(log.count == 2, "a dropped action never runs: \(log)")
+        print("Keep Awake links that arrive while the copy waits all run in order once it is main, and none after it lets go: ok")
     }
 
     static let original: [AnimationSetting: Double] = [.minimize: 2]
@@ -159,7 +176,7 @@ struct TestMainCopy {
 
     static func handover() {
         let website = MainCopyChoice.websiteID, store = MainCopyChoice.appStoreID
-        defer { ["journal", "local.A", "local.B"].forEach { UserDefaults.standard.removePersistentDomain(forName: "test-main-copy.\($0)") } }
+        defer { ["journal", "local.A", "local.B", "local.C"].forEach { UserDefaults.standard.removePersistentDomain(forName: "test-main-copy.\($0)") } }
         precondition(!MainCopyChoice.takesOver([], poweringOff: false))
         precondition(!MainCopyChoice.takesOver([copy(1, store, at: 5)], poweringOff: false))
         precondition(MainCopyChoice.takesOver([copy(1, website, at: 5)], poweringOff: false))
@@ -325,6 +342,82 @@ struct TestMainCopy {
         precondition(!hiding.autohide && hiding.system == original && hiding.journalEmpty && hiding.kills == [.putBack("B")], "autohide comes back: \(hiding.kills)")
         print("the Dock is set to restart before autohide is written, and autohide comes back with the animations: ok")
 
+        for hidden in [true, false] {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, wantsA)
+            mac.become(a)
+            mac.elapse()
+            if hidden { a.engine.setAutohide(true) }
+            mac.elapse()
+            mac.kills = []
+            a.engine.set(.dockDelay, 0.3)
+            precondition(mac.flag == hidden && mac.queue.count == (hidden ? 1 : 0), "autohide \(hidden): the Dock restart is set only if the Dock shows the change")
+            mac.elapse()
+            precondition(mac.kills == (hidden ? [.restart("A")] : []) && !mac.flag && mac.system[.dockDelay] == 0.3, "autohide \(hidden): \(mac.kills)")
+        }
+        print("a speed change restarts the Dock once while autohide is on and not at all while it is off: ok")
+
+        let only = Mac(system: original)
+        let j = only.party("A", "\(tools).a", 10, [:])
+        only.become(j)
+        j.engine.setAutohide(true)
+        only.elapse()
+        only.kills = []
+        only.quit(j)
+        precondition(!only.autohide && only.journalEmpty && only.kills == [.putBack("A")], "only autohide comes back: \(only.kills)")
+        let alone = Mac(system: original)
+        let k = alone.party("A", "\(tools).a", 10, [:])
+        alone.become(k)
+        k.engine.setAutohide(true)
+        alone.elapse()
+        alone.kills = []
+        alone.leader = nil
+        AnimationsEngine.uninstall(k.host)
+        precondition(!alone.autohide && alone.journalEmpty && alone.kills == [.putBack("A")], "uninstall where only autohide comes back: \(alone.kills)")
+        print("when only autohide comes back, on quit and on uninstall, the Dock restarts once: ok")
+
+        for order in Together.allCases {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, wantsA), b = mac.party("B", "\(tools).b", 20, wantsB)
+            mac.become(a)
+            mac.elapse()
+            mac.kills = []
+            switch order {
+            case .mainFirst:
+                mac.willQuit(a)
+                mac.willQuit(b)
+                mac.retire(a)
+            case .passiveFirst:
+                mac.willQuit(b)
+                mac.willQuit(a)
+                mac.retire(a)
+            case .mainRetiresFirst:
+                mac.willQuit(a)
+                mac.retire(a)
+                mac.willQuit(b)
+            }
+            mac.running = []
+            mac.elapse()
+            precondition(mac.system == original, "\(order): the originals are back")
+            precondition(mac.journalEmpty && mac.queue.isEmpty, "\(order): the journal, the leaving mark and the Dock restart are clear")
+            precondition(mac.kills.count == 1 && mac.kills[0].app == "Dock" && mac.kills[0].wait, "\(order): the Dock restarts exactly once: \(mac.kills)")
+        }
+        print("both copies get the quit at the same moment, in any order: the animations come back and the Dock restarts once: ok")
+
+        let trio = Mac(system: original)
+        let a3 = trio.party("A", "\(tools).a", 10, wantsA), b3 = trio.party("B", "\(tools).b", 20, wantsB), c3 = trio.party("C", "\(tools).c", 30, wantsB)
+        trio.become(a3)
+        trio.elapse()
+        trio.kills = []
+        trio.willQuit(a3)
+        trio.willQuit(b3)
+        precondition(trio.leaving == ["animations-leaving-10", "animations-leaving-20"] && trio.kills.isEmpty, "B's mark does not erase A's: \(trio.leaving)")
+        trio.retire(a3)
+        precondition(trio.kills.isEmpty && trio.system == original.merging(wantsA) { $1 }, "A has read the marks before C writes its own and hands over: \(trio.kills)")
+        trio.willQuit(c3)
+        precondition(trio.system == original && trio.journalEmpty && trio.kills.count == 1 && trio.kills[0].wait, "C's mark lands after A has read, and C still puts everything back once: \(trio.kills)")
+        print("a mark written after another copy has read the marks loses nothing, and marks never overwrite each other: ok")
+
         let sync = Mac(system: original)
         let e = sync.party("A", "\(tools).a", 10, wantsB)
         sync.become(e)
@@ -343,6 +436,7 @@ struct TestMainCopy {
         later.elapse()
         later.kills = []
         later.leader = nil
+        later.journal.set(true, forKey: "animations-leaving-99")
         AnimationsEngine.uninstall(f.host)
         precondition(later.system == original && !later.autohide && later.journalEmpty && later.kills == [.putBack("A")], "uninstall after a finished restart: \(later.kills)")
         let old = Mac(system: original.merging(wantsA) { $1 })
@@ -356,10 +450,11 @@ struct TestMainCopy {
         let h2 = empty.party("A", "\(tools).a", 10, [:])
         AnimationsEngine.uninstall(h2.host)
         precondition(empty.kills.isEmpty && empty.system == original, "an empty journal kills nothing: \(empty.kills)")
-        print("--uninstall puts the animations and autohide back through the journal, restarts the Dock once and kills nothing when there is nothing to put back: ok")
+        print("uninstall puts the animations and autohide back through the journal, restarts the Dock once and kills nothing when there is nothing to put back: ok")
     }
 
     enum Exit: CaseIterable { case mainFirst, passiveFirst }
+    enum Together: CaseIterable { case mainFirst, passiveFirst, mainRetiresFirst }
 
     struct Kill: Equatable {
         let by: String, app: String, flagSet: Bool, wait: Bool
@@ -402,7 +497,8 @@ struct TestMainCopy {
         var flag: Bool { journal.bool(forKey: DockRestart.key) }
         var own: [String: Double] { journal.dictionary(forKey: "animations-own") as? [String: Double] ?? [:] }
         var ours: [String: Double] { journal.dictionary(forKey: "animations-ours") as? [String: Double] ?? [:] }
-        var journalEmpty: Bool { own.isEmpty && ours.isEmpty && OriginalValue.load(Self.autohideKey, journal: journal) == nil && !flag }
+        var journalEmpty: Bool { own.isEmpty && ours.isEmpty && OriginalValue.load(Self.autohideKey, journal: journal) == nil && !flag && leaving.isEmpty }
+        var leaving: [String] { journal.dictionaryRepresentation().keys.filter { $0.hasPrefix("animations-leaving-") }.sorted() }
 
         func party(_ name: String, _ bundleID: String, _ pid: Int32, _ wants: [AnimationSetting: Double]) -> Party {
             let suite = "test-main-copy.local.\(name)"
@@ -410,6 +506,7 @@ struct TestMainCopy {
             local.removePersistentDomain(forName: suite)
             let party = Party(name, bundleID, pid, wants)
             party.host = AnimationsHost(
+                pid: pid,
                 canAct: { self.leader === party },
                 peers: { MainCopyChoice.peers(of: party.running, in: self.running.map(\.running) + self.strangers) },
                 poweringOff: { self.poweringOff },
@@ -445,12 +542,19 @@ struct TestMainCopy {
             become(incoming)
         }
 
+        func willQuit(_ party: Party) {
+            party.engine.willQuit()
+        }
+
+        func retire(_ party: Party) {
+            guard leader === party else { return }
+            leader = nil
+            party.engine.refresh()
+        }
+
         func quit(_ party: Party) {
-            party.engine.putBackIfLast()
-            if leader === party {
-                leader = nil
-                party.engine.refresh()
-            }
+            willQuit(party)
+            retire(party)
             running.removeAll { $0 === party }
         }
 

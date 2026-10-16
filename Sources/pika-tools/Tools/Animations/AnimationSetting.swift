@@ -217,6 +217,7 @@ final class DockRestart {
 }
 
 struct AnimationsHost {
+    let pid: Int32
     let canAct: () -> Bool
     let peers: () -> [RunningCopy]
     let poweringOff: () -> Bool
@@ -248,6 +249,7 @@ class AnimationsEngine {
     private static let oursKey = "animations-ours"
     private static let autohideKey = "animations-autohide-original"
     private static let wantedAutohideKey = "animations-autohide-wanted"
+    private static let leavingPrefix = "animations-leaving-"
 
     init(_ host: AnimationsHost) {
         self.host = host
@@ -318,8 +320,9 @@ class AnimationsEngine {
         resumeAutohide()
     }
 
-    func putBackIfLast() {
-        guard !host.canAct(), host.peers().isEmpty else { return }
+    func willQuit() {
+        host.journal().set(true, forKey: Self.leavingPrefix + String(host.pid))
+        guard !host.canAct(), staying().isEmpty else { return }
         reload()
         putBack()
     }
@@ -334,13 +337,19 @@ class AnimationsEngine {
         let journal = host.journal()
         let dock = putBackAutohide(host)
         let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, write: host.write)
+        clearLeaving(journal)
         guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
         host.kill("Dock", true)
         DockRestart.clear(journal)
     }
 
     private func leave() {
-        if MainCopyChoice.takesOver(host.peers(), poweringOff: host.poweringOff()) { dockRestart.handOver() } else { putBack() }
+        if MainCopyChoice.takesOver(staying(), poweringOff: host.poweringOff()) { dockRestart.handOver() } else { putBack() }
+    }
+
+    private func staying() -> [RunningCopy] {
+        let journal = host.journal()
+        return host.peers().filter { !journal.bool(forKey: Self.leavingPrefix + String($0.pid)) }
     }
 
     private func resumeAutohide() {
@@ -357,6 +366,7 @@ class AnimationsEngine {
     private func putBack() {
         let dock = Self.putBackAutohide(host)
         let changes = AnimationSetting.putBack(own: own, ours: ours, system: system, remember: remember(own:ours:), write: host.write)
+        Self.clearLeaving(host.journal())
         reload()
         guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
         dockRestart.now()
@@ -407,6 +417,10 @@ class AnimationsEngine {
         if let value { host.writeAutohide(value) } else if entry != nil { OriginalValue.save(nil, wantedAutohideKey, journal: host.local) }
         OriginalValue.save(nil, autohideKey, journal: journal)
         return value != nil
+    }
+
+    private static func clearLeaving(_ journal: UserDefaults) {
+        journal.dictionaryRepresentation().keys.filter { $0.hasPrefix(leavingPrefix) }.forEach(journal.removeObject(forKey:))
     }
 
     private static func key(_ setting: AnimationSetting) -> String {

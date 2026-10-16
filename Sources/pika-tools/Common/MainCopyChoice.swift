@@ -97,3 +97,21 @@ enum OriginalValue {
         journal.set(entry.map { [$0.before, $0.ours] }, forKey: key)
     }
 }
+
+struct DeferredActions {
+    private var actions: [() -> Void] = []
+
+    mutating func add(_ action: @escaping () -> Void) {
+        actions.append(action)
+    }
+
+    mutating func run() {
+        let due = actions
+        actions = []
+        due.forEach { $0() }
+    }
+
+    mutating func drop() {
+        actions = []
+    }
+}

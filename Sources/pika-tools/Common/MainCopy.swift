@@ -25,7 +25,7 @@ final class MainCopy {
     @ObservationIgnored private var deactivate: (Bool) -> Void = { _ in }
     @ObservationIgnored private var awaited: Set<Int32> = []
     @ObservationIgnored private var timeout: DispatchWorkItem?
-    @ObservationIgnored private var deferred: [() -> Void] = []
+    @ObservationIgnored private var deferred = DeferredActions()
     @ObservationIgnored private var watching: NSKeyValueObservation?
     @ObservationIgnored private let me = MainCopy.copy(.current) ?? RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: .now)
 
@@ -73,7 +73,7 @@ final class MainCopy {
     }
 
     func whenMain(_ action: @escaping () -> Void) {
-        if role == .waiting { deferred.append(action) }
+        if role == .waiting { deferred.add(action) }
     }
 
     func makeMain(failed: @escaping () -> Void) {
@@ -112,16 +112,14 @@ final class MainCopy {
         guard role != .main else { return }
         role = .main
         activate()
-        let actions = deferred
-        deferred = []
-        actions.forEach { $0() }
+        deferred.run()
     }
 
     private func release() {
         guard role == .main || role == .waiting else { return }
         timeout?.cancel()
         awaited = []
-        deferred = []
+        deferred.drop()
         let wasMain = role == .main
         role = .passive
         leader = leader ?? MainCopyChoice.leader(me, among: peers())
