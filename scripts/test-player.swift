@@ -178,7 +178,7 @@ enum TestPlayer {
         }
         precondition(importedIDs.allSatisfy { documents.flatMap { $0["LSItemContentTypes"] as? [String] ?? [] }.contains($0) }, "an imported type the player does not open")
         let entitlements = NSDictionary(contentsOfFile: "Helper/Player/Player.entitlements")!
-        precondition(Set(entitlements.allKeys as! [String]) == ["com.apple.security.app-sandbox", "com.apple.security.files.bookmarks.app-scope", "com.apple.security.files.user-selected.read-write"], "\(entitlements.allKeys)")
+        precondition(Set(entitlements.allKeys as! [String]) == ["com.apple.security.app-sandbox", "com.apple.security.files.bookmarks.app-scope", "com.apple.security.files.user-selected.read-write", "com.apple.security.network.client", "com.apple.security.network.server"], "\(entitlements.allKeys)")
         let types = documents.flatMap { $0["LSItemContentTypes"] as? [String] ?? [] }
         let claimed = documents.flatMap { $0["CFBundleTypeExtensions"] as? [String] ?? [] }
         let system = ["avi": "public.avi", "ts": "public.mpeg-2-transport-stream", "m2ts": "public.avchd-mpeg-2-transport-stream", "mts": "public.avchd-mpeg-2-transport-stream",

@@ -111,6 +111,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private let fullScreenButton = NSButton()
     private let captionsButton = NSButton()
     private let pipButton = NSButton()
+    private let airPlay = AirPlayLink()
     private let speaker = NSImageView()
     private let speedLabel = NSTextField(labelWithString: "")
     private let elapsed = NSTextField(labelWithString: "0:00")
@@ -122,6 +123,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     let subtitles = Subtitles()
     private var chrome: WindowChrome?
     private var observer: Any?
+    private var clockWatch: NSObjectProtocol?
     private var thumbnails: Thumbnails?
     private var pip: PictureInPicture?
     private var hiddenForPip = false
@@ -221,7 +223,10 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         volume.setAccessibilityLabel(String(localized: "Volume"))
         volume.floatValue = UserDefaults.standard.object(forKey: Self.volumeKey) as? Float ?? 1
 
-        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, captionsButton, pipButton, fullScreenButton])
+        airPlay.picker.isHidden = true
+        airPlay.position = { [weak self] in self?.engine?.synchronizer.currentTime() ?? .zero }
+        airPlay.onEvent = { [weak self] in self?.airPlayEvent($0) }
+        let row = NSStackView(views: [previousButton, playButton, nextButton, elapsed, scrubber, remaining, speedLabel, speaker, volume, captionsButton, pipButton, airPlay.picker, fullScreenButton])
         row.spacing = 10
         row.edgeInsets = NSEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         row.setCustomSpacing(4, after: speaker)
@@ -250,6 +255,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             controls.widthAnchor.constraint(lessThanOrEqualTo: video.widthAnchor, constant: -32),
             wide,
             volume.widthAnchor.constraint(equalToConstant: 70),
+            airPlay.picker.widthAnchor.constraint(equalToConstant: 22),
+            airPlay.picker.heightAnchor.constraint(equalToConstant: 22),
             scrubber.widthAnchor.constraint(greaterThanOrEqualToConstant: 80),
             marks.leadingAnchor.constraint(equalTo: scrubber.leadingAnchor),
             marks.trailingAnchor.constraint(equalTo: scrubber.trailingAnchor),
@@ -286,6 +293,8 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             engine.volume = volume.floatValue
             engine.muted = muted
             if let output = Self.output { engine.route(to: output) }
+            airPlay.open(url)
+            airPlay.picker.isHidden = !engine.hasVideo
             engine.layer.frame = video.bounds
             engine.layer.autoresizingMask = [.layerWidthSizable, .layerHeightSizable]
             video.layer?.insertSublayer(engine.layer, at: 0)
@@ -358,7 +367,14 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
         return info
     }
 
+    func closeAirPlay() {
+        airPlay.close()
+    }
+
     private func stop() {
+        airPlay.close()
+        stopClockWatch()
+        volume.isEnabled = true
         guard let engine else { return }
         remember()
         thumbnails?.close()
@@ -411,12 +427,14 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
 
     private func tick() {
         guard let engine else { return }
-        if engine.failed, !failed {
+        let remote = airPlay.isActive
+        if remote { airPlay.follow(engine.synchronizer) }
+        if !remote, engine.failed, !failed {
             stop()
             fail(String(localized: "Can’t play this file. It may be damaged or in a format the player doesn’t support."))
             return
         }
-        if engine.layer.sampleBufferRenderer.requiresFlushToResumeDecoding {
+        if !remote, engine.layer.sampleBufferRenderer.requiresFlushToResumeDecoding {
             engine.seek(to: engine.synchronizer.currentTime(), rate: rate)
         }
         let ended = engine.finished.map { engine.synchronizer.currentTime() >= $0 } ?? false
@@ -433,6 +451,60 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
             if !engine.hasVideo, !isLast { go(1, explicit: false, advancing: true) }
         }
         update()
+    }
+
+    private func airPlayEvent(_ event: AirPlayLink.Event) {
+        switch event {
+        case .entered: enterAirPlay()
+        case let .left(time, resume): leaveAirPlay(time, resume: resume)
+        case let .playing(value): setPlaying(value)
+        case let .problem(text): advise(text)
+        }
+    }
+
+    private func enterAirPlay() {
+        guard let engine else { return }
+        let time = engine.synchronizer.currentTime()
+        engine.stop()
+        engine.remote = { [weak self] time, rate in self?.airPlay.command(time: time, rate: rate) }
+        clockWatch = NotificationCenter.default.addObserver(forName: AVSampleBufferRenderSynchronizer.rateDidChangeNotification, object: engine.synchronizer, queue: .main) { [weak self] _ in
+            guard let self, let engine = self.engine else { return }
+            self.airPlay.command(time: nil, rate: engine.synchronizer.rate)
+        }
+        engine.layer.isHidden = true
+        message.stringValue = String(localized: "Playing on AirPlay")
+        message.isHidden = false
+        volume.isEnabled = false
+        airPlay.command(time: time, rate: rate)
+        engine.synchronizer.setRate(rate, time: time)
+        update()
+        showControls()
+    }
+
+    private func leaveAirPlay(_ time: CMTime, resume: Bool) {
+        stopClockWatch()
+        volume.isEnabled = true
+        guard let engine else { return }
+        engine.remote = nil
+        engine.layer.isHidden = false
+        message.isHidden = true
+        if !resume { playing = false }
+        engine.seek(to: time, rate: rate)
+        update()
+        showControls()
+    }
+
+    private func stopClockWatch() {
+        if let clockWatch { NotificationCenter.default.removeObserver(clockWatch) }
+        clockWatch = nil
+    }
+
+    private func advise(_ text: String) {
+        guard let window else { return }
+        let alert = NSAlert()
+        alert.messageText = AirPlayAdvice.title
+        alert.informativeText = text
+        alert.beginSheetModal(for: window, completionHandler: nil)
     }
 
     private func update() {

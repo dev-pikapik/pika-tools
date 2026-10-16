@@ -1321,3 +1321,10 @@
 "Audio: %@" = "Audio: %@";
 "Subtitles: %@" = "Subtitel: %@";
 "Couldn’t read this subtitle file." = "File subtitel ini tidak dapat dibaca.";
+"AirPlay video can’t continue" = "Video AirPlay tidak dapat dilanjutkan";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "Perangkat AirPlay berhenti memutar video ini, jadi pemutaran dilanjutkan di Mac ini. Pastikan perangkat menyala dan berada di jaringan yang sama, lalu pilih lagi.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "Firewall disetel ke “Blokir semua koneksi masuk”, sehingga perangkat AirPlay tidak bisa mengambil video dari Mac ini. Buka Pengaturan Sistem, pilih Jaringan, lalu Firewall, lalu Opsi, matikan “Blokir semua koneksi masuk”, dan pilih perangkat lagi. pikapik tidak mengubah pengaturan ini sendiri.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "Perangkat AirPlay tidak meminta video dari Mac ini. Pastikan Mac dan perangkat berada di jaringan yang sama dan tidak ada VPN atau firewall yang memblokir koneksi di dalamnya, lalu pilih perangkat lagi.";
+"Playing on AirPlay" = "Diputar di AirPlay";
+"pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again." = "pikapik tidak dapat mulai membagikan video ini ke perangkat AirPlay. Pastikan Mac ini terhubung ke Wi-Fi atau Ethernet, lalu pilih perangkat lagi.";
+"pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network." = "pikapik Player membagikan video yang sedang Anda putar ke perangkat AirPlay yang Anda pilih, hanya di dalam jaringan lokal Anda.";

@@ -1321,3 +1321,10 @@
 "Audio: %@" = "เสียง: %@";
 "Subtitles: %@" = "คำบรรยาย: %@";
 "Couldn’t read this subtitle file." = "อ่านไฟล์คำบรรยายนี้ไม่ได้";
+"AirPlay video can’t continue" = "ไม่สามารถเล่นวิดีโอ AirPlay ต่อได้";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "อุปกรณ์ AirPlay หยุดเล่นวิดีโอนี้ จึงเล่นต่อบน Mac เครื่องนี้ โปรดตรวจสอบว่าอุปกรณ์เปิดอยู่และอยู่ในเครือข่ายเดียวกัน แล้วเลือกอุปกรณ์อีกครั้ง";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "ไฟร์วอลล์ตั้งเป็น “บล็อกการเชื่อมต่อขาเข้าทั้งหมด” อุปกรณ์ AirPlay จึงรับวิดีโอจาก Mac เครื่องนี้ไม่ได้ เปิดการตั้งค่าระบบ เลือกเครือข่าย แล้วเลือกไฟร์วอลล์และตัวเลือก ปิด “บล็อกการเชื่อมต่อขาเข้าทั้งหมด” แล้วเลือกอุปกรณ์อีกครั้ง pikapik ไม่เปลี่ยนการตั้งค่านี้เอง";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "อุปกรณ์ AirPlay ไม่ได้ขอวิดีโอจาก Mac เครื่องนี้ โปรดตรวจสอบว่า Mac และอุปกรณ์อยู่ในเครือข่ายเดียวกัน และไม่มี VPN หรือไฟร์วอลล์บล็อกการเชื่อมต่อภายในเครือข่ายนั้น แล้วเลือกอุปกรณ์อีกครั้ง";
+"Playing on AirPlay" = "กำลังเล่นบน AirPlay";
+"pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again." = "pikapik เริ่มแชร์วิดีโอนี้ไปยังอุปกรณ์ AirPlay ไม่ได้ โปรดตรวจสอบว่า Mac เครื่องนี้เชื่อมต่อกับ Wi-Fi หรืออีเทอร์เน็ต แล้วเลือกอุปกรณ์อีกครั้ง";
+"pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network." = "pikapik Player แชร์วิดีโอที่คุณกำลังเล่นไปยังอุปกรณ์ AirPlay ที่คุณเลือก ภายในเครือข่ายในบ้านของคุณเท่านั้น";

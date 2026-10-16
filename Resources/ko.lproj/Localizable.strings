@@ -1321,3 +1321,10 @@
 "Audio: %@" = "오디오: %@";
 "Subtitles: %@" = "자막: %@";
 "Couldn’t read this subtitle file." = "이 자막 파일을 읽을 수 없습니다.";
+"AirPlay video can’t continue" = "AirPlay 비디오를 계속할 수 없습니다";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay 기기가 이 비디오 재생을 멈춰서 이 Mac에서 계속 재생합니다. 기기가 켜져 있고 같은 네트워크에 있는지 확인한 다음 다시 선택하세요.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "방화벽이 ‘모든 수신 연결 차단’으로 설정되어 있어 AirPlay 기기가 이 Mac에서 비디오를 가져올 수 없습니다. 시스템 설정을 열고 네트워크, 방화벽, 옵션 순서로 선택해 ‘모든 수신 연결 차단’을 끈 다음 기기를 다시 선택하세요. pikapik은 이 설정을 직접 바꾸지 않습니다.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay 기기가 이 Mac에 비디오를 요청하지 않았습니다. Mac과 기기가 같은 네트워크에 있고 VPN이나 방화벽이 그 안의 연결을 막지 않는지 확인한 다음 기기를 다시 선택하세요.";
+"Playing on AirPlay" = "AirPlay로 재생 중";
+"pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again." = "pikapik이 이 비디오를 AirPlay 기기와 공유하기 시작하지 못했습니다. 이 Mac이 Wi-Fi 또는 이더넷에 연결되어 있는지 확인한 다음 기기를 다시 선택하세요.";
+"pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network." = "pikapik Player는 재생 중인 비디오를 선택한 AirPlay 기기와 로컬 네트워크 안에서만 공유합니다.";

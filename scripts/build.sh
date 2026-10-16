@@ -132,6 +132,10 @@ if [ -z "${APPSTORE:-}" ]; then
     rm build/player-arm64 build/player-x86_64
     cp Helper/Player/Info.plist "$PLAYER/Contents/Info.plist"
     cp -R Resources/*.lproj "$PLAYER/Contents/Resources/"
+    LOCAL_TEXT='pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network.'
+    for LPROJ in Resources/*.lproj; do
+        grep -F "\"$LOCAL_TEXT\" = " "$LPROJ/Localizable.strings" | sed 's/^"[^"]*"/"NSLocalNetworkUsageDescription"/' > "$PLAYER/Contents/Resources/$(basename "$LPROJ")/InfoPlist.strings"
+    done
 fi
 cp Sources/pika-tools/Info.plist "$APP/Contents/Info.plist"
 for EXT in $EXTENSIONS; do
@@ -187,7 +191,7 @@ if [ -z "${APPSTORE:-}" ]; then
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
     mkdir -p "$APP/Contents/Frameworks"
     cp Vendor/ffmpeg/lib/*.dylib "$APP/Contents/Frameworks/"
-    cp Vendor/ffmpeg/License.txt "$RES/Player Licenses.txt"
+    { printf 'pikapik Player plays DTS sound and shows the picture subtitles PGS, VobSub and DVB with the FFmpeg decoders dca, pgssub, dvdsub and dvbsub; like all of FFmpeg here, they are under the LGPL below.\n\n'; cat Vendor/ffmpeg/License.txt; } > "$RES/Player Licenses.txt"
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"

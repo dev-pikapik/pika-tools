@@ -289,7 +289,7 @@ final class Demuxer {
         av_packet_free(&packet)
     }
 
-    private static func free(_ io: UnsafeMutablePointer<AVIOContext>) {
+    static func free(_ io: UnsafeMutablePointer<AVIOContext>) {
         var io: UnsafeMutablePointer<AVIOContext>? = io
         av_freep(&io!.pointee.buffer)
         avio_context_free(&io)

@@ -38,7 +38,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
 
     func applicationWillTerminate(_ notification: Notification) {
-        players.forEach { $0.remember() }
+        players.forEach {
+            $0.remember()
+            $0.closeAirPlay()
+        }
     }
 
     private func outputsChanged() {

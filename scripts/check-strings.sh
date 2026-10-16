@@ -96,6 +96,8 @@ langs = sorted(os.path.basename(p)[:-len('.lproj')] for p in glob.glob('Resource
 tables = {lang: load(f'Resources/{lang}.lproj/Localizable.strings') for lang in langs}
 english = tables.get('en', {})
 all_text = '\n'.join(swift.values())
+for path in glob.glob('Helper/*/Info.plist'):
+    all_text += ''.join(f'\n"{escape(text)}"' for text in re.findall(r'UsageDescription</key>\s*<string>(.*?)</string>', open(path, encoding='utf-8').read()))
 interpolated = {re.sub(r'\\\((?:[^()]|\([^()]*\))*\)', '%', m) for m in re.findall(r'"((?:[^"\\\n]|\\.)*\\\((?:[^"\\\n]|\\.)*)"', all_text)}
 
 for key, where in sorted(needed.items(), key=lambda kv: kv[1]):

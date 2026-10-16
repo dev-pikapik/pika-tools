@@ -1321,3 +1321,10 @@
 "Audio: %@" = "音訊：%@";
 "Subtitles: %@" = "字幕：%@";
 "Couldn’t read this subtitle file." = "無法讀取此字幕檔案。";
+"AirPlay video can’t continue" = "無法繼續播放 AirPlay 影片";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay 裝置已停止播放此影片，因此這部 Mac 會繼續播放。請確認裝置已開啟並在同一網路中，然後重新選擇。";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "防火牆設為「封鎖所有連入連線」，因此 AirPlay 裝置無法從這部 Mac 取得影片。請打開「系統設定」，依序選擇「網路」、「防火牆」、「選項」，關閉「封鎖所有連入連線」，然後重新選擇裝置。pikapik 不會自行更改此設定。";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay 裝置沒有向這部 Mac 要求影片。請確認 Mac 和裝置在同一網路中，且沒有 VPN 或防火牆封鎖網路內的連線，然後重新選擇裝置。";
+"Playing on AirPlay" = "正在透過 AirPlay 播放";
+"pikapik couldn’t start sharing this video with the AirPlay device. Check that this Mac is connected to Wi-Fi or Ethernet, then pick the device again." = "pikapik 無法開始向 AirPlay 裝置分享此影片。請確認這部 Mac 已連上 Wi-Fi 或乙太網路，然後重新選擇裝置。";
+"pikapik Player shares the video you are playing with the AirPlay device you choose, only inside your local network." = "pikapik Player 會把你正在播放的影片分享給你選擇的 AirPlay 裝置，僅限在你的本地網路內。";
