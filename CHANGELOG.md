@@ -24,6 +24,9 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
 - Games, Mac App Store version: The pointer stays in the game is gone from this version. It could only pull the pointer back after it had already slipped onto another screen or into a hot corner, which was jumpy and not reliable. The website version keeps this option: there macOS itself stops the pointer at the edge.
 - Hide desktop icons, Mac App Store version: a photo of your own as wallpaper now covers the icons too, when pikapik already has access to your home folder. Before, such a wallpaper always turned into a plain color.
+- Settings: when a page opens from the menu, a link or search, the list on the left scrolls to it, so you always see which page is open.
+- Settings pictures: the pointer drawn in System Settings no longer covers the button text, and the keyboard picture on Switch language shows your own language next to English instead of Russian.
+- Translations: Romanian always speaks to you formally, Korean instructions use one polite style, Brazilian Portuguese titles capitalise only the first word, and Arabic lines that start with a key name such as Home or Enter read right to left. Small fixes in Japanese, Ukrainian and Vietnamese.
 
 ## [1.52.1] - 2026-10-16
 
