@@ -10,6 +10,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Pointer speed: when it is turned off, your mouse gets its own speed back only while it still has pikapik’s speed, so a speed you set yourself stays. If the mouse doesn’t take its speed back, pikapik tries again next time.
 - Finder extensions and Keep Awake: a copy of pikapik that has just opened no longer changes them before it knows it is the main one.
 - Animations: when another copy of pikapik becomes the main one, or you quit one of two copies, the copy that leaves no longer puts your values back over the other copy’s choices. The Dock restarts at most once, and not at all if both copies want the same. Your own values come back when the last copy quits, also when both copies quit one after another or at the same moment.
+- Animations: when two copies of pikapik quit at the same moment, only one of them puts your values back and the Dock restarts only once: the second copy waits for the first and finds nothing left to do. A copy that is still closing is never taken for one that stays open, so your values always come back.
 - Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
 - Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
 - Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.

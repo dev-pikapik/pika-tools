@@ -153,6 +153,7 @@ struct TestMainCopy {
         mapping()
         handover()
         deferredActions()
+        quittingStaysPassive()
     }
 
     static func processStart() {
@@ -200,6 +201,43 @@ struct TestMainCopy {
         precondition(RunningCopy(StubApp(pid: pid, terminated: true, id: MainCopyChoice.websiteID), started: { _ in sentinel }) == nil, "an app that has quit is no copy")
         precondition(RunningCopy(StubApp(pid: pid, terminated: false, id: nil), started: { _ in sentinel }) == nil, "an app with no bundle id is no copy")
         print("a running app maps to a copy with the kernel start of its own pid, our own copy to this process's start, and an unknown start counts as the oldest: ok")
+    }
+
+    static func quittingStaysPassive() {
+        let website = MainCopyChoice.websiteID, store = MainCopyChoice.appStoreID
+        enum Path: String, CaseIterable { case mainLeft = "the main copy leaves", timeout = "the claim times out", released = "the last copy answers", peersGone = "the other copies are gone" }
+        for path in Path.allCases {
+            for quitting in [true, false] {
+                let older = path == .mainLeft
+                let me = copy(10, website, at: older ? 10 : 30), other = copy(20, store, at: 20)
+                var running = [me, other], timers: [DispatchWorkItem] = [], posted: [Notification.Name] = []
+                var activated = 0, deactivated: [Bool] = []
+                let main = MainCopy(me: me, running: { running }, later: { timers.append($0) }, post: { name, _ in posted.append(name) })
+                Background.shared.quitting = false
+                main.start(activate: { activated += 1 }, deactivate: { deactivated.append($0) })
+                precondition(main.role == (older ? .passive : .waiting) && activated == 0, "\(path.rawValue): the copy starts \(older ? "passive" : "waiting"): \(main.role)")
+                Background.shared.quitting = quitting
+                switch path {
+                case .mainLeft:
+                    running = [me]
+                    main.evaluate()
+                case .timeout:
+                    timers.forEach { $0.perform() }
+                case .released:
+                    main.released(by: other.pid)
+                case .peersGone:
+                    running = [me]
+                    main.evaluate()
+                }
+                if quitting {
+                    precondition(main.role != .main && activated == 0 && deactivated.isEmpty, "\(path.rawValue) while the copy is quitting: it never becomes main and changes nothing: \(main.role)")
+                } else {
+                    precondition(main.role == .main && activated == 1, "\(path.rawValue): a copy that is not quitting becomes main: \(main.role)")
+                }
+            }
+        }
+        Background.shared.quitting = false
+        print("a copy that is quitting never becomes main, whether the main copy leaves, the claim times out, the last copy answers or the others are gone: ok")
     }
 
     static func deferredActions() {
@@ -527,6 +565,76 @@ struct TestMainCopy {
         precondition(trio.system == original && trio.journalEmpty && trio.kills.count == 1 && trio.kills[0].wait, "C's mark lands after A has read, and C still puts everything back once: \(trio.kills)")
         print("a mark written after another copy has read the marks loses nothing, and marks never overwrite each other: ok")
 
+        for wants in [wantsB, [:]] {
+            let changed = !wants.isEmpty
+            let pair = Mac(system: original)
+            let a = pair.party("A", "\(tools).a", 10, wantsA), b = pair.party("B", "\(tools).b", 20, wants)
+            pair.become(b)
+            if changed { b.engine.setAutohide(true) }
+            pair.elapse()
+            pair.kills = []
+            pair.willQuit(b)
+            let stalled = DispatchSemaphore(value: 0), finished = DispatchSemaphore(value: 0)
+            let other = {
+                Thread {
+                    pair.retire(b)
+                    stalled.signal()
+                    finished.signal()
+                }.start()
+                stalled.wait()
+            }
+            pair.whileWriting = other
+            pair.contended = stalled
+            pair.willQuit(a)
+            if pair.whileWriting != nil {
+                pair.whileWriting = nil
+                other()
+            }
+            finished.wait()
+            pair.running = []
+            pair.elapse()
+            precondition(pair.system == original && !pair.autohide && pair.journalEmpty && pair.queue.isEmpty, "two copies put back at the same moment, values changed \(changed): the originals are back, the journal and the Dock restart flag are clear")
+            precondition(pair.kills == (changed ? [.putBack("A")] : []), "two copies put back at the same moment, values changed \(changed): the Dock restarts \(changed ? "once" : "never"): \(pair.kills)")
+        }
+        print("two copies put back at the same moment: the second waits for the first, finds nothing left and does not restart the Dock: ok")
+
+        let late = Mac(system: original)
+        let first = late.party("A", "\(tools).a", 10, wantsA), quitting = late.party("B", "\(tools).b", 20, wantsA)
+        late.become(first)
+        late.elapse()
+        late.willQuit(quitting)
+        late.quit(first)
+        let next = late.party("C", "\(tools).c", 30, wantsB)
+        late.become(next)
+        late.elapse()
+        late.kills = []
+        precondition(late.leaving == ["animations-leaving-20"], "a copy that puts back keeps the mark of a copy that is still quitting: \(late.leaving)")
+        late.quit(next)
+        precondition(late.kills == [.putBack("C")] && late.system == original, "the main copy that leaves next does not count on the quitting copy and puts back itself: \(late.kills)")
+        late.running.removeAll { $0 === quitting }
+        _ = late.party("D", "\(tools).d", 40, [:])
+        precondition(late.leaving.isEmpty && late.journalEmpty && late.kills == [.putBack("C")], "after everyone quits the next launch finds an empty journal: \(late.leaving)")
+        print("a copy that puts back keeps the marks of copies still quitting, so the next main copy does not count on them: ok")
+
+        enum Gone: CaseIterable { case beforeNotice, beforeRetire, afterRetire }
+        for (launched, gone) in [5.0, 500].flatMap({ at in Gone.allCases.map { (at, $0) } }) {
+            let pair = Mac(system: original)
+            let web = pair.party("A", website, 10, wantsA)
+            pair.become(web)
+            pair.elapse()
+            pair.kills = []
+            pair.strangers = [copy(30, store, at: launched)]
+            if gone == .beforeNotice { pair.strangers = [] }
+            pair.willQuit(web)
+            if gone == .beforeRetire { pair.strangers = [] }
+            pair.retire(web)
+            pair.strangers = []
+            pair.running = []
+            pair.elapse()
+            precondition(pair.system == original && pair.journalEmpty && pair.kills == [.putBack("A")], "the website copy quits with an App Store copy launched at \(launched) that goes \(gone): it puts back once: \(pair.kills)")
+        }
+        print("the website copy quits together with an App Store copy, older or newer, gone at any moment: it puts the animations back and restarts the Dock once: ok")
+
         everyOrder()
 
         let sync = Mac(system: original)
@@ -596,8 +704,8 @@ struct TestMainCopy {
             for steps in orders([Int](repeating: 0, count: copies), first, takeOver: takeOver) {
                 let label = "\(copies) copies, takeover \(takeOver), same wishes \(same), main \(first): " + steps.map { "\($0.0.rawValue)\($0.1)" }.joined(separator: " ")
                 let mac = Mac(system: original)
-                (0..<copies).forEach { mac.journal.set(start, forKey: "animations-leaving-\(10 * ($0 + 1))") }
                 let parties = (0..<copies).map { mac.party(["A", "B", "C"][$0], "\(tools).\(["a", "b", "c"][$0])", Int32(10 * ($0 + 1)), same || $0 == first ? wantsA : wantsB) }
+                parties.forEach { mac.journal.set(start, forKey: "animations-leaving-\($0.pid)") }
                 mac.become(parties[first])
                 mac.elapse()
                 mac.kills = []
@@ -610,15 +718,19 @@ struct TestMainCopy {
                     case .takeOver: mac.become(parties[copy])
                     }
                     precondition(begun.count == copies || mac.kills.isEmpty, "\(label): put back while a copy has not been told to quit, after \(step.rawValue)\(copy): \(mac.kills)")
+                    let quitting = begun.map { parties[$0] }.filter { party in mac.running.contains { $0 === party } }
+                    precondition(quitting.allSatisfy { mac.journal.object(forKey: "animations-leaving-\($0.pid)") as? Date == $0.running.launched }, "\(label): a copy that is still quitting keeps its mark, after \(step.rawValue)\(copy): \(mac.leaving)")
                 }
                 precondition(mac.system == original && !mac.autohide, "\(label): the originals are back")
                 precondition(mac.journalEmpty, "\(label): the journal and the Dock restart flag are clear")
                 precondition(mac.kills.count == 1 && mac.kills[0].wait, "\(label): the Dock restarts exactly once: \(mac.kills)")
+                _ = mac.party("D", "\(tools).d", 40, [:])
+                precondition(mac.leaving.isEmpty, "\(label): the next launch clears the marks: \(mac.leaving)")
                 count += 1
             }
         }
         precondition(count == 3542, "orders run: \(count)")
-        print("any order of quit notice, retire and exit for 2 or 3 copies, with and without a passive copy taking over, each starting with stale marks: originals back, journal empty, one Dock restart (\(count) orders): ok")
+        print("any order of quit notice, retire and exit for 2 or 3 copies, with and without a passive copy taking over, each starting with stale marks: originals back, journal empty, one Dock restart, a quitting copy keeps its mark until it exits, the next launch clears the marks (\(count) orders): ok")
     }
 
     enum Exit: CaseIterable { case mainFirst, passiveFirst }
@@ -655,7 +767,9 @@ struct TestMainCopy {
         var running: [Party] = []
         var strangers: [RunningCopy] = []
         var leader: Party?
-        var whileWaiting: (() -> Void)?
+        var whileWaiting: (() -> Void)?, whileWriting: (() -> Void)?
+        var contended: DispatchSemaphore?
+        let lock = NSLock()
 
         init(system: [AnimationSetting: Double]) {
             self.system = system
@@ -666,7 +780,7 @@ struct TestMainCopy {
         var flag: Bool { journal.bool(forKey: DockRestart.key) }
         var own: [String: Double] { journal.dictionary(forKey: "animations-own") as? [String: Double] ?? [:] }
         var ours: [String: Double] { journal.dictionary(forKey: "animations-ours") as? [String: Double] ?? [:] }
-        var journalEmpty: Bool { own.isEmpty && ours.isEmpty && OriginalValue.load(Self.autohideKey, journal: journal) == nil && !flag && leaving.isEmpty }
+        var journalEmpty: Bool { own.isEmpty && ours.isEmpty && OriginalValue.load(Self.autohideKey, journal: journal) == nil && !flag }
         var leaving: [String] { journal.dictionaryRepresentation().keys.filter { $0.hasPrefix("animations-leaving-") }.sorted() }
 
         func party(_ name: String, _ bundleID: String, _ pid: Int32, _ wants: [AnimationSetting: Double]) -> Party {
@@ -692,6 +806,17 @@ struct TestMainCopy {
                         self.whileWaiting = nil
                         waiting()
                     }
+                },
+                exclusive: { body in
+                    precondition(Thread.current.threadDictionary["exclusive"] == nil, "\(name): the put back never waits for its own lock")
+                    if !self.lock.try() {
+                        self.contended?.signal()
+                        self.lock.lock()
+                    }
+                    Thread.current.threadDictionary["exclusive"] = true
+                    body()
+                    Thread.current.threadDictionary["exclusive"] = nil
+                    self.lock.unlock()
                 }
             )
             party.engine = AnimationsEngine(party.host)
@@ -740,6 +865,10 @@ struct TestMainCopy {
                 precondition(value == nil || value == journaled || value == TestMainCopy.original[setting], "\(party.name): the journal holds the value before \(setting) is written")
                 precondition(!AnimationSetting.restartsDock([(setting, value)], autohide: autohide) || flag, "\(party.name): the Dock restart is pending before \(setting) is written")
             }
+            if let writing = whileWriting {
+                whileWriting = nil
+                writing()
+            }
             system[setting] = value
         }
 
@@ -749,6 +878,13 @@ struct TestMainCopy {
             autohide = on
         }
     }
+}
+
+final class Background {
+    static let shared = Background()
+    var quitting = false
+
+    static func quit() {}
 }
 
 final class StubApp: NSRunningApplication, @unchecked Sendable {

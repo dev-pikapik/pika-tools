@@ -36,7 +36,13 @@ final class AnimationsTool: AnimationsEngine, Tool {
             CFPreferencesAppSynchronize(dock)
         },
         later: { DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: $0) },
-        kill: { killall($0, wait: $1) }
+        kill: { killall($0, wait: $1) },
+        exclusive: { body in
+            let file = open(NSTemporaryDirectory() + "pikapik-animations.lock", O_RDWR | O_CREAT | O_EXLOCK, 0o600)
+            body()
+            MainCopy.journal.synchronize()
+            if file >= 0 { close(file) }
+        }
     )
 
     private init() {

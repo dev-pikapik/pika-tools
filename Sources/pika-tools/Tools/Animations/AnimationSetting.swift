@@ -229,6 +229,7 @@ struct AnimationsHost {
     let writeAutohide: (Bool) -> Void
     let later: (DispatchWorkItem) -> Void
     let kill: (String, Bool) -> Void
+    let exclusive: (() -> Void) -> Void
 }
 
 @Observable
@@ -258,7 +259,7 @@ class AnimationsEngine {
         own = Self.originals(host.journal())
         ours = Self.written(host.journal(), host.local)
         storedSpeed = host.local.object(forKey: Self.speedKey) as? Double
-        host.journal().removeObject(forKey: Self.leavingKey(host.me.pid))
+        Self.clearLeaving(host)
         reload()
     }
 
@@ -324,7 +325,6 @@ class AnimationsEngine {
     func willQuit() {
         host.journal().set(host.me.launched, forKey: Self.leavingKey(host.me.pid))
         guard !host.canAct(), staying().isEmpty else { return }
-        reload()
         putBack()
     }
 
@@ -335,13 +335,9 @@ class AnimationsEngine {
     }
 
     static func uninstall(_ host: AnimationsHost) {
-        let journal = host.journal()
-        let dock = putBackAutohide(host)
-        let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, write: host.write)
-        clearLeaving(journal)
-        guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
+        guard putBack(host) else { return }
         host.kill("Dock", true)
-        DockRestart.clear(journal)
+        DockRestart.clear(host.journal())
     }
 
     private func leave() {
@@ -350,9 +346,7 @@ class AnimationsEngine {
 
     private func staying() -> [RunningCopy] {
         let journal = host.journal()
-        return host.peers().filter { peer in
-            (journal.object(forKey: Self.leavingKey(peer.pid)) as? Date).map { abs($0.timeIntervalSince(peer.launched)) >= 1 } ?? true
-        }
+        return host.peers().filter { !Self.isLeaving($0, journal) }
     }
 
     private func resumeAutohide() {
@@ -367,12 +361,21 @@ class AnimationsEngine {
     }
 
     private func putBack() {
-        let dock = Self.putBackAutohide(host)
-        let changes = AnimationSetting.putBack(own: own, ours: ours, system: system, remember: remember(own:ours:), write: host.write)
-        Self.clearLeaving(host.journal())
+        let dock = Self.putBack(host)
         reload()
-        guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
-        dockRestart.now()
+        if dock { dockRestart.now() }
+    }
+
+    private static func putBack(_ host: AnimationsHost) -> Bool {
+        var dock = false
+        host.exclusive {
+            let journal = host.journal()
+            let autohide = putBackAutohide(host)
+            let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, write: host.write)
+            clearLeaving(host)
+            dock = autohide || changes.contains { $0.0.apply == .dock }
+        }
+        return dock
     }
 
     private func apply(_ new: [AnimationSetting: Double]) {
@@ -426,8 +429,14 @@ class AnimationsEngine {
         leavingPrefix + String(pid)
     }
 
-    private static func clearLeaving(_ journal: UserDefaults) {
-        journal.dictionaryRepresentation().keys.filter { $0.hasPrefix(leavingPrefix) }.forEach(journal.removeObject(forKey:))
+    private static func isLeaving(_ copy: RunningCopy, _ journal: UserDefaults) -> Bool {
+        (journal.object(forKey: leavingKey(copy.pid)) as? Date).map { abs($0.timeIntervalSince(copy.launched)) < 1 } ?? false
+    }
+
+    private static func clearLeaving(_ host: AnimationsHost) {
+        let journal = host.journal()
+        let kept = Set((host.peers() + [host.me]).filter { isLeaving($0, journal) }.map { leavingKey($0.pid) })
+        journal.dictionaryRepresentation().keys.filter { $0.hasPrefix(leavingPrefix) && !kept.contains($0) }.forEach(journal.removeObject(forKey:))
     }
 
     private static func key(_ setting: AnimationSetting) -> String {

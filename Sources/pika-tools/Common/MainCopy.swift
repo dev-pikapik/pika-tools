@@ -1,11 +1,16 @@
 import AppKit
-import SwiftUI
+import Observation
 
 @Observable
 final class MainCopy {
     enum Role { case waiting, main, passive, retired }
 
-    static let shared = MainCopy()
+    static let shared = MainCopy(
+        me: .own(),
+        running: { NSWorkspace.shared.runningApplications.compactMap { RunningCopy($0) } },
+        later: { DispatchQueue.main.asyncAfter(deadline: .now() + patience, execute: $0) },
+        post: { DistributedNotificationCenter.default().postNotificationName($0, object: $1, userInfo: nil, deliverImmediately: true) }
+    )
     static var canAct: Bool { shared.role == .main }
 
     static var journal: UserDefaults {
@@ -27,9 +32,14 @@ final class MainCopy {
     @ObservationIgnored private var timeout: DispatchWorkItem?
     @ObservationIgnored private var deferred = DeferredActions()
     @ObservationIgnored private var watching: NSKeyValueObservation?
-    @ObservationIgnored let me = RunningCopy.own()
+    @ObservationIgnored let me: RunningCopy
+    @ObservationIgnored private let running: () -> [RunningCopy]
+    @ObservationIgnored private let later: (DispatchWorkItem) -> Void
+    @ObservationIgnored private let send: (Notification.Name, String) -> Void
 
-    private init() {}
+    init(me: RunningCopy, running: @escaping () -> [RunningCopy], later: @escaping (DispatchWorkItem) -> Void, post: @escaping (Notification.Name, String) -> Void) {
+        (self.me, self.running, self.later, send) = (me, running, later, post)
+    }
 
     var leaderCaption: (title: String, path: String?) {
         guard let leader, let app = NSRunningApplication(processIdentifier: leader.pid), let url = app.bundleURL else { return ("", nil) }
@@ -42,20 +52,20 @@ final class MainCopy {
     }
 
     func begin(activate: @escaping () -> Void, deactivate: @escaping (Bool) -> Void) {
-        self.activate = activate
-        self.deactivate = deactivate
         watching = NSWorkspace.shared.observe(\.runningApplications) { [self] _, _ in evaluate() }
         let distributed = DistributedNotificationCenter.default()
         distributed.addObserver(forName: Self.claim, object: nil, queue: .main) { [self] note in
-            guard let pid = Self.sender(note), let claimant = peers().first(where: { $0.pid == pid }),
-                  MainCopyChoice.leader(me, among: [claimant]) == claimant else { return }
-            role == .main || role == .waiting ? release() : post(Self.released)
+            if let pid = Self.sender(note) { claimed(by: pid) }
         }
         distributed.addObserver(forName: Self.released, object: nil, queue: .main) { [self] note in
-            guard let pid = Self.sender(note) else { return }
-            awaited.remove(pid)
-            proceedIfAlone()
+            if let pid = Self.sender(note) { released(by: pid) }
         }
+        start(activate: activate, deactivate: deactivate)
+    }
+
+    func start(activate: @escaping () -> Void, deactivate: @escaping (Bool) -> Void) {
+        self.activate = activate
+        self.deactivate = deactivate
         let others = peers()
         if MainCopyChoice.leader(me, among: others) != me { return release() }
         awaited = Set(others.map(\.pid))
@@ -63,7 +73,17 @@ final class MainCopy {
         post(Self.claim)
         let work = DispatchWorkItem { [self] in become() }
         timeout = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + Self.patience, execute: work)
+        later(work)
+    }
+
+    func claimed(by pid: Int32) {
+        guard let claimant = peers().first(where: { $0.pid == pid }), MainCopyChoice.leader(me, among: [claimant]) == claimant else { return }
+        role == .main || role == .waiting ? release() : post(Self.released)
+    }
+
+    func released(by pid: Int32) {
+        awaited.remove(pid)
+        proceedIfAlone()
     }
 
     func retire() {
@@ -85,7 +105,7 @@ final class MainCopy {
         }
     }
 
-    private func evaluate() {
+    func evaluate() {
         guard role != .retired else { return }
         let peers = peers()
         let leader = MainCopyChoice.leader(me, among: peers)
@@ -128,46 +148,14 @@ final class MainCopy {
     }
 
     func peers() -> [RunningCopy] {
-        MainCopyChoice.peers(of: me, in: NSWorkspace.shared.runningApplications.compactMap { RunningCopy($0) })
+        MainCopyChoice.peers(of: me, in: running())
     }
 
     private func post(_ name: Notification.Name) {
-        DistributedNotificationCenter.default().postNotificationName(name, object: String(me.pid), userInfo: nil, deliverImmediately: true)
+        send(name, String(me.pid))
     }
 
     private static func sender(_ note: Notification) -> Int32? {
         (note.object as? String).flatMap { Int32($0) }
-    }
-}
-
-struct PassiveCopyView: View {
-    private let copy = MainCopy.shared
-    @State private var starting = false
-
-    var body: some View {
-        let caption = copy.leaderCaption
-        ContentUnavailableView {
-            Label("Another copy of pikapik is in charge", systemImage: "rectangle.on.rectangle")
-        } description: {
-            Text("This copy changes nothing on your Mac and takes over when the other copy quits.")
-            Text(verbatim: caption.title)
-            if let path = caption.path {
-                Text(verbatim: path)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-                    .truncationMode(.middle)
-            }
-        } actions: {
-            Button("Make This Copy the Main One") {
-                starting = true
-                copy.makeMain { starting = false }
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(starting)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationTitle(Text(verbatim: "pikapik"))
-        .onAppear { SettingsWindow.window?.title = "pikapik" }
     }
 }
