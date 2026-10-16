@@ -130,7 +130,6 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var engine: Engine?
     private var chrome: WindowChrome?
     private var observer: Any?
-    private var hideTimer: Timer?
     private var thumbnails: Thumbnails?
     private var hovered: Double?
     private var cursorHidden = false
@@ -690,8 +689,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     private func armHideTimer() {
-        hideTimer?.invalidate()
-        hideTimer = Timer.scheduledTimer(withTimeInterval: PlayerChrome.hideDelay, repeats: false) { [weak self] _ in self?.refreshControls(idle: PlayerChrome.hideDelay) }
+        chrome?.hideAfterIdle(PlayerChrome.hideDelay) { [weak self] in self?.refreshControls(idle: PlayerChrome.hideDelay) }
     }
 
     func hideControls() {
@@ -767,7 +765,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     }
 
     func windowWillClose(_ notification: Notification) {
-        hideTimer?.invalidate()
+        chrome?.cancelIdle()
         stop()
         scrubber.onHover = nil
         onClose?(self)

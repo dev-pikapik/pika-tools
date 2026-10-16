@@ -20,9 +20,16 @@ final class WindowChrome {
     private let shield = ButtonShield()
     private weak var window: NSWindow?
     private var state = (bar: true, shade: false)
+    private var idleTimer: Timer?
+    private var idle: (delay: TimeInterval, action: () -> Void)?
+    private var observers: [NSObjectProtocol] = []
 
     init(_ window: NSWindow, over content: NSView) {
         self.window = window
+        observers = [
+            NotificationCenter.default.addObserver(forName: NSMenu.didEndTrackingNotification, object: nil, queue: nil) { [weak self] _ in self?.restartIdle() },
+            NotificationCenter.default.addObserver(forName: NSWindow.didEndSheetNotification, object: window, queue: nil) { [weak self] _ in self?.restartIdle() },
+        ]
         shield.content = content
         Self.style(window)
         let gradient = CAGradientLayer()
@@ -41,6 +48,24 @@ final class WindowChrome {
             shade.trailingAnchor.constraint(equalTo: content.trailingAnchor),
             shade.heightAnchor.constraint(equalToConstant: Self.shadeHeight),
         ])
+    }
+
+    deinit {
+        observers.forEach(NotificationCenter.default.removeObserver)
+    }
+
+    func hideAfterIdle(_ delay: TimeInterval, _ action: @escaping () -> Void) {
+        idleTimer?.invalidate()
+        idle = (delay, action)
+        idleTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { _ in action() }
+    }
+
+    func cancelIdle() {
+        idleTimer?.invalidate()
+    }
+
+    private func restartIdle() {
+        if idleTimer?.isValid == true, let idle { hideAfterIdle(idle.delay, idle.action) }
     }
 
     static let trackingOptions: NSTrackingArea.Options = [.mouseMoved, .mouseEnteredAndExited, .activeAlways, .inVisibleRect]
@@ -75,13 +100,12 @@ final class WindowChrome {
         }
     }
 
-    static func pointerOver(_ window: NSWindow, windowNumberAt: (NSPoint) -> Int = { NSWindow.windowNumber(at: $0, belowWindowWithWindowNumber: 0) }) -> Bool {
+    static func pointerOver(_ window: NSWindow, windowNumberAt: (NSPoint) -> Int) -> Bool {
         windowNumberAt(NSEvent.mouseLocation) == window.windowNumber
     }
 
     static func opened(over window: NSWindow) -> Bool {
-        let buttons = window.standardWindowButton(.closeButton)?.window
-        return NSApp.windows.contains { $0 !== buttons && $0.isVisible && ($0.parent === window || $0.sheetParent === window || $0.level == .popUpMenu) }
+        NSApp.windows.contains { $0.isVisible && ($0.sheetParent === window || $0.level == .popUpMenu) }
     }
 
     static func overControls(_ window: NSWindow, at point: NSPoint, panel: NSView, windowNumberAt: (NSPoint) -> Int = { NSWindow.windowNumber(at: $0, belowWindowWithWindowNumber: 0) }) -> Bool {
