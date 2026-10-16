@@ -21,5 +21,14 @@ struct TestSettingsSyncThread {
         RunLoop.main.run(until: Date() + 0.2)
         precondition(heard == [true, true], "\(heard)")
         print("a setting saved off the main thread does not wait for a busy main thread, and is heard later on the main thread: ok")
+
+        var listeners: [String: Int] = [:]
+        for case let path as String in FileManager.default.enumerator(atPath: "Sources")! where path.hasSuffix(".swift") {
+            let text = try! String(contentsOfFile: "Sources/" + path, encoding: .utf8)
+            let count = ["UserDefaults.didChangeNotification", "NSUserDefaultsDidChangeNotification"].reduce(0) { $0 + text.components(separatedBy: $1).count - 1 }
+            if count > 0 { listeners[path] = count }
+        }
+        precondition(listeners == ["pika-tools/Common/SettingsFile.swift": 1], "only SettingsFile.onSave may listen for saved settings: \(listeners)")
+        print("only SettingsFile.onSave listens for saved settings: ok")
     }
 }
