@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "foto, gambar, citra, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, aplikasi default, buka dengan, klik dua kali, Pratinjau";
 "To show the next picture, allow access to this folder." = "Untuk menampilkan gambar berikutnya, izinkan akses ke folder ini.";
 "There are no pictures in this folder." = "Tidak ada gambar di folder ini.";
+"AirPlay video can’t continue" = "Video AirPlay tidak dapat dilanjutkan";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "Perangkat AirPlay berhenti memutar video ini, jadi pemutaran dilanjutkan di Mac ini. Pastikan perangkat menyala dan berada di jaringan yang sama, lalu pilih lagi.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "Firewall disetel ke “Blokir semua koneksi masuk”, sehingga perangkat AirPlay tidak bisa mengambil video dari Mac ini. Buka Pengaturan Sistem, pilih Jaringan, lalu Firewall, lalu Opsi, matikan “Blokir semua koneksi masuk”, dan pilih perangkat lagi. pikapik tidak mengubah pengaturan ini sendiri.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "Perangkat AirPlay tidak meminta video dari Mac ini. Pastikan Mac dan perangkat berada di jaringan yang sama dan tidak ada VPN atau firewall yang memblokir koneksi di dalamnya, lalu pilih perangkat lagi.";
+"Playing on AirPlay" = "Diputar di AirPlay";
+"Track %lld" = "Trek %lld";

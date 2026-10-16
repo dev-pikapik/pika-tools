@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "ภาพถ่าย, รูปภาพ, ภาพ, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, แอปเริ่มต้น, เปิดด้วย, ดับเบิลคลิก, พรีวิว";
 "To show the next picture, allow access to this folder." = "หากต้องการแสดงรูปภาพถัดไป โปรดอนุญาตการเข้าถึงโฟลเดอร์นี้";
 "There are no pictures in this folder." = "ไม่มีรูปภาพในโฟลเดอร์นี้";
+"AirPlay video can’t continue" = "ไม่สามารถเล่นวิดีโอ AirPlay ต่อได้";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "อุปกรณ์ AirPlay หยุดเล่นวิดีโอนี้ จึงเล่นต่อบน Mac เครื่องนี้ โปรดตรวจสอบว่าอุปกรณ์เปิดอยู่และอยู่ในเครือข่ายเดียวกัน แล้วเลือกอุปกรณ์อีกครั้ง";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "ไฟร์วอลล์ตั้งเป็น “บล็อกการเชื่อมต่อขาเข้าทั้งหมด” อุปกรณ์ AirPlay จึงรับวิดีโอจาก Mac เครื่องนี้ไม่ได้ เปิดการตั้งค่าระบบ เลือกเครือข่าย แล้วเลือกไฟร์วอลล์และตัวเลือก ปิด “บล็อกการเชื่อมต่อขาเข้าทั้งหมด” แล้วเลือกอุปกรณ์อีกครั้ง pikapik ไม่เปลี่ยนการตั้งค่านี้เอง";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "อุปกรณ์ AirPlay ไม่ได้ขอวิดีโอจาก Mac เครื่องนี้ โปรดตรวจสอบว่า Mac และอุปกรณ์อยู่ในเครือข่ายเดียวกัน และไม่มี VPN หรือไฟร์วอลล์บล็อกการเชื่อมต่อภายในเครือข่ายนั้น แล้วเลือกอุปกรณ์อีกครั้ง";
+"Playing on AirPlay" = "กำลังเล่นบน AirPlay";
+"Track %lld" = "แทร็ก %lld";

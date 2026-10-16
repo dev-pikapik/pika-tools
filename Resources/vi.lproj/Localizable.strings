@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "ảnh, hình ảnh, tranh, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, ứng dụng mặc định, mở bằng, nhấp đúp, Xem trước";
 "To show the next picture, allow access to this folder." = "Để hiển thị ảnh tiếp theo, hãy cho phép truy cập thư mục này.";
 "There are no pictures in this folder." = "Không có hình ảnh nào trong thư mục này.";
+"AirPlay video can’t continue" = "Không thể tiếp tục phát video AirPlay";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "Thiết bị AirPlay đã ngừng phát video này nên video tiếp tục phát trên Mac này. Hãy kiểm tra thiết bị đã bật và cùng mạng, rồi chọn lại thiết bị.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "Tường lửa đang đặt ở “Chặn tất cả các kết nối đến” nên thiết bị AirPlay không thể nhận video từ Mac này. Hãy mở Cài đặt hệ thống, chọn Mạng, rồi Tường lửa và Tùy chọn, tắt “Chặn tất cả các kết nối đến” và chọn lại thiết bị. pikapik không tự đổi cài đặt này.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "Thiết bị AirPlay đã không yêu cầu video từ Mac này. Hãy đảm bảo Mac và thiết bị cùng một mạng và không có VPN hay tường lửa nào chặn kết nối trong mạng đó, rồi chọn lại thiết bị.";
+"Playing on AirPlay" = "Đang phát trên AirPlay";
+"Track %lld" = "Rãnh %lld";

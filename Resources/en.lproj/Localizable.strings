@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview";
 "To show the next picture, allow access to this folder." = "To show the next picture, allow access to this folder.";
 "There are no pictures in this folder." = "There are no pictures in this folder.";
+"AirPlay video can’t continue" = "AirPlay video can’t continue";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again.";
+"Playing on AirPlay" = "Playing on AirPlay";
+"Track %lld" = "Track %lld";

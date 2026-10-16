@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "fotka, obrázek, snímek, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, výchozí aplikace, otevřít v aplikaci, dvojklik, Náhled";
 "To show the next picture, allow access to this folder." = "Chcete-li zobrazit další obrázek, povolte přístup k této složce.";
 "There are no pictures in this folder." = "V této složce nejsou žádné obrázky.";
+"AirPlay video can’t continue" = "Video přes AirPlay nelze dál přehrávat";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "Zařízení AirPlay přestalo toto video přehrávat, proto přehrávání pokračuje na tomto Macu. Zkontrolujte, že je zařízení zapnuté a ve stejné síti, a pak ho vyberte znovu.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "Firewall je nastaven na „Blokovat všechna příchozí připojení“, takže zařízení AirPlay nemůže z tohoto Macu získat video. Otevřete Nastavení systému, zvolte Síť, potom Firewall a Volby, vypněte „Blokovat všechna příchozí připojení“ a zařízení vyberte znovu. pikapik toto nastavení sám nemění.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "Zařízení AirPlay si video od tohoto Macu nevyžádalo. Ujistěte se, že Mac i zařízení jsou ve stejné síti a že VPN ani firewall v ní nebrání připojení, a pak zařízení vyberte znovu.";
+"Playing on AirPlay" = "Přehrává se přes AirPlay";
+"Track %lld" = "Stopa %lld";

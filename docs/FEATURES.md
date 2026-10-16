@@ -1179,7 +1179,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Plays videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, in their own window. The button opens one file and never changes which app opens your videos; the switch below does that.
 
-**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
+**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which never reaches the internet and has only the right to read and write files you choose (and, for AirPlay, to serve one film to your own network while it plays). The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
 
 **Options:**
 - Formats — the lists of formats on the same page, Video and Music; hover a format to see its file extensions (`PlayerPage.swift:23`, `PlayerPage.swift:24`).
@@ -1396,6 +1396,26 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 1. (Website) Open a video of a few minutes and move the pointer along the time bar → a card with the time and a picture follows the pointer; the picture matches the scene at that spot.
 2. (Website) Open a music file → the card shows only the time.
 3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
+
+### AirPlay video
+
+**Does:** A button on the control panel, next to full screen, sends the playing video to an Apple TV, a smart TV or any other AirPlay device. The picture continues from the same second, the panel keeps showing the time and the keys keep working, and when you disconnect the video comes back to the Mac at the second where the device stopped. It is shown only for videos.
+
+**How it works:** The button is the system AirPlay picker (`Helper/Player/PlayerWindow.swift:206`). When you choose a device the helper builds a playlist of the film (`AirPlaySource`, `Helper/Player/AirPlaySource.swift:62`) and serves it to that device as HLS from the Mac’s own address (`AirPlayServer`, `Helper/Player/AirPlayServer.swift:105`). The film is cut at real key frames into pieces of about six seconds, and each piece is built only when the device asks for it (`AirPlaySegmentWriter.build`, `Helper/Player/AirPlaySegments.swift:63`), so a jump anywhere in the film is immediate. H.264 and HEVC, HDR included, are passed on unchanged. VP9 and AV1 are re-encoded to HEVC with an H.264 version next to it. The sound goes as separate tracks, so the device offers the languages: AAC, AC-3, E-AC-3 and ALAC unchanged, FLAC as ALAC, Opus, Vorbis, DTS and MP3 as AAC. Text subtitles go as WebVTT; picture subtitles (PGS, VobSub) are burnt into the picture while their track is chosen, and until the menu for choosing a subtitle track arrives the one marked forced or default is used. The server exists only while a film is shown on a device and is closed with the window, by switching back or when the Mac goes to sleep. Every showing has a new 128-bit secret in the address. The server answers only the exact paths it knows, never a path from the request, and only a device from the Mac’s own networks (`AirPlayRouter`, `AirPlayNetwork`, `AirPlayServer.swift:21`, `:65`). The sandbox of the player (and only the player) gets the rights to serve and to connect (`Helper/Player/Player.entitlements`). If the device never asks for the film, the player says so in plain words and says what to do when the firewall has **Block all incoming connections** on; it does not change that setting (`AirPlayAdvice`, `AirPlayPlaylists.swift:285`). In the Mac App Store version the player is not there, so neither is this button.
+
+**Options:**
+- The choice of the device and the language of the sound are made on the device; there is nothing to set in pikapik.
+- Limits: frame-by-frame steps do nothing and the volume slider is off while the device plays; the device controls the sound.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website, needs an AirPlay device on the same network) Open an MP4 and press the AirPlay button on the panel → the list of devices appears; choose one → the picture and sound move to it within a few seconds, the window says Playing on AirPlay, and the time on the panel keeps running.
+2. (Website) Drag the position slider to the middle of a long film → the device jumps there at once; press Space → it pauses on the device; press it again → it plays.
+3. (Website) Open an MKV with two sound tracks and use the device’s audio menu → the other language plays. Open a film with VP9 video → it plays on the device.
+4. (Website) Choose “this Mac” in the list again → the video continues on the Mac from the second where the device stopped, with no gap and no second window.
+5. (Website) Close the window while it plays on the device → the device stops, and the Mac is no longer listening (`lsof -iTCP -sTCP:LISTEN -n -P | grep -i player` shows nothing).
+6. (Website) In System Settings › Network › Firewall › Options turn on **Block all incoming connections**, choose a device → after a few seconds the video continues on the Mac and a message says what to switch off. Turn it off again afterwards.
 
 ### FFmpeg and dav1d Licenses
 

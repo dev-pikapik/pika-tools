@@ -126,6 +126,7 @@ final class Engine {
     private var steps = 0
     private var end = CMTime.zero
     private(set) var finished: CMTime?
+    var remote: ((CMTime, Float) -> Void)?
 
     var volume: Float {
         get { audio.volume }
@@ -224,15 +225,27 @@ final class Engine {
     }
 
     func seek(to time: CMTime, rate: Float) {
+        if let remote {
+            finished = nil
+            synchronizer.setRate(rate, time: time)
+            remote(time, rate)
+            return
+        }
         lock.withLock { (wanted, requested) = ((time, rate), time) }
         finished = nil
         queue.async { [weak self] in self?.restart() }
     }
 
     func step(_ direction: Int) {
+        guard remote == nil else { return }
         lock.withLock { steps += direction }
         finished = nil
         queue.async { [weak self] in self?.restartOnFrame() }
+    }
+
+    func finishRemote() {
+        finished = duration
+        synchronizer.setRate(synchronizer.rate, time: duration)
     }
 
     func tags() -> MediaTags { demuxer.tags() }

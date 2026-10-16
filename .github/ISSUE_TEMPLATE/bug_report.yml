@@ -92,6 +92,7 @@ body:
         - "Player › Glass panel that hides"
         - "Player › Window without a title bar"
         - "Player › Preview over the time bar"
+        - "Player › AirPlay video"
         - "Player › FFmpeg and dav1d Licenses"
         - "Uninstaller › Offer to clean up when an app goes to the Trash"
         - "Uninstaller › Installed apps"

@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "صورة، صورة فوتوغرافية، رسم، jpeg، jpg، png، heic، webp، avif، gif، raw، psd، tiff، svg، التطبيق الافتراضي، فتح باستخدام، نقر مزدوج، معاينة";
 "To show the next picture, allow access to this folder." = "لعرض الصورة التالية، اسمح بالوصول إلى هذا المجلد.";
 "There are no pictures in this folder." = "لا توجد صور في هذا المجلد.";
+"AirPlay video can’t continue" = "تعذّر متابعة فيديو AirPlay";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "توقف جهاز AirPlay عن تشغيل هذا الفيديو، لذا يستمر التشغيل على هذا الـ Mac. تأكد من أن الجهاز قيد التشغيل وعلى الشبكة نفسها، ثم اخترْه مرة أخرى.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "جدار الحماية مضبوط على «حظر جميع الاتصالات الواردة»، لذا لا يستطيع جهاز AirPlay الحصول على الفيديو من هذا الـ Mac. افتح إعدادات النظام، واختر الشبكة، ثم جدار الحماية، ثم خيارات، وأوقف «حظر جميع الاتصالات الواردة»، ثم اختر الجهاز مرة أخرى. لا يغيّر pikapik هذا الإعداد بنفسه.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "لم يطلب جهاز AirPlay الفيديو من هذا الـ Mac. تأكد من أن الـ Mac والجهاز على الشبكة نفسها، وأن أي VPN أو جدار حماية لا يمنع الاتصالات داخلها، ثم اختر الجهاز مرة أخرى.";
+"Playing on AirPlay" = "التشغيل عبر AirPlay";
+"Track %lld" = "المسار %lld";

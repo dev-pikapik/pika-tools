@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "fotoğraf, resim, görsel, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, varsayılan uygulama, birlikte aç, çift tıklama, Önizleme";
 "To show the next picture, allow access to this folder." = "Sonraki resmi göstermek için bu klasöre erişime izin verin.";
 "There are no pictures in this folder." = "Bu klasörde resim yok.";
+"AirPlay video can’t continue" = "AirPlay videosu devam edemiyor";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay aygıtı bu videoyu oynatmayı durdurdu, bu yüzden oynatma bu Mac’te devam ediyor. Aygıtın açık ve aynı ağda olduğunu kontrol edin, sonra yeniden seçin.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "Güvenlik duvarı “Gelen tüm bağlantıları engelle” olarak ayarlı olduğundan bir AirPlay aygıtı videoyu bu Mac’ten alamaz. Sistem Ayarları’nı açın, Ağ’ı, sonra Güvenlik Duvarı’nı ve Seçenekler’i seçin, “Gelen tüm bağlantıları engelle” seçeneğini kapatın ve aygıtı yeniden seçin. pikapik bu ayarı kendisi değiştirmez.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay aygıtı bu Mac’ten videoyu istemedi. Mac ile aygıtın aynı ağda olduğundan ve hiçbir VPN veya güvenlik duvarının ağ içindeki bağlantıları engellemediğinden emin olun, sonra aygıtı yeniden seçin.";
+"Playing on AirPlay" = "AirPlay üzerinde oynatılıyor";
+"Track %lld" = "Parça %lld";

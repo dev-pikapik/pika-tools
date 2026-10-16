@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "사진, 이미지, 그림, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, 기본 앱, 다음으로 열기, 더블 클릭, 미리 보기";
 "To show the next picture, allow access to this folder." = "다음 사진을 보려면 이 폴더에 대한 접근을 허용하세요.";
 "There are no pictures in this folder." = "이 폴더에 이미지가 없습니다.";
+"AirPlay video can’t continue" = "AirPlay 비디오를 계속할 수 없습니다";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay 기기가 이 비디오 재생을 멈춰서 이 Mac에서 계속 재생합니다. 기기가 켜져 있고 같은 네트워크에 있는지 확인한 다음 다시 선택하세요.";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "방화벽이 ‘모든 수신 연결 차단’으로 설정되어 있어 AirPlay 기기가 이 Mac에서 비디오를 가져올 수 없습니다. 시스템 설정을 열고 네트워크, 방화벽, 옵션 순서로 선택해 ‘모든 수신 연결 차단’을 끈 다음 기기를 다시 선택하세요. pikapik은 이 설정을 직접 바꾸지 않습니다.";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay 기기가 이 Mac에 비디오를 요청하지 않았습니다. Mac과 기기가 같은 네트워크에 있고 VPN이나 방화벽이 그 안의 연결을 막지 않는지 확인한 다음 기기를 다시 선택하세요.";
+"Playing on AirPlay" = "AirPlay로 재생 중";
+"Track %lld" = "트랙 %lld";

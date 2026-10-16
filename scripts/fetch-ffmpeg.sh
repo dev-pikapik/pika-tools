@@ -49,6 +49,8 @@ if [ "$(cat "$OUT/stamp" 2>/dev/null)" != "$STAMP" ]; then
         --enable-parser=aac,aac_latm,ac3,av1,flac,h263,h264,hevc,mpeg4video,mpegaudio,mpegvideo,opus,vc1,vorbis,vp3,vp8,vp9
         --enable-decoder=aac,vp8,vp9,libdav1d,mpeg4,msmpeg4v1,msmpeg4v2,msmpeg4v3,wmv1,wmv2,wmv3,vc1,theora,mpeg1video,mpeg2video,flv,h263,wmav1,wmav2,vorbis,ape,dsd_lsbf_planar
         --enable-bsf=aac_adtstoasc,extract_extradata,mpeg4_unpack_bframes
+        --enable-decoder=dca,pgssub,dvdsub,dvbsub
+        --enable-parser=dca,dvdsub,dvbsub
     )
     {
         echo "$FFMPEG (LGPL 2.1 or later) and $DAV1D (BSD 2-Clause), built by scripts/fetch-ffmpeg.sh"

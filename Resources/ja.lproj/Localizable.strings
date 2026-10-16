@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "写真, 画像, イメージ, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, デフォルトのアプリ, このアプリで開く, ダブルクリック, プレビュー";
 "To show the next picture, allow access to this folder." = "次の画像を表示するには、このフォルダへのアクセスを許可してください。";
 "There are no pictures in this folder." = "このフォルダには画像がありません。";
+"AirPlay video can’t continue" = "AirPlayのビデオを続けて再生できません";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlayデバイスがこのビデオの再生を止めたため、このMacで再生を続けます。デバイスの電源が入っていて同じネットワークにあることを確認してから、もう一度選んでください。";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "ファイアウォールが「すべての着信接続をブロック」に設定されているため、AirPlayデバイスはこのMacからビデオを受け取れません。システム設定を開き、「ネットワーク」、「ファイアウォール」、「オプション」の順に選んで「すべての着信接続をブロック」をオフにし、もう一度デバイスを選んでください。pikapikはこの設定を自分では変更しません。";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlayデバイスがこのMacにビデオを要求しませんでした。Macとデバイスが同じネットワークにあり、VPNやファイアウォールがそのネットワーク内の接続を妨げていないことを確認してから、もう一度デバイスを選んでください。";
+"Playing on AirPlay" = "AirPlayで再生中";
+"Track %lld" = "トラック%lld";

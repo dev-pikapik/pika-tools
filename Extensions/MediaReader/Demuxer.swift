@@ -171,7 +171,7 @@ final class Track {
     }
 }
 
-private final class ByteReader {
+final class ByteReader {
     let read: (UnsafeMutablePointer<UInt8>, Int32, Int64) -> Int32
     let size: Int64
     var position: Int64 = 0
@@ -182,7 +182,7 @@ private final class ByteReader {
     }
 }
 
-private let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePointer<UInt8>?, Int32) -> Int32 = { opaque, buffer, size in
+let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePointer<UInt8>?, Int32) -> Int32 = { opaque, buffer, size in
     guard let opaque, let buffer else { return PikaErrorEOF }
     let reader = Unmanaged<ByteReader>.fromOpaque(opaque).takeUnretainedValue()
     guard reader.position < reader.size else { return PikaErrorEOF }
@@ -191,7 +191,7 @@ private let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePo
     return count
 }
 
-private let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -> Int64 = { opaque, offset, whence in
+let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -> Int64 = { opaque, offset, whence in
     guard let opaque else { return -1 }
     let reader = Unmanaged<ByteReader>.fromOpaque(opaque).takeUnretainedValue()
     switch whence & ~AVSEEK_FORCE {
@@ -276,7 +276,7 @@ final class Demuxer {
         av_packet_free(&packet)
     }
 
-    private static func free(_ io: UnsafeMutablePointer<AVIOContext>) {
+    static func free(_ io: UnsafeMutablePointer<AVIOContext>) {
         var io: UnsafeMutablePointer<AVIOContext>? = io
         av_freep(&io!.pointee.buffer)
         avio_context_free(&io)

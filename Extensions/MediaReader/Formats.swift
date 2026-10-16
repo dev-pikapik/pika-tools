@@ -159,7 +159,7 @@ private func makeAudioFormat(_ par: AVCodecParameters, _ extradata: Data) -> Tra
         asbd = AudioStreamBasicDescription(mSampleRate: Float64(par.sample_rate), mFormatID: kAudioFormatLinearPCM,
             mFormatFlags: (float ? kAudioFormatFlagIsFloat : bits > 8 ? kAudioFormatFlagIsSignedInteger : 0) | (big ? kAudioFormatFlagIsBigEndian : 0) | kAudioFormatFlagIsPacked,
             mBytesPerPacket: bits / 8 * channels, mFramesPerPacket: 1, mBytesPerFrame: bits / 8 * channels, mChannelsPerFrame: channels, mBitsPerChannel: bits, mReserved: 0)
-    case AV_CODEC_ID_WMAV1, AV_CODEC_ID_WMAV2, AV_CODEC_ID_VORBIS, AV_CODEC_ID_APE, AV_CODEC_ID_DSD_LSBF_PLANAR:
+    case AV_CODEC_ID_WMAV1, AV_CODEC_ID_WMAV2, AV_CODEC_ID_VORBIS, AV_CODEC_ID_APE, AV_CODEC_ID_DSD_LSBF_PLANAR, AV_CODEC_ID_DTS:
         guard let software = AudioDecoder(par) else { return nil }
         decoder = software
         asbd = software.format

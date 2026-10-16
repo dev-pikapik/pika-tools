@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "फ़ोटो, छवि, चित्र, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, डिफ़ॉल्ट ऐप, इसके साथ खोलें, डबल-क्लिक, प्रीव्यू";
 "To show the next picture, allow access to this folder." = "अगली तस्वीर दिखाने के लिए इस फ़ोल्डर तक पहुँच की अनुमति दें।";
 "There are no pictures in this folder." = "इस फ़ोल्डर में कोई चित्र नहीं है।";
+"AirPlay video can’t continue" = "AirPlay वीडियो आगे नहीं चल सकता";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay डिवाइस ने यह वीडियो चलाना बंद कर दिया, इसलिए प्लेबैक इस Mac पर जारी है। जाँचें कि डिवाइस चालू है और उसी नेटवर्क पर है, फिर उसे दोबारा चुनें।";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "फ़ायरवॉल में “सभी आने वाले कनेक्शन ब्लॉक करें” चालू है, इसलिए AirPlay डिवाइस इस Mac से वीडियो नहीं ले सकता। सिस्टम सेटिंग खोलें, नेटवर्क चुनें, फिर फ़ायरवॉल और विकल्प चुनें, “सभी आने वाले कनेक्शन ब्लॉक करें” बंद करें और डिवाइस को दोबारा चुनें। pikapik यह सेटिंग खुद नहीं बदलता।";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay डिवाइस ने इस Mac से वीडियो नहीं माँगा। पक्का करें कि Mac और डिवाइस एक ही नेटवर्क पर हैं और कोई VPN या फ़ायरवॉल उसके भीतर कनेक्शन नहीं रोक रहा, फिर डिवाइस को दोबारा चुनें।";
+"Playing on AirPlay" = "AirPlay पर चल रहा है";
+"Track %lld" = "ट्रैक %lld";

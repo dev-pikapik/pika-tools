@@ -1290,3 +1290,9 @@
 "photo, image, picture, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, default app, open with, double-click, Preview" = "照片, 影像, 圖片, jpeg, jpg, png, heic, webp, avif, gif, raw, psd, tiff, svg, 預設 App, 打開方式, 點兩下, 預覽";
 "To show the next picture, allow access to this folder." = "若要顯示下一張圖片，請允許存取此資料夾。";
 "There are no pictures in this folder." = "此資料夾中沒有圖片。";
+"AirPlay video can’t continue" = "無法繼續播放 AirPlay 影片";
+"The AirPlay device stopped playing this video, so playback continues on this Mac. Check that the device is turned on and on the same network, then pick it again." = "AirPlay 裝置已停止播放此影片，因此這部 Mac 會繼續播放。請確認裝置已開啟並在同一網路中，然後重新選擇。";
+"The firewall is set to “Block all incoming connections”, so an AirPlay device can’t get the video from this Mac. Open System Settings, choose Network, then Firewall, then Options, turn off “Block all incoming connections”, and pick the device again. pikapik doesn’t change this setting itself." = "防火牆設為「封鎖所有連入連線」，因此 AirPlay 裝置無法從這部 Mac 取得影片。請打開「系統設定」，依序選擇「網路」、「防火牆」、「選項」，關閉「封鎖所有連入連線」，然後重新選擇裝置。pikapik 不會自行更改此設定。";
+"The AirPlay device didn’t ask this Mac for the video. Make sure the Mac and the device are on the same network and that no VPN or firewall blocks connections inside it, then pick the device again." = "AirPlay 裝置沒有向這部 Mac 要求影片。請確認 Mac 和裝置在同一網路中，且沒有 VPN 或防火牆封鎖網路內的連線，然後重新選擇裝置。";
+"Playing on AirPlay" = "正在透過 AirPlay 播放";
+"Track %lld" = "軌道 %lld";
