@@ -16,6 +16,8 @@ struct PetPose: Equatable {
     var bounce: CGFloat = 0
     var nap = 0.0
     var dream: CGFloat = 1
+    var face = PetFace()
+    var twinkle = 0.0
     var outfit: [PetSlot: PetItem] = [:]
 }
 
@@ -29,7 +31,7 @@ enum PetFigure {
         fill(Path(ellipseIn: CGRect(x: -5.5 * f, y: -1 - pose.floor, width: 11 * f, height: 2.4)), .black.opacity(0.12 * f))
     }
 
-    static func draw(_ pose: PetPose, night: Bool, fill: (Path, Color) -> Void) {
+    static func draw(_ pose: PetPose, night: Bool, outlined: Bool = true, fill: (Path, Color) -> Void) {
         let body = night ? Color(red: 1, green: 0.53, blue: 0.46) : Color(red: 1, green: 0.45, blue: 0.38)
         let feet = night ? Color(red: 0.86, green: 0.36, blue: 0.36) : Color(red: 0.80, green: 0.30, blue: 0.29)
         let air = pose.air, hang = pose.hang, sit = pose.sit
@@ -60,16 +62,25 @@ enum PetFigure {
         paws = paws.applying(place)
         let shape = Path(roundedRect: CGRect(x: -width / 2, y: -height / 2, width: width, height: height), cornerRadius: 4, style: .continuous)
         let eye = CGPoint(x: 2.6, y: -height / 2 + 3.8)
-        let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place)
+        let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place, outlined: outlined)
         wear.draw(.back, fill)
-        if sit < 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
+        if sit < 0.5 { fill(paws, feet) }
+        wear.outline(fill)
+        if sit < 0.5 { wear.draw(.feet, fill) }
         fill(shape.applying(place), body)
         wear.draw(.base, fill)
         wear.draw(.legs, fill)
         wear.draw(.outer, fill)
         if sit >= 0.5 { fill(paws, feet); wear.draw(.feet, fill) }
         wear.draw(.neck, fill)
+        wear.draw(.prop, fill)
 
+        let face = pose.lid >= 1 ? PetFace() : pose.face
+        let seat = CGPoint(x: eye.x + 0.5 * face.look.dx, y: eye.y + 0.5 * face.look.dy)
+        func put(_ path: Path, _ color: Color) { fill(path.applying(place), color) }
+        if face.blush > 0 {
+            put(Path(ellipseIn: CGRect(x: seat.x - 3.4, y: seat.y + 0.6, width: 3.2, height: 1.9)), Color(red: 1, green: 0.76, blue: 0.82).opacity(0.55 * face.blush))
+        }
         if pose.dizzy {
             var cross = Path()
             for angle in [CGFloat.pi / 4, -.pi / 4] {
@@ -78,9 +89,33 @@ enum PetFigure {
             }
             fill(cross.applying(place), Self.eye)
         } else {
-            let tall: CGFloat = pose.blink ? 0.5 : 2.5 - 2 * pose.lid
-            fill(Path(ellipseIn: CGRect(x: eye.x - 1.25, y: eye.y - tall / 2, width: 2.5, height: tall)).applying(place), Self.eye)
+            let tall = (pose.blink ? 0.5 : 2.5 - 2 * pose.lid) * face.open * (1 - face.smile), wide = 2.5 + 0.8 * max(0, face.open - 1)
+            put(Path(ellipseIn: CGRect(x: seat.x - wide / 2, y: seat.y - tall / 2, width: wide, height: tall)), Self.eye)
+            if face.smile > 0 {
+                var arc = Path()
+                arc.move(to: CGPoint(x: -1.3, y: 0.6))
+                arc.addQuadCurve(to: CGPoint(x: 1.3, y: 0.6), control: CGPoint(x: 0, y: -1.6))
+                put(arc.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round)).applying(CGAffineTransform(translationX: seat.x, y: seat.y)), Self.eye.opacity(face.smile))
+            }
         }
+        if face.brows > 0 {
+            let bar = Path(roundedRect: CGRect(x: -1.1, y: -0.25, width: 2.2, height: 0.5), cornerRadius: 0.25)
+            put(bar.applying(CGAffineTransform(rotationAngle: 0.5 * face.brow).concatenating(CGAffineTransform(translationX: seat.x, y: seat.y - 1.9 - 0.8 * face.lift))), Self.eye.opacity(face.brows))
+        }
+        if face.mouth > 0 {
+            let bowl = max(0, face.curve), half = 0.9 + 0.35 * bowl, open = 2.2 * face.gape, inset = 0.8 * half * abs(face.curve)
+            let mid = CGPoint(x: seat.x + 0.6, y: seat.y + 2.9)
+            let left = CGPoint(x: mid.x - half, y: mid.y), right = CGPoint(x: mid.x + half, y: mid.y)
+            func bend(_ shift: CGFloat) -> CGFloat { mid.y + (0.9 * face.curve + shift) * 4 / 3 }
+            let top = bend(-open * (0.5 - 0.3 * bowl)), bottom = bend(open * (0.5 + 0.3 * bowl)), low = inset * max(0, 1 - 2 * face.gape)
+            var lip = Path()
+            lip.move(to: left)
+            lip.addCurve(to: right, control1: CGPoint(x: left.x + inset, y: top), control2: CGPoint(x: right.x - inset, y: top))
+            var gap = lip
+            gap.addCurve(to: left, control1: CGPoint(x: right.x - low, y: bottom), control2: CGPoint(x: left.x + low, y: bottom))
+            put(gap.union(gap.strokedPath(StrokeStyle(lineWidth: 0.5, lineCap: .round, lineJoin: .round))), Self.eye.opacity(face.mouth))
+        }
+        wear.draw(.whiskers, fill)
         wear.draw(.face, fill)
         wear.draw(.head, fill)
         wear.draw(.glass, fill)
@@ -91,10 +126,97 @@ enum PetFigure {
             let t = (age / 2.7).truncatingRemainder(dividingBy: 1)
             let size = 2.2 + 1.4 * t
             let spot = CGPoint(x: pose.facing * (4.5 + 6.5 * t), y: centre - height / 2 + 1 - 15 * t)
-            var z = Path()
-            z.addLines([CGPoint(x: -size / 2, y: -size / 2), CGPoint(x: size / 2, y: -size / 2), CGPoint(x: -size / 2, y: size / 2), CGPoint(x: size / 2, y: size / 2)])
-            let stroke = z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
-            fill(stroke.applying(CGAffineTransform(translationX: spot.x, y: spot.y)), (night ? body : feet).opacity(pose.dream * min(1, 4 * t) * (1 - t * t)))
+            fill(zed(size).applying(CGAffineTransform(translationX: spot.x, y: spot.y)), (night ? body : feet).opacity(pose.dream * min(1, 4 * t) * (1 - t * t)))
+        }
+
+        if face.glow > 0 {
+            var crown: CGFloat = switch pose.outfit[.head] {
+            case .flowers: 1
+            case .cap: 3.5
+            case .detective: 4
+            case .helmet: 4.5
+            case .cowboy, .crown: 5
+            case .pirate: 5.8
+            case .propeller, .bowler: 5.5
+            case .curls: 6
+            case .beanie, .bun: 6.5
+            case .viking: 7.3
+            case .tophat: 7.5
+            case .quiff: 9.3
+            case .bunny: 8
+            case .wizard, .party: 8.5
+            default: 0
+            }
+            if pose.outfit[.back] == .umbrella { crown = max(crown, 9.5) }
+            if pose.outfit[.back] == .balloon { crown = max(crown, 10.5) }
+            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, fill: fill)
+        }
+    }
+
+    private static func zed(_ size: CGFloat) -> Path {
+        var z = Path()
+        z.addLines([CGPoint(x: -size / 2, y: -size / 2), CGPoint(x: size / 2, y: -size / 2), CGPoint(x: -size / 2, y: size / 2), CGPoint(x: size / 2, y: size / 2)])
+        return z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
+    }
+
+    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, fill emit: (Path, Color) -> Void) {
+        let a = face.glow, float = 0.6 * sin(time * 3)
+        let c = CGPoint(x: facing * 2.2, y: top - crown - 5.5 - float), back = -facing
+        func shift(_ path: Path, _ x: CGFloat, _ y: CGFloat) -> Path { path.applying(CGAffineTransform(translationX: x, y: y)) }
+        func fill(_ path: Path, _ ink: (r: Double, g: Double, b: Double)) {
+            if PetClothes.faint(ink.r, ink.g, ink.b) { emit(path.strokedPath(PetClothes.stroke), PetClothes.rim.opacity(a)) }
+            emit(path, Color(red: ink.r, green: ink.g, blue: ink.b).opacity(a))
+        }
+        switch face.mark {
+        case .none:
+            break
+        case .heart:
+            var heart = Path()
+            heart.move(to: CGPoint(x: 0, y: 2.2))
+            heart.addCurve(to: CGPoint(x: -2.3, y: -0.5), control1: CGPoint(x: -1.2, y: 1.4), control2: CGPoint(x: -2.3, y: 0.8))
+            heart.addCurve(to: CGPoint(x: 0, y: -0.8), control1: CGPoint(x: -2.3, y: -2.3), control2: CGPoint(x: -0.3, y: -2.2))
+            heart.addCurve(to: CGPoint(x: 2.3, y: -0.5), control1: CGPoint(x: 0.3, y: -2.2), control2: CGPoint(x: 2.3, y: -2.3))
+            heart.addCurve(to: CGPoint(x: 0, y: 2.2), control1: CGPoint(x: 2.3, y: 0.8), control2: CGPoint(x: 1.2, y: 1.4))
+            fill(shift(heart, c.x, c.y), (1, 0.36, 0.52))
+        case .sparkles:
+            for (k, spot) in [(-2.6, 1.2, 2.3), (2.6, -0.8, 1.8), (0.2, -3.4, 1.3)].map({ (CGFloat($0.0), CGFloat($0.1), CGFloat($0.2)) }).enumerated() {
+                let r = spot.2 * CGFloat(0.75 + 0.25 * sin(time * 6 + Double(k) * 2.1))
+                var star = Path()
+                star.addLines((0..<8).map { i in
+                    let angle = CGFloat(i) * .pi / 4, reach = i % 2 == 0 ? r : r * 0.32
+                    return CGPoint(x: c.x + spot.0 + reach * sin(angle), y: c.y + spot.1 - reach * cos(angle))
+                })
+                star.closeSubpath()
+                fill(star, (1, 0.8, 0.22))
+            }
+        case .ask:
+            var hook = Path()
+            hook.addLines(stride(from: 160.0, through: -70, by: -15).map { deg in
+                CGPoint(x: 1.5 * cos(deg * .pi / 180), y: -1.5 * sin(deg * .pi / 180))
+            })
+            hook.addLine(to: CGPoint(x: 0, y: 2.1))
+            let ink = (0.3, 0.62, 1.0)
+            fill(shift(hook.strokedPath(StrokeStyle(lineWidth: 1.1, lineCap: .round, lineJoin: .round)), c.x, c.y - 0.6), ink)
+            fill(Path(ellipseIn: CGRect(x: c.x - 0.65, y: c.y + 2.4, width: 1.3, height: 1.3)), ink)
+        case .bang:
+            let ink = (1.0, 0.34, 0.24)
+            fill(Path(roundedRect: CGRect(x: c.x - 0.9, y: c.y - 2.8, width: 1.8, height: 3.9), cornerRadius: 0.9), ink)
+            fill(Path(ellipseIn: CGRect(x: c.x - 0.9, y: c.y + 1.8, width: 1.8, height: 1.8)), ink)
+        case .drop:
+            var drop = Path()
+            drop.move(to: CGPoint(x: 0, y: -1.8))
+            drop.addCurve(to: CGPoint(x: 1.1, y: 0.5), control1: CGPoint(x: 0.3, y: -0.9), control2: CGPoint(x: 1.1, y: -0.2))
+            drop.addCurve(to: CGPoint(x: -1.1, y: 0.5), control1: CGPoint(x: 1.1, y: 1.8), control2: CGPoint(x: -1.1, y: 1.8))
+            drop.addCurve(to: CGPoint(x: 0, y: -1.8), control1: CGPoint(x: -1.1, y: -0.2), control2: CGPoint(x: -0.3, y: -0.9))
+            fill(shift(drop, back * 4.4, top - crown - 3.4 - float), (0.5, 0.78, 1))
+        case .zzz:
+            for (x, y, size) in [(-1.8, 1.6, 2.2), (1.4, -1.4, 3.2)] as [(CGFloat, CGFloat, CGFloat)] {
+                fill(shift(zed(size), c.x + x, c.y + y), (0.45, 0.5, 0.95))
+            }
+        case .puff:
+            for (x, y, r) in [(4.2, 1.6, 1.2), (5.9, 0.6, 1.7), (7.6, 1.6, 1.2)] {
+                fill(Path(ellipseIn: CGRect(x: -back * x - r, y: top - crown - y - 0.8 - float - r, width: 2 * r, height: 2 * r)), (0.7, 0.7, 0.7))
+            }
         }
     }
 }

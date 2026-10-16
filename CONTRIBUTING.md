@@ -59,6 +59,16 @@ swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -na
 
 The ⌘Q and ⌘W guard is a `CGEventTap` on `keyDown`/`keyUp`. A bare ⌘Q or ⌘W, with Cmd and without Ctrl, Option or Shift, is dropped. The quit and close shortcuts, ⇧⌘Q and ⇧⌘W unless you record your own, are swallowed and replaced with a fresh ⌘Q or ⌘W, so the app sees a normal quit or close. During Game Mode, shortcuts with Control or without Command pass through as game input, even if they were assigned to quitting or closing elsewhere.
 
+Every event pikapik posts (the keys it sends for you, the mouse clicks, the swipes, the replayed Dock clicks) goes through `CGEvent.postPikapik` in `Common/EventTag.swift`: it marks the event as pikapik's own and hands it to a sender that a test can replace. Keyboard events are built only by `CGEvent.pikapikKey` in the same file. A key-down carries the modifiers the replacement needs, and a key-up carries the modifiers the user really holds (`CGEvent.pikapikHeld`, by default `CGEventSource.flagsState(.hidSystemState)`). A key-up with the key-down's flags leaves ⌘ held in every other app until the next real keyboard or mouse event. The test replaces the sender (`CGEvent.pikapikSend`) with a recorder and the held modifiers with a fixed value, so the result doesn't depend on the keys held on the Mac that runs it. It then runs the real code of each place and compares the keys it would send, their order, their flags, their text, and the tag on every event itself: the Home and End key-down and key-up, the release in `stop()` of Home and End, the ⌘ keys, the Finder keys and the App Store layout-fix key, the Finder ⌘X after a copy (on a pasteboard of its own, never the general one), the layout-fix retype, and Back and Forward. It also reads the sources and fails if any file but `EventTag.swift` builds a keyboard event or posts an event. It posts nothing and needs no Accessibility. Run it for the website build and for the App Store build, which has its own layout-fix key:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-key-up-flags.swift -o build/test-key-up-flags && build/test-key-up-flags
+```
+
+```bash
+swiftc -parse-as-library -D APPSTORE $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift ! -name Updater.swift ! -name 'LeftoverPermissions*.swift' ! -name SMC.swift ! -name FanHelperProtocol.swift ! -name FanControl.swift ! -name FanSettings.swift ! -name PointerTool.swift ! -name 'DockDisplay*' ! -path '*/Tools/Animations/*' ! -path '*/Tools/KeyRepeat/*' ! -path '*/Tools/Uninstaller/*') Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-key-up-flags.swift -o build/test-key-up-flags-appstore && build/test-key-up-flags-appstore
+```
+
 Shortcuts in Settings are read live. macOS shortcuts come from `AppleSymbolicHotKeys` in `com.apple.symbolichotkeys`, and a missing entry means the macOS default, which SkyLight reports. Finder's Cut comes from `NSUserKeyEquivalents` for Finder and then for all apps, matched by the menu title in Finder's language. They are read again when pikapik becomes active or a window comes forward. The recorder catches keys with a session event tap and pauses the Mac's own shortcuts while you type, the same way Game Mode does, so it can tell you what already uses them. Parsing and the conflict check live in `Shortcuts`, which you can test without the app:
 
 ```bash
@@ -176,6 +186,36 @@ Awards and wardrobe unlocks live in `PetProgress`. `PetPhysics` reports what the
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetWardrobe.swift Sources/pika-tools/Tools/Pet/PetAwards.swift scripts/test-awards.swift -o build/test-awards && build/test-awards
+```
+
+The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head) that `PetMind` fades between. `PetStage` cues a mood from what the pet already knows (being picked up, a kick, an award, a late hour) and the rules are plain numbers: a higher mood interrupts a lower one, the same cue extends a mood instead of restarting it, every mood rests before it can come back, and the pet starts at most one mood of its own every three minutes. The rules run without the app too:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
+```
+
+What the pet feels, when it sits down and when it says a phrase it owes live in `PetCues`, which has no AppKit, and `PetStage` only feeds it the clock and the pet: a pet that wakes from a doze is sleepy and sits, the morning phrase waits for the yawn and is never lost, a phrase owed while the pet cannot sit waits until it can, and bored and sleepy never start while it cannot sit:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetCues,PetMood,PetPhrases,PetPhysics,BallPhysics,PetWardrobe,PetAwards}.swift scripts/test-pet-cues.swift -o build/test-pet-cues && build/test-pet-cues
+```
+
+Each mark stays 0.4 units clear of the pet and of every hat and back item, in every pose and both facings, so the crown heights in `PetFigure.mark` can’t drift out of date:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
+```
+
+Every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window; a fill that falls below that gets a thin gray rim under it (about 0.8 pt on screen) at full strength. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the rim is gray its first 2 render px (the test draws at scale 6) must keep the 3:1 too and the rim must stick out 2 to 3 render px, so a rim half or twice as wide fails:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
+```
+
+The outline must stay cheap: drawing any single item with it costs at most 0.3 ms more per frame than without it, and a whole look, which is 3 to 7 items whose outlines add up, at most 0.5 ms, under 2% of a frame at the pet’s 30 frames per second (release build on an idle Mac; add `raster` to also fill the paths). This check is manual: CI does not run it, because timings on shared runners are too noisy to hold such small limits:
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/bench-pet.swift -o build/bench-pet && build/bench-pet
 ```
 
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:

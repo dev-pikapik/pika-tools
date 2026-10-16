@@ -56,8 +56,8 @@ final class CommandKeysTool: Tool {
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var keys: Set<Int64> = []
     @ObservationIgnored fileprivate var blocked: Set<Int64> = []
-    @ObservationIgnored fileprivate var triggers: [Shortcut: Int64] = [:]
-    @ObservationIgnored fileprivate var held: (key: Int64, target: Int64)?
+    @ObservationIgnored var triggers: [Shortcut: Int64] = [:]
+    @ObservationIgnored var held: (key: Int64, target: Int64)?
 
     init() {
         protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
@@ -124,10 +124,10 @@ final class CommandKeysTool: Tool {
         isActive = true
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
-            post(held.target, down: false, nil)
+            CGEvent.postPikapikKey(Int(held.target), down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -142,7 +142,7 @@ final class CommandKeysTool: Tool {
     }
 }
 
-private func commandKeysCallback(
+func commandKeysCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
@@ -159,14 +159,14 @@ private func commandKeysCallback(
         let code = event.getIntegerValueField(.keyboardEventKeycode)
         if type == .keyUp, let held = tool.held, held.key == code {
             tool.held = nil
-            post(held.target, down: false, proxy)
+            CGEvent.postPikapikKey(Int(held.target), down: false, flags: flags)
             return nil
         }
         if type == .keyDown, !GameModeTool.shared.isPlaying || !GameRules.isGameInput(flags.rawValue),
            let target = tool.triggers[Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: flags.rawValue)] {
             guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else { return nil }
             tool.held = (code, target)
-            post(target, down: true, proxy)
+            CGEvent.postPikapikKey(Int(target), down: true, flags: .maskCommand)
             return nil
         }
         guard tool.blocked.contains(code),
@@ -179,13 +179,6 @@ private func commandKeysCallback(
         break
     }
     return Unmanaged.passUnretained(event)
-}
-
-private func post(_ code: Int64, down: Bool, _ proxy: CGEventTapProxy?) {
-    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(code), keyDown: down) else { return }
-    key.flags = .maskCommand
-    key.markPikapik()
-    if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
 private struct CommandKeysSettings: View {

@@ -50,7 +50,7 @@ final class HomeEndTool: Tool {
 
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
-    @ObservationIgnored private var held: (key: Int, target: Int, flags: CGEventFlags)?
+    @ObservationIgnored var held: (key: Int, target: Int)?
 
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
@@ -117,10 +117,10 @@ final class HomeEndTool: Tool {
         #endif
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
-            Self.send(held.target, held.flags, down: false, nil)
+            CGEvent.postPikapikKey(held.target, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -134,12 +134,12 @@ final class HomeEndTool: Tool {
         isActive = false
     }
 
-    fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
+    fileprivate func handle(_ event: CGEvent, up: Bool) -> Bool {
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            Self.send(held.target, held.flags, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, flags: event.flags)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -150,20 +150,17 @@ final class HomeEndTool: Tool {
         #if !APPSTORE
         guard case .typing = TextFocus(app.processIdentifier) else { return false }
         #endif
-        held = (key, target.key, target.flags)
-        Self.send(target.key, target.flags, down: true, proxy)
+        press(key, target)
         return true
     }
 
-    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
-        guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
-        event.flags = flags
-        event.markPikapik()
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
+    func press(_ key: Int, _ target: (key: Int, flags: CGEventFlags)) {
+        held = (key, target.key)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags)
     }
 }
 
-private func homeEndCallback(
+func homeEndCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
@@ -175,7 +172,7 @@ private func homeEndCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp:
-        if tool.handle(event, up: type == .keyUp, proxy: proxy) { return nil }
+        if tool.handle(event, up: type == .keyUp) { return nil }
     default:
         break
     }

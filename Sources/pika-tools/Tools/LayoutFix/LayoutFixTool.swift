@@ -4,18 +4,15 @@ import SwiftUI
 
 private let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.google.android.studio"]
 
-private func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
-    let source = CGEventSource(stateID: .privateState)
+func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
     func post(_ key: Int, _ text: String?) {
         for down in [true, false] {
-            guard let event = CGEvent(keyboardEventSource: source, virtualKey: CGKeyCode(key), keyDown: down) else { continue }
-            event.flags = []
-            event.markPikapik()
+            guard let event = CGEvent.pikapikKey(key, down: down, flags: []) else { continue }
             if let text {
                 let units = Array(text.utf16)
                 event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
             }
-            event.tapPostEvent(proxy)
+            event.postPikapik(proxy)
         }
     }
     for _ in old.unicodeScalars { post(kVK_Delete, nil) }
@@ -78,7 +75,7 @@ final class LayoutFixTool: Tool {
 
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
-    @ObservationIgnored fileprivate var held: Int64?
+    @ObservationIgnored var held: Int64?
     @ObservationIgnored fileprivate var holding = false
     @ObservationIgnored private var typed: [Stroke] = []
     @ObservationIgnored private var layout: KeyboardLayout?
@@ -136,10 +133,10 @@ final class LayoutFixTool: Tool {
         if fixesAsYouType { DispatchQueue.main.async { KeyboardLayouts.prepare() } }
     }
 
-    private func stop() {
+    func stop() {
         if held != nil {
             held = nil
-            pressService(down: false, nil)
+            CGEvent.postPikapikKey(kVK_F19, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -217,9 +214,7 @@ final class LayoutFixTool: Tool {
         if let fix = KeyboardLayouts.fix(typed, from: current, ignored: Set(ignored)),
            [fix.original, fix.text].allSatisfy({ $0.unicodeScalars.count == $0.count }) {
             replace(fix.original, with: fix.text, proxy)
-            let key = event.copy()
-            key?.markPikapik()
-            key?.tapPostEvent(proxy)
+            event.copy()?.postPikapik(proxy)
             select(fix.target)
             clear()
             if space { last = (fix, current) }
@@ -260,7 +255,7 @@ final class LayoutFixTool: Tool {
     }
 }
 
-private func layoutFixCallback(
+func layoutFixCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
@@ -283,7 +278,7 @@ private func layoutFixCallback(
         if type == .keyUp {
             if tool.held == code {
                 tool.held = nil
-                pressService(down: false, proxy)
+                CGEvent.postPikapikKey(kVK_F19, down: false, flags: event.flags, proxy)
                 return nil
             }
             break
@@ -299,7 +294,7 @@ private func layoutFixCallback(
             if tool.undo(proxy) { return nil }
             if tool.isEnabled {
                 tool.held = code
-                pressService(down: true, proxy)
+                CGEvent.postPikapikKey(kVK_F19, down: true, flags: [.maskControl, .maskAlternate, .maskShift, .maskCommand], proxy)
                 return nil
             }
             tool.holding = false
@@ -309,14 +304,6 @@ private func layoutFixCallback(
         break
     }
     return Unmanaged.passUnretained(event)
-}
-
-/// ⌃⌥⇧⌘F19, the NSKeyEquivalent of the Services command in Info.plist.
-private func pressService(down: Bool, _ proxy: CGEventTapProxy?) {
-    guard let key = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(kVK_F19), keyDown: down) else { return }
-    key.flags = [.maskControl, .maskAlternate, .maskShift, .maskCommand]
-    key.markPikapik()
-    if let proxy { key.tapPostEvent(proxy) } else { key.post(tap: .cgSessionEventTap) }
 }
 
 private struct LayoutFixServiceSettings: View {
@@ -608,9 +595,7 @@ final class LayoutFixTool: Tool {
         guard let fix = KeyboardLayouts.fix(typed, from: current, ignored: Set(ignored)), let element = field(),
               Self.matches(element, fix.original, boundary: true) == true else { return false }
         replace(fix.original, with: fix.text, proxy)
-        let key = event.copy()
-        key?.markPikapik()
-        key?.tapPostEvent(proxy)
+        event.copy()?.postPikapik(proxy)
         select(fix.target)
         clear()
         if space { last = (fix, current) }

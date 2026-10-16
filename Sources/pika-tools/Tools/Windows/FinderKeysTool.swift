@@ -6,6 +6,7 @@ import SwiftUI
 @Observable
 final class FinderKeys {
     static let shared = FinderKeys()
+    @ObservationIgnored var pasteboard = NSPasteboard.general
 
     private(set) var isActive = false
 
@@ -14,7 +15,7 @@ final class FinderKeys {
     @ObservationIgnored var deletes = false
     @ObservationIgnored private var cutCount: Int?
     @ObservationIgnored private var generation = 0
-    @ObservationIgnored private var held: (key: Int, target: Int, flags: CGEventFlags)?
+    @ObservationIgnored var held: (key: Int, target: Int)?
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
@@ -44,10 +45,10 @@ final class FinderKeys {
         isActive = true
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
-            Self.send(held.target, held.flags, down: false, nil)
+            CGEvent.postPikapikKey(held.target, down: false, nil)
         }
         if let tap {
             CGEvent.tapEnable(tap: tap, enable: false)
@@ -61,13 +62,13 @@ final class FinderKeys {
         isActive = false
     }
 
-    fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
+    fileprivate func handle(_ event: CGEvent, up: Bool) -> Bool {
         guard !event.isPikapik else { return false }
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            Self.send(held.target, held.flags, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, flags: event.flags)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -89,7 +90,7 @@ final class FinderKeys {
 
         let target: (key: Int, flags: CGEventFlags)
         if cutting {
-            let before = NSPasteboard.general.changeCount
+            let before = pasteboard.changeCount
             cancelCut()
             watchCopy(since: before, attempts: 20)
             target = (kVK_ANSI_C, .maskCommand)
@@ -102,22 +103,15 @@ final class FinderKeys {
             case kVK_Delete, kVK_ForwardDelete:
                 target = (kVK_Delete, .maskCommand)
             default:
-                let moves = NSPasteboard.general.changeCount == cutCount
+                let moves = pasteboard.changeCount == cutCount
                 cancelCut()
                 guard moves else { return false }
                 target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
             }
         }
-        held = (key, target.key, target.flags)
-        Self.send(target.key, target.flags, down: true, proxy)
+        held = (key, target.key)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags)
         return true
-    }
-
-    private static func send(_ key: Int, _ flags: CGEventFlags, down: Bool, _ proxy: CGEventTapProxy?) {
-        guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return }
-        event.flags = flags
-        event.markPikapik()
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
     }
 
     private func cancelCut() {
@@ -125,17 +119,16 @@ final class FinderKeys {
         generation += 1
     }
 
-    private func watchCopy(since count: Int, attempts: Int) {
+    func watchCopy(since count: Int, attempts: Int) {
         let mine = generation
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
             guard generation == mine else { return }
-            let now = NSPasteboard.general.changeCount
+            let now = pasteboard.changeCount
             if now != count {
-                if NSPasteboard.general.types?.contains(.fileURL) == true {
+                if pasteboard.types?.contains(.fileURL) == true {
                     cutCount = now
                 } else {
-                    Self.send(kVK_ANSI_X, .maskCommand, down: true, nil)
-                    Self.send(kVK_ANSI_X, .maskCommand, down: false, nil)
+                    CGEvent.tapPikapikKey(kVK_ANSI_X, flags: .maskCommand)
                 }
             } else if attempts > 1 {
                 watchCopy(since: count, attempts: attempts - 1)
@@ -161,7 +154,7 @@ final class FinderKeys {
     }
 }
 
-private func finderKeysCallback(
+func finderKeysCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
@@ -173,7 +166,7 @@ private func finderKeysCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { keys.refresh() }
     case .keyDown, .keyUp:
-        if keys.handle(event, up: type == .keyUp, proxy: proxy) { return nil }
+        if keys.handle(event, up: type == .keyUp) { return nil }
     default:
         break
     }

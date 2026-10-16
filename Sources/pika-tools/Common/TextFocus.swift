@@ -109,7 +109,7 @@ enum TextFocus {
 
     static func enable(_ attribute: String, _ pid: pid_t, _ bundleID: String) -> AXError {
         puttingBack.wait()
-        if isOn(pid, attribute) { return .success }
+        if isOn(pid) { return .success }
         let entry = Switched(bundleID: bundleID, pid: pid, attribute: attribute, before: false)
         lock.lock()
         let watching = observer != nil
@@ -125,9 +125,18 @@ enum TextFocus {
         return error
     }
 
-    private static func isOn(_ pid: pid_t, _ attribute: String) -> Bool {
-        let (value, error) = Self.value(AXUIElementCreateApplication(pid), attribute)
-        return error == .success && value as? Bool == true
+    static var isOn: (pid_t) -> Bool = { pid in
+        let app = AXUIElementCreateApplication(pid)
+        if ["AXManualAccessibility", "AXEnhancedUserInterface"].contains(where: { value(app, $0).0 as? Bool == true }) { return true }
+        var element = value(app, kAXFocusedUIElementAttribute).0
+        for _ in 0..<64 {
+            guard let current = element, CFGetTypeID(current) == AXUIElementGetTypeID(), !CFEqual(current, app) else { return false }
+            let role = value(current as! AXUIElement, kAXRoleAttribute).0 as? String
+            if role == "AXWebArea" { return true }
+            if role == nil || role == kAXWindowRole { return false }
+            element = value(current as! AXUIElement, kAXParentAttribute).0
+        }
+        return false
     }
 
     private static func isChromium(_ pid: pid_t) -> Bool {
