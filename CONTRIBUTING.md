@@ -196,7 +196,7 @@ Each mark stays 0.4 units clear of the pet and of every hat and back item, in ev
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
 ```
 
-Items and marks whose fill stays below 3:1 against white or against #1E1E1E get one thin gray outline under the fill. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the outline is gray its first 2 px must keep the 3:1 too:
+Every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window; a fill that falls below that gets a thin gray rim under it (about 0.8 pt on screen) at full strength. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the rim is gray its first 2 render px (the test draws at scale 6) must keep the 3:1 too and the rim must stick out 2 to 3 render px, so a rim half or twice as wide fails:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
