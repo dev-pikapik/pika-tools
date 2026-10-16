@@ -47,14 +47,11 @@ final class PetStage: NSObject {
     private var ticked = 0.0
     private var felt = 0.0
     private var resting = false
-    private var mind = PetMind()
-    private var cradled = 0.0, touched = ProcessInfo.processInfo.systemUptime, tumbled = -Double.infinity
-    private var nextScold = 0.0, nextCheer = 0.0, nextLook = 0.0, dull = Double.random(in: 20...40)
+    private var feelings = PetCues()
+    private var cradled = 0.0, touched = ProcessInfo.processInfo.systemUptime
+    private var nextCheer = 0.0, nextLook = 0.0, dull = Double.random(in: 20...40)
     private var eager: Double?, still: CGPoint?, stillAt = 0.0
-    private var dressed: [PetSlot: PetItem]?
-    private var told = 0, shown = -1
-    private var hello = false
-    private var owed: (phrase: PetPhrase, by: Double)?
+    private var shown = -1
     private static let anyInput = CGEventType(rawValue: ~0)!
 
     private override init() {
@@ -74,9 +71,7 @@ final class PetStage: NSObject {
         let window = Self.panel(view, grip), field = Self.panel(ballView, ballGrip)
         self.window = window
         self.field = field
-        hello = true
-        dressed = nil
-        told = PetProgress.shared.news.count
+        feelings.begin(news: PetProgress.shared.news.count)
 
         let link = view.displayLink(target: self, selector: #selector(tick))
         link.preferredFrameRateRange = CAFrameRateRange(minimum: 15, maximum: 30, preferred: 30)
@@ -91,7 +86,7 @@ final class PetStage: NSObject {
         watch(workspace, NSWorkspace.screensDidSleepNotification) { $0.asleep = true }
         watch(workspace, NSWorkspace.screensDidWakeNotification) {
             $0.asleep = false
-            $0.hello = true
+            $0.feelings.hello = true
         }
         watch(workspace, NSWorkspace.sessionDidResignActiveNotification) { $0.locked = true }
         watch(workspace, NSWorkspace.sessionDidBecomeActiveNotification) { $0.locked = false }
@@ -545,53 +540,22 @@ final class PetStage: NSObject {
         talk(ProcessInfo.processInfo.systemUptime)
     }
 
+    private func attune() {
+        feelings.progress = progress
+        feelings.muted = demo != nil || blind != nil
+    }
+
     @discardableResult
     private func feel(_ mood: PetMood, _ now: TimeInterval) -> Bool {
-        let sits = mood == .bored || mood == .sleepy
-        guard demo == nil, blind == nil, physics.state != .doze, !sits || physics.canSit, mind.feel(mood, at: now) else { return false }
-        progress?.mark("mood:\(mood.rawValue)")
-        switch mood {
-        case .happy: progress?.add(.smiles)
-        case .shy: progress?.add(.blushes)
-        case .bored, .sleepy: physics.sit(mood.length)
-        case .excited:
-            progress?.add(.smiles)
-            if physics.grounded, !physics.calm { physics.jump() }
-        default: break
-        }
-        return true
+        attune()
+        return feelings.feel(mood, now, &physics)
     }
 
     private func cues(_ point: CGPoint?, _ events: [PetPhysics.Event], _ now: TimeInterval) {
         guard demo == nil else { return }
-        let state = physics.state, flung = events.contains(.fling)
-        for event in events {
-            switch event {
-            case .fling:
-                feel(.grumpy, now)
-                if now >= nextScold {
-                    nextScold = now + 600
-                    owed = (PetPhrases.gently, now + 8)
-                }
-            case .tumble where !flung:
-                feel(now - tumbled < 60 ? .grumpy : .surprised, now)
-                tumbled = now
-            case .leap, .climb: feel(.proud, now)
-            case .woke: feel(.sleepy, now)
-            default: break
-            }
-        }
-        let outfit = PetProgress.shared.outfit, news = PetProgress.shared.news.count
-        if let dressed, dressed != outfit { feel(.proud, now) }
-        dressed = outfit
-        if news > told { feel(.excited, now) }
-        told = news
-        if hello, state == .walk {
-            hello = false
-            feel(.happy, now)
-            if (5..<12).contains(Calendar.current.component(.hour, from: Date())), progress?.greet(Date()) == true { owed = (PetPhrases.morning, now + 8) }
-        }
-        if state == .held {
+        attune()
+        feelings.cue(events, now, Date(), &physics)
+        if physics.state == .held {
             still = point
             stillAt = now
             if hypot(physics.vx, physics.vy) >= 300 { cradled = now } else if now - cradled >= 1.2 { feel(.happy, now) }
@@ -601,7 +565,7 @@ final class PetStage: NSObject {
                 touched = now
                 if rested >= 1.2 { feel(.shy, now) }
             } else if rested >= 0.8, ahead > 0, ahead < 80, abs(point.y - frame.midY) < 80 {
-                mind.gaze = CGVector(dx: 1, dy: (frame.midY - point.y) / 80)
+                feelings.mind.gaze = CGVector(dx: 1, dy: (frame.midY - point.y) / 80)
                 feel(.curious, now)
             }
         } else {
@@ -615,16 +579,10 @@ final class PetStage: NSObject {
             let idle = PetTool.shared.rhythm ? CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: Self.anyInput) : 0
             if idle >= dull, !(5..<23).contains(Calendar.current.component(.hour, from: Date())) || Battery.read().map({ $0.phase == .onBattery && $0.charge <= 10 }) == true { feel(.sleepy, now) }
         }
-        if let line = owed {
-            if now > line.by {
-                owed = nil
-            } else if state == .walk {
-                let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
-                if PetTool.shared.talks, !typing, !Self.microphoneInUse, !behindDock {
-                    owed = nil
-                    say(line.phrase, for: 3.4)
-                }
-            }
+        if feelings.owed != nil {
+            let typing = CGEventSource.secondsSinceLastEventType(.combinedSessionState, eventType: .keyDown) < 5
+            let free = PetTool.shared.talks && !typing && !Self.microphoneInUse && !behindDock
+            if let phrase = feelings.speak(now, &physics, free: free) { present(phrase) }
         }
     }
 
@@ -674,7 +632,7 @@ final class PetStage: NSObject {
         let now = ProcessInfo.processInfo.systemUptime
         var pose = PetPose(physics, scale: Self.scale, time: now)
         pose.outfit = PetProgress.shared.outfit
-        pose.face = mind.face(at: now)
+        pose.face = feelings.mind.face(at: now)
         pose.twinkle = pose.face.glow > 0 && !physics.calm ? now : 0
         view.pose = pose
         if grip.frame != physics.frame { grip.frame = physics.frame }
@@ -732,8 +690,8 @@ final class PetStage: NSObject {
         case "moods" where Int(ProcessInfo.processInfo.systemUptime / 4) != shown:
             let now = ProcessInfo.processInfo.systemUptime
             shown = Int(now / 4)
-            mind = PetMind()
-            mind.feel(PetMood.allCases[1 + shown % 9], at: now)
+            feelings.mind = PetMind()
+            feelings.mind.feel(PetMood.allCases[1 + shown % 9], at: now)
         case "tumble" where physics.state == .walk && physics.clock > 1.2:
             physics.bump(physics.frame.offsetBy(dx: physics.facing * 20, dy: 0))
         case "sit" where phrase == nil, "update" where phrase == nil:
@@ -817,6 +775,10 @@ final class PetStage: NSObject {
 
     private func say(_ phrase: PetPhrase, for seconds: Double) {
         guard physics.sit(seconds) else { return }
+        present(phrase)
+    }
+
+    private func present(_ phrase: PetPhrase) {
         hideBubble()
         let clickable = phrase.id == "update" || phrase.id == "award" || phrase.link != nil
         let panel = NSPanel(contentRect: .zero, styleMask: [.borderless, .nonactivatingPanel], backing: .buffered, defer: true)

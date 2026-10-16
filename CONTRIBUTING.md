@@ -184,6 +184,12 @@ The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head)
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
 ```
 
+What the pet feels, when it sits down and when it says a phrase it owes live in `PetCues`, which has no AppKit, and `PetStage` only feeds it the clock and the pet: a pet that wakes from a doze is sleepy and sits, the morning phrase waits for the yawn and is never lost, a phrase owed while the pet cannot sit waits until it can, and bored and sleepy never start while it cannot sit:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetCues,PetMood,PetPhrases,PetPhysics,BallPhysics,PetWardrobe,PetAwards}.swift scripts/test-pet-cues.swift -o build/test-pet-cues && build/test-pet-cues
+```
+
 Each mark stays 0.4 units clear of the pet and of every hat and back item, in every pose and both facings, so the crown heights in `PetFigure.mark` can’t drift out of date:
 
 ```bash

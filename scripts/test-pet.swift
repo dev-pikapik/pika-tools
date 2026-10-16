@@ -51,7 +51,8 @@ enum TestPet {
             }
             if next() < 0.03 { pet.jump() }
             var probe = pet
-            precondition(probe.sit(1) == pet.canSit, "sit and canSit disagree in \(pet.state)")
+            let sat = probe.sit(1)
+            precondition(sat == [State.walk, .turn].contains(pet.state) && sat == pet.canSit && probe.state == (sat ? .sit : pet.state), "a pet may sit down only while it walks or turns: \(pet.state) \(sat)")
             if next() < 0.005 { pet.sit(next() * 3) }
             if next() < 0.01 { pet.sense(idle: next() * 150, typed: next() * 2, next()) }
             if next() < 0.003 { pet.calm.toggle() }
