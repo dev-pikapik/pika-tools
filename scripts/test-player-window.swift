@@ -1,12 +1,15 @@
 import AppKit
 
-final class Press: NSObject {
+final class Press: NSObject, @unchecked Sendable {
     var count = 0
     @objc func press(_ sender: Any?) { count += 1 }
 }
 
-final class Seen: @unchecked Sendable {
-    var opened = false, tracking = false, fired = 0
+final class Stand: NSWindow {
+    var shown = false
+    var sheeted: NSWindow?
+    override var isVisible: Bool { shown }
+    override var sheetParent: NSWindow? { sheeted }
 }
 
 @main
@@ -97,49 +100,6 @@ enum TestPlayerWindow {
         precondition(WindowChrome.voiceOver(arguments: [], bundleID: release, system: true), "the real VoiceOver always counts")
         print("the pointer check sees foreign windows, the VoiceOver argument works in the dev build only: ok")
 
-        func wait(_ done: () -> Bool) -> Bool {
-            let end = Date().addingTimeInterval(3)
-            while !done() && Date() < end { RunLoop.current.run(until: Date().addingTimeInterval(0.02)) }
-            return done()
-        }
-        window.orderFront(nil)
-        precondition(!WindowChrome.opened(over: window), "nothing of ours is open over a quiet player window")
-        let popover = NSPopover()
-        popover.animates = false
-        popover.contentViewController = NSViewController()
-        popover.contentViewController?.view = NSView(frame: NSRect(x: 0, y: 0, width: 120, height: 60))
-        popover.show(relativeTo: NSRect(x: 300, y: 20, width: 40, height: 20), of: content, preferredEdge: .maxY)
-        precondition(wait { WindowChrome.opened(over: window) }, "an open popover keeps the controls")
-        popover.close()
-        precondition(wait { !WindowChrome.opened(over: window) }, "a closed popover lets go")
-        let sheet = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
-        window.beginSheet(sheet)
-        precondition(wait { WindowChrome.opened(over: window) } && window.attachedSheet === sheet, "an open sheet keeps the controls")
-        window.endSheet(sheet)
-        precondition(wait { !WindowChrome.opened(over: window) }, "a closed sheet lets go")
-        let peer = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
-        peer.orderFront(nil)
-        precondition(NSApp.windows.contains(peer) && !WindowChrome.opened(over: window), "a second player window of ours is another window, not part of this one")
-        peer.orderOut(nil)
-
-        let menu = NSMenu()
-        menu.addItem(withTitle: "1x", action: nil, keyEquivalent: "")
-        let seen = Seen(), timer = Seen()
-        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: false) { _ in timer.fired += 1 }
-        let inside = Timer(timeInterval: 0.4, repeats: false) { _ in
-            seen.opened = WindowChrome.opened(over: window)
-            seen.tracking = RunLoop.current.currentMode == .eventTracking
-            seen.fired = timer.fired
-            menu.cancelTracking()
-        }
-        RunLoop.current.add(inside, forMode: .common)
-        menu.popUp(positioning: nil, at: NSPoint(x: 100, y: 100), in: content)
-        precondition(seen.tracking && seen.opened, "while the menu is tracked the player knows it is open")
-        precondition(seen.fired == 0, "and the hide timer, in the default mode, does not fire meanwhile")
-        precondition(wait { timer.fired == 1 } && !WindowChrome.opened(over: window), "once the menu is closed the overdue timer fires and nothing of ours is open")
-        window.orderOut(nil)
-        print("an open popover, sheet or menu of ours keeps the controls, the hide timer waits out the menu, a second player window does not count: ok")
-
         func click(_ y: CGFloat, _ count: Int) -> NSEvent {
             NSEvent.mouseEvent(with: .leftMouseDown, location: NSPoint(x: 100, y: y), modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 0, clickCount: count, pressure: 1)!
         }
@@ -165,5 +125,61 @@ enum TestPlayerWindow {
         precondition(zoom.window === other && zoom.convert(zoom.bounds, to: nil).contains(spot), "the button now lives in another window, as in full screen")
         precondition(!WindowChrome.overButtons(spot, in: window) && WindowChrome.overButtons(centre(.closeButton), in: window), "a button of another window does not count, the others do")
         print("a button in a system window is not ours: ok")
+
+        func stand(_ level: NSWindow.Level = .normal) -> Stand {
+            let made = Stand(contentRect: NSRect(x: 0, y: 0, width: 300, height: 100), styleMask: [.titled], backing: .buffered, defer: false)
+            made.level = level
+            made.shown = true
+            return made
+        }
+        precondition(!WindowChrome.opened(over: window), "nothing of ours is open over a quiet window")
+        let popover = stand()
+        popover.parent = window
+        precondition(WindowChrome.opened(over: window), "a shown child window of the player, like a popover, counts as open")
+        popover.shown = false
+        precondition(!WindowChrome.opened(over: window), "a hidden one does not")
+        let sheet = stand()
+        sheet.sheeted = window
+        precondition(WindowChrome.opened(over: window), "a shown sheet of the player counts as open")
+        sheet.shown = false
+        let menu = stand(.popUpMenu)
+        precondition(WindowChrome.opened(over: window), "a shown pop-up menu counts as open")
+        menu.shown = false
+        let peer = stand()
+        precondition(!WindowChrome.opened(over: window), "a second player window of ours is another window and does not count")
+        peer.shown = false
+        let corner = stand()
+        corner.parent = window
+        window.standardWindowButton(.closeButton).map { corner.contentView?.addSubview($0) }
+        precondition(!WindowChrome.opened(over: window), "the window of the buttons in full screen does not count, or the panel would never hide there")
+        popover.shown = true
+        precondition(WindowChrome.opened(over: window), "a popover next to it still does")
+        popover.shown = false
+        corner.shown = false
+        print("an open popover, sheet or menu counts as open over the player, a second player window and the full-screen buttons do not: ok")
+
+        let panelView = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
+        content.addSubview(panelView)
+        let onPanel = NSPoint(x: 200, y: 40), onPicture = NSPoint(x: 200, y: 200)
+        let own = { (_: NSPoint) in window.windowNumber }, foreign = { (_: NSPoint) in window.windowNumber + 1 }
+        precondition(WindowChrome.overControls(window, at: onPanel, panel: panelView, windowNumberAt: own), "the pointer on the panel keeps the controls")
+        precondition(!WindowChrome.overControls(window, at: onPicture, panel: panelView, windowNumberAt: own), "the pointer on the picture does not")
+        precondition(!WindowChrome.overControls(window, at: onPanel, panel: panelView, windowNumberAt: foreign), "the pointer on the panel but under another window does not")
+        sheet.shown = true
+        precondition(WindowChrome.overControls(window, at: onPicture, panel: panelView, windowNumberAt: foreign), "an open sheet keeps the controls wherever the pointer is and whichever window is under it")
+        sheet.shown = false
+        precondition(!WindowChrome.overControls(window, at: onPicture, panel: panelView, windowNumberAt: foreign), "and lets go when it is closed")
+        print("the controls stay while the pointer is on them or something of ours is open, and follow the pointer after: ok")
+
+        let sooner = Press(), later = Press()
+        RunLoop.current.add(Timer(timeInterval: 0.05, repeats: false) { _ in later.count += 1 }, forMode: .default)
+        RunLoop.current.add(Timer(timeInterval: 0.05, repeats: false) { _ in sooner.count += 1 }, forMode: .eventTracking)
+        let end = Date().addingTimeInterval(0.3)
+        while Date() < end { _ = RunLoop.current.run(mode: .eventTracking, before: end) }
+        precondition(sooner.count == 1 && later.count == 0, "a timer of the default mode, like the hide timer, waits while the run loop is in the tracking mode of a menu")
+        RunLoop.current.run(until: Date().addingTimeInterval(0.2))
+        precondition(later.count == 1, "and fires when the menu is closed")
+        precondition(!NSApp.windows.contains { $0.isVisible }, "the test shows nothing on screen")
+        print("the hide timer waits out a menu and the test shows no window: ok")
     }
 }
