@@ -50,6 +50,8 @@ enum TestPet {
                 point.y += (next() - 0.5) * 30
             }
             if next() < 0.03 { pet.jump() }
+            var probe = pet
+            precondition(probe.sit(1) == pet.canSit, "sit and canSit disagree in \(pet.state)")
             if next() < 0.005 { pet.sit(next() * 3) }
             if next() < 0.01 { pet.sense(idle: next() * 150, typed: next() * 2, next()) }
             if next() < 0.003 { pet.calm.toggle() }
@@ -782,6 +784,14 @@ enum TestPet {
         precondition(!lively.jump() && !lively.sit(2) && lively.state == .doze, "a dozing pet jumped or sat up")
         lively.sense(idle: 0.1, typed: 50, 0.25)
         precondition(lively.state == .wake, "input does not wake the pet")
+        var sleepy = lively
+        precondition(!sleepy.canSit && !sleepy.sit(2) && sleepy.state == .wake, "a pet sat down in the middle of its stretch")
+        var woke = false
+        for _ in 0..<90 where !woke {
+            sleepy.step(1.0 / 30, cursor: nil)
+            woke = sleepy.drain().contains(.woke)
+        }
+        precondition(woke && sleepy.canSit && sleepy.sit(3) && sleepy.state == .sit, "a pet that woke sleepy did not sit down: \(sleepy.state)")
         states = trace(&lively, 2)
         precondition(Array(states.prefix(2)) == [.wake, .walk] && lively.origin != spot, "a woken pet does not walk on: \(states)")
         lively.calm = true

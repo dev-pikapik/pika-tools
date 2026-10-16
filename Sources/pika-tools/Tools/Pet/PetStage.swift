@@ -53,7 +53,7 @@ final class PetStage: NSObject {
     private var eager: Double?, still: CGPoint?, stillAt = 0.0
     private var dressed: [PetSlot: PetItem]?
     private var told = 0, shown = -1
-    private var hello = false, dozed = false
+    private var hello = false
     private var owed: (phrase: PetPhrase, by: Double)?
     private static let anyInput = CGEventType(rawValue: ~0)!
 
@@ -525,7 +525,7 @@ final class PetStage: NSObject {
         }
         let events = physics.drain()
         if let progress {
-            events.forEach { progress.add($0.counter) }
+            events.compactMap(\.counter).forEach { progress.add($0) }
             progress.walk(physics.walked)
             if now >= ticked {
                 ticked = now + 30
@@ -547,8 +547,8 @@ final class PetStage: NSObject {
 
     @discardableResult
     private func feel(_ mood: PetMood, _ now: TimeInterval) -> Bool {
-        let state = physics.state, sits = mood == .bored || mood == .sleepy
-        guard demo == nil, blind == nil, state != .doze, !sits || [.walk, .turn, .wake].contains(state), mind.feel(mood, at: now) else { return false }
+        let sits = mood == .bored || mood == .sleepy
+        guard demo == nil, blind == nil, physics.state != .doze, !sits || physics.canSit, mind.feel(mood, at: now) else { return false }
         progress?.mark("mood:\(mood.rawValue)")
         switch mood {
         case .happy: progress?.add(.smiles)
@@ -577,11 +577,10 @@ final class PetStage: NSObject {
                 feel(now - tumbled < 60 ? .grumpy : .surprised, now)
                 tumbled = now
             case .leap, .climb: feel(.proud, now)
+            case .woke: feel(.sleepy, now)
             default: break
             }
         }
-        if dozed, state == .wake { feel(.sleepy, now) }
-        dozed = state == .doze
         let outfit = PetProgress.shared.outfit, news = PetProgress.shared.news.count
         if let dressed, dressed != outfit { feel(.proud, now) }
         dressed = outfit
@@ -873,13 +872,14 @@ final class PetStage: NSObject {
 }
 
 private extension PetPhysics.Event {
-    var counter: PetCounter {
+    var counter: PetCounter? {
         switch self {
         case .jump: .jumps
         case .leap: .leaps
         case .climb: .climbs
         case .tumble: .tumbles
         case .fling: .flights
+        case .woke: nil
         }
     }
 }

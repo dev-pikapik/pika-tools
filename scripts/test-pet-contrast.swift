@@ -4,7 +4,7 @@ enum PetStage { static let scale: CGFloat = 2.4 }
 
 @main
 enum TestPetContrast {
-    static let side: CGFloat = 6, floor = 1.5, limit = 0.1
+    static let side: CGFloat = 6, floor = 1.6, limit = 0.1
     static let width = Int(48 * side), height = Int(58 * side)
 
     static func linear(_ v: Double) -> Double { v <= 0.04045 ? v / 12.92 : pow((v + 0.055) / 1.055, 2.4) }
