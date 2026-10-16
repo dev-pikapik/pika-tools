@@ -329,7 +329,7 @@ The Picture in Picture window (`Helper/Player/PictureInPicture.swift`) has a che
 swiftc -parse-as-library Helper/Player/PictureInPicture.swift scripts/test-pip.swift -o build/test-pip && build/test-pip
 ```
 
-The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.swift`) makes the content run under a transparent, title-less bar, hides the three window buttons and a dark gradient under them together with the control panel, decides in `overControls` whether the panel may hide (an open sheet or menu of ours keeps it), and is the one call any other player window makes. Its test opens a real window without showing it:
+The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.swift`) makes the content run under a transparent, title-less bar, hides the three window buttons and a dark gradient under them together with the control panel, decides in `overControls` whether the panel may hide (an open sheet or menu of ours keeps it), owns the hide timer that starts again when a menu closes or a sheet ends, and is the one call any other player window makes. Its test opens a real window without showing it:
 
 ```bash
 swiftc -parse-as-library Helper/Player/WindowChrome.swift scripts/test-player-window.swift -o build/test-player-window && build/test-player-window
