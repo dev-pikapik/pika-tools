@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "更新日志, 发行说明, 版本";
 "bug, issue, feedback, support" = "错误, 问题, 反馈, 支持";
 "open source, legal" = "开源, 许可证, 源代码, 法律";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "开源, 许可证, 源代码, 法律, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "支持, 捐赠, 打赏, 赞助, 感谢, 咖啡";
 "Windows" = "窗口";
 "Dock" = "程序坞";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "恢复原来的 App";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS 会逐个格式询问，请点按“使用 pikapik Player”。";
 "macOS will ask about each format. Click “Use” each time." = "macOS 会逐个格式询问，每次请点按“使用”。";
-"FFmpeg and dav1d Licenses" = "FFmpeg 和 dav1d 许可证";
+"Player Licenses" = "播放器许可证";
 "Source Code" = "源代码";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "视频, 影片, 电影, 观看, 播放, 播放器, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "默认应用, 打开方式, 双击, 视频, 影片, 电影, mkv, avi, webm, mp4, mov, QuickTime";

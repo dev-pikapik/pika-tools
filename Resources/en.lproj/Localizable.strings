@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "changelog, release notes, version";
 "bug, issue, feedback, support" = "bug, issue, feedback, support";
 "open source, legal" = "open source, legal";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "support, donate, donation, tip, sponsor, thanks";
 "Windows" = "Windows";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Restore Previous Apps";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS will ask about each format. Click “Use pikapik Player”.";
 "macOS will ask about each format. Click “Use” each time." = "macOS will ask about each format. Click “Use” each time.";
-"FFmpeg and dav1d Licenses" = "FFmpeg and dav1d Licenses";
+"Player Licenses" = "Player Licenses";
 "Source Code" = "Source Code";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, movie, film, watch, play, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime";

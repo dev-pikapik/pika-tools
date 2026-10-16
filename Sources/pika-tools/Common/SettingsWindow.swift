@@ -225,7 +225,7 @@ struct SettingsItem: Identifiable {
             SettingsItem(tab: .player, title: String(localized: "Open Video…"), synonyms: "video, movie, film, watch, play, mkv, avi, wmv, webm, flv"),
             SettingsItem(tab: .player, title: String(localized: "Open All in pikapik"), synonyms: "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime"),
             SettingsItem(tab: .player, title: String(localized: "Music"), synonyms: "music, song, audio, flac, mp3, ogg, opus, wma, default app, open with"),
-            SettingsItem(tab: .player, title: String(localized: "FFmpeg and dav1d Licenses"), synonyms: "open source, legal"),
+            SettingsItem(tab: .player, title: String(localized: "Player Licenses"), synonyms: "open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Remove an app"), synonyms: "uninstall, remove app, delete app, delete, remove, app, application, cleaner, clean up, leftovers, trash, reset, put back, restore, undo"),
             SettingsItem(tab: .uninstaller, title: String(localized: "Offer to clean up when an app goes to the Trash"), synonyms: "uninstall, remove app, delete app, leftovers, clean up, Trash, bin, watch, automatic, offer, notify"),
             SettingsItem(tab: .background, title: String(localized: "What runs in the background"), synonyms: "login items, open at login, launch agents, launch daemons, daemons, startup, autostart, helpers, running, services, leftovers, background, turn off"),

@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "jurnal de modificări, note de lansare, versiune";
 "bug, issue, feedback, support" = "eroare, problemă, feedback, asistență, bug";
 "open source, legal" = "open source, juridic, licență";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "open source, juridic, licență, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "susținere, donație, donează, bacșiș, sponsor, mulțumesc, cafea";
 "Windows" = "Ferestre";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Restabilește aplicațiile anterioare";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS va întreba pentru fiecare format. Fă clic pe „Utilizează pikapik Player”.";
 "macOS will ask about each format. Click “Use” each time." = "macOS va întreba pentru fiecare format. Fă clic de fiecare dată pe „Utilizează”.";
-"FFmpeg and dav1d Licenses" = "Licențele FFmpeg și dav1d";
+"Player Licenses" = "Licențele playerului";
 "Source Code" = "Cod sursă";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, vizionare, redare, player, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "aplicație implicită, deschide cu, dublu clic, video, film, mkv, avi, webm, mp4, mov, QuickTime";

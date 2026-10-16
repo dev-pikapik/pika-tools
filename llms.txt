@@ -2,7 +2,7 @@
 
 > pikapik (formerly pika-tools) is a free, open-source (MIT) menu bar app for macOS 14 and newer. It collects small conveniences for the keyboard, mouse, windows and Finder in one place. Everything is off until you turn it on.
 
-It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip tool bundled for archives and FFmpeg and dav1d bundled for the player, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
+It is written in Swift and SwiftUI, has no dependencies apart from the 7-Zip tool bundled for archives and FFmpeg, dav1d, libass, FreeType, HarfBuzz and FriBidi bundled for the player, runs on Apple silicon and Intel, and is available in 23 languages. Settings can be exported as a file or synced through iCloud.
 
 ## What it does
 - Game Mode: while you play, Spotlight, Siri, ⌘Tab and Mission Control don't pop up over the game, ⌘Q and ⌘W don't close it, and the display stays on.

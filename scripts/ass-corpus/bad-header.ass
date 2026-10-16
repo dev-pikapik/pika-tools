@@ -1,0 +1,21 @@
+[Script Info]
+PlayResX: 0
+PlayResY: -5
+ScaledBorderAndShadow: maybe
+
+[V4+ Styles]
+Format: Name
+Style: Default
+
+[Fonts]
+fontname: a.ttf
+!!!!
+
+[Graphics]
+filename: x.png
+!!!!
+
+[Events]
+Format: Text, Start, End
+Dialogue: Hello,0:00:00.00,0:00:09.00
+Dialogue: {\k10}One{\k10}Two

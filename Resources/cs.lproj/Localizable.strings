@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "seznam změn, poznámky k vydání, verze";
 "bug, issue, feedback, support" = "chyba, problém, zpětná vazba, podpora";
 "open source, legal" = "open source, otevřený zdrojový kód, právní informace, licence";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "open source, otevřený zdrojový kód, právní informace, licence, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "podpora, dar, příspěvek, spropitné, sponzor, poděkování, káva";
 "Windows" = "Okna";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Vrátit původní aplikace";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS se zeptá na každý formát. Klikněte na „Použít pikapik Player“.";
 "macOS will ask about each format. Click “Use” each time." = "macOS se zeptá na každý formát. Pokaždé klikněte na „Použít“.";
-"FFmpeg and dav1d Licenses" = "Licence FFmpeg a dav1d";
+"Player Licenses" = "Licence přehrávače";
 "Source Code" = "Zdrojový kód";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, sledovat, přehrát, přehrávač, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "výchozí aplikace, otevřít v, dvojklik, video, film, mkv, avi, webm, mp4, mov, QuickTime";

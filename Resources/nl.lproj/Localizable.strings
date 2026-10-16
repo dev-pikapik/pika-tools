@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "wijzigingslog, releasenotes, versie";
 "bug, issue, feedback, support" = "bug, probleem, feedback, ondersteuning";
 "open source, legal" = "open source, juridisch, licentie";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "open source, juridisch, licentie, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "steunen, doneren, donatie, fooi, sponsor, bedankt, koffie";
 "Windows" = "Vensters";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Vorige apps herstellen";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS vraagt het voor elk formaat. Klik op ‘Gebruik pikapik Player’.";
 "macOS will ask about each format. Click “Use” each time." = "macOS vraagt het voor elk formaat. Klik elke keer op ‘Gebruik’.";
-"FFmpeg and dav1d Licenses" = "Licenties van FFmpeg en dav1d";
+"Player Licenses" = "Licenties van de speler";
 "Source Code" = "Broncode";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, kijken, afspelen, speler, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "standaardapp, open met, dubbelklik, video, film, mkv, avi, webm, mp4, mov, QuickTime";

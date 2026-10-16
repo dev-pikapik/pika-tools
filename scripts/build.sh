@@ -81,8 +81,8 @@ for ARCH in arm64 x86_64; do
         -module-name Player \
         -target "$ARCH-apple-macos$MIN_OS" \
         "${EMIT[@]}" \
-        -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
-        Vendor/ffmpeg/lib/*.dylib -Xlinker -dead_strip_dylibs \
+        -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include \
+        Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -dead_strip_dylibs \
         -Xlinker -rpath -Xlinker @executable_path/../../../../Frameworks \
         "${PLAYER_SOURCES[@]}" \
         -o "build/player-$ARCH"
@@ -187,7 +187,7 @@ if [ -z "${APPSTORE:-}" ]; then
     cp Vendor/7zip/License.txt "$RES/7-Zip License.txt"
     mkdir -p "$APP/Contents/Frameworks"
     cp Vendor/ffmpeg/lib/*.dylib "$APP/Contents/Frameworks/"
-    cp Vendor/ffmpeg/License.txt "$RES/FFmpeg License.txt"
+    cp Vendor/ffmpeg/License.txt "$RES/Player Licenses.txt"
 fi
 cp Resources/github.svg Resources/AppIcon.icon/Assets/pikapik.svg "$RES/"
 [ -n "${APPSTORE:-}" ] && cp Resources/PrivacyInfo.xcprivacy "$RES/"

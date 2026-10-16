@@ -153,47 +153,70 @@ enum TestTracks {
         return (host, view)
     }
 
-    static func assBlock(_ text: String, style: String = "Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,10,10,10,1") -> SubtitleBlock? {
-        let script = "[Script Info]\nPlayResY: 288\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n\(style)\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\nDialogue: 0,0:00:01.00,0:00:03.00,Default,,0,0,0,,\(text)\n"
-        return SubtitleParser.parse(script).first?.block
+    static let assStyle = "Style: Default,Helvetica,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,10,10,10,1"
+
+    static func assScript(_ lines: [String], style: String = assStyle) -> String {
+        "[Script Info]\nPlayResX: 512\nPlayResY: 288\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n\(style)\n\n[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"
+            + lines.map { "Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,\($0)\n" }.joined()
     }
 
-    static func styledDrawing() {
+    /// Waits until libass has drawn the request; its answer comes on the main queue before the sentinel does.
+    static func drawn(_ engine: AssEngine, _ track: AssTrack, at time: Double, canvas: AssCanvas) async -> AssFrame? {
+        var result: AssFrame?
+        engine.forget()
+        engine.render(track, at: time, canvas: canvas) { result = $0 }
+        while !engine.isIdle { try? await Task.sleep(for: .milliseconds(1)) }
+        var delivered = false
+        DispatchQueue.main.async { delivered = true }
+        while !delivered { try? await Task.sleep(for: .milliseconds(1)) }
+        return result
+    }
+
+    @MainActor static func assDrawing() async {
+        guard let engine = AssEngine() else { return check(false, "ASS: libass starts") }
+        engine.finishFonts()
         let (host, view) = makeHost()
-        func shot(_ text: String, style: String? = nil) -> Picture {
-            view.show(SubtitleScene(blocks: [style.flatMap { assBlock(text, style: $0) } ?? assBlock(text)].compactMap { $0 }))
-            return picture(of: host, background: 0.35)
+        func shot(_ lines: String..., at time: Double = 1, in view: SubtitleView = view, host: NSView = host, width: Int = 800, height: Int = 450) async -> Picture {
+            view.show(ass: await drawn(engine, AssTrack(engine: engine, script: assScript(lines))!, at: time, canvas: view.assCanvas))
+            return picture(of: host, background: 0.35, width: width, height: height)
         }
-        let plain = shot("Hello world")
-        let white = plain.box { $0 > 240 && $1 > 240 && $2 > 240 }
+        let whiteBox = { (picture: Picture) in picture.box { $0 > 240 && $1 > 240 && $2 > 240 } }
+        let plain = (await shot("Hello world"))
+        let white = whiteBox(plain)
         check(white.count > 200 && white.low < 90 && abs((white.left + white.right) / 2 - 400) < 40, "ASS: the default style is white text at the bottom centre")
-        check(plain.box { $0 < 20 && $1 < 20 && $2 < 20 }.count > 200, "ASS: the style outline draws a dark edge around the letters")
-        let tinted = shot("{\\c&H0000FF&}Hello world")
-        check(tinted.box(red).count > 200 && tinted.box { $0 > 240 && $1 > 240 && $2 > 240 }.count == 0, "ASS: \\c colours the letters red (BGR order)")
-        let edged = shot("{\\3c&H00FF00&\\bord4}Hello world")
-        check(edged.box(green).count > 300, "ASS: \\3c and \\bord paint a green outline")
-        let wide = shot("{\\bord0}Hello world").box { $0 < 20 && $1 < 20 && $2 < 20 }.count
-        check(wide == 0, "ASS: \\bord0 removes the outline")
-        let regular = shot("{\\bord0}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
-        let bold = shot("{\\bord0\\b1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
-        let underlined = shot("{\\bord0\\u1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
-        let italic = shot("{\\bord0\\i1}Hello world").box { $0 > 240 && $1 > 240 && $2 > 240 }
-        check(bold.count > regular.count && underlined.count > regular.count && italic.count != regular.count, "ASS: \\b, \\u and \\i change how the letters look: \(regular.count) / \(bold.count) / \(underlined.count) / \(italic.count)")
-        let places = [1: shot("{\\an1}Hello world"), 3: shot("{\\an3}Hello world"), 5: shot("{\\an5}Hello world"), 7: shot("{\\an7}Hello world"), 9: shot("{\\an9}Hello world")].mapValues { $0.box { $0 > 240 && $1 > 240 && $2 > 240 } }
+        let edge = plain.box { $0 < 60 && $1 < 60 && $2 < 60 }.count
+        check(edge > 150, "ASS: the style outline draws a dark edge around the letters: \(edge) dark pixels")
+        let tinted = (await shot("{\\c&H0000FF&}Hello world"))
+        check(tinted.box(red).count > 200 && whiteBox(tinted).count == 0, "ASS: \\c colours the letters red (BGR order)")
+        check((await shot("{\\3c&H00FF00&\\bord4}Hello world")).box(green).count > 300, "ASS: \\3c and \\bord paint a green outline")
+        let regular = (await shot("{\\bord0}Hello world"))
+        check(regular.box { $0 < 20 && $1 < 20 && $2 < 20 }.count == 0, "ASS: \\bord0 removes the outline")
+        let (bold, underlined, italic) = (whiteBox((await shot("{\\bord0\\b1}Hello world"))), whiteBox((await shot("{\\bord0\\u1}Hello world"))), whiteBox((await shot("{\\bord0\\i1}Hello world"))))
+        let flat = whiteBox(regular)
+        check(bold.count > flat.count && underlined.count > flat.count && italic.count != flat.count, "ASS: \\b, \\u and \\i change how the letters look: \(flat.count) / \(bold.count) / \(underlined.count) / \(italic.count)")
+        var places: [Int: (count: Int, left: Int, right: Int, low: Int, high: Int)] = [:]
+        for place in [1, 3, 5, 7, 9] { places[place] = whiteBox(await shot("{\\an\(place)}Hello world")) }
         check(places[1]!.left < 80 && places[1]!.low < 90 && places[3]!.right > 720 && places[3]!.low < 90, "ASS: \\an1 and \\an3 sit in the bottom corners")
         check(places[7]!.left < 80 && places[7]!.high > 360 && places[9]!.right > 720 && places[9]!.high > 360, "ASS: \\an7 and \\an9 sit in the top corners")
         check(abs((places[5]!.low + places[5]!.high) / 2 - 225) < 30 && abs((places[5]!.left + places[5]!.right) / 2 - 400) < 40, "ASS: \\an5 sits in the middle")
         let (taller, tallView) = makeHost(width: 1600, height: 900)
-        tallView.show(SubtitleScene(blocks: [assBlock("{\\bord0}Hello world")].compactMap { $0 }))
-        let big = picture(of: taller, background: 0.35, width: 1600, height: 900).box { $0 > 240 && $1 > 240 && $2 > 240 }
-        check(regular.count > 0 && big.high - big.low > (regular.high - regular.low) * 3 / 2, "ASS: the letters grow with the height of the picture (font 20 of 288)")
-        let mixed = shot("{\\c&H0000FF&}Red {\\c&HFF0000&}Blue")
+        let big = whiteBox((await shot("{\\bord0}Hello world", in: tallView, host: taller, width: 1600, height: 900)))
+        check(flat.count > 0 && big.high - big.low > (flat.high - flat.low) * 3 / 2, "ASS: the letters grow with the height of the picture (font 20 of 288)")
+        let mixed = (await shot("{\\c&H0000FF&}Red {\\c&HFF0000&}Blue"))
         check(mixed.box(red).count > 100 && mixed.box { $2 > 170 && $0 < 90 && $1 < 90 }.count > 100, "ASS: two colours in one line are both drawn")
-        let animated = shot("{\\fad(300,300)\\move(0,0,100,100)\\k30}Read me")
-        check(animated.box { $0 > 240 && $1 > 240 && $2 > 240 }.count > 100, "ASS: fades, moves and karaoke leave readable plain text")
-        view.show(SubtitleScene(blocks: [assBlock("{\\an8}Top"), assBlock("Bottom")].compactMap { $0 }))
-        let both = picture(of: host, background: 0.35).box { $0 > 240 && $1 > 240 && $2 > 240 }
-        check(both.low < 90 && both.high > 360, "ASS: two lines with different places both show")
+        let (start, later) = (whiteBox((await shot("{\\an7\\bord0\\move(0,0,100,100,0,1000)}Hello", at: 0.05))), whiteBox((await shot("{\\an7\\bord0\\move(0,0,100,100,0,1000)}Hello", at: 0.95))))
+        check(start.count > 50 && later.count > 50 && later.left - start.left > 100 && start.high - later.high > 100, "ASS: \\move carries the text across the picture: \(start) to \(later)")
+        let karaoke = [await shot("{\\an5\\bord0\\k100}Sing {\\k100}along", at: 0.1), await shot("{\\an5\\bord0\\k100}Sing {\\k100}along", at: 1.9)]
+        check(karaoke[0].box(red).count > 100 && karaoke[0].box(red).count > karaoke[1].box(red).count, "ASS: karaoke paints the words that have not been sung yet in the secondary colour")
+        let both = (await shot("{\\an8}Top", "Bottom"))
+        check(whiteBox(both).low < 90 && whiteBox(both).high > 360, "ASS: two lines with different places both show")
+        view.videoSize = CGSize(width: 400, height: 300)
+        host.layoutSubtreeIfNeeded()
+        let boxed = whiteBox((await shot("{\\an7}Hello", "{\\an9}Hello")))
+        check(boxed.left >= 100 && boxed.right <= 700, "ASS: the text stays on the video, not on the bars beside it: \(boxed.left)...\(boxed.right)")
+        view.videoSize = .zero
+        view.show(ass: nil)
+        check(picture(of: host, background: 0).white().count == 0, "ASS: the picture goes away when the subtitle ends")
     }
 
     static func pictureDrawing(_ cue: PictureCue, _ later: PictureCue) {
@@ -242,11 +265,12 @@ enum TestTracks {
         var streams: [SubtitleStream]?
         var cues: [Int32: [SubtitleCue]] = [:]
         var pictures: [Int32: [PictureCue]] = [:]
+        var changes = 0
     }
 
-    static func scan(_ url: URL, start: Double = 0, expecting: Int, for seconds: Double = 8) async -> Found {
+    static func scan(_ url: URL, start: Double = 0, expecting: Int, for seconds: Double = 8, engine: AssEngine? = nil) async -> Found {
         let found = Found()
-        let scanner = SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }, onPictures: { found.pictures[$0] = $1 })
+        let scanner = SubtitleScanner(url: url, start: start, onStreams: { found.streams = $0 }, onCues: { found.cues[$0] = $1 }, onPictures: { found.pictures[$0] = $1 }, engine: engine)
         let deadline = Date().addingTimeInterval(seconds)
         while Date() < deadline, found.streams == nil || found.cues.values.reduce(0, { $0 + $1.count }) + found.pictures.values.reduce(0, { $0 + $1.count }) < expecting { try? await Task.sleep(for: .milliseconds(50)) }
         scanner.cancel()
@@ -300,10 +324,34 @@ enum TestTracks {
         check(b.count == 2 && SubtitleText.plain(b[0].text) == "Первая русская строка" && b[1].start == 4, "MKV: Russian cues")
         check(SubtitleText.spans(a[1].text).contains { $0.italic && $0.text == "English" }, "MKV: italic kept as a style, not as a tag")
 
-        for (name, url, format) in [("mov_text in MP4", movText, SubtitleFormat.movText), ("ASS in MKV", ass, .ass), ("WebVTT in MKV", vtt, .webvtt)] {
+        for (name, url, format) in [("mov_text in MP4", movText, SubtitleFormat.movText), ("WebVTT in MKV", vtt, .webvtt)] {
             found = await scan(url, expecting: 2)
             let cues = found.cues.values.first ?? []
             check(found.streams?.count == 1 && found.streams?.first?.format == format && cues.count == 2 && SubtitleText.plain(cues[0].text) == "First English line" && abs(cues[0].start - 1) < 0.01 && abs(cues[1].start - 4) < 0.01 && !cues[1].text.contains("<"), "\(name): \(cues.count) cues, first at \(cues.first?.start ?? -1) s")
+        }
+        let libass = AssEngine()!
+        let sung = Found()
+        let sungScanner = SubtitleScanner(url: ass, start: 0, onStreams: { sung.streams = $0 }, onCues: { _, _ in }, engine: libass, onAss: { _ in sung.changes += 1 })
+        await waitFor { sung.changes > 0 }
+        sungScanner.cancel()
+        let sungTrack = sung.streams?.first?.ass
+        check(sung.streams?.count == 1 && sung.streams?.first?.format == .ass && sung.streams?.first?.language == nil && sungTrack?.isEmpty == false && sung.cues.isEmpty, "ASS in MKV: the track keeps its events for libass, not as plain cues")
+        if let sungTrack {
+            let screen = AssCanvas(size: CGSize(width: 640, height: 360), video: CGSize(width: 320, height: 180), scale: 1)
+            let first = await drawn(libass, sungTrack, at: 1.5, canvas: screen)
+            let between = await drawn(libass, sungTrack, at: 3.5, canvas: screen)
+            let second = await drawn(libass, sungTrack, at: 4.5, canvas: screen)
+            check(first != nil && between == nil && second != nil && first.map { $0.rect.midY > 180 } == true, "ASS in MKV: libass draws the line at 1.5 s and 4.5 s, nothing between, at the bottom")
+        }
+        let fontFile = ["/System/Library/Fonts/Supplemental/Arial.ttf", "/System/Library/Fonts/Supplemental/Courier New.ttf", "/System/Library/Fonts/Supplemental/Times New Roman.ttf"].first { FileManager.default.fileExists(atPath: $0) }
+        if let fontFile {
+            let withFont = make(ffmpeg, "ass-font.mkv", in: folder, video + tone(440) + ["-i", english.path, "-map", "0:v", "-map", "1:a", "-map", "2", "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-c:a", "aac", "-c:s", "ass", "-attach", fontFile, "-metadata:s:t:0", "mimetype=application/x-truetype-font"])
+            let fonts = AssEngine()!
+            let carried = await scan(withFont, expecting: 0, for: 4, engine: fonts)
+            await waitFor { fonts.fontBytes > 0 }
+            check(carried.streams?.count == 1 && fonts.fontBytes == (try? Data(contentsOf: URL(fileURLWithPath: fontFile)).count), "ASS in MKV: the font attached to the file goes to libass (\(fonts.fontBytes) bytes)")
+        } else {
+            check(false, "no system font to attach to the test file")
         }
         found = await scan(plain, expecting: 1, for: 2)
         check(found.streams?.isEmpty == true && found.cues.isEmpty, "a file without subtitles finds none")
@@ -381,7 +429,7 @@ enum TestTracks {
                 let broken = folder.appendingPathComponent("broken-" + url.lastPathComponent)
                 try! bytes.write(to: broken)
                 damaged += 1
-                _ = await scan(broken, expecting: .max, for: 1)
+                _ = await scan(broken, expecting: .max, for: 1, engine: libass)
             }
         }
         _ = await scan(folder.appendingPathComponent("missing.mkv"), expecting: 1, for: 1)
@@ -538,7 +586,7 @@ enum TestTracks {
         subtitles.choose(pictureTrack?.id)
         now = 1
         await settle { !subtitles.view.scene.pictures.isEmpty }
-        check(subtitles.view.scene.pictures.count == 1 && subtitles.view.scene.blocks.isEmpty, "a picture track shows its picture at 1 s")
+        check(subtitles.view.scene.pictures.count == 1 && subtitles.view.ass == nil, "a picture track shows its picture at 1 s")
         now = 2.5
         subtitles.refresh()
         check(subtitles.view.scene.pictures.isEmpty, "between two pictures nothing shows")
@@ -563,7 +611,35 @@ enum TestTracks {
         check(!subtitles.ticking, "closing the video stops the clock")
 
         drawing()
-        styledDrawing()
+        subtitles.view.frame = NSRect(x: 0, y: 0, width: 800, height: 450)
+        subtitles.open(ass, resume: 0, saved: "", delay: 0, audioLanguage: nil, neighbours: nil)
+        await settle { subtitles.tracks.count == 1 }
+        subtitles.choose(subtitles.tracks.first?.id)
+        now = 1.5
+        subtitles.refresh()
+        await settle { subtitles.view.ass != nil }
+        check(subtitles.view.ass != nil && subtitles.view.shown == nil && subtitles.ticking, "an ASS track shows libass's picture at 1.5 s and the clock runs for animation: picture \(subtitles.view.ass != nil), text \(subtitles.view.shown ?? "none"), clock \(subtitles.ticking), tracks \(subtitles.tracks.map(\.id)), chosen \(subtitles.selected ?? "none")")
+        now = 3.5
+        subtitles.refresh()
+        await settle { subtitles.view.ass == nil }
+        check(subtitles.view.ass == nil, "between two ASS lines nothing shows")
+        subtitles.playing = { false }
+        now = 4.5
+        subtitles.refresh()
+        await settle { subtitles.view.ass != nil }
+        check(subtitles.view.ass != nil && !subtitles.ticking, "on pause a seek draws the ASS line once, and the clock stays off")
+        subtitles.playing = { true }
+        subtitles.close()
+        check(subtitles.view.ass == nil && subtitles.tracks.isEmpty, "closing the video clears the ASS picture")
+        let sideScript = write(assScript(["{\\an8\\k50}Side script"]), "side.ass", in: folder)
+        subtitles.open(plain, resume: 0, saved: "", delay: 0, audioLanguage: nil, neighbours: [])
+        subtitles.load(sideScript, select: true, failed: {})
+        now = 1
+        await settle { subtitles.view.ass != nil }
+        check(subtitles.tracks.count == 1 && subtitles.view.ass != nil, "an .ass file opened from the menu is drawn by libass")
+        subtitles.close()
+
+        await assDrawing()
 
         print(failures == 0 ? "all track checks passed" : "\(failures) track checks FAILED")
         exit(failures == 0 ? 0 : 1)

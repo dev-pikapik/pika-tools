@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "değişiklik günlüğü, sürüm notları, sürüm";
 "bug, issue, feedback, support" = "hata, sorun, geri bildirim, destek, bug";
 "open source, legal" = "açık kaynak, open source, yasal, lisans";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "açık kaynak, open source, yasal, lisans, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "destek, bağış, bahşiş, sponsor, teşekkür, kahve";
 "Windows" = "Pencereler";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Önceki Uygulamaları Geri Getir";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS her biçim için soracak. “pikapik Player’ı Kullan” düğmesine tıklayın.";
 "macOS will ask about each format. Click “Use” each time." = "macOS her biçim için soracak. Her seferinde “Kullan” düğmesine tıklayın.";
-"FFmpeg and dav1d Licenses" = "FFmpeg ve dav1d Lisansları";
+"Player Licenses" = "Oynatıcı Lisansları";
 "Source Code" = "Kaynak Kodu";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, izle, oynat, oynatıcı, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "varsayılan uygulama, birlikte aç, çift tıklama, video, film, mkv, avi, webm, mp4, mov, QuickTime";

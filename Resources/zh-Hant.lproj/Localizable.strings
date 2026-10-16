@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "更新記錄, 版本說明, 版本";
 "bug, issue, feedback, support" = "錯誤, 問題, 意見回饋, 支援";
 "open source, legal" = "開放原始碼, 授權, 法律";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "開放原始碼, 授權, 法律, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "支持, 捐款, 斗內, 贊助, 感謝, 咖啡";
 "Windows" = "視窗";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "還原原本的 App";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS 會逐個格式詢問，請點按「使用 pikapik Player」。";
 "macOS will ask about each format. Click “Use” each time." = "macOS 會逐個格式詢問，每次請點按「使用」。";
-"FFmpeg and dav1d Licenses" = "FFmpeg 與 dav1d 授權";
+"Player Licenses" = "播放器授權";
 "Source Code" = "原始碼";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "影片, 視訊, 電影, 觀看, 播放, 播放器, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "預設 App, 打開方式, 按兩下, 影片, 視訊, 電影, mkv, avi, webm, mp4, mov, QuickTime";

@@ -143,7 +143,7 @@ jobs:
           if ./scripts/release-notes.sh "$VERSION" > build/notes.md; then NOTES=(--notes-file build/notes.md); else NOTES=(--generate-notes); fi
           ./scripts/fetch-7zip.sh --source build
           ./scripts/fetch-ffmpeg.sh --source build
-          gh release create "$GITHUB_REF_NAME" build/pikapik.zip build/pikapik.dmg build/pika-tools.zip build/7-Zip-26.04-source.tar.xz build/ffmpeg-8.1.3.tar.xz build/dav1d-1.5.4.tar.xz \
+          gh release create "$GITHUB_REF_NAME" build/pikapik.zip build/pikapik.dmg build/pika-tools.zip build/7-Zip-26.04-source.tar.xz build/ffmpeg-8.1.3.tar.xz build/dav1d-1.5.4.tar.xz build/libass-0.17.5.tar.xz build/freetype-2.15.0.tar.xz build/harfbuzz-14.6.0.tar.xz build/fribidi-1.0.17.tar.xz \
             --title "pikapik $VERSION" \
             "${NOTES[@]}"
 

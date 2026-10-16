@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "log perubahan, catatan rilis, changelog, versi";
 "bug, issue, feedback, support" = "bug, masalah, umpan balik, dukungan";
 "open source, legal" = "sumber terbuka, open source, lisensi, hukum";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "sumber terbuka, open source, lisensi, hukum, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "dukung, donasi, tip, sponsor, terima kasih, kopi";
 "Windows" = "Jendela";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Pulihkan App Sebelumnya";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS akan bertanya untuk setiap format. Klik “Gunakan pikapik Player”.";
 "macOS will ask about each format. Click “Use” each time." = "macOS akan bertanya untuk setiap format. Klik “Gunakan” setiap kali.";
-"FFmpeg and dav1d Licenses" = "Lisensi FFmpeg dan dav1d";
+"Player Licenses" = "Lisensi pemutar";
 "Source Code" = "Kode sumber";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, film, tonton, putar, pemutar, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "app default, buka dengan, klik dua kali, video, film, mkv, avi, webm, mp4, mov, QuickTime";

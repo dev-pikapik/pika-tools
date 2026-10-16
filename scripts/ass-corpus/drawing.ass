@@ -1,0 +1,19 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Helvetica,36,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\an7\pos(0,0)\p1}m 0 0 l 100 0 100 100 0 100
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p4\pos(300,200)}m 0 0 b 100 0 100 100 0 100 c s 50 50 50 -50 -50 -50 n 1 1
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p-1}m 1 1 l 2 2
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p100}m 99999999999 0 l 1 1 1e30 4
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p1\fscx9999\fscy9999}m 0 0 l 1000000 0 1000000 1000000
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p1}m l b s c n p m
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\p1\frx90\fry90\frz90\fax5\fay5}m 0 0 l 100 100 0 100

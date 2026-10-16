@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "nhật ký thay đổi, ghi chú phát hành, changelog, phiên bản";
 "bug, issue, feedback, support" = "lỗi, bug, sự cố, phản hồi, hỗ trợ";
 "open source, legal" = "mã nguồn mở, open source, giấy phép, pháp lý";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "mã nguồn mở, open source, giấy phép, pháp lý, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "ủng hộ, quyên góp, donate, tip, tài trợ, cảm ơn, cà phê";
 "Windows" = "Cửa sổ";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "Khôi phục ứng dụng trước đó";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS sẽ hỏi từng định dạng. Bấm “Dùng pikapik Player”.";
 "macOS will ask about each format. Click “Use” each time." = "macOS sẽ hỏi từng định dạng. Mỗi lần bấm “Dùng”.";
-"FFmpeg and dav1d Licenses" = "Giấy phép FFmpeg và dav1d";
+"Player Licenses" = "Giấy phép của trình phát";
 "Source Code" = "Mã nguồn";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "video, phim, xem, phát, trình phát, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "ứng dụng mặc định, mở bằng, nhấp đúp, video, phim, mkv, avi, webm, mp4, mov, QuickTime";

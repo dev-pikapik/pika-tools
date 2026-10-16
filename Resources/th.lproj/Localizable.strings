@@ -115,6 +115,7 @@
 "changelog, release notes, version" = "บันทึกการเปลี่ยนแปลง, หมายเหตุประจำรุ่น, changelog, เวอร์ชัน";
 "bug, issue, feedback, support" = "บั๊ก, bug, ปัญหา, คำติชม, การสนับสนุน";
 "open source, legal" = "โอเพนซอร์ส, open source, สัญญาอนุญาต, กฎหมาย";
+"open source, legal, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi" = "โอเพนซอร์ส, open source, สัญญาอนุญาต, กฎหมาย, FFmpeg, dav1d, libass, FreeType, HarfBuzz, FriBidi";
 "support, donate, donation, tip, sponsor, thanks" = "สนับสนุน, บริจาค, ทิป, สปอนเซอร์, ขอบคุณ, กาแฟ";
 "Windows" = "หน้าต่าง";
 "Dock" = "Dock";
@@ -1198,7 +1199,7 @@
 "Restore Previous Apps" = "คืนค่าแอปก่อนหน้า";
 "macOS will ask about each format. Click “Use pikapik Player”." = "macOS จะถามทีละรูปแบบ คลิก “ใช้ pikapik Player”";
 "macOS will ask about each format. Click “Use” each time." = "macOS จะถามทีละรูปแบบ คลิก “ใช้” ทุกครั้ง";
-"FFmpeg and dav1d Licenses" = "สัญญาอนุญาตของ FFmpeg และ dav1d";
+"Player Licenses" = "สัญญาอนุญาตของเครื่องเล่น";
 "Source Code" = "ซอร์สโค้ด";
 "video, movie, film, watch, play, mkv, avi, wmv, webm, flv" = "วิดีโอ, หนัง, ภาพยนตร์, ดู, เล่น, เครื่องเล่น, mkv, avi, wmv, webm, flv";
 "default app, open with, double-click, video, movie, mkv, avi, webm, mp4, mov, QuickTime" = "แอปเริ่มต้น, เปิดด้วย, ดับเบิลคลิก, วิดีโอ, หนัง, ภาพยนตร์, mkv, avi, webm, mp4, mov, QuickTime";

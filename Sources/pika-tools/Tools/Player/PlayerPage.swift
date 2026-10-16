@@ -4,7 +4,7 @@ import UniformTypeIdentifiers
 
 struct PlayerPage: View {
     static let helper = Bundle.main.bundleURL.appending(path: "Contents/Helpers/pikapik Player.app")
-    private static let license = Bundle.main.url(forResource: "FFmpeg License", withExtension: "txt")
+    private static let license = Bundle.main.url(forResource: "Player Licenses", withExtension: "txt")
     private static let source = URL(string: "https://github.com/dev-pikapik/pika-tools/releases/latest")!
     private static let videos = DefaultApps(types: PlayerFormats.videoTypes, target: helper, previousKey: "player-video-previous-apps")
     private static let songs = DefaultApps(types: PlayerFormats.musicTypes, target: helper, previousKey: "player-music-previous-apps", fallback: "com.apple.Music")
@@ -24,7 +24,7 @@ struct PlayerPage: View {
             Section("Music") { formats(Self.songs, PlayerFormats.music, anchor: String(localized: "Music")) }
             Section {
                 if let license = Self.license {
-                    row(String(localized: "FFmpeg and dav1d Licenses"), symbol: "doc.text.fill", color: .green) { NSWorkspace.shared.open(license) }
+                    row(String(localized: "Player Licenses"), symbol: "doc.text.fill", color: .green) { NSWorkspace.shared.open(license) }
                 }
                 row(String(localized: "Source Code"), symbol: "chevron.left.forwardslash.chevron.right", color: .gray) { NSWorkspace.shared.open(Self.source) }
             }
