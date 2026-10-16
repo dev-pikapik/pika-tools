@@ -6,6 +6,13 @@ struct RunningCopy: Equatable {
     let launched: Date
 }
 
+extension RunningCopy {
+    init?(pid: Int32, bundleID: String) {
+        guard let launched = MainCopyChoice.started(pid) else { return nil }
+        self.init(pid: pid, bundleID: bundleID, launched: launched)
+    }
+}
+
 enum MainCopyChoice {
     static let websiteID = "com.pesotchi.pika-tools"
     static let appStoreID = "com.pikapik.tools"

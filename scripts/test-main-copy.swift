@@ -165,9 +165,14 @@ struct TestMainCopy {
         let first = MainCopyChoice.started(child.processIdentifier)
         precondition(first.map { abs($0.timeIntervalSince(launched)) < 1 } == true, "a child's start is the moment it was launched: \(String(describing: first)) vs \(launched)")
         precondition(MainCopyChoice.started(child.processIdentifier) == first, "reading a process's start twice gives the same date")
+        let me = RunningCopy(pid: getpid(), bundleID: MainCopyChoice.websiteID)!, peer = RunningCopy(pid: child.processIdentifier, bundleID: MainCopyChoice.websiteID)!
+        precondition(me.launched == MainCopyChoice.started(getpid()), "a copy's own date is its process's start")
+        precondition(peer.launched == MainCopyChoice.started(child.processIdentifier), "a peer's date is its own process's start, not ours: \(peer.launched) vs \(String(describing: MainCopyChoice.started(child.processIdentifier)))")
+        precondition(peer.launched > me.launched, "the later process is the later copy")
+        precondition(abs(peer.launched.timeIntervalSince(launched)) < 1, "a peer's date is its launch moment, not the moment it was read")
         child.terminate()
         child.waitUntilExit()
-        precondition(MainCopyChoice.started(Int32.max) == nil, "a process that does not exist has no start")
+        precondition(MainCopyChoice.started(Int32.max) == nil && RunningCopy(pid: Int32.max, bundleID: MainCopyChoice.websiteID) == nil, "a process that does not exist has no start and is no copy")
         print("a process's start comes from the kernel: this one is in the past, a child's is its launch moment and never changes, a missing one has none: ok")
     }
 
