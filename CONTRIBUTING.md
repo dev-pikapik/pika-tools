@@ -188,6 +188,36 @@ Awards and wardrobe unlocks live in `PetProgress`. `PetPhysics` reports what the
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetWardrobe.swift Sources/pika-tools/Tools/Pet/PetAwards.swift scripts/test-awards.swift -o build/test-awards && build/test-awards
 ```
 
+The pet’s feelings are a face (eye, brow, mouth, blush, a mark above the head) that `PetMind` fades between. `PetStage` cues a mood from what the pet already knows (being picked up, a kick, an award, a late hour) and the rules are plain numbers: a higher mood interrupts a lower one, the same cue extends a mood instead of restarting it, every mood rests before it can come back, and the pet starts at most one mood of its own every three minutes. The rules run without the app too:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/PetMood.swift scripts/test-mood.swift -o build/test-mood && build/test-mood
+```
+
+What the pet feels, when it sits down and when it says a phrase it owes live in `PetCues`, which has no AppKit, and `PetStage` only feeds it the clock and the pet: a pet that wakes from a doze is sleepy and sits, the morning phrase waits for the yawn and is never lost, a phrase owed while the pet cannot sit waits until it can, and bored and sleepy never start while it cannot sit:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetCues,PetMood,PetPhrases,PetPhysics,BallPhysics,PetWardrobe,PetAwards}.swift scripts/test-pet-cues.swift -o build/test-pet-cues && build/test-pet-cues
+```
+
+Each mark stays 0.4 units clear of the pet and of every hat and back item, in every pose and both facings, so the crown heights in `PetFigure.mark` can’t drift out of date:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-marks.swift -o build/test-pet-marks && build/test-pet-marks
+```
+
+Every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window; a fill that falls below that gets a thin gray rim under it (about 0.8 pt on screen) at full strength. At most 10% of any outline may stay below 3:1 against white and against #1E1E1E (day and night colours on both), in walking, sitting and jumping poses and both facings, and where the rim is gray its first 2 render px (the test draws at scale 6) must keep the 3:1 too and the rim must stick out 2 to 3 render px, so a rim half or twice as wide fails:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
+```
+
+The outline must stay cheap: drawing every item and look with it costs at most 0.3 ms more per frame than without it (release build on an idle Mac; add `raster` to also fill the paths). This check is manual: CI does not run it, because timings on shared runners are too noisy to hold a 0.3 ms limit:
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/bench-pet.swift -o build/bench-pet && build/bench-pet
+```
+
 The app and the pet tell you about an update only when the latest release is newer than the running version, compared number by number, so `1.26.10` is newer than `1.26.9` and `v1.27.0` equals `1.27.0`. The comparison lives in `Version`:
 
 ```bash

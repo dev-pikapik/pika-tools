@@ -2,7 +2,7 @@ import CoreGraphics
 
 struct PetPhysics {
     enum State { case walk, turn, jump, tumble, lie, getUp, sit, kick, held, thrown, doze, wake }
-    enum Event { case jump, leap, climb, tumble, fling }
+    enum Event { case jump, leap, climb, tumble, fling, woke }
 
     static let size = CGSize(width: 30, height: 32)
     static let pointer = CGSize(width: 16, height: 22)
@@ -134,9 +134,11 @@ struct PetPhysics {
         return events
     }
 
+    var canSit: Bool { state == .walk || state == .turn }
+
     @discardableResult
     mutating func sit(_ seconds: Double) -> Bool {
-        guard state == .walk || state == .turn else { return false }
+        guard canSit else { return false }
         if state == .turn { facing = heading }
         enter(.sit, seconds)
         return true
@@ -292,8 +294,13 @@ struct PetPhysics {
                 facing = heading
                 enter(.getUp, calm ? 0.3 : 0.5)
             }
-        case .getUp, .sit, .kick, .wake:
+        case .getUp, .sit, .kick:
             if clock >= hold { enter(.walk) }
+        case .wake:
+            if clock >= hold {
+                enter(.walk)
+                events.append(.woke)
+            }
         case .doze:
             break
         case .held:

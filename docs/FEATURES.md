@@ -1684,68 +1684,81 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 ### Pet on the desktop
 
-**Does:** A small pet walks along the bottom of the screen and reacts to you.
+**Does:** A small pet walks along the bottom of the screen and reacts to you. It also shows nine feelings (happy, excited, proud, curious, surprised, shy, bored, sleepy and a little grumpy): each is a face, a small sign over its head and sometimes a hop, in answer to what you do. It never asks for anything and makes no sound.
 
-**How it works:** `Sources/pika-tools/Tools/Pet/PetTool.swift:159`, overlay window `PetStage`, physics `PetPhysics.swift`. No permission needed. Website reads Dock icon positions through Accessibility (`PetStage.swift:346`) and announces updates (`:673`); App Store uses a window-list check for full screen and the screen’s full width (`PetStage.swift:272,338`).
+**How it works:** `Sources/pika-tools/Tools/Pet/PetTool.swift` (`PetSettings`), overlay window `PetStage`, physics `PetPhysics.swift`. No permission needed. Website reads Dock icon positions through Accessibility (`PetStage.tiles`) and announces updates (`PetStage.nextPhrase`); App Store uses a window-list check for full screen (`PetStage.fullscreen`) and the screen’s full width (`PetStage.dock`). Feelings: the rules are plain numbers in `PetMood.swift` (`PetMood`, `PetFace`, `PetMind`), `PetCues` (no AppKit) decides what the pet feels, when it sits down and when it says a phrase it owes, `PetStage` only feeds it what the pet already knows, and `PetFigure.draw` paints the face (eye, brow, mouth, blush) under the moustache and the sign over everything. There is no new timer; it runs in the existing frame loop, and a calm pet redraws nothing extra. A higher feeling interrupts a lower one, the same cue extends a feeling instead of restarting it, every feeling rests before it can return, the pet starts at most one curious, bored or sleepy feeling of its own every 3 minutes, and faces fade in over 0.25 s and out over 0.4 s. The rules run without the app: `scripts/test-mood.swift`, `scripts/test-pet-cues.swift` runs the cues with a real pet (wake from a doze, the morning phrase, a phrase owed after a toss, sitting only when it can), and `scripts/test-pet-marks.swift` checks that no sign touches a hat or a back item in any pose, and `scripts/test-pet-contrast.swift` checks that every item and sign stands out at 3:1 or better on a white window and on a #1E1E1E window, and that a fill falling below that gets a thin gray rim (about 0.8 pt on screen) at full strength, neither thinner nor thicker than intended (commands in CONTRIBUTING.md).
 
 **Options:**
-- Talks sometimes — speech bubbles (`PetTool.swift:168`). The App Store line under it does not mention updates (`:150-156`).
-- Follows your rhythm — reacts to typing (`:175`).
-- Ball — a ball the pet plays with (`:182`).
-- “To make it jump when you press Space, allow Input Monitoring” — note with a permission bar (`:191`); a listen-only tap checks only whether Space was pressed.
+- Talks sometimes — speech bubbles (`PetTool.talks`); the App Store line under it does not mention updates; it also governs the two feeling phrases, “Hey, gently!” and “Good morning!”. The pet keeps them to itself while you type or the microphone is in use.
+- Follows your rhythm — reacts to typing (`PetTool.rhythm`); when it is off, typing and idle time start no feelings.
+- Ball — a ball the pet plays with (`PetTool.ball`).
+- “To make it jump when you press Space, allow Input Monitoring” — note with a permission bar (`PetTool.listening`); a listen-only tap checks only whether Space was pressed.
 
 **Nuances:** The only tool on by default in the App Store build.
+- What starts a feeling: surprised when you pick it up or it tumbles; happy when you hold it still for 1.2 s, set it down slowly, it kicks the ball, your Mac wakes up, or you type fast for more than a minute; excited, with a hop, about a new award; proud after a leap over the pointer, a window climb or a new outfit; shy when the pointer rests on it for 1.2 s; curious when the pointer stops within 80 points in front of it for 0.8 s (its eye follows the pointer); bored, sitting down, after 20 to 40 s without keyboard or mouse or 10 minutes without attention (not while you type); sleepy, sitting down with a yawn and a small “z”, as soon as it has stretched and is up from a doze, or, while you are idle for the same 20 to 40 s, late at night (11 pm to 5 am) or when the battery is at 10 % or less; a little grumpy (a pout and a small cloud, never angry) when it is tossed, and at a second tumble within a minute.
+- Phrases: “Hey, gently!” after a toss, at most once every 10 minutes. “Good morning!” the first time each day, between 5 and 12 o’clock, that the pet starts or your Mac wakes up. If the pet was dozing it yawns first and says it when the yawn is over; if it cannot say it right then (you are typing, the microphone is on, it is in the air) it waits up to 8 seconds, and the day still counts when Talks sometimes is off.
+- Quiet rules: while the pet is hidden (screen asleep, Mac locked, full screen, Game Mode) it has no frames and no feelings; while it dozes its face does not change; with Reduce Motion on (System Settings › Accessibility › Display) it does not hop and its signs stay still; with Talks sometimes off it says neither phrase but still shows feelings.
+- Nothing is read or sent: the cues use only the time of day, how long ago a key or the mouse was used (never what you typed), the pointer, the ball, being carried and the battery level. No sound, window, notification or meter.
 
 **Edition:** Both; App Store differs: does not find Dock icons, no update phrase.
 
 **Test:**
 1. Turn it on → the pet appears at the bottom; pick it up and throw it; push the ball; turn each sub-switch off and on → behavior follows.
 2. Switch an app to full screen on each display → the pet hides on that display only and returns when full screen ends; works across Spaces and after sleep and wake.
+3. Pick the pet up → wide eyes and a “!” sign. Hold it still for 2 s → a smile and a heart. Set it down slowly → it smiles again. Throw it hard → a pout and a small cloud, and “Hey, gently!” (with Talks sometimes on; the phrase does not repeat within 10 minutes).
+4. Rest the pointer on the pet for 2 s → it blushes and looks down with a drop sign. Stop the pointer on the ground about 50 points in front of it for 1 s → a “?” sign and its eye follows the pointer.
+5. Put a different thing on in Settings › Pet › Wardrobe → the pet looks proud, with sparkles. Earn an award → it is excited, sparkles and hops once.
+6. With Follows your rhythm on, leave keyboard and mouse alone for about 40 s → it looks bored and sits down; press a key → it gets up. Put the Mac to sleep and wake it between 5 and 12 o’clock → a heart and “Good morning!” the first time that day (after the yawn if the pet was dozing), only the heart after the next wake.
+7. Turn Talks sometimes off and repeat step 3 and 6 → no phrases, feelings still show. Turn Reduce Motion on → no hops, signs stay still. Switch an app to full screen → no feelings while the pet is hidden. Open Activity Monitor → CPU of pikapik is as before the pet had feelings (a calm pet adds nothing).
 
 ### Wardrobe
 
-**Does:** Things the pet can wear: 38 things in seven groups, six free; the rest unlock with awards.
+**Does:** Things the pet can wear: 53 things in eight groups (Hats & Hair, Face, Moustaches, Neckwear, Tops, Bottoms, Shoes, Extras), six free; the rest unlock with awards.
 
-**How it works:** `Sources/pika-tools/Tools/Pet/PetWardrobeView.swift`, `PetClothes.swift`; tiles, slot chips, “New” tags.
+**How it works:** `Sources/pika-tools/Tools/Pet/PetWardrobeView.swift`, `PetClothes.swift`; tiles, slot chips, “New” tags. Moustaches are a group of their own so they can be worn with a monocle, glasses or a mask; hats and hairstyles share one group because there is one head. The Cane and the Umbrella are Extras (one slot with Cape, Balloon and the wings); the Cane is drawn in front of the pet (layer `prop`), the Umbrella is held up behind it and lifts when the pet jumps. Fifteen things are new, all unlocked by awards: Bowler Hat (Rare), Quiff, Curls and Top Knot (Uncommon), Handlebar Moustache (Epic), Chevron and Pencil Moustache (Rare), Monocle (Epic), Cravat (Rare), Tailcoat (Rare), Waistcoat (Epic), Tweed Jacket (Rare), Spats (Rare), Cane (Uncommon) and Umbrella (Epic).
 
 **Options:**
-- Take Everything Off — clears the outfit (`PetWardrobeView.swift:346`).
+- Take Everything Off — clears the outfit (`PetWardrobeSection`).
 
 **Edition:** Both.
 
 **Test:**
-1. Open Settings › Pet → Wardrobe shows 38 things in seven groups with six unlocked. Click an unlocked thing → the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing → its award opens and nothing is worn.
+1. Open Settings › Pet → Wardrobe shows 53 things in eight groups with six unlocked. Click an unlocked thing → the pet puts it on and takes it off again; Take Everything Off clears the outfit. Click a locked thing → its award opens and nothing is worn.
+2. Open the Moustaches group → three moustaches (Handlebar, Chevron, Pencil), all locked at first. Once unlocked, wear one together with a monocle or glasses → both show, the moustache over the mouth. Open Hats & Hair and wear a hat, then a hairstyle → the hairstyle replaces the hat (one head).
+3. Once unlocked, wear the Cane → it is drawn in front of the pet; wear the Umbrella → it is held up behind the pet and replaces the Cane; wear the Cape → it replaces the Umbrella (one Extras slot).
 
 ### Looks
 
-**Does:** Ready-made outfits: 10 looks.
+**Does:** Ready-made outfits: 13 looks. New: Professor (Curls, Round Glasses, Chevron Moustache, Tweed Jacket, Cravat), Londoner (Bowler Hat, Pencil Moustache, Waistcoat, Spats, Umbrella) and Rock Star (Quiff, Sunglasses, Hoodie, Jeans, Sneakers). The Gentleman look is fuller: Top Hat, Monocle, Handlebar Moustache, Tailcoat, Bow Tie, Spats and Cane.
 
-**How it works:** Look cards (`PetTool.swift:135`, `PetLooks`).
+**How it works:** Look cards (`PetLooksSection` in `PetWardrobeView.swift`, the looks themselves are `PetLook` in `PetWardrobe.swift`).
 
 **Edition:** Both.
 
 **Test:**
 1. Click a look with missing pieces → nothing is worn; click a complete look → the pet wears it all.
+2. Open Looks → 13 cards. Wear Gentleman, Professor, Londoner or Rock Star once all their pieces are unlocked → every piece shows at once, the moustache and the monocle with the hat, and nothing stays from the previous outfit.
 
 ### Awards
 
-**Does:** Awards you earn by playing with the pet: 24 in the App Store build, 25 on the Website; they unlock clothes.
+**Does:** Awards you earn by playing with the pet: 30 in the App Store build, 31 on the Website; they unlock clothes. Six are new and come from its feelings and manners: Sunshine (make the pet happy 30 times; unlocks Quiff, Curls, Top Knot), Charmer (rest the pointer on it until it blushes, 10 times; Pencil Moustache, Cravat), All the Feels (see all 9 feelings; Monocle, Handlebar and Chevron Moustache), Gentle Hands (pick it up and set it down gently 25 times; Waistcoat, Spats), Good Morning (meet it in the morning on 7 different days; Bowler Hat, Umbrella, Tweed Jacket) and Dapper (wear 5 things at once; Tailcoat, Cane).
 
-**How it works:** `PetAwardsView.swift`, `PetAwards.swift`. The Website adds an Open Source award, earned by opening the GitHub link in About; the App Store build drops it and gives the explorer award extra unlocks (`PetAwards.swift:3,23,100`). Plain totals of steps, pick-ups, throws and the like, the date of each award and the outfit are stored only in five preferences keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit); never sent, never exported, never synced. Detail sheet: Done, “Earned on …”, Unlocks. The sidebar badge shows new awards.
+**How it works:** `PetAwardsView.swift`, `PetAwards.swift`. The Website adds an Open Source award, earned by opening the GitHub link in About; the App Store build drops it and gives the explorer award extra unlocks (`appStore`, `PetAward.all`, `PetAward.items`). Plain totals of steps, pick-ups, throws and the like (now also happy moments, blushes, gentle set-downs and mornings greeted), which of the 9 feelings you have seen, whether 5 things were worn at once, the date of each award and the outfit are stored only in five preferences keys (pet-counts, pet-awards, pet-seen, pet-fresh, pet-outfit); never sent, never exported, never synced. Detail sheet: Done, “Earned on …”, Unlocks. The sidebar badge shows new awards.
 
 **Options:**
-- Erase Progress… — button in Awards (`PetAwardsView.swift:304`); after the alert “Erase Progress” it deletes all pet progress on this Mac and removes the five pet keys.
+- Erase Progress… — button in Awards (`PetAwardsSection.erase`); after the alert “Erase Progress” it deletes all pet progress on this Mac and removes the five pet keys.
 
 **Nuances:** Network access unlocks nothing. Restore Defaults keeps awards and outfit.
 
 **Edition:** Both; App Store differs: no Open Source award.
 
 **Test:**
-1. Open Settings › Pet → Awards shows 24 awards (App Store; no “Open Source” award) or 25 (Website).
+1. Open Settings › Pet → Awards shows 30 awards (App Store; no “Open Source” award) or 31 (Website).
 2. Earn an award (pick the pet up and throw it high 10 times) → the pet announces it, Pet in the sidebar shows a badge, the award and what it unlocks are marked “New” until you leave the page, and the unlocked things can be worn. Quit and relaunch → outfit, counts and awards are kept.
 3. Export Settings and open the file → no pet-counts, pet-awards, pet-seen, pet-fresh or pet-outfit. Restore Defaults keeps the awards and the outfit.
 4. (Website) Click the GitHub link in About → the “Open Source” award is earned; with iCloud sync on, a second Mac does not receive the awards or the outfit.
-5. Press Erase Progress… and confirm → awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read <bundle id>` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off → same result, no error.
+5. Earn a new award: make the pet happy 30 times (hold it still, set it down slowly, kick the ball), rest the pointer on it 10 times until it blushes, see each of the 9 feelings once, pick it up and set it down slowly 25 times, meet it in the morning on 7 different days (start the pet or wake the Mac between 5 and 12), wear 5 things at once → each one is announced, marked “New” and unlocks its things. The “Good Morning” award counts one day however often the Mac wakes up, and it counts whether or not Talks sometimes is on.
+6. Press Erase Progress… and confirm → awards, unlocked things and counts are gone, only the six free things can be worn, and `defaults read <bundle id>` shows none of the five pet keys. Repeat the wardrobe and award steps with Wi-Fi off → same result, no error.
 
 ## Permissions
 

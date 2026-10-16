@@ -9,6 +9,7 @@ private extension PetSlot {
         switch self {
         case .head: CGRect(x: -10, y: -22, width: 20, height: 23)
         case .back: CGRect(x: -13, y: -25, width: 26, height: 26)
+        case .whiskers: CGRect(x: -6.5, y: -13.6, width: 17, height: 10.4)
         default: CGRect(x: -10, y: -15, width: 20, height: 16)
         }
     }
@@ -16,6 +17,7 @@ private extension PetSlot {
 
 private extension PetItem {
     var award: PetAward? { PetAward.all.first { $0.items.contains(self) } }
+    var lens: CGRect { self == .cane ? CGRect(x: -8, y: -15, width: 19, height: 16.5) : slot.lens }
 }
 
 extension PetLook {
@@ -237,7 +239,7 @@ struct ItemTile: View {
             if unlocked { progress.wear(item) } else if let award { open(award) }
         } label: {
             VStack(spacing: 4) {
-                PetThumb(outfit: [item.slot: item], lens: item.slot.lens, ghost: !unlocked)
+                PetThumb(outfit: [item.slot: item], lens: item.lens, ghost: !unlocked)
                     .frame(height: 52)
                 Text(item.title)
                     .font(.caption)
