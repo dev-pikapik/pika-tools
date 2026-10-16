@@ -185,6 +185,9 @@ struct TestMainCopy {
         let unknown = RunningCopy.own(started: { _ in nil }), peer = copy(5, MainCopyChoice.websiteID, at: 5)
         precondition(unknown.launched == .distantPast && MainCopyChoice.leader(unknown, among: [peer]) == peer, "a copy that does not know its start counts as the oldest, so any other copy leads: \(unknown)")
         precondition(RunningCopy(NSRunningApplication.current) == nil, "a process LaunchServices does not know is no copy")
+        precondition(RunningCopy(StubApp(terminated: false, id: MainCopyChoice.websiteID), started: { $0 == getpid() ? sentinel : nil }) == RunningCopy(pid: getpid(), bundleID: MainCopyChoice.websiteID, launched: sentinel), "an app maps to a copy with its own pid, bundle id and start")
+        precondition(RunningCopy(StubApp(terminated: true, id: MainCopyChoice.websiteID), started: { _ in sentinel }) == nil, "an app that has quit is no copy")
+        precondition(RunningCopy(StubApp(terminated: false, id: nil), started: { _ in sentinel }) == nil, "an app with no bundle id is no copy")
         guard let app = NSWorkspace.shared.runningApplications.first(where: { !$0.isTerminated && $0.bundleIdentifier != nil }), let id = app.bundleIdentifier else {
             print("a running app maps to a copy with the kernel start of its own pid: skipped, no running app with a bundle id")
             return
@@ -711,4 +714,17 @@ struct TestMainCopy {
             autohide = on
         }
     }
+}
+
+final class StubApp: NSRunningApplication, @unchecked Sendable {
+    private let quit: Bool, bundle: String?
+
+    init(terminated: Bool, id: String?) {
+        (quit, bundle) = (terminated, id)
+        super.init()
+    }
+
+    override var isTerminated: Bool { quit }
+    override var processIdentifier: pid_t { getpid() }
+    override var bundleIdentifier: String? { bundle }
 }
