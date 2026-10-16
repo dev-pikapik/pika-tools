@@ -14,7 +14,7 @@ final class FinderKeys {
     @ObservationIgnored var deletes = false
     @ObservationIgnored private var cutCount: Int?
     @ObservationIgnored private var generation = 0
-    @ObservationIgnored private var held: (key: Int, target: Int)?
+    @ObservationIgnored var held: (key: Int, target: Int)?
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
 
@@ -44,7 +44,7 @@ final class FinderKeys {
         isActive = true
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
             CGEvent.postPikapikKey(held.target, down: false, nil)
@@ -127,8 +127,7 @@ final class FinderKeys {
                 if NSPasteboard.general.types?.contains(.fileURL) == true {
                     cutCount = now
                 } else {
-                    CGEvent.postPikapikKey(kVK_ANSI_X, down: true, flags: .maskCommand)
-                    CGEvent.postPikapikKey(kVK_ANSI_X, down: false, flags: .maskCommand)
+                    CGEvent.tapPikapikKey(kVK_ANSI_X, flags: .maskCommand)
                 }
             } else if attempts > 1 {
                 watchCopy(since: count, attempts: attempts - 1)
@@ -154,7 +153,7 @@ final class FinderKeys {
     }
 }
 
-private func finderKeysCallback(
+func finderKeysCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,

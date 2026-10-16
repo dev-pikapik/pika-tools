@@ -9,15 +9,23 @@ extension CGEvent {
 
     func markPikapik() { setIntegerValueField(.eventSourceUserData, value: Self.pikapikTag) }
 
-    static func pikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = []) -> CGEvent? {
+    static func pikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = [], held: CGEventFlags = CGEventSource.flagsState(.hidSystemState)) -> CGEvent? {
         guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return nil }
-        event.flags = down ? flags : CGEventSource.flagsState(.hidSystemState)
+        event.flags = down ? flags : held
         event.markPikapik()
         return event
     }
 
+    static var pikapikSend: (CGEvent, CGEventTapProxy?) -> Void = { event, proxy in
+        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
+    }
+
     static func postPikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = [], _ proxy: CGEventTapProxy? = nil) {
         guard let event = pikapikKey(key, down: down, flags: flags) else { return }
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
+        pikapikSend(event, proxy)
+    }
+
+    static func tapPikapikKey(_ key: Int, flags: CGEventFlags) {
+        for down in [true, false] { postPikapikKey(key, down: down, flags: flags) }
     }
 }

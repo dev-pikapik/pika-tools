@@ -7,7 +7,7 @@ private let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.goog
 private func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
     func post(_ key: Int, _ text: String?) {
         for down in [true, false] {
-            guard let event = CGEvent.pikapikKey(key, down: down, flags: []) else { continue }
+            guard let event = CGEvent.pikapikKey(key, down: down) else { continue }
             if let text {
                 let units = Array(text.utf16)
                 event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
@@ -75,7 +75,7 @@ final class LayoutFixTool: Tool {
 
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
-    @ObservationIgnored fileprivate var held: Int64?
+    @ObservationIgnored var held: Int64?
     @ObservationIgnored fileprivate var holding = false
     @ObservationIgnored private var typed: [Stroke] = []
     @ObservationIgnored private var layout: KeyboardLayout?
@@ -133,7 +133,7 @@ final class LayoutFixTool: Tool {
         if fixesAsYouType { DispatchQueue.main.async { KeyboardLayouts.prepare() } }
     }
 
-    private func stop() {
+    func stop() {
         if held != nil {
             held = nil
             CGEvent.postPikapikKey(kVK_F19, down: false, nil)
@@ -257,7 +257,7 @@ final class LayoutFixTool: Tool {
     }
 }
 
-private func layoutFixCallback(
+func layoutFixCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
