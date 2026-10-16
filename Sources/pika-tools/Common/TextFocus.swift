@@ -116,7 +116,8 @@ enum TextFocus {
         if watching { enabled.append(entry) }
         lock.unlock()
         guard watching else { return .success }
-        let error = write(attribute, true, pid)
+        var error = write(attribute, true, pid)
+        if error == .notImplemented { error = .success }
         lock.lock()
         if error != .success { enabled.removeAll { $0 == entry } }
         let dropped = error == .success && !enabled.contains(entry)
