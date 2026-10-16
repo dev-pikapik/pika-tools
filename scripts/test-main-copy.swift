@@ -149,8 +149,26 @@ struct TestMainCopy {
         precondition(!defaults.bool(forKey: systemKey) && OriginalValue.load(crashKey) == nil)
         print("after a crash the next launch keeps the real original and puts it back: ok")
 
+        processStart()
         handover()
         deferredActions()
+    }
+
+    static func processStart() {
+        let now = Date()
+        precondition(MainCopyChoice.started(getpid()).map { $0 < now } == true, "this process started before now")
+        let child = Process()
+        child.executableURL = URL(fileURLWithPath: "/bin/sleep")
+        child.arguments = ["2"]
+        let launched = Date()
+        try! child.run()
+        let first = MainCopyChoice.started(child.processIdentifier)
+        precondition(first.map { abs($0.timeIntervalSince(launched)) < 1 } == true, "a child's start is the moment it was launched: \(String(describing: first)) vs \(launched)")
+        precondition(MainCopyChoice.started(child.processIdentifier) == first, "reading a process's start twice gives the same date")
+        child.terminate()
+        child.waitUntilExit()
+        precondition(MainCopyChoice.started(Int32.max) == nil, "a process that does not exist has no start")
+        print("a process's start comes from the kernel: this one is in the past, a child's is its launch moment and never changes, a missing one has none: ok")
     }
 
     static func deferredActions() {
@@ -418,6 +436,26 @@ struct TestMainCopy {
         _ = window.party("B", "\(tools).b", 20, wantsB)
         precondition(window.leaving.isEmpty, "a copy clears the mark left under its pid when it starts: \(window.leaving)")
         print("a mark left by an earlier process with the same pid is ignored before the new copy has started, and cleared once it has: ok")
+
+        for (offset, sameProcess) in [(0.5, true), (-0.5, true), (1.5, false), (-1.5, false)] as [(Double, Bool)] {
+            let tolerance = Mac(system: original)
+            let held = tolerance.party("A", "\(tools).a", 10, wantsA)
+            tolerance.become(held)
+            tolerance.elapse()
+            tolerance.kills = []
+            let peer = copy(20, "\(tools).b", at: 20)
+            tolerance.journal.set(peer.launched.addingTimeInterval(offset), forKey: "animations-leaving-20")
+            tolerance.strangers = [peer]
+            tolerance.leader = nil
+            held.engine.refresh()
+            tolerance.elapse()
+            if sameProcess {
+                precondition(tolerance.system == original && tolerance.journalEmpty && tolerance.kills.count == 1 && tolerance.kills[0].wait, "a mark \(offset) s off the peer's launch is that peer leaving: \(tolerance.kills)")
+            } else {
+                precondition(tolerance.kills.isEmpty && tolerance.system == original.merging(wantsA) { $1 } && !tolerance.journalEmpty, "a mark \(offset) s off the peer's launch is another process: \(tolerance.kills)")
+            }
+        }
+        print("a mark within half a second of a peer's launch is that peer leaving, one 1.5 s off is another process, either way round: ok")
 
         let trio = Mac(system: original)
         let a3 = trio.party("A", "\(tools).a", 10, wantsA), b3 = trio.party("B", "\(tools).b", 20, wantsB), c3 = trio.party("C", "\(tools).c", 30, wantsB)

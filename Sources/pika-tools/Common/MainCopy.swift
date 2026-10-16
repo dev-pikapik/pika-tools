@@ -27,7 +27,7 @@ final class MainCopy {
     @ObservationIgnored private var timeout: DispatchWorkItem?
     @ObservationIgnored private var deferred = DeferredActions()
     @ObservationIgnored private var watching: NSKeyValueObservation?
-    @ObservationIgnored let me = MainCopy.copy(.current) ?? RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: .now)
+    @ObservationIgnored let me = RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: MainCopyChoice.started(getpid()) ?? .distantPast)
 
     private init() {}
 
@@ -140,7 +140,7 @@ final class MainCopy {
     }
 
     private static func copy(_ app: NSRunningApplication) -> RunningCopy? {
-        guard !app.isTerminated, let id = app.bundleIdentifier, let launched = app.launchDate else { return nil }
+        guard !app.isTerminated, let id = app.bundleIdentifier, let launched = MainCopyChoice.started(app.processIdentifier) else { return nil }
         return RunningCopy(pid: app.processIdentifier, bundleID: id, launched: launched)
     }
 }

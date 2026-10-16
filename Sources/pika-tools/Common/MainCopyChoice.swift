@@ -31,6 +31,15 @@ enum MainCopyChoice {
     static func journal(_ bundleID: String) -> String {
         family(bundleID) == "pikapik" ? websiteID : family(bundleID)
     }
+
+    static func started(_ pid: Int32) -> Date? {
+        var info = kinfo_proc()
+        var size = MemoryLayout<kinfo_proc>.stride
+        var mib = [CTL_KERN, KERN_PROC, KERN_PROC_PID, pid]
+        guard sysctl(&mib, UInt32(mib.count), &info, &size, nil, 0) == 0, size > 0, info.kp_proc.p_pid == pid else { return nil }
+        let time = info.kp_proc.p_starttime
+        return Date(timeIntervalSince1970: Double(time.tv_sec) + Double(time.tv_usec) / 1e6)
+    }
 }
 
 enum OriginalValue {
