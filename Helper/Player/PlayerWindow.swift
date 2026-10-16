@@ -6,7 +6,6 @@ import UniformTypeIdentifiers
 final class VideoView: NSView {
     weak var controller: PlayerController?
     weak var panel: NSView?
-    private var dragsWindow = false
 
     override var acceptsFirstResponder: Bool { true }
 
@@ -34,15 +33,10 @@ final class VideoView: NSView {
     }
 
     override func mouseDown(with event: NSEvent) {
-        let point = convert(event.locationInWindow, from: nil)
-        dragsWindow = WindowChrome.dragsWindow(at: point, panel: panel)
-        if let window, WindowChrome.stripDoubleClick(event, in: window) { return }
+        guard let window else { return }
+        if WindowChrome.stripDoubleClick(event, in: window) { return }
         if event.clickCount == 2 { _ = controller?.perform(.fullScreen) }
-    }
-
-    override func mouseDragged(with event: NSEvent) {
-        guard dragsWindow, window?.styleMask.contains(.fullScreen) == false else { return }
-        window?.performDrag(with: event)
+        if WindowChrome.startsDrag(event, in: window, at: convert(event.locationInWindow, from: nil), panel: panel) { window.performDrag(with: event) }
     }
 
     override func updateTrackingAreas() {

@@ -116,7 +116,7 @@ enum TestPlayerWindow {
         RunLoop.current.run(until: Date().addingTimeInterval(1))
         precondition(buttons?.alphaValue == 0 && buttons?.isHidden == false, "with VoiceOver the hidden buttons stay in the accessibility tree")
         precondition(settled(true), "and come back")
-        precondition(WindowChrome.stripAction(nil) == #selector(NSWindow.performZoom(_:)) && WindowChrome.stripAction("Maximize") == #selector(NSWindow.performZoom(_:)), "an unset or Maximize setting zooms")
+        precondition(WindowChrome.stripAction(nil) == #selector(NSWindow.zoom(_:)) && WindowChrome.stripAction("Maximize") == #selector(NSWindow.zoom(_:)), "an unset or Maximize setting zooms like the title bar, not like the green button that can mean full screen")
         precondition(WindowChrome.stripAction("Minimize") == #selector(NSWindow.performMiniaturize(_:)) && WindowChrome.stripAction("None") == nil, "Minimize minimizes and None does nothing")
         precondition(WindowChrome.trackingOptions.contains(.activeAlways) && !WindowChrome.trackingOptions.contains(.activeInKeyWindow) && WindowChrome.trackingOptions.contains(.mouseMoved), "pointing at a window that is not the active one is seen too")
         func centre(_ type: NSWindow.ButtonType) -> NSPoint {
@@ -164,6 +164,9 @@ enum TestPlayerWindow {
         precondition(WindowChrome.stripDoubleClick(click(top, 2), in: window, setting: "None"), "a double-click in the top strip is the system's, not full screen")
         precondition(!WindowChrome.stripDoubleClick(click(top, 1), in: window, setting: "None"), "one click in the strip does nothing special")
         precondition(!WindowChrome.stripDoubleClick(click(100, 2), in: window, setting: "None"), "a double-click on the picture is still full screen")
+        let beforeZoom = window.frame
+        for _ in 1...2 { window.perform(WindowChrome.stripAction("Maximize")!, with: nil) }
+        precondition(window.frame == beforeZoom, "the second double-click puts the window back where it was")
         pass("the top strip double-click follows the system setting")
 
         let panel = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
@@ -171,6 +174,9 @@ enum TestPlayerWindow {
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 200), panel: panel), "a drag that starts on the picture moves the window")
         panel.isHidden = true
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel) && WindowChrome.dragsWindow(at: .zero, panel: nil), "a hidden or missing panel never blocks the drag")
+        let dragged = NSEvent.mouseEvent(with: .leftMouseDragged, location: NSPoint(x: 100, y: 200), modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 0, clickCount: 1, pressure: 1)!
+        precondition(WindowChrome.startsDrag(click(200, 1), in: window, at: NSPoint(x: 100, y: 200), panel: nil), "the drag starts at the mouse-down")
+        precondition(!WindowChrome.startsDrag(dragged, in: window, at: NSPoint(x: 100, y: 200), panel: nil) && !WindowChrome.startsDrag(click(200, 2), in: window, at: NSPoint(x: 100, y: 200), panel: nil), "a later drag event would lose the first pixels, the second click of a double-click is not a drag")
         pass("the window moves only when the drag starts on the picture")
 
         let other = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled], backing: .buffered, defer: false)
