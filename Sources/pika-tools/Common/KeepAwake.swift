@@ -480,7 +480,7 @@ struct KeepAwakeSettings: View {
 
 extension KeepAwake {
     func handle(_ url: URL) {
-        guard MainCopy.shared.role != .passive else { return }
+        guard MainCopy.canAct else { return MainCopy.shared.whenMain { [self] in handle(url) } }
         let value = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first?.name
         func flag(_ current: Bool) -> Bool { value == "on" ? true : value == "off" ? false : !current }
         switch url.host {

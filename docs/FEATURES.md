@@ -335,7 +335,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Gives links you can add to Shortcuts, Control Center and widgets to start Keep Awake in one click.
 
-**How it works:** `pikapik://keep-awake`, `pikapik://display`, `pikapik://lid-closed` handled by `KeepAwake.handle(_:)` (`KeepAwake.swift:473`). The App Store build uses the scheme `pikapik-store` (`scripts/build.sh:181`). Add the Open URLs action in Shortcuts with the link.
+**How it works:** `pikapik://keep-awake`, `pikapik://display`, `pikapik://lid-closed` handled by `KeepAwake.handle(_:)` (`KeepAwake.swift:482`). The App Store build uses the scheme `pikapik-store` (`scripts/build.sh:181`). Add the Open URLs action in Shortcuts with the link.
 
 **Options:**
 - Keep Awake — row with Copy Link (`KeepAwake.swift:433`).

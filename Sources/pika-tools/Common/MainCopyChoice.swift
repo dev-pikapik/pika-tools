@@ -24,8 +24,8 @@ enum MainCopyChoice {
         (peers + [me]).max { ($0.launched, $0.pid) < ($1.launched, $1.pid) } ?? me
     }
 
-    static func takesOver(_ peers: [RunningCopy]) -> Bool {
-        peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
+    static func takesOver(_ peers: [RunningCopy], quitting: Bool) -> Bool {
+        !quitting && peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
     }
 
     static func journal(_ bundleID: String) -> String {

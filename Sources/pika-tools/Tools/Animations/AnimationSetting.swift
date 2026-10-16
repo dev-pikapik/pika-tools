@@ -147,6 +147,75 @@ enum AnimationSetting: String, CaseIterable {
             result[setting] = own[setting] ?? (owned[setting] == nil ? system[setting] : nil)
         }
     }
+
+    static func set(_ new: [Self: Double], own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, write: (Self, Double?) -> Void) -> (own: [Self: Double], ours: [Self: Double], changes: [(Self, Double?)]) {
+        let changes = Self.changes(from: ours, to: new, system: system, own: own)
+        let originals = Self.originals(own, owned: ours, new: new, system: system)
+        remember(own.merging(originals) { $1 }, ours.merging(new) { $1 })
+        changes.forEach { write($0.0, $0.1) }
+        remember(originals, new)
+        return (originals, new, changes)
+    }
+
+    static func putBack(own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, write: (Self, Double?) -> Void) -> [(Self, Double?)] {
+        let written = ours.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
+        let changes = Self.changes(from: written, to: [:], system: system, own: own)
+        changes.forEach { write($0.0, $0.1) }
+        remember([:], [:])
+        return changes
+    }
+}
+
+final class DockRestart {
+    static let key = "animations-dock-pending"
+
+    private let journal: () -> UserDefaults
+    private let later: (DispatchWorkItem) -> Void
+    private let kill: (Bool) -> Void
+    private var work: DispatchWorkItem?
+
+    init(journal: @escaping () -> UserDefaults, later: @escaping (DispatchWorkItem) -> Void, kill: @escaping (Bool) -> Void) {
+        (self.journal, self.later, self.kill) = (journal, later, kill)
+    }
+
+    var isPending: Bool { journal().bool(forKey: Self.key) }
+
+    func restart(for changes: [(AnimationSetting, Double?)], autohide: Bool) {
+        if isPending || AnimationSetting.restartsDock(changes, autohide: autohide) { schedule() }
+    }
+
+    func schedule() {
+        work?.cancel()
+        journal().set(true, forKey: Self.key)
+        let item = DispatchWorkItem { [self] in fire() }
+        work = item
+        later(item)
+    }
+
+    func leave(takesOver: Bool, putBack: () -> Void) {
+        if takesOver { handOver() } else { putBack() }
+    }
+
+    func handOver() {
+        work?.cancel()
+        work = nil
+    }
+
+    func now() {
+        handOver()
+        kill(true)
+        Self.clear(journal())
+    }
+
+    static func clear(_ journal: UserDefaults) {
+        journal.removeObject(forKey: key)
+    }
+
+    private func fire() {
+        work = nil
+        kill(false)
+        Self.clear(journal())
+    }
 }
 
 enum AnimationLabel: Equatable {

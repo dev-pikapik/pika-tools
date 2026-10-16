@@ -157,7 +157,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         let background = Background.shared
         if background.quitting || Background.isOutsideQuit { return .terminateNow }
         guard Background.isOn, MainCopy.shared.role != .passive, !NSEvent.modifierFlags.contains(.option) else {
-            if MainCopy.shared.role != .passive { KeepAwake.shared.set(.off) }
+            if MainCopy.canAct { KeepAwake.shared.set(.off) }
             return .terminateNow
         }
         background.hide()

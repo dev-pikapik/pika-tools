@@ -23,7 +23,10 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Hide the Dock automatically turns on again when this copy of pikapik becomes the main one again. If you changed it yourself in the meantime, pikapik keeps your choice.
 - Pointer speed: when it is turned off, your mouse gets its own speed back only while it still has pikapik’s speed, so a speed you set yourself stays. If the mouse doesn’t take its speed back, pikapik tries again next time.
 - Finder extensions and Keep Awake: a copy of pikapik that has just opened no longer changes them before it knows it is the main one.
-- Animations: when another copy of pikapik becomes the main one, the copy that leaves no longer puts your values back over the new copy's choices, and the Dock restarts once instead of twice. Your own values come back when the last copy quits.
+- Animations: when another copy of pikapik becomes the main one, the copy that leaves no longer puts your values back over the new copy’s choices, and the Dock restarts once instead of twice. Your own values come back when the last copy quits.
+- Animations: when the Mac shuts down with two copies of pikapik open, your values now come back.
+- Animations: the Dock restart is no longer lost if pikapik stops in the second before it.
+- Keep Awake: a link from the Shortcuts app that opens pikapik now works as soon as that copy becomes the main one.
 - Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
 
 ## [1.52.0] - 2026-10-15

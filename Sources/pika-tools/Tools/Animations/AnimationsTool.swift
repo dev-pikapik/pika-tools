@@ -26,7 +26,11 @@ final class AnimationsTool: Tool {
     private(set) var autohide = false
     private(set) var appsPending = false
     private(set) var finderPending = false
-    @ObservationIgnored private var dockRestart: DispatchWorkItem?
+    @ObservationIgnored private let dockRestart = DockRestart(
+        journal: { MainCopy.journal },
+        later: { DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: $0) },
+        kill: { AnimationsTool.killall("Dock", wait: $0) }
+    )
 
     private static let dock = "com.apple.dock" as CFString
     private static let speedKey = "animations-speed"
@@ -34,7 +38,6 @@ final class AnimationsTool: Tool {
     private static let oursKey = "animations-ours"
     private static let autohideKey = "animations-autohide-original"
     private static let wantedAutohideKey = "animations-autohide-wanted"
-    private static let dockKey = "animations-dock-pending"
 
     private init() {
         owned = Self.saved()
@@ -111,7 +114,7 @@ final class AnimationsTool: Tool {
     func refresh() {
         reload()
         guard MainCopy.canAct else {
-            if !MainCopy.takesOver { putBack() } else { handOverDock() }
+            dockRestart.leave(takesOver: MainCopy.takesOver, putBack: putBack)
             return
         }
         apply(owned)
@@ -129,23 +132,12 @@ final class AnimationsTool: Tool {
         }
     }
 
-    private func handOverDock() {
-        guard let work = dockRestart else { return }
-        work.cancel()
-        dockRestart = nil
-        MainCopy.journal.set(true, forKey: Self.dockKey)
-    }
-
     private func putBack() {
-        let written = ours.filter { setting, value in system[setting].map { abs($0 - value) < 0.0005 } ?? false }
-        let changes = AnimationSetting.changes(from: written, to: [:], system: system, own: own)
         let dock = Self.putBackAutohide()
-        changes.forEach { $0.0.write($0.1) }
-        remember(own: [:], ours: [:])
+        let changes = AnimationSetting.putBack(own: own, ours: ours, system: system, remember: remember(own:ours:)) { $0.write($1) }
         reload()
         guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
-        dockRestart?.cancel()
-        Self.killall("Dock", wait: true)
+        dockRestart.now()
     }
 
     func load() {
@@ -161,7 +153,10 @@ final class AnimationsTool: Tool {
         let journal = MainCopy.journal
         store(nil, ownKey, journal)
         store([:], oursKey, journal)
-        if putBackAutohide() || settings.contains(where: { $0.apply == .dock }) { killall("Dock", wait: true) }
+        if putBackAutohide() || settings.contains(where: { $0.apply == .dock }) {
+            killall("Dock", wait: true)
+            DockRestart.clear(journal)
+        }
     }
 
     private static func putBackAutohide() -> Bool {
@@ -188,20 +183,13 @@ final class AnimationsTool: Tool {
             owned = new
             return remember(owned: new)
         }
-        let changes = AnimationSetting.changes(from: ours, to: new, system: system, own: own)
-        let originals = AnimationSetting.originals(own, owned: ours, new: new, system: system)
-        remember(own: own.merging(originals) { $1 }, ours: ours.merging(new) { $1 })
         remember(owned: new)
-        own = originals
-        ours = new
-        owned = new
-        changes.forEach { $0.0.write($0.1) }
-        remember(own: own, ours: ours)
-        let waiting = MainCopy.journal.bool(forKey: Self.dockKey)
-        guard !changes.isEmpty || waiting else { return }
+        let applied = AnimationSetting.set(new, own: own, ours: ours, system: system, remember: remember(own:ours:)) { $0.write($1) }
+        (own, ours, owned) = (applied.own, applied.ours, new)
+        let changes = applied.changes
+        guard !changes.isEmpty || dockRestart.isPending else { return }
         reload()
-        if waiting || AnimationSetting.restartsDock(changes, autohide: autohide) { restartDock() }
-        if waiting { MainCopy.journal.removeObject(forKey: Self.dockKey) }
+        dockRestart.restart(for: changes, autohide: autohide)
         if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
         if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
     }
@@ -223,13 +211,7 @@ final class AnimationsTool: Tool {
     }
 
     func restartDock() {
-        dockRestart?.cancel()
-        let work = DispatchWorkItem { [self] in
-            dockRestart = nil
-            Self.killall("Dock")
-        }
-        dockRestart = work
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: work)
+        dockRestart.schedule()
     }
 
     private static func key(_ setting: AnimationSetting) -> String {

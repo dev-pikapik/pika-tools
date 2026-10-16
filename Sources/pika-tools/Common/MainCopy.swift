@@ -7,7 +7,7 @@ final class MainCopy {
 
     static let shared = MainCopy()
     static var canAct: Bool { shared.role == .main }
-    static var takesOver: Bool { MainCopyChoice.takesOver(shared.peers()) }
+    static var takesOver: Bool { MainCopyChoice.takesOver(shared.peers(), quitting: Background.shared.quitting) }
 
     static var journal: UserDefaults {
         let own = Bundle.main.bundleIdentifier ?? ""
@@ -26,6 +26,7 @@ final class MainCopy {
     @ObservationIgnored private var deactivate: (Bool) -> Void = { _ in }
     @ObservationIgnored private var awaited: Set<Int32> = []
     @ObservationIgnored private var timeout: DispatchWorkItem?
+    @ObservationIgnored private var deferred: (() -> Void)?
     @ObservationIgnored private var watching: NSKeyValueObservation?
     @ObservationIgnored private let me = MainCopy.copy(.current) ?? RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: .now)
 
@@ -72,6 +73,10 @@ final class MainCopy {
         deactivate(true)
     }
 
+    func whenMain(_ action: @escaping () -> Void) {
+        if role == .waiting { deferred = action }
+    }
+
     func makeMain(failed: @escaping () -> Void) {
         let configuration = NSWorkspace.OpenConfiguration()
         configuration.createsNewApplicationInstance = true
@@ -108,12 +113,16 @@ final class MainCopy {
         guard role != .main else { return }
         role = .main
         activate()
+        let action = deferred
+        deferred = nil
+        action?()
     }
 
     private func release() {
         guard role == .main || role == .waiting else { return }
         timeout?.cancel()
         awaited = []
+        deferred = nil
         let wasMain = role == .main
         role = .passive
         leader = leader ?? MainCopyChoice.leader(me, among: peers())
