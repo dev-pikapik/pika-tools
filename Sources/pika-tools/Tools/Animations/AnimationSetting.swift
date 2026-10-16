@@ -258,6 +258,7 @@ class AnimationsEngine {
         own = Self.originals(host.journal())
         ours = Self.written(host.journal(), host.local)
         storedSpeed = host.local.object(forKey: Self.speedKey) as? Double
+        host.journal().removeObject(forKey: Self.leavingPrefix + String(host.pid))
         reload()
     }
 

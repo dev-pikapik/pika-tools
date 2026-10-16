@@ -404,19 +404,19 @@ struct TestMainCopy {
         }
         print("both copies get the quit at the same moment, in any order: the animations come back and the Dock restarts once: ok")
 
-        let trio = Mac(system: original)
-        let a3 = trio.party("A", "\(tools).a", 10, wantsA), b3 = trio.party("B", "\(tools).b", 20, wantsB), c3 = trio.party("C", "\(tools).c", 30, wantsB)
-        trio.become(a3)
-        trio.elapse()
-        trio.kills = []
-        trio.willQuit(a3)
-        trio.willQuit(b3)
-        precondition(trio.leaving == ["animations-leaving-10", "animations-leaving-20"] && trio.kills.isEmpty, "B's mark does not erase A's: \(trio.leaving)")
-        trio.retire(a3)
-        precondition(trio.kills.isEmpty && trio.system == original.merging(wantsA) { $1 }, "A has read the marks before C writes its own and hands over: \(trio.kills)")
-        trio.willQuit(c3)
-        precondition(trio.system == original && trio.journalEmpty && trio.kills.count == 1 && trio.kills[0].wait, "C's mark lands after A has read, and C still puts everything back once: \(trio.kills)")
-        print("a mark written after another copy has read the marks loses nothing, and marks never overwrite each other: ok")
+        let stale = Mac(system: original)
+        stale.journal.set(true, forKey: "animations-leaving-10")
+        let main = stale.party("A", "\(tools).a", 10, wantsA), passive = stale.party("B", "\(tools).b", 20, wantsB)
+        stale.become(main)
+        stale.elapse()
+        stale.kills = []
+        stale.quit(passive)
+        precondition(stale.kills.isEmpty && stale.system == original.merging(wantsA) { $1 }, "a mark left by an earlier copy with the same pid is not the main copy leaving: \(stale.kills)")
+        stale.quit(main)
+        precondition(stale.system == original && stale.journalEmpty && stale.kills == [.putBack("A")], "the main copy puts back when it leaves: \(stale.kills)")
+        print("a copy clears its own leaving mark when it starts, so a mark left by an earlier copy with the same pid does not count: ok")
+
+        everyOrder()
 
         let sync = Mac(system: original)
         let e = sync.party("A", "\(tools).a", 10, wantsB)
@@ -451,6 +451,63 @@ struct TestMainCopy {
         AnimationsEngine.uninstall(h2.host)
         precondition(empty.kills.isEmpty && empty.system == original, "an empty journal kills nothing: \(empty.kills)")
         print("uninstall puts the animations and autohide back through the journal, restarts the Dock once and kills nothing when there is nothing to put back: ok")
+    }
+
+    enum Step: String { case willQuit = "W", retire = "R", exit = "X", takeOver = "B" }
+
+    static func orders(_ stage: [Int], _ leader: Int?, takeOver: Bool, _ steps: [(Step, Int)] = []) -> [[(Step, Int)]] {
+        var next = stage.indices.compactMap { copy -> (Step, Int)? in
+            switch stage[copy] {
+            case 0: return (.willQuit, copy)
+            case 1: return (leader == copy ? .retire : .exit, copy)
+            case 2: return (.exit, copy)
+            default: return nil
+            }
+        }
+        if takeOver, leader == nil, let newest = stage.indices.last(where: { stage[$0] < 3 }), stage[newest] == 0 { next.append((.takeOver, newest)) }
+        guard !next.isEmpty else { return [steps] }
+        return next.flatMap { step, copy -> [[(Step, Int)]] in
+            var stage = stage, leader = leader
+            switch step {
+            case .willQuit: stage[copy] = 1
+            case .retire: (stage[copy], leader) = (2, nil)
+            case .exit: stage[copy] = 3
+            case .takeOver: leader = copy
+            }
+            return orders(stage, leader, takeOver: takeOver, steps + [(step, copy)])
+        }
+    }
+
+    static func everyOrder() {
+        var count = 0
+        let cases = [2, 3].flatMap { copies in [false, true].flatMap { takeOver in [false, true].flatMap { same in (0..<copies).map { (copies, takeOver, same, $0) } } } }
+        for (copies, takeOver, same, first) in cases {
+            for steps in orders([Int](repeating: 0, count: copies), first, takeOver: takeOver) {
+                let label = "\(copies) copies, takeover \(takeOver), same wishes \(same), main \(first): " + steps.map { "\($0.0.rawValue)\($0.1)" }.joined(separator: " ")
+                let mac = Mac(system: original)
+                (0..<copies).forEach { mac.journal.set(true, forKey: "animations-leaving-\(10 * ($0 + 1))") }
+                let parties = (0..<copies).map { mac.party(["A", "B", "C"][$0], "\(tools).\(["a", "b", "c"][$0])", Int32(10 * ($0 + 1)), same || $0 == first ? wantsA : wantsB) }
+                mac.become(parties[first])
+                mac.elapse()
+                mac.kills = []
+                var begun = Set<Int>()
+                for (step, copy) in steps {
+                    switch step {
+                    case .willQuit: mac.willQuit(parties[copy]); begun.insert(copy)
+                    case .retire: mac.retire(parties[copy])
+                    case .exit: mac.running.removeAll { $0 === parties[copy] }
+                    case .takeOver: mac.become(parties[copy])
+                    }
+                    precondition(begun.count == copies || mac.kills.isEmpty, "\(label): put back while a copy has not been told to quit, after \(step.rawValue)\(copy): \(mac.kills)")
+                }
+                precondition(mac.system == original && !mac.autohide, "\(label): the originals are back")
+                precondition(mac.journalEmpty, "\(label): the journal and the Dock restart flag are clear")
+                precondition(mac.kills.count == 1 && mac.kills[0].wait, "\(label): the Dock restarts exactly once: \(mac.kills)")
+                count += 1
+            }
+        }
+        precondition(count == 3542, "orders run: \(count)")
+        print("any order of quit notice, retire and exit for 2 or 3 copies, with and without a passive copy taking over, each starting with stale marks: originals back, journal empty, one Dock restart (\(count) orders): ok")
     }
 
     enum Exit: CaseIterable { case mainFirst, passiveFirst }
