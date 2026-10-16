@@ -14,6 +14,11 @@ final class Fires: Sendable {
 
 final class FullScreen: NSWindow {
     var system = false
+    var drags = 0, zooms = 0, performZooms = 0, fullScreens = 0
+    override func performDrag(with event: NSEvent) { drags += 1 }
+    override func zoom(_ sender: Any?) { zooms += 1; super.zoom(sender) }
+    override func performZoom(_ sender: Any?) { performZooms += 1; super.performZoom(sender) }
+    override func toggleFullScreen(_ sender: Any?) { fullScreens += 1 }
     override var styleMask: NSWindow.StyleMask {
         get { system ? super.styleMask.union(.fullScreen) : super.styleMask }
         set { super.styleMask = newValue.subtracting(.fullScreen) }
@@ -164,19 +169,48 @@ enum TestPlayerWindow {
         precondition(WindowChrome.stripDoubleClick(click(top, 2), in: window, setting: "None"), "a double-click in the top strip is the system's, not full screen")
         precondition(!WindowChrome.stripDoubleClick(click(top, 1), in: window, setting: "None"), "one click in the strip does nothing special")
         precondition(!WindowChrome.stripDoubleClick(click(100, 2), in: window, setting: "None"), "a double-click on the picture is still full screen")
-        let beforeZoom = window.frame
-        for _ in 1...2 { window.perform(WindowChrome.stripAction("Maximize")!, with: nil) }
-        precondition(window.frame == beforeZoom, "the second double-click puts the window back where it was")
-        pass("the top strip double-click follows the system setting")
+        let probe = FullScreen(contentRect: NSRect(x: 0, y: 0, width: 400, height: 300), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
+        probe.collectionBehavior = .fullScreenPrimary
+        let video = VideoView(frame: NSRect(x: 0, y: 0, width: 400, height: 300))
+        let controls = NSView(frame: NSRect(x: 100, y: 20, width: 200, height: 56))
+        video.addSubview(controls)
+        video.panel = controls
+        probe.contentView = video
+        _ = WindowChrome(probe, over: video)
+        if let area = NSScreen.main?.visibleFrame { probe.setFrame(NSRect(x: area.minX + 20, y: area.minY + 20, width: 400, height: 300), display: false) }
+        let start = probe.frame
+        func stripY() -> CGFloat { probe.contentLayoutRect.height + 5 }
+        func down(_ y: CGFloat, _ count: Int) -> NSEvent {
+            NSEvent.mouseEvent(with: .leftMouseDown, location: NSPoint(x: 200, y: y), modifierFlags: [], timestamp: 0, windowNumber: probe.windowNumber, context: nil, eventNumber: 0, clickCount: count, pressure: 1)!
+        }
+        precondition(probe.contentView?.superview?.hitTest(NSPoint(x: 200, y: probe.frame.height - 10)) === video, "a click 10 pt below the top edge reaches the picture, not the system title bar")
+        UserDefaults.standard.setVolatileDomain(["AppleActionOnDoubleClick": "Maximize"], forName: UserDefaults.argumentDomain)
+        video.mouseDown(with: down(stripY(), 2))
+        precondition(probe.zooms == 1 && probe.performZooms == 0 && probe.fullScreens == 0 && probe.drags == 0 && probe.frame != start, "the first double-click in the strip maximizes with the window's own zoom, not the green button, and not full screen")
+        video.mouseDown(with: down(stripY(), 2))
+        precondition(probe.zooms == 2 && probe.performZooms == 0 && probe.fullScreens == 0 && probe.drags == 0 && probe.frame == start, "the second double-click puts the window back where it was")
+        let menuSource = (try? String(contentsOfFile: "Helper/Player/main.swift", encoding: .utf8)) ?? ""
+        precondition(menuSource.contains("#selector(NSWindow.zoom(_:))") && !menuSource.contains("performZoom"), "the Window menu zooms with the same action as the strip")
+        pass("a click in the top strip reaches the picture, its double-click follows the system setting")
 
         let panel = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
         precondition(!WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel), "a drag that starts on the panel does not move the window")
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 200), panel: panel), "a drag that starts on the picture moves the window")
         panel.isHidden = true
         precondition(WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel) && WindowChrome.dragsWindow(at: .zero, panel: nil), "a hidden or missing panel never blocks the drag")
-        let dragged = NSEvent.mouseEvent(with: .leftMouseDragged, location: NSPoint(x: 100, y: 200), modifierFlags: [], timestamp: 0, windowNumber: window.windowNumber, context: nil, eventNumber: 0, clickCount: 1, pressure: 1)!
-        precondition(WindowChrome.startsDrag(click(200, 1), in: window, at: NSPoint(x: 100, y: 200), panel: nil), "the drag starts at the mouse-down")
-        precondition(!WindowChrome.startsDrag(dragged, in: window, at: NSPoint(x: 100, y: 200), panel: nil) && !WindowChrome.startsDrag(click(200, 2), in: window, at: NSPoint(x: 100, y: 200), panel: nil), "a later drag event would lose the first pixels, the second click of a double-click is not a drag")
+        func presses(_ y: CGFloat, _ count: Int = 1) -> Int {
+            let before = probe.drags
+            video.mouseDown(with: down(y, count))
+            return probe.drags - before
+        }
+        precondition(presses(150) == 1 && presses(stripY()) == 1, "the mouse-down on the picture and on the strip starts the window drag, so the window follows the pointer from the first pixel")
+        precondition(presses(40) == 0 && presses(150, 2) == 0, "the panel and the second click of a double-click do not")
+        controls.isHidden = true
+        precondition(presses(40) == 1, "a hidden panel never blocks the drag")
+        controls.isHidden = false
+        probe.system = true
+        precondition(presses(150) == 0 && presses(stripY()) == 0, "full screen has no window drag")
+        probe.system = false
         pass("the window moves only when the drag starts on the picture")
 
         let other = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 640, height: 360), styleMask: [.titled], backing: .buffered, defer: false)
