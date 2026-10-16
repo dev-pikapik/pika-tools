@@ -1,4 +1,4 @@
-import Foundation
+import AppKit
 
 struct RunningCopy: Equatable {
     let pid: Int32
@@ -7,9 +7,18 @@ struct RunningCopy: Equatable {
 }
 
 extension RunningCopy {
-    init?(pid: Int32, bundleID: String) {
-        guard let launched = MainCopyChoice.started(pid) else { return nil }
+    init?(pid: Int32, bundleID: String, started: (Int32) -> Date? = MainCopyChoice.started) {
+        guard let launched = started(pid) else { return nil }
         self.init(pid: pid, bundleID: bundleID, launched: launched)
+    }
+
+    init?(_ app: NSRunningApplication, started: (Int32) -> Date? = MainCopyChoice.started) {
+        guard !app.isTerminated, let bundleID = app.bundleIdentifier else { return nil }
+        self.init(pid: app.processIdentifier, bundleID: bundleID, started: started)
+    }
+
+    static func own(started: (Int32) -> Date? = MainCopyChoice.started) -> RunningCopy {
+        RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "", launched: started(getpid()) ?? .distantPast)
     }
 }
 

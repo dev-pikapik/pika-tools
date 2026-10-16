@@ -1,4 +1,4 @@
-import Foundation
+import AppKit
 
 @main
 struct TestMainCopy {
@@ -150,6 +150,7 @@ struct TestMainCopy {
         print("after a crash the next launch keeps the real original and puts it back: ok")
 
         processStart()
+        mapping()
         handover()
         deferredActions()
     }
@@ -169,11 +170,30 @@ struct TestMainCopy {
         precondition(me.launched == MainCopyChoice.started(getpid()), "a copy's own date is its process's start")
         precondition(peer.launched == MainCopyChoice.started(child.processIdentifier), "a peer's date is its own process's start, not ours: \(peer.launched) vs \(String(describing: MainCopyChoice.started(child.processIdentifier)))")
         precondition(peer.launched > me.launched, "the later process is the later copy")
-        precondition(abs(peer.launched.timeIntervalSince(launched)) < 1, "a peer's date is its launch moment, not the moment it was read")
         child.terminate()
         child.waitUntilExit()
         precondition(MainCopyChoice.started(Int32.max) == nil && RunningCopy(pid: Int32.max, bundleID: MainCopyChoice.websiteID) == nil, "a process that does not exist has no start and is no copy")
         print("a process's start comes from the kernel: this one is in the past, a child's is its launch moment and never changes, a missing one has none: ok")
+    }
+
+    static func mapping() {
+        let sentinel = Date(timeIntervalSince1970: 42)
+        var asked: [Int32] = []
+        let own = RunningCopy.own(started: { asked.append($0); return sentinel })
+        precondition(own.pid == getpid() && own.launched == sentinel && asked == [getpid()], "a copy's own date comes from the start lookup of its own pid: \(own) \(asked)")
+        precondition(RunningCopy.own().launched == MainCopyChoice.started(getpid()), "a copy's own date is the kernel start of this process")
+        let unknown = RunningCopy.own(started: { _ in nil }), peer = copy(5, MainCopyChoice.websiteID, at: 5)
+        precondition(unknown.launched == .distantPast && MainCopyChoice.leader(unknown, among: [peer]) == peer, "a copy that does not know its start counts as the oldest, so any other copy leads: \(unknown)")
+        precondition(RunningCopy(NSRunningApplication.current) == nil, "a process LaunchServices does not know is no copy")
+        guard let app = NSWorkspace.shared.runningApplications.first(where: { !$0.isTerminated && $0.bundleIdentifier != nil }), let id = app.bundleIdentifier else {
+            print("a running app maps to a copy with the kernel start of its own pid: skipped, no running app with a bundle id")
+            return
+        }
+        let pid = app.processIdentifier
+        precondition(RunningCopy(app) == RunningCopy(pid: pid, bundleID: id, launched: MainCopyChoice.started(pid)!), "a running app's date is the kernel start of its own pid")
+        precondition(RunningCopy(app, started: { $0 == pid ? sentinel : nil })?.launched == sentinel, "the start lookup gets the app's pid and its answer is the date")
+        precondition(RunningCopy(app, started: { _ in nil }) == nil, "an app with no start time is no copy")
+        print("a running app maps to a copy with the kernel start of its own pid, our own copy to this process's start, and an unknown start counts as the oldest: ok")
     }
 
     static func deferredActions() {

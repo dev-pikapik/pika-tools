@@ -27,7 +27,7 @@ final class MainCopy {
     @ObservationIgnored private var timeout: DispatchWorkItem?
     @ObservationIgnored private var deferred = DeferredActions()
     @ObservationIgnored private var watching: NSKeyValueObservation?
-    @ObservationIgnored let me = RunningCopy(pid: getpid(), bundleID: Bundle.main.bundleIdentifier ?? "")!
+    @ObservationIgnored let me = RunningCopy.own()
 
     private init() {}
 
@@ -128,7 +128,7 @@ final class MainCopy {
     }
 
     func peers() -> [RunningCopy] {
-        MainCopyChoice.peers(of: me, in: NSWorkspace.shared.runningApplications.compactMap(Self.copy))
+        MainCopyChoice.peers(of: me, in: NSWorkspace.shared.runningApplications.compactMap { RunningCopy($0) })
     }
 
     private func post(_ name: Notification.Name) {
@@ -137,11 +137,6 @@ final class MainCopy {
 
     private static func sender(_ note: Notification) -> Int32? {
         (note.object as? String).flatMap { Int32($0) }
-    }
-
-    private static func copy(_ app: NSRunningApplication) -> RunningCopy? {
-        guard !app.isTerminated else { return nil }
-        return app.bundleIdentifier.flatMap { RunningCopy(pid: app.processIdentifier, bundleID: $0) }
     }
 }
 
