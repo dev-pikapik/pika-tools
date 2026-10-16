@@ -150,9 +150,13 @@ final class HomeEndTool: Tool {
         #if !APPSTORE
         guard case .typing = TextFocus(app.processIdentifier) else { return false }
         #endif
+        press(key, target, proxy: proxy)
+        return true
+    }
+
+    func press(_ key: Int, _ target: (key: Int, flags: CGEventFlags), proxy: CGEventTapProxy) {
         held = (key, target.key)
         CGEvent.postPikapikKey(target.key, down: true, flags: target.flags, proxy)
-        return true
     }
 }
 
