@@ -4,7 +4,7 @@ import SwiftUI
 
 private let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.google.android.studio"]
 
-private func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
+func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
     func post(_ key: Int, _ text: String?) {
         for down in [true, false] {
             guard let event = CGEvent.pikapikKey(key, down: down) else { continue }
@@ -12,7 +12,7 @@ private func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) 
                 let units = Array(text.utf16)
                 event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
             }
-            event.tapPostEvent(proxy)
+            event.postPikapik(proxy)
         }
     }
     for _ in old.unicodeScalars { post(kVK_Delete, nil) }
@@ -214,9 +214,7 @@ final class LayoutFixTool: Tool {
         if let fix = KeyboardLayouts.fix(typed, from: current, ignored: Set(ignored)),
            [fix.original, fix.text].allSatisfy({ $0.unicodeScalars.count == $0.count }) {
             replace(fix.original, with: fix.text, proxy)
-            let key = event.copy()
-            key?.markPikapik()
-            key?.tapPostEvent(proxy)
+            event.copy()?.postPikapik(proxy)
             select(fix.target)
             clear()
             if space { last = (fix, current) }
@@ -597,9 +595,7 @@ final class LayoutFixTool: Tool {
         guard let fix = KeyboardLayouts.fix(typed, from: current, ignored: Set(ignored)), let element = field(),
               Self.matches(element, fix.original, boundary: true) == true else { return false }
         replace(fix.original, with: fix.text, proxy)
-        let key = event.copy()
-        key?.markPikapik()
-        key?.tapPostEvent(proxy)
+        event.copy()?.postPikapik(proxy)
         select(fix.target)
         clear()
         if space { last = (fix, current) }

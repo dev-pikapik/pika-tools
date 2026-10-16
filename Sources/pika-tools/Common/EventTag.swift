@@ -9,20 +9,25 @@ extension CGEvent {
 
     func markPikapik() { setIntegerValueField(.eventSourceUserData, value: Self.pikapikTag) }
 
-    static func pikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = [], held: CGEventFlags = CGEventSource.flagsState(.hidSystemState)) -> CGEvent? {
+    static var pikapikHeld: () -> CGEventFlags = { CGEventSource.flagsState(.hidSystemState) }
+
+    static func pikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = []) -> CGEvent? {
         guard let event = CGEvent(keyboardEventSource: CGEventSource(stateID: .privateState), virtualKey: CGKeyCode(key), keyDown: down) else { return nil }
-        event.flags = down ? flags : held
-        event.markPikapik()
+        event.flags = down ? flags : pikapikHeld()
         return event
     }
 
-    static var pikapikSend: (CGEvent, CGEventTapProxy?) -> Void = { event, proxy in
-        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: .cgSessionEventTap) }
+    static var pikapikSend: (CGEvent, CGEventTapProxy?, CGEventTapLocation) -> Void = { event, proxy, tap in
+        if let proxy { event.tapPostEvent(proxy) } else { event.post(tap: tap) }
+    }
+
+    func postPikapik(_ proxy: CGEventTapProxy? = nil, tap: CGEventTapLocation = .cgSessionEventTap) {
+        markPikapik()
+        Self.pikapikSend(self, proxy, tap)
     }
 
     static func postPikapikKey(_ key: Int, down: Bool, flags: CGEventFlags = [], _ proxy: CGEventTapProxy? = nil) {
-        guard let event = pikapikKey(key, down: down, flags: flags) else { return }
-        pikapikSend(event, proxy)
+        pikapikKey(key, down: down, flags: flags)?.postPikapik(proxy)
     }
 
     static func tapPikapikKey(_ key: Int, flags: CGEventFlags) {

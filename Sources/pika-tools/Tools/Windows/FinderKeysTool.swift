@@ -6,6 +6,7 @@ import SwiftUI
 @Observable
 final class FinderKeys {
     static let shared = FinderKeys()
+    @ObservationIgnored var pasteboard = NSPasteboard.general
 
     private(set) var isActive = false
 
@@ -89,7 +90,7 @@ final class FinderKeys {
 
         let target: (key: Int, flags: CGEventFlags)
         if cutting {
-            let before = NSPasteboard.general.changeCount
+            let before = pasteboard.changeCount
             cancelCut()
             watchCopy(since: before, attempts: 20)
             target = (kVK_ANSI_C, .maskCommand)
@@ -102,7 +103,7 @@ final class FinderKeys {
             case kVK_Delete, kVK_ForwardDelete:
                 target = (kVK_Delete, .maskCommand)
             default:
-                let moves = NSPasteboard.general.changeCount == cutCount
+                let moves = pasteboard.changeCount == cutCount
                 cancelCut()
                 guard moves else { return false }
                 target = (kVK_ANSI_V, [.maskCommand, .maskAlternate])
@@ -118,13 +119,13 @@ final class FinderKeys {
         generation += 1
     }
 
-    private func watchCopy(since count: Int, attempts: Int) {
+    func watchCopy(since count: Int, attempts: Int) {
         let mine = generation
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
             guard generation == mine else { return }
-            let now = NSPasteboard.general.changeCount
+            let now = pasteboard.changeCount
             if now != count {
-                if NSPasteboard.general.types?.contains(.fileURL) == true {
+                if pasteboard.types?.contains(.fileURL) == true {
                     cutCount = now
                 } else {
                     CGEvent.tapPikapikKey(kVK_ANSI_X, flags: .maskCommand)

@@ -67,8 +67,7 @@ enum BackForward {
             event.setIntegerValueField(CGEventField(rawValue: 110)!, value: 16)
             event.setIntegerValueField(CGEventField(rawValue: 132)!, value: phase)
             event.setIntegerValueField(CGEventField(rawValue: 115)!, value: forward ? 8 : 4)
-            event.markPikapik()
-            event.post(tap: .cgSessionEventTap)
+            event.postPikapik()
         }
     }
 
@@ -82,8 +81,7 @@ enum BackForward {
             guard let event = CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: point, mouseButton: .center) else { return }
             event.setIntegerValueField(.mouseEventButtonNumber, value: forward ? 4 : 3)
             event.setIntegerValueField(.mouseEventClickState, value: 1)
-            event.markPikapik()
-            event.post(tap: .cgSessionEventTap)
+            event.postPikapik()
         }
     }
 }

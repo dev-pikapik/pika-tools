@@ -130,8 +130,7 @@ final class MiddleClickTool: Tool {
         for type in [CGEventType.otherMouseDown, .otherMouseUp] {
             let event = CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: location, mouseButton: .center)
             event?.setIntegerValueField(.mouseEventClickState, value: 1)
-            event?.markPikapik()
-            event?.post(tap: .cghidEventTap)
+            event?.postPikapik(tap: .cghidEventTap)
         }
     }
 }
