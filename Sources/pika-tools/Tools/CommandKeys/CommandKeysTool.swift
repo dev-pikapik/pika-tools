@@ -56,8 +56,8 @@ final class CommandKeysTool: Tool {
     @ObservationIgnored private var source: CFRunLoopSource?
     @ObservationIgnored fileprivate var keys: Set<Int64> = []
     @ObservationIgnored fileprivate var blocked: Set<Int64> = []
-    @ObservationIgnored fileprivate var triggers: [Shortcut: Int64] = [:]
-    @ObservationIgnored fileprivate var held: (key: Int64, target: Int64)?
+    @ObservationIgnored var triggers: [Shortcut: Int64] = [:]
+    @ObservationIgnored var held: (key: Int64, target: Int64)?
 
     init() {
         protectsQuit = UserDefaults.standard.bool(forKey: "command-keys-quit")
@@ -124,7 +124,7 @@ final class CommandKeysTool: Tool {
         isActive = true
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
             CGEvent.postPikapikKey(Int(held.target), down: false, nil)
@@ -142,7 +142,7 @@ final class CommandKeysTool: Tool {
     }
 }
 
-private func commandKeysCallback(
+func commandKeysCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,

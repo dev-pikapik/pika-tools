@@ -50,7 +50,7 @@ final class HomeEndTool: Tool {
 
     @ObservationIgnored private var tap: CFMachPort?
     @ObservationIgnored private var source: CFRunLoopSource?
-    @ObservationIgnored private var held: (key: Int, target: Int)?
+    @ObservationIgnored var held: (key: Int, target: Int)?
 
     init() {
         isEnabled = UserDefaults.standard.bool(forKey: id)
@@ -117,7 +117,7 @@ final class HomeEndTool: Tool {
         #endif
     }
 
-    private func stop() {
+    func stop() {
         if let held {
             self.held = nil
             CGEvent.postPikapikKey(held.target, down: false, nil)
@@ -156,7 +156,7 @@ final class HomeEndTool: Tool {
     }
 }
 
-private func homeEndCallback(
+func homeEndCallback(
     proxy: CGEventTapProxy,
     type: CGEventType,
     event: CGEvent,
