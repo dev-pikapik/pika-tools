@@ -1,0 +1,19 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Helvetica,36,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(100,100,540,260)\pos(320,180)}Clipped rect
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\iclip(0,0,320,180)\an7\pos(0,0)}Inverse clip
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(m 100 100 l 500 100 500 300 100 300)\an5\pos(320,180)}Vector clip
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(1,m 0 0 b 100 0 100 100 0 100)\pos(50,50)}Scaled vector
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(-999999,-999999,999999,999999)}Huge clip
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(m)}Empty vector
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\clip(a,b,c,d)}Words

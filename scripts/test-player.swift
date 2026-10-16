@@ -1,4 +1,5 @@
 import AppKit
+import AVFoundation
 import Foundation
 import UniformTypeIdentifiers
 
@@ -34,14 +35,28 @@ enum TestPlayer {
             (up, [], .louder), (down, [], .quieter), ("m", [], .mute), ("f", [], .fullScreen), ("F", [], .fullScreen), ("f", .command, .fullScreen), ("f", [.command, .control], .fullScreen),
             ("\u{1B}", [], .leaveFullScreen), ("s", [], .snapshot), ("t", [], .floatOnTop),
             ("n", [], .next), ("N", [], .next), (">", .shift, .next), ("p", [], .previous), ("<", .shift, .previous), ("n", .command, nil), ("p", .option, nil),
-            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("a", [], nil), ("", [], nil),
+            ("v", [], .nextSubtitle), ("V", [], .nextSubtitle), ("3", .shift, .nextAudio), ("#", .shift, nil), ("z", [], .subtitleEarlier), ("x", [], .subtitleLater),
+            ("F", .shift, .subtitleLarger), ("G", .shift, .subtitleSmaller), ("v", .command, nil), ("z", .shift, nil), ("g", [], nil),
+            ("\u{F72D}", [], .nextChapter), ("\u{F72C}", [], .previousChapter), ("a", [], .loop), ("A", [], .loop), ("p", [.command, .option], .pictureInPicture),
+            (up, .option, nil), (left, [.shift, .option], nil), ("f", .option, nil), ("p", .command, nil), ("", [], nil),
         ]
         for (key, modifiers, action) in keys {
             precondition(PlayerAction(key: key, modifiers: modifiers) == action, "key \(key.unicodeScalars.map { String($0.value, radix: 16) }) \(modifiers.rawValue)")
         }
         precondition(PlayerAction(key: left, modifiers: [.shift, .function, .numericPad]) == .skipBack, "arrow keys always carry the function flag")
+        let layouts: [(String, String)] = [("US", "#"), ("German", "§"), ("British", "£"), ("Russian", "№"), ("Spanish", "·"), ("French", "3"), ("Swedish", "#"), ("Arabic", "٣"), ("Hebrew", "#")]
+        for (layout, typed) in layouts {
+            precondition(PlayerAction(key: typed, modifiers: .shift, keyCode: 20) == .nextAudio, "⇧3 on the \(layout) layout types \(typed) and must still switch audio")
+            precondition(PlayerAction(key: typed, modifiers: [], keyCode: 20) == nil && PlayerAction(key: typed, modifiers: [.shift, .command], keyCode: 20) == nil, "3 without Shift or with Command does nothing on the \(layout) layout")
+            precondition(PlayerAction(key: "$", modifiers: .shift, keyCode: 21) == nil, "⇧4 is not bound")
+        }
+        let russian: [(String, UInt16, PlayerAction)] = [("м", 9, .nextSubtitle), ("я", 6, .subtitleEarlier), ("ч", 7, .subtitleLater), ("ь", 46, .mute), ("а", 3, .fullScreen), ("ы", 1, .snapshot), ("е", 17, .floatOnTop), ("т", 45, .next), ("з", 35, .previous), ("л", 40, .playPause), ("о", 38, .longBack), ("д", 37, .longForward), ("х", 33, .slower), ("ъ", 30, .faster), ("б", 43, .frameBack), ("ю", 47, .frameForward)]
+        for (typed, code, action) in russian { precondition(PlayerAction(key: typed, modifiers: [], keyCode: code) == action, "\(typed) on the Russian layout is the key \(code)") }
+        precondition(PlayerAction(key: "а", modifiers: [], keyCode: 0) == nil && PlayerAction(key: "м", modifiers: .command, keyCode: 9) == nil, "a Russian letter on an unbound key or with Command does nothing")
+        precondition(PlayerAction(key: "z", modifiers: [], keyCode: 16) == .subtitleEarlier, "a typed letter still wins over the key position (QWERTZ Z)")
+        print("audio switch and letter keys work on other layouts by key position: ok")
         let bound = Set(PlayerAction.bindings.map(\.action))
-        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop] {
+        for action in [PlayerAction.playPause, .back, .forward, .skipBack, .skipForward, .longBack, .longForward, .frameBack, .frameForward, .start, .end, .slower, .faster, .normalSpeed, .louder, .quieter, .mute, .fullScreen, .leaveFullScreen, .snapshot, .next, .previous, .floatOnTop, .nextSubtitle, .nextAudio, .subtitleEarlier, .subtitleLater, .subtitleLarger, .subtitleSmaller] {
             precondition(bound.contains(action), "\(action) has no key")
         }
         precondition(Set(PlayerAction.bindings.map { "\($0.key)\($0.modifiers.rawValue)" }).count == PlayerAction.bindings.count, "a key is bound twice")
@@ -298,6 +313,62 @@ enum TestPlayer {
         await formats.set(true, for: [a, b]).value
         precondition(formats.isOn([a, b]), "a system that never answers but changes the app must not stall")
         print("no answer from the system, but the app changed: ok")
+
+        let starts = [0.0, 60, 150, 300]
+        precondition(PlayerChapters.current(starts, at: 0) == 0 && PlayerChapters.current(starts, at: 59.9) == 0)
+        precondition(PlayerChapters.current(starts, at: 60) == 1 && PlayerChapters.current(starts, at: 59.97) == 1, "a seek that lands a hair early still counts")
+        precondition(PlayerChapters.current(starts, at: 1000) == 3 && PlayerChapters.current([], at: 5) == nil && PlayerChapters.current([10], at: 2) == nil)
+        precondition(PlayerChapters.next(starts, after: 0) == 60 && PlayerChapters.next(starts, after: 59.99) == 150 && PlayerChapters.next(starts, after: 60) == 150)
+        precondition(PlayerChapters.next(starts, after: 299.99) == nil && PlayerChapters.next(starts, after: 300) == nil && PlayerChapters.next(starts, after: 1000) == nil, "no next chapter after the last one")
+        precondition(PlayerChapters.next([10, 20], after: 2) == 10 && PlayerChapters.next([], after: 2) == nil)
+        precondition(PlayerChapters.previous(starts, before: 100) == 60, "past the first seconds the chapter starts over")
+        precondition(PlayerChapters.previous(starts, before: 61) == 0 && PlayerChapters.previous(starts, before: 63) == 0, "right after a start it goes to the chapter before")
+        precondition(PlayerChapters.previous(starts, before: 63.5) == 60 && PlayerChapters.previous(starts, before: 60) == 0)
+        precondition(PlayerChapters.previous(starts, before: 0) == 0 && PlayerChapters.previous(starts, before: 2) == 0 && PlayerChapters.previous(starts, before: 1000) == 300)
+        precondition(PlayerChapters.previous([10, 20], before: 5) == 0 && PlayerChapters.previous([], before: 5) == 0)
+        precondition(PlayerChapters.fractions(starts, duration: 600) == [0.1, 0.25, 0.5], "\(PlayerChapters.fractions(starts, duration: 600))")
+        precondition(PlayerChapters.fractions([0, 600, 700], duration: 600).isEmpty && PlayerChapters.fractions(starts, duration: 0).isEmpty && PlayerChapters.fractions(starts, duration: .nan).isEmpty)
+        print("chapters: current, next and previous at the edges, marks as fractions of the bar: ok")
+
+        var loop = PlayerLoop()
+        precondition(loop.wrap(at: 100) == nil && !loop.isSet)
+        loop.press(at: 10)
+        precondition(loop.start == 10 && loop.end == nil && !loop.isSet && loop.wrap(at: 100) == nil, "only A: nothing to jump")
+        loop.press(at: 10.2)
+        precondition(loop.end == nil, "B too close to A is ignored")
+        loop.press(at: 20)
+        precondition(loop.start == 10 && loop.end == 20 && loop.isSet)
+        precondition(loop.wrap(at: 5) == nil && loop.wrap(at: 19.9) == nil && loop.wrap(at: 20) == 10 && loop.wrap(at: 25) == 10 && loop.wrap(at: .infinity) == 10)
+        loop.press(at: 15)
+        precondition(loop == PlayerLoop() && loop.wrap(at: 25) == nil, "third press clears")
+        loop.press(at: 50)
+        loop.press(at: 30)
+        precondition(loop.start == 30 && loop.end == 50, "B before A swaps them")
+        precondition(loop.wrap(at: 50) == 30)
+        loop.press(at: 0)
+        precondition(loop == PlayerLoop())
+        loop.press(at: 1)
+        precondition(loop.start == 1 && loop.end == nil, "a new loop starts again")
+        print("loop A-B: set, jump, clear, B before A: ok")
+
+        let speakers = PlayerOutput(uid: "speakers", name: "Speakers"), headphones = PlayerOutput(uid: "headphones", name: "Headphones")
+        precondition(PlayerOutput.choice(nil, among: [speakers, headphones]) == nil)
+        precondition(PlayerOutput.choice("headphones", among: [speakers, headphones]) == "headphones")
+        precondition(PlayerOutput.choice("headphones", among: [speakers]) == nil, "an unplugged output must fall back to the system output")
+        precondition(PlayerOutput.choice("headphones", among: []) == nil)
+        let real = PlayerOutput.all()
+        precondition(Set(real.map(\.uid)).count == real.count && real.allSatisfy { !$0.uid.isEmpty && !$0.name.isEmpty })
+        let renderer = AVSampleBufferAudioRenderer()
+        precondition(renderer.audioOutputDeviceUniqueID == nil, "a new renderer follows the system output")
+        for output in real {
+            renderer.audioOutputDeviceUniqueID = output.uid
+            precondition(renderer.audioOutputDeviceUniqueID == output.uid, "\(output.name) was not accepted")
+        }
+        if let system = PlayerOutput.system() {
+            renderer.audioOutputDeviceUniqueID = system
+            precondition(renderer.audioOutputDeviceUniqueID == system, "the system output was not accepted")
+        }
+        print("sound outputs: \(real.count) found, each accepted by the player, an unplugged one falls back to the system, the system one is known: ok")
     }
 }
 

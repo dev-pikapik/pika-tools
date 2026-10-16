@@ -30,9 +30,9 @@ if [ -z "$DIR" ]; then
             Extensions/"$EXT"/*.swift ${SHARED[@]+"${SHARED[@]}"} -o "$DIR/$EXT.o"
     done
     [ ! -d Vendor/ffmpeg/include ] || swiftc -wmo -c -module-name Player -target arm64-apple-macos14.0 \
-        -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include \
+        -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include \
         -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
-        Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,ImageLogic}.swift -o "$DIR/Player.o"
+        Helper/Player/*.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,ImageLogic,PlayerMarks,PlayerOutput,SubtitleParser}.swift -o "$DIR/Player.o"
 fi
 
 python3 - "$DIR" <<'PY'

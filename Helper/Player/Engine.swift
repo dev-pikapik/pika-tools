@@ -115,12 +115,19 @@ final class Engine {
     let layer = AVSampleBufferDisplayLayer()
     let size: CGSize
     let duration: CMTime
+    let audioTracks: [Track]
+    let chapters: [Chapter]
     private let audio = AVSampleBufferAudioRenderer()
     private let demuxer: Demuxer
     private let file: Int32
     private let queue = DispatchQueue(label: "pikapik.player")
     private let lock = NSLock()
-    private var feeds: [Feed] = []
+    private var chosenAudio: Track?
+    private var feedList: [Feed] = []
+    private var feeds: [Feed] {
+        get { lock.withLock { feedList } }
+        set { lock.withLock { feedList = newValue } }
+    }
     private var wanted: (CMTime, Float)?
     private var requested: CMTime?
     private var steps = 0
@@ -137,7 +144,15 @@ final class Engine {
         set { audio.isMuted = newValue }
     }
 
+    var output: String? { audio.audioOutputDeviceUniqueID }
+
+    func route(to uid: String) {
+        audio.audioOutputDeviceUniqueID = uid
+    }
+
     var hasAudio: Bool { feeds.contains { $0.renderer === audio } }
+
+    var audioTrack: Track? { lock.withLock { chosenAudio } ?? feeds.first { $0.renderer === audio }?.track }
 
     var hasVideo: Bool { !size.equalTo(.zero) }
 
@@ -177,12 +192,14 @@ final class Engine {
             feeds.append(Feed(track, layer.sampleBufferRenderer, decoder))
             size = track.size
         }
-        self.feeds = feeds
+        feedList = feeds
         self.size = size
+        audioTracks = demuxer.tracks.filter { $0.format.mediaType == kCMMediaType_Audio && Self.decodable($0.format.description) }
         demuxer.discard(except: feeds.map(\.track))
         duration = demuxer.duration.isValid ? demuxer.duration : feeds.compactMap { feed in
             ((try? demuxer.last(feed.track)) ?? nil).map { feed.track.time($0.pts + $0.duration) }
         }.max() ?? .zero
+        chapters = demuxer.chapters()
         guard !feeds.isEmpty else {
             close(fd)
             throw MediaError.unsupportedFeature
@@ -235,6 +252,12 @@ final class Engine {
         queue.async { [weak self] in self?.restartOnFrame() }
     }
 
+    func selectAudio(_ track: Track) {
+        guard audioTracks.contains(where: { $0 === track }) else { return }
+        lock.withLock { chosenAudio = track }
+        queue.async { [weak self] in self?.switchAudio(to: track) }
+    }
+
     func tags() -> MediaTags { demuxer.tags() }
 
     func frameImage() -> CGImage? {
@@ -242,6 +265,21 @@ final class Engine {
         var image: CGImage?
         VTCreateCGImageFromCVPixelBuffer(buffer, options: nil, imageOut: &image)
         return image
+    }
+
+    private func switchAudio(to track: Track) {
+        guard audioTracks.contains(where: { $0 === track }), let old = feeds.first(where: { $0.renderer === audio }), old.track !== track else { return }
+        let time = synchronizer.currentTime()
+        audio.stopRequestingMediaData()
+        audio.flush()
+        demuxer.select(track, replacing: old.track)
+        let feed = Feed(track, audio, nil)
+        feed.next = (try? demuxer.locate(track, track.ticks(time))) ?? nil
+        feeds = feeds.map { $0 === old ? feed : $0 }
+        pump(feed)
+        audio.requestMediaDataWhenReady(on: queue) { [weak self, weak feed] in
+            if let self, let feed { self.pump(feed) }
+        }
     }
 
     private func restartOnFrame() {

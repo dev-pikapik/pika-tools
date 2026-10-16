@@ -1179,7 +1179,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Plays videos that QuickTime can’t open, such as MKV, WebM, AVI, WMV and FLV, in their own window. The button opens one file and never changes which app opens your videos; the switch below does that.
 
-**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Subtitles are not supported yet.
+**How it works:** The button is on Settings › Player (`Sources/pika-tools/Tools/Player/PlayerPage.swift:14`) and opens the file in the small separate app `pikapik Player` (`Helper/Player`), which has no network access and only the right to read and write files you choose. The same app also appears under Open With when you right-click a video. A video that is already open comes to the front instead of opening twice (`Helper/Player/main.swift:35`). You can also drop a video on the player window. Space plays and pauses, ↑ and ↓ change the volume, F and Esc enter and leave full screen. Sound tracks and subtitles are described below.
 
 **Options:**
 - Formats — the lists of formats on the same page, Video and Music; hover a format to see its file extensions (`PlayerPage.swift:23`, `PlayerPage.swift:24`).
@@ -1305,6 +1305,31 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 4. (Website) Scroll up with the mouse wheel over the video → the volume goes up; scroll sideways (or hold Shift and scroll) → the video skips. Touch the trackpad lightly → nothing changes.
 5. (Website) Open the Playback menu → every key above is shown next to its item, and each item does the same as its key.
 
+### Sound tracks and subtitles
+
+**Does:** A video with several sound tracks lets you pick one, and the picture can show subtitles, from inside the file (text, ASS with its animation and karaoke, and the picture subtitles of Blu-ray, DVD and DVB broadcasts) or from a .srt, .vtt or .ass file. Switching the sound track keeps your place and the pause. The choice is remembered for that video and used the next time you open it.
+
+**How it works:** The **Audio** and **Subtitles** menus and the button with the speech bubble on the panel list the tracks by language and name, or **Track 2** when the file gives neither (`Helper/Player/TrackMenus.swift:32`, `Helper/Player/main.swift:149`). Choosing a sound track stops only the audio, opens the new track at the clock time and starts it again; the picture and the clock are not touched (`Helper/Player/Engine.swift:247`). Subtitles inside the file (SubRip, ASS/SSA, WebVTT, mov_text and the pictures of PGS, VobSub and DVB) are read by a second reader in the background, ten minutes ahead of the picture at a time and again after a jump, so a long film is never read to the end for its subtitles; the list of tracks appears at once and the lines fill in a moment after the video starts (`Helper/Player/Subtitles.swift:159`). Files with the video’s name next to it are found by themselves once the folder is allowed; a file can also be dropped on the window or added with **Subtitles › Add Subtitle File…**; UTF-8, UTF-16 and Windows Cyrillic text are understood (`Sources/pika-tools/Tools/Player/SubtitleParser.swift:204`). Plain text is white with a shadow, at the bottom in the middle, rises above the panel while it is visible, and its size follows the window height (`Helper/Player/Subtitles.swift:392`). ASS and SSA are drawn by libass, the engine of IINA and mpv, so styles, karaoke, moves, fades, clips, drawings and animation all work, and right-to-left and complex scripts are shaped correctly; the fonts attached to an MKV are used first, then the fonts of the Mac through CoreText, and nothing is downloaded (`Helper/Player/Ass.swift:25`, `:71`, `:82`). libass draws on its own queue, never on the main thread, into one picture per change, which the view lays over the video at the size and place the film gives it, also with black bars; the **Larger** and **Smaller** keys scale it (`Helper/Player/Subtitles.swift:564`, `:787`). Each track keeps at most 24 MB of lines and the attached fonts at most 96 MB (32 MB each), a moment with more than 400 lines at once is not drawn, and a damaged script cannot take the player down (`Helper/Player/Ass.swift:26`, `:207`). A picture subtitle is decoded by FFmpeg into a bitmap and drawn over the video at the place and scale the film gives it, also with black bars, for exactly as long as it should be shown, and it rises above the panel too; each track keeps at most 32 MB of pictures, so a long film does not fill the memory (`Helper/Player/Subtitles.swift:94`, `:172`, `:527`). With no choice made, the player picks a subtitle file next to the video, or else a track in the language of the Mac when it differs from the sound track’s language (`Helper/Player/Subtitles.swift:749`).
+
+**Keys:** V next subtitles (the last step is off), ⇧3 (#) next sound track, found by the place of the key so it works on any keyboard layout, Z and X move subtitles 0.1 s earlier and later, ⇧F and ⇧G make them larger and smaller. The same items are in the Audio and Subtitles menus (`Sources/pika-tools/Tools/Player/PlayerLogic.swift:108`).
+
+**Nuances:** A script with a crowd of animated signs can draw slowly: the lines then appear a little late, while the video and the sound are not held up. The size key does not change picture subtitles, because they are already pictures. Subtitle formats that are not text or one of these pictures are in the list but greyed out, with “(can’t be shown)”. The clock that redraws the subtitles stops while the video is paused. A subtitle file that can’t be read shows a short note and nothing else changes. The track choice and the delay are remembered for each of the last 200 videos; the size is the same for all.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open an MKV with two sound tracks → Audio lists both; choose the second while playing → the sound changes and the time keeps going without a jump; pause, choose the first → it stays paused.
+2. (Website) Open a video with text subtitles → Subtitles lists them; choose one → white text with a shadow appears at the bottom in the middle at the right moment; choose Off → it goes away.
+3. (Website) Put `Movie.srt` next to `Movie.mkv` and allow the folder → it is chosen by itself. Drop another .srt on the window → it is added and shown.
+4. (Website) Press V repeatedly → the subtitles change one by one, then off, and a short note names each. Press X three times → the note says the delay is 0.3 s and the text comes later.
+5. (Website) Press ⇧F → the text grows; resize the window → the text follows its height. Show the panel (move the mouse) → the text rises above it.
+6. (Website) Choose the second sound track, close, open the video again → the same track is chosen.
+7. (Website) A file that is not a subtitle renamed to .srt, dropped on the window → a note “Couldn’t read this subtitle file.” appears; nothing crashes.
+8. (Website) Open an MKV with a PGS track (Blu-ray) → Subtitles lists it; choose it → the picture appears where the film puts it, in the same size relative to the video, also after resizing the window, and goes away on the film’s own time; pause → it rises above the panel. The same for VobSub (DVD) and DVB tracks.
+9. (Website) Open an MKV with ASS subtitles that have karaoke, a moving sign and a top-of-the-screen style (a typical anime release with its own fonts) → the words fill with color as they are sung, the sign moves and fades, the lines keep their looks, places and fonts; Larger scales them.
+10. (Website) Press ⇧3 on a Russian or German layout → the sound track changes just as on a US layout.
+11. Without pressing anything: `scripts/test-subtitles.swift` checks the readers for SubRip, WebVTT, mov_text, the encodings and the detection of ASS, including broken and random input; `scripts/test-ass.swift` draws scripts with `\move`, karaoke and `\clip` through libass at a small size and compares them with the reference pictures in `scripts/ass-reference` (a few pixels may differ), checks the memory and line limits, and draws the twelve scripts of `scripts/ass-corpus` (animation, karaoke, moves, `\t`, `\clip`, broken tags, a crowd of lines, mixed scripts) and many random changes of them, each in its own process with a time limit, so no file may crash or hang the player; `scripts/test-tracks.swift` plays the samples made with ffmpeg, switches the sound track and checks that the time does not jump, checks that a 25-minute film is read only ten minutes ahead and follows a jump, then checks the subtitles of each sample (PGS, VobSub and DVB made with ffmpeg’s encoders: the bitmap, the start and end time, the memory limit), the delay and the size, and draws the subtitle view into a picture to check that the text is white, at the bottom in the middle, the same in the dark and the light theme, raised above the panel, larger on request and readable on a white picture thanks to the shadow, that ASS from libass lands in the view with its bold, italic, underline, colors, outline, corners, moves and karaoke, inside the video and not on the black bars, and that an ASS track of an MKV and an .ass file from the menu are drawn, and that a picture subtitle lands at the right place and scale over the video, also with black bars; the paused video does not keep the subtitle clock running. `scripts/test-player.swift` also checks ⇧3 on nine keyboard layouts. Both print passed.
+
 ### Speed
 
 **Does:** Plays faster or slower, from 0.5× to 2×, with the voice at the same pitch.
@@ -1373,14 +1398,14 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** The player window has no grey title bar: the video fills the whole window, and the three round buttons sit on top of it, hidden together with the control panel.
 
-**How it works:** The window stays a normal titled window, so it keeps its rounded corners, shadow, ⌘W and the Window menu, but its content runs under a transparent, title-less bar (`Helper/Player/WindowChrome.swift:32`; the title is still set for the Window menu and VoiceOver). The three buttons are shown and hidden by the same rule as the panel (`PlayerWindow.swift:703`; hidden buttons do not react to the mouse until it moves), with a thin dark gradient under them, over a video only, so they stay readable on a bright picture; a song gets the buttons without the shade (`WindowChrome.swift:57`). A drag on the video moves the window (`PlayerWindow.swift:43`, rule in `WindowChrome.swift:53`), except on the control panel, and it works from the first click even when the window is not the active one (`PlayerWindow.swift:13`); a double-click on the video still goes full screen (`PlayerWindow.swift:36`). A double-click on the thin strip at the very top does what System Settings says for a title bar: zoom, minimize or nothing (`WindowChrome.swift:47`). In full screen the Mac handles the menu bar and the buttons (`PlayerWindow.swift:755`). `scripts/test-player-window.swift` checks the window style and that the buttons and the gradient hide and show together.
+**How it works:** The window stays a normal titled window, so it keeps its rounded corners, shadow, ⌘W and the Window menu, but its content runs under a transparent, title-less bar (`Helper/Player/WindowChrome.swift:36`; the title is still set for the Window menu and VoiceOver). The three buttons are shown and hidden by the same rule as the panel (`PlayerWindow.swift:704`; the pointer resting on a button counts as being over the controls, `WindowChrome.swift:60`; the pointer is also followed over a window that is not the active one, `WindowChrome.swift:34`; hidden buttons do not react to the mouse until it moves, and an unchanged state starts no new fade), with a thin dark gradient under them, over a video only, so they stay readable on a bright picture; a song gets the buttons without the shade (`WindowChrome.swift:67`; with VoiceOver on, the hidden buttons stay in the accessibility tree). A drag on the video moves the window (`PlayerWindow.swift:43`, rule in `WindowChrome.swift:56`), except on the control panel, and it works from the first click even when the window is not the active one (`PlayerWindow.swift:13`); a double-click on the video still goes full screen (`PlayerWindow.swift:36`). A double-click on the thin strip at the very top does what System Settings says for a title bar: zoom, minimize or nothing (`WindowChrome.swift:50`). In full screen the Mac handles the menu bar and the buttons (`PlayerWindow.swift:756`). `scripts/test-player-window.swift` checks the window style and that the buttons and the gradient hide and show together.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
 1. (Website) Open a video → no grey bar at the top: the picture reaches the top edge. Keep the mouse still while it plays → after about 2.5 seconds the three buttons and the panel fade out together; move the mouse → they come back with a dark shade under the buttons.
 2. (Website) Pause → the buttons stay however long you wait. Open a mostly white video → the buttons are still easy to see. Open a song without a cover in the light appearance → the buttons are there and there is no dark patch at the top. Open a file that can’t be played → the buttons are there.
-3. (Website) Click another app, then drag the video of the player window straight away → the window moves with the first drag. Drag the control panel’s edge → it doesn’t move. Keep the mouse still until the buttons fade, then click where the red button was → nothing happens until you move the mouse. Double-click the video → full screen; double-click again → back to the window. Double-click the thin strip at the very top → what System Settings › Desktop & Dock › “Double-click a window’s title bar to” says (Zoom, Minimize or nothing). ⌘W or the red button closes it.
+3. (Website) Click another app, then drag the video of the player window straight away → the window moves with the first drag. Drag the control panel’s edge → it doesn’t move. Keep the mouse still until the buttons fade, then click where the red button was → nothing happens until you move the mouse. Keep the pointer on the three buttons of a playing video for more than 2.5 seconds → they stay while it is there. Click another app, then only point at the player window (no click) → its buttons and panel appear. Double-click the video → full screen; double-click again → back to the window. Double-click the thin strip at the very top → what System Settings › Desktop & Dock › “Double-click a window’s title bar to” says (Zoom, Minimize or nothing). ⌘W or the red button closes it.
 4. (Website) Do it in the light and in the dark appearance → both look the same, only the buttons’ own colours differ.
 5. (Website) `scripts/test-player-window.swift` prints ok four times.
 
@@ -1397,17 +1422,85 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 2. (Website) Open a music file → the card shows only the time.
 3. (Website) Play and hover along the time bar for 10 minutes, opening other videos now and then → the player’s memory in Activity Monitor does not keep growing.
 
-### FFmpeg and dav1d Licenses
+### Picture in Picture
 
-**Does:** Shows the licenses of the two open-source libraries the player uses, and links to their source code.
+**Does:** Shows the video in a small floating window above your other windows, with play, pause and skip buttons, while you work in other apps.
 
-**How it works:** The FFmpeg License row opens the bundled `FFmpeg License.txt` (`PlayerPage.swift:41`): FFmpeg under LGPL 2.1 or later, dav1d under BSD 2-Clause. Source Code opens the latest release on GitHub, where the source of both is attached (`PlayerPage.swift:43`).
+**How it works:** The player gives the video layer to `AVPictureInPictureController` (`Helper/Player/PictureInPicture.swift:3`). While the small window is open macOS asks the player for the length of the video and whether it is paused, and tells it when you press play, pause or skip; the player answers from its own state (`PictureInPicture.swift:76`). The button on the control panel, **Window › Picture in Picture** and ⌘⌥P start and stop it (`Helper/Player/PlayerWindow.swift:656`). While it runs the player window is hidden, and it comes back when the small window is closed or restored, and when the video is closed or another file is opened (`PlayerWindow.swift:649`). A video has the button from the start, dimmed, so the time bar does not move when macOS says the video can be shown that way; only then the button and the menu item turn on (`PlayerWindow.swift:635`).
+
+**Nuances:** In full screen the player window stays where it is. A file with no picture, such as music, has no button.
 
 **Edition:** Website only (App Store: hidden).
 
 **Test:**
-1. (Website) Settings › Player › FFmpeg and dav1d Licenses → a text file with both licenses opens.
-2. (Website) Source Code → the latest release page opens in the browser, with the FFmpeg and dav1d source archives in the list of files.
+1. (Website) Open a video and play it → a button with two small windows is at the right of the control panel, dimmed for a moment at the start; the time bar does not move when it turns on; for a music file the button is missing.
+2. (Website) Click the button, or press ⌘⌥P → the video moves to a small floating window and keeps playing; the player window is hidden.
+3. (Website) In the small window press pause, then skip → the video pauses and jumps; close the small window or click its restore button → the player window is back at the same time.
+4. (Website) Open **Window** → the item **Picture in Picture** is there, with ⌘⌥P next to it; it is dimmed when no video is open.
+
+### Chapters
+
+**Does:** Shows the chapters of a video on the time bar and in a **Chapters** menu, names the chapter under the preview, and lets you jump from chapter to chapter.
+
+**How it works:** The reader lists the file’s chapters with their titles and moves them onto the same clock as the picture (`Extensions/MediaReader/Demuxer.swift:294`). The window turns them into marks on the time bar (`Helper/Player/TimeMarks.swift:3`, `PlayerWindow.swift:675`) and into the **Chapters** menu, where the chapter you are in has a check mark (`Helper/Player/main.swift:62`). Page Down goes to the start of the next chapter and stays put in the last one; Page Up goes to the start of the chapter you are in, or to the one before it when you are within 3 seconds of its start (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:3`, `PlayerWindow.swift:660`). The chapter name is shown under the small picture when you point at the time bar (`Helper/Player/Thumbnails.swift:157`). A chapter without a title is called “Chapter” and its number.
+
+**Nuances:** A video without chapters has no marks, and the menu says “No Chapters”. Marks at the very start or end of the bar are not drawn.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Open an MKV or MP4 with chapters → thin light marks with a dark edge sit on the time bar at the chapter starts, and the **Chapters** menu lists every chapter with the current one checked.
+2. (Website) Press Page Down → the time jumps to the start of the next chapter; press it in the last chapter → nothing changes.
+3. (Website) Press Page Up in the middle of a chapter → it goes back to the start of that chapter; press Page Up again at once → the chapter before.
+4. (Website) Point at the time bar → the card shows the picture, the time and the chapter name under the picture; a long name is cut with “…”.
+5. (Website) Choose a chapter in the **Chapters** menu → the video jumps to its start.
+6. (Website) Open a video without chapters → no marks, and the menu shows “No Chapters”.
+
+### Repeat A–B
+
+**Does:** Repeats a part of the video again and again, from a spot you mark to another.
+
+**How it works:** The A key is pressed three times: the first press marks the start (A) at the current time, the second marks the end (B), the third clears both (`Sources/pika-tools/Tools/Player/PlayerMarks.swift:34`, `Helper/Player/PlayerWindow.swift:668`). Two yellow marks and a yellow strip between them show the part on the time bar. Every tick of the player checks the time, and when it reaches B the video seeks back to A and goes on playing at the same speed (`PlayerWindow.swift:432`, `PlayerMarks.swift:46`). The Playback menu item changes its name between **Set Loop Start**, **Set Loop End** and **Clear Loop**.
+
+**Nuances:** If the second mark comes before the first, they swap places. A second mark less than half a second from the first is ignored. Opening another video clears the loop.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Play a video, press A at about 5 seconds, then A again at about 12 → two yellow marks and a strip show on the time bar.
+2. (Website) Keep playing → when the time reaches the second mark it jumps back to the first and plays on; this repeats.
+3. (Website) Press A a third time → the marks disappear and the video plays past the end of the old loop.
+4. (Website) Press A, jump back 10 seconds with J, press A → the loop is between the two spots, the earlier one first.
+5. (Website) Open the Playback menu → the item reads **Set Loop Start**, then **Set Loop End**, then **Clear Loop** as you press A.
+
+### Play Sound Through
+
+**Does:** Sends the sound of the player, and only of the player, to another speaker, headphones or other sound output, without changing the output of your Mac.
+
+**How it works:** The list is the Mac’s sound outputs that are not hidden (`Sources/pika-tools/Tools/Player/PlayerOutput.swift:8`), read each time the Playback menu opens (`Helper/Player/main.swift:44`). Choosing one gives its identifier to the sound renderer of every open player (`Helper/Player/PlayerWindow.swift:158`, `Helper/Player/Engine.swift:143`); videos opened later use it too. **System Output** gives the player back to whatever the Mac uses, and follows it when you change it in System Settings. When the chosen output is unplugged or switched off, the player goes back to the system output by itself (`Helper/Player/main.swift:31`, `PlayerOutput.swift:33`). The choice is not kept after the player quits.
+
+**Nuances:** The item is hidden while the Mac has only one sound output. AirPlay for video is not offered: the system AirPlay button works only with Apple’s own player, which cannot play MKV, WebM and the other formats this player is for. The sound of a video can still go to an AirPlay speaker when the Mac itself uses it as its output.
+
+**Edition:** Website only (App Store: hidden).
+
+**Test:**
+1. (Website) Connect headphones or a second sound output, play a video → **Playback › Play Sound Through** lists the outputs, with **System Output** checked.
+2. (Website) Choose the headphones → the sound of the player moves to them; the sound of other apps stays where it was, and the output in System Settings is the same as before.
+3. (Website) Choose **System Output** → the sound comes back to the Mac’s own output.
+4. (Website) Choose the headphones, then unplug them → the sound continues on the Mac’s output, and the menu shows **System Output** checked.
+5. (Website) With only one sound output the item is not in the Playback menu.
+
+### Player Licenses
+
+**Does:** Shows the licenses of the open-source libraries the player uses, and links to their source code.
+
+**How it works:** The Player Licenses row opens the bundled `Player Licenses.txt` (`PlayerPage.swift:27`), made from `Vendor/ffmpeg/License.txt` by `scripts/fetch-ffmpeg.sh`: FFmpeg under LGPL 2.1 or later, dav1d under BSD 2-Clause, libass under ISC, FreeType under the FreeType License, HarfBuzz under MIT, and FriBidi under LGPL 2.1, which is a separate library you can replace (`libfribidi.0.dylib` in the Frameworks folder of the app; the others are built into the player). Source Code opens the latest release on GitHub, where the source archives of all six are attached (`PlayerPage.swift:29`).
+
+**Edition:** Website only (App Store: hidden; the player and libass are not in that build).
+
+**Test:**
+1. (Website) Settings › Player › Player Licenses → a text file with the six licenses opens, FriBidi saying it is a replaceable library with its source attached to the release.
+2. (Website) Source Code → the latest release page opens in the browser, with the FFmpeg, dav1d, libass, FreeType, HarfBuzz and FriBidi source archives in the list of files.
 
 ## Uninstaller
 

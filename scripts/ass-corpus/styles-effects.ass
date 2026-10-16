@@ -1,0 +1,18 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Weird,,0,&HZZZ,0,0,0,9,9,9,9,0,0,-1,-1,9,-9,-9,99,-1,-1,-1,9
+Style: Default,Helvetica,36,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,0,0,0,0,100,100,0,0,1,2,1,2,10,10,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,,{\rWeird}Weird style
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,Banner;99;99;99,{\rDefault\be5\blur50\shad-50\xbord99\ybord-99\xshad50\yshad-50}Odd effects
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,Scroll up;0;999999;1,Scroll up
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,Scroll down;-5;5;0,Scroll down
+Dialogue: 0,0:00:00.00,0:00:09.00,Default,,0,0,0,Banner;0;1;1,Banner

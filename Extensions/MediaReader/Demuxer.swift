@@ -45,8 +45,14 @@ final class Run {
     var atEnd = false
 }
 
+func streamTag(_ stream: UnsafeMutablePointer<AVStream>, _ key: String) -> String? {
+    av_dict_get(stream.pointee.metadata, key, nil, 0)?.pointee.value.map { String(cString: $0) }
+}
+
 final class Track {
     let index: Int32
+    let language: String?
+    let title: String?
     let timeBase: AVRational
     let format: TrackFormat
     let size: CGSize
@@ -72,6 +78,8 @@ final class Track {
     fileprivate init(_ stream: UnsafeMutablePointer<AVStream>, format: TrackFormat, start: Int64, decodeOrderTimes: Bool) {
         let par = stream.pointee.codecpar.pointee
         index = stream.pointee.index
+        language = streamTag(stream, "language")
+        title = streamTag(stream, "title")
         timeBase = stream.pointee.time_base
         self.format = format
         self.decodeOrderTimes = decodeOrderTimes
@@ -171,7 +179,7 @@ final class Track {
     }
 }
 
-private final class ByteReader {
+final class ByteReader {
     let read: (UnsafeMutablePointer<UInt8>, Int32, Int64) -> Int32
     let size: Int64
     var position: Int64 = 0
@@ -182,7 +190,7 @@ private final class ByteReader {
     }
 }
 
-private let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePointer<UInt8>?, Int32) -> Int32 = { opaque, buffer, size in
+let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePointer<UInt8>?, Int32) -> Int32 = { opaque, buffer, size in
     guard let opaque, let buffer else { return PikaErrorEOF }
     let reader = Unmanaged<ByteReader>.fromOpaque(opaque).takeUnretainedValue()
     guard reader.position < reader.size else { return PikaErrorEOF }
@@ -191,7 +199,7 @@ private let readBytes: @convention(c) (UnsafeMutableRawPointer?, UnsafeMutablePo
     return count
 }
 
-private let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -> Int64 = { opaque, offset, whence in
+let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -> Int64 = { opaque, offset, whence in
     guard let opaque else { return -1 }
     let reader = Unmanaged<ByteReader>.fromOpaque(opaque).takeUnretainedValue()
     switch whence & ~AVSEEK_FORCE {
@@ -202,6 +210,11 @@ private let seekBytes: @convention(c) (UnsafeMutableRawPointer?, Int64, Int32) -
     default: return -1
     }
     return reader.position
+}
+
+struct Chapter {
+    let start: Double
+    let title: String
 }
 
 final class Demuxer {
@@ -286,6 +299,22 @@ final class Demuxer {
         streams.filter { byIndex[$0.index] != nil }
     }
 
+    func chapters() -> [Chapter] {
+        lock.withLock {
+            guard let context else { return [] }
+            let offset = context.pointee.start_time == PikaNoTimestamp ? 0 : Double(context.pointee.start_time) / Double(AV_TIME_BASE)
+            var found: [Chapter] = []
+            for index in 0..<Int(context.pointee.nb_chapters) {
+                guard let chapter = context.pointee.chapters[index]?.pointee, chapter.time_base.den > 0 else { continue }
+                let start = Double(chapter.start) * Double(chapter.time_base.num) / Double(chapter.time_base.den) - offset
+                guard start.isFinite else { continue }
+                let title = av_dict_get(chapter.metadata, "title", nil, 0).map { String(cString: $0.pointee.value) } ?? ""
+                found.append(Chapter(start: max(0, start), title: title))
+            }
+            return found.sorted { $0.start < $1.start }
+        }
+    }
+
     func tags() -> MediaTags {
         lock.withLock {
             guard let context else { return MediaTags() }
@@ -313,6 +342,15 @@ final class Demuxer {
                 context?.pointee.streams[Int(stream.index)]?.pointee.discard = AVDISCARD_ALL
                 byIndex[stream.index] = nil
             }
+        }
+    }
+
+    func select(_ stream: Track, replacing old: Track) {
+        lock.withLock {
+            context?.pointee.streams[Int(old.index)]?.pointee.discard = AVDISCARD_ALL
+            byIndex[old.index] = nil
+            context?.pointee.streams[Int(stream.index)]?.pointee.discard = AVDISCARD_DEFAULT
+            byIndex[stream.index] = stream
         }
     }
 

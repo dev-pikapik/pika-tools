@@ -118,10 +118,22 @@ The language switch uses a listen-only `CGEventTap`, so it never changes or dela
 swiftc -parse-as-library Sources/pika-tools/Tools/InputSwitch/InputSwitchGesture.swift scripts/test-input-switch.swift -o build/test-input-switch && build/test-input-switch
 ```
 
+In a game the language switch needs a short, deliberate Option and Shift: a game key still held, or modifiers held longer than 0.45 seconds, leave the game the keys. `GameInputIntent` decides this:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/Games/GameInputIntent.swift scripts/test-game-language.swift -o build/test-game-language && build/test-game-language
+```
+
 Middle click on the trackpad uses two `CGEventTap`s. A listen-only one reads the fingers from gesture events with `NSEvent.allTouches()`, leaving out resting thumbs, and `MiddleClickGesture` decides when a quick tap with the chosen number of fingers ends; pikapik then posts a middle button click at the pointer. The other one turns a left or right press made while that many fingers are down into the middle button: down, drag and up. Both read the trackpad settings each time, so a three-finger tap stays with Look up and a three-finger press with three-finger drag. The tap decision can be tested without the app:
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Mouse/MiddleClickGesture.swift scripts/test-middle-click.swift -o build/test-middle-click && build/test-middle-click
+```
+
+`WheelStep` turns each mouse wheel notch into a fixed number of lines or pixels and leaves trackpad scrolling alone, and `ScrollDirection` sets the direction for the mouse and the trackpad separately. The same test checks how `SettingsFile` merges settings from another Mac:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-scroll.swift -o build/test-scroll && build/test-scroll
 ```
 
 Animations writes hidden macOS preferences with `CFPreferencesSetAppValue`: the Dock keys go to `com.apple.dock`, the Finder key to `com.apple.finder` and the rest to the global domain. pikapik remembers which keys it wrote, so Restore Defaults and `--uninstall` delete exactly those; a value set in Terminal is shown as it is and stays until you move its slider. A change to a Dock key restarts the Dock once, 0.6 seconds after the last change, and Finder restarts only from its button. The slider math and what gets written live in `AnimationSetting`, which you can test without the app:
@@ -190,6 +202,18 @@ The helper that runs as root sets the fan speed and, in the website version, tur
 swiftc -parse-as-library Sources/pika-tools/Common/FanHelperProtocol.swift scripts/test-fan-helper.swift -o build/test-fan-helper && codesign -f -s "${SIGN_IDENTITY:-pikapik Dev}" build/test-fan-helper && build/test-fan-helper
 ```
 
+The fan speeds and temperatures come from the SMC. `SMCCodec` turns its bytes into numbers and back and keeps a requested fan speed between the fan's minimum and maximum:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SMC.swift scripts/test-fans.swift -o build/test-fans && build/test-fans
+```
+
+`ThermalSensors` picks which SMC sensors stand for the processor, graphics, memory, storage, battery and Wi-Fi on each chip family, from M1 to M5, and on Intel:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SMC.swift Sources/pika-tools/Common/Temperatures.swift scripts/test-temps.swift -o build/test-temps && build/test-temps
+```
+
 The same helper switches launch daemons off and on with `launchctl disable` and `bootout`, or `enable` and `bootstrap`, for `system/<label>`. It takes only a label and finds the file itself, so the app never hands it a path. A label must use letters, digits, dots, hyphens and underscores, must not start with `com.apple.` or be pikapik’s own, and must be the `Label` of a regular file (not a link) directly inside `/Library/LaunchDaemons`. The only exceptions are Remote Login (`com.openssh.sshd`) and Screen Sharing (`com.apple.screensharing`), which have fixed files in `/System/Library/LaunchDaemons`. File Sharing (`com.apple.smbd`) is left out: macOS 27 has no launchd on/off entry for it (the other two have one), so System Settings stays the way to change it. Change the allow-list only together with this test:
 
 ```bash
@@ -200,6 +224,12 @@ iCloud sync keeps `settings.json` in the pikapik folder in iCloud Drive, or pika
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsFile.swift Sources/pika-tools/Tools/Games/GameRules.swift scripts/test-settings-folder.swift -o build/test-settings-folder && build/test-settings-folder
+```
+
+The search field in Settings matches words in any order, ignores accents and understands shortcuts typed as words, so Ctrl+Space finds ⌃Space. The rules live in `SettingsSearch`:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift scripts/test-settings-search.swift -o build/test-settings-search && build/test-settings-search
 ```
 
 The app also reads the file whenever it comes to the front, so a change that arrived while it sat in the background is picked up. This check writes newer settings from "another Mac" into the local build's folder and waits for them to be applied. It needs `./scripts/build.sh` first and switches between apps, so it refuses to run unless the keyboard and mouse have been idle for two minutes:
@@ -218,6 +248,12 @@ swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Common/SettingsSearch.swift Sources/pika-tools/Tools/Uninstaller/AppFootprint.swift Sources/pika-tools/Tools/Uninstaller/AppRemover.swift scripts/test-app-remover.swift -o build/test-app-remover && build/test-app-remover
+```
+
+`AppShelf` reads apps dragged onto a page from the pasteboard and ignores other files and folders. Game Mode also accepts a bare program and a process row dragged from Activity Monitor:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-app-drop.swift -o build/test-app-drop && build/test-app-drop
 ```
 
 The Uninstaller page keeps its choices in `UninstallerLogic`: how the app list is sorted, what is ticked and what is not, the total on the **Move to Trash** button, how apps in the Trash and leftovers of removed apps are shown, and the wording of sizes and dates. The test gives it made-up apps and files, so nothing real is read or touched:
@@ -244,6 +280,12 @@ The archive engine in `Tools/Archive/` opens and creates ZIP, 7Z, TAR.GZ and TAR
 swiftc -parse-as-library scripts/test-archive.swift Sources/pika-tools/Tools/Archive/Archive{,Create,Extract,Probe,Run,Sanitize}.swift Extensions/Preview/ZipNames.swift Sources/pika-tools/Common/UniqueURL.swift -o build/test-archive && build/test-archive
 ```
 
+The archive windows are an `ArchivePanel`: the red button, a VoiceOver press and closing twice all answer the question only once:
+
+```bash
+swiftc -parse-as-library $(find Sources -name '*.swift' ! -name main.swift ! -name App.swift) Extensions/Shared/*.swift Extensions/Convert/ConvertFormats.swift Extensions/Preview/ZipNames.swift scripts/test-archive-panel.swift -o build/test-archive-panel && build/test-archive-panel
+```
+
 `Battery.swift` turns the readings from IOKit into a `BatteryState` and a `BatteryHealth`, and `BatterySettings.swift` shows them on the read-only Battery page. The battery condition comes from `system_profiler` in the direct version and straight from IOKit in the App Store version, which starts no other program. The test feeds them made-up readings, so it runs on a Mac without a battery; the second line checks the App Store version:
 
 ```bash
@@ -255,6 +297,12 @@ The **Ports** page learns which programs listen on which ports from the same ker
 
 ```bash
 swiftc -parse-as-library Sources/pika-tools/Tools/Ports/PortScanner.swift scripts/test-ports.swift -o build/test-ports && codesign -s - -f -i com.pesotchi.pika-tools.test-ports build/test-ports && build/test-ports
+```
+
+The **Speed Test** page runs `networkQuality`. `SpeedResult` reads its JSON and the live progress lines and works out how long a big download would take:
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Tools/SpeedTest/SpeedResult.swift scripts/test-speed-test.swift -o build/test-speed-test && build/test-speed-test
 ```
 
 The **Brightness** page changes the brightness of monitors macOS can’t adjust on its own: it asks the monitor itself through its cable or, if the monitor doesn’t listen, dims the picture. `BrightnessMath.swift` holds the parts that need no monitor: the messages that set and read the brightness with their checksums, reading the monitor’s answer even when HDMI repeats a byte or two, the maker, model and serial number from the monitor’s EDID, how dark the picture gets and the steps of the brightness keys. The test feeds it made-up bytes and never talks to a monitor:
@@ -269,10 +317,16 @@ swiftc -parse-as-library Sources/pika-tools/Common/BrightnessMath.swift scripts/
 swiftc -parse-as-library Sources/pika-tools/Tools/LayoutFix/KeyboardLayouts.swift scripts/test-layout.swift -o build/test-layout && build/test-layout
 ```
 
-The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until a format button, or **Open All in pikapik**, turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app and assigns the helper with `NSWorkspace.setDefaultApplication`, one type at a time, waiting for each answer (macOS reports “Keep” as a cancel error, which only moves on to the next type; no answer for 60 s stops the run). On the way back it restores that app, or the next one that can open the type, never the helper. What the buttons show is read from `urlForApplication(toOpen:)`, not from our own settings. Time, seeking, keys and the format list live in `PlayerLogic.swift`:
+The **Player** page opens videos in `pikapik Player.app`, a small sandboxed app inside `Contents/Helpers/` with no network access that reads only the files you open. It plays every file through one pipeline: the `Demuxer` from `Extensions/MediaReader/` reads the packets with FFmpeg, H.264, HEVC and AV1 go straight to `AVSampleBufferDisplayLayer`, which decodes them in hardware, other video is decoded by FFmpeg, and the sound goes to `AVSampleBufferAudioRenderer`, both kept in step by one `AVSampleBufferRenderSynchronizer`. It is an alternate app for every type until a format button, or **Open All in pikapik**, turns it into the default one: `Common/DefaultApps.swift` (shared with the archives switch) remembers each type’s previous app and assigns the helper with `NSWorkspace.setDefaultApplication`, one type at a time, waiting for each answer (macOS reports “Keep” as a cancel error, which only moves on to the next type; no answer for 60 s stops the run). On the way back it restores that app, or the next one that can open the type, never the helper. What the buttons show is read from `urlForApplication(toOpen:)`, not from our own settings. Time, seeking, keys and the format list live in `PlayerLogic.swift`, and the chapter jumps, the chapter marks and the A–B loop in `PlayerMarks.swift`:
 
 ```bash
-swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-player.swift -o build/test-player && build/test-player
+swiftc -parse-as-library Sources/pika-tools/Common/DefaultApps.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift Sources/pika-tools/Tools/Player/PlayerMarks.swift Sources/pika-tools/Tools/Player/PlayerOutput.swift scripts/test-player.swift -o build/test-player && build/test-player
+```
+
+The Picture in Picture window (`Helper/Player/PictureInPicture.swift`) has a check too: after it is closed it must not keep the video it showed alive, which AVKit does for as long as its content source holds the delegate. It does nothing on a Mac that cannot show Picture in Picture.
+
+```bash
+swiftc -parse-as-library Helper/Player/PictureInPicture.swift scripts/test-pip.swift -o build/test-pip && build/test-pip
 ```
 
 Pictures open in the same app: `Helper/Player/ImageDecoder.swift` reads them with ImageIO (SVG with `NSImage`), `Helper/Player/ImageWindow.swift` is the window, and everything that needs no window (formats, paging, keys, zoom, decoded sizes) lives in `Sources/pika-tools/Tools/Player/ImageLogic.swift`. Their test writes small pictures in a dozen formats, cuts them, and checks zoom, folders, keys and damaged files:
@@ -293,7 +347,13 @@ The player window has no title bar: `WindowChrome` (`Helper/Player/WindowChrome.
 swiftc -parse-as-library Helper/Player/WindowChrome.swift scripts/test-player-window.swift -o build/test-player-window && build/test-player-window
 ```
 
-The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg, so CI skips it; build FFmpeg first with `./scripts/build.sh`:
+The chapter marks on the time bar (`Helper/Player/TimeMarks.swift`) are drawn offscreen on dark glass and must stay visible there:
+
+```bash
+swiftc -parse-as-library Helper/Player/TimeMarks.swift scripts/test-time-marks.swift -o build/test-time-marks && build/test-time-marks
+```
+
+The preview over the time bar (`Helper/Player/Thumbnails.swift`) has its own test. It makes short videos with ffmpeg (set `FFMPEG=/path/to/ffmpeg` if it is not in Homebrew’s folder), checks the picture at 50 % for H.264, MPEG-4 and VP9, the background filling, and that closing the window frees everything. It needs the bundled FFmpeg: CI builds it before the tests, and on your Mac `./scripts/build.sh` builds it the first time:
 
 ```bash
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Thumbnails.swift Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-thumbnails.swift -o build/test-thumbnails && build/test-thumbnails
@@ -305,10 +365,28 @@ Songs have a test too (`scripts/test-music.swift`). It makes a short song in MP3
 swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Engine.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-music.swift -o build/test-music && build/test-music
 ```
 
-The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It needs the same ffmpeg:
+The folder, the next-song logic and Now Playing have one too (`scripts/test-folder.swift`). It opens a folder of three songs in a real player window with the volume at zero, and checks the first song, the automatic move to the next one, Next and Previous, and what macOS would show in Control Center after opening, pausing, moving on and closing. It also checks that the bottom row of buttons, with every button shown and ten-hour times, fits the narrowest window. It needs the same ffmpeg:
 
 ```bash
-swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Extensions/MediaReader/FFmpeg.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Engine,FolderAccess,MusicView,NowPlaying,PlayerWindow,Thumbnails}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/PlayerLogic.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Ass,Engine,FolderAccess,MusicView,NowPlaying,PictureInPicture,PlayerWindow,Subtitles,Thumbnails,TimeMarks,TrackMenus,WindowChrome}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,PlayerMarks,PlayerOutput,SubtitleParser}.swift scripts/test-folder.swift -o build/test-folder && build/test-folder
+```
+
+Subtitles have three tests. The reader (`Sources/pika-tools/Tools/Player/SubtitleParser.swift`, no FFmpeg needed) is checked on SubRip, WebVTT, mov_text and WebVTT boxes with a byte order mark, CRLF, UTF-16, Windows-1251, overlapping lines, empty lines, broken times, the delay, the line at a given time, how an ASS script is told from other text, and random bytes:
+
+```bash
+swiftc -O -parse-as-library Sources/pika-tools/Tools/Player/SubtitleParser.swift scripts/test-subtitles.swift -o build/test-subtitles && build/test-subtitles
+```
+
+ASS scripts are drawn by libass (`Helper/Player/Ass.swift`). `scripts/test-ass.swift` draws a script with `\move` and one with karaoke and compares the frames at fixed times, and a `\clip` frame, with the small reference pictures in `scripts/ass-reference/` (at most 1% of the pixels may differ; `UPDATE=1 build/test-ass` writes the pictures again after a change you meant to make). It also checks the limits on events, fonts and time, and feeds the 12 scripts in `scripts/ass-corpus/` (animation, karaoke, `\move`, `\t`, `\clip`, drawings, bidirectional text, broken tags and headers, a crowd of events) and up to 150 random changes of each (6 seconds per script) to libass in a child process; none may crash or hang:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/Ass.swift Sources/pika-tools/Tools/Player/SubtitleParser.swift scripts/test-ass.swift -o build/test-ass && build/test-ass
+```
+
+The scan of subtitle tracks inside a video, the audio switch and the subtitle logic (`Helper/Player/Subtitles.swift`) use videos that the test makes with ffmpeg (an MKV with two audio and two subtitle tracks, mov_text, ASS with a font attached to the file, and WebVTT, picture tracks in PGS, VobSub and DVB, a two-minute file, damaged copies; the test writes the PGS file itself and ffmpeg’s own encoders make VobSub and DVB from it). ASS is checked for the picture libass draws from the file, a script file next to the video and the script in the MKV, with the font from the file. The picture subtitles are checked for the decoded bitmap, the time they are shown, their place and scale over the video (also with black bars), the lift above the panel and the memory limit. The audio switch is checked for a time that does not jump, a pause that stays, and 40 quick switches with seeks. It needs the bundled FFmpeg:
+
+```bash
+swiftc -O -parse-as-library -target arm64-apple-macos14.0 -import-objc-header Helper/Player/Player.h -I Vendor/ffmpeg/include Vendor/ffmpeg/lib/*.dylib Vendor/ffmpeg/lib/libass.a -lc++ -liconv -framework CoreText -Xlinker -rpath -Xlinker "$PWD/Vendor/ffmpeg/lib" Helper/Player/{Ass,Engine,Subtitles}.swift Extensions/MediaReader/{Demuxer,Formats,Codecs,AudioDecoder}.swift Sources/pika-tools/Tools/Player/{PlayerLogic,SubtitleParser}.swift scripts/test-tracks.swift -o build/test-tracks && build/test-tracks
 ```
 
 ### Adding a tool
@@ -366,4 +444,4 @@ A program without its own icon, such as a command-line tool, gets a gray tile wi
 
 The direct build includes the 7-Zip command line tool (`7zz`) from [www.7-zip.org](https://www.7-zip.org), licensed under the GNU LGPL 2.1 with the unRAR restriction. It runs as a separate program, its license is in the app as `Contents/Resources/7-Zip License.txt`, and its source code is attached to every release as `7-Zip-26.04-source.tar.xz`.
 
-The video player uses [FFmpeg](https://ffmpeg.org) under the GNU LGPL 2.1 or later and [dav1d](https://code.videolan.org/videolan/dav1d) under the BSD 2-Clause license, built as shared libraries in `Contents/Frameworks/` with only LGPL parts enabled. Both licenses are in the app as `Contents/Resources/FFmpeg License.txt`, the Player page opens them, and the exact sources are attached to every release.
+The video player uses [FFmpeg](https://ffmpeg.org) under the GNU LGPL 2.1 or later and [dav1d](https://code.videolan.org/videolan/dav1d) under the BSD 2-Clause license, built as shared libraries in `Contents/Frameworks/` with only LGPL parts enabled. For ASS subtitles it also uses [libass](https://github.com/libass/libass) (ISC), [FreeType](https://freetype.org) (FreeType License) and [HarfBuzz](https://harfbuzz.github.io) (MIT), linked into the player program, and [FriBidi](https://github.com/fribidi/fribidi) (GNU LGPL 2.1), which stays a separate `libfribidi.0.dylib` in `Contents/Frameworks/` that you can replace with your own build. All six licenses are in the app as `Contents/Resources/Player Licenses.txt`, the Player page opens them, and the exact sources are attached to every release. The App Store build has no player, so none of these libraries are in it.
