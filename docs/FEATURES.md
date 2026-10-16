@@ -415,7 +415,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 - Fan speed (slider) — shown for Manual; from the fan’s minimum to its maximum in steps of 50 rpm.
 - This Mac has no fans — what the page says on a Mac without fans (fanless MacBook Air; empty state, `FanSettings.swift:22`).
 
-**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:182`). The helper is installed and removed through the Administrator access permission row. Needs a Mac with fans.
+**Nuances:** Quitting or killing pikapik returns the fans to automatic within seconds (handoff on terminate, `App.swift:195`). The helper is installed and removed through the Administrator access permission row. Needs a Mac with fans.
 
 **Edition:** Website only (App Store: hidden — needs administrator rights and SMC access).
 
@@ -710,7 +710,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Makes the pointer move the same distance for the same hand movement, with no speed-up.
 
-**How it works:** Website: the private `IOHIDEventSystemClient` (`HIDPointerAccelerationType`), no permission; restored when pikapik quits (`Sources/pika-tools/App.swift:185`) and by `--uninstall` (`Sources/pika-tools/Tools/Mouse/PointerTool.swift:216`). App Store: replaced by an animated guide and a row with an Open button to System Settings › Mouse (`SettingsWindow.swift:978-987`, `com.apple.Mouse-Settings.extension`) because an App Store app cannot change it. The guide (`SettingsGuide`, `Sources/pika-tools/Common/SettingsGuide.swift`) shows where to click: Advanced…, then “Pointer acceleration” off; its labels come from your Mac, in its language. System Settings shows the Mouse page only while a mouse is connected.
+**How it works:** Website: the private `IOHIDEventSystemClient` (`HIDPointerAccelerationType`), no permission; restored when pikapik quits (`Sources/pika-tools/App.swift:190`) and by `--uninstall` (`Sources/pika-tools/Tools/Mouse/PointerTool.swift:216`). App Store: replaced by an animated guide and a row with an Open button to System Settings › Mouse (`SettingsWindow.swift:978-987`, `com.apple.Mouse-Settings.extension`) because an App Store app cannot change it. The guide (`SettingsGuide`, `Sources/pika-tools/Common/SettingsGuide.swift`) shows where to click: Advanced…, then “Pointer acceleration” off; its labels come from your Mac, in its language. System Settings shows the Mouse page only while a mouse is connected.
 
 **Options:**
 - Tracking speed — slider, disabled while the switch is off (`PointerTool.swift:226`). Website only; in the App Store guide it is the system’s own slider.
@@ -1093,7 +1093,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** One slider that sets every effect below at once: As in macOS, Faster, Instant.
 
-**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:325`, `AnimationSetting.swift`); “Sets all the effects below at once.”
+**How it works:** `PaceSlider` (`Sources/pika-tools/Tools/Animations/AnimationsTool.swift:346`, `AnimationSetting.swift`); “Sets all the effects below at once.”
 
 **Nuances:** Changes bar: “Works in apps after you reopen them”; “Finder picks up the changes after a restart” with a Restart Finder button. The Dock restarts through `/usr/bin/killall`. `--uninstall` puts everything back.
 
@@ -1106,7 +1106,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Hides the Dock until the pointer touches the edge.
 
-**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:251`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
+**How it works:** Website: `autohide` in `com.apple.dock` (`AnimationsTool.swift:34`). App Store: an animated guide (“Automatically hide and show the Dock” turned on) above an Open row to System Settings › Desktop & Dock (`SettingsWindow.swift:1061-1066`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1118,10 +1118,10 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Fine controls for each effect.
 
-**How it works:** Section at `AnimationsTool.swift:255`, `AnimationSetting.swift`, in the defaults named below.
+**How it works:** Section at `AnimationsTool.swift:151`, `AnimationSetting.swift`, in the defaults named below.
 
 **Options:**
-- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:200`).
+- Delay before the Dock appears — slider, `autohide-delay` in `com.apple.dock` (`AnimationsTool.swift:153`).
 - How fast the Dock slides out — slider, `autohide-time-modifier` (`:201`).
 - Opening windows — toggle, `NSAutomaticWindowAnimationsEnabled` in the global domain (`:204`).
 - Save dialogs and resizing — slider, `NSWindowResizeTime` (`:205`).
@@ -1139,7 +1139,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Chooses Genie, Scale or Suck for minimizing windows.
 
-**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:416`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
+**How it works:** Website: `mineffect` in `com.apple.dock` (`AnimationsTool.swift:301`). App Store: an animated guide (the effect changes from Genie Effect to Scale Effect) above an Open row (“Choose “Scale Effect” for a quicker animation”, `SettingsWindow.swift:1045-1050`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the picker.
 
@@ -1151,7 +1151,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Turns off the Dock icons’ bounce when an app opens.
 
-**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:203`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
+**How it works:** Website: `no-bouncing` in `com.apple.dock` (`AnimationsTool.swift:158`). App Store: an animated guide (“Animate opening applications” turned off) above an Open row (`SettingsWindow.swift:1053-1058`).
 
 **Edition:** Both; App Store differs: guide and Open button instead of the switch.
 
@@ -1163,7 +1163,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Does:** Opens System Settings › Accessibility › Motion so you can turn on Reduce Motion, and shows where to click.
 
-**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:274`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
+**How it works:** A row with an Open button (`SystemSettingsRow`, `AnimationsTool.swift:170`; App Store `SettingsWindow.swift:1068`) and the animated guide `SettingsGuide.reduceMotion` (Accessibility › Motion › “Reduce motion” on), in both editions. The link `SettingsGuide.reduceMotionLink` opens the Motion page (anchor `AX_REDUCE_MOTION`) and falls back to Display when this macOS has no such anchor.
 
 **Edition:** Both.
 

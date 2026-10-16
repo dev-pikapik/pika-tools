@@ -24,8 +24,8 @@ enum MainCopyChoice {
         (peers + [me]).max { ($0.launched, $0.pid) < ($1.launched, $1.pid) } ?? me
     }
 
-    static func takesOver(_ peers: [RunningCopy], quitting: Bool) -> Bool {
-        !quitting && peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
+    static func takesOver(_ peers: [RunningCopy], poweringOff: Bool) -> Bool {
+        !poweringOff && peers.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }.map { $0.bundleID != appStoreID } ?? false
     }
 
     static func journal(_ bundleID: String) -> String {
@@ -65,9 +65,9 @@ enum OriginalValue {
     }
 
     @discardableResult
-    static func set(_ key: String, intent: String? = nil, journal: UserDefaults = .standard, current: Bool, to new: Bool, write: (Bool) -> Void) -> Entry? {
+    static func set(_ key: String, intent: String? = nil, journal: UserDefaults = .standard, local: UserDefaults = .standard, current: Bool, to new: Bool, write: (Bool) -> Void) -> Entry? {
         let entry = change(load(key, journal: journal), current: current, to: new)
-        if let intent { save(entry, intent) }
+        if let intent { save(entry, intent, journal: local) }
         if entry != nil { save(entry, key, journal: journal) }
         write(new)
         if entry == nil { save(nil, key, journal: journal) }

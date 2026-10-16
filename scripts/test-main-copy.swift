@@ -153,26 +153,27 @@ struct TestMainCopy {
     }
 
     static let original: [AnimationSetting: Double] = [.minimize: 2]
-    static let wantsA: [AnimationSetting: Double] = [.bounce: 1, .dockDelay: 0]
-    static let wantsB: [AnimationSetting: Double] = [.bounce: 1, .dockDelay: 0.3, .minimize: 1]
+    static let wantsA: [AnimationSetting: Double] = [.bounce: 0, .dockDelay: 0]
+    static let wantsB: [AnimationSetting: Double] = [.bounce: 0, .dockDelay: 0.3, .minimize: 1]
+    static let tools = "com.pikapik.e2e.tools"
 
     static func handover() {
         let website = MainCopyChoice.websiteID, store = MainCopyChoice.appStoreID
-        defer { UserDefaults.standard.removeObject(forKey: DockRestart.key) }
-        precondition(!MainCopyChoice.takesOver([], quitting: false))
-        precondition(!MainCopyChoice.takesOver([copy(1, store, at: 5)], quitting: false))
-        precondition(MainCopyChoice.takesOver([copy(1, website, at: 5)], quitting: false))
-        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 1), copy(2, store, at: 5)], quitting: false))
-        precondition(MainCopyChoice.takesOver([copy(1, website, at: 9), copy(2, store, at: 5)], quitting: false))
+        defer { ["journal", "local.A", "local.B"].forEach { UserDefaults.standard.removePersistentDomain(forName: "test-main-copy.\($0)") } }
+        precondition(!MainCopyChoice.takesOver([], poweringOff: false))
+        precondition(!MainCopyChoice.takesOver([copy(1, store, at: 5)], poweringOff: false))
+        precondition(MainCopyChoice.takesOver([copy(1, website, at: 5)], poweringOff: false))
+        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 1), copy(2, store, at: 5)], poweringOff: false))
+        precondition(MainCopyChoice.takesOver([copy(1, website, at: 9), copy(2, store, at: 5)], poweringOff: false))
         precondition(MainCopyChoice.journal(website) == website && MainCopyChoice.journal(store) == website)
-        precondition(MainCopyChoice.journal("com.pikapik.e2e.tools.a") == "com.pikapik.e2e.tools")
-        precondition(MainCopyChoice.journal("com.pikapik.e2e.tools.a") == MainCopyChoice.journal("com.pikapik.e2e.tools.b"))
+        precondition(MainCopyChoice.journal("\(tools).a") == tools)
+        precondition(MainCopyChoice.journal("\(tools).a") == MainCopyChoice.journal("\(tools).b"))
         precondition(MainCopyChoice.journal("com.apple.finder") == "com.apple.finder")
         print("the copy that comes next continues the animations unless it is the App Store one: ok")
 
-        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 5)], quitting: true))
-        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 9), copy(2, store, at: 5)], quitting: true))
-        print("a copy that is quitting, as when the Mac shuts down, never counts on the next one: ok")
+        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 5)], poweringOff: true))
+        precondition(!MainCopyChoice.takesOver([copy(1, website, at: 9), copy(2, store, at: 5)], poweringOff: true))
+        print("a copy on a Mac that is shutting down never counts on the next one: ok")
 
         precondition(!AnimationSetting.restartsDock([(.dockDelay, 0.3)], autohide: false))
         precondition(AnimationSetting.restartsDock([(.dockDelay, 0.3)], autohide: true))
@@ -182,136 +183,249 @@ struct TestMainCopy {
 
         for exit in Exit.allCases {
             let mac = Mac(system: original)
-            let a = mac.party("A", "com.pikapik.e2e.tools.a", 10, wantsA), b = mac.party("B", "com.pikapik.e2e.tools.b", 20, wantsB)
-            var clock = 0.0
-            mac.apply(a, seen: mac.system)
+            let a = mac.party("A", "\(tools).a", 10, wantsA), b = mac.party("B", "\(tools).b", 20, wantsB)
+            mac.become(a)
             mac.elapse()
             var leader = a, passive = b
             for lap in 1...3 {
                 for _ in 0..<2 {
-                    clock += 60
                     mac.kills = []
                     swap(&leader, &passive)
-                    leader.launched = clock
                     mac.handOver(from: passive, to: leader)
                     mac.elapse()
                     precondition(mac.system == original.merging(leader.wants) { $1 }, "lap \(lap): the system holds \(leader.name)'s wishes and the originals")
-                    precondition(mac.kills == [Kill(by: leader.name, flagSet: true, wait: false)], "lap \(lap): the Dock restarts once, by \(leader.name), while the flag is still set: \(mac.kills)")
+                    precondition(mac.kills == [.restart(leader.name)], "lap \(lap): the Dock restarts once, by \(leader.name), while the flag is still set: \(mac.kills)")
                     precondition(!mac.flag, "lap \(lap): the flag is gone after the restart")
                 }
             }
             precondition(leader === a && passive === b)
+            mac.kills = []
             switch exit {
             case .mainFirst:
-                mac.kills = []
-                precondition(MainCopyChoice.takesOver(MainCopyChoice.peers(of: a.running, in: [a.running, b.running]), quitting: false))
-                mac.handOver(from: a, to: b)
+                mac.quit(a)
+                precondition(mac.kills.isEmpty && mac.flag == false, "the main copy quits and hands over: \(mac.kills)")
+                mac.become(b)
                 mac.elapse()
                 precondition(mac.system == original.merging(wantsB) { $1 })
-                mac.leave(b, among: [])
+                precondition(mac.kills == [.restart("B")], "B restarts the Dock once: \(mac.kills)")
+                mac.kills = []
+                mac.quit(b)
+                precondition(mac.kills == [.putBack("B")], "the last copy puts back: \(mac.kills)")
             case .passiveFirst:
-                mac.leave(a, among: [])
+                mac.quit(b)
+                precondition(mac.kills.isEmpty, "the passive copy quits while the main one runs: \(mac.kills)")
+                mac.quit(a)
+                precondition(mac.kills == [.putBack("A")], "the last copy puts back: \(mac.kills)")
             }
             precondition(mac.system == original, "after \(exit) the system is as before pikapik")
-            precondition(mac.own.isEmpty && mac.ours.isEmpty, "after \(exit) the journal is empty")
-            precondition(!mac.flag && mac.queue.isEmpty, "after \(exit) no Dock restart is left")
+            precondition(mac.journalEmpty && mac.queue.isEmpty, "after \(exit) the journal and the Dock restart are clear")
         }
         print("three laps between two copies, then both quit in either order: one Dock restart per handover, originals back: ok")
 
-        let mac = Mac(system: original)
-        let a = mac.party("A", "com.pikapik.e2e.tools.a", 10, wantsA)
-        mac.apply(a, seen: mac.system)
-        mac.elapse()
-        mac.kills = []
-        mac.leave(a, among: [copy(30, MainCopyChoice.appStoreID, at: 500)])
-        precondition(mac.system == original && mac.kills == [Kill(by: "A", flagSet: false, wait: true)])
+        let stranger = Mac(system: original)
+        let lone = stranger.party("A", "\(tools).a", 10, wantsA)
+        stranger.become(lone)
+        stranger.elapse()
+        stranger.kills = []
+        stranger.strangers = [copy(30, store, at: 500)]
+        stranger.quit(lone)
+        precondition(stranger.system == original && stranger.kills == [.putBack("A")] && stranger.journalEmpty)
         print("an App Store copy does not continue the animations, so the leaving copy puts them back: ok")
 
         let shutdown = Mac(system: original)
-        let c = shutdown.party("A", "com.pikapik.e2e.tools.a", 10, wantsA)
-        shutdown.apply(c, seen: shutdown.system)
+        let c = shutdown.party("A", website, 10, wantsA), d = shutdown.party("B", website, 20, wantsB)
+        shutdown.become(c)
         shutdown.elapse()
         shutdown.kills = []
-        shutdown.leave(c, among: [copy(30, MainCopyChoice.websiteID, at: 500)], quitting: true)
-        precondition(shutdown.system == original && shutdown.kills.count == 1 && shutdown.own.isEmpty && shutdown.ours.isEmpty)
-        print("when the Mac shuts down with two copies open, each one puts the animations back: ok")
+        shutdown.poweringOff = true
+        shutdown.quit(c)
+        precondition(shutdown.system == original && shutdown.kills == [.putBack("A")] && shutdown.journalEmpty, "shutdown: \(shutdown.kills)")
+        shutdown.quit(d)
+        precondition(shutdown.kills == [.putBack("A")], "the other copy has nothing left to put back: \(shutdown.kills)")
+        print("when the Mac shuts down with two copies open, the main copy puts the animations back and the Dock restarts once: ok")
+
+        for wants in [wantsB, wantsA] {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, wants), b = mac.party("B", "\(tools).b", 20, wantsB)
+            mac.become(b)
+            mac.elapse()
+            mac.kills = []
+            mac.quit(b)
+            mac.become(a)
+            mac.elapse()
+            precondition(mac.kills == (wants == wantsB ? [] : [.restart("A")]), "B quits while A runs: \(mac.kills)")
+            precondition(mac.system == original.merging(wants) { $1 } && !mac.flag)
+            mac.kills = []
+            mac.quit(a)
+            precondition(mac.system == original && mac.journalEmpty && mac.kills == [.putBack("A")])
+        }
+        print("one copy quits while the other runs: the other continues, with no Dock restart for the same values and one for others: ok")
+
+        for waiting in [false, true] {
+            let mac = Mac(system: original)
+            let a = mac.party("A", "\(tools).a", 10, wantsA), b = mac.party("B", "\(tools).b", 20, wantsB)
+            mac.become(a)
+            if !waiting { mac.elapse() }
+            mac.kills = []
+            mac.quit(a)
+            precondition(mac.kills.isEmpty && mac.system == original.merging(wantsA) { $1 }, "A quits and B has not become main yet: \(mac.kills)")
+            mac.quit(b)
+            precondition(mac.system == original && mac.journalEmpty, "B quits before it became main and puts the originals back")
+            precondition(mac.kills == [.putBack("B", flagSet: waiting)], "waiting \(waiting): \(mac.kills)")
+        }
+        print("both copies quit one after another: the last one puts back what the journal holds: ok")
 
         for wants in [wantsA, wantsB] {
             let mac = Mac(system: original)
-            let a = mac.party("A", "com.pikapik.e2e.tools.a", 10, wantsA), b = mac.party("B", "com.pikapik.e2e.tools.b", 20, wants)
-            mac.apply(a, seen: mac.system)
+            let a = mac.party("A", "\(tools).a", 10, wantsA), b = mac.party("B", "\(tools).b", 20, wants)
+            mac.become(a)
             precondition(mac.queue.count == 1 && mac.kills.isEmpty && mac.flag, "A's restart waits and the flag is set")
-            b.launched = 60
             mac.handOver(from: a, to: b)
             precondition(mac.kills.isEmpty && mac.flag, "the handover restarts nothing and keeps the flag")
             mac.elapse()
-            precondition(mac.kills == [Kill(by: "B", flagSet: true, wait: false)], "the waiting restart is done once, by B: \(mac.kills)")
-            precondition(!mac.flag)
+            precondition(mac.kills == [.restart("B")], "the waiting restart is done once, by B: \(mac.kills)")
+            precondition(!mac.flag && mac.queue.isEmpty && mac.system == original.merging(wants) { $1 })
         }
         print("a Dock restart that is still waiting goes to the next copy, which restarts the Dock once: ok")
 
-        let same = Mac(system: original)
-        let first = same.party("A", "com.pikapik.e2e.tools.a", 10, wantsA), second = same.party("B", "com.pikapik.e2e.tools.b", 20, wantsA)
-        same.apply(first, seen: same.system)
-        same.elapse()
-        same.kills = []
-        second.launched = 60
-        same.handOver(from: first, to: second)
-        same.elapse()
-        precondition(same.kills.isEmpty && !same.flag && same.system == original.merging(wantsA) { $1 })
-        print("two copies that want the same values restart the Dock zero times at the handover: ok")
-
         for wants in [wantsA, wantsB] {
             let mac = Mac(system: original)
-            let a = mac.party("A", "com.pikapik.e2e.tools.a", 10, wantsA), b = mac.party("B", "com.pikapik.e2e.tools.b", 20, wants)
-            mac.apply(a, seen: mac.system)
+            let a = mac.party("A", "\(tools).a", 10, wantsA), b = mac.party("B", "\(tools).b", 20, wants)
+            mac.become(a)
             precondition(mac.flag && mac.queue.count == 1)
             mac.queue = []
-            mac.apply(b, seen: mac.system)
+            mac.running.removeAll { $0 === a }
+            mac.leader = nil
+            mac.become(b)
             mac.elapse()
-            precondition(mac.kills == [Kill(by: "B", flagSet: true, wait: false)], "after the crash the new main copy restarts the Dock once: \(mac.kills)")
-            precondition(!mac.flag && mac.queue.isEmpty)
+            precondition(mac.kills == [.restart("B")], "after the crash the new main copy restarts the Dock once: \(mac.kills)")
+            precondition(!mac.flag && mac.queue.isEmpty && mac.system == original.merging(wants) { $1 })
         }
         print("if pikapik stops while the Dock restart waits, the next main copy still does it: ok")
+
+        let hiding = Mac(system: original)
+        let h = hiding.party("A", "\(tools).a", 10, wantsA), i = hiding.party("B", "\(tools).b", 20, wantsA)
+        hiding.become(h)
+        hiding.elapse()
+        hiding.kills = []
+        h.engine.setAutohide(true)
+        precondition(hiding.autohide && hiding.flag && hiding.queue.count == 1)
+        hiding.elapse()
+        precondition(hiding.kills == [.restart("A")] && !hiding.flag, "autohide restarts the Dock once, with the flag set: \(hiding.kills)")
+        hiding.kills = []
+        hiding.quit(h)
+        hiding.become(i)
+        hiding.elapse()
+        precondition(!hiding.autohide && hiding.kills == [.restart("B")], "the next copy does not want autohide and turns it off: \(hiding.kills)")
+        hiding.kills = []
+        i.engine.setAutohide(true)
+        hiding.elapse()
+        hiding.kills = []
+        hiding.quit(i)
+        precondition(!hiding.autohide && hiding.system == original && hiding.journalEmpty && hiding.kills == [.putBack("B")], "autohide comes back: \(hiding.kills)")
+        print("the Dock is set to restart before autohide is written, and autohide comes back with the animations: ok")
+
+        let sync = Mac(system: original)
+        let e = sync.party("A", "\(tools).a", 10, wantsB)
+        sync.become(e)
+        e.engine.setAutohide(true)
+        sync.kills = []
+        sync.leader = nil
+        AnimationsEngine.uninstall(e.host)
+        precondition(sync.system == original && !sync.autohide && sync.journalEmpty, "uninstall puts everything back")
+        precondition(sync.kills == [.putBack("A", flagSet: true)], "uninstall restarts the Dock once and clears the flag: \(sync.kills)")
+        sync.queue = []
+        let later = Mac(system: original)
+        let f = later.party("A", "\(tools).a", 10, wantsB)
+        later.become(f)
+        later.elapse()
+        f.engine.setAutohide(true)
+        later.elapse()
+        later.kills = []
+        later.leader = nil
+        AnimationsEngine.uninstall(f.host)
+        precondition(later.system == original && !later.autohide && later.journalEmpty && later.kills == [.putBack("A")], "uninstall after a finished restart: \(later.kills)")
+        let old = Mac(system: original.merging(wantsA) { $1 })
+        old.journal.removeObject(forKey: "animations-ours")
+        old.withoutJournal = true
+        let g = old.party("A", "\(tools).a", 10, [:])
+        wantsA.forEach { g.host.local.set($1, forKey: "animations-\($0.rawValue)") }
+        AnimationsEngine.uninstall(g.host)
+        precondition(old.system == original && old.kills == [.putBack("A")], "the 1.52.0 keys still work: \(old.kills)")
+        let empty = Mac(system: original)
+        let h2 = empty.party("A", "\(tools).a", 10, [:])
+        AnimationsEngine.uninstall(h2.host)
+        precondition(empty.kills.isEmpty && empty.system == original, "an empty journal kills nothing: \(empty.kills)")
+        print("--uninstall puts the animations and autohide back through the journal, restarts the Dock once and kills nothing when there is nothing to put back: ok")
     }
 
     enum Exit: CaseIterable { case mainFirst, passiveFirst }
 
     struct Kill: Equatable {
-        let by: String, flagSet: Bool, wait: Bool
+        let by: String, app: String, flagSet: Bool, wait: Bool
+
+        static func restart(_ by: String) -> Kill { Kill(by: by, app: "Dock", flagSet: true, wait: false) }
+        static func putBack(_ by: String, flagSet: Bool = false) -> Kill { Kill(by: by, app: "Dock", flagSet: flagSet, wait: true) }
     }
 
     final class Party {
-        let name: String, bundleID: String, pid: Int32, wants: [AnimationSetting: Double], dock: DockRestart
-        var launched = 0.0
+        let name: String, bundleID: String, pid: Int32, wants: [AnimationSetting: Double]
+        var host: AnimationsHost!
+        var engine: AnimationsEngine!
 
-        init(_ name: String, _ bundleID: String, _ pid: Int32, _ wants: [AnimationSetting: Double], dock: DockRestart) {
-            (self.name, self.bundleID, self.pid, self.wants, self.dock) = (name, bundleID, pid, wants, dock)
+        init(_ name: String, _ bundleID: String, _ pid: Int32, _ wants: [AnimationSetting: Double]) {
+            (self.name, self.bundleID, self.pid, self.wants) = (name, bundleID, pid, wants)
         }
 
-        var running: RunningCopy { TestMainCopy.copy(pid, bundleID, at: launched) }
+        var running: RunningCopy { TestMainCopy.copy(pid, bundleID, at: Double(pid)) }
     }
 
     final class Mac {
+        static let journalName = "test-main-copy.journal"
+        static let autohideKey = "animations-autohide-original"
+
+        let journal = UserDefaults(suiteName: Mac.journalName)!
         var system: [AnimationSetting: Double]
-        var own: [AnimationSetting: Double] = [:]
-        var ours: [AnimationSetting: Double] = [:]
+        var autohide = false, poweringOff = false, withoutJournal = false
         var queue: [DispatchWorkItem] = []
         var kills: [Kill] = []
+        var running: [Party] = []
+        var strangers: [RunningCopy] = []
+        var leader: Party?
 
         init(system: [AnimationSetting: Double]) {
             self.system = system
-            UserDefaults.standard.removeObject(forKey: DockRestart.key)
+            journal.removePersistentDomain(forName: Self.journalName)
+            journal.set([String: Double](), forKey: "animations-ours")
         }
 
-        var flag: Bool { UserDefaults.standard.bool(forKey: DockRestart.key) }
+        var flag: Bool { journal.bool(forKey: DockRestart.key) }
+        var own: [String: Double] { journal.dictionary(forKey: "animations-own") as? [String: Double] ?? [:] }
+        var ours: [String: Double] { journal.dictionary(forKey: "animations-ours") as? [String: Double] ?? [:] }
+        var journalEmpty: Bool { own.isEmpty && ours.isEmpty && OriginalValue.load(Self.autohideKey, journal: journal) == nil && !flag }
 
         func party(_ name: String, _ bundleID: String, _ pid: Int32, _ wants: [AnimationSetting: Double]) -> Party {
-            Party(name, bundleID, pid, wants, dock: DockRestart(
-                journal: { .standard },
+            let suite = "test-main-copy.local.\(name)"
+            let local = UserDefaults(suiteName: suite)!
+            local.removePersistentDomain(forName: suite)
+            let party = Party(name, bundleID, pid, wants)
+            party.host = AnimationsHost(
+                canAct: { self.leader === party },
+                peers: { MainCopyChoice.peers(of: party.running, in: self.running.map(\.running) + self.strangers) },
+                poweringOff: { self.poweringOff },
+                journal: { self.journal },
+                local: local,
+                read: { self.system[$0] },
+                write: { self.write($0, $1, by: party) },
+                readAutohide: { self.autohide },
+                writeAutohide: { self.writeAutohide($0, by: party) },
                 later: { self.queue.append($0) },
-                kill: { wait in self.kills.append(Kill(by: name, flagSet: self.flag, wait: wait)) }
-            ))
+                kill: { self.kills.append(Kill(by: name, app: $0, flagSet: self.flag, wait: $1)) }
+            )
+            party.engine = AnimationsEngine(party.host)
+            wants.forEach { party.engine.set($0.key, $0.value) }
+            running.append(party)
+            return party
         }
 
         func elapse() {
@@ -320,34 +434,40 @@ struct TestMainCopy {
             due.forEach { $0.perform() }
         }
 
-        func apply(_ party: Party, seen: [AnimationSetting: Double]) {
-            let (before, wasOurs) = (own, ours)
-            let originals = AnimationSetting.originals(own, owned: ours, new: party.wants, system: seen)
-            let applied = AnimationSetting.set(party.wants, own: own, ours: ours, system: seen, remember: { self.own = $0; self.ours = $1 }) { setting, value in
-                precondition(self.ours == wasOurs.merging(party.wants) { $1 } && self.own == before.merging(originals) { $1 }, "\(party.name): the journal holds the old and the new values and the originals before \(setting) is written")
-                self.system[setting] = value
-            }
-            precondition(own == applied.own && ours == applied.ours, "\(party.name): the journal ends with the new values")
-            party.dock.restart(for: applied.changes, autohide: false)
-        }
-
-        func putBack(_ party: Party) {
-            let (before, wasOurs) = (own, ours)
-            let changes = AnimationSetting.putBack(own: own, ours: ours, system: system, remember: { self.own = $0; self.ours = $1 }) { setting, value in
-                precondition(self.own == before && self.ours == wasOurs, "\(party.name): the journal is kept until \(setting) is back")
-                self.system[setting] = value
-            }
-            if changes.contains(where: { $0.0.apply == .dock }) { party.dock.now() }
-        }
-
-        func leave(_ party: Party, among others: [RunningCopy], quitting: Bool = false) {
-            party.dock.leave(takesOver: MainCopyChoice.takesOver(others, quitting: quitting)) { putBack(party) }
+        func become(_ party: Party) {
+            leader = party
+            party.engine.refresh()
         }
 
         func handOver(from outgoing: Party, to incoming: Party) {
-            let seen = system
-            leave(outgoing, among: MainCopyChoice.peers(of: outgoing.running, in: [outgoing.running, incoming.running]))
-            apply(incoming, seen: seen)
+            leader = nil
+            outgoing.engine.refresh()
+            become(incoming)
+        }
+
+        func quit(_ party: Party) {
+            party.engine.putBackIfLast()
+            if leader === party {
+                leader = nil
+                party.engine.refresh()
+            }
+            running.removeAll { $0 === party }
+        }
+
+        private func write(_ setting: AnimationSetting, _ value: Double?, by party: Party) {
+            let journaled = ours[setting.rawValue]
+            precondition(withoutJournal || journaled != nil && own[setting.rawValue] == TestMainCopy.original[setting], "\(party.name): the journal holds the old and the new values and the original before \(setting) is written")
+            if leader === party {
+                precondition(value == nil || value == journaled || value == TestMainCopy.original[setting], "\(party.name): the journal holds the value before \(setting) is written")
+                precondition(!AnimationSetting.restartsDock([(setting, value)], autohide: autohide) || flag, "\(party.name): the Dock restart is pending before \(setting) is written")
+            }
+            system[setting] = value
+        }
+
+        private func writeAutohide(_ on: Bool, by party: Party) {
+            precondition(OriginalValue.load(Self.autohideKey, journal: journal) != nil, "\(party.name): the journal holds the original autohide before it is written")
+            if leader === party { precondition(flag, "\(party.name): the Dock restart is pending before autohide is written") }
+            autohide = on
         }
     }
 }

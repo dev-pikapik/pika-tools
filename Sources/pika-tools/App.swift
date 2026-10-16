@@ -131,10 +131,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         }
         #endif
 
-        NSWorkspace.shared.notificationCenter.addObserver(forName: NSWorkspace.willPowerOffNotification, object: nil, queue: .main) { _ in
-            Background.shared.quitting = true
-        }
-
         MainCopy.shared.begin(
             activate: { [self] in MainActor.assumeIsolated { startFeatures() } },
             deactivate: { [self] quitting in MainActor.assumeIsolated { stopFeatures(quitting: quitting) } }
@@ -155,6 +151,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         let background = Background.shared
+        background.poweringOff = Background.isLoggingOut
         if background.quitting || Background.isOutsideQuit { return .terminateNow }
         guard Background.isOn, MainCopy.shared.role != .passive, !NSEvent.modifierFlags.contains(.option) else {
             if MainCopy.canAct { KeepAwake.shared.set(.off) }
@@ -167,6 +164,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ notification: Notification) {
         KeepAwake.shared.handOff()
         SpeedTest.shared.cancel()
+        #if !APPSTORE
+        AnimationsTool.shared.putBackIfLast()
+        #endif
         MainCopy.shared.retire()
         if #available(macOS 14.2, *) { AppVolumeEngine.shared.shutdown() }
     }

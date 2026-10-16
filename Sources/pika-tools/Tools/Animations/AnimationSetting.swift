@@ -1,4 +1,5 @@
 import Foundation
+import Observation
 
 enum AnimationSetting: String, CaseIterable {
     case dockDelay = "dock-delay", dockSpeed = "dock-speed", minimize, bounce
@@ -148,10 +149,11 @@ enum AnimationSetting: String, CaseIterable {
         }
     }
 
-    static func set(_ new: [Self: Double], own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, write: (Self, Double?) -> Void) -> (own: [Self: Double], ours: [Self: Double], changes: [(Self, Double?)]) {
+    static func set(_ new: [Self: Double], own: [Self: Double], ours: [Self: Double], system: [Self: Double], remember: (_ own: [Self: Double], _ ours: [Self: Double]) -> Void, willWrite: ([(Self, Double?)]) -> Void, write: (Self, Double?) -> Void) -> (own: [Self: Double], ours: [Self: Double], changes: [(Self, Double?)]) {
         let changes = Self.changes(from: ours, to: new, system: system, own: own)
         let originals = Self.originals(own, owned: ours, new: new, system: system)
         remember(own.merging(originals) { $1 }, ours.merging(new) { $1 })
+        willWrite(changes)
         changes.forEach { write($0.0, $0.1) }
         remember(originals, new)
         return (originals, new, changes)
@@ -192,10 +194,6 @@ final class DockRestart {
         later(item)
     }
 
-    func leave(takesOver: Bool, putBack: () -> Void) {
-        if takesOver { handOver() } else { putBack() }
-    }
-
     func handOver() {
         work?.cancel()
         work = nil
@@ -215,6 +213,229 @@ final class DockRestart {
         work = nil
         kill(false)
         Self.clear(journal())
+    }
+}
+
+struct AnimationsHost {
+    let canAct: () -> Bool
+    let peers: () -> [RunningCopy]
+    let poweringOff: () -> Bool
+    let journal: () -> UserDefaults
+    let local: UserDefaults
+    let read: (AnimationSetting) -> Double?
+    let write: (AnimationSetting, Double?) -> Void
+    let readAutohide: () -> Bool
+    let writeAutohide: (Bool) -> Void
+    let later: (DispatchWorkItem) -> Void
+    let kill: (String, Bool) -> Void
+}
+
+@Observable
+class AnimationsEngine {
+    private(set) var owned: [AnimationSetting: Double]
+    private(set) var own: [AnimationSetting: Double]
+    private(set) var ours: [AnimationSetting: Double]
+    private(set) var system: [AnimationSetting: Double] = [:]
+    private(set) var storedSpeed: Double?
+    private(set) var autohide = false
+    private(set) var appsPending = false
+    private(set) var finderPending = false
+    @ObservationIgnored private let host: AnimationsHost
+    @ObservationIgnored private let dockRestart: DockRestart
+
+    private static let speedKey = "animations-speed"
+    private static let ownKey = "animations-own"
+    private static let oursKey = "animations-ours"
+    private static let autohideKey = "animations-autohide-original"
+    private static let wantedAutohideKey = "animations-autohide-wanted"
+
+    init(_ host: AnimationsHost) {
+        self.host = host
+        dockRestart = DockRestart(journal: host.journal, later: host.later, kill: { host.kill("Dock", $0) })
+        owned = Self.saved(host.local)
+        own = Self.originals(host.journal())
+        ours = Self.written(host.journal(), host.local)
+        storedSpeed = host.local.object(forKey: Self.speedKey) as? Double
+        reload()
+    }
+
+    var baseline: [AnimationSetting: Double] {
+        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.map { ($0, baseline($0)) })
+    }
+
+    func baseline(_ setting: AnimationSetting) -> Double {
+        (ours[setting] == nil ? system[setting] : own[setting]) ?? setting.macOS
+    }
+
+    func reload() {
+        system = Self.snapshot(host)
+        autohide = host.readAutohide()
+        own = Self.originals(host.journal())
+        ours = Self.written(host.journal(), host.local)
+    }
+
+    func set(_ setting: AnimationSetting, _ value: Double) {
+        var new = owned
+        new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
+        storedSpeed = nil
+        apply(new)
+    }
+
+    func setSpeed(_ speed: Double) {
+        var new = owned
+        for (setting, value) in AnimationSpeed.preset(speed, baseline: baseline) {
+            new[setting] = abs(value - baseline(setting)) < 0.0005 ? nil : value
+        }
+        storedSpeed = speed > 0 ? speed : nil
+        apply(new)
+    }
+
+    func setAutohide(_ on: Bool) {
+        guard host.canAct() else { return }
+        restartDock()
+        OriginalValue.set(Self.autohideKey, intent: Self.wantedAutohideKey, journal: host.journal(), local: host.local, current: host.readAutohide(), to: on, write: host.writeAutohide)
+        autohide = on
+    }
+
+    func restartDock() {
+        dockRestart.schedule()
+    }
+
+    func restartFinder() {
+        finderPending = false
+        host.kill("Finder", false)
+    }
+
+    func reset() {
+        storedSpeed = nil
+        apply([:])
+    }
+
+    func refresh() {
+        reload()
+        guard host.canAct() else { return leave() }
+        apply(owned)
+        resumeAutohide()
+    }
+
+    func putBackIfLast() {
+        guard !host.canAct(), host.peers().isEmpty else { return }
+        reload()
+        putBack()
+    }
+
+    func load() {
+        storedSpeed = host.local.object(forKey: Self.speedKey) as? Double
+        reload()
+        apply(Self.saved(host.local))
+    }
+
+    static func uninstall(_ host: AnimationsHost) {
+        let journal = host.journal()
+        let dock = putBackAutohide(host)
+        let changes = AnimationSetting.putBack(own: originals(journal), ours: written(journal, host.local), system: snapshot(host), remember: { remember($0, $1, journal) }, write: host.write)
+        guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
+        host.kill("Dock", true)
+        DockRestart.clear(journal)
+    }
+
+    private func leave() {
+        if MainCopyChoice.takesOver(host.peers(), poweringOff: host.poweringOff()) { dockRestart.handOver() } else { putBack() }
+    }
+
+    private func resumeAutohide() {
+        let journal = host.journal()
+        switch OriginalValue.resume(OriginalValue.load(Self.wantedAutohideKey, journal: host.local), journal: OriginalValue.load(Self.autohideKey, journal: journal), current: autohide) {
+        case .write(let value): setAutohide(value)
+        case .forget:
+            OriginalValue.save(nil, Self.wantedAutohideKey, journal: host.local)
+            OriginalValue.save(nil, Self.autohideKey, journal: journal)
+        case .keep: break
+        }
+    }
+
+    private func putBack() {
+        let dock = Self.putBackAutohide(host)
+        let changes = AnimationSetting.putBack(own: own, ours: ours, system: system, remember: remember(own:ours:), write: host.write)
+        reload()
+        guard dock || changes.contains(where: { $0.0.apply == .dock }) else { return }
+        dockRestart.now()
+    }
+
+    private func apply(_ new: [AnimationSetting: Double]) {
+        guard host.canAct() else {
+            owned = new
+            return remember(owned: new)
+        }
+        remember(owned: new)
+        let applied = AnimationSetting.set(new, own: own, ours: ours, system: system, remember: remember(own:ours:), willWrite: { [self] in dockRestart.restart(for: $0, autohide: host.readAutohide()) }, write: host.write)
+        (own, ours, owned) = (applied.own, applied.ours, new)
+        let changes = applied.changes
+        guard !changes.isEmpty else { return }
+        reload()
+        if changes.contains(where: { $0.0.apply == .apps }) { appsPending = true }
+        if changes.contains(where: { $0.0.apply != .dock }) { finderPending = true }
+    }
+
+    private func remember(own: [AnimationSetting: Double], ours: [AnimationSetting: Double]) {
+        Self.remember(own, ours, host.journal())
+    }
+
+    private func remember(owned: [AnimationSetting: Double]) {
+        let defaults = host.local
+        for setting in AnimationSetting.allCases where defaults.object(forKey: Self.key(setting)) as? Double != owned[setting] {
+            defaults.set(owned[setting], forKey: Self.key(setting))
+        }
+        if defaults.object(forKey: Self.speedKey) as? Double != storedSpeed {
+            defaults.set(storedSpeed, forKey: Self.speedKey)
+        }
+    }
+
+    private static func remember(_ own: [AnimationSetting: Double], _ ours: [AnimationSetting: Double], _ journal: UserDefaults) {
+        store(own.isEmpty ? nil : own, ownKey, journal)
+        store(ours, oursKey, journal)
+    }
+
+    private static func snapshot(_ host: AnimationsHost) -> [AnimationSetting: Double] {
+        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in host.read(setting).map { (setting, $0) } })
+    }
+
+    private static func putBackAutohide(_ host: AnimationsHost) -> Bool {
+        let journal = host.journal()
+        let entry = OriginalValue.load(autohideKey, journal: journal)
+        let value = OriginalValue.putBack(entry, current: host.readAutohide())
+        if let value { host.writeAutohide(value) } else if entry != nil { OriginalValue.save(nil, wantedAutohideKey, journal: host.local) }
+        OriginalValue.save(nil, autohideKey, journal: journal)
+        return value != nil
+    }
+
+    private static func key(_ setting: AnimationSetting) -> String {
+        "animations-\(setting.rawValue)"
+    }
+
+    private static func saved(_ local: UserDefaults) -> [AnimationSetting: Double] {
+        Dictionary(uniqueKeysWithValues: AnimationSetting.allCases.compactMap { setting in
+            (local.object(forKey: key(setting)) as? Double).map { (setting, $0) }
+        })
+    }
+
+    private static func journaled(_ key: String, _ journal: UserDefaults) -> [AnimationSetting: Double]? {
+        (journal.dictionary(forKey: key) as? [String: Double]).map { saved in
+            Dictionary(uniqueKeysWithValues: saved.compactMap { key, value in AnimationSetting(rawValue: key).map { ($0, value) } })
+        }
+    }
+
+    private static func originals(_ journal: UserDefaults) -> [AnimationSetting: Double] {
+        journaled(ownKey, journal) ?? [:]
+    }
+
+    private static func written(_ journal: UserDefaults, _ local: UserDefaults) -> [AnimationSetting: Double] {
+        journaled(oursKey, journal) ?? saved(local)
+    }
+
+    private static func store(_ values: [AnimationSetting: Double]?, _ key: String, _ journal: UserDefaults) {
+        let raw = values.map { Dictionary(uniqueKeysWithValues: $0.map { ($0.key.rawValue, $0.value) }) }
+        if journal.dictionary(forKey: key) as? [String: Double] != raw { journal.set(raw, forKey: key) }
     }
 }
 
