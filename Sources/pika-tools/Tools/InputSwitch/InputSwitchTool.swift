@@ -119,7 +119,10 @@ struct InputSwitchArt: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     private static let durations = [0.9, 0.5, 0.45, 1.5, 0.6]
-    private static let languages = ["EN", "RU"]
+    private static let languages: [String] = {
+        let code = (Bundle.main.preferredLocalizations.first ?? "en").prefix(2).uppercased()
+        return ["EN", code == "EN" ? "ES" : code]
+    }()
 
     var body: some View {
         IllustrationRow(loop: Self.durations) { tick in
