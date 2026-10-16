@@ -159,14 +159,14 @@ func commandKeysCallback(
         let code = event.getIntegerValueField(.keyboardEventKeycode)
         if type == .keyUp, let held = tool.held, held.key == code {
             tool.held = nil
-            CGEvent.postPikapikKey(Int(held.target), down: false, proxy)
+            CGEvent.postPikapikKey(Int(held.target), down: false, flags: flags)
             return nil
         }
         if type == .keyDown, !GameModeTool.shared.isPlaying || !GameRules.isGameInput(flags.rawValue),
            let target = tool.triggers[Shortcut(key: UInt16(truncatingIfNeeded: code), modifiers: flags.rawValue)] {
             guard event.getIntegerValueField(.keyboardEventAutorepeat) == 0 else { return nil }
             tool.held = (code, target)
-            CGEvent.postPikapikKey(Int(target), down: true, flags: .maskCommand, proxy)
+            CGEvent.postPikapikKey(Int(target), down: true, flags: .maskCommand)
             return nil
         }
         guard tool.blocked.contains(code),

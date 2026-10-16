@@ -7,7 +7,7 @@ private let alwaysExcluded = HomeEndTool.consoles + ["com.jetbrains.", "com.goog
 func replace(_ old: String, with new: String, _ proxy: CGEventTapProxy) {
     func post(_ key: Int, _ text: String?) {
         for down in [true, false] {
-            guard let event = CGEvent.pikapikKey(key, down: down) else { continue }
+            guard let event = CGEvent.pikapikKey(key, down: down, flags: []) else { continue }
             if let text {
                 let units = Array(text.utf16)
                 event.keyboardSetUnicodeString(stringLength: units.count, unicodeString: units)
@@ -278,7 +278,7 @@ func layoutFixCallback(
         if type == .keyUp {
             if tool.held == code {
                 tool.held = nil
-                CGEvent.postPikapikKey(kVK_F19, down: false, proxy)
+                CGEvent.postPikapikKey(kVK_F19, down: false, flags: event.flags, proxy)
                 return nil
             }
             break

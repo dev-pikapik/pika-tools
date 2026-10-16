@@ -196,7 +196,7 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 **Options:**
 - Make This Copy the Main One: starts a fresh copy that opens Settings and takes the lead.
 
-**Nuances:** Copies with the same bundle id that start later replace the older one. Older versions without this feature do not step back. A copy that crashes leaves its changes until the next copy starts. The Dock, DDC monitor brightness and the default apps for archives are not part of the handover.
+**Nuances:** Copies with the same bundle id that start later replace the older one. Older versions without this feature do not step back. A copy that crashes leaves its changes until the next copy starts. The Dock, DDC monitor brightness and the default apps for archives are not part of the handover. A copy started by running its binary from Terminal has no launch date, so the other copies do not see it and it does not see them: for tests start every copy with `open -n`.
 
 **Edition:** Both; the website and App Store copies count as the same family.
 
@@ -630,6 +630,9 @@ This is the catalog of everything pikapik does, grouped like the Settings sideba
 
 **Test:**
 1. (Website) Turn it on, open a new app (TextEdit) and hold a key → the letter repeats, no accent popup. Turn it off and reopen the app → the popup is back.
+2. (Website, two copies) Write down `defaults read -g ApplePressAndHoldEnabled` (“does not exist” counts too). Start one copy with `open -n` and turn the switch on → `0`. Start a second copy of the same family with `open -n` → the first one puts the value back and the second one writes `0` again within a fraction of a second; the value ends at `0`.
+3. Quit the second copy → the first one takes over and the value stays `0`. Turn the switch off in the first copy → the value is what you wrote down.
+4. With the switch on, quit the copy → the value is what you wrote down, and the next start writes `0` again. After `kill -9` the value stays `0` until a copy starts again; turning the switch off then puts it back.
 
 ### Home and End go to the start and end of a line
 

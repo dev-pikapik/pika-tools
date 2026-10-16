@@ -26,8 +26,8 @@ struct TestKeyUpFlags {
         Sent(type: .keyDown, key: key, flags: flags, pikapik: true, text: text, proxy: proxy, tap: .cgSessionEventTap)
     }
 
-    static func up(_ key: Int, text: String? = nil, proxy: Bool = false) -> Sent {
-        Sent(type: .keyUp, key: key, flags: held, pikapik: true, text: text, proxy: proxy, tap: .cgSessionEventTap)
+    static func up(_ key: Int, _ flags: CGEventFlags = held, text: String? = nil, proxy: Bool = false) -> Sent {
+        Sent(type: .keyUp, key: key, flags: flags, pikapik: true, text: text, proxy: proxy, tap: .cgSessionEventTap)
     }
 
     static let held: CGEventFlags = .maskShift
@@ -35,6 +35,18 @@ struct TestKeyUpFlags {
     static func keyEvent(_ key: Int, down: Bool) -> CGEvent {
         guard let event = CGEvent(keyboardEventSource: nil, virtualKey: CGKeyCode(key), keyDown: down) else { preconditionFailure("no key event") }
         return event
+    }
+
+    static func release(_ key: Int) -> CGEvent {
+        let event = keyEvent(key, down: false)
+        event.flags = held
+        return event
+    }
+
+    static func inTap(_ body: () -> Void) {
+        CGEvent.pikapikHeld = { preconditionFailure("a tap callback must not ask the system which modifiers are held: the question stalls the tap and typed keys get lost") }
+        body()
+        CGEvent.pikapikHeld = { held }
     }
 
     static func text(_ event: CGEvent) -> String? {
@@ -82,18 +94,19 @@ struct TestKeyUpFlags {
             let downSource = down.getIntegerValueField(.eventSourceStateID)
             precondition(downSource != 0 && downSource != 1, "a key must come from a private event source, not the nil or system one")
 
-            guard let up = CGEvent.pikapikKey(key, down: false, flags: flags) else { preconditionFailure("no key-up event") }
+            guard let up = CGEvent.pikapikKey(key, down: false) else { preconditionFailure("no key-up event") }
             precondition(up.type == .keyUp && up.getIntegerValueField(.keyboardEventKeycode) == Int64(key))
             let upSource = up.getIntegerValueField(.eventSourceStateID)
             precondition(upSource != 0 && upSource != 1, "a key must come from a private event source, not the nil or system one")
             precondition(up.flags == CGEvent.pikapikHeld(), "a key-up must carry exactly the flags held, not the press flags: pressed \(flags), held \(held), sent \(up.flags)")
+            precondition(CGEvent.pikapikKey(key, down: false, flags: flags)?.flags == flags, "a key-up given flags must carry them: \(flags)")
         }
         print("a key-down carries the flags it was given and a key-up carries exactly the flags held: ok")
         print("a key comes from a private event source, not the nil or system one: ok")
 
         CGEvent.pikapikHeld = { [] }
         for (key, flags) in keys {
-            guard let up = CGEvent.pikapikKey(key, down: false, flags: flags) else { preconditionFailure("no key-up event") }
+            guard let up = CGEvent.pikapikKey(key, down: false) else { preconditionFailure("no key-up event") }
             precondition(up.flags == [], "a key-up must carry no flags when none are held: pressed \(flags), sent \(up.flags)")
         }
         CGEvent.pikapikHeld = { held }
@@ -114,13 +127,13 @@ struct TestKeyUpFlags {
         let homeEnd = HomeEndTool()
         guard let home = HomeEndTool.target(kVK_Home, [], app: "com.apple.TextEdit", excluded: []) else { preconditionFailure("Home must be replaced in a text editor") }
         precondition(home.flags.contains(.maskCommand), "Home must press its arrow with Command: \(home.flags)")
-        expect(record { homeEnd.press(kVK_Home, home, proxy: proxy) }, [down(home.key, home.flags, proxy: true)], "Home and End key-down")
+        expect(record { inTap { homeEnd.press(kVK_Home, home) } }, [down(home.key, home.flags)], "Home and End key-down")
         precondition(homeEnd.held?.key == kVK_Home && homeEnd.held?.target == home.key, "Home and End must remember the key it holds down")
-        print("Home and End answers the key-down with one key-down of its key with Command: ok")
+        print("Home and End answers the key-down with one key-down of its key with Command, posted to the session, not through the tap, so apps do not take it for a repeat: ok")
         var result: Unmanaged<CGEvent>?
-        expect(record { result = homeEndCallback(proxy: proxy, type: .keyUp, event: keyEvent(kVK_Home, down: false), refcon: Unmanaged.passUnretained(homeEnd).toOpaque()) }, [up(home.key, proxy: true)], "Home and End key-up")
+        expect(record { inTap { result = homeEndCallback(proxy: proxy, type: .keyUp, event: release(kVK_Home), refcon: Unmanaged.passUnretained(homeEnd).toOpaque()) } }, [up(home.key)], "Home and End key-up")
         precondition(result == nil && homeEnd.held == nil, "Home and End must swallow the key-up it answers and let go of the key")
-        print("Home and End answers the key-up with one key-up of its key and swallows it: ok")
+        print("Home and End answers the key-up with one key-up of its key with the modifiers of the key let go, and swallows it: ok")
         homeEnd.held = (kVK_End, kVK_RightArrow)
         expect(record { homeEnd.stop() }, [up(kVK_RightArrow)], "Home and End stop")
         expect(record { homeEnd.stop() }, [], "Home and End second stop")
@@ -130,10 +143,10 @@ struct TestKeyUpFlags {
         commandKeys.triggers = [.quit: Int64(kVK_ANSI_Q)]
         let quitDown = keyEvent(Int(Shortcut.quit.key), down: true)
         quitDown.flags = CGEventFlags(rawValue: Shortcut.quit.modifiers)
-        expect(record { result = commandKeysCallback(proxy: proxy, type: .keyDown, event: quitDown, refcon: Unmanaged.passUnretained(commandKeys).toOpaque()) }, [down(kVK_ANSI_Q, .maskCommand, proxy: true)], "Command keys key-down")
+        expect(record { inTap { result = commandKeysCallback(proxy: proxy, type: .keyDown, event: quitDown, refcon: Unmanaged.passUnretained(commandKeys).toOpaque()) } }, [down(kVK_ANSI_Q, .maskCommand)], "Command keys key-down")
         precondition(result == nil && commandKeys.held?.key == Int64(Shortcut.quit.key) && commandKeys.held?.target == Int64(kVK_ANSI_Q), "Command keys must swallow the trigger and remember it")
-        print("Command keys answers its trigger with one key-down with Command and swallows it: ok")
-        expect(record { result = commandKeysCallback(proxy: proxy, type: .keyUp, event: keyEvent(Int(Shortcut.quit.key), down: false), refcon: Unmanaged.passUnretained(commandKeys).toOpaque()) }, [up(kVK_ANSI_Q, proxy: true)], "Command keys key-up")
+        print("Command keys answers its trigger with one key-down with Command, posted to the session, not through the tap, so Quit is not ignored as a repeat, and swallows it: ok")
+        expect(record { inTap { result = commandKeysCallback(proxy: proxy, type: .keyUp, event: release(Int(Shortcut.quit.key)), refcon: Unmanaged.passUnretained(commandKeys).toOpaque()) } }, [up(kVK_ANSI_Q)], "Command keys key-up")
         precondition(result == nil && commandKeys.held == nil, "Command keys must swallow the key-up it answers and let go of the key")
         print("Command keys answers the key-up with one key-up of its key and swallows it: ok")
         commandKeys.held = (Int64(Shortcut.quit.key), Int64(kVK_ANSI_Q))
@@ -143,7 +156,7 @@ struct TestKeyUpFlags {
 
         let finderKeys = FinderKeys.shared
         finderKeys.held = (kVK_F2, kVK_Return)
-        expect(record { result = finderKeysCallback(proxy: proxy, type: .keyUp, event: keyEvent(kVK_F2, down: false), refcon: Unmanaged.passUnretained(finderKeys).toOpaque()) }, [up(kVK_Return, proxy: true)], "Finder keys key-up")
+        expect(record { inTap { result = finderKeysCallback(proxy: proxy, type: .keyUp, event: release(kVK_F2), refcon: Unmanaged.passUnretained(finderKeys).toOpaque()) } }, [up(kVK_Return)], "Finder keys key-up")
         precondition(result == nil && finderKeys.held == nil, "Finder keys must swallow the key-up it answers and let go of the key")
         print("Finder keys answers the key-up with one key-up of its key and swallows it: ok")
         finderKeys.held = (kVK_F2, kVK_Return)
@@ -168,7 +181,7 @@ struct TestKeyUpFlags {
         #if APPSTORE
         let layoutFix = LayoutFixTool()
         layoutFix.held = Int64(kVK_Space)
-        expect(record { result = layoutFixCallback(proxy: proxy, type: .keyUp, event: keyEvent(kVK_Space, down: false), refcon: Unmanaged.passUnretained(layoutFix).toOpaque()) }, [up(kVK_F19, proxy: true)], "Layout fix key-up")
+        expect(record { inTap { result = layoutFixCallback(proxy: proxy, type: .keyUp, event: release(kVK_Space), refcon: Unmanaged.passUnretained(layoutFix).toOpaque()) } }, [up(kVK_F19, proxy: true)], "Layout fix key-up")
         precondition(result == nil && layoutFix.held == nil, "Layout fix must swallow the key-up it answers and let go of the key")
         print("Layout fix answers the key-up with one key-up of F19 and swallows it: ok")
         layoutFix.held = Int64(kVK_Space)
@@ -177,11 +190,11 @@ struct TestKeyUpFlags {
         print("Layout fix releases a held F19 once when it stops: ok")
         #endif
 
-        expect(record { replace("ab", with: "c", proxy) }, [
-            down(kVK_Delete, [], proxy: true), up(kVK_Delete, proxy: true), down(kVK_Delete, [], proxy: true), up(kVK_Delete, proxy: true),
-            down(0, [], text: "c", proxy: true), up(0, text: "c", proxy: true),
+        expect(record { inTap { replace("ab", with: "c", proxy) } }, [
+            down(kVK_Delete, [], proxy: true), up(kVK_Delete, [], proxy: true), down(kVK_Delete, [], proxy: true), up(kVK_Delete, [], proxy: true),
+            down(0, [], text: "c", proxy: true), up(0, [], text: "c", proxy: true),
         ], "Layout fix retype")
-        print("Layout fix retype sends one Delete per typed letter, then the new letters, each released: ok")
+        print("Layout fix retype sends one Delete per typed letter, then the new letters, each released with no modifiers: ok")
 
         expect(record { BackForward.press(.maskCommand, forward: true) }, [down(kVK_ANSI_RightBracket, .maskCommand), up(kVK_ANSI_RightBracket)], "Forward")
         expect(record { BackForward.press([.maskCommand, .maskAlternate], forward: false) }, [down(kVK_ANSI_LeftBracket, [.maskCommand, .maskAlternate]), up(kVK_ANSI_LeftBracket)], "Back")

@@ -134,12 +134,12 @@ final class HomeEndTool: Tool {
         isActive = false
     }
 
-    fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
+    fileprivate func handle(_ event: CGEvent, up: Bool) -> Bool {
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            CGEvent.postPikapikKey(held.target, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, flags: event.flags)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -150,13 +150,13 @@ final class HomeEndTool: Tool {
         #if !APPSTORE
         guard case .typing = TextFocus(app.processIdentifier) else { return false }
         #endif
-        press(key, target, proxy: proxy)
+        press(key, target)
         return true
     }
 
-    func press(_ key: Int, _ target: (key: Int, flags: CGEventFlags), proxy: CGEventTapProxy) {
+    func press(_ key: Int, _ target: (key: Int, flags: CGEventFlags)) {
         held = (key, target.key)
-        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags, proxy)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags)
     }
 }
 
@@ -172,7 +172,7 @@ func homeEndCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { tool.refresh() }
     case .keyDown, .keyUp:
-        if tool.handle(event, up: type == .keyUp, proxy: proxy) { return nil }
+        if tool.handle(event, up: type == .keyUp) { return nil }
     default:
         break
     }

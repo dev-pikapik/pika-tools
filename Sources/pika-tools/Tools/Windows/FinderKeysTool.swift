@@ -62,13 +62,13 @@ final class FinderKeys {
         isActive = false
     }
 
-    fileprivate func handle(_ event: CGEvent, up: Bool, proxy: CGEventTapProxy) -> Bool {
+    fileprivate func handle(_ event: CGEvent, up: Bool) -> Bool {
         guard !event.isPikapik else { return false }
         let key = Int(event.getIntegerValueField(.keyboardEventKeycode))
         if up {
             guard let held, held.key == key else { return false }
             self.held = nil
-            CGEvent.postPikapikKey(held.target, down: false, proxy)
+            CGEvent.postPikapikKey(held.target, down: false, flags: event.flags)
             return true
         }
         if event.getIntegerValueField(.keyboardEventAutorepeat) != 0 { return key == held?.key }
@@ -110,7 +110,7 @@ final class FinderKeys {
             }
         }
         held = (key, target.key)
-        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags, proxy)
+        CGEvent.postPikapikKey(target.key, down: true, flags: target.flags)
         return true
     }
 
@@ -166,7 +166,7 @@ func finderKeysCallback(
     case .tapDisabledByTimeout, .tapDisabledByUserInput:
         DispatchQueue.main.async { keys.refresh() }
     case .keyDown, .keyUp:
-        if keys.handle(event, up: type == .keyUp, proxy: proxy) { return nil }
+        if keys.handle(event, up: type == .keyUp) { return nil }
     default:
         break
     }
