@@ -65,7 +65,7 @@ enum PetFigure {
         let wear = PetClothes(pose: pose, night: night, body: shape, width: width, height: height, eye: eye, paws: soles, ground: -centre, place: place)
         wear.draw(.back, fill)
         if sit < 0.5 { fill(paws, feet) }
-        wear.draw(.rim, fill)
+        wear.outline(fill)
         if sit < 0.5 { wear.draw(.feet, fill) }
         fill(shape.applying(place), body)
         wear.draw(.base, fill)
@@ -137,8 +137,8 @@ enum PetFigure {
             case .helmet: 4.5
             case .cowboy, .pirate, .crown: 5
             case .propeller, .bowler: 5.5
-            case .viking, .curls: 6
-            case .beanie, .bun: 6.5
+            case .curls: 6
+            case .viking, .beanie, .bun: 6.5
             case .tophat: 7.5
             case .quiff: 8.5
             case .bunny: 8
@@ -146,7 +146,7 @@ enum PetFigure {
             default: 0
             }
             if pose.outfit[.back] == .umbrella { crown = max(crown, 9.5) }
-            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, fill: fill)
+            mark(face, top: centre - max(width, height) / 2, crown: crown, facing: pose.facing, time: pose.twinkle, rim: wear.rim, fill: fill)
         }
     }
 
@@ -156,10 +156,14 @@ enum PetFigure {
         return z.strokedPath(StrokeStyle(lineWidth: 0.7, lineCap: .round, lineJoin: .round))
     }
 
-    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, fill: (Path, Color) -> Void) {
+    private static func mark(_ face: PetFace, top: CGFloat, crown: CGFloat, facing: CGFloat, time: Double, rim: Color, fill emit: (Path, Color) -> Void) {
         let a = face.glow, float = 0.6 * sin(time * 3)
         let c = CGPoint(x: facing * 2.2, y: top - crown - 5.5 - float), back = -facing
         func shift(_ path: Path, _ x: CGFloat, _ y: CGFloat) -> Path { path.applying(CGAffineTransform(translationX: x, y: y)) }
+        func fill(_ path: Path, _ ink: (r: Double, g: Double, b: Double)) {
+            if PetClothes.pale(ink.r, ink.g, ink.b) { emit(path.strokedPath(PetClothes.stroke), rim.opacity(a)) }
+            emit(path, Color(red: ink.r, green: ink.g, blue: ink.b).opacity(a))
+        }
         switch face.mark {
         case .none:
             break
@@ -170,7 +174,7 @@ enum PetFigure {
             heart.addCurve(to: CGPoint(x: 0, y: -0.8), control1: CGPoint(x: -2.3, y: -2.3), control2: CGPoint(x: -0.3, y: -2.2))
             heart.addCurve(to: CGPoint(x: 2.3, y: -0.5), control1: CGPoint(x: 0.3, y: -2.2), control2: CGPoint(x: 2.3, y: -2.3))
             heart.addCurve(to: CGPoint(x: 0, y: 2.2), control1: CGPoint(x: 2.3, y: 0.8), control2: CGPoint(x: 1.2, y: 1.4))
-            fill(shift(heart, c.x, c.y), Color(red: 1, green: 0.36, blue: 0.52).opacity(a))
+            fill(shift(heart, c.x, c.y), (1, 0.36, 0.52))
         case .sparkles:
             for (k, spot) in [(-2.6, 1.2, 2.3), (2.6, -0.8, 1.8), (0.2, -3.4, 1.3)].map({ (CGFloat($0.0), CGFloat($0.1), CGFloat($0.2)) }).enumerated() {
                 let r = spot.2 * CGFloat(0.75 + 0.25 * sin(time * 6 + Double(k) * 2.1))
@@ -180,7 +184,7 @@ enum PetFigure {
                     return CGPoint(x: c.x + spot.0 + reach * sin(angle), y: c.y + spot.1 - reach * cos(angle))
                 })
                 star.closeSubpath()
-                fill(star, Color(red: 1, green: 0.8, blue: 0.22).opacity(a))
+                fill(star, (1, 0.8, 0.22))
             }
         case .ask:
             var hook = Path()
@@ -188,11 +192,11 @@ enum PetFigure {
                 CGPoint(x: 1.5 * cos(deg * .pi / 180), y: -1.5 * sin(deg * .pi / 180))
             })
             hook.addLine(to: CGPoint(x: 0, y: 2.1))
-            let ink = Color(red: 0.3, green: 0.62, blue: 1).opacity(a)
+            let ink = (0.3, 0.62, 1.0)
             fill(shift(hook.strokedPath(StrokeStyle(lineWidth: 1.1, lineCap: .round, lineJoin: .round)), c.x, c.y - 0.6), ink)
             fill(Path(ellipseIn: CGRect(x: c.x - 0.65, y: c.y + 2.4, width: 1.3, height: 1.3)), ink)
         case .bang:
-            let ink = Color(red: 1, green: 0.34, blue: 0.24).opacity(a)
+            let ink = (1.0, 0.34, 0.24)
             fill(Path(roundedRect: CGRect(x: c.x - 0.9, y: c.y - 2.8, width: 1.8, height: 3.9), cornerRadius: 0.9), ink)
             fill(Path(ellipseIn: CGRect(x: c.x - 0.9, y: c.y + 1.8, width: 1.8, height: 1.8)), ink)
         case .drop:
@@ -201,14 +205,14 @@ enum PetFigure {
             drop.addCurve(to: CGPoint(x: 1.1, y: 0.5), control1: CGPoint(x: 0.3, y: -0.9), control2: CGPoint(x: 1.1, y: -0.2))
             drop.addCurve(to: CGPoint(x: -1.1, y: 0.5), control1: CGPoint(x: 1.1, y: 1.8), control2: CGPoint(x: -1.1, y: 1.8))
             drop.addCurve(to: CGPoint(x: 0, y: -1.8), control1: CGPoint(x: -1.1, y: -0.2), control2: CGPoint(x: -0.3, y: -0.9))
-            fill(shift(drop, back * 4.4, top - crown - 3.4 - float), Color(red: 0.5, green: 0.78, blue: 1).opacity(a))
+            fill(shift(drop, back * 4.4, top - crown - 3.4 - float), (0.5, 0.78, 1))
         case .zzz:
             for (x, y, size) in [(-1.8, 1.6, 2.2), (1.4, -1.4, 3.2)] as [(CGFloat, CGFloat, CGFloat)] {
-                fill(shift(zed(size), c.x + x, c.y + y), Color(red: 0.45, green: 0.5, blue: 0.95).opacity(a))
+                fill(shift(zed(size), c.x + x, c.y + y), (0.45, 0.5, 0.95))
             }
         case .puff:
             for (x, y, r) in [(4.2, 1.6, 1.2), (5.9, 0.6, 1.7), (7.6, 1.6, 1.2)] {
-                fill(Path(ellipseIn: CGRect(x: -back * x - r, y: top - crown - y - 0.8 - float - r, width: 2 * r, height: 2 * r)), Color(white: 0.7).opacity(a))
+                fill(Path(ellipseIn: CGRect(x: -back * x - r, y: top - crown - y - 0.8 - float - r, width: 2 * r, height: 2 * r)), (0.7, 0.7, 0.7))
             }
         }
     }

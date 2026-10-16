@@ -1,6 +1,6 @@
 import CoreGraphics
 
-enum PetMark { case none, heart, sparkles, ask, bang, drop, puff, zzz }
+enum PetMark: CaseIterable { case none, heart, sparkles, ask, bang, drop, puff, zzz }
 
 struct PetFace: Equatable {
     var open: CGFloat = 1

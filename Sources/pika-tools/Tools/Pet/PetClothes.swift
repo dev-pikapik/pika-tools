@@ -1,18 +1,36 @@
 import SwiftUI
 
 struct PetClothes {
-    enum Layer { case rim, back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
+    enum Layer: CaseIterable { case back, feet, base, legs, outer, neck, prop, whiskers, face, head, glass }
 
     let pose: PetPose, night: Bool, body: Path, width: CGFloat, height: CGFloat, eye: CGPoint, paws: [CGRect], ground: CGFloat, place: CGAffineTransform
 
     func draw(_ layer: Layer, _ fill: (Path, Color) -> Void) {
-        for (path, color) in shapes(layer) where (color == .clear) == (layer == .rim) {
-            fill(path.applying(place), color == .clear ? c(Dye.steel) : color)
-        }
+        let layers = shapes(layer)
+        if layer == .back { outline(layers, fill) }
+        for (path, paint) in layers { fill(path.applying(place), paint.color) }
+    }
+
+    func outline(_ fill: (Path, Color) -> Void) { outline(Self.front.flatMap(shapes), fill) }
+
+    var rim: Color { c(Dye.steel).color }
+
+    static let stroke = StrokeStyle(lineWidth: 0.7, lineJoin: .round)
+
+    static func pale(_ r: Double, _ g: Double, _ b: Double, _ a: Double = 1) -> Bool { a * (0.2126 * r + 0.7152 * g + 0.0722 * b) + 1 - a > 0.76 }
+
+    private static let front = Layer.allCases.filter { $0 != .back }
+
+    private func outline(_ layers: Layers, _ fill: (Path, Color) -> Void) {
+        var pale = Path()
+        let core = body.boundingRect.insetBy(dx: 2, dy: 2)
+        for (path, paint) in layers where paint.pale && !core.contains(path.boundingRect) { pale.addPath(path) }
+        if !pale.isEmpty { fill(pale.strokedPath(Self.stroke).applying(place), rim) }
     }
 
     private typealias Ink = (r: Double, g: Double, b: Double)
-    private typealias Layers = [(Path, Color)]
+    private struct Paint { let color: Color, pale: Bool }
+    private typealias Layers = [(Path, Paint)]
 
     private enum Dye {
         static let ink: Ink = (0.15, 0.14, 0.19), satin: Ink = (0.30, 0.28, 0.37)
@@ -39,16 +57,10 @@ struct PetClothes {
         static let pine: Ink = (0.16, 0.45, 0.43), pineDeep: Ink = (0.10, 0.31, 0.31)
     }
 
-    private func c(_ k: Ink, _ a: Double = 1) -> Color {
+    private func c(_ k: Ink, _ a: Double = 1) -> Paint {
         let l = night ? 0.12 : 0
-        return Color(red: k.r + (1 - k.r) * l, green: k.g + (1 - k.g) * l, blue: k.b + (1 - k.b) * l, opacity: a)
+        return Paint(color: Color(red: k.r + (1 - k.r) * l, green: k.g + (1 - k.g) * l, blue: k.b + (1 - k.b) * l, opacity: a), pale: Self.pale(k.r, k.g, k.b, a))
     }
-
-    private func edge(_ path: Path) -> Path { path.strokedPath(StrokeStyle(lineWidth: 0.7, lineJoin: .round)) }
-
-    private func rim(_ path: Path) -> (Path, Color) { (edge(path), .clear) }
-
-    private func shoeRim(_ path: Path) -> (Path, Color) { pose.sit < 0.5 ? (edge(path), c(Dye.steel)) : rim(path) }
 
     private var neck: CGFloat { -height / 2 + 6.4 }
     private var chest: CGFloat { -height / 2 + 5.7 }
@@ -70,7 +82,6 @@ struct PetClothes {
     private func build(_ layer: Layer) -> Layers {
         let o = pose.outfit
         switch layer {
-        case .rim: return shapes(.base) + shapes(.outer) + shapes(.feet)
         case .back: return o[.back].map { inside(back($0)) } ?? []
         case .feet: return o[.feet].map(shoes) ?? []
         case .base, .outer:
@@ -536,7 +547,7 @@ struct PetClothes {
             white.addPath(sleeves)
             var bands = Path()
             for k in 0..<6 { bands.addRect(CGRect(x: -w - 2, y: n + 0.8 + CGFloat(k) * 1.45, width: 2 * w + 4, height: 0.72)) }
-            return [rim(white), (white, c(Dye.white)), (bands.intersection(white), c(Dye.navy))]
+            return [(white, c(Dye.white)), (bands.intersection(white), c(Dye.navy))]
         case .hero:
             let trunk = torso(0, to: b + 1)
             var suit = trunk
@@ -559,7 +570,7 @@ struct PetClothes {
             for p in paws where pose.sit < 0.5 && p.maxY - 0.95 > b - 0.3 { boots.addPath(Path(CGRect(x: p.minX - 0.1, y: p.maxY - 1.65, width: p.width + 0.2, height: 0.7))) }
             var lights = oval(2.9, n + 2.35, 0.32, 0.32)
             lights.addPath(oval(3.9, n + 2.35, 0.32, 0.32))
-            return [rim(white), (white, c(Dye.snow))] + (boots.isEmpty ? [] : [(boots, c(Dye.mist))]) + [(blue, c(Dye.blue)), (lights, c(Dye.white))]
+            return [(white, c(Dye.snow))] + (boots.isEmpty ? [] : [(boots, c(Dye.mist))]) + [(blue, c(Dye.blue)), (lights, c(Dye.white))]
         case .hoodie:
             let hem = b - 1.0
             var sage = shirt(-0.1, hem: hem, flare: 0.45)
@@ -588,7 +599,7 @@ struct PetClothes {
             mist.addPath(ribbon([P(-0.4, n + 1.9), P(1.8, n + 1.9)], { _ in 0.5 }))
             var pen = Path(roundedRect: CGRect(x: 0.2, y: n + 0.7, width: 0.6, height: 1.6), cornerRadius: 0.3)
             pen.addPath(Path(CGRect(x: 0.65, y: n + 0.9, width: 0.35, height: 0.9)))
-            return [rim(white), (white, c(Dye.snow)), (v, c(Dye.snow)), (mist, c(Dye.mist)), (pen, c(Dye.blue))]
+            return [(white, c(Dye.snow)), (v, c(Dye.snow)), (mist, c(Dye.mist)), (pen, c(Dye.blue))]
         case .tailcoat:
             let flap = (pose.air ? 0.5 + 0.1 * sin(pose.lift * 0.6) : 0.1 * sin(2 * CGFloat(pose.step)) * walk) - (pose.hang ? pose.tilt * 0.5 : 0)
             let hem = b + 0.4, pivot = P(-w + 1.0, waist - 0.6)
@@ -741,10 +752,10 @@ struct PetClothes {
             }
         }
         switch item {
-        case .sneakers: return [shoeRim(a), (a, c(Dye.snow)), (b, c(Dye.blue))]
+        case .sneakers: return [(a, c(Dye.snow)), (b, c(Dye.blue))]
         case .boots: return [(a, c(Dye.yellow)), (b, c(Dye.yellowDeep)), (d, c(Dye.white, 0.55))]
         case .spats: return [(a, c(Dye.ink)), (d, c(Dye.satin)), (b, c(Dye.cream)), (e, c(Dye.ink)), (f, c(Dye.white, 0.6))]
-        case .skates: return [(a, c(Dye.turquoise)), (b, c(Dye.white)), (d, c(Dye.steelDeep)), shoeRim(e), (e, c(Dye.snow)), (f, c(Dye.pink))]
+        case .skates: return [(a, c(Dye.turquoise)), (b, c(Dye.white)), (d, c(Dye.steelDeep)), (e, c(Dye.snow)), (f, c(Dye.pink))]
         default: return []
         }
     }
@@ -840,7 +851,7 @@ struct PetClothes {
             var wing = primaries
             wing.addPath(coverts)
             let far = CGAffineTransform(translationX: -root.x, y: -root.y).concatenating(CGAffineTransform(scaleX: 0.85, y: 0.85)).concatenating(CGAffineTransform(translationX: root.x + 1.2, y: root.y - 1.0))
-            return [(wing.turned(flap - 0.25, root).applying(far), c(Dye.mist)), (edge(wing.turned(flap, root)), c(Dye.steel)), (primaries.turned(flap, root), c(Dye.feather)), (coverts.turned(flap, root), c(Dye.snow))]
+            return [(wing.turned(flap - 0.25, root).applying(far), c(Dye.mist)), (primaries.turned(flap, root), c(Dye.feather)), (coverts.turned(flap, root), c(Dye.snow))]
         default:
             return []
         }
