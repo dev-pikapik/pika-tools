@@ -33,16 +33,30 @@ struct PetClothes {
 
     private func outline(_ layers: Layers, _ fill: (Path, Color) -> Void) {
         guard outlined else { return }
-        var faint = Path()
+        var faint: [(path: Path, box: CGRect)] = []
         var covers = [body.boundingRect.insetBy(dx: 2, dy: 2)]
         for (path, paint) in layers {
             let box = path.boundingRect
-            if paint.faint && !covers.contains(where: { $0.contains(box) }) { faint.addPath(path) }
+            if paint.faint && !covers.contains(where: { $0.contains(box) }) {
+                for part in path.subpaths {
+                    let inner = part.boundingRect
+                    let holders = faint.filter { $0.box.contains(inner) }, probes = holders.isEmpty ? [] : part.inside
+                    if !holders.contains(where: { held in probes.allSatisfy { held.path.contains($0) } }) { faint.append((part, inner)) }
+                }
+            }
             var parts = 0
             path.forEach { if case .move = $0 { parts += 1 } }
             if parts == 1 { covers.append(box) }
         }
-        if !faint.isEmpty { fill(faint.strokedPath(Self.stroke).applying(place), Self.rim) }
+        var batches: [(path: Path, boxes: [CGRect])] = []
+        for part in faint {
+            let ring = part.path.strokedPath(Self.stroke), near = part.box.insetBy(dx: -1, dy: -1)
+            if let i = batches.firstIndex(where: { batch in !batch.boxes.contains { $0.intersects(near) } }) {
+                batches[i].path.addPath(ring)
+                batches[i].boxes.append(part.box)
+            } else { batches.append((ring, [part.box])) }
+        }
+        for batch in batches { fill(batch.path.applying(place), Self.rim) }
     }
 
     private typealias Ink = (r: Double, g: Double, b: Double)
@@ -983,5 +997,35 @@ private func fluff(_ o: CGPoint, _ r: CGFloat) -> Path {
 private extension Path {
     func turned(_ angle: CGFloat, _ o: CGPoint) -> Path {
         applying(CGAffineTransform(translationX: -o.x, y: -o.y).concatenating(CGAffineTransform(rotationAngle: angle)).concatenating(CGAffineTransform(translationX: o.x, y: o.y)))
+    }
+}
+
+private extension Path {
+    var inside: [CGPoint] {
+        let box = boundingRect, mid = CGPoint(x: box.midX, y: box.midY)
+        var all = [mid]
+        forEach { element in
+            switch element {
+            case .move(let to), .line(let to), .quadCurve(let to, _), .curve(let to, _, _):
+                let reach = hypot(to.x - mid.x, to.y - mid.y), keep = reach > 0 ? max(0, reach - 0.3) / reach : 0
+                all.append(CGPoint(x: mid.x + keep * (to.x - mid.x), y: mid.y + keep * (to.y - mid.y)))
+            case .closeSubpath: break
+            }
+        }
+        return all
+    }
+
+    var subpaths: [Path] {
+        var parts: [Path] = []
+        forEach { element in
+            switch element {
+            case .move(let to): parts.append(Path()); parts[parts.count - 1].move(to: to)
+            case .line(let to): parts[parts.count - 1].addLine(to: to)
+            case .quadCurve(let to, let control): parts[parts.count - 1].addQuadCurve(to: to, control: control)
+            case .curve(let to, let c1, let c2): parts[parts.count - 1].addCurve(to: to, control1: c1, control2: c2)
+            case .closeSubpath: parts[parts.count - 1].closeSubpath()
+            }
+        }
+        return parts
     }
 }

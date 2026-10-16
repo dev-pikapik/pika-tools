@@ -202,7 +202,7 @@ Every item and sign stands out at 3:1 or better on a white window and on a #1E1E
 swiftc -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/test-pet-contrast.swift -o build/test-pet-contrast && build/test-pet-contrast
 ```
 
-The outline must stay cheap: drawing every item and look with it costs at most 0.3 ms more per frame than without it (release build on an idle Mac; add `raster` to also fill the paths):
+The outline must stay cheap: drawing every item and look with it costs at most 0.3 ms more per frame than without it (release build on an idle Mac; add `raster` to also fill the paths). This check is manual: CI does not run it, because timings on shared runners are too noisy to hold a 0.3 ms limit:
 
 ```bash
 swiftc -O -parse-as-library Sources/pika-tools/Tools/Pet/{PetFigure,PetClothes,PetWardrobe,PetMood,PetPhysics,BallPhysics}.swift scripts/bench-pet.swift -o build/bench-pet && build/bench-pet

@@ -10,7 +10,7 @@ struct Cost {
 struct Row {
     let name: String
     let walk: Cost, idle: Cost, night: Cost
-    var worst: Double { max(walk.extra, night.extra) }
+    var worst: Double { max(walk.extra, idle.extra, night.extra) }
 
     var text: String {
         func part(_ label: String, _ c: Cost) -> String { String(format: "%@ %.4f -> %.4f (%+.4f)", label, c.flat, c.outlined, c.extra) }
