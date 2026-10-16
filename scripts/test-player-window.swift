@@ -183,6 +183,7 @@ enum TestPlayerWindow {
         func down(_ y: CGFloat, _ count: Int) -> NSEvent {
             NSEvent.mouseEvent(with: .leftMouseDown, location: NSPoint(x: 200, y: y), modifierFlags: [], timestamp: 0, windowNumber: probe.windowNumber, context: nil, eventNumber: 0, clickCount: count, pressure: 1)!
         }
+        precondition(probe.contentView?.superview?.hitTest(NSPoint(x: 200, y: probe.frame.height - 10)) === video, "a click 10 pt below the top edge reaches the picture, not the system title bar")
         UserDefaults.standard.setVolatileDomain(["AppleActionOnDoubleClick": "Maximize"], forName: UserDefaults.argumentDomain)
         video.mouseDown(with: down(stripY(), 2))
         precondition(probe.zooms == 1 && probe.performZooms == 0 && probe.fullScreens == 0 && probe.drags == 0 && probe.frame != start, "the first double-click in the strip maximizes with the window's own zoom, not the green button, and not full screen")
@@ -190,7 +191,7 @@ enum TestPlayerWindow {
         precondition(probe.zooms == 2 && probe.performZooms == 0 && probe.fullScreens == 0 && probe.drags == 0 && probe.frame == start, "the second double-click puts the window back where it was")
         let menuSource = (try? String(contentsOfFile: "Helper/Player/main.swift", encoding: .utf8)) ?? ""
         precondition(menuSource.contains("#selector(NSWindow.zoom(_:))") && !menuSource.contains("performZoom"), "the Window menu zooms with the same action as the strip")
-        pass("the top strip double-click follows the system setting")
+        pass("a click in the top strip reaches the picture, its double-click follows the system setting")
 
         let panel = NSView(frame: NSRect(x: 100, y: 20, width: 400, height: 56))
         precondition(!WindowChrome.dragsWindow(at: NSPoint(x: 200, y: 40), panel: panel), "a drag that starts on the panel does not move the window")
