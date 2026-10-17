@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Zwierzak pokazuje uczucia, a odtwarzacz otwiera obrazki
+
+<sub>1.52.2 · 17 października 2026</sub>
+
+Zwierzak pokazuje teraz, co czuje, odtwarzacz otwiera też twoje obrazki, a okna schowane w Docku zostają tam, gdy grasz.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Jego pyszczek się zmienia, a mały znak nad głową, na przykład serduszko, iskierki albo chmurka, pokazuje, co czuje. W garderobie jest 15 nowych rzeczy: wąsy, kapelusze i fryzury.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+W wersji ze strony obrazki otwierają się w tym samym odtwarzaczu, tak jak w Podglądzie: JPEG, PNG, HEIC, RAW z aparatu, PSD i wiele innych.
+
+- Odtwarzacz (wersja ze strony): wybierz ścieżkę dźwiękową lub napisy, przeskakuj między rozdziałami i naciśnij A, by powtórzyć fragment.
+- Odtwarzacz (wersja ze strony): obraz w obrazie, AirPlay na telewizor i dźwięk przez inne głośniki bez zmiany wyjścia Maca.
+
+**Wypróbuj:** Ustawienia › Zwierzak · Ustawienia › Odtwarzacz
+
+**Poprawki**
+
+- Gry (wersja ze strony): okna schowane w Docku nie wracają już, gdy gra się otwiera lub zamyka.
+- ⇧⌘Q i twój własny skrót do zamykania zamykają teraz aplikację za każdym razem.
+- Gdy przestajesz ukrywać ikony na biurku, pliki na biurku zawsze wracają.
+- Chrome, Slack, VS Code (wersja ze strony): pikapik nie wyłącza już tego, co włączyły tam inne aplikacje, a po zamknięciu pikapik Chrome wraca do stanu sprzed.
+- Ustawienia: wideo, muzyka i obrazki mają po jednym przełączniku, a lista po lewej zawsze pokazuje otwartą stronę.
+
+---
+
 ## <a id="v1.52.1"></a>Odtwarzacz gra twoją muzykę, a ustawienia wracają po awarii
 
 <sub>1.52.1 · 16 października 2026</sub>

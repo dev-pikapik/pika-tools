@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>宠物会表达心情，播放器也能打开图片
+
+<sub>1.52.2 · 2026年10月17日</sub>
+
+宠物现在会表达心情，播放器也能打开你的图片，收进程序坞的窗口在玩游戏时不会再跑回来。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+它的表情会变化，头顶会出现一个小标志，比如爱心、闪光或一朵小云，告诉你它的心情。衣橱里有 15 件新东西：胡子、帽子和发型。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+在网站版中，图片会在同一个播放器里打开，就像“预览”那样：JPEG、PNG、HEIC、相机 RAW、PSD 等等。
+
+- 播放器（网站版）：选择音轨或字幕，在章节之间跳转，按 A 重复播放一段。
+- 播放器（网站版）：画中画、AirPlay 到电视，以及在不改变 Mac 输出的情况下用其他扬声器播放声音。
+
+**试试看：** 设置 › 宠物 · 设置 › 播放器
+
+**修复**
+
+- 游戏（网站版）：游戏打开或关闭时，收进程序坞的窗口不会再跑回来。
+- ⇧⌘Q 和你自己设定的退出快捷键现在每次都能退出应用。
+- 停止隐藏桌面图标后，桌面上的文件总会回来。
+- Chrome、Slack、VS Code（网站版）：pikapik 不再关闭其他应用在那里打开的功能，退出 pikapik 后 Chrome 会恢复原样。
+- 设置：视频、音乐和图片各只有一个开关，左侧列表总会显示当前打开的页面。
+
+---
+
 ## <a id="v1.52.1"></a>播放器播放你的音乐，崩溃后设置也会恢复
 
 <sub>1.52.1 · 2026年10月16日</sub>

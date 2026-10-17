@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>L’animaletto mostra le emozioni e il lettore apre le immagini
+
+<sub>1.52.2 · 17 ottobre 2026</sub>
+
+L’animaletto ora mostra come si sente, il lettore apre anche le tue immagini e le finestre che metti nel Dock restano lì mentre giochi.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Il suo muso cambia e un piccolo segno sopra la testa, come un cuore, delle scintille o una nuvoletta, mostra come si sente. Il guardaroba ha 15 cose nuove: baffi, cappelli e acconciature.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Nella versione dal sito le immagini si aprono nello stesso lettore, come in Anteprima: JPEG, PNG, HEIC, RAW della fotocamera, PSD e molte altre.
+
+- Lettore (versione dal sito): scegli una traccia audio o i sottotitoli, salta tra i capitoli e premi A per ripetere una parte.
+- Lettore (versione dal sito): Picture in Picture, AirPlay sulla TV e audio su altri altoparlanti senza cambiare l’uscita del Mac.
+
+**Provalo:** Impostazioni › Animaletto · Impostazioni › Lettore
+
+**Corretto**
+
+- Giochi (versione dal sito): le finestre che metti nel Dock non tornano più quando un gioco si apre o si chiude.
+- ⇧⌘Q e la tua scorciatoia per uscire ora chiudono l’app ogni volta.
+- Quando smetti di nascondere le icone della scrivania, i file sulla scrivania tornano sempre.
+- Chrome, Slack, VS Code (versione dal sito): pikapik non spegne più ciò che altre app vi hanno acceso, e Chrome torna com’era quando chiudi pikapik.
+- Impostazioni: video, musica e immagini hanno un solo interruttore ciascuno, e l’elenco a sinistra mostra sempre la pagina aperta.
+
+---
+
 ## <a id="v1.52.1"></a>Il lettore riproduce la tua musica e le impostazioni tornano dopo un arresto anomalo
 
 <sub>1.52.1 · 16 ottobre 2026</sub>

@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Peliharaan menunjukkan perasaannya, dan pemutar membuka gambar
+
+<sub>1.52.2 · 17 Oktober 2026</sub>
+
+Peliharaan kini menunjukkan apa yang dirasakannya, pemutar juga membuka gambar Anda, dan jendela yang Anda simpan di Dock tetap di sana saat bermain.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Wajahnya berubah, dan tanda kecil di atas kepalanya, seperti hati, kilauan, atau awan kecil, menunjukkan perasaannya. Lemari pakaian punya 15 barang baru: kumis, topi, dan gaya rambut.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Di versi situs web, gambar terbuka di pemutar yang sama, seperti di Pratinjau: JPEG, PNG, HEIC, RAW kamera, PSD, dan banyak lagi.
+
+- Pemutar (versi situs web): pilih trek audio atau subtitel, lompat antarbab, dan tekan A untuk mengulang satu bagian.
+- Pemutar (versi situs web): gambar dalam gambar, AirPlay ke TV, dan suara lewat speaker lain tanpa mengubah output Mac.
+
+**Coba:** Pengaturan › Peliharaan · Pengaturan › Pemutar
+
+**Diperbaiki**
+
+- Game (versi situs web): jendela yang Anda simpan di Dock tidak lagi kembali saat game dibuka atau ditutup.
+- ⇧⌘Q dan pintasan keluar Anda sendiri kini menutup app setiap kali.
+- Saat Anda berhenti menyembunyikan ikon desktop, file di desktop selalu kembali.
+- Chrome, Slack, VS Code (versi situs web): pikapik tidak lagi mematikan apa yang dinyalakan app lain di sana, dan Chrome kembali seperti semula saat Anda keluar dari pikapik.
+- Pengaturan: video, musik, dan gambar masing-masing punya satu sakelar, dan daftar di kiri selalu menunjukkan halaman yang terbuka.
+
+---
+
 ## <a id="v1.52.1"></a>Pemutar memainkan musik Anda, dan pengaturan Anda kembali setelah crash
 
 <sub>1.52.1 · 16 Oktober 2026</sub>

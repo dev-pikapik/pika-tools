@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>La mascota muestra lo que siente y el reproductor abre imágenes
+
+<sub>1.52.2 · 17 de octubre de 2026</sub>
+
+La mascota ya muestra cómo se siente, el reproductor abre también tus imágenes y las ventanas que guardas en el Dock se quedan ahí mientras juegas.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Su cara cambia y una pequeña señal sobre su cabeza, como un corazón, chispas o una nubecita, muestra cómo se siente. El armario tiene 15 cosas nuevas: bigotes, sombreros y peinados.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+En la versión de la web, las imágenes se abren en el mismo reproductor, como en Vista Previa: JPEG, PNG, HEIC, RAW de cámara, PSD y muchas más.
+
+- Reproductor (versión de la web): elige una pista de audio o subtítulos, salta entre capítulos y pulsa A para repetir una parte.
+- Reproductor (versión de la web): imagen en imagen, AirPlay a la tele y sonido por otros altavoces sin cambiar la salida del Mac.
+
+**Pruébalo:** Ajustes › Mascota · Ajustes › Reproductor
+
+**Corregido**
+
+- Juegos (versión de la web): las ventanas que guardas en el Dock ya no vuelven cuando un juego se abre o se cierra.
+- ⇧⌘Q y tu propio atajo para salir ahora cierran la app siempre.
+- Cuando dejas de ocultar los iconos del escritorio, los archivos del escritorio siempre vuelven.
+- Chrome, Slack, VS Code (versión de la web): pikapik ya no apaga lo que otras apps encendieron allí, y Chrome vuelve a estar como antes al salir de pikapik.
+- Ajustes: los vídeos, la música y las imágenes tienen un solo interruptor cada uno, y la lista de la izquierda siempre muestra la página abierta.
+
+---
+
 ## <a id="v1.52.1"></a>El reproductor pone tu música, y tus ajustes vuelven tras un cierre inesperado
 
 <sub>1.52.1 · 16 de octubre de 2026</sub>

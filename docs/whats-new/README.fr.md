@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Le compagnon montre ses émotions, et le lecteur ouvre les images
+
+<sub>1.52.2 · 17 octobre 2026</sub>
+
+Le compagnon montre maintenant ce qu’il ressent, le lecteur ouvre aussi vos images, et les fenêtres placées dans le Dock y restent pendant que vous jouez.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Sa tête change, et un petit signe au-dessus, comme un cœur, des étincelles ou un petit nuage, montre ce qu’il ressent. La garde-robe compte 15 nouveautés : moustaches, chapeaux et coiffures.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Dans la version du site, les images s’ouvrent dans le même lecteur, comme dans Aperçu : JPEG, PNG, HEIC, RAW d’appareil photo, PSD et bien d’autres.
+
+- Lecteur (version du site) : choisissez une piste audio ou des sous-titres, passez d’un chapitre à l’autre, et appuyez sur A pour répéter un passage.
+- Lecteur (version du site) : image dans l’image, AirPlay vers une TV et son sur d’autres haut-parleurs sans changer la sortie du Mac.
+
+**Pour essayer :** Réglages › Compagnon · Réglages › Lecteur
+
+**Corrigé**
+
+- Jeux (version du site) : les fenêtres placées dans le Dock ne reviennent plus quand un jeu s’ouvre ou se ferme.
+- ⇧⌘Q et votre propre raccourci pour quitter ferment maintenant l’app à chaque fois.
+- Quand vous arrêtez de masquer les icônes du bureau, les fichiers du bureau reviennent toujours.
+- Chrome, Slack, VS Code (version du site) : pikapik ne désactive plus ce que d’autres apps y ont activé, et Chrome redevient comme avant quand vous quittez pikapik.
+- Réglages : les vidéos, la musique et les images ont chacune un seul interrupteur, et la liste à gauche montre toujours la page ouverte.
+
+---
+
 ## <a id="v1.52.1"></a>Le lecteur joue votre musique, et vos réglages reviennent après un plantage
 
 <sub>1.52.1 · 16 octobre 2026</sub>

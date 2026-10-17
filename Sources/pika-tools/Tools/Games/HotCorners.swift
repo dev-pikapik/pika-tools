@@ -30,7 +30,7 @@ enum HotCorners {
 
     static func putBackAll() {
         CFPreferencesAppSynchronize(dock)
-        var saved = before, wrote = false
+        var saved = before, wrote: [String: Int] = [:]
         let ours = ours
         for side in saved.keys {
             let name = key(side) as CFString
@@ -38,11 +38,11 @@ enum HotCorners {
             saved = plan.saved
             guard let value = plan.write else { continue }
             CFPreferencesSetAppValue(name, value as CFNumber, dock)
-            wrote = true
+            wrote[key(side)] = value
         }
-        if wrote {
+        if !wrote.isEmpty {
             CFPreferencesAppSynchronize(dock)
-            _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+            if !DockCorners.set(wrote) { _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"]) }
         }
         remember(saved, [:])
     }
@@ -67,12 +67,41 @@ enum HotCorners {
     private static func put(_ value: Int, side: String) {
         CFPreferencesSetAppValue(key(side) as CFString, value as CFNumber, dock)
         CFPreferencesAppSynchronize(dock)
-        _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"])
+        if !DockCorners.set([key(side): value]) { _ = try? Process.run(URL(fileURLWithPath: "/usr/bin/killall"), arguments: ["Dock"]) }
     }
 
     private static func remember(_ saved: [String: Int], _ ours: [String: Int]) {
         UserDefaults.standard.set(saved.isEmpty ? nil : saved, forKey: journalKey)
         UserDefaults.standard.set(ours.isEmpty ? nil : ours, forKey: oursKey)
+    }
+}
+
+enum DockCorners {
+    private typealias Read = @convention(c) (UnsafeMutablePointer<Int32>, UnsafeMutablePointer<Int32>) -> Int32
+    private typealias Write = @convention(c) (Int32, Int32, Int32) -> Int32
+
+    private static let library = dlopen("/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices", RTLD_LAZY)
+    private static let read = dlsym(library, "CoreDockGetExposeCornerActionsWithModifiers").map { unsafeBitCast($0, to: Read.self) }
+    private static let write = dlsym(library, "CoreDockSetExposeCornerActionWithModifier").map { unsafeBitCast($0, to: Write.self) }
+    static let names = ["tl", "tr", "bl", "br"].map(HotCorners.key)
+
+    static func set(_ actions: [String: Int]) -> Bool {
+        guard !actions.isEmpty else { return true }
+        guard let write, let now = current() else { return false }
+        for (name, action) in actions {
+            guard let corner = names.firstIndex(of: name), write(Int32(max(action, 1)), Int32(corner), now.modifiers[corner]) == 0 else { return false }
+        }
+        return current().map { same(actions, $0.actions) } ?? false
+    }
+
+    static func same(_ wanted: [String: Int], _ actions: [Int32]) -> Bool {
+        wanted.allSatisfy { name, action in names.firstIndex(of: name).map { max(Int(actions[$0]), 1) == max(action, 1) } ?? false }
+    }
+
+    private static func current() -> (actions: [Int32], modifiers: [Int32])? {
+        guard let read else { return nil }
+        var actions = [Int32](repeating: 0, count: 4), modifiers = [Int32](repeating: 0, count: 4)
+        return read(&actions, &modifiers) == 0 ? (actions, modifiers) : nil
     }
 }
 #endif

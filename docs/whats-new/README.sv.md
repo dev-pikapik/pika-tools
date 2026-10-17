@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Husdjuret visar känslor och spelaren öppnar bilder
+
+<sub>1.52.2 · 17 oktober 2026</sub>
+
+Husdjuret visar nu hur det känns, spelaren öppnar även dina bilder och fönster du lagt undan i Dock stannar där medan du spelar.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Dess ansikte ändras och ett litet tecken över huvudet, som ett hjärta, gnistor eller ett litet moln, visar hur det känns. Garderoben har 15 nya saker: mustascher, hattar och frisyrer.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+I webbversionen öppnas bilder i samma spelare, så som Förhandsvisning visar dem: JPEG, PNG, HEIC, kamera-RAW, PSD och många fler.
+
+- Spelare (webbversionen): välj ljudspår eller undertexter, hoppa mellan kapitel och tryck på A för att upprepa en del.
+- Spelare (webbversionen): bild-i-bild, AirPlay till tv:n och ljud genom andra högtalare utan att ändra Macens utgång.
+
+**Prova:** Inställningar › Husdjur · Inställningar › Spelare
+
+**Åtgärdat**
+
+- Spel (webbversionen): fönster du lagt undan i Dock kommer inte längre tillbaka när ett spel öppnas eller stängs.
+- ⇧⌘Q och ditt eget kortkommando för att avsluta avslutar nu appen varje gång.
+- När du slutar gömma symbolerna på skrivbordet kommer filerna på skrivbordet alltid tillbaka.
+- Chrome, Slack, VS Code (webbversionen): pikapik stänger inte längre av det som andra appar har slagit på där, och Chrome blir som förut när du avslutar pikapik.
+- Inställningar: videor, musik och bilder har en enda knapp var, och listan till vänster visar alltid vilken sida som är öppen.
+
+---
+
 ## <a id="v1.52.1"></a>Spelaren spelar din musik, och dina inställningar kommer tillbaka efter en krasch
 
 <sub>1.52.1 · 16 oktober 2026</sub>

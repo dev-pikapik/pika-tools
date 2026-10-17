@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Mazlíček ukazuje city a přehrávač otevírá obrázky
+
+<sub>1.52.2 · 17. října 2026</sub>
+
+Mazlíček teď ukazuje, jak se cítí, přehrávač otevírá i vaše obrázky a okna, která uložíte do Docku, tam při hraní zůstanou.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Jeho tvářička se mění a malé znamení nad hlavou, třeba srdíčko, jiskřičky nebo mráček, ukazuje, jak se cítí. Šatník má 15 nových věcí: kníry, klobouky a účesy.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Ve verzi z webu se obrázky otevírají ve stejném přehrávači, tak jak je ukazuje Náhled: JPEG, PNG, HEIC, RAW z fotoaparátu, PSD a mnoho dalších.
+
+- Přehrávač (verze z webu): vyberte zvukovou stopu nebo titulky, přeskakujte mezi kapitolami a klávesou A opakujte část videa.
+- Přehrávač (verze z webu): obraz v obraze, AirPlay do televize a zvuk do jiných reproduktorů bez změny výstupu Macu.
+
+**Vyzkoušejte:** Nastavení › Mazlíček · Nastavení › Přehrávač
+
+**Opraveno**
+
+- Hry (verze z webu): okna uložená do Docku se už nevracejí, když se hra otevře nebo zavře.
+- ⇧⌘Q a vaše vlastní zkratka pro ukončení teď aplikaci ukončí pokaždé.
+- Když přestanete skrývat ikony na ploše, soubory na ploše se vždy vrátí.
+- Chrome, Slack, VS Code (verze z webu): pikapik už nevypíná to, co tam zapnuly jiné aplikace, a po ukončení pikapiku je Chrome zase jako dřív.
+- Nastavení: videa, hudba a obrázky mají každé jeden přepínač a seznam vlevo vždy ukazuje otevřenou stránku.
+
+---
+
 ## <a id="v1.52.1"></a>Přehrávač hraje vaši hudbu a nastavení se vrátí po pádu
 
 <sub>1.52.1 · 16. října 2026</sub>

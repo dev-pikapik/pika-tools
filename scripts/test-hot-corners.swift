@@ -50,5 +50,11 @@ struct TestHotCorners {
         }
         precondition(written == 2 && HotCorners.before.isEmpty && HotCorners.ours.isEmpty)
         print("the journal is saved before the corner is written and cleared only after it: ok")
+
+        precondition(DockCorners.same(["wvous-br-corner": 11, "wvous-tl-corner": 0], [1, 4, 10, 11]))
+        precondition(!DockCorners.same(["wvous-br-corner": 11], [1, 4, 10, 2]))
+        precondition(!DockCorners.same(["wvous-xx-corner": 1], [1, 1, 1, 1]))
+        precondition(DockCorners.same([:], []))
+        print("the Dock reads back the corners it was told, with 0 and 1 both meaning nothing: ok")
     }
 }

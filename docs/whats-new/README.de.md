@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Das Haustier zeigt Gefühle, und der Player öffnet Bilder
+
+<sub>1.52.2 · 17. Oktober 2026</sub>
+
+Das Haustier zeigt jetzt, wie es sich fühlt, der Player öffnet auch Ihre Bilder, und Fenster, die Sie im Dock abgelegt haben, bleiben beim Spielen dort.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Sein Gesicht verändert sich, und ein kleines Zeichen über dem Kopf, etwa ein Herz, Funkeln oder ein Wölkchen, zeigt, wie es sich fühlt. Im Kleiderschrank gibt es 15 neue Dinge: Schnurrbärte, Hüte und Frisuren.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+In der Version von der Website öffnen sich Bilder im selben Player, so wie Vorschau sie zeigt: JPEG, PNG, HEIC, Kamera-RAW, PSD und viele mehr.
+
+- Player (Version von der Website): Tonspur oder Untertitel wählen, zwischen Kapiteln springen und mit A einen Teil wiederholen.
+- Player (Version von der Website): Bild-in-Bild, AirPlay auf den Fernseher und Ton über andere Lautsprecher, ohne die Ausgabe des Mac zu ändern.
+
+**Ausprobieren:** Einstellungen › Haustier · Einstellungen › Player
+
+**Behoben**
+
+- Spiele (Version von der Website): Fenster, die Sie im Dock abgelegt haben, kommen nicht mehr zurück, wenn ein Spiel startet oder endet.
+- ⇧⌘Q und Ihr eigener Kurzbefehl zum Beenden beenden die App jetzt jedes Mal.
+- Wenn Sie die Symbole auf dem Schreibtisch nicht mehr ausblenden, kommen die Dateien darauf immer zurück.
+- Chrome, Slack, VS Code (Version von der Website): pikapik schaltet dort nicht mehr aus, was andere Apps eingeschaltet haben, und Chrome ist nach dem Beenden von pikapik wieder wie vorher.
+- Einstellungen: Videos, Musik und Bilder haben je einen Schalter, und die Liste links zeigt immer, welche Seite offen ist.
+
+---
+
 ## <a id="v1.52.1"></a>Der Player spielt Ihre Musik, und Ihre Einstellungen kommen nach einem Absturz zurück
 
 <sub>1.52.1 · 16. Oktober 2026</sub>

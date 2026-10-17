@@ -493,21 +493,21 @@ enum DockEdges {
         let active = wanted.sorted().map { corners[$0] }.filter { current($0) > 1 }
         let hides = hidesDock && CFPreferencesGetAppBooleanValue("autohide" as CFString, dock, nil)
         let targets = active + (hides ? [delay] : [])
+        var restart = false
         if !saved.isEmpty {
             guard Set(saved.keys) != Set(targets) else { return }
-            let wrote = reset()
-            if targets.isEmpty {
-                if wrote { relaunch() }
-                return
-            }
+            restart = reset()
         }
-        guard !targets.isEmpty else { return }
-        var original: [String: Any] = [:]
-        for name in targets { original[name] = CFPreferencesCopyAppValue(name as CFString, dock) ?? "" }
-        UserDefaults.standard.set(original, forKey: key)
-        for name in active { CFPreferencesSetAppValue(name as CFString, 0 as CFNumber, dock) }
-        if hides { CFPreferencesSetAppValue(delay as CFString, 1000.0 as CFNumber, dock) }
-        relaunch()
+        if !targets.isEmpty {
+            var original: [String: Any] = [:]
+            for name in targets { original[name] = CFPreferencesCopyAppValue(name as CFString, dock) ?? "" }
+            UserDefaults.standard.set(original, forKey: key)
+            for name in active { CFPreferencesSetAppValue(name as CFString, 1 as CFNumber, dock) }
+            if hides { CFPreferencesSetAppValue(delay as CFString, 1000.0 as CFNumber, dock) }
+            CFPreferencesAppSynchronize(dock)
+            restart = !DockCorners.set(Dictionary(uniqueKeysWithValues: active.map { ($0, 1) })) || hides || restart
+        }
+        if restart { relaunch() }
     }
 
     static func restoreSoon() {
@@ -525,7 +525,10 @@ enum DockEdges {
     }
 
     static func restorable(_ saved: [String: Any], current: (String) -> Any?) -> [String: Any] {
-        saved.filter { name, _ in (current(name) as? NSNumber)?.doubleValue == (name == delay ? 1000.0 : 0.0) }
+        saved.filter { name, _ in
+            let value = (current(name) as? NSNumber)?.doubleValue
+            return name == delay ? value == 1000 : value == 0 || value == 1
+        }
     }
 
     private static func reset() -> Bool {
@@ -533,11 +536,14 @@ enum DockEdges {
         let saved = journal
         UserDefaults.standard.removeObject(forKey: key)
         let ours = restorable(saved) { CFPreferencesCopyAppValue($0 as CFString, dock) }
+        var live: [String: Int] = [:]
         for (name, original) in ours {
             let value = original as? String == "" ? nil : original as CFPropertyList
             CFPreferencesSetAppValue(name as CFString, value, dock)
+            if name != delay { live[name] = (original as? NSNumber)?.intValue ?? 1 }
         }
-        return !ours.isEmpty
+        CFPreferencesAppSynchronize(dock)
+        return ours[delay] != nil || !DockCorners.set(live)
     }
 
     private static func relaunch() {

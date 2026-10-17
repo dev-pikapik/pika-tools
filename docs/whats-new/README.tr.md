@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Evcil dost duygularını gösteriyor, oynatıcı resimleri açıyor
+
+<sub>1.52.2 · 17 Ekim 2026</sub>
+
+Evcil dost artık ne hissettiğini gösteriyor, oynatıcı resimlerinizi de açıyor ve Dock’a kaldırdığınız pencereler oyun sırasında geri gelmiyor.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Yüzü değişiyor ve başının üstünde kalp, ışıltı ya da küçük bir bulut gibi bir işaret ne hissettiğini gösteriyor. Gardıropta 15 yeni şey var: bıyıklar, şapkalar ve saç modelleri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Web sitesi sürümünde resimler aynı oynatıcıda, Önizleme’deki gibi açılıyor: JPEG, PNG, HEIC, kamera RAW, PSD ve daha fazlası.
+
+- Oynatıcı (web sitesi sürümü): bir ses kanalı ya da altyazı seçin, bölümler arasında geçin ve bir kısmı tekrarlamak için A’ya basın.
+- Oynatıcı (web sitesi sürümü): resim içinde resim, televizyona AirPlay ve Mac’in çıkışını değiştirmeden başka hoparlörlerden ses.
+
+**Deneyin:** Ayarlar › Evcil Dost · Ayarlar › Oynatıcı
+
+**Düzeltilenler**
+
+- Oyunlar (web sitesi sürümü): bir oyun açılıp kapandığında Dock’a kaldırdığınız pencereler artık geri gelmiyor.
+- ⇧⌘Q ve kendi çıkış kısayolunuz artık uygulamadan her seferinde çıkıyor.
+- Masaüstü simgelerini gizlemeyi bıraktığınızda masaüstündeki dosyalar her zaman geri geliyor.
+- Chrome, Slack, VS Code (web sitesi sürümü): pikapik artık başka uygulamaların orada açtığını kapatmıyor ve pikapik’ten çıkınca Chrome eski hâline dönüyor.
+- Ayarlar: videolar, müzik ve resimlerin her birinin tek bir anahtarı var ve soldaki liste her zaman açık sayfayı gösteriyor.
+
+---
+
 ## <a id="v1.52.1"></a>Oynatıcı müziğinizi çalar, ayarlarınız çökmeden sonra geri gelir
 
 <sub>1.52.1 · 16 Ekim 2026</sub>

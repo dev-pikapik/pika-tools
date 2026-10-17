@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>寵物會表達心情，播放器也能打開圖片
+
+<sub>1.52.2 · 2026年10月17日</sub>
+
+寵物現在會表達心情，播放器也能打開你的圖片，收進 Dock 的視窗在玩遊戲時不會再跑回來。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+牠的表情會變化，頭上會出現一個小記號，例如愛心、閃光或一朵小雲，讓你知道牠的心情。衣櫥裡有 15 樣新東西：鬍子、帽子和髮型。
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+在網站版中，圖片會在同一個播放器裡打開，就像「預覽程式」那樣：JPEG、PNG、HEIC、相機 RAW、PSD 等等。
+
+- 播放器（網站版）：選擇音軌或字幕，在章節之間跳轉，按 A 重複播放一段。
+- 播放器（網站版）：子母畫面、AirPlay 到電視，以及在不改變 Mac 輸出的情況下用其他揚聲器播放聲音。
+
+**試試看：** 設定 › 寵物 · 設定 › 播放器
+
+**修正**
+
+- 遊戲（網站版）：遊戲打開或關閉時，收進 Dock 的視窗不會再跑回來。
+- ⇧⌘Q 和你自己設定的結束快速鍵現在每次都能結束 App。
+- 停止隱藏桌面圖像後，桌面上的檔案一定會回來。
+- Chrome、Slack、VS Code（網站版）：pikapik 不再關閉其他 App 在那裡開啟的功能，結束 pikapik 後 Chrome 會恢復原狀。
+- 設定：影片、音樂和圖片各只有一個開關，左側列表一定會顯示目前開啟的頁面。
+
+---
+
 ## <a id="v1.52.1"></a>播放器播放你的音樂，當機後設定也會還原
 
 <sub>1.52.1 · 2026年10月16日</sub>

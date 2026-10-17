@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Animăluțul își arată sentimentele, iar playerul deschide imagini
+
+<sub>1.52.2 · 17 octombrie 2026</sub>
+
+Animăluțul arată acum ce simte, playerul deschide și imaginile dumneavoastră, iar ferestrele puse în Dock rămân acolo cât timp jucați.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Fața i se schimbă, iar un semn mic deasupra capului, ca o inimă, sclipiri sau un norișor, arată ce simte. Garderoba are 15 lucruri noi: mustăți, pălării și coafuri.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+În versiunea de pe site, imaginile se deschid în același player, așa cum le arată Previzualizare: JPEG, PNG, HEIC, RAW de la cameră, PSD și multe altele.
+
+- Player (versiunea de pe site): alegeți o pistă audio sau subtitrări, săriți între capitole și apăsați A ca să repetați o parte.
+- Player (versiunea de pe site): imagine în imagine, AirPlay pe televizor și sunet prin alte boxe fără a schimba ieșirea Mac-ului.
+
+**Încearcă:** Setări › Animăluț · Setări › Player
+
+**Reparat**
+
+- Jocuri (versiunea de pe site): ferestrele puse în Dock nu mai revin când un joc se deschide sau se închide.
+- ⇧⌘Q și propria dumneavoastră scurtătură de ieșire închid acum aplicația de fiecare dată.
+- Când nu mai ascundeți pictogramele de pe birou, fișierele de pe birou revin întotdeauna.
+- Chrome, Slack, VS Code (versiunea de pe site): pikapik nu mai oprește ce au pornit acolo alte aplicații, iar Chrome redevine cum era când ieșiți din pikapik.
+- Setări: videoclipurile, muzica și imaginile au câte un singur comutator, iar lista din stânga arată mereu pagina deschisă.
+
+---
+
 ## <a id="v1.52.1"></a>Playerul îți cântă muzica, iar setările revin după o blocare
 
 <sub>1.52.1 · 16 octombrie 2026</sub>

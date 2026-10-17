@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Thú cưng thể hiện cảm xúc, trình phát mở được ảnh
+
+<sub>1.52.2 · 17 tháng 10 năm 2026</sub>
+
+Thú cưng giờ thể hiện cảm xúc, trình phát mở được cả ảnh của bạn, và các cửa sổ bạn cất vào Dock sẽ ở yên đó khi bạn chơi game.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Khuôn mặt nó thay đổi, và một dấu nhỏ trên đầu như trái tim, lấp lánh hay đám mây nhỏ cho biết nó đang cảm thấy thế nào. Tủ đồ có 15 món mới: ria mép, mũ và kiểu tóc.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Trong bản từ trang web, ảnh mở ngay trong trình phát, giống như Xem trước: JPEG, PNG, HEIC, RAW của máy ảnh, PSD và nhiều định dạng khác.
+
+- Trình phát (bản từ trang web): chọn rãnh âm thanh hoặc phụ đề, chuyển giữa các chương và nhấn A để lặp lại một đoạn.
+- Trình phát (bản từ trang web): hình trong hình, AirPlay lên TV và phát âm thanh qua loa khác mà không đổi đầu ra của Mac.
+
+**Thử ngay:** Cài đặt › Thú cưng · Cài đặt › Trình phát
+
+**Đã sửa**
+
+- Trò chơi (bản từ trang web): các cửa sổ bạn cất vào Dock không còn hiện lại khi game mở hoặc đóng.
+- ⇧⌘Q và phím tắt thoát của riêng bạn giờ luôn thoát ứng dụng.
+- Khi bạn thôi ẩn biểu tượng trên màn hình nền, các tệp trên màn hình nền luôn quay lại.
+- Chrome, Slack, VS Code (bản từ trang web): pikapik không còn tắt những gì ứng dụng khác đã bật ở đó, và Chrome trở lại như cũ khi bạn thoát pikapik.
+- Cài đặt: video, nhạc và ảnh mỗi loại có một công tắc, và danh sách bên trái luôn cho thấy trang đang mở.
+
+---
+
 ## <a id="v1.52.1"></a>Trình phát chơi nhạc của bạn, và cài đặt quay lại sau khi bị lỗi
 
 <sub>1.52.1 · 16 tháng 10 năm 2026</sub>

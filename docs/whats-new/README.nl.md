@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>Het huisdiertje toont gevoelens en de speler opent afbeeldingen
+
+<sub>1.52.2 · 17 oktober 2026</sub>
+
+Het huisdiertje laat nu zien hoe het zich voelt, de speler opent ook je afbeeldingen en vensters die je in het Dock hebt gezet blijven daar terwijl je speelt.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Zijn gezicht verandert en een klein teken boven zijn hoofd, zoals een hartje, sterretjes of een wolkje, laat zien hoe het zich voelt. De kledingkast heeft 15 nieuwe dingen: snorren, hoeden en kapsels.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+In de versie van de website openen afbeeldingen in dezelfde speler, zoals Voorvertoning ze toont: JPEG, PNG, HEIC, camera-RAW, PSD en nog veel meer.
+
+- Speler (versie van de website): kies een geluidsspoor of ondertitels, spring tussen hoofdstukken en druk op A om een stuk te herhalen.
+- Speler (versie van de website): beeld-in-beeld, AirPlay naar de tv en geluid via andere luidsprekers zonder de uitvoer van je Mac te veranderen.
+
+**Probeer het:** Instellingen › Huisdiertje · Instellingen › Speler
+
+**Opgelost**
+
+- Games (versie van de website): vensters die je in het Dock hebt gezet komen niet meer terug als een game opent of sluit.
+- ⇧⌘Q en je eigen toetscombinatie voor stoppen sluiten de app nu elke keer.
+- Als je de symbolen op het bureaublad niet meer verbergt, komen de bestanden op het bureaublad altijd terug.
+- Chrome, Slack, VS Code (versie van de website): pikapik zet daar niet meer uit wat andere apps hebben aangezet, en Chrome is weer zoals het was als je pikapik stopt.
+- Instellingen: video’s, muziek en afbeeldingen hebben elk één schakelaar, en de lijst links toont altijd welke pagina open is.
+
+---
+
 ## <a id="v1.52.1"></a>De speler speelt je muziek, en je instellingen komen terug na een crash
 
 <sub>1.52.1 · 16 oktober 2026</sub>

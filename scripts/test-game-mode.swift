@@ -275,6 +275,8 @@ enum TestGameMode {
         let calmed: [String: Any] = ["wvous-tl-corner": 2, "wvous-br-corner": 14, "autohide-delay": ""]
         var now: [String: Any] = ["wvous-tl-corner": 0, "wvous-br-corner": 4, "autohide-delay": 1000.0]
         precondition(Set(DockEdges.restorable(calmed) { now[$0] }.keys) == ["wvous-tl-corner", "autohide-delay"])
+        now["wvous-tl-corner"] = 1
+        precondition(Set(DockEdges.restorable(calmed) { now[$0] }.keys) == ["wvous-tl-corner", "autohide-delay"])
         now["wvous-tl-corner"] = nil
         now["autohide-delay"] = 0.5
         precondition(DockEdges.restorable(calmed) { now[$0] }.isEmpty)

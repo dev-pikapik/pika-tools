@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>O bichinho mostra o que sente, e o player abre imagens
+
+<sub>1.52.2 · 17 de outubro de 2026</sub>
+
+O bichinho agora mostra como se sente, o player abre também suas imagens, e as janelas que você guarda no Dock ficam lá enquanto você joga.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+A carinha dele muda, e um pequeno sinal sobre a cabeça, como um coração, brilhos ou uma nuvenzinha, mostra como ele se sente. O guarda-roupa tem 15 itens novos: bigodes, chapéus e penteados.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+Na versão do site, as imagens abrem no mesmo player, do jeito que a Pré-Visualização mostra: JPEG, PNG, HEIC, RAW de câmera, PSD e muitas outras.
+
+- Player (versão do site): escolha uma faixa de áudio ou legendas, pule entre capítulos e aperte A para repetir um trecho.
+- Player (versão do site): imagem no modo PIP, AirPlay para a TV e som por outros alto-falantes sem mudar a saída do Mac.
+
+**Experimente:** Ajustes › Bichinho · Ajustes › Player
+
+**Corrigido**
+
+- Jogos (versão do site): as janelas que você guarda no Dock não voltam mais quando um jogo abre ou fecha.
+- ⇧⌘Q e seu próprio atalho para encerrar agora fecham o app sempre.
+- Quando você para de ocultar os ícones da mesa, os arquivos da mesa sempre voltam.
+- Chrome, Slack, VS Code (versão do site): o pikapik não desliga mais o que outros apps ligaram ali, e o Chrome volta a ser como era quando você encerra o pikapik.
+- Ajustes: vídeos, músicas e imagens têm um único botão cada, e a lista à esquerda sempre mostra a página aberta.
+
+---
+
 ## <a id="v1.52.1"></a>O player toca sua música, e seus ajustes voltam depois de uma falha
 
 <sub>1.52.1 · 16 de outubro de 2026</sub>

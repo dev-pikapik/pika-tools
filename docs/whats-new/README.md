@@ -5,6 +5,35 @@
 
 ---
 
+## <a id="v1.52.2"></a>The pet shows its feelings, and the player opens pictures
+
+<sub>1.52.2 · October 17, 2026</sub>
+
+The pet now shows how it feels, the player opens your pictures too, and windows you put away in the Dock stay away while you play.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/pet-dark.png"><img src="../media/pet-light.png" width="340" alt=""></picture>
+
+Its face changes, and a small sign over its head, such as a heart, sparkles or a little cloud, shows how it feels. The wardrobe has 15 new things, with moustaches, hats and hair.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/player-dark.png"><img src="../media/player-light.png" width="340" alt=""></picture>
+
+In the website version, pictures open in the same player, the way Preview shows them: JPEG, PNG, HEIC, camera RAW, PSD and many more.
+
+- Player (website version): pick a sound track or subtitles, jump between chapters, and press A to repeat a part.
+- Player (website version): Picture in Picture, AirPlay to a TV, and sound through other speakers without changing your Mac’s output.
+
+**Try it:** Settings › Pet · Settings › Player
+
+**Fixed**
+
+- Games (website version): windows you put away in the Dock no longer come back when a game opens or closes.
+- ⇧⌘Q and your own Quit shortcut now quit the app every time.
+- When you stop hiding desktop icons, the files on your desktop always come back.
+- Chrome, Slack, VS Code (website version): pikapik no longer turns off what other apps turned on there, and Chrome goes back to how it was when you quit pikapik.
+- Settings: videos, music and pictures each have one switch, and the list on the left always shows which page is open.
+
+---
+
 ## <a id="v1.52.1"></a>The player plays your music, and your settings come back after a crash
 
 <sub>1.52.1 · October 16, 2026</sub>
