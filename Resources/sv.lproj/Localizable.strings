@@ -303,6 +303,8 @@
 "Slower" = "Långsammare";
 "Switch language" = "Byt språk";
 "The dot marks your Mac’s normal speed" = "Pricken visar din Macs normala hastighet";
+"Pointer acceleration is already off in System Settings" = "Pekaracceleration är redan avstängd i Systeminställningar";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Det här reglaget ändrar därför bara hastigheten. Slå på accelerationen där för att få tillbaka den";
 "The dot marks the default" = "Pricken visar standardvärdet";
 "Then paste to move them" = "Sedan flyttar Klistra in dem";
 "Keep your Mac from falling asleep" = "Hindra att din Mac somnar";

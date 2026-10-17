@@ -303,6 +303,8 @@
 "Slower" = "더 느리게";
 "Switch language" = "언어 전환";
 "The dot marks your Mac’s normal speed" = "점은 Mac의 기본 속도를 나타냅니다";
+"Pointer acceleration is already off in System Settings" = "시스템 설정에서 포인터 가속이 이미 꺼져 있습니다";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "따라서 이 스위치는 속도만 바꿉니다. 가속을 되돌리려면 시스템 설정에서 켜세요";
 "The dot marks the default" = "점은 기본값 위치";
 "Then paste to move them" = "그다음 붙여넣기로 이동";
 "Keep your Mac from falling asleep" = "Mac이 잠들지 않게 합니다";

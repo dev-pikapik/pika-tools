@@ -131,6 +131,10 @@ enum OriginalValue {
         putBack(before, ours: ours, current: current).isEmpty
     }
 
+    static func goal(saved: [String: Int], system: [String: Int], unset: [String: Int]) -> [String: Int] {
+        unset.merging(saved) { $1 }.merging(system) { $1 }
+    }
+
     static func load(_ key: String, journal: UserDefaults = .standard) -> Entry? {
         guard let saved = journal.array(forKey: key) as? [Bool], saved.count == 2 else { return nil }
         return Entry(before: saved[0], ours: saved[1])

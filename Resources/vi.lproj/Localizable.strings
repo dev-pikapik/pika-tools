@@ -303,6 +303,8 @@
 "Slower" = "Chậm hơn";
 "Switch language" = "Chuyển ngôn ngữ";
 "The dot marks your Mac’s normal speed" = "Chấm đánh dấu tốc độ bình thường của máy Mac";
+"Pointer acceleration is already off in System Settings" = "Tăng tốc con trỏ đã tắt trong Cài đặt hệ thống";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Vì vậy, công tắc này chỉ thay đổi tốc độ. Để có lại tăng tốc, hãy bật nó ở đó";
 "The dot marks the default" = "Chấm đánh dấu giá trị mặc định";
 "Then paste to move them" = "Sau đó dán để di chuyển";
 "Keep your Mac from falling asleep" = "Không cho máy Mac chuyển sang ngủ";

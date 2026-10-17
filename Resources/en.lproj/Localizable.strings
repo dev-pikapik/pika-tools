@@ -303,6 +303,8 @@
 "Slower" = "Slower";
 "Switch language" = "Switch language";
 "The dot marks your Mac’s normal speed" = "The dot marks your Mac’s normal speed";
+"Pointer acceleration is already off in System Settings" = "Pointer acceleration is already off in System Settings";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "So this switch only changes the speed. To bring acceleration back, turn it on there";
 "The dot marks the default" = "The dot marks the default";
 "Then paste to move them" = "Then paste to move them";
 "Keep your Mac from falling asleep" = "Keep your Mac from falling asleep";

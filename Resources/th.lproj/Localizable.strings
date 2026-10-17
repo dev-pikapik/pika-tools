@@ -303,6 +303,8 @@
 "Slower" = "ช้าลง";
 "Switch language" = "สลับภาษา";
 "The dot marks your Mac’s normal speed" = "จุดแสดงความเร็วปกติของ Mac";
+"Pointer acceleration is already off in System Settings" = "ความเร่งตัวชี้ปิดอยู่แล้วในการตั้งค่าระบบ";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "สวิตช์นี้จึงเปลี่ยนแค่ความเร็ว หากต้องการให้มีความเร่งอีกครั้ง ให้เปิดที่นั่น";
 "The dot marks the default" = "จุดบอกค่าเริ่มต้น";
 "Then paste to move them" = "จากนั้นวางเพื่อย้าย";
 "Keep your Mac from falling asleep" = "ป้องกัน Mac ไม่ให้หลับ";

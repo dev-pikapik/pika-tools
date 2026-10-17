@@ -303,6 +303,8 @@
 "Slower" = "Повільніше";
 "Switch language" = "Зміна мови";
 "The dot marks your Mac’s normal speed" = "Крапка — звичайна швидкість вашого Mac";
+"Pointer acceleration is already off in System Settings" = "Прискорення вказівника вже вимкнено в Системних параметрах";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Тому цей перемикач змінює лише швидкість. Щоб повернути прискорення, увімкніть його там";
 "The dot marks the default" = "Крапка позначає типове значення";
 "Then paste to move them" = "Потім вставлення переміщує їх";
 "Keep your Mac from falling asleep" = "Не дає Mac заснути";

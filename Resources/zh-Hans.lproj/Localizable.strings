@@ -303,6 +303,8 @@
 "Slower" = "更慢";
 "Switch language" = "切换语言";
 "The dot marks your Mac’s normal speed" = "圆点表示 Mac 的正常速度";
+"Pointer acceleration is already off in System Settings" = "“系统设置”中已关闭指针加速";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "因此这个开关只会改变速度。如需恢复加速，请在那里将它打开";
 "The dot marks the default" = "圆点标出默认值";
 "Then paste to move them" = "再粘贴即可移动";
 "Keep your Mac from falling asleep" = "防止 Mac 进入睡眠";

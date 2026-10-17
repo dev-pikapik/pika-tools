@@ -303,6 +303,8 @@
 "Slower" = "Медленнее";
 "Switch language" = "Смена языка";
 "The dot marks your Mac’s normal speed" = "Точка — обычная скорость вашего Mac";
+"Pointer acceleration is already off in System Settings" = "Ускорение указателя уже выключено в Системных настройках";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Поэтому этот переключатель меняет только скорость. Чтобы вернуть ускорение, включите его там";
 "The dot marks the default" = "Точка отмечает значение по умолчанию";
 "Then paste to move them" = "Затем вставка перемещает их";
 "Keep your Mac from falling asleep" = "Не даёт Mac уснуть";

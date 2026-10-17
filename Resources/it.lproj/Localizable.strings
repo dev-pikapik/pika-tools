@@ -303,6 +303,8 @@
 "Slower" = "Più lenta";
 "Switch language" = "Cambia lingua";
 "The dot marks your Mac’s normal speed" = "Il punto indica la velocità normale del tuo Mac";
+"Pointer acceleration is already off in System Settings" = "L’accelerazione del puntatore è già disattivata in Impostazioni di Sistema";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Quindi questo interruttore cambia solo la velocità. Per riavere l’accelerazione, attivala lì";
 "The dot marks the default" = "Il punto indica il valore predefinito";
 "Then paste to move them" = "Poi incolla per spostarli";
 "Keep your Mac from falling asleep" = "Evita che il tuo Mac si addormenti";

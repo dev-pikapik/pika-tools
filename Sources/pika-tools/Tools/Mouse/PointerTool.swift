@@ -22,6 +22,10 @@ final class PointerTool: Tool {
         return min(max(value, speedRange.lowerBound), speedRange.upperBound)
     }
 
+    fileprivate static var systemIsLinear: Bool {
+        UserDefaults.standard.bool(forKey: "com.apple.mouse.linear")
+    }
+
     private(set) var isActive = false
 
     var isEnabled: Bool {
@@ -41,7 +45,6 @@ final class PointerTool: Tool {
     @ObservationIgnored private let client = PointerTool.makeClient()
     @ObservationIgnored private var saved: [String: [String: Int]]
     @ObservationIgnored private var ours: [String: [String: [Int]]]
-    @ObservationIgnored private var port: IONotificationPortRef?
 
     init() {
         let defaults = UserDefaults.standard
@@ -49,6 +52,7 @@ final class PointerTool: Tool {
         speed = Self.savedSpeed
         saved = defaults.dictionary(forKey: Self.savedKey) as? [String: [String: Int]] ?? [:]
         ours = defaults.dictionary(forKey: Self.oursKey) as? [String: [String: [Int]]] ?? [:]
+        watchDevices()
     }
 
     private static var savedSpeed: Double {
@@ -75,13 +79,7 @@ final class PointerTool: Tool {
 
     func refresh() {
         isActive = isEnabled && client != nil
-        if isEnabled, MainCopy.canAct {
-            apply()
-            watchDevices()
-        } else {
-            restore()
-            stopWatching()
-        }
+        if isEnabled, MainCopy.canAct { apply() } else { restore() }
     }
 
     func restore() {
@@ -89,18 +87,19 @@ final class PointerTool: Tool {
         for service in mice() {
             guard let id = Self.registryID(service), let before = saved[id] else { continue }
             let mine = ours[id] ?? Self.numbers(written(service)).mapValues { [$0] }
-            for (key, value) in OriginalValue.putBack(before, ours: mine, current: Self.read(service, before.keys)) {
+            let goal = OriginalValue.goal(saved: before, system: system(Set(before.keys).union(mine.keys).union([Self.linearKey])), unset: [Self.linearKey: 0])
+            for (key, value) in OriginalValue.putBack(goal, ours: mine, current: Self.read(service, goal.keys)) {
                 IOHIDServiceClientSetProperty(service, key as CFString, value as CFNumber)
             }
-            if !OriginalValue.isBack(before, ours: mine, current: Self.read(service, before.keys)) { left[id] = before }
+            if !OriginalValue.isBack(goal, ours: mine, current: Self.read(service, goal.keys)) { left[id] = before }
         }
         saved = left
         ours = ours.filter { left[$0.key] != nil }
         save()
     }
 
-    private func apply() {
-        for service in mice() {
+    private func apply(_ services: [IOHIDServiceClient]? = nil) {
+        for service in mice(services) {
             guard let id = Self.registryID(service) else { continue }
             let values = written(service)
             let new = Self.numbers(values)
@@ -110,7 +109,7 @@ final class PointerTool: Tool {
             for (key, value) in values {
                 IOHIDServiceClientSetProperty(service, key as CFString, value)
             }
-            ours[id] = new.mapValues { [$0] }
+            ours[id] = (ours[id] ?? [:]).merging(new.mapValues { [$0] }) { $1 }
             save()
         }
     }
@@ -121,14 +120,16 @@ final class PointerTool: Tool {
     }
 
     private func written(_ service: IOHIDServiceClient) -> [(String, NSNumber)] {
-        let accelerationKey = Self.accelerationKey(service)
-        return Self.property(service, Self.linearKey) != nil
-            ? [(Self.linearKey, NSNumber(value: 1)), (accelerationKey, Self.fixed(speed))]
-            : [(Self.resolutionKey, Self.fixed(min(max(400 / speed, 10), 1995))), (accelerationKey, Self.fixed(-1))]
+        [(Self.linearKey, NSNumber(value: 1)), (Self.accelerationKey(service), Self.fixed(speed))]
     }
 
-    private func mice() -> [IOHIDServiceClient] {
-        guard let client, let services = IOHIDEventSystemClientCopyServices(client) as? [IOHIDServiceClient] else { return [] }
+    private func system(_ keys: some Sequence<String>) -> [String: Int] {
+        guard let client else { return [:] }
+        return Dictionary(uniqueKeysWithValues: keys.compactMap { key in (IOHIDEventSystemClientCopyProperty(client, key as CFString) as? NSNumber).map { (key, $0.intValue) } })
+    }
+
+    private func mice(_ services: [IOHIDServiceClient]? = nil) -> [IOHIDServiceClient] {
+        guard let client, let services = services ?? IOHIDEventSystemClientCopyServices(client) as? [IOHIDServiceClient] else { return [] }
         return services.filter {
             IOHIDServiceClientConformsTo($0, UInt32(kHIDPage_GenericDesktop), UInt32(kHIDUsage_GD_Mouse)) != 0
                 && IOHIDServiceClientConformsTo($0, UInt32(kHIDPage_Digitizer), UInt32(kHIDUsage_Dig_TouchPad)) == 0
@@ -137,23 +138,23 @@ final class PointerTool: Tool {
     }
 
     private func watchDevices() {
-        guard port == nil, let port = IONotificationPortCreate(kIOMainPortDefault) else { return }
-        self.port = port
-        IONotificationPortSetDispatchQueue(port, .main)
-        var iterator: io_iterator_t = 0
-        let callback: IOServiceMatchingCallback = { refcon, iterator in
-            while case let service = IOIteratorNext(iterator), service != 0 { IOObjectRelease(service) }
-            guard let refcon else { return }
-            let tool = Unmanaged<PointerTool>.fromOpaque(refcon).takeUnretainedValue()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { if tool.isEnabled, MainCopy.canAct { tool.apply() } }
+        typealias Match = @convention(c) (IOHIDEventSystemClient, CFArray) -> Void
+        typealias Added = @convention(c) (UnsafeMutableRawPointer?, UnsafeMutableRawPointer?, IOHIDServiceClient?) -> Void
+        typealias Register = @convention(c) (IOHIDEventSystemClient, Added, UnsafeMutableRawPointer?, UnsafeMutableRawPointer?) -> Void
+        typealias Schedule = @convention(c) (IOHIDEventSystemClient, UnsafeMutableRawPointer) -> Void
+        let library = dlopen(nil, RTLD_NOW)
+        guard let client,
+              let match = dlsym(library, "IOHIDEventSystemClientSetMatchingMultiple"),
+              let register = dlsym(library, "IOHIDEventSystemClientRegisterDeviceMatchingCallback"),
+              let schedule = dlsym(library, "IOHIDEventSystemClientScheduleWithDispatchQueue") else { return }
+        let added: Added = { target, _, service in
+            guard let target, let service else { return }
+            let tool = Unmanaged<PointerTool>.fromOpaque(target).takeUnretainedValue()
+            if tool.isEnabled, MainCopy.canAct { tool.apply([service]) }
         }
-        IOServiceAddMatchingNotification(port, kIOFirstMatchNotification, IOServiceMatching(kIOHIDDeviceKey), callback, Unmanaged.passUnretained(self).toOpaque(), &iterator)
-        while case let service = IOIteratorNext(iterator), service != 0 { IOObjectRelease(service) }
-    }
-
-    private func stopWatching() {
-        port.map(IONotificationPortDestroy)
-        port = nil
+        unsafeBitCast(match, to: Match.self)(client, [["DeviceUsagePage": kHIDPage_GenericDesktop, "DeviceUsage": kHIDUsage_GD_Mouse]] as CFArray)
+        unsafeBitCast(register, to: Register.self)(client, added, Unmanaged.passUnretained(self).toOpaque(), nil)
+        unsafeBitCast(schedule, to: Schedule.self)(client, Unmanaged.passUnretained(DispatchQueue.main).toOpaque())
     }
 
     private static func makeClient() -> IOHIDEventSystemClient? {
@@ -262,6 +263,14 @@ private struct PointerSettings: View {
             }
             .disabled(!tool.isEnabled)
             .settingAnchor(String(localized: "Tracking speed"))
+        }
+        if inSettings, PointerTool.systemIsLinear {
+            SystemSettingsRow(
+                title: String(localized: "Pointer acceleration is already off in System Settings"),
+                subtitle: Text("So this switch only changes the speed. To bring acceleration back, turn it on there"),
+                url: URL(string: "x-apple.systempreferences:com.apple.Mouse-Settings.extension")!,
+                guide: SettingsGuide(pane: .mouse, steps: [.button("Advanced…"), .toggle("Pointer acceleration", on: true)])
+            )
         }
     }
 }

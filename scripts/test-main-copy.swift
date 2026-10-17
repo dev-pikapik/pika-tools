@@ -131,6 +131,20 @@ struct TestMainCopy {
         precondition(OriginalValue.putBack(speeds, ours: changing, current: ["acceleration": 98304]) == speeds)
         print("a crash while the speed changes still finds pikapik's speed: ok")
 
+        let fast = ["linear": [1], "acceleration": [131072]]
+        let leftover = OriginalValue.goal(saved: ["linear": 1, "acceleration": 58982], system: ["linear": 0, "acceleration": 57344], unset: ["linear": 0])
+        precondition(OriginalValue.putBack(leftover, ours: fast, current: ["linear": 1, "acceleration": 131072]) == ["linear": 0, "acceleration": 57344])
+        print("turning it off brings back System Settings, not what another program left: ok")
+
+        let older = ["linear": [1], "acceleration": [131072], "resolution": [29959168]]
+        let fresh = OriginalValue.goal(saved: ["acceleration": 57344, "resolution": 26214400], system: ["acceleration": 57344], unset: ["linear": 0])
+        precondition(OriginalValue.putBack(fresh, ours: older, current: ["linear": 1, "acceleration": 131072, "resolution": 29959168]) == ["linear": 0, "acceleration": 57344, "resolution": 26214400])
+        print("a mouse that never had the linear key gets acceleration and resolution back: ok")
+
+        let linear = OriginalValue.goal(saved: ["linear": 1, "acceleration": 57344], system: ["linear": 1, "acceleration": 57344], unset: ["linear": 0])
+        precondition(OriginalValue.putBack(linear, ours: fast, current: ["linear": 1, "acceleration": 131072]) == ["acceleration": 57344])
+        print("with acceleration off in System Settings only the speed goes back: ok")
+
         let defaults = UserDefaults.standard
         defer { defaults.removeObject(forKey: crashKey); defaults.removeObject(forKey: systemKey) }
         let crashed = Process()

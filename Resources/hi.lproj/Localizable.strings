@@ -303,6 +303,8 @@
 "Slower" = "धीमा";
 "Switch language" = "भाषा बदलें";
 "The dot marks your Mac’s normal speed" = "बिंदु आपके Mac की सामान्य गति दिखाता है";
+"Pointer acceleration is already off in System Settings" = "सिस्टम सेटिंग्ज़ में पॉइंटर ऐक्सलरेशन पहले से बंद है";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "इसलिए यह स्विच सिर्फ़ गति बदलता है। ऐक्सलरेशन वापस लाने के लिए उसे वहाँ चालू करें";
 "The dot marks the default" = "बिंदु डिफ़ॉल्ट मान दिखाता है";
 "Then paste to move them" = "फिर पेस्ट करने पर वे मूव हो जाती हैं";
 "Keep your Mac from falling asleep" = "अपने Mac को सोने से रोकें";

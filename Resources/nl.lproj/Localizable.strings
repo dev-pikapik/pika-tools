@@ -303,6 +303,8 @@
 "Slower" = "Trager";
 "Switch language" = "Van taal wisselen";
 "The dot marks your Mac’s normal speed" = "De stip toont de normale snelheid van je Mac";
+"Pointer acceleration is already off in System Settings" = "Aanwijzerversnelling staat al uit in Systeeminstellingen";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Deze schakelaar verandert dus alleen de snelheid. Zet de versnelling daar aan om haar terug te krijgen";
 "The dot marks the default" = "De stip markeert de standaardwaarde";
 "Then paste to move them" = "Daarna verplaatst plakken ze";
 "Keep your Mac from falling asleep" = "Voorkomt dat je Mac in slaap valt";

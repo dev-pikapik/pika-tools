@@ -303,6 +303,8 @@
 "Slower" = "Lebih lambat";
 "Switch language" = "Ganti bahasa";
 "The dot marks your Mac’s normal speed" = "Titik menandai kecepatan normal Mac Anda";
+"Pointer acceleration is already off in System Settings" = "Akselerasi penunjuk sudah mati di Pengaturan Sistem";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Jadi sakelar ini hanya mengubah kecepatan. Untuk mengembalikan akselerasi, nyalakan di sana";
 "The dot marks the default" = "Titik menandai nilai bawaan";
 "Then paste to move them" = "Lalu tempel untuk memindahkannya";
 "Keep your Mac from falling asleep" = "Cegah Mac tertidur";

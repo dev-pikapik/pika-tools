@@ -303,6 +303,8 @@
 "Slower" = "Daha yavaş";
 "Switch language" = "Dili değiştir";
 "The dot marks your Mac’s normal speed" = "Nokta, Mac’inizin normal hızını gösterir";
+"Pointer acceleration is already off in System Settings" = "İmleç hızlandırma Sistem Ayarları’nda zaten kapalı";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Bu yüzden bu anahtar yalnızca hızı değiştirir. Hızlandırmayı geri getirmek için onu orada açın";
 "The dot marks the default" = "Nokta, varsayılan değeri gösterir";
 "Then paste to move them" = "Sonra yapıştırmak onları taşır";
 "Keep your Mac from falling asleep" = "Mac’inizin uykuya dalmasını engelleyin";

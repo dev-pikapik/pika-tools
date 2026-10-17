@@ -303,6 +303,8 @@
 "Slower" = "更慢";
 "Switch language" = "切換語言";
 "The dot marks your Mac’s normal speed" = "圓點表示 Mac 的正常速度";
+"Pointer acceleration is already off in System Settings" = "「系統設定」中已關閉指標加速";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "因此這個開關只會改變速度。若要恢復加速，請在那裡將它開啟";
 "The dot marks the default" = "圓點標示預設值";
 "Then paste to move them" = "再貼上即可移動";
 "Keep your Mac from falling asleep" = "防止 Mac 進入睡眠";

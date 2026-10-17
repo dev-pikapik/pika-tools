@@ -303,6 +303,8 @@
 "Slower" = "Mai lent";
 "Switch language" = "Schimbă limba";
 "The dot marks your Mac’s normal speed" = "Punctul arată viteza normală a Mac-ului";
+"Pointer acceleration is already off in System Settings" = "Accelerarea cursorului este deja dezactivată în Configurări sistem";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Așa că acest comutator schimbă doar viteza. Pentru a reveni la accelerare, activeaz-o acolo";
 "The dot marks the default" = "Punctul marchează valoarea implicită";
 "Then paste to move them" = "Apoi lipirea le mută";
 "Keep your Mac from falling asleep" = "Împiedică adormirea Mac-ului";

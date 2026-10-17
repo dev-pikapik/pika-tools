@@ -303,6 +303,8 @@
 "Slower" = "Pomaleji";
 "Switch language" = "Přepnutí jazyka";
 "The dot marks your Mac’s normal speed" = "Tečka značí běžnou rychlost vašeho Macu";
+"Pointer acceleration is already off in System Settings" = "Zrychlení ukazatele je už vypnuté v Nastavení systému";
+"So this switch only changes the speed. To bring acceleration back, turn it on there" = "Tento přepínač proto mění jen rychlost. Pokud chcete zrychlení vrátit, zapněte ho tam";
 "The dot marks the default" = "Tečka označuje výchozí hodnotu";
 "Then paste to move them" = "Pak je vložení přesune";
 "Keep your Mac from falling asleep" = "Nedovolí Macu usnout";
