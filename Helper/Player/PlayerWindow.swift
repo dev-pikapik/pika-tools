@@ -98,8 +98,8 @@ final class Scrubber: NSSlider {
 final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemValidation {
     static let volumeKey = "volume"
     private static let resumeStore = "resume"
-    private static let minimum = NSSize(width: 580, height: 200)
-    private static let musicSize = NSSize(width: 580, height: 600)
+    private static let minimum = NSSize(width: 640, height: 200)
+    private static let musicSize = NSSize(width: 640, height: 600)
     private let video = VideoView()
     private let music = MusicView()
     private let message = NSTextField(labelWithString: String(localized: "Drop a video or a song here"))
@@ -126,7 +126,7 @@ final class PlayerController: NSWindowController, NSWindowDelegate, NSMenuItemVa
     private var clockWatch: NSObjectProtocol?
     private var thumbnails: Thumbnails?
     private var pip: PictureInPicture?
-    private var hiddenForPip = false
+    private(set) var hiddenForPip = false
     private var chapters: [Chapter] = []
     private var loop = PlayerLoop()
     private var hovered: Double?

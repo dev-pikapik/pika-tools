@@ -37,7 +37,8 @@ enum TestFolder {
         UserDefaults.standard.setVolatileDomain(["volume": Float(0)], forName: UserDefaults.argumentDomain)
         let folder = FileManager.default.temporaryDirectory.appendingPathComponent("pika-folder-\(UUID().uuidString)")
         try! FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
-        defer { try? FileManager.default.removeItem(at: folder) }
+        let clip = folder.appendingPathExtension("mp4")
+        make(clip.lastPathComponent, in: folder.deletingLastPathComponent(), ["-f", "lavfi", "-i", "testsrc2=size=640x360:rate=25:duration=2", "-pix_fmt", "yuv420p"])
         make("cover.jpg", in: folder, ["-f", "lavfi", "-i", "color=c=0xe94560:s=64x64", "-frames:v", "1"])
         let sine = ["-f", "lavfi", "-i", "sine=frequency=440:duration=3:sample_rate=44100"]
         let covered = sine + ["-i", folder.appendingPathComponent("cover.jpg").path, "-map", "0:a", "-map", "1:v", "-c:v", "copy", "-disposition:v:0", "attached_pic"]
@@ -52,7 +53,7 @@ enum TestFolder {
         if let window = player.window, let panel = row(in: window.contentView!) {
             for view in panel.arrangedSubviews {
                 view.isHidden = false
-                if let label = view as? NSTextField, label.stringValue.contains(":") { label.stringValue = "-10:00:00" }
+                if let label = view as? NSTextField { label.stringValue = label.stringValue.contains(":") ? "-10:00:00" : "0.75×" }
             }
             let needed = panel.fittingSize.width + 32
             check(needed <= window.minSize.width, "the bottom row with every button and ten-hour times needs \(Int(needed)) pt; the narrowest window is \(Int(window.minSize.width)) pt")
@@ -61,10 +62,24 @@ enum TestFolder {
         }
         let center = MPNowPlayingInfoCenter.default()
         let name = { player.window?.representedURL?.lastPathComponent ?? "-" }
+        let content = { player.window.map { $0.contentRect(forFrameRect: $0.frame).size } ?? .zero }
+        let resize = { (size: NSSize) in
+            player.window?.setContentSize(size)
+            player.window?.layoutIfNeeded()
+            wait(0.3)
+            return content() == size
+        }
+
+        player.load(clip)
+        wait(2, until: { player.state.hasPrefix("Playing") })
+        player.window?.layoutIfNeeded()
+        check(abs(content().width / content().height - 16.0 / 9) < 0.02, "a 16:9 video opens in a 16:9 window: \(content())")
+        check(resize(NSSize(width: 960, height: 540)), "a video window can be made larger: \(content())")
 
         player.load(folder)
         wait(2, until: { player.state.hasPrefix("Playing") })
         check(name() == "01 first.mp3", "a folder opens at its first song: \(name())")
+        check(resize(NSSize(width: 900, height: 420)), "a music window keeps the size it is given: \(content())")
         let info = center.nowPlayingInfo ?? [:]
         check(info[MPMediaItemPropertyTitle] as? String == "Тест 音楽" && info[MPMediaItemPropertyArtist] as? String == "Артист" && info[MPMediaItemPropertyAlbumTitle] as? String == "Альбом", "Now Playing has title, artist and album")
         check(info[MPMediaItemPropertyArtwork] != nil, "Now Playing has the cover")
@@ -109,6 +124,7 @@ enum TestFolder {
         wait(0.5)
         check(center.nowPlayingInfo == nil && center.playbackState == .stopped, "closing the window clears Now Playing")
 
+        [folder, clip].forEach { try? FileManager.default.removeItem(at: $0) }
         print(failures == 0 ? "all folder checks passed" : "\(failures) folder checks FAILED")
         exit(failures == 0 ? 0 : 1)
     }

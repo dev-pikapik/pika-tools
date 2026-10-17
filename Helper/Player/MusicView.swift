@@ -32,12 +32,15 @@ final class MusicView: NSView {
         cover.layer?.masksToBounds = true
         cover.imageScaling = .scaleProportionallyUpOrDown
         cover.setAccessibilityElement(false)
+        cover.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+        cover.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         subtitleLabel.font = .systemFont(ofSize: 14)
         subtitleLabel.textColor = .secondaryLabelColor
         for label in [titleLabel, subtitleLabel] {
             label.alignment = .center
             label.lineBreakMode = .byTruncatingTail
+            label.setContentCompressionResistancePriority(NSLayoutConstraint.Priority(490), for: .horizontal)
             label.setAccessibilityElement(false)
         }
         labels.orientation = .vertical
@@ -51,9 +54,9 @@ final class MusicView: NSView {
         for view in [glass, backdrop, dim, column, cover] as [NSView] { view.translatesAutoresizingMaskIntoConstraints = false }
         for view in [glass, backdrop, dim, column] { addSubview(view) }
         let width = slot.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.55)
-        width.priority = .defaultHigh
+        width.priority = NSLayoutConstraint.Priority(480)
         let height = slot.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, constant: -250)
-        height.priority = NSLayoutConstraint.Priority(740)
+        height.priority = NSLayoutConstraint.Priority(490)
         var constraints = [width, height, slot.heightAnchor.constraint(equalTo: slot.widthAnchor), slot.widthAnchor.constraint(lessThanOrEqualToConstant: 440)]
         constraints += [
             column.centerXAnchor.constraint(equalTo: centerXAnchor),
