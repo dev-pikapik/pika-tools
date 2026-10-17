@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Aanwijzerversnelling gaat uit op elke muis
+
+<sub>1.52.3 · 17 oktober 2026</sub>
+
+De schakelaar en de snelheid werken nu op elke muis, ook op een muis die je na het starten van pikapik aansluit.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Eerder kon een muis die uit de sluimer kwam, opnieuw verbond of later werd aangesloten zijn versnelling houden. Nu beweegt de aanwijzer met elke muis precies zo ver als je hand, en de snelheidsregelaar verandert ze allemaal.
+
+**Probeer het:** Instellingen › Muis › Aanwijzerversnelling uitschakelen
+
+**Opgelost**
+
+- Zet je de schakelaar uit, dan komt terug wat je in Systeeminstellingen hebt ingesteld.
+- Staat de versnelling al uit in Systeeminstellingen, dan zegt de pagina Muis dat en laat zien waar je hem weer aanzet.
+
+---
+
 ## <a id="v1.52.2"></a>Het huisdiertje toont gevoelens en de speler opent afbeeldingen
 
 <sub>1.52.2 · 17 oktober 2026</sub>

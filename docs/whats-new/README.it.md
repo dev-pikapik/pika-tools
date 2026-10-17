@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>L’accelerazione del puntatore si disattiva su ogni mouse
+
+<sub>1.52.3 · 17 ottobre 2026</sub>
+
+L’interruttore e la velocità ora arrivano a ogni mouse, anche a quello collegato dopo l’avvio di pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Prima un mouse che si risvegliava, si ricollegava o veniva collegato dopo poteva tenere l’accelerazione. Ora con qualsiasi mouse il puntatore si sposta esattamente quanto la tua mano, e il cursore della velocità li cambia tutti.
+
+**Provalo:** Impostazioni › Mouse › Disattiva l’accelerazione del puntatore
+
+**Corretto**
+
+- Quando spegni l’interruttore, torna quello che hai impostato in Impostazioni di Sistema.
+- Se l’accelerazione è già disattivata in Impostazioni di Sistema, la pagina Mouse lo dice e mostra dove riattivarla.
+
+---
+
 ## <a id="v1.52.2"></a>L’animaletto mostra le emozioni e il lettore apre le immagini
 
 <sub>1.52.2 · 17 ottobre 2026</sub>

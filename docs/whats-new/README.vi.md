@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Tắt tăng tốc con trỏ giờ có tác dụng với mọi chuột
+
+<sub>1.52.3 · 17 tháng 10 năm 2026</sub>
+
+Công tắc và tốc độ giờ áp dụng cho mọi chuột, kể cả chuột cắm vào sau khi mở pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Trước đây, chuột vừa thức dậy, kết nối lại hoặc được cắm vào sau có thể vẫn giữ tăng tốc. Giờ với chuột nào, con trỏ cũng đi đúng bằng quãng tay bạn di chuyển, và thanh trượt tốc độ thay đổi tất cả.
+
+**Thử ngay:** Cài đặt › Chuột › Tắt tăng tốc con trỏ
+
+**Đã sửa**
+
+- Khi tắt công tắc, những gì bạn đặt trong Cài đặt hệ thống sẽ quay lại.
+- Nếu tăng tốc con trỏ đã tắt trong Cài đặt hệ thống, trang Chuột sẽ cho biết và chỉ chỗ bật lại.
+
+---
+
 ## <a id="v1.52.2"></a>Thú cưng thể hiện cảm xúc, trình phát mở được ảnh
 
 <sub>1.52.2 · 17 tháng 10 năm 2026</sub>

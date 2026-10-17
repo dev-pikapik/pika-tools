@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Zrychlení ukazatele jde vypnout u každé myši
+
+<sub>1.52.3 · 17. října 2026</sub>
+
+Přepínač a rychlost teď platí pro každou myš, i pro tu připojenou po spuštění pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Dřív si myš, která se probudila, znovu připojila nebo byla připojena později, mohla zrychlení nechat. Teď se ukazatel s jakoukoli myší posune přesně tak daleko jako ruka a posuvník rychlosti mění všechny myši.
+
+**Vyzkoušejte:** Nastavení › Myš › Vypnout zrychlení ukazatele
+
+**Opraveno**
+
+- Když přepínač vypnete, vrátí se to, co máte v Nastavení systému.
+- Pokud je zrychlení už vypnuté v Nastavení systému, stránka Myš to řekne a ukáže, kde ho znovu zapnout.
+
+---
+
 ## <a id="v1.52.2"></a>Mazlíček ukazuje city a přehrávač otevírá obrázky
 
 <sub>1.52.2 · 17. října 2026</sub>

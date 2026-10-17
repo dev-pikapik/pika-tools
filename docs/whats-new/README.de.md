@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Zeigerbeschleunigung lässt sich bei jeder Maus ausschalten
+
+<sub>1.52.3 · 17. Oktober 2026</sub>
+
+Schalter und Tempo wirken jetzt auf jede Maus, auch auf eine, die erst nach dem Start von pikapik angeschlossen wird.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Bisher konnte eine Maus, die aufwachte, sich neu verband oder später angeschlossen wurde, ihre Beschleunigung behalten. Jetzt bewegt sich der Zeiger mit jeder Maus genau so weit wie deine Hand, und der Tempo-Regler ändert alle.
+
+**Ausprobieren:** Einstellungen › Maus › Zeigerbeschleunigung ausschalten
+
+**Behoben**
+
+- Schaltest du den Schalter aus, kommt zurück, was du in den Systemeinstellungen eingestellt hast.
+- Ist die Beschleunigung in den Systemeinstellungen schon aus, sagt die Seite Maus das und zeigt, wo du sie wieder einschaltest.
+
+---
+
 ## <a id="v1.52.2"></a>Das Haustier zeigt Gefühle, und der Player öffnet Bilder
 
 <sub>1.52.2 · 17. Oktober 2026</sub>

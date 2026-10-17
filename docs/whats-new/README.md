@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Turning off pointer acceleration now works on every mouse
+
+<sub>1.52.3 · October 17, 2026</sub>
+
+The switch and the speed now reach every mouse, even one plugged in after pikapik started.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Before, a mouse that woke up, reconnected or was plugged in later could keep its acceleration. Now the pointer moves exactly as far as your hand with any mouse, and the speed slider changes them all.
+
+**Try it:** Settings › Mouse › Turn off pointer acceleration
+
+**Fixed**
+
+- Turning the switch off brings back what you set in System Settings.
+- If acceleration is already off in System Settings, the Mouse page says so and shows where to turn it back on.
+
+---
+
 ## <a id="v1.52.2"></a>The pet shows its feelings, and the player opens pictures
 
 <sub>1.52.2 · October 17, 2026</sub>

@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Pekaracceleration stängs av på alla möss
+
+<sub>1.52.3 · 17 oktober 2026</sub>
+
+Reglaget och hastigheten når nu varje mus, även en som ansluts efter att pikapik startat.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Förut kunde en mus som vaknade, anslöts igen eller kopplades in senare behålla sin acceleration. Nu rör sig pekaren exakt lika långt som handen med vilken mus som helst, och hastighetsreglaget ändrar alla.
+
+**Prova:** Inställningar › Mus › Stäng av pekaracceleration
+
+**Åtgärdat**
+
+- När du stänger av reglaget kommer det du har valt i Systeminställningar tillbaka.
+- Om accelerationen redan är avstängd i Systeminställningar säger sidan Mus det och visar var du slår på den igen.
+
+---
+
 ## <a id="v1.52.2"></a>Husdjuret visar känslor och spelaren öppnar bilder
 
 <sub>1.52.2 · 17 oktober 2026</sub>

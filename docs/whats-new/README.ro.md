@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Accelerarea cursorului se dezactivează pe orice maus
+
+<sub>1.52.3 · 17 octombrie 2026</sub>
+
+Comutatorul și viteza ajung acum la fiecare maus, chiar și la cel conectat după pornirea pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Înainte, un maus care se trezea, se reconecta sau era conectat mai târziu își putea păstra accelerarea. Acum, cu orice maus, cursorul se mișcă exact cât mâna ta, iar glisorul de viteză le schimbă pe toate.
+
+**Încearcă:** Setări › Maus › Dezactivează accelerarea cursorului
+
+**Reparat**
+
+- Când oprești comutatorul, revine ce ai setat în Configurări sistem.
+- Dacă accelerarea este deja dezactivată în Configurări sistem, pagina Maus îți spune asta și îți arată unde o pornești din nou.
+
+---
+
 ## <a id="v1.52.2"></a>Animăluțul își arată sentimentele, iar playerul deschide imagini
 
 <sub>1.52.2 · 17 octombrie 2026</sub>

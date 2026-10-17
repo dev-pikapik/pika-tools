@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>L’accélération du pointeur se désactive sur toutes les souris
+
+<sub>1.52.3 · 17 octobre 2026</sub>
+
+L’interrupteur et la vitesse s’appliquent maintenant à chaque souris, même branchée après le lancement de pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Avant, une souris qui sortait de veille, se reconnectait ou était branchée plus tard pouvait garder son accélération. Désormais, avec n’importe quelle souris, le pointeur va exactement aussi loin que votre main, et le curseur de vitesse les change toutes.
+
+**Pour essayer :** Réglages › Souris › Désactiver l’accélération du pointeur
+
+**Corrigé**
+
+- Quand vous désactivez l’interrupteur, ce que vous avez réglé dans Réglages Système revient.
+- Si l’accélération est déjà désactivée dans Réglages Système, la page Souris le dit et montre où la réactiver.
+
+---
+
 ## <a id="v1.52.2"></a>Le compagnon montre ses émotions, et le lecteur ouvre les images
 
 <sub>1.52.2 · 17 octobre 2026</sub>

@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>A aceleração do cursor desliga em qualquer mouse
+
+<sub>1.52.3 · 17 de outubro de 2026</sub>
+
+O botão e a velocidade agora chegam a cada mouse, até ao que é conectado depois de abrir o pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Antes, um mouse que acordava, se reconectava ou era conectado depois podia manter a aceleração. Agora, com qualquer mouse, o cursor anda exatamente o quanto a sua mão anda, e o controle de velocidade muda todos.
+
+**Experimente:** Ajustes › Mouse › Desativar a aceleração do cursor
+
+**Corrigido**
+
+- Ao desligar o botão, volta o que você ajustou nos Ajustes do Sistema.
+- Se a aceleração já está desativada nos Ajustes do Sistema, a página Mouse avisa e mostra onde ativá-la de novo.
+
+---
+
 ## <a id="v1.52.2"></a>O bichinho mostra o que sente, e o player abre imagens
 
 <sub>1.52.2 · 17 de outubro de 2026</sub>

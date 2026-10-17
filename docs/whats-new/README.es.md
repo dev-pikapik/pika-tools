@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>La aceleración del puntero se desactiva en cualquier ratón
+
+<sub>1.52.3 · 17 de octubre de 2026</sub>
+
+El interruptor y la velocidad ahora llegan a cada ratón, incluso al que se conecta después de abrir pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Antes, un ratón que despertaba, se volvía a conectar o se conectaba más tarde podía conservar su aceleración. Ahora, con cualquier ratón, el puntero se mueve exactamente lo mismo que tu mano, y el control de velocidad los cambia todos.
+
+**Pruébalo:** Ajustes › Ratón › Desactivar la aceleración del puntero
+
+**Corregido**
+
+- Al desactivar el interruptor vuelve lo que tienes en Ajustes del Sistema.
+- Si la aceleración ya está desactivada en Ajustes del Sistema, la página Ratón lo dice y muestra dónde volver a activarla.
+
+---
+
 ## <a id="v1.52.2"></a>La mascota muestra lo que siente y el reproductor abre imágenes
 
 <sub>1.52.2 · 17 de octubre de 2026</sub>

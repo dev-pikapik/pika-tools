@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Przyspieszenie wskaźnika wyłącza się na każdej myszy
+
+<sub>1.52.3 · 17 października 2026</sub>
+
+Przełącznik i szybkość działają teraz na każdą mysz, nawet podłączoną po uruchomieniu pikapik.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Wcześniej mysz, która się wybudziła, połączyła ponownie albo została podłączona później, mogła zachować przyspieszenie. Teraz z każdą myszą wskaźnik przesuwa się dokładnie tyle co ręka, a suwak szybkości zmienia wszystkie myszy.
+
+**Wypróbuj:** Ustawienia › Mysz › Wyłącz przyspieszenie wskaźnika
+
+**Poprawki**
+
+- Po wyłączeniu przełącznika wraca to, co masz w Ustawieniach systemowych.
+- Jeśli przyspieszenie jest już wyłączone w Ustawieniach systemowych, strona Mysz o tym mówi i pokazuje, gdzie je włączyć z powrotem.
+
+---
+
 ## <a id="v1.52.2"></a>Zwierzak pokazuje uczucia, a odtwarzacz otwiera obrazki
 
 <sub>1.52.2 · 17 października 2026</sub>

@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>Akselerasi penunjuk kini bisa dimatikan di setiap tetikus
+
+<sub>1.52.3 · 17 Oktober 2026</sub>
+
+Sakelar dan kecepatan kini berlaku untuk setiap tetikus, bahkan yang dicolokkan setelah pikapik dibuka.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Dulu, tetikus yang bangun dari tidur, tersambung ulang, atau dicolokkan belakangan bisa tetap memakai akselerasinya. Sekarang dengan tetikus apa pun, penunjuk bergerak persis sejauh tangan Anda, dan penggeser kecepatan mengubah semuanya.
+
+**Coba:** Pengaturan › Tetikus › Matikan akselerasi penunjuk
+
+**Diperbaiki**
+
+- Saat sakelar dimatikan, yang Anda atur di Pengaturan Sistem kembali.
+- Jika akselerasi sudah mati di Pengaturan Sistem, halaman Tetikus memberi tahu dan menunjukkan tempat menyalakannya lagi.
+
+---
+
 ## <a id="v1.52.2"></a>Peliharaan menunjukkan perasaannya, dan pemutar membuka gambar
 
 <sub>1.52.2 · 17 Oktober 2026</sub>

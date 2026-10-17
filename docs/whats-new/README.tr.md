@@ -5,6 +5,25 @@
 
 ---
 
+## <a id="v1.52.3"></a>İmleç hızlandırma her farede kapanıyor
+
+<sub>1.52.3 · 17 Ekim 2026</sub>
+
+Anahtar ve hız artık her fareye ulaşıyor, pikapik açıldıktan sonra takılan fareye bile.
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="../media/linear-pointer-dark.png"><img src="../media/linear-pointer-light.png" width="340" alt=""></picture>
+
+Önceden uykudan uyanan, yeniden bağlanan ya da sonradan takılan bir fare hızlandırmasını koruyabiliyordu. Artık hangi fare olursa olsun imleç tam eliniz kadar gidiyor ve hız kaydırıcısı hepsini değiştiriyor.
+
+**Deneyin:** Ayarlar › Fare › İmleç hızlandırmayı kapat
+
+**Düzeltilenler**
+
+- Anahtarı kapattığınızda Sistem Ayarları’nda seçtiğiniz geri gelir.
+- İmleç hızlandırma Sistem Ayarları’nda zaten kapalıysa Fare sayfası bunu söyler ve yeniden nereden açacağınızı gösterir.
+
+---
+
 ## <a id="v1.52.2"></a>Evcil dost duygularını gösteriyor, oynatıcı resimleri açıyor
 
 <sub>1.52.2 · 17 Ekim 2026</sub>

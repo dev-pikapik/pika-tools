@@ -5,7 +5,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 ## [1.52.3] - Unreleased
 
 ### Fixed
-- Turn off pointer acceleration: the switch and the speed now reach every mouse, including one that wakes, reconnects or is plugged in after launch, and turning it off brings back what System Settings has. When acceleration is already off in System Settings, the Mouse page says so.
+- Turn off pointer acceleration now works on every mouse, even one plugged in or woken after launch, and turning it off brings back what System Settings has.
 
 ## [1.52.2] - 2026-10-17
 
