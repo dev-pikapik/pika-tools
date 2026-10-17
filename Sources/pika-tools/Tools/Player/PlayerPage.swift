@@ -21,9 +21,11 @@ struct PlayerPage: View {
                     .frame(maxWidth: .infinity)
                     .settingAnchor(String(localized: "Open Video…"))
             }
-            Section("Video") { formats(Self.videos, PlayerFormats.video, anchor: String(localized: "Open All in pikapik")) }
-            Section("Music") { formats(Self.songs, PlayerFormats.music, anchor: String(localized: "Music")) }
-            Section("Pictures") { formats(Self.pictures, ImageFormats.all, anchor: String(localized: "Pictures")) }
+            Section {
+                DefaultAppToggle(title: String(localized: "Open videos in pikapik"), formats: Self.formats(PlayerFormats.video), apps: Self.videos)
+                DefaultAppToggle(title: String(localized: "Open music in pikapik"), formats: Self.formats(PlayerFormats.music), apps: Self.songs)
+                DefaultAppToggle(title: String(localized: "Open pictures in pikapik"), formats: Self.formats(ImageFormats.all), apps: Self.pictures)
+            }
             Section {
                 if let license = Self.license {
                     row(String(localized: "Player Licenses"), symbol: "doc.text.fill", color: .green) { NSWorkspace.shared.open(license) }
@@ -34,47 +36,8 @@ struct PlayerPage: View {
         .formStyle(.grouped)
     }
 
-    @ViewBuilder
-    private func formats(_ apps: DefaultApps, _ list: [(name: String, extensions: [String])], anchor: String) -> some View {
-        VStack(spacing: 6) {
-            Button(action: { if MainCopy.canAct { apps.set(!apps.isOn) } }) {
-                (apps.isOn ? Text("Restore Previous Apps") : Text("Open All in pikapik")).frame(minWidth: 140)
-            }
-            .controlSize(.large)
-            .settingAnchor(anchor)
-            (apps.isOn ? Text("macOS will ask about each format. Click “Use” each time.") : Text("macOS will ask about each format. Click “Use pikapik Player”."))
-                .font(.caption)
-                .foregroundStyle(.secondary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
-        }
-        .disabled(apps.busy)
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 4)
-        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in apps.refresh() }
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 104), spacing: 8)], spacing: 8) {
-            ForEach(list, id: \.name) { format in
-                let types = PlayerFormats.types(of: format.extensions)
-                let isOn = apps.isOn(types)
-                Button(action: { if MainCopy.canAct { apps.set(!isOn, for: types) } }) {
-                    HStack(spacing: 5) {
-                        Text(verbatim: format.name)
-                            .font(.callout.weight(.medium))
-                        if let app = apps.app(of: types) {
-                            Image(nsImage: NSWorkspace.shared.icon(forFile: app.path)).resizable().frame(width: 16, height: 16)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 4)
-                    .background(isOn ? AnyShapeStyle(.tint.opacity(0.25)) : AnyShapeStyle(.quaternary), in: Capsule())
-                    .contentShape(Capsule())
-                }
-                .buttonStyle(.plain)
-                .disabled(apps.busy)
-                .help(format.extensions.map { "." + $0 }.joined(separator: " "))
-            }
-        }
-        .padding(.vertical, 4)
+    private static func formats(_ list: [(name: String, extensions: [String])]) -> [(name: String, types: [UTType])] {
+        list.map { ($0.name, PlayerFormats.types(of: $0.extensions)) }
     }
 
     private func row(_ title: String, symbol: String, color: Color, action: @escaping () -> Void) -> some View {

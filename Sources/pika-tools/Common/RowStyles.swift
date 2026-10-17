@@ -1,5 +1,6 @@
 import AppKit
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct RowLabel: View {
     let title: Text
@@ -214,5 +215,27 @@ struct RowChevron: View {
             .font(.caption.weight(.semibold))
             .foregroundStyle(.tertiary)
             .accessibilityHidden(true)
+    }
+}
+
+struct DefaultAppToggle: View {
+    let title: String
+    let formats: [(name: String, types: [UTType])]
+    @Bindable var apps: DefaultApps
+
+    var body: some View {
+        let formats = formats.filter { !$0.types.isEmpty }
+        Toggle(isOn: Binding(get: { apps.isOn }, set: { if MainCopy.canAct { apps.set($0) } })) {
+            RowLabel(Text(verbatim: title), Text(verbatim: formats.map(\.name).joined(separator: "\u{00A0}· ")) + note(on: formats.filter { apps.isOn($0.types) }.count, of: formats.count))
+        }
+        .disabled(apps.busy)
+        .settingAnchor(title)
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in apps.refresh() }
+    }
+
+    private func note(on: Int, of count: Int) -> Text {
+        guard !apps.isOn else { return Text(verbatim: "") }
+        let state = on > 0 ? Text("Already in pikapik: \(on) of \(count)") + Text(verbatim: "\n") : Text(verbatim: "")
+        return Text(verbatim: "\n") + state + Text("macOS will ask about each format.")
     }
 }

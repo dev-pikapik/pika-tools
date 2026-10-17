@@ -8,8 +8,9 @@ final class ArchiveTool: Tool {
     var title: String { String(localized: "Archives in Finder") }
     let tab = SettingsTab.finder
     private let finder = FinderExtension(bundle: "Archive", key: "archive", preview: true)
+    static let formats: [(name: String, types: [UTType])] = [("ZIP", [.zip]), ("7Z", [UTType("org.7-zip.7-zip-archive")].compactMap { $0 })]
     private let defaultApp = DefaultApps(
-        types: ["public.zip-archive", "org.7-zip.7-zip-archive"].compactMap { UTType($0) },
+        types: ArchiveTool.formats.flatMap(\.types),
         target: Bundle.main.bundleURL,
         previousKey: "archive-previous-apps",
         fallback: "com.apple.archiveutility"
@@ -59,11 +60,7 @@ private struct ArchiveSettings: View {
         ) { AnyView(ArchiveArt(on: $0)) }
         #if !APPSTORE
         if inSettings {
-            Toggle(isOn: Binding(get: { defaultApp.isOn }, set: { if MainCopy.canAct { defaultApp.set($0) } })) {
-                RowLabel(Text("Open archives with this app"), Text(verbatim: "ZIP · 7Z"))
-            }
-            .settingAnchor(String(localized: "Open archives with this app"))
-            .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in defaultApp.refresh() }
+            DefaultAppToggle(title: String(localized: "Open archives in pikapik"), formats: ArchiveTool.formats, apps: defaultApp)
         }
         #endif
     }

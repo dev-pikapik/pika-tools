@@ -43,17 +43,12 @@ final class DefaultApps {
         types.allSatisfy { current[$0.identifier].map(isTarget) == true }
     }
 
-    func app(of types: [UTType]) -> URL? {
-        types.compactMap { current[$0.identifier] }.first { !isTarget($0) } ?? (isOn(types) ? target : nil)
-    }
-
     func refresh() {
         current = Dictionary(types.compactMap { type in system.handler(of: type).map { (type.identifier, $0) } }, uniquingKeysWith: { first, _ in first })
     }
 
     @discardableResult
-    func set(_ on: Bool, for subset: [UTType]? = nil) -> Task<Void, Never> {
-        let types = subset ?? self.types
+    func set(_ on: Bool) -> Task<Void, Never> {
         var previous = remembered
         if on {
             for type in types {

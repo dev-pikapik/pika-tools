@@ -290,16 +290,10 @@ enum TestPlayer {
 
         system.candidates = [a.identifier: [old, ours], b.identifier: [next, ours], c.identifier: [next, ours]]
         let formats = DefaultApps(types: [a, b, c], target: ours, previousKey: "formats", system: system, defaults: defaults)
-        await formats.set(true, for: [a]).value
-        precondition(formats.isOn([a]) && !formats.isOn([b]) && !formats.isOn && formats.app(of: [a]) == ours && formats.app(of: [b]) == next, "one format should change alone")
-        precondition(system.handler(of: b) == next && system.handler(of: c) == next, "the other formats must stay as they were")
-        await formats.set(false, for: [a]).value
-        precondition(system.handler(of: a) == old && defaults.object(forKey: "formats") == nil && formats.app(of: [a]) == old)
-        print("one format changes and returns alone: ok")
-
         system.keep = [b.identifier]
         await formats.set(true).value
         precondition(system.handler(of: a) == ours && system.handler(of: b) == next && system.handler(of: c) == ours && !formats.busy, "Keep on one format must not stop the next ones")
+        precondition(formats.isOn([a]) && formats.isOn([c]) && !formats.isOn([b]) && !formats.isOn, "the switch stays off and counts two of three formats")
         system.keep = [a.identifier]
         await formats.set(false).value
         precondition(system.handler(of: a) == ours && system.handler(of: c) == next, "Keep on turning off must not stop the next ones")
@@ -310,8 +304,8 @@ enum TestPlayer {
         print("Keep moves on to the next format and keeps the old app for later: ok")
 
         system.silent = true
-        await formats.set(true, for: [a, b]).value
-        precondition(formats.isOn([a, b]), "a system that never answers but changes the app must not stall")
+        await formats.set(true).value
+        precondition(formats.isOn, "a system that never answers but changes the app must not stall")
         print("no answer from the system, but the app changed: ok")
 
         let starts = [0.0, 60, 150, 300]
