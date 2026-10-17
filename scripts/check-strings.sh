@@ -22,7 +22,7 @@ if [ -z "$DIR" ]; then
         -Xfrontend -emit-localized-strings -Xfrontend -emit-localized-strings-path -Xfrontend "$DIR" \
         "${SOURCES[@]}" -o "$DIR/app.o"
     for EXT in NewFile Compress Convert Archive Preview; do
-        SHARED=(Extensions/Shared/*.swift)
+        SHARED=(Extensions/Shared/*.swift Sources/pika-tools/Common/MainCopyChoice.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
         [ "$EXT" != Preview ] || SHARED=(-import-objc-header Extensions/Preview/libarchive.h)
         swiftc -wmo -c -module-name "$EXT" -target arm64-apple-macos14.0 -application-extension \

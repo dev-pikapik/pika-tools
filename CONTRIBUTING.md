@@ -104,6 +104,12 @@ Only one copy of pikapik acts on the Mac. Copies of the same family (the website
 swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift Sources/pika-tools/Common/MainCopy.swift Sources/pika-tools/Tools/Animations/AnimationSetting.swift scripts/test-main-copy.swift -o build/test-main-copy && build/test-main-copy
 ```
 
+Every copy brings its own Finder extensions, and Finder asks every running one for its menu, so without a choice each copy adds its own New File, Make a Smaller Copy, Convert and Archive item. Before it adds an item, an extension asks `MainCopyChoice.showsMenu`: among the running extensions of the same kind (pikapik ids only), the item belongs to the one whose app is running, then to the website or App Store copy over dev and test copies, then to the app that started last (the main copy), so exactly one extension adds it, whatever copies are installed or running. When the main copy quits or is deleted, the item moves to a copy that is left. An extension that does not find itself in the list adds its item, so the item never disappears. The website copy, while it is the main one, also switches off the same extension of dev and test copies, which helps with copies built before this choice; it never switches off the App Store one, which only the user can turn back on.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift scripts/test-finder-menu.swift -o build/test-finder-menu && build/test-finder-menu
+```
+
 In the website build, Retype words you typed in the wrong language and Home/End switch on `AXManualAccessibility` (or `AXEnhancedUserInterface`) in Chromium apps so their text fields become visible. `TextFocus` writes each switched app (bundle id, pid, attribute, original value) to a journal before the switch and removes it when it puts the app back. After a crash the main copy reads the journal at start and, off the main thread, puts back every app that still runs with the same pid and bundle id, trying again every second for up to 10 tries while the app still runs and does not answer. Switching off works the same way, off the main thread, and on quit the main copy waits up to 2 seconds for it. Each app stays in the journal until it is put back, and new switches wait until this is done. It does not read the attribute first: Electron answers `false` even while the switch is on.
 
 ```bash

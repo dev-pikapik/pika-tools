@@ -8,7 +8,7 @@ final class ConvertExtension: FIFinderSync {
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
-        guard menuKind == .contextualMenuForItems else { return nil }
+        guard menuKind == .contextualMenuForItems, FinderMenu.shown else { return nil }
         let files = FIFinderSyncController.default().selectedItemURLs() ?? []
         let targets = ConvertFormats.targets(for: files)
         guard !targets.isEmpty else { return nil }

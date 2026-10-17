@@ -8,7 +8,7 @@ final class NewFileExtension: FIFinderSync {
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
-        guard menuKind == .contextualMenuForContainer || menuKind == .contextualMenuForItems else { return nil }
+        guard menuKind == .contextualMenuForContainer || menuKind == .contextualMenuForItems, FinderMenu.shown else { return nil }
         let menu = NSMenu()
         let item = menu.addItem(withTitle: NSLocalizedString("New File", comment: ""), action: #selector(newFile(_:)), keyEquivalent: "")
         item.tag = menuKind == .contextualMenuForItems ? 1 : 0

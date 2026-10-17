@@ -99,11 +99,11 @@ final class FinderExtension {
     static func refreshFinderRecord() {}
     #else
     private func ignoreOtherCopies() {
-        guard MainCopy.canAct, !id.contains(".dev.") else { return }
+        guard MainCopy.canAct, Bundle.main.bundleIdentifier == MainCopyChoice.websiteID else { return }
         for line in Self.pluginkit("-m", "-p", "com.apple.FinderSync").split(separator: "\n") where line.hasPrefix("+") {
-            let other = line.split(whereSeparator: \.isWhitespace).last?.prefix { $0 != "(" } ?? ""
-            if other.hasPrefix("com.pesotchi.pika-tools"), other.hasSuffix("." + key), other != id {
-                Self.pluginkit("-e", "ignore", "-i", String(other))
+            let other = String(line.split(whereSeparator: \.isWhitespace).last?.prefix { $0 != "(" } ?? "")
+            if other.hasPrefix(MainCopyChoice.websiteID) || other.hasPrefix("com.pikapik."), other.hasSuffix("." + key), ![id, MainCopyChoice.appStoreID + "." + key].contains(other) {
+                Self.pluginkit("-e", "ignore", "-i", other)
             }
         }
     }

@@ -87,7 +87,7 @@ for ARCH in arm64 x86_64; do
         "${PLAYER_SOURCES[@]}" \
         -o "build/player-$ARCH"
     for EXT in $EXTENSIONS; do
-        SHARED=(Extensions/Shared/*.swift)
+        SHARED=(Extensions/Shared/*.swift Sources/pika-tools/Common/MainCopyChoice.swift)
         [ "$EXT" != Archive ] || SHARED+=(Sources/pika-tools/Tools/Archive/Archive.swift)
         LINK=()
         [ "$EXT" != Preview ] || { SHARED=(); LINK=(-import-objc-header Extensions/Preview/libarchive.h -larchive); }

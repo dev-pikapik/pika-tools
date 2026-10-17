@@ -8,7 +8,7 @@ final class ArchiveExtension: FIFinderSync {
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
-        guard menuKind == .contextualMenuForItems,
+        guard menuKind == .contextualMenuForItems, FinderMenu.shown,
               let files = FIFinderSyncController.default().selectedItemURLs(), !files.isEmpty
         else { return nil }
         let menu = NSMenu()

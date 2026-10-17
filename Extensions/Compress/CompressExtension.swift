@@ -10,7 +10,7 @@ final class CompressExtension: FIFinderSync {
     }
 
     override func menu(for menuKind: FIMenuKind) -> NSMenu? {
-        guard menuKind == .contextualMenuForItems,
+        guard menuKind == .contextualMenuForItems, FinderMenu.shown,
               (FIFinderSyncController.default().selectedItemURLs() ?? []).contains(where: { Self.smaller.contains($0.pathExtension.lowercased()) })
         else { return nil }
         let menu = NSMenu()

@@ -52,6 +52,20 @@ enum MainCopyChoice {
         family(bundleID) == "pikapik" ? websiteID : family(bundleID)
     }
 
+    static func showsMenu(_ own: String, among extensions: [String], hosts: [RunningCopy]) -> Bool {
+        guard extensions.contains(own) else { return true }
+        func rank(_ id: String) -> (Int, Int, Date, Int32, String) {
+            let app = hostID(id)
+            let host = hosts.filter { $0.bundleID == app }.max { ($0.launched, $0.pid) < ($1.launched, $1.pid) }
+            return (host == nil ? 0 : 1, family(app) == "pikapik" ? 1 : 0, host?.launched ?? .distantPast, host?.pid ?? 0, id)
+        }
+        return extensions.max { rank($0) < rank($1) } == own
+    }
+
+    static func hostID(_ extensionID: String) -> String {
+        extensionID.split(separator: ".").dropLast().joined(separator: ".")
+    }
+
     static func started(_ pid: Int32) -> Date? {
         var info = kinfo_proc()
         var size = MemoryLayout<kinfo_proc>.stride
