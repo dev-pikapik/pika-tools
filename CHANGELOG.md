@@ -2,6 +2,11 @@
 
 Every update to pikapik, version by version. The same news, told simply with a picture, is in [What’s new](docs/whats-new/README.md), also in your language: [Русский](docs/whats-new/README.ru.md) · [Українська](docs/whats-new/README.uk.md) · [Deutsch](docs/whats-new/README.de.md) · [Français](docs/whats-new/README.fr.md) · [Español](docs/whats-new/README.es.md) · [Italiano](docs/whats-new/README.it.md) · [Português (Brasil)](docs/whats-new/README.pt-BR.md) · [日本語](docs/whats-new/README.ja.md) · [简体中文](docs/whats-new/README.zh-Hans.md) · [한국어](docs/whats-new/README.ko.md) · [Română](docs/whats-new/README.ro.md) · [Polski](docs/whats-new/README.pl.md) · [Türkçe](docs/whats-new/README.tr.md) · [Nederlands](docs/whats-new/README.nl.md) · [Svenska](docs/whats-new/README.sv.md) · [Čeština](docs/whats-new/README.cs.md) · [繁體中文](docs/whats-new/README.zh-Hant.md) · [العربية](docs/whats-new/README.ar.md) · [हिन्दी](docs/whats-new/README.hi.md) · [Bahasa Indonesia](docs/whats-new/README.id.md) · [Tiếng Việt](docs/whats-new/README.vi.md) · [ไทย](docs/whats-new/README.th.md).
 
+## [1.52.3] - Unreleased
+
+### Fixed
+- Turn off pointer acceleration: the switch and the speed now reach every mouse, including one that wakes, reconnects or is plugged in after launch, and turning it off brings back what System Settings has. When acceleration is already off in System Settings, the Mouse page says so.
+
 ## [1.52.2] - 2026-10-17
 
 ### Added
@@ -20,7 +25,6 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Settings, website version: videos, music and pictures now each have one switch, the same as archives, with their formats listed under it. It replaces the Open All in pikapik button and the format buttons; to change a single format, use Get Info in Finder.
 
 ### Fixed
-- Turn off pointer acceleration: the switch and the speed now reach every mouse, including one that wakes, reconnects or is plugged in after launch, and turning it off brings back what System Settings has. When acceleration is already off in System Settings, the Mouse page says so.
 - Retype words you typed in the wrong language and Home/End, website version: pikapik no longer turns off what another app, such as Voice Control or a keyboard navigation tool, had turned on in Chrome, Slack, VS Code and other apps built on Chromium. These apps don’t say truthfully whether that mode is on, so pikapik now looks for itself: if the app already shows its text fields, pikapik leaves it as it is, does not remember it and does not touch it when quitting. It switches, and later puts back, only the apps it really had to turn on.
 - Retype words you typed in the wrong language and Home/End, website version: when you quit pikapik, Google Chrome and other Chromium browsers are put back as they were. Before, pikapik turned them on but did not remember it, because Chrome answers as if it had refused, so they stayed on after pikapik quit.
 - Keys pikapik sends for you (Home and End, Quit app and Close window, Finder keys, Back and Forward, the text the layout fix retypes, the App Store layout-fix shortcut) no longer leave other apps thinking ⌘ or other modifier keys are still held until you touch the keyboard or mouse.
