@@ -28,10 +28,6 @@ final class DesktopIconsTool: Tool {
     func refresh() { curtain.isOn = isEnabled && MainCopy.canAct }
 }
 #else
-private func relaunch(_ bundleID: String) {
-    for app in NSRunningApplication.runningApplications(withBundleIdentifier: bundleID) { kill(app.processIdentifier, SIGTERM) }
-}
-
 @Observable
 final class DesktopIconsTool: Tool {
     let id = "desktop-icons"
@@ -41,41 +37,36 @@ final class DesktopIconsTool: Tool {
     let needs: [Permission] = []
     let isActive = false
     var isEnabled: Bool { get { false } set {} }
-    private(set) var hidden = DesktopIconsTool.read()
+    private(set) var hidden = DesktopIcons.hidden(.system)
+    private(set) var finderBusy = false
 
     var isOn: Bool {
         get { hidden }
         set {
             guard MainCopy.canAct else { return }
-            OriginalValue.set(Self.journal, current: Self.read(), to: newValue, write: Self.write)
+            if newValue { DesktopIcons.hide(.system) } else { DesktopIcons.show(.system, restartFinder: restartFinder) }
             hidden = newValue
         }
     }
 
     var settingsView: AnyView { AnyView(DesktopIconsSettings(tool: self)) }
-    func refresh() { hidden = Self.read() }
+    func refresh() { hidden = DesktopIcons.hidden(.system) }
 
     static func putBack() {
-        if let value = OriginalValue.putBack(OriginalValue.load(journal), current: read()) { write(value) }
-        OriginalValue.save(nil, journal)
+        DesktopIcons.putBack(.system)
     }
 
-    private static func write(_ value: Bool) {
-        CFPreferencesSetAppValue(key, value as CFBoolean, domain)
-        CFPreferencesAppSynchronize(domain)
-        relaunch("com.apple.WindowManager")
-    }
-
-    private static let journal = "desktop-icons-original"
-    private static let domain = "com.apple.WindowManager" as CFString
-    private static var stageManager: Bool { CFPreferencesGetAppBooleanValue("GloballyEnabled" as CFString, domain, nil) }
-    private static var key: CFString { (stageManager ? "HideDesktop" : "StandardHideDesktopIcons") as CFString }
-
-    private static func read() -> Bool {
-        CFPreferencesAppSynchronize(domain)
-        var valid: DarwinBoolean = false
-        let value = CFPreferencesGetAppBooleanValue(key, domain, &valid)
-        return valid.boolValue ? value : stageManager
+    private func restartFinder() {
+        guard let pid = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.finder").first?.processIdentifier,
+              let before = HiddenFilesTool.activity(pid)
+        else { finderBusy = false; return }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
+            guard let after = HiddenFilesTool.activity(pid) else { finderBusy = false; return }
+            let busy = HiddenFilesTool.busy(before, after)
+            if busy != finderBusy { finderBusy = busy }
+            if busy { return restartFinder() }
+            kill(pid, SIGTERM)
+        }
     }
 }
 
@@ -124,7 +115,7 @@ final class HiddenFilesTool: Tool {
         if let after = activity(pid), !busy(before, after) { kill(pid, SIGTERM) }
     }
 
-    private static func busy(_ before: (cpu: Double, io: UInt64), _ after: (cpu: Double, io: UInt64)) -> Bool {
+    fileprivate static func busy(_ before: (cpu: Double, io: UInt64), _ after: (cpu: Double, io: UInt64)) -> Bool {
         after.cpu - before.cpu > 0.005 || after.io != before.io
     }
 
@@ -146,7 +137,7 @@ final class HiddenFilesTool: Tool {
         if finderBusy { finderBusy = false }
     }
 
-    private static func activity(_ pid: pid_t) -> (cpu: Double, io: UInt64)? {
+    fileprivate static func activity(_ pid: pid_t) -> (cpu: Double, io: UInt64)? {
         var info = rusage_info_v4()
         let result = withUnsafeMutablePointer(to: &info) {
             $0.withMemoryRebound(to: rusage_info_t?.self, capacity: 1) { proc_pid_rusage(pid, RUSAGE_INFO_V4, $0) }
@@ -180,7 +171,7 @@ private struct DesktopIconsSettings: View {
         ToggleRow(
             icon: tool.icon,
             title: tool.title,
-            subtitle: Text("For calls, recordings and screenshots. The files stay where they are"),
+            subtitle: tool.finderBusy ? Text("Waiting for Finder to finish copying") : Text("For calls, recordings and screenshots. The files stay where they are"),
             hint: Text("The files stay where they are"),
             help: Text("Hides the files and folders on the desktop, the same as the Show items setting in System Settings › Desktop & Dock. They stay in the Desktop folder in Finder."),
             isOn: $tool.isOn

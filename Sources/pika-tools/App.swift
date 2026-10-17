@@ -175,6 +175,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     @MainActor private func startFeatures() {
         #if !APPSTORE
         TextFocus.putBackAfterCrash()
+        DesktopIconsTool.putBack()
         #endif
         ToolRegistry.shared.refresh()
         Permissions.shared.checkSystemAudio()

@@ -116,6 +116,12 @@ Changing a hot corner from the Games page remembers the first action and puts it
 swiftc -parse-as-library Sources/pika-tools/Tools/Games/HotCorners.swift scripts/test-hot-corners.swift -o build/test-hot-corners && build/test-hot-corners
 ```
 
+In the website build, Hide desktop icons shows as on whenever the desktop is hidden: by the System Settings switch (`StandardHideDesktopIcons`, or `HideDesktop` with Stage Manager) or because Finder has no desktop window, as after `defaults write com.apple.finder CreateDesktop -bool false`, which also takes away the selection rectangle. Switching it off always brings the desktop back: it shows the icons, forgets the journal and, when Finder has no desktop window, removes `CreateDesktop` and restarts Finder once it has finished copying. Switching it on hides the icons only on a visible desktop and notes that pikapik hid them. Putting back, on quit and whenever a copy becomes the main one, only ever shows the icons, and only while the note says pikapik hid them and they are still hidden, so icons hidden in System Settings stay hidden and a journal from an older version never hides them again. The logic lives in `DesktopIcons`, which reaches the Mac only through `DesktopIconsHost`, so the test runs it on a simulated Mac.
+
+```bash
+swiftc -parse-as-library Sources/pika-tools/Common/MainCopyChoice.swift Sources/pika-tools/Tools/Windows/DesktopIcons.swift scripts/test-desktop-icons.swift -o build/test-desktop-icons && build/test-desktop-icons
+```
+
 A `Toggle` inside a `Menu` needs `.toggleStyle(.automatic)`: the switch style that Settings pages apply makes each item draw three rows that do nothing when chosen. The test reads every Swift file in `Sources` and fails on a `Toggle` in a `Menu` without it.
 
 ```bash

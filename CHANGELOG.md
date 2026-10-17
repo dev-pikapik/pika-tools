@@ -36,6 +36,7 @@ Every update to pikapik, version by version. The same news, told simply with a p
 - Keep Awake: links from the Shortcuts app that open pikapik now work as soon as that copy becomes the main one, and several links in a row all apply.
 - Convert in Finder: if you had Compress on, Convert turns on too, now also when Compress was working in your other copy of pikapik at that moment.
 - Games, Mac App Store version: The pointer stays in the game is gone from this version. It could only pull the pointer back after it had already slipped onto another screen or into a hot corner, which was jumpy and not reliable. The website version keeps this option: there macOS itself stops the pointer at the edge.
+- Hide desktop icons, website version: turning it off now always brings back the files on your desktop and selecting them with the pointer, even if another app turned the desktop off, and quitting or updating pikapik no longer hides them again.
 - Hide desktop icons, Mac App Store version: a photo of your own as wallpaper now covers the icons too, when pikapik already has access to your home folder. Before, such a wallpaper always turned into a plain color.
 - Player, website version: a song folder you later delete is forgotten the next time the player starts.
 - Settings: when a page opens from the menu, a link or search, the list on the left scrolls to it, so you always see which page is open.
